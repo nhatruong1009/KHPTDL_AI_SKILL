@@ -1,0 +1,502 @@
+                                                           MTH045 - The Science of Data Analytics | Milestone 4
+
+                  MILESTONE P4
+
+  FROM MODELING TO EVALUATION
+TỪ LỰA CHỌN MÔ HÌNH ĐẾN THIẾT KẾ
+
+                     ĐÁNH GIÁ
+
+                   Modeling Strategy, Algorithm Selection & Evaluation Design
+
+                                     Lĩnh vực bắt buộc: GIÁO DỤC
+
+Mục tiêu của Milestone 4
+Chuyển các Analytical Questions và analytic-ready dataset từ Milestone 3 thành một kế hoạch Modeling &
+Evaluation có lập luận. Cấp độ bắt buộc yêu cầu lựa chọn nhóm giải pháp/thuật toán/mô hình phù hợp và
+thiết kế cách đánh giá; cấp độ mở rộng không bắt buộc cho phép lập trình prototype để kiểm chứng đề
+xuất.
+
+                     Thông tin nhóm                        Nội dung
+Tên nhóm
+Thành viên
+Project title
+Milestone 1 proposal version
+Milestone 2 dataset/version
+Milestone 3 prepared dataset/version
+Ngày nộp
+
+Tài liệu hướng dẫn thực hiện đồ án - Student Project Guideline
+
+From Modeling to Evaluation | Education Analytics Project
+
+                                                                     Trang 1
+                                                                     Trang 1
+                                                                                                             MTH045 - The Science of Data Analytics | Milestone 4
+
+1. Vị trí của Milestone 4 trong Data Analytics Methodology
+
+Milestone 4 tương ứng với giai đoạn From Modeling to Evaluation. Đây là bước chuyển từ câu hỏi phân tích
+và dữ liệu đã chuẩn bị sang chiến lược giải pháp: xác định bài toán kỹ thuật, lựa chọn nhóm phương pháp
+phù hợp, nêu baseline, lập luận trade-off và thiết kế tiêu chí đánh giá trước khi triển khai mô hình đầy đủ.
+
+                             Hình 1. Vị trí Milestone 4 trong Data Analytics Methodology (John Rollins)
+
+             Milestone                           Câu hỏi trung tâm                                  Đầu ra chính
+
+Milestone 1 - From Problem to  Vấn đề nào cần giải quyết? Câu hỏi phân tích  Business Goal, SMART Goal/KPI, Analytical
+Approach                       nào cần trả lời?                              Questions, Analytics Type
+
+Milestone 2 - From             Cần dữ liệu gì và nguồn dữ liệu mở nào cung   Data Requirements, dataset selection, raw data,
+Requirements to Collection     cấp được?                                     provenance
+
+Milestone 3 - From             Dữ liệu thực tế có đủ và phù hợp không? Cần   AQ-Data Fit, prepared dataset, data quality &
+Understanding to Preparation   chuẩn bị thế nào?                             leakage controls
+
+Milestone 4 - From Modeling    Nhóm giải pháp/mô hình nào phù hợp với        Modeling Strategy Matrix, Evaluation Plan;
+to Evaluation                  từng AQ? Đánh giá bằng cách nào?              optional prototype
+
+Nguyên tắc xuyên suốt
+
+Không phải mọi Analytical Question đều cần Machine Learning. Mô hình phức tạp không mặc định tốt
+hơn. Lựa chọn phương pháp phải bắt đầu từ câu hỏi, dạng output cần tạo, đặc điểm dữ liệu, yêu cầu giải
+thích và quyết định mà kết quả sẽ hỗ trợ.
+
+From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                         Trang 2
+                                                                                                         Trang 2
+                                                              MTH045 - The Science of Data Analytics | Milestone 4
+
+   2. Hai cấp độ yêu cầu của Milestone 4
+
+   Cấp độ           Tính bắt buộc                                         Yêu cầu                                     Sản phẩm
+
+LEVEL 1 - Modeling  BẮT BUỘC          Với từng Analytical Question: xác định technical task; đề xuất          Modeling Strategy
+& Evaluation                          các nhóm giải pháp/thuật toán/mô hình; chọn baseline và                 Matrix + Model
+Proposal                              primary approach; lập luận lựa chọn; thiết kế evaluation plan;          Selection Cards +
+                                      nêu assumptions, risks, interpretability và fairness.                   Evaluation Plan
+LEVEL 2 - Prototype KHÔNG BẮT
+                                      Lập trình thử nghiệm có kiểm soát cho một hoặc nhiều đề                 Notebook/code +
+Experiment          BUỘC              xuất ở Level 1. Mục tiêu là kiểm chứng feasibility và hiểu              experiment log +
+                                      trade-off, không phải thi leaderboard hoặc tối ưu                       preliminary results
+                                      hyperparameter đến mức tối đa.
+
+   Quy tắc chấm hoàn thành
+
+   Nhóm không thực hiện Level 2 vẫn có thể hoàn thành đầy đủ Milestone 4 nếu Level 1 được lập luận tốt.
+   Prototype chỉ là phần mở rộng minh chứng; không được dùng kết quả thử nghiệm để che lấp một
+   Modeling Strategy yếu hoặc không phù hợp.
+
+   3. Entry Gate ­ đầu vào bắt buộc từ Milestone 3
+
+                Đầu vào                                               Yêu cầu tối thiểu trước khi modeling
+Approved Analytical Questions
+Prepared dataset                      Chỉ sử dụng các AQ còn hiệu lực sau AQ-Data Fit ở Milestone 3. AQ đã defer/drop
+Leakage controls                      không được tự động đưa trở lại.
+Known limitations
+Traceability                          Có version rõ ràng, data dictionary, unit of analysis, keys, target/outcome và feature
+                                      windows nếu có.
+
+                                      Nếu có Predictive Analytics, đã xác định prediction point, temporal boundary, target
+                                      leakage và split rule.
+
+                                      Các data gaps, representativeness issues, sensitive attributes và assumptions đã được
+                                      ghi nhận.
+
+                                      Có chuỗi AQ -> Data Requirement -> Actual Variables -> Prepared Dataset.
+
+   Không đạt Entry Gate?
+
+   Nếu dữ liệu không còn hỗ trợ AQ sau Milestone 3, nhóm phải quay lại cập nhật scope/câu hỏi trước khi
+   chọn thuật toán. Không được “cứ chọn model” cho một câu hỏi mà dataset không thể trả lời.
+
+   4. Quy trình thực hiện Level 1 ­ bắt buộc
+
+Bước        Hoạt động                                         Câu hỏi kiểm tra                                Sản phẩm
+
+1     Reconfirm AQ & decision         AQ đang hỏi What happened, Why, What will happen hay What should        AQ Modeling Brief
+                                      we do? Kết quả sẽ hỗ trợ quyết định nào?
+
+2     Translate AQ to technical task  Bài toán kỹ thuật là aggregation, comparison, association,              Technical Task
+                                      classification, regression, forecasting, survival, clustering,          Definition
+
+                                      optimization...?
+
+3     Shortlist candidate solution    Có ít nhất một baseline và 1-2 nhóm giải pháp hợp lý nào?               Candidate Solution
+      families                                                                                                Matrix
+
+4     Select primary approach         Tại sao chọn? Trade-off về interpretability, complexity, assumptions,   Selection Rationale
+                                      data size, imbalance, compute?
+
+5     Design evaluation               Success được đo bằng metric nào? Split/validation nào? Baseline nào?    Evaluation Plan
+                                      Error/fairness analysis ra sao?
+
+6     Risk & ethics review            Có leakage, overfitting, causal overclaim, unfairness hoặc high-stakes  Risk & Ethics Notes
+                                      automation không?
+
+   From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                              Trang 3
+                                                                                                              Trang 3
+                                                                            MTH045 - The Science of Data Analytics | Milestone 4
+
+Bước             Hoạt động                                                         Câu hỏi kiểm tra                                           Sản phẩm
+                                                                                                                                      AI Decision Log
+7                GenAI-assisted critique       AI gợi ý gì? Nhóm chấp nhận/từ chối gì và đã kiểm chứng như thế
+                                               nào?
+
+       5. Từ Analytical Question đến nhóm giải pháp/mô hình
+
+       Bảng dưới là định hướng, không phải danh sách bắt buộc. Nhóm phải chọn theo câu hỏi và dữ liệu thực tế.
+       Không “nâng cấp” câu hỏi sang ML chỉ để có mô hình phức tạp.
+
+  Mức phân tích         Câu hỏi điển hình             Technical task          Nhóm giải pháp/phương pháp có thể xem xét                            Điểm cần lưu ý
+Descriptive
+Diagnostic       What happened? Tỷ lệ hoàn     Aggregation,                 Descriptive statistics; grouped aggregation;              Không cần ML nếu thống kê mô tả
+Predictive       thành, phân bố điểm, mức độ   summarization,               rate/trend analysis; cross-tabulation;                    trả lời đủ câu hỏi. Xác minh
+                 tương tác thay đổi thế nào?   segmentation,                visualization/dashboard; exploratory clustering chỉ       denominator, grain, time period và
+Prescriptive                                   visualization                khi thật sự cần phân nhóm chưa biết trước.                uncertainty.
+
+                 Why / what factors are        Group comparison,            Chi-square/Fisher; t-test/ANOVA hoặc non-                 Association không đồng nghĩa
+                 associated? Nhóm nào khác     association, explanatory     parametric alternatives; correlation/association;         causation. Nêu confounding,
+                 nhau? Yếu tố nào liên hệ với  modeling                     logistic/linear regression; interpretable trees; feature  assumptions và effect size; tránh
+                 outcome?                                                   importance như bằng chứng bổ trợ.                         diễn giải feature importance như
+                                                                                                                                      nguyên nhân.
+                 What is likely to happen? Có  Classification, regression,  Logistic/linear regression baseline; decision tree;
+                 thể nhận diện nguy cơ không   forecasting, survival/risk   random forest; gradient boosting; SVM; neural             Prediction point, leakage, class
+                 hoàn thành trước tuần 4       estimation, ranking          network khi dữ liệu đủ; time-series models; survival      imbalance, calibration và cost of
+                 không?                                                     models tùy AQ.                                            errors phải rõ. Model phức tạp chỉ
+                                                                                                                                      dùng khi có lợi ích được chứng
+                 What should we do? Can thiệp Decision rules,               Rule-based decision support; mathematical                 minh.
+                                                                            optimization; scenario simulation; causal
+                 nào nên áp dụng? Phân bổ      optimization, simulation,    inference/uplift nếu có treatment/outcome phù hợp;        Open observational data thường
+                                                                            experiment/A-B test design.                               không đủ để khẳng định can thiệp
+                 nguồn lực thế nào?            causal/uplift analysis                                                                 nào “gây ra” kết quả. Nếu thiếu
+                                                                                                                                      causal/intervention data, hạ claim
+                                                                                                                                      thành decision-support hoặc đề
+                                                                                                                                      xuất thiết kế thí nghiệm tương lai.
+
+       6. Task 1 ­ Lập AQ Modeling Brief
+
+       Với mỗi Analytical Question, nhóm điền một Modeling Brief trước khi nêu tên thuật toán. Mục tiêu là tránh
+       chọn model theo thói quen hoặc theo gợi ý của AI.
+
+                Thuộc tính                                                              Nội dung nhóm phải xác định
+AQ ID & wording                                Câu hỏi phân tích cuối cùng từ Milestone 3.
+Analytics level                                Descriptive / Diagnostic / Predictive / Prescriptive.
+Decision supported                             Ai sẽ dùng kết quả và để quyết định gì?
+Unit of analysis                               Student, student-course, student-week, assessment, event...?
+Outcome/target                                 Nếu có supervised task: target là gì, ở thời điểm nào? Nếu không có target, ghi N/A.
+Input information                              Những nhóm biến nào hợp lệ để sử dụng; mốc thời gian/feature window nếu có.
+                                               Rate/table, effect/association, probability, predicted score, forecast, cluster, ranking,
+Expected output                                recommendation/decision rule...
+                                               Interpretability, imbalance, sample size, time dependency, compute, fairness, missingness,
+Main constraint                                data gap...
+
+       7. Task 2 ­ Candidate Solution Matrix và lập luận lựa chọn
+
+       Mỗi AQ phải có ít nhất một baseline hợp lý. Với AQ cần modeling, nhóm nên xem xét 2-3 candidate families
+       trước khi chọn primary approach. Không yêu cầu liệt kê càng nhiều thuật toán càng tốt.
+
+AQ               Technical task            Baseline  Candidate 1            Candidate 2  Primary approach                             Lập luận ngắn
+
+AQ-__
+
+       From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                                                      Trang 4
+                                                                                                                                      Trang 4
+                                                                          MTH045 - The Science of Data Analytics | Milestone 4
+
+    AQ  Technical task   Baseline  Candidate 1                            Candidate 2  Primary approach                Lập luận ngắn
+AQ-__
+AQ-__
+AQ-__
+
+        7.1. Tiêu chí bắt buộc khi lập luận
+
+        • Fit to question: phương pháp có trực tiếp tạo output cần cho AQ không?
+        • Fit to data: sample size, feature types, sparsity, class imbalance, temporal structure và granularity có phù
+
+             hợp không?
+        • Assumptions: mô hình yêu cầu giả định gì và dữ liệu có đáp ứng tương đối không?
+        • Interpretability: stakeholder cần hiểu yếu tố/logic hay chỉ cần dự báo? Mức giải thích cần thiết là bao
+
+             nhiêu?
+        • Complexity vs baseline: mô hình phức tạp mang lại lợi ích kỳ vọng gì so với baseline?
+        • Robustness & reproducibility: có thể đánh giá ổn định, tái lập và tránh leakage không?
+        • Ethics/fairness: sai số có ảnh hưởng bất lợi đến nhóm sinh viên nào không? Có dùng sensitive attribute
+
+             không?
+        • Actionability: output có hỗ trợ decision đã nêu trong Milestone 1 không?
+
+         Không chấp nhận lập luận dạng
+
+         “Random Forest mạnh”, “XGBoost phổ biến”, “Neural Network hiện đại”, hoặc “AI đề xuất mô hình này”.
+         Tên thuật toán không phải là lập luận. Nhóm phải nối lựa chọn với AQ, dữ liệu, constraints và evaluation.
+
+        8. Task 3 ­ Thiết kế Evaluation Plan trước khi lập trình
+
+        Evaluation là phần bắt buộc của Level 1 ngay cả khi nhóm không code. Nhóm phải mô tả trước cách biết
+        một phương pháp “tốt” hay “đủ dùng”, thay vì chạy nhiều model rồi chọn metric đẹp nhất.
+
+    Technical task                        Evaluation gợi ý                           Baseline/validation cần có                                 Lưu ý
+Descriptive /
+aggregation            Consistency checks; denominator validation;        Đối chiếu tổng số record, counts, known      Không dùng accuracy/F1 cho một bài toán
+                       confidence interval khi phù hợp; comparison        totals hoặc alternate aggregation.           chỉ cần mô tả.
+Diagnostic /           across groups/time; visual sanity checks.
+association                                                               Unadjusted comparison + adjusted model       Không biến “association” thành “cause”.
+                       Effect size + confidence interval; test            khi phù hợp.
+Classification         statistic/p-value khi giả định hợp lệ; model                                                    Với early-warning giáo dục, recall, precision
+                       fit/residual diagnostics; sensitivity analysis.    Majority/simple rule hoặc Logistic           và calibration thường quan trọng hơn chỉ
+Regression                                                                Regression baseline;                         accuracy.
+                       Confusion matrix; precision, recall, F1; ROC-      stratified/temporal/student-level split phù
+Forecasting            AUC/PR-AUC; calibration; threshold-based           hợp.                                         Chọn metric theo đơn vị outcome và cost
+                       metrics theo decision cost.                        Mean/median baseline hoặc simple linear      của sai số.
+Clustering                                                                model.
+                       MAE, RMSE, R²; residual analysis; error by                                                      Không random split chuỗi thời gian.
+Prescriptive /         subgroup.                                          Naive last-value/seasonal baseline.
+optimization / causal                                                                                                  Cluster tốt về metric nhưng không có ý
+                       MAE/RMSE/sMAPE tùy dữ liệu;                        Simple segmentation hoặc multiple            nghĩa giáo dục thì không tạo giá trị.
+                       rolling/temporal validation.                       seeds/solutions.
+                                                                                                                       Nếu không có treatment/intervention data,
+                       Silhouette/other internal metric + stability +     Current policy hoặc simple decision rule.    không được tuyên bố hiệu quả can thiệp.
+                       domain interpretability.
+
+                       Objective value, feasibility, constraint
+                       satisfaction; treatment effect/uplift uncertainty
+                       nếu causal.
+
+        8.1. Evaluation Design Card bắt buộc
+
+                    Mục                                                      Nhóm cần ghi
+Primary metric(s)        Metric chính và lý do metric này phản ánh đúng mục tiêu/decision.
+Secondary metric(s)      Metric bổ sung để nhìn trade-off hoặc rủi ro.
+
+        From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                                       Trang 5
+                                                                                                                       Trang 5
+                    Mục                                                                                         MTH045 - The Science of Data Analytics | Milestone 4
+Validation strategy
+Baseline                                                                                                   Nhóm cần ghi
+Error analysis                                         Holdout / cross-validation / temporal split / group split / student-level split... và lý do.
+Fairness / subgroup check                              Cách làm đơn giản để so sánh. Không có baseline thì khó biết model phức tạp có thực sự
+Success criterion                                      hữu ích.
+                                                       Sai ở nhóm nào, loại lỗi nào, threshold nào?
+                                                       Hiệu năng có khác đáng kể giữa các nhóm liên quan không? Nếu có, xử lý/diễn giải thế nào?
+                                                       Điều kiện để xem approach đủ tốt cho mục đích học thuật/project; tránh đặt ngưỡng tùy ý
+                                                       sau khi thấy kết quả.
+
+9. Ví dụ xuyên suốt ­ Course Completion Analytics
+
+Ví dụ minh họa cách một project giáo dục có thể có nhiều mức câu hỏi nhưng không ép mọi mức vào
+Machine Learning.
+
+AQ ví dụ                                  Mức               Technical task                    Phương pháp hợp lý                       Evaluation / quyết định
+                                                        Rate/trend
+AQ1. Tỷ lệ hoàn thành khác nhau thế nào   Descriptive   comparison             Aggregation, cross-tab, visualization;       Kiểm tra denominator, trend consistency;
+giữa course và semester?                                Association /          confidence interval nếu cần.                 hỗ trợ xác định course cần xem xét.
+                                                        explanatory modeling
+AQ2. Engagement và assessment behavior    Diagnostic                           Group comparison + logistic regression;      Effect size/CI, model diagnostics; diễn
+nào liên hệ với non-completion?                         Binary classification  interpretable tree là bổ sung.               giải là association, không causal.
+
+AQ3. Có thể nhận diện sinh viên có nguy   Predictive    Causal/decision        Baseline Logistic Regression; Decision       Temporal/student split; PR-AUC, recall,
+cơ non-completion vào cuối tuần 4 không?                support                Tree/Random Forest/Gradient Boosting nếu     precision, calibration; tuyệt đối không
+                                                                               dữ liệu đủ.                                  dùng feature sau tuần 4.
+AQ4. Can thiệp nào nên áp dụng để tăng    Prescriptive
+completion?                                                                    Nếu dataset không có                         Không dùng model dự báo để suy ra “can
+                                                                               intervention/treatment: chưa đủ để estimate  thiệp X sẽ làm tăng completion”.
+                                                                               causal effect. Có thể xây decision-support
+                                                                               hypothesis và đề xuất A/B test tương lai.
+
+Bài học từ AQ4
+
+Khi dữ liệu không đủ cho Prescriptive Analytics, lựa chọn đúng không phải là “sáng tạo một mô hình
+prescriptive”. Nhóm phải hạ claim, thiết kế decision-support ở mức phù hợp, hoặc đề xuất dữ liệu/thí
+nghiệm bổ sung cho giai đoạn sau.
+
+10. LEVEL 2 ­ Prototype Experiment (không bắt buộc)
+
+Nếu nhóm thực hiện Level 2, mục tiêu là kiểm tra feasibility của các đề xuất Level 1. Prototype không cần là
+hệ thống hoàn chỉnh và không yêu cầu hyperparameter tuning quy mô lớn.
+
+            Bước prototype                                                                               Yêu cầu tối thiểu
+1. Reproduce data input
+2. Implement baseline                                  Load đúng prepared dataset/version từ Milestone 3; không sửa raw data âm thầm trong
+3. Implement candidate                                 notebook.
+
+4. Split & fit correctly                               Luôn chạy baseline trước hoặc cùng với candidate model.
+5. Evaluate
+6. Error / subgroup analysis                           Ít nhất một candidate approach từ Candidate Solution Matrix; không thay model tùy ý mà
+7. Compare to Level 1 expectation                      không cập nhật rationale.
+8. Reproducibility
+                                                       Tuân thủ temporal/group/student-level split; mọi scaler/encoder/feature selection phải fit trên
+                                                       training partition nếu applicable.
+
+                                                       Dùng metric đã định nghĩa ở Evaluation Plan; báo cả metric không thuận lợi nếu có.
+
+                                                       Xem lỗi theo threshold, class hoặc subgroup phù hợp; ghi nhận bất ổn và failure cases.
+
+                                                       Kết quả có củng cố hay bác bỏ lựa chọn ban đầu? Có cần đổi primary approach không?
+
+                                                       Lưu notebook/script, random seed, package/environment, data version và experiment log.
+
+From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                                            Trang 6
+                                                                                                                            Trang 6
+                                                                                                           MTH045 - The Science of Data Analytics | Milestone 4
+
+Prototype không phải cuộc thi
+Không chọn “best model” chỉ dựa trên một con số. Nếu improvement nhỏ nhưng interpretability giảm
+mạnh, nhóm phải thảo luận trade-off. Một baseline đơn giản có thể là lựa chọn tốt hơn.
+
+11. Chính sách sử dụng Generative AI trong Milestone 4
+
+Generative AI được phép dùng như Modeling Partner: hỗ trợ mở rộng lựa chọn, giải thích, phản biện và viết
+prototype. Quyết định cuối cùng và bằng chứng đánh giá vẫn thuộc trách nhiệm của nhóm.
+
+     Mức sử dụng                        ĐƯỢC PHÉP / CÓ ĐIỀU KIỆN                                               KHÔNG ĐƯỢC PHÉP
+Hiểu thuật toán
+                   Yêu cầu AI giải thích assumptions, ưu/nhược điểm, khi nào         Chép nguyên mô tả AI làm “lập luận lựa chọn” mà không nối
+Model selection    nên/không nên dùng một method; so sánh 2-3 model families.        với AQ và dữ liệu thật.
+
+Evaluation design  Yêu cầu AI đề xuất candidate families và đặt câu hỏi phản         “Hãy chọn model tốt nhất cho tôi” rồi chấp nhận câu trả lời như
+                   biện; nhóm tự chọn và ghi rationale.                              kết luận.
+Coding prototype
+                   Nhờ AI review metric, split, leakage risk, class imbalance,       Bịa metric threshold, benchmark hoặc kết quả chưa chạy.
+Interpretation     calibration, fairness; phải kiểm tra lại với kiến thức môn học.
+Data / synthetic                                                                     Nộp code AI sinh nhưng thành viên không giải thích được;
+results            AI có thể sinh skeleton code, function, unit test, plotting code  dùng code có data leakage dù “chạy được”.
+                   hoặc hỗ trợ debug; nhóm phải chạy, hiểu, sửa và kiểm chứng.
+                                                                                     Cho AI tự tạo confusion matrix, scores, plots hoặc “kết quả dự
+                   Có thể nhờ AI challenge interpretation dựa trên output thật do    kiến” rồi trình bày như kết quả thực nghiệm.
+                   nhóm cung cấp.
+                                                                                     Tạo synthetic labels/outcomes hoặc fake student records để
+                   Có thể tạo toy data nhỏ để test code path nếu ghi rõ là           cải thiện performance hay thay thế evaluation trên real data.
+                   synthetic và không dùng làm evidence.
+
+11.1. AI Decision Log bắt buộc
+
+Prompt / mục tiêu               AI suggestion  Team decision                         Evidence / verification  Ảnh hưởng đến proposal
+
+Gợi ý prompt tốt:
+
+• “Dựa trên AQ, unit of analysis, target, feature window và constraints dưới đây, hãy đề xuất 2-3 model
+     families phù hợp. Không chọn thay nhóm. Với mỗi family, hãy nêu assumptions, ưu/nhược điểm,
+     leakage risks và evaluation metrics cần cân nhắc.”
+
+• “Hãy đóng vai reviewer và tìm các điểm yếu trong Model Selection Rationale này: có mismatch giữa AQ
+     và model không, metric có phù hợp không, có causal overclaim, class imbalance hoặc leakage không?”
+
+12. Sản phẩm nộp của Milestone 4
+
+                   Deliverable      Bắt buộc?                                                            Nội dung
+A. Updated Traceability Matrix
+B. AQ Modeling Briefs           Có                         Business Goal -> AQ -> Analytics Level -> Technical Task -> Prepared Data -
+C. Candidate Solution Matrix                               > Primary Approach -> Evaluation -> Decision Supported.
+D. Evaluation Plan              Có
+E. Risk & Ethics Notes          Có                         Một brief cho mỗi AQ được giữ lại.
+F. AI Decision Log
+                                Có                         Baseline + candidate families + primary approach + rationale.
+G. Prototype Notebook / Code
+                                Có                         Metrics, validation strategy, baseline, error analysis, fairness/subgroup checks
+                                Có nếu dùng                và success criterion.
+                                GenAI
+                                                           Leakage, overfitting, interpretability, causal limits, fairness và high-stakes use.
+                                Không
+                                                           Minh bạch AI đã hỗ trợ gì, nhóm quyết định gì, cách kiểm chứng. Nếu không
+                                                           dùng AI, ghi “Not used”.
+
+                                                           Nếu thực hiện: code + experiment log + preliminary results + reproducibility
+                                                           information.
+
+From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                              Trang 7
+                                                                                                              Trang 7
+                                                                                    MTH045 - The Science of Data Analytics | Milestone 4
+
+       12.1. Bảng traceability cuối Milestone 4
+
+AQ     Analytics Level Technical Task           Baseline          Primary Approach  Primary Metric  Validation  Decision Supported
+
+AQ-__
+
+AQ-__
+
+AQ-__
+
+AQ-__
+
+       13. Cấu trúc báo cáo đề nghị
+
+                           Mục                                                                         Nội dung
+       1. Project Context & Continuity          Tóm tắt Business Goal, SMART Goal, dataset và những AQ còn hiệu lực sau Milestone 3.
+       2. AQ-to-Technical-Task Mapping          Mỗi AQ được chuyển thành technical task như thế nào.
+       3. Candidate Modeling Approaches         Baseline, candidate families và selection rationale.
+       4. Evaluation Design                     Metrics, validation, baseline, error/fairness analysis và success criteria.
+       5. Risk, Ethics & Limitations            Leakage, interpretability, causal limits, fairness, data constraints.
+       6. Generative AI Usage                   AI Decision Log và reflection ngắn.
+       7. Optional Prototype Results            Chỉ có nếu nhóm thực hiện Level 2.
+       8. Updated Traceability Matrix           Bảng tổng hợp để nối sang bước Development/Deployment hoặc báo cáo cuối.
+
+       14. Rubric đánh giá Level 1 ­ 100 điểm
+
+                                      Tiêu chí                       Điểm                                       Mô tả
+       Traceability từ AQ đến technical task
+       Candidate solution families & baseline                     NA       Không mất liên kết với Business Goal/Decision và prepared
+       Selection rationale                                        NA       data.
+       Evaluation design                                          NA
+       Leakage / risk / ethics / fairness                         NA       Đề xuất phù hợp, đủ nhưng không liệt kê lan man; có
+       GenAI transparency & critical use                          NA       baseline.
+       Presentation & consistency                                 NA
+       TỔNG                                                       NA       Lập luận theo question-data-assumption-interpretability-
+                                                                           complexity-actionability.
+                                                                  100
+                                                                           Metric, validation, baseline, error analysis và success
+                                                                           criterion hợp lý.
+
+                                                                           Nhận diện đúng các rủi ro quan trọng trong bối cảnh giáo
+                                                                           dục.
+
+                                                                           AI được dùng như partner; có decision log và kiểm chứng.
+
+                                                                           Bảng, thuật ngữ, versioning và logic toàn báo cáo rõ ràng.
+
+                                                                           Level 2 không phải điều kiện để đạt đủ 100 điểm của Level 1.
+
+       15. Checklist trước khi nộp
+
+       ☐ Mỗi AQ còn hiệu lực đều có Analytics Level và Technical Task rõ ràng.
+       ☐ Không ép mọi AQ thành Machine Learning; Descriptive/Diagnostic đơn giản được giữ nếu phù hợp.
+       ☐ Mỗi modeling AQ có baseline và ít nhất 1-2 candidate families hợp lý.
+       ☐ Primary approach được chọn bằng lập luận gắn với dữ liệu, không bằng độ “hiện đại” của thuật toán.
+       ☐ Evaluation Plan được viết trước hoặc độc lập với kết quả prototype.
+       ☐ Nếu Predictive: prediction point, split strategy, leakage và class imbalance đã được xem xét.
+
+       From Modeling to Evaluation | Education Analytics Project
+
+                                                                                                                Trang 8
+                                                                                                                Trang 8
+                                                                                                           MTH045 - The Science of Data Analytics | Milestone 4
+
+☐ Nếu Diagnostic: không diễn giải association thành causation.
+☐ Nếu Prescriptive: có bằng chứng/thiết kế causal thích hợp; nếu không, đã hạ claim hoặc đề xuất future
+experiment.
+☐ Nếu dùng GenAI: AI Decision Log đầy đủ; không có metric/kết quả do AI bịa ra.
+☐ Nếu làm prototype: code tái lập được, dùng đúng prepared dataset/version và metric đã cam kết.
+☐ Updated Traceability Matrix thể hiện rõ AQ -> model/solution -> evaluation -> decision.
+
+Điều kiện hoàn thành Milestone 4
+Một submission đạt yêu cầu phải chứng minh rằng nhóm biết “vì sao chọn phương pháp này” và “sẽ đánh
+giá nó như thế nào” trước khi bị cuốn vào coding. Kết quả của Milestone 4 là Modeling & Evaluation
+Proposal có traceability, không phải một danh sách thuật toán.
+
+From Modeling to Evaluation | Education Analytics Project
+
+                                                           Trang 9
+                                                           Trang 9
+

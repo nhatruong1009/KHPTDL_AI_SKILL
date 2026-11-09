@@ -1,0 +1,23 @@
+channels {'CA': 5065, 'DE': 6079, 'FR': 6671, 'GB': 1611, 'IN': 1422, 'JP': 4616, 'KR': 3983, 'MX': 6921, 'RU': 6865, 'US': 2199}
+unique channels total 37917
+% of videos from channels with >=5 trending videos:
+ {'CA': 74.5, 'DE': 75.2, 'FR': 72.6, 'GB': 38.6, 'IN': 91.1, 'JP': 53.4, 'KR': 68.9, 'MX': 74.5, 'RU': 76.0, 'US': 56.8}
+% channels with exactly 1 trending video: {'CA': 55.2, 'DE': 53.2, 'FR': 51.0, 'GB': 70.9, 'IN': 23.8, 'JP': 58.7, 'KR': 55.0, 'MX': 52.7, 'RU': 54.1, 'US': 63.3}
+                      regions  videos  med_views  videos_per_channel
+cat                                                                 
+Entertainment              10   60572  115148.75                5.62
+People & Blogs             10   35379   58510.50                3.22
+News & Politics            10   23353   62563.25                5.78
+Sports                     10   15469  193471.00                4.06
+Music                      10   13800  275106.75                2.62
+Comedy                     10   13025  294404.00                5.54
+Film & Animation           10   10780  149299.00                3.57
+Howto & Style              10   10597   70708.25                5.38
+Gaming                     10    6106  105146.50                2.54
+Education                  10    4343   30067.00                4.77
+Science & Technology       10    4034  182583.00                4.18
+Autos & Vehicles           10    3474   77306.50                3.15
+{'0': 34884.0, '1-5': 44037.0, '6-10': 68271.0, '11-20': 80032.0, '21+': 98834.0}
+{'<=30': 177290.0, '31-50': 106995.0, '51-70': 90564.0, '71-100': 91951.0}
+share by UTC hour: {0: 2.6, 1: 2.7, 2: 2.8, 3: 3.0, 4: 2.7, 5: 2.7, 6: 2.4, 7: 2.9, 8: 3.5, 9: 3.9, 10: 4.2, 11: 4.6, 12: 4.5, 13: 5.1, 14: 5.8, 15: 6.7, 16: 7.7, 17: 7.1, 18: 5.3, 19: 4.9, 20: 4.3, 21: 4.1, 22: 3.5, 23: 3.0}
+{'Friday': 15.8, 'Monday': 14.5, 'Saturday': 13.1, 'Sunday': 13.5, 'Thursday': 15.0, 'Tuesday': 14.2, 'Wednesday': 13.9}

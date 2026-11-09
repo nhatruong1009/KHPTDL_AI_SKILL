@@ -1,0 +1,445 @@
+                                                                  MTH045 - The Science of Data Analytics | Milestone 5
+
+                             MILESTONE P5
+
+  FINAL INTEGRATION & PROJECT REPORT
+
+ TỔNG HỢP 4 MILESTONES THÀNH BÁO CÁO ĐỒ ÁN CUỐI
+                                         KỲ
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                                                           ━━━━━
+
+                          From Project Evidence to a Coherent Analytics Report
+
+                                        Lĩnh vực bắt buộc: GIÁO DỤC
+
+ Mục tiêu của Milestone 5
+
+ Tích hợp có chọn lọc các kết quả từ Milestone 1–4 thành một Final Project Report thống nhất, có khả
+ năng truy vết từ nhu cầu stakeholder đến dữ liệu, xử lý dữ liệu, lựa chọn phương pháp, thiết kế đánh giá
+ và quyết định giáo dục được hỗ trợ. Đây không phải là thao tác nối bốn báo cáo cũ; nhóm phải rà soát,
+ cập nhật và viết lại thành một câu chuyện phân tích nhất quán.
+
+                    Thông tin nhóm                                Nội dung
+
+Tên nhóm
+
+Thành viên
+
+Project title cuối cùng
+
+Dataset / version cuối cùng
+
+Milestone 4 status                                                □ Level 1 bắt buộc □ Level 2 có thử nghiệm
+
+Ngày nộp
+
+                         Tài liệu hướng dẫn tổng hợp đồ án – Student Final Project Guideline
+
+Final Integration & Project Report | Education Analytics Project                                              Trang 1
+                                                                                                        MTH045 - The Science of Data Analytics | Milestone 5
+
+1. Vai trò của Milestone 5 trong toàn bộ đồ án
+
+ Chuỗi logic của đồ án
+
+ M1 – Why & What? → M2 – What Data? → M3 – Is the Data Fit & Ready? → M4 – How to Analyze
+ & Evaluate? → M5 – What is the final, defensible project story?
+
+Milestone 5 có ba nhiệm vụ chính:
+
+• Tích hợp: đưa các sản phẩm quan trọng của M1–M4 vào một cấu trúc báo cáo duy nhất.
+• Đồng bộ: giải quyết các mâu thuẫn giữa proposal ban đầu, dữ liệu thực tế, câu hỏi cuối cùng và
+
+     phương pháp đề xuất.
+• Truy vết: chứng minh mỗi quyết định kỹ thuật đều quay về một Analytical Question, một nguồn dữ liệu
+
+     và một mục tiêu/decision của stakeholder.
+
+1.1. Quy tắc quan trọng khi tổng hợp
+
+                 Quy tắc                                          Yêu cầu áp dụng
+
+Không copy-paste bốn milestone rồi   Final Report phải được viết lại theo một narrative chung; nội dung cũ chỉ
+ghép lại.                            là evidence/input.
+
+Sử dụng phiên bản cuối cùng của câu Nếu AQ đã sửa/drop ở M3, report phải dùng trạng thái cuối và giải thích
+
+hỏi và dữ liệu.                      thay đổi.
+
+Không che giấu data gaps hoặc model  Giới hạn là một phần của kết quả khoa học, không phải lỗi cần giấu.
+limitations.
+
+Phân biệt đề xuất với thực nghiệm.   Level 1 của M4 là bắt buộc; nếu chưa lập trình, không được viết như thể
+                                     đã có kết quả thực nghiệm.
+
+Mọi kết luận phải có evidence.       AI output, assumption hoặc stakeholder simulation không được dùng
+                                     thay cho evidence từ dữ liệu/tham khảo đáng tin cậy.
+
+1.2. Input bắt buộc trước khi bắt đầu Milestone 5
+
+Nguồn            Sản phẩm cần mang sang M5                        Trạng thái cần kiểm tra          Nếu chưa hoàn chỉnh
+
+Milestone 1      Business Goal, SMART Goal, KPI,                  Phiên bản cuối / đã ghi nhận  Quay lại làm rõ scope và
+                 stakeholder needs, Analytical Questions,         thay đổi                      AQ
+                 analytics level
+                                                                                                Không được tiếp tục nếu
+Milestone 2      Selected open dataset,                           Nguồn dữ liệu kiểm chứng      nguồn/dataset chưa rõ
+                 provenance/license, data requirements,           được
+                 AQ–Data mapping                                                                Hoàn tất AQ–Data Fit và xử
+                                                                                                lý leakage/gaps
+Milestone 3      Data understanding, quality findings,            Prepared data có version +
+                 prepared dataset, final AQ status                pipeline                      Hoàn tất ít nhất Level 1
+                                                                                                trước Final Report
+Milestone 4      Candidate method/model families,                 Phân biệt rõ mandatory vs
+                 rationale, evaluation plan; optional             optional
+                 experiment
+
+Final Integration & Project Report | Education Analytics Project                                Trang 2
+                                                                                                                                                              MTH045 - The Science of Data Analytics | Milestone 5
+
+2. Bảng hướng dẫn tích hợp 4 Milestones thành Final Project Report
+
+Bảng dưới đây là khung viết chính. Với mỗi phần, nhóm phải lấy evidence từ milestone tương ứng, cập nhật theo phiên bản cuối và viết lại thành nội dung có tính
+kết nối.
+
+Phần Final Report                  Nguồn             Mục tiêu phần viết        Nội dung phải trình bày                                     Evidence bắt buộc                  Câu hỏi tự kiểm tra
+
+Abstract / Executive           M1–M4          Tóm tắt toàn bộ project          Problem; data; final AQ; proposed/implemented               150–250 từ; không đưa chi tiết     Người đọc có hiểu project giải
+Summary                                                                        analysis; key result nếu có; educational value;             không có trong report.             quyết gì, dùng dữ liệu nào và đạt
+                                              Đặt bài toán trong bối cảnh      limitations.                                                                                   tới mức nào không?
+                                              giáo dục
+1. Introduction & Educational  M1             Xác định outcome và tiêu chí     Bối cảnh; motivation; stakeholders; phạm vi; project        Business context và stakeholder    Vì sao vấn đề này đáng phân tích?
+Context                                       thành công                       objective.                                                  needs đã tổng hợp.                 Ai sử dụng kết quả?
+                                              Chốt hệ thống câu hỏi cuối
+2. Business Understanding &    M1             cùng                             Business Goal; SMART Goal; Primary/Secondary KPI;           Bảng SMART/KPI phiên bản cuối.     Goal có phải business outcome,
+Success Criteria                                                               decision needs.                                                                                không phải technical task?
+                                              Giải thích cần dữ liệu gì và vì
+3. Analytical Questions &      M1 + M3        sao chọn dataset                 Final AQ; Descriptive / Diagnostic / Predictive /           AQ quality check; AQ revision      AQ có Clear, Specific, Scoped,
+Analytics Levels                                                               Prescriptive; scope; decision supported.                    status.                            Data-oriented, Answerable không?
+                                              Mô tả dữ liệu thật và độ phù
+4. Data Requirements &         M2             hợp                              Unit of analysis; target/outcome; variables/concepts;       Data Requirement Matrix + Dataset Dataset được chọn vì fit với AQ hay
+Dataset Selection                                                              time; population; candidate datasets; selection
+                                              Chứng minh nhóm hiểu dữ          rationale; provenance/license.                              Selection Matrix.                  chỉ vì dễ tải?
+                                              liệu trước khi modeling
+5. Dataset Description &       M2 + M3                                         Files/tables; keys; dimensions; sample; variables;          Data dictionary + AQ–Data Fit      Câu hỏi nào không được dataset hỗ
+Requirement–Data Fit                          Mô tả pipeline xử lý có lý do    coverage; gaps; AQ status: keep/modify/defer/drop.          Matrix.                            trợ và nhóm đã xử lý ra sao?
+
+6. Data Understanding & Data   M3             Ánh xạ AQ sang technical         Distribution; missingness; duplicates; invalids; outliers;  Profiling tables/charts + quality  Vấn đề dữ liệu nào có thể thay đổi
+Quality                                       approach                         imbalance; temporal coverage; representativeness;           findings.                          kết luận?
+                                                                               sensitive fields.
+                                              Thiết kế cách biết giải pháp
+7. Data Preparation &          M3             có đủ tốt                        Cleaning; transformations; joins; derived variables;        Preparation Decision Matrix +      Mỗi bước xử lý có lý do và không
+Analytic-ready Data                           Báo cáo prototype nếu nhóm       encoding; missing handling; leakage control; final          reproducible pipeline.             làm rò rỉ thông tin?
+                                              thực hiện                        dataset/version.
+                                              Quay lại trả lời câu hỏi ban
+8. Modeling / Analysis         M4 – Level 1   đầu                              AQ → analytics type → technical task → baseline →           Model/Method Selection Matrix.     Tại sao cách tiếp cận phù hợp với
+Strategy                                                                       candidate method/model families → primary proposal                                             câu hỏi, dữ liệu và mức
+                                              Nêu giới hạn một cách có         → rationale.                                                                                   interpretability cần có?
+                                              trách nhiệm
+9. Evaluation Design           M4 – Level 1                                    Metric; baseline; split/validation; success criterion;      Evaluation Plan.                   Metric có phù hợp mục tiêu và
+                                                                               leakage/fairness/interpretability checks.                                                      class/data structure không?
+10. Experimental               M4 – Level 2,
+Implementation & Results       optional                                        Tools; implementation; experimental setup; model            Code/notebook + result             Kết quả có reproducible và không bị
+                                                                               results; comparison; error analysis; interpretation.        tables/charts.                     trình bày quá mức evidence?
+11. Findings, Discussion &     M1–M4
+Decision Support                                                               Trả lời từng final AQ; educational meaning;                 AQ-by-AQ findings table.           Mỗi conclusion có quay lại AQ và
+                                                                               implications; uncertainty; stakeholder decision support.                                       evidence không?
+
+12. Limitations & Future Work M2–M4                                            Dataset gaps; generalizability; observational/causal        Limitation log / unresolved gaps.  Nhóm có phân biệt “không thấy
+                                                                               limits; model limits; deferred AQ; next data needed.                                           bằng chứng” với “không có dữ liệu
+                                                                                                                                                                              để kiểm tra” không?
+
+Final Integration & Project Report | Education Analytics Project                                        Trang 3
+                                                                                                                                                          MTH045 - The Science of Data Analytics | Milestone 5
+
+        Phần Final Report       Nguồn        Mục tiêu phần viết                     Nội dung phải trình bày                             Evidence bắt buộc                   Câu hỏi tự kiểm tra
+13. Generative AI Use &    M1–M5
+Reflection                                   Minh bạch vai trò AI            AI used for; suggestion; verification; accepted/rejected;  AI Decision Log.          AI có hỗ trợ reasoning hay thay thế
+                           M1–M4                                             final human decision.                                                                reasoning/evidence?
+14. Conclusion
+                                             Khép lại project theo business  What was asked; what data supported; what analysis         Không thêm kết luận mới.  Kết luận có nhất quán với scope và
+                                             goal                            is appropriate; what can/cannot be concluded; next                                   evidence không?
+                                                                             step.
+
+3. Bảng tổng hợp bắt buộc – Final Project Traceability Matrix
+
+ Đây là sản phẩm trung tâm của Milestone 5
+
+ Mỗi hàng tương ứng với một Analytical Question cuối cùng. Nhìn ngang một hàng phải thấy được toàn bộ đường đi từ mục tiêu → câu hỏi → dữ liệu → xử lý →
+ phương pháp → đánh giá → decision. Nếu một mắt xích không có bằng chứng, nhóm phải ghi GAP / N.A. và giải thích; không được tự bịa để điền đủ bảng.
+
+AQ-ID    Business /        Final Analytical  Analytics Level       Required Data /  Actual Dataset &  Preparation / Feature      Candidate Method /       Evaluation / Result Decision Supported Final Status
+       SMART Goal +            Question                                    Unit          Variables               Logic           Model + Rationale
+
+               KPI
+
+AQ1                                          Descriptive /                                                                                                        □ Answered □
+                                             Diagnostic /                                                                                                         Partial
+                                             Predictive /                                                                                                         □ Deferred □
+                                             Prescriptive                                                                                                         Dropped
+
+AQ2                                          Descriptive /                                                                                                        □ Answered □
+                                             Diagnostic /                                                                                                         Partial
+                                             Predictive /                                                                                                         □ Deferred □
+                                             Prescriptive                                                                                                         Dropped
+
+AQ3                                          Descriptive /                                                                                                        □ Answered □
+                                             Diagnostic /                                                                                                         Partial
+                                             Predictive /                                                                                                         □ Deferred □
+                                             Prescriptive                                                                                                         Dropped
+
+AQ4                                          Descriptive /                                                                                                        □ Answered □
+                                             Diagnostic /                                                                                                         Partial
+                                             Predictive /                                                                                                         □ Deferred □
+                                             Prescriptive                                                                                                         Dropped
+
+AQ5                                          Descriptive /                                                                                                        □ Answered □
+                                             Diagnostic /                                                                                                         Partial
+                                             Predictive /                                                                                                         □ Deferred □
+                                             Prescriptive                                                                                                         Dropped
+
+Yêu cầu: số dòng bằng số Final Analytical Questions của nhóm. Không bắt buộc phải có đủ bốn mức analytics nếu dữ liệu hoặc scope không hỗ trợ; mọi thay đổi phải được giải thích trong AQ
+
+Revision Log.
+
+Final Integration & Project Report | Education Analytics Project                                             Trang 4
+                                                                                               MTH045 - The Science of Data Analytics | Milestone 5
+
+3.1. AQ Revision Log – theo dõi sự thay đổi từ proposal đến report cuối
+
+AQ-ID  AQ ở Milestone 1  Finding từ M2/M3                         AQ cuối cùng         Action  Lý do  Ảnh hưởng tới phương pháp
+
+AQ1                                                                             □ Keep
+                                                                                □ Modify
+AQ2                                                                             □ Defer
+                                                                                □ Drop
+AQ3
+                                                                                □ Keep
+AQ4                                                                             □ Modify
+                                                                                □ Defer
+                                                                                □ Drop
+
+                                                                                □ Keep
+                                                                                □ Modify
+                                                                                □ Defer
+                                                                                □ Drop
+
+                                                                                □ Keep
+                                                                                □ Modify
+                                                                                □ Defer
+                                                                                □ Drop
+
+Final Integration & Project Report | Education Analytics Project                Trang 5
+                                                                      MTH045 - The Science of Data Analytics | Milestone 5
+
+4. Hướng dẫn viết Final Report: không ghép milestone, mà viết lại thành một
+narrative
+
+Final Report nên đọc như một dự án duy nhất, không phải bốn bài tập đặt cạnh nhau. Nhóm nên sử dụng
+logic sau để tổ chức lập luận:
+
+ Narrative chuẩn
+
+ Stakeholder problem → measurable goal → analytical questions → required data → selected open
+ dataset → actual data fit/gaps → prepared data → candidate analytical methods → evaluation design /
+ optional experiment → findings and limitations → educational decision support.
+
+4.1. Cấu trúc đề nghị và độ dài
+
+            Phần                 Độ dài gợi ý                                     Trọng tâm               Ghi chú
+                                                                  Toàn bộ project            Viết sau cùng
+Abstract                         0.5 trang                                                   Không kể lại transcript
+                                                                                             stakeholder
+1–3. Context, Goal, AQ           2–3 trang                        M1 đã được cập nhật
+                                                                                             Cite dataset/source/license
+4–5. Data Requirements &         2–3 trang                        M2
+Selection                                                                                    Ưu tiên bảng/biểu evidence
+                                                                                             Nêu rationale, không chỉ liệt
+6–7. Understanding & Preparation 3–5 trang                        M3                         kê thuật toán
+                                                                                             Chỉ có nếu thực sự chạy
+8–9. Modeling & Evaluation Plan 3–4 trang                         M4 Level 1 bắt buộc        Không causal hóa
+                                                                                             observational data
+10. Experiment                   0–4 trang                        M4 Level 2 optional        Minh bạch AI usage
+                                                                  Tổng hợp                   Search log, AI log, data
+11–12. Findings, Decision        2–4 trang                        M1–M5                      dictionary, code link
+Support, Limitations                                              Evidence chi tiết
+
+13–14. AI Reflection & Conclusion 1–2 trang
+
+Appendices                       Không giới hạn hợp
+                                 lý
+
+4.2. Hai trường hợp của Milestone 4 phải được viết khác nhau
+
+          Tình trạng                         Final Report phải có                                       Không được làm
+
+Chỉ hoàn thành Level 1 (bắt  Modeling Strategy + Candidate Methods + Rationale +             Không tạo metric, chart, confusion
+buộc)                        Evaluation Design. Viết ở thì đề xuất: “would be                matrix hoặc nói “model achieved…”
+                             evaluated”, “is proposed”.                                      nếu chưa chạy.
+
+Có Level 2 (optional         Bổ sung implementation, real experimental results,              Không chỉ báo “best model”; phải
+experiment)                  baseline comparison, error/limitation analysis.                 giải thích metric, validation và ý
+                                                                                             nghĩa với AQ.
+
+Final Integration & Project Report | Education Analytics Project                             Trang 6
+                                                                        MTH045 - The Science of Data Analytics | Milestone 5
+
+5. Bảng tổng hợp câu trả lời cuối cùng theo Analytical Question
+
+Sau khi viết các phần kỹ thuật, nhóm phải quay lại từng AQ và trả lời ở mức evidence mà project thực sự
+đạt được. Đây là cầu nối giữa analytics và decision support.
+
+AQ-ID    Final AQ         Evidence/Data       Method /                  Main Finding hoặc     Confidence /  Implication for
+                                Used          Analysis                   Expected Output       Limitation       Decision
+
+AQ1
+AQ2
+AQ3
+AQ4
+AQ5
+
+Quy tắc diễn giải
+
+Descriptive: mô tả điều đã xảy ra. Diagnostic: nói về association/pattern trừ khi thiết kế cho phép causal
+inference. Predictive: kết luận về khả năng dự báo trên validation phù hợp, không suy ra nguyên nhân.
+Prescriptive: nếu chỉ có observational data, trình bày recommendation như giả thuyết/decision option cần
+kiểm chứng chứ không khẳng định intervention chắc chắn hiệu quả.
+
+6. Generative AI trong Milestone 5 – được dùng như thế nào?
+
+Generative AI được phép sử dụng như một writing/review partner, nhưng không được tạo evidence thay
+cho project. Mọi nội dung AI đề xuất phải được nhóm kiểm tra với milestone artifacts, dataset và nguồn
+tham khảo.
+
+AI có thể hỗ trợ                       Ví dụ                            Yêu cầu kiểm chứng          Không được phép
+
+Kiểm tra tính nhất quán   Phát hiện SMART                         Đối chiếu với M1–M4 và sửa        Để AI tự thay đổi scope mà
+                          Goal/AQ/dataset/model không             bằng quyết định của nhóm          không ghi nhận
+                          còn khớp
+
+Review cấu trúc report    Gợi ý thứ tự section, chuyển ý, Nhóm tự quyết định narrative              Nộp nguyên output AI như
+                                                                                                    report
+                          rút gọn trùng lặp                       cuối
+
+Language editing          Sửa câu, clarity, academic tone         Không làm thay đổi                AI thêm claim, citation, metric
+                                                                  meaning/evidence                  không có thật
+
+Challenge reasoning       Hỏi ngược: vì sao model này? Nhóm trả lời bằng course                     Coi phản hồi AI là đáp án đúng
+                                                                                                    mặc định
+                          metric này?                             concept/data evidence
+
+Code/documentation        Review README, code                     Chạy lại code và xác minh output  Bịa kết quả, synthetic metric,
+review nếu có experiment  comments, reproducibility steps                                           figure giả
+
+6.1. AI Decision Log tối thiểu
+
+Stage                AI used for       AI suggestion/output             Student verification /              Final human decision
+                                                                             modification
+
+M1 / M5
+M2 / M5
+M3 / M5
+M4 / M5
+
+Final Integration & Project Report | Education Analytics Project                                            Trang 7
+                                                                          MTH045 - The Science of Data Analytics | Milestone 5
+
+7. Gói nộp cuối kỳ – Final Project Package
+
+                Deliverable       Bắt buộc?                       Nội dung                                  Yêu cầu
+Final Project Report (.pdf hoặc
+.docx theo yêu cầu lớp)           Bắt buộc          Báo cáo đã tích hợp M1–M5                Khoảng 15–25 trang phần
+Project Traceability Matrix                                                                  chính, không tính phụ lục; có
+Dataset source +                  Bắt buộc          Bảng mục 3                               Traceability Matrix
+provenance/license
+Prepared dataset / access                                                                    Phải cập nhật theo Final AQ
+instructions
+Data dictionary                   Bắt buộc          Link/source và version đã sử dụng        Có thể truy vết và tái tải
+
+Code / notebook                   Bắt buộc nếu      Dữ liệu sau M3 hoặc hướng dẫn tái tạo    Không vi phạm license/privacy
+                                  được phép chia
+README                            sẻ                                                         Khớp analytic-ready data
+
+AI Decision Log                   Bắt buộc          Định nghĩa biến cuối                     Chạy được hoặc có README
+Appendices / supporting                                                                      rõ
+evidence                          Chỉ bắt buộc nếu  Preparation + experiment code
+                                  có Level 2                                                 Ngắn gọn nhưng đủ
+                                  experiment hoặc                                            reproducibility
+                                  giảng viên yêu                                             Đưa phụ lục hoặc file riêng
+                                  cầu
+                                                                                             Không làm phần chính quá dài
+                                  Bắt buộc          Cấu trúc project, cách tái tạo,
+                                                    dependency
+
+                                  Bắt buộc nếu có   Vai trò, verification, final decision
+                                  dùng GenAI
+
+                                  Khi cần           Search log, profiling, extended tables,
+                                                    prompts quan trọng
+
+8. Rubric đề nghị cho Milestone 5 / Final Project Report – 100 điểm
+
+                    Tiêu chí                                                      Mô tả                             Điểm
+Problem–Goal–AQ coherence
+                                  Business context, SMART/KPI và Final AQ nhất quán; changes được giải
+Requirement–Data traceability     thích.
+Data understanding & preparation
+evidence                          Data requirements, dataset selection, variable coverage và gaps được truy vết
+                                  rõ.
+
+                                  Profiling, quality, preparation decisions, leakage/ethics được trình bày có bằng
+                                  chứng.
+
+Modeling/analysis strategy – Level 1 AQ → task → baseline → candidate methods → rationale hợp lý.
+
+Evaluation design                 Metric, validation/split, success criteria và limitations phù hợp.
+
+Experimental evidence – nếu có    Nếu có Level 2: implementation/reproducibility/result interpretation. Nếu không
+                                  có: điểm này chuyển vào chất lượng Level 1 theo quy định lớp.
+
+Findings & educational decision   Trả lời AQ ở đúng mức evidence; implications hợp lý, không overclaim.
+support
+
+Limitations & research integrity  Nêu data/model/generalizability/causal limits minh bạch.
+
+Traceability Matrix & report      Bảng tổng hợp hoàn chỉnh; report không phải bản ghép cơ học của
+integration                       milestones.
+
+Generative AI transparency &      AI usage minh bạch, có verification và quyết định cuối của nhóm.
+human ownership
+
+Presentation & references         Format, bảng/figure, citation, language, consistency.
+
+9. Checklist trước khi nộp
+
+□ Final Report sử dụng Final AQ, không dùng phiên bản đã bị sửa/drop mà không giải thích.
+□ Mỗi Final AQ có thể truy vết đến Business/SMART Goal và decision cần hỗ trợ.
+□ Mỗi AQ có dữ liệu/biến thực tế tương ứng hoặc được đánh dấu gap/partial/deferred.
+□ Dataset source, version, provenance và license đã được ghi rõ.
+
+Final Integration & Project Report | Education Analytics Project                                                    Trang 8
+                                                                                                          MTH045 - The Science of Data Analytics | Milestone 5
+
+□ Data preparation có rationale, version và kiểm soát leakage phù hợp.
+□ M4 Level 1 được hoàn thành cho từng AQ có thể phân tích: task, baseline, candidate methods, rationale,
+evaluation.
+□ Nếu không chạy thử nghiệm, report không chứa metric/kết quả giả định như kết quả thật.
+□ Nếu có chạy thử nghiệm, kết quả có validation, baseline và khả năng tái lập.
+□ Descriptive/Diagnostic/Predictive/Prescriptive được diễn giải đúng mức bằng chứng.
+□ Limitations, deferred questions và future data needs được trình bày rõ.
+□ Traceability Matrix hoàn chỉnh và nhất quán với các section.
+□ Generative AI usage được khai báo; không có fabricated citation/data/result.
+□ Tất cả bảng, hình, dataset và nguồn tham khảo có tên/citation phù hợp.
+□ Abstract và Conclusion phản ánh đúng mức project thực sự đạt được.
+
+ Điều kiện hoàn thành Milestone 5
+
+ Một Final Project Report đạt yêu cầu khi người chấm có thể lần theo một đường logic rõ ràng từ
+ stakeholder problem đến Final Analytical Questions, từ câu hỏi đến dữ liệu thực tế, từ dữ liệu đến
+ preparation, từ câu hỏi/dữ liệu đến phương pháp và đánh giá, và cuối cùng quay lại được
+ decision/educational value – đồng thời nhìn thấy rõ những gì project chưa thể kết luận.
+
+Final Integration & Project Report | Education Analytics Project  Trang 9
+

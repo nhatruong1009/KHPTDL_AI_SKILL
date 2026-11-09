@@ -1,0 +1,5 @@
+REGION,rev_total,rev_L12M,rev_P12M,orders_total,orders_L12M,customers_total,customers_2005,share_total_pct,share_L12M_pct,growth_L12M_pct
+Europe,4830142.59,2536851.78,1774850.84,148,77,44,19,49.1,49.72,42.93
+North America,3806703.73,2002136.25,1642668.43,118,61,38,14,38.69,39.24,21.88
+Australia,630623.1,327851.08,242636.18,19,10,5,4,6.41,6.43,35.12
+Asia,570671.95,235074.11,236695.35,18,10,5,3,5.8,4.61,-0.68

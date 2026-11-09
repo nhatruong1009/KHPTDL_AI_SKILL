@@ -1,0 +1,14 @@
+rows: 2823 | SALES missing: 0 | PRODUCTLINE missing: 0
+rows used (excluding Cancelled): 2763
+                     revenue  share_pct  lines  share_pct_incl_cancelled
+PRODUCTLINE                                                             
+Classic Cars      3860372.85      39.24    951                     39.07
+Vintage Cars      1865086.95      18.96    594                     18.97
+Motorcycles       1166388.34      11.86    331                     11.63
+Trucks and Buses  1127789.84      11.46    301                     11.24
+Planes             939570.86       9.55    294                      9.72
+Ships              657771.48       6.69    216                      7.12
+Trains             221161.05       2.25     76                      2.26
+total: 9838141.37 | shares sum: 100.0
+top: Classic Cars, second: Vintage Cars, ratio: 2.07
+saved C:\KHPTDL\outputs\revenue-by-product-pie\revenue_by_product_pie.png

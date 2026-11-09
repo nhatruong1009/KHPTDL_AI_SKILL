@@ -1,0 +1,545 @@
+                                                   MTH045 – The Science of Data Analytics | Milestone 1
+
+                            MILESTONE P1
+
+      PHÂN TÍCH YÊU CẦU VÀ XÂY DỰNG
+ PROPOSAL CHO DỰ ÁN PHÂN TÍCH DỮ LIỆU
+
+                   Requirement Analysis & Analytics Project Proposal
+
+                                     Lĩnh vực bắt buộc: GIÁO DỤC
+
+Mục tiêu của milestone
+Xác định đúng vấn đề và yêu cầu phân tích trước khi lựa chọn dữ liệu, kỹ thuật hay mô hình. Kết
+quả của milestone này là proposal nền tảng cho đồ án cuối môn.
+
+     Thông tin nhóm                                Nội dung
+
+Tên nhóm
+Thành viên
+Chủ đề dự án
+Stakeholders mô phỏng
+Ngày nộp
+
+                       Tài liệu hướng dẫn thực hiện đồ án
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                             Trang 1
+                                                   MTH045 – The Science of Data Analytics | Milestone 1
+
+1. Mục đích và kết quả cần đạt
+
+Milestone 1 là bước định nghĩa bài toán và viết proposal cho đồ án cuối môn. Ở giai đoạn này, nhóm
+chưa được bắt đầu bằng việc chọn mô hình hoặc thuật toán. Nhóm phải chứng minh được rằng câu
+hỏi phân tích xuất phát từ nhu cầu của stakeholder và liên kết được với mục tiêu của tổ chức.
+
+• Xác định stakeholder, nhu cầu, pain points, quyết định cần hỗ trợ và tiêu chí thành công.
+• Chuyển nhu cầu của stakeholder thành Business Goal và SMART Goal có thể đo lường.
+• Xác định KPI phù hợp với mục tiêu thay vì chọn KPI chỉ vì dữ liệu đang có.
+• Xây dựng hệ thống Analytical Questions theo bốn mức: Descriptive, Diagnostic, Predictive và
+
+     Prescriptive.
+• Từ từng Analytical Question, xác định loại phân tích và nhóm kỹ thuật/mô hình có thể cần ở các
+
+     milestone sau.
+• Xác định sơ bộ dữ liệu cần thiết, tính khả thi, ràng buộc và các vấn đề đạo đức/quyền riêng tư
+
+     trong dữ liệu giáo dục.
+• Sử dụng Generative AI như stakeholder mô phỏng, partner phản biện và reviewer; không sử dụng
+
+     AI như nguồn sự thật hay công cụ làm thay toàn bộ proposal.
+
+Chuỗi traceability bắt buộc
+Stakeholder Needs → Business Goal → SMART Goal → KPI → Analytical Questions → Analytics
+Type → Candidate Technique Family → Data Requirements → Decision Supported
+
+2. Phạm vi dự án và bối cảnh tình huống
+
+Tất cả dự án phải thuộc lĩnh vực giáo dục. Nhóm có thể chọn một vấn đề cụ thể trong bối cảnh
+trường đại học, nền tảng học trực tuyến, LMS, lớp học blended learning hoặc hoạt động hỗ trợ người
+học.
+
+Gợi ý hướng dự án                                  Ví dụ vấn đề tổ chức cần hiểu hoặc cải thiện
+
+Course completion / dropout  Tỷ lệ hoàn thành môn học thấp; sinh viên ngừng tham gia giữa học kỳ.
+Student engagement
+Learning performance         Mức độ tham gia LMS, video, quiz hoặc thảo luận giảm.
+Student support
+Course / learning design     Kết quả học tập khác biệt giữa các nhóm học viên hoặc hình thức học.
+
+Program management           Khó phát hiện sớm sinh viên cần hỗ trợ hoặc phân bổ nguồn lực tư vấn.
+
+                             Chưa rõ hoạt động học tập hoặc cấu trúc nội dung nào liên quan đến kết quả
+                             tốt hơn.
+
+                             Cần theo dõi hiệu quả chương trình, môn học hoặc nhóm học viên theo thời
+                             gian.
+
+Nhóm có thể chọn một chủ đề khác trong giáo dục nếu xác định được stakeholder,
+business/organizational goal và quyết định cần hỗ trợ.
+
+3. Tình huống khởi đầu
+
+Một trường đại học đang mở rộng học trực tuyến và blended learning. Trong một số môn học, nhà
+trường ghi nhận dấu hiệu sinh viên giảm mức độ tham gia hoặc không hoàn thành môn học đúng kỳ
+vọng. Nhà trường có thể có dữ liệu từ LMS, hệ thống quản lý đào tạo, bài tập, quiz, điểm số và khảo
+sát; tuy nhiên, chưa xác định rõ câu hỏi nào cần được phân tích và analytics sẽ hỗ trợ quyết định
+gì.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                                 Trang 2
+                                                                                                  MTH045 – The Science of Data Analytics | Milestone 1
+
+Nhóm của bạn đóng vai trò Data Analytics Team được giao nhiệm vụ làm rõ vấn đề, thu thập và tổng
+hợp yêu cầu, sau đó xây dựng proposal cho một dự án phân tích dữ liệu có thể triển khai trong các
+milestone tiếp theo.
+
+  Lưu ý quan trọng
+  Trong Milestone 1, chưa yêu cầu phân tích dataset, huấn luyện mô hình hay chứng minh nguyên
+  nhân. Mục tiêu là xác định đúng vấn đề và thiết kế được một analytic approach hợp lý.
+
+4. Stakeholders và cách mô phỏng requirement gathering bằng
+Generative AI
+
+Do chưa có điều kiện gặp stakeholder thực tế, nhóm sẽ sử dụng Generative AI để mô phỏng
+stakeholder interview. Mỗi nhóm phải làm việc với ít nhất ba stakeholder có góc nhìn khác nhau.
+
+Stakeholder tối thiểu                                           Mối quan tâm điển hình
+
+Academic Program Manager / Program Chất lượng đào tạo, tỷ lệ hoàn thành, hiệu quả chương trình, quyết
+
+Coordinator                         định ở cấp chương trình.
+
+Course Lecturer / Course Coordinator Mức độ tham gia, tiến độ học tập, hoạt động học, sinh viên cần hỗ trợ,
+                                                        thiết kế môn học.
+
+Student Support Officer / Academic  Phát hiện sớm rủi ro, ưu tiên hỗ trợ, nguồn lực tư vấn, tránh can thiệp
+Advisor                             không cần thiết.
+
+4.1. Vai trò được phép của Generative AI
+
+Vai trò của AI         AI được phép hỗ trợ                      AI không được thay thế
+
+Simulated         Trả lời phỏng vấn theo persona, nêu ưu tiên,  Tự quyết định Business Goal, KPI hoặc toàn
+Stakeholder       ràng buộc và mối quan tâm của vai trò.        bộ proposal thay nhóm.
+Sparring Partner
+                  Đặt câu hỏi ngược, thách thức assumptions,    Được xem như nguồn dữ kiện thực tế về
+Reviewer          chỉ ra xung đột hoặc điểm còn mơ hồ.          trường, sinh viên hay dataset.
+
+                  Kiểm tra tính SMART, traceability, độ rõ của  Sửa tự động và được nhóm chấp nhận mà
+                  Analytical Questions.                         không có đánh giá, lý do.
+
+4.2. Prompt khởi tạo stakeholder mô phỏng
+
+  Prompt gợi ý
+  Bạn đóng vai [TÊN VAI TRÒ] của một trường đại học. Bối cảnh: [MÔ TẢ NGẮN VẤN ĐỀ GIÁO
+  DỤC]. Tôi là Data Analyst đang thực hiện requirement gathering trước khi bắt đầu một dự án phân
+  tích dữ liệu. Hãy trả lời từ góc nhìn của stakeholder này. Không tự viết analytical questions hoặc giải
+  pháp kỹ thuật thay cho tôi. Nếu thông tin không có trong bối cảnh, hãy nói rõ đó là giả định hoặc
+  quan điểm của stakeholder, không trình bày như một dữ kiện đã được xác minh.
+
+Quy tắc: nhóm phải tự đặt câu hỏi lần lượt như một cuộc phỏng vấn; không yêu cầu AI tạo toàn bộ
+interview hoặc toàn bộ proposal trong một prompt.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                        Trang 3
+                                                              MTH045 – The Science of Data Analytics | Milestone 1
+
+5. Quy trình thực hiện Milestone 1
+
+Task 1 – Xác định bối cảnh dự án và stakeholder map
+
+1. Chọn một vấn đề cụ thể trong lĩnh vực giáo dục.
+2. Xác định tối thiểu ba stakeholder và giải thích vì sao họ liên quan đến vấn đề.
+3. Nêu sơ bộ quyết định mà từng stakeholder có thể cần đưa ra. Đây mới là giả thuyết ban đầu và sẽ
+
+     được kiểm tra qua interview.
+
+Stakeholder                     Vai trò                 Mục tiêu giả định ban đầu  Quyết định có thể cần hỗ
+                                                                                                  trợ
+
+Task 2 – Chuẩn bị câu hỏi phỏng vấn stakeholder
+
+Mỗi stakeholder cần 5–8 câu hỏi mở bao phủ tối thiểu năm nhóm thông tin sau:
+
+Nhóm thông tin                  Điều cần tìm hiểu                         Ví dụ hướng hỏi
+
+Business Goals     Stakeholder muốn cải thiện điều gì?        Mục tiêu quan trọng nhất mà anh/chị muốn đạt trong
+Success Vision                                                bối cảnh này là gì?
+Challenges
+Decision Making    Thành công được định nghĩa và đo như       Điều gì cho thấy tình hình đã thực sự được cải thiện?
+Risk Anticipation  thế nào?
+
+                   Khó khăn, pain points, constraints là gì?  Điểm khó nhất hiện nay trong việc xử lý vấn đề này là
+                                                              gì?
+
+                   Analytics sẽ hỗ trợ quyết định nào?        Nếu có insight này, anh/chị sẽ sử dụng nó để quyết
+                                                              định điều gì?
+
+                   Điều gì khiến kết quả không được tin hoặc Điều gì có thể khiến anh/chị không sử dụng kết quả
+
+                   không được dùng?                           phân tích?
+
+Không nên dùng câu hỏi dẫn dắt. Ví dụ “Anh/chị có nghĩ thời gian xem video thấp là nguyên nhân
+sinh viên bỏ học không?” đã áp đặt giả định trước khi có bằng chứng.
+
+Task 3 – Thực hiện stakeholder interviews với Generative AI
+
+1. Tạo một cuộc hội thoại riêng cho từng stakeholder.
+2. Dùng prompt khởi tạo vai trò, sau đó phỏng vấn theo câu hỏi do nhóm tự chuẩn bị.
+3. Trong quá trình phỏng vấn, đặt câu hỏi follow-up khi câu trả lời còn chung chung hoặc mâu thuẫn.
+4. Ghi lại các phát biểu quan trọng và đánh dấu rõ: stakeholder opinion, assumption hay information
+
+   được cung cấp trong scenario.
+
+Task 4 – Tổng hợp yêu cầu: Organize → Identify Themes → Prioritize → Refine →
+Validate
+
+Sau interview, nhóm không được chuyển trực tiếp câu trả lời của AI thành Business Goal. Nhóm phải
+synthesize stakeholder input theo quy trình đã học.
+
+Stakeholder        Goal / Need       Challenge                Decision Needed Success Indicator Risk / Constraint
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                           Trang 4
+Stakeholder  Goal / Need          Challenge               MTH045 – The Science of Data Analytics | Milestone 1
+                                                   Decision Needed Success Indicator Risk / Constraint
+
+• Identify Themes: tìm các chủ đề lặp lại giữa stakeholder, ví dụ engagement, completion, early
+     support, learning design.
+
+• Prioritize: chọn theme có liên kết mạnh nhất với organizational goal, decision impact và tính khả thi.
+• Refine: chuyển theme thành phát biểu vấn đề rõ hơn, loại bỏ các yêu cầu ngoài scope.
+• Validate: quay lại AI stakeholder và trình bày cách hiểu của nhóm để yêu cầu xác nhận/chỉnh sửa.
+
+             Nội dung validation                                     Kết quả
+
+Điểm stakeholder xác nhận
+
+Điểm stakeholder đề nghị điều chỉnh
+
+Điểm nhóm không chấp nhận / không sử dụng
+và lý do
+
+Task 5 – Xác định Business Goal
+
+Từ các yêu cầu đã tổng hợp, nhóm đề xuất một Business Goal chính cho dự án. Business Goal phải
+mô tả outcome tổ chức muốn đạt, không phải activity hay technical solution.
+
+             Không phù hợp                                           Phù hợp hơn
+
+“Phân tích dữ liệu LMS.”                           “Cải thiện khả năng hoàn thành môn học thành công của
+“Xây mô hình Random Forest dự đoán dropout.”       sinh viên.”
+
+                                                   “Nhận diện sớm sinh viên có nguy cơ không hoàn thành
+                                                   để hỗ trợ kịp thời.”
+
+Nhóm phải giải thích: Business Goal xuất phát từ stakeholder nào, tại sao quan trọng và quyết định
+nào sẽ được hỗ trợ nếu goal này được giải quyết.
+
+Task 6 – Chuyển Business Goal thành SMART Goal và xác định KPI
+
+SMART                                              Câu hỏi kiểm tra
+
+Specific     Chúng ta muốn cải thiện chính xác điều gì, cho đối tượng nào?
+Measurable   Sẽ đo bằng metric/KPI nào? Baseline và target là gì?
+Achievable   Mục tiêu có thực tế trong phạm vi project và bối cảnh giả định không?
+Relevant     Mục tiêu có liên kết trực tiếp với Business Goal và stakeholder need không?
+Time-bound   Khoảng thời gian đánh giá là khi nào?
+
+Nếu scenario không cung cấp baseline thật, phải ghi rõ đó là assumption dùng cho proposal; không
+được trình bày số do AI tạo ra như dữ kiện.
+
+KPI yêu cầu: 01 Primary KPI và tối đa 02 Secondary KPIs. Với mỗi KPI, giải thích vì sao nó đo được
+tiến độ hướng đến SMART Goal.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                          Trang 5
+                                                                                                  MTH045 – The Science of Data Analytics | Milestone 1
+
+Task 7 – Xây dựng Analytical Question Ladder theo 4 mức phân tích
+
+Đây là phần trọng tâm của milestone. Từ cùng một Business Goal, nhóm phải phát triển câu hỏi theo
+bốn mức analytics để hình thành lộ trình từ “hiểu hiện trạng” đến “hỗ trợ hành động”.
+
+Mức phân tích    Mục đích                          Câu hỏi điển hình                 Yêu cầu khi viết câu hỏi
+
+1. Descriptive   Hiểu điều gì đã/đang xảy ra. What happened? What is the             Có metric, population, time period,
+(Mô tả)                                                    current pattern?          unit/segment rõ ràng.
+2. Diagnostic
+(Chẩn đoán)      Hiểu yếu tố, khác biệt hoặc       Why did it happen? What is        Nêu rõ yếu tố cần so sánh/kiểm tra. Không
+                 mối liên hệ có thể giải thích     associated with it?               dùng ngôn ngữ nhân quả nếu thiết kế
+3. Predictive    hiện tượng.                                                         không hỗ trợ causal inference.
+(Dự báo)
+                 Ước lượng điều gì có khả          What is likely to happen?         Xác định target/outcome, đơn vị dự báo,
+4. Prescriptive  năng xảy ra tiếp theo hoặc ai                                       prediction horizon và dữ liệu có sẵn tại thời
+(Chỉ định)       có nguy cơ/khả năng thuộc                                           điểm dự báo.
+                 một outcome.
+                                                                                     Nêu rõ decision, action alternatives,
+                 Hỗ trợ lựa chọn hành động         What should we do? Which          objective/KPI và constraints; không chỉ viết
+                 trong điều kiện mục tiêu và       action should be prioritized?     “đưa ra khuyến nghị”.
+                 ràng buộc.
+
+Yêu cầu tối thiểu cho Question Ladder
+Mỗi nhóm phải có ít nhất 01 câu hỏi ở mỗi mức Descriptive, Diagnostic, Predictive và Prescriptive.
+Các câu hỏi phải liên kết logic với nhau. Ở milestone sau, sau khi audit dữ liệu, nhóm có thể quyết
+định chỉ triển khai một tập con khả thi; nhưng proposal phải thể hiện được toàn bộ analytic pathway.
+
+Mỗi Analytical Question phải đạt năm tiêu chí: Clear – Specific – Scoped – Data-oriented –
+Answerable.
+
+                 Analytical Question               Clear Specific Scoped               Data-   Answerab  Cần chỉnh
+                                                                                     oriented       le      sửa?
+
+AQ1
+AQ2
+AQ3
+AQ4
+
+Bắt buộc giữ lại ít nhất một ví dụ Before → After để chứng minh nhóm đã refine câu hỏi sau khi tự
+kiểm tra hoặc nhận phản biện từ AI.
+
+Task 8 – Xác định Analytics Type và Candidate Technique Family
+
+Ở Milestone 1, nhóm chưa cần chốt thuật toán cụ thể. Mục tiêu là xác định đúng loại phân tích và
+nhóm kỹ thuật có thể phù hợp, để chuẩn bị cho bước data audit và modeling sau này.
+
+Analytics Type   Candidate technique family (gợi ý định hướng)                                 Ví dụ output
+
+Descriptive      Aggregation, summary statistics, distribution analysis, visualization, Dashboard, profile, trend, rate,
+Diagnostic
+Predictive       segmentation.                                                       distribution.
+
+                 Group comparison, association/correlation, statistical tests,       Factors/segments associated
+                 explanatory regression/model, cohort analysis.                      with outcome, significant
+                                                                                     differences, explanatory patterns.
+
+                 Classification, regression, time-series forecasting, survival/risk  Probability/risk score, predicted
+                 modeling; đánh giá bằng validation phù hợp.                         value, forecast.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                                               Trang 6
+                                                        MTH045 – The Science of Data Analytics | Milestone 1
+
+Analytics Type         Candidate technique family (gợi ý định hướng)                                Ví dụ output
+
+Prescriptive           Decision rules, prioritization, recommendation, optimization,  Recommended
+                       simulation/scenario analysis, what-if analysis.                action/priority/allocation under
+                                                                                      constraints.
+
+Cảnh báo về “Diagnostic = causal”
+Phân tích chẩn đoán trên dữ liệu quan sát thường cho biết khác biệt hoặc mối liên hệ, không tự
+động chứng minh nguyên nhân. Chỉ dùng các từ “gây ra”, “tác động”, “hiệu quả của can thiệp” khi
+project có thiết kế phù hợp để hỗ trợ causal inference.
+
+Task 9 – Xác định Preliminary Data Requirements
+
+Với từng Analytical Question, xác định dữ liệu cần thiết ở mức khái niệm. Chưa cần xử lý dữ liệu ở
+milestone này.
+
+AQ            Data / Variables Needed  Possible Source  Granularity / Time            Availability  Privacy / Ethics Note
+
+AQ1
+
+AQ2
+
+AQ3
+
+AQ4
+
+Dữ liệu giáo dục có thể nhạy cảm. Không tải dữ liệu cá nhân thật của sinh viên lên công cụ AI công
+cộng. Trong milestone này, chỉ sử dụng bối cảnh giả lập hoặc dữ liệu đã được ẩn danh/giả lập nếu cần
+minh họa.
+
+Task 10 – Xác định Decision Supported và mức quyết định
+
+Nhóm phải nêu ít nhất một quyết định mà stakeholder có thể đưa ra dựa trên project, sau đó phân loại:
+
+• Strategic / Tactical / Operational.
+• Programmed / Non-programmed nếu phù hợp.
+• One-Way Door / Two-Way Door nếu cách phân loại này giúp đánh giá mức rủi ro và mức độ bằng
+
+     chứng cần thiết.
+Giải thích ngắn: vì sao loại quyết định này ảnh hưởng đến độ sâu phân tích, mức độ kiểm chứng hoặc
+mức độ chắc chắn mà project cần cung cấp.
+
+6. Cấu trúc Proposal phải nộp
+
+Độ dài khuyến nghị: 6–10 trang nội dung chính, không tính phụ lục. Proposal phải được viết như một
+tài liệu khởi động dự án, không phải bản mô tả lý thuyết.
+
+              Section                                   Nội dung bắt buộc
+
+1. Project Context & Problem           Bối cảnh, vấn đề, phạm vi, lý do cần analytics.
+Statement
+                                       Stakeholder map, interview approach, synthesized themes, priorities,
+2. Stakeholder Analysis &              conflicts/constraints.
+Requirement Findings                   Business Goal, SMART Goal, assumption nếu có, Primary/Secondary KPIs và
+                                       rationale.
+3. Business Goal, SMART Goal
+& KPIs
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                                                  Trang 7
+Section                                                             MTH045 – The Science of Data Analytics | Milestone 1
+                                                                   Nội dung bắt buộc
+
+4. Analytical Question Ladder  Các câu hỏi Descriptive → Diagnostic → Predictive → Prescriptive; quality check
+                               và Before → After.
+5. Proposed Analytic Approach  Analytics type của từng AQ, candidate technique family, expected output; chưa cần
+                               chọn thuật toán cuối cùng.
+6. Preliminary Data            Nguồn dữ liệu, biến, granularity, time window, access, quality risks, privacy/ethics.
+Requirements & Feasibility
+7. Decision Supported &        Ai dùng kết quả, quyết định nào được hỗ trợ, mức quyết định, expected value.
+Expected Value
+8. Generative AI Usage & Team  AI đã được dùng ở vai trò nào; nhóm chấp nhận/từ chối gợi ý nào và tại sao; điều
+Reflection                     gì vẫn cần bằng chứng thật.
+
+7. Bảng Traceability bắt buộc
+
+Cuối proposal phải có một bảng duy nhất thể hiện toàn bộ logic của dự án. Đây là phần giảng viên sử
+dụng để kiểm tra tính nhất quán của proposal.
+
+Business Goal    SMART Goal / KPI  AQ              Analytics Type  Candidate Technique  Data Needed  Decision Supported
+                                                                             Family
+
+                                   AQ1
+
+                                   AQ2
+
+                                   AQ3
+
+                                   AQ4
+
+8. Minh họa cách hình thành Question Ladder (không phải đáp án mẫu)
+
+Ví dụ này chỉ minh họa cấu trúc suy luận; nhóm phải xây dựng câu hỏi riêng theo bối cảnh và
+stakeholder của mình.
+
+Thành phần                                                         Ví dụ minh họa
+
+Business Goal    Cải thiện khả năng hoàn thành môn học của sinh viên.
+SMART Goal
+                 Tăng tỷ lệ hoàn thành của sinh viên năm nhất trong các môn blended learning được
+Descriptive AQ   chọn từ baseline giả định 60% lên 70% vào cuối học kỳ kế tiếp.
+Diagnostic AQ
+                 Tỷ lệ hoàn thành của sinh viên năm nhất theo môn học và học kỳ hiện nay là bao nhiêu?
+Predictive AQ
+                 Những chỉ báo engagement nào trong 6 tuần đầu khác biệt đáng kể giữa nhóm hoàn
+Prescriptive AQ  thành và không hoàn thành?
+
+                 Có thể ước lượng nguy cơ không hoàn thành vào cuối học kỳ từ dữ liệu 6 tuần đầu với
+                 mức hiệu năng chấp nhận được hay không?
+
+                 Trong điều kiện số lượng cố vấn có hạn, nhóm sinh viên nào nên được ưu tiên hỗ trợ
+                 trước và theo tiêu chí nào để tối đa hóa khả năng hoàn thành?
+
+Logic cần quan sát: mô tả hiện trạng → tìm yếu tố liên quan → dự báo outcome → hỗ trợ lựa chọn
+hành động. Mỗi tầng tạo tiền đề cho tầng tiếp theo nhưng không tự động chứng minh causal effect.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                                     Trang 8
+                                                                  MTH045 – The Science of Data Analytics | Milestone 1
+
+9. Bằng chứng sử dụng Generative AI
+
+Trong phụ lục, nhóm phải cung cấp bằng chứng đủ để thể hiện AI được sử dụng có kiểm soát, không
+cần nộp toàn bộ hội thoại dài.
+
+• Danh sách câu hỏi interview do nhóm tự xây dựng.
+• Các đoạn transcript/screenshot quan trọng từ ít nhất ba stakeholder interviews.
+• Ít nhất một vòng validation với stakeholder mô phỏng.
+• Ít nhất một ví dụ AI critique → Team decision → Reason.
+• Prompt reviewer và phần phản hồi được nhóm sử dụng để refine proposal.
+
+        AI Suggestion / Critique                   Team Decision  Reason / Evidence
+
+10. Tiêu chí đánh giá
+
+                Tiêu chí              Điểm                        Mô tả trọng tâm
+
+Stakeholder requirement gathering     NA           Câu hỏi interview có chiều sâu; thể hiện được goals, success,
+                                                   challenges, decisions và risks.
+Synthesis & prioritization            NA
+                                                   Tổng hợp được themes, xung đột, ưu tiên và assumptions; có
+Business Goal + SMART Goal + KPI      NA           validation.
+
+Analytical Question Ladder            NA           Goal đúng bản chất outcome; SMART rõ; KPI có rationale và
+                                                   traceability.
+Analytics Type & Candidate Technique  NA
+                                                   Có đủ 4 mức; câu hỏi clear, specific, scoped, data-oriented,
+Family                                             answerable; các tầng liên kết logic.
+
+Data Requirements, feasibility,       NA           Phân loại đúng loại analytics; nhóm kỹ thuật phù hợp; không nhảy
+                                                   sớm vào thuật toán cụ thể.
+privacy/ethics
+                                                   Dữ liệu cần thiết hợp lý; nhận diện access, quality, granularity và vấn
+Decision supported & expected value   NA           đề nhạy cảm.
+
+Responsible GenAI use & proposal quality NA        Nêu rõ ai dùng kết quả, quyết định nào được hỗ trợ và mức quyết
+                                                   định.
+
+                                                   AI dùng như partner; có phản biện, minh bạch; proposal rõ ràng,
+                                                   nhất quán.
+
+Tổng                                  100
+
+11. Các lỗi thường gặp cần tránh
+
+• Bắt đầu proposal bằng thuật toán: “Nhóm sẽ dùng Random Forest/XGBoost...” trước khi xác định
+     business problem.
+
+• Viết Business Goal dưới dạng activity, ví dụ “phân tích LMS” hoặc “xây dashboard”.
+• Dùng baseline hoặc số liệu do AI bịa ra nhưng không ghi là assumption.
+• Chọn KPI chỉ vì có sẵn trong dataset, không chứng minh được liên kết với SMART Goal.
+• Viết câu hỏi Diagnostic bằng ngôn ngữ nhân quả (“X gây ra Y”) trong khi chỉ có dữ liệu quan sát.
+• Viết câu hỏi Predictive nhưng không xác định target, đơn vị dự báo hoặc prediction horizon.
+• Viết câu hỏi Prescriptive chỉ ở dạng “Đề xuất giải pháp gì?” mà không nêu decision, action
+
+     alternatives, objective hoặc constraints.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                                                     Trang 9
+                                                                                                  MTH045 – The Science of Data Analytics | Milestone 1
+
+• Cho AI tạo trọn bộ interview/proposal rồi sao chép mà không có team judgment.
+• Tải dữ liệu cá nhân thật của sinh viên lên công cụ AI công cộng.
+
+12. Checklist trước khi nộp
+
+☐ Nhóm đã phỏng vấn tối thiểu 3 stakeholder mô phỏng và có follow-up questions.
+☐ Business Goal là organizational outcome, không phải technical solution.
+☐ SMART Goal có metric, target/baseline (hoặc assumption được ghi rõ) và thời gian.
+☐ Primary KPI đo trực tiếp tiến độ hướng đến SMART Goal.
+☐ Có ít nhất 1 Analytical Question ở mỗi mức: Descriptive, Diagnostic, Predictive, Prescriptive.
+☐ Mỗi AQ đạt Clear, Specific, Scoped, Data-oriented, Answerable.
+☐ Diagnostic questions không suy diễn causal effect nếu project không có causal design.
+☐ Predictive questions có target, unit và prediction horizon.
+☐ Prescriptive questions nêu rõ decision/action/constraints.
+☐ Mỗi AQ có analytics type, candidate technique family và data requirements tương ứng.
+☐ Có decision supported và stakeholder sử dụng kết quả.
+☐ Có traceability matrix cuối proposal.
+☐ Có AI usage evidence và ít nhất một ví dụ AI suggestion → Team decision → Reason.
+☐ Không có dữ liệu cá nhân thật được đưa vào AI public tool.
+
+  Nguyên tắc xuyên suốt
+  Generative AI có thể mô phỏng trải nghiệm stakeholder và hỗ trợ tư duy, nhưng không thay thế
+  bằng chứng. Mọi kết luận về người học, hành vi học tập, nguyên nhân hay hiệu quả can thiệp trong
+  các milestone sau phải được kiểm chứng bằng dữ liệu và phương pháp phù hợp.
+
+ Kết thúc Milestone 1: Proposal được chấp nhận sẽ là “hợp đồng phân tích” cho các milestone
+                                                              tiếp theo.
+
+Requirement Analysis & Analytics Project Proposal
+
+                                                   Trang 10
+

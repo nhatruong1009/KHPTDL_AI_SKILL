@@ -1,0 +1,64 @@
+rows: 2823 | non-cancelled used: 2763
+countries per region: {'Asia': ['Singapore', 'Japan', 'Philippines'], 'Australia': ['Australia'], 'Europe': ['France', 'Norway', 'Finland', 'Austria', 'UK', 'Spain', 'Sweden', 'Italy', 'Denmark', 'Belgium', 'Germany', 'Switzerland', 'Ireland'], 'North America': ['USA', 'Canada']}
+
+=== Region summary ===
+                rev_total   rev_L12M   rev_P12M  orders_total  orders_L12M  customers_total  customers_2005  share_total_pct  share_L12M_pct  growth_L12M_pct
+REGION                                                                                                                                                      
+Europe         4830142.6  2536851.8  1774850.8           148           77               44              19             49.1            49.7             42.9
+North America  3806703.7  2002136.2  1642668.4           118           61               38              14             38.7            39.2             21.9
+Australia       630623.1   327851.1   242636.2            19           10                5               4              6.4             6.4             35.1
+Asia            570672.0   235074.1   236695.4            18           10                5               3              5.8             4.6             -0.7
+
+=== Asia by country ===
+              revenue  orders  customers      first       last
+COUNTRY                                                       
+Japan        188168.0       6          2 2004-01-12 2005-04-22
+Philippines   94016.0       3          1 2003-03-03 2004-11-16
+Singapore    288488.0       9          2 2003-04-16 2005-04-23
+
+Asia customers:
+                                       revenue  orders       last
+COUNTRY     CUSTOMERNAME                                        
+Japan       Osaka Souveniers Co.      67605.0       2 2004-04-13
+            Tokyo Collectables, Ltd  120563.0       4 2005-04-22
+Philippines Cruz & Sons Co.           94016.0       3 2004-11-16
+Singapore   Dragon Souveniers, Ltd.  172990.0       5 2005-03-02
+            Handji Gifts& Co         115499.0       4 2005-04-23
+
+Asia revenue by year: {2003: 243773.0, 2004: 281390.0, 2005: 45509.0}
+
+=== Order value by region (per order) ===
+               count     mean      50%
+REGION                                
+Asia            18.0  31704.0  32060.0
+Australia       19.0  33191.0  37879.0
+Europe         148.0  32636.0  33152.0
+North America  118.0  32260.0  31922.0
+Asia vs rest order value: median 32,060 vs 33,181; Mann-Whitney U p = 0.783 (n = 18 vs 285)
+
+Avg price vs MSRP (negative = above MSRP): {'Asia': 13.1, 'Rest': 9.3}
+
+Product line mix (% of revenue):
+ PRODUCTLINE  Classic Cars  Motorcycles  Planes  Ships  Trains  Trucks and Buses  Vintage Cars
+REGION                                                                                       
+Asia                 40.9          8.5    12.3    5.8     2.9              17.9          11.6
+Rest                 39.1         12.1     9.4    6.7     2.2              11.1          19.4
+
+Deal size mix (% of lines):
+ DEALSIZE  Large  Medium  Small
+REGION                        
+Asia        5.1    46.5   48.4
+Rest        5.7    49.0   45.2
+
+=== Scenarios (L12M base) ===
+Total L12M: 5,101,913 | Asia: 235,074 (4.6%) | non-Asia: 4,866,839
+ non_asia_revenue_lost_pct  revenue_lost  asia_needed_to_break_even  asia_multiple_needed
+                        10     486683.91                  721758.02                  3.07
+                        25    1216709.78                 1451783.89                  6.18
+                        50    2433419.55                 2668493.66                 11.35
+                       100    4866839.11                 5101913.22                 21.70
+USA alone (L12M) = 1,863,970 = 7.9x Asia
+Asia growth last 12M vs previous 12M: -0.7%
+Sensitivity - Asia + Australia L12M: 562,925 (11.0%)
+
+Saved charts to C:\KHPTDL\outputs\shift-to-asia

@@ -1,0 +1,29 @@
+COUNTRY,PRODUCTLINE,L12M,P12M,growth_abs
+Australia,Classic Cars,107697.0,85389.0,22308.0
+Australia,Motorcycles,18728.0,47765.0,-29038.0
+Australia,Planes,34975.0,17532.0,17443.0
+Australia,Ships,4160.0,0.0,4160.0
+Australia,Trains,0.0,1681.0,-1681.0
+Australia,Trucks and Buses,66021.0,11298.0,54723.0
+Australia,Vintage Cars,96271.0,78971.0,17299.0
+France,Classic Cars,151730.0,153310.0,-1581.0
+France,Motorcycles,79842.0,124451.0,-44609.0
+France,Planes,89083.0,19073.0,70010.0
+France,Ships,36109.0,30378.0,5731.0
+France,Trains,19758.0,7583.0,12175.0
+France,Trucks and Buses,65169.0,31590.0,33579.0
+France,Vintage Cars,110743.0,65867.0,44877.0
+Spain,Classic Cars,241831.0,193132.0,48698.0
+Spain,Motorcycles,61006.0,13629.0,47378.0
+Spain,Planes,41916.0,21536.0,20380.0
+Spain,Ships,44009.0,69392.0,-25382.0
+Spain,Trains,23730.0,14706.0,9024.0
+Spain,Trucks and Buses,92920.0,45514.0,47407.0
+Spain,Vintage Cars,79783.0,112657.0,-32874.0
+USA,Classic Cars,691643.0,589487.0,102156.0
+USA,Motorcycles,276099.0,218489.0,57609.0
+USA,Planes,171952.0,156481.0,15471.0
+USA,Ships,89774.0,94331.0,-4556.0
+USA,Trains,35867.0,28304.0,7563.0
+USA,Trucks and Buses,207719.0,171648.0,36071.0
+USA,Vintage Cars,390915.0,298017.0,92899.0

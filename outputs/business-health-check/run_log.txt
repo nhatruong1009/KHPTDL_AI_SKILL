@@ -1,0 +1,135 @@
+rows: 2823 | range: 2003-01-06 -> 2005-05-31
+
+[1] Revenue Jan-May by year (all statuses / excluding Cancelled):
+               all  excl_cancelled  shipped_resolved  shipped_resolved_inprocess
+YEAR_ID                                                                         
+2003      839377.0        839377.0          839377.0                    839377.0
+2004     1313317.0       1267960.0         1267960.0                   1267960.0
+2005     1791487.0       1791487.0         1421825.0                   1566555.0
+growth %:
+           all  excl_cancelled  shipped_resolved  shipped_resolved_inprocess
+YEAR_ID                                                                    
+2003      NaN             NaN               NaN                         NaN
+2004     56.5            51.1              51.1                        51.1
+2005     36.4            41.3              12.1                        23.5
+On Hold + Disputed value in 2005 orders: 224,932
+
+[2] orders with >1 status: 0 | total orders: 307
+Orders by quarter x status:
+ STATUS  Cancelled  Disputed  In Process  On Hold  Resolved  Shipped
+Q                                                                  
+2003Q1          0         0           0        0         0       14
+2003Q2          0         0           0        0         0       19
+2003Q3          0         0           0        0         0       19
+2003Q4          1         0           0        0         1       50
+2004Q1          0         0           0        0         0       25
+2004Q2          3         0           0        0         0       25
+2004Q3          0         0           0        0         0       34
+2004Q4          0         0           0        1         1       55
+2005Q1          0         0           0        0         2       34
+2005Q2          0         3           6        3         0       11
+
+Open / problem orders (In Process, On Hold, Disputed):
+            orders      value     oldest     newest
+STATUS                                             
+Disputed         3   72212.86 2005-04-15 2005-05-13
+In Process       6  144729.96 2005-05-29 2005-05-31
+On Hold          4  178979.19 2004-11-19 2005-05-06
+
+On Hold & Disputed orders detail:
+                  DATE    STATUS                      customer    country     value
+ORDERNUMBER                                                                        
+10334       2004-11-19   On Hold      Volvo Model Replicas, Co     Sweden  26260.21
+10401       2005-04-03   On Hold       Tekni Collectables Inc.        USA  46519.00
+10406       2005-04-15  Disputed      Danish Wholesale Imports    Denmark  26012.87
+10407       2005-04-22   On Hold     The Sharp Gifts Warehouse        USA  57883.09
+10414       2005-05-06   On Hold             Gifts4AllAges.com        USA  48316.89
+10415       2005-05-09  Disputed  Australian Collectables, Ltd  Australia  14378.09
+10417       2005-05-13  Disputed         Euro Shopping Channel      Spain  31821.90
+
+Cancelled orders:
+                  DATE                 customer country     value
+ORDERNUMBER                                                      
+10167       2003-10-23  Scandinavian Gift Ideas  Sweden  48710.92
+10248       2004-05-07        Land of Toys Inc.     USA  45357.66
+10253       2004-06-01    UK Collectables, Ltd.      UK  50408.25
+10262       2004-06-24    Euro Shopping Channel   Spain  50010.65
+
+Resolved orders by year: {2003: 1, 2004: 1, 2005: 2}
+
+Share of orders not 'Shipped' by year:
+       orders  not_shipped  pct_not_shipped
+YEAR                                      
+2003     104            2              1.9
+2004     144            5              3.5
+2005      59           14             23.7
+
+[3] Retention:
+  2003 customers back in Jan-May 2004: 19/68 = 27.9%
+  2004 customers back in Jan-May 2005: 31/83 = 37.3%
+  new customers Jan-May 2004: 15 | Jan-May 2005: 0
+  active customers Jan-May: 2004 34 | 2005 40
+  2004 customers not seen in Jan-May 2005: 52, their 2004 revenue = 2,622,804 (57.3% of 2004)
+  top 5 of them: {'Australian Collectors, Co.': 140860.0, 'Vida Sport, Ltd': 117714.0, 'AV Stores, Co.': 106790.0, "Marta's Replicas Co.": 103080.0, 'Saveley & Henriot, Co.': 101339.0}
+
+[4] Concentration (share of revenue, excl. Cancelled):
+  2004: top1 7.1% (Euro Shopping Channel), top2 12.7%, top5 20.9%, customers 83
+  Jan-May 2005: top1 18.2% (Euro Shopping Channel), top2 30.1%, top5 44.9%, customers 40
+  Jan-May 2004 (like-for-like): top1 10.6% (Euro Shopping Channel), top2 18.6%, top5 37.1%, customers 34
+  Jan-May 2005 top 2: {'Euro Shopping Channel': 326798.0, 'Mini Gifts Distributors Ltd.': 213256.0}
+
+[5] Jan-May 2005 vs 2004, excluding Cancelled:
+  by COUNTRY:
+ YEAR_ID          2004      2005    change  change_pct
+COUNTRY                                              
+Switzerland   50433.0       0.0  -50433.0      -100.0
+Ireland       38784.0       0.0  -38784.0      -100.0
+Germany       37266.0       0.0  -37266.0      -100.0
+Japan         67605.0   38745.0  -28860.0       -43.0
+Singapore     24220.0    6763.0  -17456.0       -72.0
+Denmark       31330.0   26013.0   -5317.0       -17.0
+France       245722.0  242956.0   -2765.0        -1.0
+Norway            0.0       0.0       0.0         NaN
+Philippines       0.0       0.0       0.0         NaN
+Canada        31302.0   33693.0    2390.0         8.0
+UK            35384.0   40803.0    5419.0        15.0
+Belgium       18800.0   25040.0    6240.0        33.0
+Sweden            0.0   31607.0   31607.0         NaN
+Italy             0.0   41510.0   41510.0         NaN
+Austria           0.0   68250.0   68250.0         NaN
+Finland       48832.0  126852.0   78020.0       160.0
+Australia     49638.0  145092.0   95454.0       192.0
+Spain        175137.0  326798.0  151661.0        87.0
+USA          413508.0  637364.0  223857.0        54.0
+  by PRODUCTLINE:
+ YEAR_ID               2004      2005    change  change_pct
+PRODUCTLINE                                               
+Trains             27310.0   36917.0    9608.0        35.0
+Ships              85506.0  128178.0   42672.0        50.0
+Motorcycles       173385.0  234948.0   61562.0        36.0
+Planes            136803.0  200074.0   63272.0        46.0
+Trucks and Buses  109760.0  178057.0   68297.0        62.0
+Vintage Cars      225938.0  340739.0  114801.0        51.0
+Classic Cars      509258.0  672573.0  163315.0        32.0
+
+[6] Jan-May orders and order value (excl. Cancelled):
+      orders    revenue  avg_order  customers  orders_per_customer
+YEAR                                                              
+2003      27   839377.4    31088.0         26                  1.0
+2004      42  1267959.5    30189.5         34                  1.2
+2005      59  1791486.7    30364.2         40                  1.5
+
+New vs active customers per quarter:
+         new_customers  active_customers
+2003Q1             14                14
+2003Q2             16                17
+2003Q3             12                18
+2003Q4             26                45
+2004Q1             11                23
+2004Q2              6                21
+2004Q3              7                30
+2004Q4              0                46
+2005Q1              0                24
+2005Q2              0                20
+
+Saved charts to C:\KHPTDL\outputs\business-health-check

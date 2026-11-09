@@ -1,0 +1,56 @@
+(217, 20)
+       firearms_per_100_people  avg_2013_2022_firearm_homicide_rate  gdp_per_capita_usd_2017  gini_index_2017
+count                   215.00                                96.00                   128.00            67.00
+mean                      9.70                                 4.55                 21325.69            35.19
+std                      12.33                                 8.82                 26832.62             7.09
+min                       0.00                                 0.00                   525.47            23.20
+25%                       2.05                                 0.12                  4320.65            30.40
+50%                       5.40                                 0.38                 10369.71            34.40
+75%                      13.65                                 3.81                 28547.92            38.60
+max                     120.50                                38.36                170547.09            53.30
+countries with both: 95
+Spearman guns vs firearm homicide -0.003 0.9803662184465342
+CI [-0.217  0.196]
+w/o USA: -0.015
+       income_group  n  median_guns  median_fhr  spearman
+        High income 47        14.50       0.174    -0.025
+         Low income  1         0.80       0.519       NaN
+Lower middle income 10         1.55       0.190     0.758
+Upper middle income 37         7.90       1.763     0.131
+                                           region  n  median_guns  median_fhr  spearman
+                              East Asia & Pacific  9          3.6       0.117     0.655
+                            Europe & Central Asia 37         14.4       0.169     0.107
+                        Latin America & Caribbean 31          8.8       7.447     0.100
+Middle East, North Africa, Afghanistan & Pakistan  8         12.0       0.245     0.192
+                                    North America  3         34.7       3.516       NaN
+                                       South Asia  2          1.6       0.107       NaN
+                               Sub-Saharan Africa  5          4.8       0.519       NaN
+n with gini: 51
+unadj std coef guns: 0.265
+adj coefs [const,guns,logGDP,gini]: [-0.752  0.538 -0.572  1.191]
+adj guns CI [0.238 0.938]
+                         firearms_per_100_people    lg  gini_index_2017    lf
+firearms_per_100_people                     1.00  0.41            -0.15  0.10
+lg                                          0.41  1.00            -0.42 -0.43
+gini_index_2017                            -0.15 -0.42             1.00  0.65
+lf                                          0.10 -0.43             0.65  1.00
+            country  firearms_per_100_people  avg_2013_2022_firearm_homicide_rate        income_group
+        El Salvador                     12.0                               38.364 Upper middle income
+            Jamaica                      8.8                               38.267 Upper middle income
+           Honduras                     14.1                               37.037 Lower middle income
+St. Kitts and Nevis                      3.4                               28.888         High income
+Trinidad and Tobago                      3.2                               24.633         High income
+       Bahamas, The                     18.8                               24.346         High income
+             Belize                     10.0                               22.155 Upper middle income
+          St. Lucia                      3.4                               21.259 Upper middle income
+               country  firearms_per_100_people  avg_2013_2022_firearm_homicide_rate
+               Iceland                     31.7                                0.083
+               Austria                     30.0                                0.114
+               Finland                     32.4                                0.169
+                Cyprus                     34.0                                0.296
+                Serbia                     39.1                                0.319
+Bosnia and Herzegovina                     31.2                                0.572
+                Canada                     34.7                                0.642
+            Montenegro                     39.1                                1.697
+         United States                    120.5                                3.516
+               Uruguay                     34.7                                6.005

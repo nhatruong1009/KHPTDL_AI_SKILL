@@ -1,0 +1,54 @@
+rows: 2823 | range: 2003-01-06 -> 2005-05-31
+Cancelled rows excluded: 60 (194,487 USD)
+rows used: 2763
+
+Total L12M: 5,101,913 | P12M: 3,896,851 | growth +30.9%
+              territory   rev_L12M  share_L12M_pct   rev_P12M  growth_abs_L12M  growth_pct_L12M  share_of_growth_pct  growth_pct_JanMay  rev_Q3_04  growth_pct_Q3  orders_L12M  customers_L12M  new_customers_L12M  customers_2005  top_customer_share_pct  reliable
+COUNTRY                                                                                                                                                                                                                                                             
+USA                  NA  1863969.7            36.5  1556756.4         307213.3             19.7                 25.5               54.1   407496.6           18.9           57              28                 4.0            13.0                    22.6      True
+Spain              EMEA   585196.2            11.5   470565.8         114630.4             24.4                  9.5               86.6    21986.3          -53.9           17               4                 0.0             1.0                    88.4      True
+France             EMEA   552433.3            10.8   432251.7         120181.6             27.8                 10.0               -1.1    63484.5            9.4           20              10                 1.0             7.0                    32.6      True
+Australia          APAC   327851.1             6.4   242636.2          85214.9             35.1                  7.1              192.3    53632.0          -37.8           10               5                 0.0             4.0                    37.6      True
+Italy              EMEA   233745.5             4.6    84747.4         148998.1            175.8                 12.4                NaN   150538.9            NaN            5               3                 1.0             1.0                    41.9     False
+UK                 EMEA   212666.8             4.2   164787.5          47879.2             29.1                  4.0               15.3        0.0            NaN            5               4                 0.0             1.0                    50.2     False
+Finland            EMEA   169595.8             3.3   159986.1           9609.6              6.0                  0.8              159.8    42744.1          -38.1            4               3                 0.0             3.0                    40.8     False
+Sweden             EMEA   151554.3             3.0        0.0         151554.3              NaN                 12.6                NaN    53941.7            NaN            5               2                 1.0             1.0                    56.4     False
+Canada               NA   138166.6             2.7    85912.0          52254.6             60.8                  4.3                7.6    43332.4            NaN            4               3                 0.0             1.0                    42.2     False
+Japan             Japan   120562.7             2.4    67605.1          52957.7             78.3                  4.4              -42.7        0.0            NaN            4               1                 1.0             1.0                   100.0     False
+Austria            EMEA   119944.6             2.4    43488.7          76455.9            175.8                  6.3                NaN     6693.3            NaN            4               2                 0.0             2.0                    92.7     False
+Denmark            EMEA   115114.9             2.3    71651.2          43463.7             60.7                  3.6              -17.0        0.0            NaN            4               2                 0.0             1.0                    52.4     False
+Germany            EMEA   113152.3             2.2    95887.5          17264.8             18.0                  1.4             -100.0    34993.9            NaN            3               3                 1.0             0.0                    60.9     False
+Norway             EMEA   110931.1             2.2   141830.6         -30899.5            -21.8                 -2.6                NaN    50508.6            NaN            4               3                 0.0             0.0                    54.5     False
+Singapore    APAC/Japan    98582.6             1.9   146248.3         -47665.7            -32.6                 -4.0              -72.1    46030.7            4.1            5               2                 0.0             2.0                    92.6     False
+Belgium            EMEA    86264.1             1.7    20437.3          65826.8            322.1                  5.5               33.2    47760.5         2817.2            4               2                 0.0             2.0                    65.1     False
+Switzerland        EMEA    67281.0             1.3    50432.5          16848.5             33.4                  1.4             -100.0    67281.0            NaN            1               1                 0.0             0.0                   100.0     False
+Ireland            EMEA    18972.0             0.4    38784.5         -19812.5            -51.1                 -1.6             -100.0    18972.0            NaN            1               1                 0.0             0.0                   100.0     False
+Philippines       Japan    15928.8             0.3    22842.0          -6913.2            -30.3                 -0.6                NaN        0.0            NaN            1               1                 0.0             0.0                   100.0     False
+
+Revenue by quarter (USD):
+ QTR_ID           1         2          3          4
+YEAR_ID                                           
+2003      445095.0  562365.0   649515.0  1811294.0
+2004      833731.0  620484.0  1109396.0  2014775.0
+2005     1071992.0  719494.0        NaN        NaN
+Q3 share of year: 2003 18.7% | 2004 24.2%
+
+Robustness (Shipped/Resolved only), top 8 by L12M:
+            L12M_done  P12M_done  growth_abs_done  growth_pct_done
+COUNTRY                                                          
+USA        1697822.2  1556756.4         141065.7              9.1
+Spain       518240.9   470565.8          47675.2             10.1
+France      508648.6   432251.7          76396.9             17.7
+Australia   269501.6   242636.2          26865.4             11.1
+Italy       233745.5    84747.4         148998.1            175.8
+UK          212666.8   164787.5          47879.2             29.1
+Finland     169595.8   159986.1           9609.6              6.0
+Canada      138166.6    85912.0          52254.6             60.8
+
+Top product-line growth within reliable markets:
+  USA : Classic Cars +102,156, Vintage Cars +92,899, Motorcycles +57,609
+  Spain : Classic Cars +48,698, Trucks and Buses +47,407, Motorcycles +47,378
+  France : Planes +70,010, Vintage Cars +44,877, Trucks and Buses +33,579
+  Australia : Trucks and Buses +54,723, Classic Cars +22,308, Planes +17,443
+
+Saved charts to C:\KHPTDL\outputs\market-focus-next-quarter
