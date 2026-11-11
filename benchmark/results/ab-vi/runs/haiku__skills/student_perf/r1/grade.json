@@ -1,0 +1,69 @@
+{
+  "task": "student_perf",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file, xác định học sinh trùng và xử lý khi gộp",
+        "pass": true,
+        "evidence": "Đọc 395 + 649 dòng; dùng khóa 13 cột của student-merge.R ra 382 cặp, phát hiện ghép nhiều-nhiều (12 dòng Toán, 8 dòng BĐN), ghép 1-1 được 370 cặp → 674 HS duy nhất (tham chiếu 662, khác biệt có nêu rõ). Có phân tích riêng từng môn, SE cluster theo học sinh, và kiểm tra độ nhạy 1 dòng/HS (659 HS, ρ −0.19/−0.18)."
+      },
+      {
+        "check": "2. Phát hiện G3=0 và loại hoặc kiểm tra độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "38 Toán + 15 BĐN = 53 dòng, tất cả có absences=0, coi là bỏ học/không thi nên loại; độ nhạy khi giữ lại: Toán ρ −0.12/−0.10, BĐN −0.21/−0.17 (khớp tham chiếu −0.121/−0.104, −0.208/−0.171)."
+      },
+      {
+        "check": "3. Kiểm định phù hợp dữ liệu thứ bậc + effect size",
+        "pass": true,
+        "evidence": "Spearman kèm KTC, Mann–Whitney, rank-biserial, Cohen's d; vd. BĐN Dalc ρ=−0.204 (p=2.35e-07), Toán Walc ρ=−0.187 (p=0.00037), đúng với tham chiếu."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu (âm nhỏ, rõ hơn ở BĐN, Toán yếu hơn khi giữ G3=0)",
+        "pass": true,
+        "evidence": "|ρ| 0.15–0.20 khi bỏ G3=0; giữ G3=0 thì Toán còn −0.12/−0.10 so với BĐN −0.21/−0.17; mô hình hiệu chỉnh: BĐN vẫn có ý nghĩa, gộp không có ý nghĩa ở mức 5%."
+      },
+      {
+        "check": "5. Không dùng từ ngữ nhân quả, nêu yếu tố gây nhiễu",
+        "pass": true,
+        "evidence": "'không kết luận rượu gây ra điểm thấp'; có hiệu chỉnh và nêu giới, tuổi, thời gian học, số lần trượt, vắng, động lực, gia đình, bạn bè. Riêng tiêu đề biểu đồ forest 'Ước lượng hiệu ứng uống rượu lên G3' hơi mang sắc thái nhân quả."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Hệ số gộp '−0.34 điểm mỗi bậc Dalc' / '−0.27 mỗi bậc Walc' (và mô hình B gộp p=0.07–0.08) lấy từ mô hình đưa đồng thời Dalc và Walc (analysis.py dòng 176), trong khi mô hình từng môn đưa riêng từng biến. Vì vậy −0.34 nằm ngoài khoảng của hai hệ số từng môn (−0.62, −0.49) và không so sánh được với chúng; bài không nêu điều này. Kết luận 'gộp không còn ý nghĩa' một phần là do hai biến cộng tuyến được hiệu chỉnh lẫn nhau."
+    ],
+    "summary": "Bài phân tích chắc chắn và các số liệu khớp với tham chiếu: Spearman từng môn khi bỏ và khi giữ G3=0 trùng gần như tuyệt đối. Bài xử lý tốt cả hai bẫy chính. Với học sinh trùng, bài phát hiện khóa của student-merge.R tạo ghép nhiều-nhiều, ghép 1-1 được 370 cặp (674 HS) và có giải thích lựa chọn. Với 53 dòng G3=0, bài loại khỏi phân tích chính, có lý do rõ và có kiểm tra độ nhạy. Bài dùng đúng kiểm định thứ bậc (Spearman, Mann–Whitney, rank-biserial), dùng SE cluster theo học sinh, hiệu chỉnh nhiều mức và nêu rõ hạn chế cùng tính quan sát của dữ liệu. Điểm yếu thứ nhất: mô hình hồi quy gộp đưa đồng thời Dalc và Walc, còn mô hình từng môn đưa riêng từng biến, nhưng bài không nói ra. Vì vậy hệ số gộp −0.34/−0.27 và kết luận 'gộp không còn ý nghĩa' dễ gây hiểu nhầm. Điểm yếu thứ hai: nhóm 'cao' định nghĩa là 3–5 (khác tham chiếu 4–5, nhưng có nêu rõ). Thứ ba, tiêu đề biểu đồ mang tính mô tả chứ không nêu kết luận. Biểu đồ forest còn để nhãn mã thô (A_tho, B_hieu_chinh_nen) và tiêu đề có chữ 'hiệu ứng' mang hơi hướng nhân quả. Câu trả lời và answer.md viết bằng tiếng Việt, trả lời trực tiếp ngay từ đầu và có ghi n."
+  },
+  "judge_cost_usd": 0.30168550000000005,
+  "accuracy_pct": 100.0,
+  "quality_pct": 80.0,
+  "overall": 92.0
+}

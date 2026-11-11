@@ -1,0 +1,72 @@
+{
+  "task": "worldbank_health",
+  "model": "sonnet",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": false,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Skips metadata rows and removes aggregates via Metadata_Country Region",
+        "pass": true,
+        "evidence": "analysis.py:50 read_csv(skiprows=4); line 54 meta[meta['Region'].notna()] 'drops aggregates'; log: '217 economies (non-aggregate)'"
+      },
+      {
+        "check": "2. Explicit year with ~180+ complete countries",
+        "pass": true,
+        "evidence": "Year 2023, complete cases 184 (matches GT 184); dropped list printed; robustness on 2019 (186) and 2022"
+      },
+      {
+        "check": "3. Strong positive association (Spearman ~0.8+) noted as association confounded by income",
+        "pass": true,
+        "evidence": "Pearson r(ln health, LE)=0.829, Spearman 0.842 (GT 0.842/0.829); r(ln health, ln GDP)=0.906; 'Đây là mối liên hệ, không chứng minh nhân quả'; coef drops 3.6→1.1 when controlling GDP"
+      },
+      {
+        "check": "4. Controls for income; over/under lists consistent with GT",
+        "pass": true,
+        "evidence": "Full model coefs lh 1.135, lg 3.85, R2 0.758 match GT exactly; residuals from GDP-only model: over Solomon Is +7.2, Jordan +6.6, Lebanon +6.1, Malawi, Maldives; under Nigeria −15.3, Nauru −9.8, Eq. Guinea −9.6, Guyana −9.3, Chad −8.5 — strongly overlap GT 2023 lists (Jordan, Lebanon, Solomon, Malawi / Nigeria, Naoero, Eq Guinea, Chad, Guyana, Lesotho)"
+      },
+      {
+        "check": "5. Vietnam positive residual ~+2 to +5",
+        "pass": true,
+        "evidence": "VN resid +1.94 (GDP-only, matches GT resid_gdp_only 1.94), +2.7 controlling health too (GT full 2.73); story states '+2 đến +3 năm, trên trung bình nhưng không nổi bật'"
+      },
+      {
+        "check": "6. story.md for MoH leaders with core message, arc, suggestion-framed actions, caveats",
+        "pass": true,
+        "evidence": "Bold core message (advantage shrank +11.1→+1.9); sections context→over/under→Vietnam trend→'Hàm ý cho Bộ Y tế' with 'Gợi ý (suy luận, chưa kiểm định)'; caveats on causation, US$ not PPP, Nauru/Nigeria data quality"
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "This is a strong, well-verified run. The agent skipped the 4 metadata rows and dropped aggregates using the empty Region field. It picked 2023, where 184 countries have all three indicators. Its statistics reproduce the reference exactly: Spearman 0.842; with both log variables in the model, the coefficients are 1.135 (health spending) and 3.85 (GDP), with R² 0.758. It also reports the GDP-only R² of 0.746. The residuals that rank countries come from the GDP-only model. The over- and under-performer lists overlap strongly with the reference 2023 lists, and robustness checks on 2019, 2022, a quadratic model and a model that also includes health spending give rank correlations of 0.94–0.99. Vietnam is +1.94 years in the GDP-only model (reference 1.94) and +2.7 when health spending is also included (reference 2.73); the agent frames this as a stable '+2 to +3' range. The story is useful for the Ministry: one core message (Vietnam's advantage shrank from +11.1 years in 2000 to +1.9 in 2023), comparisons with peers and neighbours, actions framed as suggestions, and clear caveats (association not causation, health spending in current US$ not PPP, outlier data quality). The Central African Republic 2022 outlier is avoided by using 2023 but is never mentioned. The charts are log-scaled and the scatter titles state a takeaway. Weaknesses: the bar chart title is descriptive rather than a takeaway, the Jordan and Lebanon labels overlap (which the agent disclosed), the charts use the raw 'Naoero' label, and the story title is a question, not a takeaway. No numbers were invented."
+  },
+  "judge_cost_usd": 0.29938180000000003,
+  "accuracy_pct": 100.0,
+  "quality_pct": 91.7,
+  "overall": 96.7
+}

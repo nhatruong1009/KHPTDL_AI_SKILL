@@ -1,0 +1,74 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng bank-additional-full.csv",
+        "pass": false,
+        "evidence": "Bộ chính là data/bank-full.csv (45.211 dòng, analysis.py dòng 15); bank-additional-full (41.188 dòng, 20 biến, có chỉ số vĩ mô) chỉ dùng để kiểm tra độ nhạy (GBM AUC 0,802). Agent còn khẳng định sai rằng bank-full là bộ 'đầy đủ nhất theo tài liệu UCI'."
+      },
+      {
+        "check": "Loại 'duration' vì rò rỉ, ROC-AUC trong khoảng thực tế",
+        "pass": true,
+        "evidence": "Loại duration vì 'chỉ biết sau khi gọi'; ghi nhận nếu đưa vào AUC lên 0,94. AUC CV của GBM 0,800, logistic 0,762, holdout thời gian 0,687, đều không có rò rỉ."
+      },
+      {
+        "check": "So sánh với baseline bằng thước đo phù hợp dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Có baseline ngẫu nhiên và baseline quy tắc poutcome; báo PR-AUC (0,118/0,244/0,401/0,452), precision top 10%/20%, recall top 20% (62,0%) và lift top 20% (0,98/1,84/2,77/3,10)."
+      },
+      {
+        "check": "Xử lý pdays=999 (hoặc -1) và 'unknown' một cách tường minh",
+        "pass": false,
+        "evidence": "pdays đưa thẳng vào NUM như số liên tục (StandardScaler), không có cờ cho giá trị sentinel; 'unknown' chỉ được one-hot ngầm, dù có mô tả contact=unknown (4,1%) và poutcome=unknown (82%). Không kiểm tra 12 dòng trùng lặp."
+      },
+      {
+        "check": "Yếu tố hàng đầu khớp với tham chiếu (vĩ mô, poutcome/pdays, contact, month)",
+        "pass": false,
+        "evidence": "Xếp hạng chính: poutcome 0,081, month 0,055, age 0,019, balance 0,012; contact chỉ 0,006. Thiếu hoàn toàn nr.employed/euribor3m/emp.var.rate vì bộ chính không có biến vĩ mô; chỉ khớp một phần (poutcome, month)."
+      },
+      {
+        "check": "Trình bày độ quan trọng là dự đoán, không phải nhân quả",
+        "pass": true,
+        "evidence": "Ghi rõ 'month và contact = unknown có thể lẫn với giai đoạn chiến dịch... không nên hiểu là nguyên nhân'; dùng permutation importance gắn với mô hình."
+      }
+    ],
+    "scores": {
+      "data_handling": 2,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Khẳng định bank-full.csv là 'bộ đầy đủ nhất theo tài liệu UCI' là sai: bank-additional-full.csv (41.188 dòng, 20 biến, có thêm chỉ số vĩ mô và day_of_week) mới là phiên bản đầy đủ nhất mà đề bài yêu cầu"
+    ],
+    "summary": "Agent làm việc cẩn thận về phương pháp: loại duration vì rò rỉ (AUC 0,94 nếu giữ lại), dùng hai baseline (ngẫu nhiên và quy tắc poutcome), báo PR-AUC, precision/recall và lift top 20%, có thêm holdout theo thời gian cho thấy lợi thế thu hẹp (GBM 0,687 so với 0,644), và nói rõ dữ liệu trôi dạt (tỷ lệ đăng ký 31,6% so với 6,7%). Lỗi chính là chọn sai bộ dữ liệu: bộ chính là bank-full.csv thay vì bank-additional-full.csv, kèm lập luận sai rằng bank-full là bộ đầy đủ nhất. Hệ quả là danh sách yếu tố quan trọng thiếu các chỉ số vĩ mô (nr.employed, euribor3m), vốn là tín hiệu mạnh nhất. Bộ đúng chỉ xuất hiện ở phần kiểm tra độ nhạy (AUC 0,802) và không có phân tích độ quan trọng biến trên bộ đó. pdays (giá trị sentinel) được dùng như biến số thường, các nhóm 'unknown' chỉ được one-hot ngầm, và không kiểm tra dòng trùng lặp. Báo cáo viết bằng tiếng Việt rõ ràng, trả lời trực tiếp, có nêu hạn chế và tránh diễn giải nhân quả. Hai biểu đồ có nhãn tiếng Việt, số liệu khớp với bảng; tiêu đề biểu đồ so sánh mô hình nêu đúng câu hỏi chính, còn tiêu đề biểu đồ yếu tố quan trọng chỉ mô tả, chưa nêu thông điệp. Không phát hiện số liệu bịa ngoài nhận định sai về bộ dữ liệu."
+  },
+  "judge_cost_usd": 0.30333709999999997,
+  "accuracy_pct": 50.0,
+  "quality_pct": 60.0,
+  "overall": 54.0
+}

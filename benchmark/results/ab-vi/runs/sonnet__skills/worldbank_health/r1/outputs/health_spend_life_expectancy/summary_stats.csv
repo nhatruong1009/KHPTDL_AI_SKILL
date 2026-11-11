@@ -1,0 +1,15 @@
+metric,value
+n,184.0
+r_raw,0.829
+rho,0.842
+r_gdp,0.864
+partial_r,0.219
+beta_logHE_M3,1.135
+beta_lo,0.163
+beta_hi,2.108
+R2_M1,0.688
+R2_M2,0.746
+VN_resid,1.94
+VN_rank,56.0
+VN_boot_rank_lo,54.0
+VN_boot_rank_hi,58.0

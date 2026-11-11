@@ -1,0 +1,66 @@
+{
+  "task": "student_perf",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "';' separator, both files, overlap identified, per-course or dedup when pooling",
+        "pass": true,
+        "evidence": "load() uses sep=';' and strips quotes from G1/G2. The R-style 13-key merge gives 382 rows; the agent explains that 12 come from duplicate-key groups and links 370 students one-to-one. It pools 1,044 enrolment rows (674 students) with student-clustered SEs, and adds per-course and one-row-per-student sensitivity runs."
+      },
+      {
+        "check": "Detects G3=0 and excludes or runs a sensitivity check, with reasoning",
+        "pass": true,
+        "evidence": "Finds 53 rows (38 Math, 15 Portuguese) and treats them as non-completion: 33 have G2>0 with mean G2 4.4 vs 11.6. They are excluded from the primary analysis and kept in a sensitivity run (Walc M1 −0.19 → −0.08). Their alcohol use does not differ (MWU p=0.55 and 0.37)."
+      },
+      {
+        "check": "Ordinal-appropriate tests plus effect sizes",
+        "pass": true,
+        "evidence": "Reports Spearman rho −0.18 (Dalc) and −0.18 (Walc), Mann-Whitney p-values, Hedges g −0.55 and −0.46 with CIs, and per-level coefficients with CIs. The Spearman tests are pooled only, not run per course."
+      },
+      {
+        "check": "Conclusion matches reference (small negative in both courses, clearest in Portuguese; Math weaker with G3=0 kept, stronger without)",
+        "pass": false,
+        "evidence": "The pooled rho of about −0.18 is in range, but there is no per-course Spearman or MWU. It never says the link is clearest in Portuguese and never shows Math strengthening once G3=0 rows are dropped. The adjusted per-course results (Math Walc −0.34, p=0.04; Portuguese Dalc −0.28, p=0.05) are mixed and framed as the effect mostly vanishing."
+      },
+      {
+        "check": "No causal wording; at least one confounder named",
+        "pass": true,
+        "evidence": "States 'associations, not causal effects' and adjusts for sex, studytime, failures and absences. However, 'not a grade drop caused by drinking' after controlling for G1/G2 is itself a causal claim and treats possible mediators as confounders."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "The run handles the data traps well. It reads the ';' separator and strips the quotes from G1/G2. It reproduces the 382-row R merge, explains why it uses a 370 one-to-one linkage instead, and clusters standard errors by student. G3=0 rows are excluded with a sensible justification and a sensitivity run. Effect sizes are reported: Spearman about −0.18, Hedges g −0.55 and −0.46, and per-level coefficients with CIs. Stated numbers match its own outputs; for example, the chart's n=23+26=49 for Dalc ≥ 4 and 134+69=203 for Walc ≥ 4.\n\nThe main weakness is the analysis. The rank tests are pooled only, so the answer misses the reference's per-course findings: the association is clearest in Portuguese, and in Math it is weaker with G3=0 kept and stronger once those rows are excluded. The headline 'mostly goes away' also rests on adjusting for G1/G2, which are near-copies of the outcome and possibly mediators. That is overcontrol, and reading it as 'not caused by drinking' overreaches.\n\nCaveats are good: the data is observational and self-reported, about 50 tests were run, and the heavy-drinking groups are small. The chart is clear, with 95% CIs and n labels. However, it uses a continuous x-axis (ticks at 1.5, 2.5 and so on) for ordinal levels, its title describes the plot rather than stating the takeaway, and the n labels overlap the markers."
+  },
+  "judge_cost_usd": 0.2673397,
+  "accuracy_pct": 80.0,
+  "quality_pct": 65.0,
+  "overall": 74.0
+}

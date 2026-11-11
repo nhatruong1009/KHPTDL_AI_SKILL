@@ -1,0 +1,81 @@
+{
+  "task": "retail_uk",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Loại trùng lặp / chồng lấn hai sheet đầu 12/2010",
+        "pass": true,
+        "evidence": "Có ghi 'đã loại... các dòng trùng lặp' nhưng không nói rõ hai sheet chồng lấn 1–9/12/2010. Kỳ chính T1–T11 không chạm vùng chồng lấn. Độ nhạy 1/1–9/12 ra +2,7%, khớp tham chiếu 2,67%, nên nhiều khả năng không bị đếm trùng."
+      },
+      {
+        "check": "2. Nhận ra 2011 kết thúc 9/12 và so sánh cùng kỳ",
+        "pass": true,
+        "evidence": "'dữ liệu 2011 chỉ đến ngày 9/12/2011... so cùng kỳ tháng 1–11'. Có nêu rõ so cả năm cho −1,4% là sai (tham chiếu −1,34%)."
+      },
+      {
+        "check": "3. Xử lý hóa đơn hủy 'C' nhất quán",
+        "pass": true,
+        "evidence": "'Hoàn trả được trừ vào doanh thu ròng', áp dụng nhất quán cho mọi con số."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ trong ±3 điểm % so với tham chiếu",
+        "pass": true,
+        "evidence": "+2,3% (T1–T11) và +2,7% (1/1–9/12), so với tham chiếu net_product_lines 2,67%."
+      },
+      {
+        "check": "5. Tách mới/cũ theo Customer ID và nêu rõ loại phần thiếu ID",
+        "pass": true,
+        "evidence": "Cầu nối gồm mất khách −£1,05M (1.528 khách), khách cũ còn lại −£0,38M, khách mới +£1,33M (1.505 khách), không mã +£0,25M 'không phân bổ được'. Tham chiếu: mất £1,06M, khách cũ còn lại −£0,42M, tỷ lệ quay lại 63,4% (agent nói 37% không quay lại)."
+      },
+      {
+        "check": "6. Thị trường tăng/giảm mạnh nhất khớp tham chiếu, Anh chi phối doanh thu",
+        "pass": true,
+        "evidence": "Tăng: Australia +£107k (tham chiếu +£106k), Pháp +£61k (+£61,6k). Giảm: EIRE −£81k (−£79k), Đan Mạch −£27k (−£28k), Thụy Điển −£16k (−£16k). Anh chiếm 84% (tham chiếu 84,21%)."
+      },
+      {
+        "check": "7. story.md có một thông điệp cốt lõi, mạch bối cảnh–căng thẳng–insight–hành động, đề xuất dạng gợi ý",
+        "pass": true,
+        "evidence": "Tiêu đề nêu thông điệp 'khách cũ đang rời đi nhanh hơn khách mới bù vào'. Có tóm tắt cho CEO, cầu nối, thị trường, 'Đề xuất: ưu tiên giữ chân khách cũ' và mục 'Hành động gợi ý'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Khẳng định 'phần tăng này đến từ khách mới' / tiêu đề biểu đồ 'nhờ khách mới' dễ gây hiểu lầm. Theo chính cầu nối của agent, phần có mã khách giảm ròng khoảng −£56k (−1,05 −0,38 +0,04 +1,33). Toàn bộ mức tăng +£194k thực ra đến từ giao dịch không có mã khách (+£0,25M).",
+      "'Khoảng 14% doanh thu không có mã khách' chỉ đúng cho 2011 (£1,19M/£8,57M). Năm 2010 là khoảng 11% (£0,94M/£8,38M)."
+    ],
+    "summary": "Bài làm tốt và xử lý đúng các bẫy chính. Agent so cùng kỳ T1–T11 với +2,3%, độ nhạy 1/1–9/12 ra +2,7%, khớp tham chiếu 2,67%. Agent trừ ròng hoàn trả, loại mã phí và nêu rõ phần thiếu mã khách. Cầu nối mới/cũ khớp tham chiếu: mất khách khoảng £1,05M, khoảng 37% khách 2010 không quay lại. Các thị trường tăng/giảm mạnh nhất (Australia, Pháp, EIRE, Đan Mạch, Thụy Điển) cũng đúng. Agent có cảnh báo Australia gần như chỉ do một khách hàng. Story.md bằng tiếng Việt, có mạch rõ và kết bằng đề xuất hành động. Hai biểu đồ (thác nước và thanh ngang) có tiêu đề nêu kết luận, nhãn số khớp với văn bản. Điểm trừ: agent không nêu rõ việc hai sheet chồng lấn. Thông điệp 'tăng nhờ khách mới' chưa chính xác: phần có mã khách thực ra giảm ròng nhẹ, mức tăng tổng đến từ giao dịch không mã. Tỷ lệ 14% không có mã chỉ đúng cho 2011. Trả lời cuối còn kèm chi tiết thừa về bảng màu."
+  },
+  "judge_cost_usd": 0.2012466,
+  "accuracy_pct": 100.0,
+  "quality_pct": 75.0,
+  "overall": 90.0
+}

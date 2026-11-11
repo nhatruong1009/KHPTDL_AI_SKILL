@@ -1,0 +1,16 @@
+Country Name,Country Code,Region,IncomeGroup,life_exp,expected_le_income,gap_vs_income,health_exp_pc,gdp_pc_ppp
+Jordan,JOR,Middle East & North Africa,Upper middle income,77.81,70.88,6.94,342.1,11450.57
+Solomon Islands,SLB,East Asia & Pacific,Lower middle income,70.53,63.72,6.81,111.36,2599.04
+Lebanon,LBN,Middle East & North Africa,Lower middle income,77.82,71.37,6.45,260.81,12585.2
+Maldives,MDV,South Asia,Upper middle income,81.04,75.04,6.0,1159.03,24806.63
+Cabo Verde,CPV,Sub-Saharan Africa,Upper middle income,76.06,70.31,5.75,290.13,10250.6
+Nicaragua,NIC,Latin America & Caribbean,Lower middle income,74.95,69.25,5.7,216.55,8326.84
+Vanuatu,VUT,East Asia & Pacific,Lower middle income,71.48,65.92,5.56,143.44,4201.81
+Sri Lanka,LKA,South Asia,Upper middle income,77.48,72.12,5.36,134.24,14512.14
+Morocco,MAR,Middle East & North Africa,Lower middle income,75.31,70.13,5.19,232.25,9902.81
+Malawi,MWI,Sub-Saharan Africa,Low income,67.35,62.19,5.17,41.27,1831.97
+Tajikistan,TJK,Europe & Central Asia,Lower middle income,71.79,66.71,5.08,85.15,4967.67
+Bangladesh,BGD,South Asia,Lower middle income,74.67,69.73,4.94,53.46,9155.32
+Costa Rica,CRI,Latin America & Caribbean,High income,80.8,75.97,4.83,1163.3,29247.89
+Ecuador,ECU,Latin America & Caribbean,Upper middle income,77.39,72.61,4.78,509.49,15907.36
+Peru,PER,Latin America & Caribbean,Upper middle income,77.74,72.98,4.76,445.53,17041.57

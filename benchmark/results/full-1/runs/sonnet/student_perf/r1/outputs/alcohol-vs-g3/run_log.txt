@@ -1,0 +1,33 @@
+dup keys within file 4 12
+safe matched 358 | raw key overlap 366
+Dalc agree 1.0 Walc agree 1.0
+corr G3 mat vs por among matched 0.48209251762894056
+students 686 in both 358 any zero 51
+mat G3=0 n= 38 | G2 of those: min/median/max 0 5.0 10 | absences zero-group 0.0 vs rest 6.32
+por G3=0 n= 15 | G2 of those: min/median/max 0 5.0 9 | absences zero-group 0.0 vs rest 3.75
+mat G3=0 & G2>0: 25  por: 8
+                            sample alcohol    n  spearman   sp_lo   sp_hi    sp_p  pearson  slope_per_pt  slope_ci  slope_p  n_low  n_high  mean_low  mean_high    diff  cohen_d  welch_p   mwu_p
+0      A student-level, zeros kept    Dalc  686   -0.1687 -0.2355 -0.0978  0.0000  -0.1440       -0.5429    0.2796   0.0002    606      80   11.3358    10.3875 -0.9483  -0.2757   0.0068  0.0034
+1      A student-level, zeros kept    Walc  686   -0.1281 -0.2035 -0.0527  0.0008  -0.1257       -0.3393    0.2006   0.0010    422     264   11.5237    10.7481 -0.7756  -0.2260   0.0034  0.0014
+2   B student-level, excl any G3=0    Dalc  635   -0.1826 -0.2525 -0.1051  0.0000  -0.1854       -0.5355    0.2212   0.0000    559      76   11.9821    10.7763 -1.2058  -0.4565   0.0000  0.0003
+3   B student-level, excl any G3=0    Walc  635   -0.1706 -0.2493 -0.0899  0.0000  -0.1899       -0.3948    0.1590   0.0000    386     249   12.2111    11.2590 -0.9521  -0.3621   0.0000  0.0000
+4            C math rows only, all    Dalc  395   -0.1209 -0.2088 -0.0340  0.0162  -0.0547       -0.2811    0.5078   0.2785    351      44   10.4160    10.4091 -0.0069  -0.0015   0.9897  0.4325
+5            C math rows only, all    Walc  395   -0.1045 -0.1958 -0.0155  0.0380  -0.0519       -0.1848    0.3512   0.3032    236     159   10.5000    10.2893 -0.2107  -0.0459   0.6358  0.0805
+6             D por rows only, all    Dalc  649   -0.2084 -0.2799 -0.1347  0.0000  -0.2047       -0.7151    0.2635   0.0000    572      77   12.1014    10.4545 -1.6469  -0.5164   0.0001  0.0000
+7             D por rows only, all    Walc  649   -0.1709 -0.2435 -0.0969  0.0000  -0.1766       -0.4443    0.1908   0.0000    397     252   12.3224    11.2500 -1.0724  -0.3361   0.0001  0.0001
+8                     E math, G3>0    Dalc  357   -0.1529 -0.2563 -0.0551  0.0038  -0.1407       -0.4937    0.3614   0.0078    314      43   11.6433    10.6512 -0.9921  -0.3085   0.0308  0.0581
+9                     E math, G3>0    Walc  357   -0.1874 -0.2889 -0.0870  0.0004  -0.1901       -0.4737    0.2546   0.0003    206     151   12.0291    10.8344 -1.1947  -0.3760   0.0004  0.0004
+10                     F por, G3>0    Dalc  634   -0.2036 -0.2744 -0.1258  0.0000  -0.2110       -0.6193    0.2237   0.0000    560      74   12.3607    10.8784 -1.4823  -0.5591   0.0000  0.0000
+11                     F por, G3>0    Walc  634   -0.1660 -0.2391 -0.0881  0.0000  -0.1850       -0.3882    0.1608   0.0000    391     243   12.5115    11.6667 -0.8448  -0.3173   0.0001  0.0002
+  alcohol  n_high  zero_rate_high  n_low  zero_rate_low  odds_ratio  fisher_p
+0    Dalc      80          0.0500    606         0.0776      0.6260    0.4986
+1    Walc     264          0.0568    422         0.0853      0.6459    0.1809
+   term    coef    ci95       p    n                model
+1  Dalc -0.3189  0.2662  0.0192  686  A zeros kept / Dalc
+1  Walc -0.1856  0.1926  0.0593  686  A zeros kept / Walc
+1  Dalc -0.2551  0.3225  0.1216  686  A zeros kept / both
+2  Walc -0.0817  0.2330  0.4922  686  A zeros kept / both
+1  Dalc -0.3732  0.2097  0.0005  635  B excl zeros / Dalc
+1  Walc -0.3008  0.1515  0.0001  635  B excl zeros / Walc
+1  Dalc -0.2024  0.2541  0.1190  635  B excl zeros / both
+2  Walc -0.2174  0.1840  0.0209  635  B excl zeros / both

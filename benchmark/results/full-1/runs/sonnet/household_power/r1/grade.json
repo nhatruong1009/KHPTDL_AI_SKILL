@@ -1,0 +1,68 @@
+{
+  "task": "household_power",
+  "model": "sonnet",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Parses '?' as missing and dd/mm/yyyy dates; reports missing amount and longest gaps",
+        "pass": true,
+        "evidence": "na_values='?', format='%d/%m/%Y %H:%M:%S'; reports 25,979 of 2,075,259 minutes (1.25%); longest gaps 17–22 Aug 2010 (5.0 d), 25–28 Sep 2010 (3.6 d), 28–30 Apr 2007 (2.6 d), 13–15 Jun 2009 (2.3 d). All match the reference."
+      },
+      {
+        "check": "kW→kWh via /60; totals of right magnitude",
+        "pass": true,
+        "evidence": "kwh = g/60. Monthly totals match the reference: Dec 2007 1210, Dec 2008 949, Dec 2009 1015, Aug 2008 206, Jan 2007 1150. Jan–Nov is about 25 kWh/day, which works out to roughly 9,300 kWh/yr."
+      },
+      {
+        "check": "Handles partial/gap months before comparing",
+        "pass": true,
+        "evidence": "Days with <50% coverage are dropped and partial days scaled up. Monthly total = mean_day × days_in_month, giving Apr 2007 643 and Aug 2010 440 (reference: 642 and 440). Year comparison uses Jan–Nov kWh/day, and 2006 is flagged as partial. Minor issue: the chart plots Dec 2006 extrapolated to 1,350 kWh."
+      },
+      {
+        "check": "Annual seasonality (winter high, Aug lowest) and daily evening peak",
+        "pass": true,
+        "evidence": "Jan 35, Dec 34, Aug 13.6 kWh/day, so August is the lowest month and January the highest. Evening peak about 1.9 kW at 20:00–21:00 and night trough 03:00–05:00. Reference: peak hour 20, low hour 4."
+      },
+      {
+        "check": "Dec 2010 forecast inside [759,1392] with interval and stated method",
+        "pass": true,
+        "evidence": "Point forecast 966 kWh with 95% range 741–1,192. Method: scale the Dec 2008/2009 levels by 2010/prior-year level ratios, with interval ±1.96×CV (11.9%). A backtest is also reported."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Trend chart plots Dec 2006 as ~1,350 kWh, extrapolated from 16 days. Observed is 697 kWh, so the month looks inflated next to the others; the text does caveat this."
+    ],
+    "summary": "This is a strong, accurate run. Parsing, the kWh conversion, gap detection and gap-adjusted monthly totals all match the reference closely. Examples: Aug 2008 206, Dec 2008 949, Dec 2009 1015, missing data 1.25%, and the top gaps are identical. The run covers trend (flat, using Jan–Nov kWh/day), seasonality by month, weekday and hour, and abnormal weeks via robust z-scores, and it correctly calls Aug 2008 an absence rather than a data gap. The forecast of 966 kWh (741–1,192) falls inside the plausible range, and the method, a backtest and caveats are stated. Weak points in rigor: Dec 2007 is excluded post hoc, which lowers the point estimate; the CV comes from only 3 points; and the 4 'estimates' are not independent. The agent discloses all of these. Charts are clean but have descriptive rather than takeaway titles and missing axis labels (e.g. hour). The extrapolated Dec 2006 point (~1,350) is plotted as if it were a full month."
+  },
+  "judge_cost_usd": 0.2607579,
+  "accuracy_pct": 100.0,
+  "quality_pct": 85.0,
+  "overall": 94.0
+}

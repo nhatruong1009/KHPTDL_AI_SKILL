@@ -1,0 +1,69 @@
+{
+  "task": "student_perf",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file, xác định học sinh trùng và xử lý khi gộp",
+        "pass": true,
+        "evidence": "read_csv(sep=';') cho cả hai file; tái hiện ghép kiểu R (382 dòng) nhưng chọn ghép 1–1 trên 22 thuộc tính → 370 cặp, 674 học sinh (tham chiếu: 382/662); gộp bảng dài 1.044 dòng với SE cluster theo học sinh và kiểm tra độ nhạy chỉ dùng học sinh không trùng (Walc = −0,34, p = 0,002). Lựa chọn khác tham chiếu nhưng được nêu rõ và xử lý không độc lập đúng cách."
+      },
+      {
+        "check": "2. Phát hiện G3 = 0 và loại bỏ/kiểm tra độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "53 dòng G3 = 0 (38 Toán, 15 Bồ Đào Nha), cả 53 dòng đều có absences = 0 → coi là bỏ học hoặc không được chấm, loại khỏi mẫu chính (991 dòng); độ nhạy khi giữ số 0: M1 Walc = −0,35 (p = 0,001), d = −0,30, ρ = −0,15."
+      },
+      {
+        "check": "3. Dùng kiểm định phù hợp dữ liệu thứ bậc và báo cáo effect size",
+        "pass": true,
+        "evidence": "Spearman ρ = −0,18 (Walc) / −0,18 (Dalc) kèm KTC bootstrap theo cụm; có tính Mann-Whitney (p = 1,3e-09 trong CSV) và Cohen d = −0,50; đồng thời dùng OLS với chỉ số 'trọng số tuần' (5·Dalc+2·Walc)/7, tức xem thang thứ bậc như thang khoảng."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu: liên quan âm nhỏ ở cả hai môn, rõ nhất ở Bồ Đào Nha; Toán yếu hơn khi giữ G3=0 và mạnh lên khi loại",
+        "pass": false,
+        "evidence": "Độ lớn gộp ρ ≈ −0,18 khớp, nhưng không có Spearman/effect size riêng từng môn; tách môn chỉ bằng OLS (Toán −0,47, BĐN −0,39), ngụ ý Toán mạnh hơn, không nêu BĐN rõ nhất, cũng không cho thấy Toán yếu đi khi giữ G3=0. Thông điệp chính lại là 'phần lớn biến mất khi kiểm soát G2', đây là điều chỉnh quá mức theo điểm giữa kỳ (G2 gần như là cùng một kết quả)."
+      },
+      {
+        "check": "5. Không dùng từ ngữ nhân quả; nêu ít nhất một biến gây nhiễu",
+        "pass": false,
+        "evidence": "Có ghi 'không thể kết luận rượu gây ra điểm thấp' (không nhân quả), nhưng không nêu biến gây nhiễu cụ thể nào (failures, studytime, sex, goout…); chỉ có G2/absences như biến kiểm soát, đó không phải biến gây nhiễu."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 3,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Số học sinh duy nhất 674 / 370 cặp trùng, trong khi tham chiếu là 662 / 382; phát biểu '382 dòng không phải 382 học sinh' trái với tài liệu gốc của bộ dữ liệu (ở đây chỉ là lựa chọn được nêu rõ, không chắc là sai)"
+    ],
+    "summary": "Agent xử lý dữ liệu khá cẩn thận: dùng sep ';', ghép học sinh trùng với SE cluster theo học sinh, phát hiện 53 dòng G3 = 0 và có phân tích độ nhạy. Agent cũng báo cáo Spearman ρ ≈ −0,18 kèm KTC bootstrap và Cohen d = −0,50, đều khớp tham chiếu về độ lớn. Điểm yếu thứ nhất là con số 370 cặp / 674 học sinh lệch khỏi 382/662 của tham chiếu, dù agent có nêu rõ lý do. Thứ hai, không có Spearman hay effect size riêng cho từng môn, nên bỏ lỡ phát hiện liên quan rõ nhất ở môn Bồ Đào Nha và mẫu hình Toán thay đổi theo cách xử lý G3 = 0. Thứ ba, thông điệp chính 'mối liên quan biến mất khi kiểm soát G2' là điều chỉnh quá mức theo một biến gần như trùng với kết quả, dễ gây hiểu lầm. Ngoài ra không nêu biến gây nhiễu cụ thể nào. Biểu đồ có tiêu đề rút ra kết luận và KTC rõ ràng, chỉ có nhãn n hiển thị dạng số thập phân (n=376.0). Câu trả lời viết bằng tiếng Việt đúng yêu cầu."
+  },
+  "judge_cost_usd": 0.2553812,
+  "accuracy_pct": 60.0,
+  "quality_pct": 65.0,
+  "overall": 62.0
+}

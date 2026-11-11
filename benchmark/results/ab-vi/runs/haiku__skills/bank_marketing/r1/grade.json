@@ -1,0 +1,72 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py dòng 252: main_path = DATA/'bank-additional'/'bank-additional-full.csv'; answer.md nêu 41.188 dòng, 20 biến, còn 41.176 sau khi bỏ 12 dòng trùng. bank-full.csv chỉ dùng để kiểm tra độ nhạy."
+      },
+      {
+        "check": "Loại 'duration' vì rò rỉ, AUC nằm trong khoảng thực tế",
+        "pass": true,
+        "evidence": "LEAK=['duration'] bị loại; answer.md giải thích 'chỉ biết sau khi gọi xong'. ROC AUC holdout GB 0,814, LR 0,802 (CV 0,804/0,791), khớp tham chiếu 0,80/0,786."
+      },
+      {
+        "check": "So sánh với baseline bằng thước đo phù hợp dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Baseline tỷ lệ chung (PR AUC 0,113) và luật poutcome (ROC 0,621, PR 0,275, thu hồi top 20% là 37,7%) so với GB (PR AUC 0,491, lift top 10% là 4,65, thu hồi top 20% là 66,5%)."
+      },
+      {
+        "check": "Xử lý pdays=999 và 'unknown' một cách tường minh",
+        "pass": true,
+        "evidence": "prepare(): tạo cờ pdays_contacted và pdays_num (999→0); answer.md: các mức 'unknown' được giữ thành nhóm riêng, không gán giá trị."
+      },
+      {
+        "check": "Các yếu tố hàng đầu khớp với tham chiếu",
+        "pass": true,
+        "evidence": "Permutation: nr.employed 0,050, emp.var.rate 0,020, contact 0,016, month 0,015, euribor3m 0,010. poutcome success (65,1%) có nhắc đến nhưng importance riêng thấp do trùng lặp thông tin, và điều này đã được giải thích."
+      },
+      {
+        "check": "Trình bày tầm quan trọng là dự đoán, không phải nhân quả",
+        "pass": true,
+        "evidence": "'Quan hệ là tương quan, không phải nhân quả... có thể phản ánh cách chọn khách, không phải hiệu quả của kênh'; các chỉ số vĩ mô 'phần lớn đang mã hóa thời kỳ'."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Agent dùng đúng file bank-additional-full.csv, bỏ 12 dòng trùng, loại duration và giải thích lý do rò rỉ. pdays=999 được mã hóa bằng cờ, còn 'unknown' được giữ thành nhóm riêng. ROC AUC 0,814 (GB) và 0,802 (LR) khớp với tham chiếu không có duration. Các thước đo phù hợp dữ liệu mất cân bằng được báo cáo đầy đủ: PR AUC 0,491 so với 0,113, lift theo decile, thu hồi top 20% là 66,5% so với 37,7% của luật poutcome. Agent cũng có phân tích bỏ nhóm chỉ số vĩ mô (AUC 0,781) và kiểm tra độ nhạy trên bank-full. Các yếu tố quan trọng (nr.employed, emp.var.rate, contact, month, euribor) khớp tham chiếu và được trình bày là tương quan, không phải nhân quả. Mọi con số đều khớp với các file CSV. Điểm trừ chính: agent không kiểm định theo thời gian. Lý do đưa ra là 'không có cột ngày đầy đủ', nhưng dữ liệu đã được sắp theo ngày nên hoàn toàn có thể chia theo thứ tự dòng. Agent có thừa nhận ước lượng có thể lạc quan, nhưng không định lượng mức sụt giảm (tham chiếu cho thấy AUC giảm còn khoảng 0,70–0,72). Biểu đồ rõ ràng, có nhãn tiếng Việt và khớp với số liệu, nhưng tiêu đề chủ yếu mang tính mô tả hoặc đặt câu hỏi thay vì nêu thông điệp chính. Câu trả lời và answer.md đều bằng tiếng Việt, kết luận được nêu ngay đầu."
+  },
+  "judge_cost_usd": 0.28865110000000005,
+  "accuracy_pct": 100.0,
+  "quality_pct": 85.0,
+  "overall": 94.0
+}

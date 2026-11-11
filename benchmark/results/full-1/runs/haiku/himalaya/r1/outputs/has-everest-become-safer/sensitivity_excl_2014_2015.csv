@@ -1,0 +1,11 @@
+sample,group,deaths,people,death_rate_pct
+"Commercial, all years",Hired staff,68,10211,0.666
+"Commercial, all years",Expedition members,128,12320,1.039
+"Commercial, excl. 2014-2015",Hired staff,40,9467,0.423
+"Commercial, excl. 2014-2015",Expedition members,125,11398,1.097
+1990s excl. 2014-2015,Hired staff,19,1800,1.056
+1990s excl. 2014-2015,Expedition members,43,2980,1.443
+2000s excl. 2014-2015,Hired staff,9,3302,0.273
+2000s excl. 2014-2015,Expedition members,42,4360,0.963
+2010s excl. 2014-2015,Hired staff,12,4365,0.275
+2010s excl. 2014-2015,Expedition members,40,4058,0.986

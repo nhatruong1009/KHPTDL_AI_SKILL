@@ -1,0 +1,106 @@
+
+# ===== Random stratified hold-out (75/25): within-period estimate =====
+from sklearn.model_selection import train_test_split
+itr, ite = train_test_split(np.arange(n), test_size=.25, stratify=df.target, random_state=42)
+R_tr, R_te = df.iloc[itr], df.iloc[ite]
+yr = R_te.target.values
+baser = yr.mean()
+rr = (R_te.poutcome == "success").astype(float).values + np.random.RandomState(0).rand(len(R_te)) * 1e-6
+
+
+def row2(nm, ft, s):
+    return dict(mo_hinh=nm, bo_bien=ft, auc=roc_auc_score(yr, s), pr_auc=average_precision_score(yr, s),
+                thu_hoi_top10=topk(yr, s, .1)[0], lift_top10=topk(yr, s, .1)[1],
+                thu_hoi_top20=topk(yr, s, .2)[0], lift_top20=topk(yr, s, .2)[1])
+
+
+rr_rows = [dict(mo_hinh="Ngẫu nhiên", bo_bien="-", auc=.5, pr_auc=baser, thu_hoi_top10=.1, lift_top10=1,
+                thu_hoi_top20=.2, lift_top20=1), row2("Quy tắc poutcome=success", "poutcome", rr)]
+rp = {}
+for nm, cols in [(A, sets[A]), (B, sets[B]), (C, sets[C])]:
+    for mn, f in [("Logistic", lg), ("Gradient Boosting", gb)]:
+        p = f(cols).fit(R_tr[cols], R_tr.target).predict_proba(R_te[cols])[:, 1]
+        rp[(nm, mn)] = p
+        rr_rows.append(row2(mn, nm, p))
+rr_df = pd.DataFrame(rr_rows).round(4)
+rr_df.to_csv(f"{OUT}/ket_qua_holdout_ngau_nhien.csv", index=False)
+print(rr_df.to_string())
+pb = rp[(C, "Gradient Boosting")]
+bs = []
+rs = np.random.RandomState(3)
+for _ in range(300):
+    i = rs.randint(0, len(yr), len(yr))
+    bs.append((roc_auc_score(yr[i], pb[i]), roc_auc_score(yr[i], rr[i])))
+bs = np.array(bs)
+print("holdout AUC CI", np.percentile(bs[:, 0], [2.5, 97.5]), "rule CI", np.percentile(bs[:, 1], [2.5, 97.5]))
+
+
+def imp2(cols, fn):
+    m = gb(cols).fit(R_tr[cols], R_tr.target)
+    r = permutation_importance(m, R_te[cols], R_te.target, scoring="roc_auc", n_repeats=8, random_state=0)
+    t = pd.DataFrame({"bien": cols, "giam_auc": r.importances_mean, "sd": r.importances_std}).sort_values("giam_auc", ascending=False)
+    t.round(4).to_csv(fn, index=False)
+    return t
+
+
+i2C = imp2(sets[C], f"{OUT}/do_quan_trong_holdout_C.csv")
+i2B = imp2(sets[B], f"{OUT}/do_quan_trong_holdout_B_khong_vi_mo.csv")
+print(i2C.round(4).to_string())
+print(i2B.round(4).to_string())
+
+R2 = R_te.copy()
+R2["p"] = pb
+R2["decile"] = pd.qcut(R2.p.rank(method="first", ascending=False), 10, labels=range(1, 11))
+d2 = R2.groupby("decile", observed=True).agg(so_kh=("target", "size"), dang_ky=("target", "sum"), ty_le=("target", "mean")).reset_index()
+d2["lift"] = d2.ty_le / baser
+d2["thu_hoi_luy_ke"] = d2.dang_ky.cumsum() / d2.dang_ky.sum()
+d2.round(4).to_csv(f"{OUT}/bang_decile_holdout.csv", index=False)
+print(d2.round(3).to_string())
+
+# charts (overwrite earlier ones)
+fig, ax = plt.subplots(figsize=(9.5, 4.8))
+labs = ["Ngẫu nhiên", "Quy tắc\n'lần trước thành công'", "Logistic\n(C)", "Gradient Boosting\n(C)"]
+g = lambda mn: rr_df[(rr_df.mo_hinh == mn) & (rr_df.bo_bien == C)].auc.iloc[0]
+v1 = [.5, rr_df.auc[1], g("Logistic"), g("Gradient Boosting")]
+v2 = [.5, roll.auc_quy_tac.mean(), np.nan, roll.auc_GB_C.mean()]
+x = np.arange(4)
+w = .38
+b1 = ax.bar(x - w / 2, v1, w, color=C1, label="Kiểm tra ngẫu nhiên (cùng giai đoạn)")
+b2 = ax.bar(x + w / 2, v2, w, color=C2, label="Kiểm tra theo thời gian (train quá khứ, test giai đoạn sau)")
+for bars in (b1, b2):
+    for r_ in bars:
+        h = r_.get_height()
+        if not np.isnan(h):
+            ax.text(r_.get_x() + r_.get_width() / 2, h + .008, f"{h:.2f}", ha="center")
+ax.set_xticks(x)
+ax.set_xticklabels(labs)
+ax.set_ylim(.4, .95)
+ax.set_ylabel("ROC AUC")
+ax.set_title("Mô hình vượt baseline, nhưng lợi thế co lại khi dự báo giai đoạn sau")
+ax.legend(frameon=False, loc="upper left", fontsize=8)
+ax.spines[["top", "right"]].set_visible(False)
+plt.tight_layout(); plt.savefig(f"{OUT}/so_sanh_baseline.png", dpi=150); plt.close()
+
+fig, ax = plt.subplots(figsize=(8, 4.8))
+x = np.r_[0, d2.index.values + 1] / 10
+y = np.r_[0, d2.thu_hoi_luy_ke.values]
+ax.plot(x, y, color=C1, marker="o", label="Mô hình (Gradient Boosting)")
+ax.plot([0, 1], [0, 1], color=C2, ls="--", label="Gọi ngẫu nhiên")
+t20 = d2.thu_hoi_luy_ke.iloc[1]
+ax.annotate(f"Gọi 20% đầu bảng: bắt {t20:.0%} người đăng ký", (.2, t20), xytext=(.3, t20 - .18), arrowprops=dict(arrowstyle="->"))
+ax.set_xlabel("Tỷ lệ khách hàng được gọi (xếp theo điểm giảm dần)")
+ax.set_ylabel("Tỷ lệ người đăng ký bắt được")
+ax.set_title("Xếp hạng theo điểm số giúp bắt nhiều người đăng ký hơn")
+ax.legend(frameon=False)
+ax.spines[["top", "right"]].set_visible(False)
+plt.tight_layout(); plt.savefig(f"{OUT}/duong_thu_hoi.png", dpi=150); plt.close()
+
+fig, axs = plt.subplots(1, 2, figsize=(12, 5.2))
+for ax, t, ttl in [(axs[0], i2C, "Mô hình đầy đủ (có vĩ mô)"), (axs[1], i2B, "Không có chỉ số vĩ mô")]:
+    t = t.head(8)[::-1]
+    ax.barh(t.bien, t.giam_auc, xerr=t.sd, color=C1)
+    ax.set_title(ttl)
+    ax.set_xlabel("Mức giảm AUC khi xáo trộn biến")
+    ax.spines[["top", "right"]].set_visible(False)
+plt.suptitle("Yếu tố quan trọng nhất (hold-out ngẫu nhiên)")
+plt.tight_layout(); plt.savefig(f"{OUT}/do_quan_trong.png", dpi=150); plt.close()

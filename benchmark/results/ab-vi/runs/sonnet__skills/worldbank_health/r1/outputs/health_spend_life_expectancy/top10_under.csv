@@ -1,0 +1,11 @@
+﻿country,IncomeGroup,lifeexp,he,gdp,expected,resid,resid_se,resid_inc_he,rank_over
+Nigeria,Lower middle income,54.46,66.82,8711.69,69.76,-15.29,-4.26,-14.06,184
+Naoero,High income,62.11,2292.37,13171.96,71.95,-9.84,-2.74,-12.02,183
+Equatorial Guinea,Upper middle income,63.71,233.68,16997.0,73.3,-9.59,-2.67,-8.81,182
+Guyana,High income,70.18,505.03,54774.15,79.5,-9.32,-2.6,-7.72,181
+Chad,Low income,55.07,47.44,2703.07,63.55,-8.49,-2.36,-8.56,180
+Eswatini,Lower middle income,64.12,296.05,11309.2,71.14,-7.02,-1.95,-7.1,179
+Cote d'Ivoire,Lower middle income,61.94,87.68,7243.15,68.78,-6.83,-1.9,-6.18,178
+South Africa,Upper middle income,66.14,536.59,15212.26,72.71,-6.57,-1.83,-6.9,177
+Lesotho,Lower middle income,57.38,122.64,2879.59,63.89,-6.52,-1.81,-7.58,176
+Brunei Darussalam,High income,75.33,733.01,85102.69,81.83,-6.51,-1.81,-4.69,175

@@ -1,0 +1,55 @@
+Năm 2019: n = 186 nước
+r(LE, ln CHE) thô      = 0.806
+r(LE, ln GDP)          = 0.850
+r(ln CHE, ln GDP)      = 0.917
+R² chỉ thu nhập        = 0.722
+R² thu nhập + chi tiêu = 0.727
+Hệ số ln CHE (đã kiểm soát thu nhập) = 0.938 năm / đơn vị ln
+Tương quan riêng (partial r) LE–ln CHE | thu nhập = 0.138
+
+Top 10 VƯỢT kỳ vọng (sau khi kiểm soát thu nhập):
+             country              income  life_exp  expected_le  gap_years  che_pc  gdp_pc_ppp
+     Solomon Islands Lower middle income     69.98        62.34       7.64   98.67     2512.01
+  West Bank and Gaza Lower middle income     75.81        68.17       7.64  317.45     6508.45
+          Tajikistan Lower middle income     70.96        64.31       6.65   60.52     3459.97
+Syrian Arab Republic          Low income     70.97        64.39       6.58   55.22     3502.18
+             Burundi          Low income     62.18        55.70       6.48   22.24      868.42
+           Nicaragua Lower middle income     73.76        67.66       6.11  166.49     5981.11
+              Malawi          Low income     65.00        58.92       6.07   36.92     1450.01
+             Vanuatu Lower middle income     70.78        64.83       5.96  112.14     3762.09
+              Jordan Upper middle income     76.86        70.95       5.92  294.93    10305.66
+             Albania Upper middle income     79.47        73.74       5.73  366.34    16442.03
+
+Top 10 DƯỚI kỳ vọng:
+                 country              income  life_exp  expected_le  gap_years  che_pc  gdp_pc_ppp
+Central African Republic          Low income     31.53        56.50     -24.97   35.76      984.84
+                 Nigeria Lower middle income     53.01        69.07     -16.06   67.63     7551.39
+       Equatorial Guinea Upper middle income     62.30        73.75     -11.45  223.14    16451.36
+                Eswatini Lower middle income     59.85        70.29     -10.44  320.05     9248.32
+                  Naoero         High income     61.39        71.09      -9.70 1213.87    10554.52
+                    Chad          Low income     52.99        61.93      -8.94   30.24     2351.65
+                 Lesotho Lower middle income     55.25        62.48      -7.23  235.94     2568.34
+       Brunei Darussalam         High income     75.05        82.19      -7.14  678.82    69353.68
+            Bahamas, The         High income     71.41        78.39      -6.98 1881.40    36116.00
+                 Namibia Lower middle income     63.55        70.53      -6.98  419.15     9609.49
+
+Việt Nam: LE 74.21, kỳ vọng 71.35, chênh +2.86 năm, hạng 47/186 (1 = vượt kỳ vọng nhất)
+  CHE/người 171 USD, GDP/người PPP 11029 USD
+
+Theo nhóm thu nhập:
+                     so_nuoc  LE_tb  CHE_trung_vi  chenh_tb
+income                                                     
+High income               62  79.41       1984.99     -0.06
+Low income                21  60.92         33.37      0.17
+Lower middle income       46  66.81         69.81     -0.24
+Upper middle income       57  73.14        388.67      0.19
+
+[Bền vững 2015] n=185, r(LE, ln CHE)=0.836
+  Top vượt: West Bank and Gaza, Solomon Islands, Albania, Costa Rica, Tajikistan, Vanuatu, Nicaragua, Cabo Verde, Bosnia and Herzegovina, Kyrgyz Republic
+  Top dưới: Nigeria, Eswatini, Equatorial Guinea, Lesotho, Namibia, Chad, Naoero, Botswana, South Africa, Angola
+  Việt Nam chênh: +4.80 năm
+
+[Bền vững 2023] n=184, r(LE, ln CHE)=0.829
+  Top vượt: Jordan, Solomon Islands, Lebanon, Maldives, Cabo Verde, Nicaragua, Vanuatu, Sri Lanka, Morocco, Malawi
+  Top dưới: Nigeria, Naoero, Guyana, Equatorial Guinea, Chad, Brunei Darussalam, Lesotho, Eswatini, Cote d'Ivoire, South Africa
+  Việt Nam chênh: +2.28 năm

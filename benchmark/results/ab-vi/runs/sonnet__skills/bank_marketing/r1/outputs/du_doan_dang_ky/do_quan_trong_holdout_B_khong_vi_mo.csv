@@ -1,0 +1,15 @@
+bien,giam_auc,sd
+month,0.0858,0.0041
+contact,0.0638,0.003
+pdays,0.0241,0.0017
+age,0.0156,0.0023
+default,0.0077,0.0018
+poutcome,0.0041,0.0012
+day_of_week,0.0035,0.0009
+job,0.0015,0.0005
+previous,0.0002,0.0004
+marital,0.0001,0.0003
+loan,0.0,0.0003
+pdays_contacted,0.0,0.0
+housing,-0.0,0.0003
+education,-0.0012,0.001

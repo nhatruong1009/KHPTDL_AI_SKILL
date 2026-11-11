@@ -1,0 +1,74 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Uses bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py loads data/bank-additional/bank-additional-full.csv (41,188 rows) as the primary file. bank-full.csv (45,211 rows) is used only as a cross-check."
+      },
+      {
+        "check": "Drops 'duration' as leakage, explains why, and reports ROC-AUC in the realistic range",
+        "pass": true,
+        "evidence": "duration is excluded because 'the codebook says it is known only after the call'. Recommended HGB without macro: AUC 0.784. HGB with macro: 0.813. LR without macro: 0.765. All are in the 0.75–0.82 range."
+      },
+      {
+        "check": "Compares against baselines using imbalance-appropriate metrics",
+        "pass": true,
+        "evidence": "Three baselines: majority class (88.7% accuracy, flagged as misleading), random order (top-10% lift 1.1x, capture 11%/23%) and a poutcome=success rule (2.4x, 24%/32%), against the model (4.5x, 45%/60%). PR-AUC is computed in the CSV (0.445) but not reported in the answer."
+      },
+      {
+        "check": "Handles pdays=999 and 'unknown' explicitly",
+        "pass": true,
+        "evidence": "pdays=999 is split into a was_contacted_before flag plus pdays_clean. 'unknown' is kept as its own category, and the answer quantifies default='unknown' (8,597 clients, 5.2% subscribe). The 12 duplicate rows are noted and kept, with a reason given."
+      },
+      {
+        "check": "Top factors consistent with the reference (macro, poutcome/pdays, contact, month)",
+        "pass": true,
+        "evidence": "Recommended model ranks month (0.087) and contact (0.060) highest, and poutcome success (65%) is noted. With macro, nr.employed is the strongest factor (0.058), followed by cons.price.idx and emp.var.rate. However, macro is deliberately kept out of the headline ranking, and poutcome/pdays rank low."
+      },
+      {
+        "check": "Frames factor importance as predictive, not causal",
+        "pass": true,
+        "evidence": "Caveat 4, 'Association, not causation… calling a client differently will not necessarily change their decision', plus a note that permutation importance 'does not estimate causal effects'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Claims a time-ordered validation 'was not possible' because there are no full dates. The rows are in chronological order, so a time-ordered split was possible. The reference shows it gives a much lower AUC (~0.70–0.72) with a test base rate of 25.8%, so the random-split estimate likely overstates future performance.",
+      "'Within one campaign all clients share those values' (the macro indicators) is an overstatement. The indicators change month to month within the data, so the argument for dropping them is weaker than presented."
+    ],
+    "summary": "This is a solid, leakage-free analysis of the correct file. Duration is dropped with the codebook reason given, and the ROC-AUC values (0.765–0.813) match the reference. The baselines are well chosen (random, majority class, poutcome rule), and the results are reported as lift and capture rather than accuracy. pdays=999, 'unknown' and the duplicate rows are all handled explicitly. The bank-full cross-check and 5-fold CV add robustness, and the causal caveats are good.\n\nThere are three main weaknesses:\n- **No time-ordered validation.** The agent skipped it on an incorrect premise, since the rows are in date order. This is the most honest test for a next-campaign use case, and the reference shows performance drops substantially under it.\n- **Macro indicators set aside.** Excluding them from the recommended model is a defensible judgement, but the justification overstates that they are constant within a campaign. As a result the headline factor list leads with month, contact and age rather than the macro signals.\n- **Charts don't match the recommendation.** They show the with-macro model rather than the recommended one (this is disclosed). The titles are descriptive rather than takeaway titles, and PR-AUC is computed but never reported in the answer."
+  },
+  "judge_cost_usd": 0.3107227,
+  "accuracy_pct": 100.0,
+  "quality_pct": 65.0,
+  "overall": 86.0
+}

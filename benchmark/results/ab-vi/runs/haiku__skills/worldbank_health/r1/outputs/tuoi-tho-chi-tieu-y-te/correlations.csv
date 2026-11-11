@@ -1,0 +1,6 @@
+thong_ke,value,p
+Pearson r: chi tiêu (USD) vs tuổi thọ,0.6169613755438565,1.1067035725678135e-20
+Spearman rho: chi tiêu (USD) vs tuổi thọ,0.8415696295437539,1.4543525348660156e-50
+Pearson r: ln chi tiêu vs tuổi thọ,0.8294823804480044,6.520917792898483e-48
+Pearson r: ln chi tiêu vs ln GDP (đa cộng tuyến),0.9062492915310411,5.748904612757992e-70
+Partial r: chi tiêu vs tuổi thọ | thu nhập,0.20207857445061084,0.0059434414895438055

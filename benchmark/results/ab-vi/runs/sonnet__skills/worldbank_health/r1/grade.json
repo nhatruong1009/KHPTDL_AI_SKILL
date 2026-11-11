@@ -1,0 +1,75 @@
+{
+  "task": "worldbank_health",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Bỏ dòng metadata và loại nhóm tổng hợp",
+        "pass": true,
+        "evidence": "analysis.py dùng skiprows=4 và lọc df['Region'].notna() từ Metadata_Country; 217 nước còn lại, 184 nước đủ dữ liệu, 33 nước thiếu bị loại"
+      },
+      {
+        "check": "2. Chọn năm rõ ràng với khoảng 180+ nước",
+        "pass": true,
+        "evidence": "YEAR='2023', n=184, khớp ground truth (184); có nêu lý do là năm 2024 thiếu dữ liệu chi y tế"
+      },
+      {
+        "check": "3. Tương quan dương mạnh, nói rõ là liên hệ và bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "r(log HE, LE)=0,829, Spearman=0,842 (summary_stats), khớp GT 0,829/0,842; story ghi 'phần lớn là hiệu ứng của thu nhập', 'không chứng minh nhân quả'"
+      },
+      {
+        "check": "4. Kiểm soát thu nhập, danh sách vượt/dưới kỳ vọng khớp",
+        "pass": true,
+        "evidence": "Phần dư chính lấy từ LE~logGDP; M3 cho hệ số logHE=1,135, khớp GT 1,14. Nhóm vượt gồm Solomon, Jordan, Lebanon, Malawi; nhóm dưới gồm Nigeria −15,3, Nauru, Guinea Xích đạo, Chad, Guyana, đều khớp danh sách GT năm 2023"
+      },
+      {
+        "check": "5. Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "VN +1,94 năm (mô hình chỉ GDP), khớp GT resid_gdp_only=1,94; hạng 56/184; năm 2019 là +2,9 năm. Chỉ báo cáo phần dư của mô hình chỉ GDP; phần dư mô hình đầy đủ là +2,73 năm (hạng 44) chưa được nêu nổi bật"
+      },
+      {
+        "check": "6. story.md cho lãnh đạo Bộ Y tế: thông điệp chính, mạch truyện, hành động dạng gợi ý, lưu ý",
+        "pass": true,
+        "evidence": "Có thông điệp chính in đậm, mạch 3 phần, 3 hàm ý mang tính gợi ý (đối chiếu số liệu trong nước, nghiên cứu Sri Lanka/Jordan), lưu ý US$ hiện hành so với PPP, sai số ước tính UN, nước đảo nhỏ. Không nhắc ngoại lệ CAR 2022 (dùng năm 2023 nên tránh được)"
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "'2024 chỉ có 24 nước': GT cho thấy chỉ 22 nước có đủ cả 3 chỉ số năm 2024. Con số 24 có thể chỉ tính riêng chi y tế; sai lệch nhỏ, không ảnh hưởng kết luận"
+    ],
+    "summary": "Đây là bài phân tích chất lượng cao. Dữ liệu được làm sạch đúng: bỏ 4 dòng metadata, lọc Region rỗng để loại nhóm tổng hợp, dùng năm 2023 với n=184. Các con số khớp ground truth: r=0,829, Spearman=0,842, hệ số logHE=1,14, VN +1,94 năm. Danh sách nước vượt/dưới kỳ vọng khớp GT 2023 (Solomon, Jordan, Lebanon / Nigeria, Nauru, Guinea Xích đạo, Chad, Guyana). Kiểm tra độ vững tốt: bootstrap hạng VN, đối chiếu năm 2019, tương quan riêng phần 0,22. Story bằng tiếng Việt, hướng đúng đối tượng, có thông điệp chính, hàm ý dạng gợi ý và lưu ý rõ (US$ so với PPP, không nhân quả). Điểm trừ nhỏ: chỉ nêu nổi bật phần dư của mô hình chỉ GDP (+1,9), trong khi mô hình đầy đủ cho +2,7. Story không nhắc ngoại lệ CAR. Ở hình 2, nhãn Jordan/Lebanon chồng lên nhau. Tiêu đề hình 3 chỉ mô tả, chưa nêu được kết luận."
+  },
+  "judge_cost_usd": 0.2592763,
+  "accuracy_pct": 100.0,
+  "quality_pct": 91.7,
+  "overall": 96.7
+}

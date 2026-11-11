@@ -1,0 +1,57 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "model_id": "claude-haiku-5-5",
+  "rep": 1,
+  "wall_s": 429.6,
+  "duration_api_s": 93.0,
+  "cost_usd": 0.02538015,
+  "num_turns": 17,
+  "input_tokens": 30,
+  "output_tokens": 20426,
+  "cache_read_tokens": 552515,
+  "cache_write_tokens": 48195,
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 30,
+      "outputTokens": 20426,
+      "cacheReadInputTokens": 552515,
+      "cacheCreationInputTokens": 48195,
+      "webSearchRequests": 0,
+      "costUSD": 0.02538015,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6956,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 48195,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "final_text": "Yes, the model can rank clients before the call. Calling the top 10% of clients by score reaches 4.5 times the subscription rate of calling at random, and captures 45% of all subscribers. Calling the top 20% captures 60%. Against the naive baselines, that is a clear improvement: random order captures 11% of subscribers in the top 10%, and the simple rule \"call previous successes first\" captures 24%.\n\n**Data used:** `data/bank-additional/bank-additional-full.csv`, the most complete version (41,188 clients, all 20 inputs). I excluded `duration`, since the codebook says it is only known after the call. I cross-checked on `bank-full.csv` (45,211 rows, no economic indicators), which gave a similar result (AUC 0.795, top-10% lift 4.4x).\n\n| Model (held-out 20% test set) | ROC AUC | Lift in top 10% | Subscribers captured by top 10% / top 20% |\n|---|---|---|---|\n| Naive: call in random order | 0.50 | 1.1x | 11% / 23% |\n| Rule: previous campaign succeeded | 0.57 | 2.4x | 24% / 32% |\n| Logistic regression, no economic indicators | 0.765 | 4.4x | 44% / 57% |\n| **Gradient boosting, no economic indicators (recommended)** | **0.784** | **4.5x** | **45% / 60%** |\n| Gradient boosting, with economic indicators | 0.813 | 4.8x | 48% / 67% |\n\nAccuracy is misleading here. Only 11% of clients subscribe, so \"predict no for everyone\" scores 89% accuracy and beats every model on it. Ranking metrics are the right measure for choosing whom to call.\n\n**Factors that matter most** (permutation importance, recommended model):\n1. **Month of last contact** – March, September, October and December reach 44–51% subscription; May is 6%.\n2. **Contact type** – cellular 15% vs telephone 5%.\n3. **Age** – 65+ at 47%, under 25 at 21%, 25–55 at 8–12%.\n4. **Credit in default** – \"unknown\" 5% vs \"no\" 13%.\n5. **Number of calls in this campaign** – 13% at one call, 3% beyond ten.\n6. **Previously contacted** – modest effect.\n\nA previous campaign success is the strongest single signal (65% subscribe), but it covers only about 3% of clients.\n\n**Caveats:**\n- **Economic indicators are period proxies.** Adding them raises AUC to 0.813, but within one campaign all clients share those values, so they cannot separate clients. Their gain comes from distinguishing campaign periods, so I recommend the no-economic-indicator model for the call list.\n- **Month may partly reflect campaign waves** rather than a stable seasonal pattern.\n- **Random split, not time-based.** The data has no full dates, so I could not validate on a later period; performance on the next campaign may be lower.\n- **Association, not causation.** The factors predict subscription in historical records; they do not show that calling differently would change outcomes.\n\n**Choices I made:** I used the `bank-additional-full` file as the most complete version, kept the 12 exact duplicate rows (they may be distinct clients), and treated \"unknown\" as its own category. The charts in the output folder show the model with economic indicators, not the recommended model.\n\nFiles are in `outputs/predict-term-deposit-subscription/`: `answer.md` (full write-up), `analysis.py` (reproduces every number), metric and importance CSVs, and two charts.",
+  "outputs": [
+    "outputs/predict-term-deposit-subscription/analysis.py",
+    "outputs/predict-term-deposit-subscription/answer.md",
+    "outputs/predict-term-deposit-subscription/feature_importance.png",
+    "outputs/predict-term-deposit-subscription/lift_by_decile.csv",
+    "outputs/predict-term-deposit-subscription/logistic_coefficients.csv",
+    "outputs/predict-term-deposit-subscription/model_metrics.csv",
+    "outputs/predict-term-deposit-subscription/permutation_importance.csv",
+    "outputs/predict-term-deposit-subscription/roc_and_gains.png",
+    "outputs/predict-term-deposit-subscription/run_summary.json"
+  ],
+  "tools": {
+    "Bash": 9,
+    "Write": 2,
+    "Edit": 4,
+    "Read": 1
+  },
+  "skills_invoked": [],
+  "skill_md_reads": [],
+  "tool_errors": 3,
+  "total_tokens": 621166
+}

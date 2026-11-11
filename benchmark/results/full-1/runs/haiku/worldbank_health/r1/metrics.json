@@ -1,0 +1,57 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "model_id": "claude-haiku-5-5",
+  "rep": 1,
+  "wall_s": 111.2,
+  "duration_api_s": 95.1,
+  "cost_usd": 0.025755430000000003,
+  "num_turns": 25,
+  "input_tokens": 26,
+  "output_tokens": 22621,
+  "cache_read_tokens": 447913,
+  "cache_write_tokens": 49816,
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 26,
+      "outputTokens": 22621,
+      "cacheReadInputTokens": 447913,
+      "cacheCreationInputTokens": 49816,
+      "webSearchRequests": 0,
+      "costUSD": 0.025755430000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5263,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 49816,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "final_text": "**Trả lời ngắn:** Có, các nước chi tiêu y tế nhiều hơn thường sống lâu hơn (r = 0,81 năm 2019). Nhưng khi đã tính đến thu nhập, phần lớn mối liên hệ đó biến mất trong năm 2019. Việt Nam sống thọ hơn kỳ vọng theo thu nhập khoảng 2,9 năm, xếp thứ 48/186.\n\n**Kết quả chính (năm 2019, 186 quốc gia)**\n- **Chi tiêu và tuổi thọ:** nhóm chi ít nhất có tuổi thọ trung bình 63,2 năm; nhóm chi nhiều nhất là 80,5 năm.\n- **Sau khi tính thu nhập:** thu nhập một mình giải thích 72% biến thiên tuổi thọ, thêm chi tiêu chỉ nâng lên 72,6%. Tương quan riêng giữa chi tiêu và tuổi thọ là r = 0,13 (p = 0,08). Gấp đôi chi tiêu tương ứng +0,6 năm (95% CI −0,3 đến +1,4).\n- **Vượt kỳ vọng nhiều nhất:** Quần đảo Solomon (+7,5), Palestine (+7,5), Burundi (+7,3), Tajikistan (+6,5), Syria (+6,4).\n- **Dưới kỳ vọng nhiều nhất:** Cộng hòa Trung Phi (−24,3), Nigeria (−16,2), Guinea Xích Đạo (−11,4), Eswatini (−10,5), Nauru (−9,7).\n- **Việt Nam:** tuổi thọ 74,2 năm, kỳ vọng theo thu nhập 71,4 năm. Chi tiêu y tế 171 USD/người, bằng khoảng 44% trung vị nhóm thu nhập trung bình cao. Xếp 15/57 trong nhóm đó. Vị trí này đang thu hẹp: +7,2 năm (2010, hạng 6), +2,9 (2019, hạng 48), +2,3 (2023, hạng 51).\n\n**Phương pháp**\n- Năm chính là 2019 (năm trước đại dịch, độ phủ dữ liệu cao nhất). Kiểm tra lại với 2010 và 2023.\n- Kỳ vọng theo thu nhập là đường cubic của log(GDP/người PPP). Chênh lệch = tuổi thọ thực − kỳ vọng.\n- Hồi quy OLS tuổi thọ theo log(GDP) và log(chi tiêu), bootstrap 2.000 lần cho khoảng tin cậy.\n- Chỉ dùng các thực thể quốc gia (có Region trong metadata), loại tổng hợp khu vực của World Bank.\n\n**Điểm cần lưu ý**\n- Hiệu ứng riêng của chi tiêu không ổn định. Ở 2010 và 2023 nó có ý nghĩa thống kê (ước tính +1,4 và +0,8 năm khi gấp đôi chi tiêu), còn 2019 yếu nhất. Story nêu rõ điều này.\n- Quan sát, không phải nhân quả.\n- Một số giá trị như Cộng hòa Trung Phi (31,5 năm) và Nigeria (53,0 năm) là ước tính của World Bank và nên kiểm chứng trước khi trích dẫn.\n- Vietnam hiện được xếp nhóm thu nhập trung bình cao trong metadata, nên so sánh nhóm dùng phân loại hiện tại.\n- Dữ liệu không có cơ cấu chi tiêu công/tư hay tự chi.\n\n**Đầu ra** (trong `outputs/health-spend-vs-life-expectancy/`)\n- `story.md`: data story cho lãnh đạo Bộ Y tế, bằng tiếng Việt.\n- `analysis.py` và `analysis_log.txt`: mã và log chạy lại được.\n- `chart1_spend_vs_le.png`, `chart2_income_benchmark.png`, `chart3_gap_ranking.png`.\n- `gap_vs_income_2019.csv`, `spend_quartiles_2019.csv`, `robustness_by_year.csv`.\n\nTôi chạy các bước phân tích trực tiếp trong script, không gọi lần lượt từng skill con và không tạo `answer.md` riêng. Nội dung đã được kiểm tra với số liệu trong log, nhưng chưa có một vòng QA độc lập.",
+  "outputs": [
+    "outputs/health-spend-vs-life-expectancy/analysis.py",
+    "outputs/health-spend-vs-life-expectancy/analysis_log.txt",
+    "outputs/health-spend-vs-life-expectancy/chart1_spend_vs_le.png",
+    "outputs/health-spend-vs-life-expectancy/chart2_income_benchmark.png",
+    "outputs/health-spend-vs-life-expectancy/chart3_gap_ranking.png",
+    "outputs/health-spend-vs-life-expectancy/gap_vs_income_2019.csv",
+    "outputs/health-spend-vs-life-expectancy/robustness_by_year.csv",
+    "outputs/health-spend-vs-life-expectancy/spend_quartiles_2019.csv",
+    "outputs/health-spend-vs-life-expectancy/story.md"
+  ],
+  "tools": {
+    "Bash": 8,
+    "Read": 5,
+    "Write": 3,
+    "Edit": 8
+  },
+  "skills_invoked": [],
+  "skill_md_reads": [],
+  "tool_errors": 3,
+  "total_tokens": 520376
+}

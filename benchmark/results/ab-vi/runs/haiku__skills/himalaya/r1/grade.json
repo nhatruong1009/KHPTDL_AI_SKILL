@@ -1,0 +1,75 @@
+{
+  "task": "himalaya",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Lọc Everest đúng và dùng members.csv (cấp cá nhân) với mẫu số rõ ràng",
+        "pass": false,
+        "evidence": "Lọc peak_id == \"EVER\" đúng (2.149 chuyến, 1921–2019). Tuy vậy mẫu số lấy từ tổng cấp chuyến trong expeditions.csv (members/hired_staff, 12.741 nhân viên), không lấy từ các dòng người trong members.csv (6.730 dòng hired). members.csv chỉ được dùng để đối chiếu số ca tử vong (186/120). Lựa chọn này được nêu rõ và có lý do, nhưng không phải phân tích cấp cá nhân như yêu cầu."
+      },
+      {
+        "check": "2. Tỉ lệ tử vong theo thập kỷ của thành viên và nhân viên thuê khớp by_decade",
+        "pass": false,
+        "evidence": "Thành viên khớp: 1,96%→1,04% (GT 2,07%→1,04%); 1990s 1,44%, 2000s 0,96%, 2010s 0,86%. Nhân viên thuê lệch nhiều: trước 1990 là 2,06% so với GT 14,36%; 1970s là 2,44% (19/778) so với GT 36,54% (19/52); 1980s là 1,98% so với 13,79%. Vì vậy kết luận \"trước 1990 hai nhóm gần ngang nhau (p=0,80)\" trái với tham chiếu, vốn cho thấy nhân viên thuê rủi ro cao hơn rất nhiều."
+      },
+      {
+        "check": "3. Cảnh báo cỡ mẫu nhỏ thập kỷ đầu và/hoặc đỉnh 2014–2015",
+        "pass": true,
+        "evidence": "Có loại 1920s–1940s khỏi biểu đồ vì dưới 100 người mỗi thập kỷ và có khoảng tin cậy Wilson. Có nêu 2014 + 2015 chiếm 28/68 ca nhân viên tử vong sau 1990, cùng phân tích độ nhạy khi bỏ hai năm này (0,42% so với 1,10%)."
+      },
+      {
+        "check": "4. Cho thấy điều gì thay đổi trong kỷ nguyên thương mại (số người leo, tỉ lệ thành công, oxy, tỉ trọng nhân viên)",
+        "pass": false,
+        "evidence": "Chỉ có số chuyến theo thập kỷ (3→869, khớp GT) và tỉ lệ có trekking_agency (92–98%). Không có tỉ lệ thành công, không có mức dùng oxy (answer.md còn viết sai rằng dữ liệu \"không ghi trực tiếp ... oxy\", trong khi có cột oxygen_used), và không phân tích tỉ trọng nhân viên thuê."
+      },
+      {
+        "check": "5. story.md tồn tại, ngôn ngữ phổ thông, một thông điệp, cảnh báo trung thực",
+        "pass": true,
+        "evidence": "story.md bằng tiếng Việt, dễ hiểu, thông điệp \"an toàn hơn nhưng không chia đều\", có nêu đây là tương quan chứ không phải nhân quả và giới hạn mẫu số. Tuy nhiên thông điệp chính (nhân viên thuê nay an toàn hơn khách) dựa trên mẫu số gây tranh cãi, và story không nhúng biểu đồ nào."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": 3,
+      "honesty": 3,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Tỉ lệ tử vong nhân viên thuê trước 1990 là 2,06% (52/2.530): theo members.csv (GT) là 14,36% (52/362). Mẫu số của agent lấy từ hired_staff cấp chuyến nên làm giảm tỉ lệ rất nhiều",
+      "Nhân viên thuê 1970s 2,44% (19/778): GT 36,54% (19/52)",
+      "Nhân viên thuê 1980s 1,98% (20/1.012): GT 13,79% (20/145)",
+      "Nhân viên thuê sau 1990 0,67% (68/10.211): GT 1,07% (68/6.368). Từ đó, khẳng định 'nhân viên thấp hơn thành viên sau 1990, p=0,003' không đứng được nếu dùng mẫu số cấp cá nhân (GT 1,07% so với 1,04%)",
+      "'Trước 1990 hai nhóm gần như ngang nhau (p=0,80)': ngược với dữ liệu cấp người (14,36% so với 2,07%)",
+      "Khẳng định dữ liệu không ghi trực tiếp oxy: sai, members.csv có cột oxygen_used"
+    ],
+    "summary": "Agent lọc Everest đúng. Số liệu thành viên đoàn khớp tham chiếu (khoảng 2% → 1,04%), và số chuyến theo thập kỷ cũng khớp. Có khoảng tin cậy Wilson, có cảnh báo cỡ mẫu nhỏ và phân tích độ nhạy cho 2014–2015. Tuy nhiên, agent dùng mẫu số nhân viên thuê từ hired_staff cấp chuyến (12.741 người) thay vì các dòng người trong members.csv. Lựa chọn này có nêu rõ, nhưng khiến tỉ lệ tử vong nhân viên trước 1990 chỉ còn 2,06%, so với 14,36% theo tham chiếu. Hệ quả là thông điệp chính bị đảo: agent nói hai nhóm ngang nhau trước 1990 và nhân viên an toàn hơn khách sau 1990. Phần 'điều gì thay đổi' còn thiếu tỉ lệ thành công, mức dùng oxy và tỉ trọng nhân viên; agent còn viết sai rằng dữ liệu không có thông tin về oxy. story.md bằng tiếng Việt, dễ hiểu, có nêu đây là tương quan chứ không phải nhân quả, nhưng không nhúng biểu đồ. Tiêu đề biểu đồ chỉ mô tả, không nêu điều rút ra; đường đánh dấu 'kỷ nguyên thương mại' đặt khoảng năm 1985 thay vì 1990."
+  },
+  "judge_cost_usd": 0.24050349999999998,
+  "accuracy_pct": 40.0,
+  "quality_pct": 54.2,
+  "overall": 45.7
+}

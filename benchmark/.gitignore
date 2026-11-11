@@ -1,0 +1,5 @@
+# downloaded raw data (re-create with: python -I benchmark/fetch_data.py)
+data/
+# per-run workspaces and transcripts (large)
+__pycache__/
+runs/smoke

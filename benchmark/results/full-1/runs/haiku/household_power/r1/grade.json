@@ -1,0 +1,67 @@
+{
+  "task": "household_power",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 14.3,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Parses '?' as missing and dd/mm/yyyy dates; reports missing amount and longest gaps",
+        "pass": true,
+        "evidence": "na_values=['?'], format='%d/%m/%Y %H:%M:%S'; 25,979 missing minutes (1.25%), 71 runs; longest 17–22 Aug 2010 (5.0 d, 7226 min ≈ GT 120.4 h) and 25–28 Sep 2010 (3.6 d ≈ GT 87.3 h)."
+      },
+      {
+        "check": "Converts kW to kWh by /60; totals of right magnitude",
+        "pass": true,
+        "evidence": "kwh_min = kw/60; calendar years 2007 9,707 / 2008 9,418 / 2009 9,369 kWh, close to GT gap-adjusted 9,785 / 9,417 / 9,449; Aug 2008 bar ≈206 matching GT."
+      },
+      {
+        "check": "Handles partial/gap months before comparing",
+        "pass": true,
+        "evidence": "Daily coverage scaling, days <50% coverage excluded; partial months hatched in the monthly chart; trend uses same-period (1 Jan–26 Nov) totals and full calendar years only."
+      },
+      {
+        "check": "Annual seasonality (winter high, Aug lowest) AND daily profile with evening peak",
+        "pass": false,
+        "evidence": "Annual pattern is correct (Jan 35.1 kWh/day high, Aug 13.7 low), but there is no intraday or hourly profile anywhere. The question explicitly asked for daily seasonality, and the evening peak around 20h is never reported."
+      },
+      {
+        "check": "Dec 2010 forecast inside [759, 1392] with interval and method",
+        "pass": true,
+        "evidence": "Mean 1,046 kWh, 90% PI 878–1,196, from a log-daily regression (trend + Fourier + weekday) with 4,000 simulations, plus a backtest and a naive cross-check of 994."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "answer.md Method says data spans '1 Dec 2006 – 26 Nov 2010', but the first timestamp is 2006-12-16 17:24 (summary.json itself has this correct)"
+    ],
+    "summary": "This is a strong, well-validated run. The traps are all handled: '?' is parsed as missing, the dd/mm/yyyy dates are parsed with an explicit format, kWh is computed as kW/60, and gap and partial-month adjustment is done through coverage scaling and same-period comparisons. The reported gaps and annual totals match the reference closely. August 2008 is correctly identified as a real low-use period rather than a data gap, with appropriately cautious causal language.\n\nThe Dec 2010 forecast (1,046 kWh, 90% range 878–1,196) is inside the plausible range. It comes with a clear method, a rolling 1-month-ahead backtest (MAPE and coverage) and a naive cross-check.\n\nThe main gap is that the question explicitly asked for daily seasonality, and the agent never analysed the hourly profile, so the evening peak is missing. Check 4 fails for that reason.\n\nSmaller issues:\n- The method text gives the start date as 1 Dec 2006; it should be 16 Dec.\n- Chart titles are descriptive, not takeaway statements.\n- The trend conclusion is honestly reported as method-dependent and flat within about ±1% a year."
+  },
+  "judge_cost_usd": 0.2856462,
+  "accuracy_pct": 80.0,
+  "quality_pct": 85.0,
+  "overall": 82.0
+}

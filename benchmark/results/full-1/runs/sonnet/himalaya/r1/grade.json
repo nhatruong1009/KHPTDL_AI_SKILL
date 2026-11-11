@@ -1,0 +1,71 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": false,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Filters Everest correctly and uses members.csv (person-level) with an explicit denominator",
+        "pass": true,
+        "evidence": "analysis.py filters m.peak_id=='EVER' on members.csv; denominator stated as 'deaths per 1,000 people listed on Everest teams… one person on two expeditions counts twice'. However it silently drops 1921–1949 rows (m.year>=1950) and wrongly claims the data runs from 1950."
+      },
+      {
+        "check": "Death rate per decade for members vs hired consistent with reference",
+        "pass": true,
+        "evidence": "by_decade.csv matches GT exactly (e.g. 1970 hired 19/52 = 365/1000; 2010 members 43/4958 = 8.7; 2010 hired 40/3841 = 10.4). Era: members 19.8→10.4/1000, hired 157.3→10.7/1000 (GT incl. 1920s: 14.4%→1.07%; difference is due to the 1950 cutoff)."
+      },
+      {
+        "check": "Flags small samples in early decades and/or 2014–2015 spikes",
+        "pass": true,
+        "evidence": "'1970s… only 52 people and 19 deaths, so treat it as rough'; Wilson CIs shown; 2014 = 17 staff deaths, 2015 = 11 staff + 3 members (14 total, matching GT); rerun without 2014/15 gives staff 6.8/1000."
+      },
+      {
+        "check": "Shows commercial-era changes: more climbers, higher success, more oxygen, hired share up",
+        "pass": true,
+        "evidence": "Team entries went from 2,988 to 18,653; member summit rate 7%→52%; oxygen use 19%→62%. Expedition counts per decade and the rise in hired-staff share are never stated explicitly, only implied by the n's (267→6,368), so this is a partial pass."
+      },
+      {
+        "check": "story.md exists, plain language, one core message, honest caveats",
+        "pass": true,
+        "evidence": "Headline: 'Yes, a lot, but the biggest gains went to [staff]… and those gains have stalled.' Caveats cover observational data, the staff undercount (6,730 vs 12,741), small pre-1990 n and unrecorded deaths."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 5,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "'The data runs from 1950 to spring 2019' / 'records for 1950–2019': Everest data actually starts in 1921. The agent cut out 1921–1949 (including the 1920s, where 10 of 15 hired staff died) without saying so.",
+      "'21,813 team-member entries' is given as the 1950–2019 source count, but 21,813 includes the pre-1950 rows. The analysis actually used about 21,641 rows (2,988 + 18,653).",
+      "Pre-1990 hired rate of 157.3/1000 on n=267 is defensible only under the undisclosed 1950 cutoff. Over the full data it is 143.6/1000 on n=362."
+    ],
+    "summary": "This is a strong, well-structured analysis. The per-decade member and hired-staff rates match the reference exactly. Uncertainty is handled well: Wilson CIs, Fisher tests, an explicit caution about the 1970s staff figure (19/52), and the 2014/2015 disasters isolated with a rerun that excludes them. The story has one clear message (safer, staff gains largest, progress stalled since 2000) and covers success, oxygen and crowding, with good caveats, including a perceptive check that staff may be undercounted in members.csv. Its main flaw is silently dropping the 1921–1949 rows while claiming the data starts in 1950, and quoting the 21,813 total, which includes the dropped rows. Expedition counts and the hired-staff share are not shown explicitly. The chart is correct and has CIs, but its title is descriptive rather than a takeaway, and the 1970s spike squashes the post-1990 comparison that is the core of the story."
+  },
+  "judge_cost_usd": 0.2374397,
+  "accuracy_pct": 100.0,
+  "quality_pct": 79.2,
+  "overall": 91.7
+}

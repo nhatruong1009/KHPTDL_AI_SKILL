@@ -1,0 +1,212 @@
+[
+  {
+    "id": "retail_uk",
+    "topic": "E-commerce / retail",
+    "lang": "vi",
+    "story": true,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "question": "Đây là dữ liệu giao dịch 2009-2011 của một công ty bán quà tặng online ở Anh. Doanh thu thuần năm 2011 thay đổi bao nhiêu so với 2010 (hãy so sánh công bằng), phần thay đổi đó đến từ khách hàng mới hay khách hàng cũ, và thị trường nào kéo tăng/giảm nhiều nhất? Viết một data story ngắn (story.md) cho CEO để quyết định nên tập trung giữ chân khách cũ hay tìm khách mới.",
+    "traps": [
+      "two Excel sheets overlap on 2010-12-01..2010-12-09 (~22.5k duplicated rows) plus native exact duplicates",
+      "2011 data ends 2011-12-09 -> must compare like-for-like (Jan 1-Dec 9) or explicitly adjust",
+      "cancellation invoices start with 'C' (negative quantities) - must be netted or excluded consistently",
+      "non-product StockCodes (POST, M, AMAZONFEE, BANK CHARGES, ADJUST...) distort revenue",
+      "~20%+ rows have no Customer ID -> new/returning split only on identified customers, stated"
+    ],
+    "checks": [
+      "Deduplicates rows, in particular notices the two sheets overlap in early Dec 2010 (or otherwise avoids double counting it)",
+      "Recognises 2011 ends on 9 Dec and compares like-for-like periods (or explicitly corrects for the partial year); a naive full-2010 vs partial-2011 comparison without comment FAILS",
+      "Handles cancellations ('C' invoices / negative quantities) consistently in net revenue",
+      "Like-for-like growth figure is within +-3 percentage points of one of the reference variants in revenue_variants_GBP.growth_like_for_like_pct",
+      "Splits the change into new vs returning (existing) customers using Customer ID and states missing IDs are excluded from that split",
+      "Names the countries/markets with the largest increase/decrease consistent with top_country_changes_like_for_like (UK dominates revenue)",
+      "story.md exists with a single core message, context-tension-insight-action arc, and a recommendation framed as a suggestion for the CEO"
+    ]
+  },
+  {
+    "id": "student_perf",
+    "topic": "Education",
+    "lang": "vi",
+    "story": false,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "question": "Dùng cả hai file môn Toán và môn tiếng Bồ Đào Nha: mức độ uống rượu của học sinh (ngày thường và cuối tuần) có liên quan đến điểm cuối kỳ (G3) thấp hơn không? Hãy định lượng bằng effect size và mức ý nghĩa thống kê, xử lý đúng các học sinh xuất hiện ở cả hai file, và xử lý hợp lý các giá trị G3 đáng ngờ.",
+    "traps": [
+      "382 students are in both files (identified by 13 attributes per student-merge.R) - must not treat 1044 rows as 1044 independent students when pooling",
+      "G3 = 0 (38 math, 15 por) are almost certainly drop-outs / no-shows, not real scores",
+      "G1/G2 are quoted strings in the CSV; ';' separator",
+      "Dalc/Walc are ordinal 1-5 -> rank-based tests / Spearman",
+      "observational -> association only; confounders"
+    ],
+    "checks": [
+      "Uses ';' separator and both files; identifies the overlapping students (382 via the documented key columns, or an explicit equivalent) and analyses per course or deduplicates when pooling",
+      "Detects G3 = 0 cases and either excludes them or runs a sensitivity check, explaining why",
+      "Uses an appropriate test for ordinal data (Spearman / Mann-Whitney / Kruskal) and reports effect sizes, not only p-values",
+      "Conclusion consistent with reference: small negative association in both courses (|rho| roughly 0.1-0.2), clearest in Portuguese; Math association is weaker when G3=0 rows are kept and strengthens once they are excluded",
+      "No causal wording; mentions at least one plausible confounder"
+    ]
+  },
+  {
+    "id": "household_power",
+    "topic": "Energy / time series",
+    "lang": "vi",
+    "story": false,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "question": "Đây là dữ liệu điện của một hộ gia đình từ 12/2006 đến 11/2010. Mức tiêu thụ điện năng (kWh) đã thay đổi thế nào: xu hướng, tính mùa vụ theo ngày/tuần/năm, và các giai đoạn bất thường (khoảng trống dữ liệu, tuần bất thường)? Sau đó dự báo tổng điện năng tháng 12/2010 kèm khoảng bất định.",
+    "traps": [
+      "'?' marks missing values (~1.25%), including multi-day gaps",
+      "Date is dd/mm/yyyy, separate Time column",
+      "Global_active_power is minute-averaged kW -> kWh = sum/60 (not sum)",
+      "Dec 2006 and Nov 2010 are partial months; months with gaps need adjustment before comparing",
+      "~2M rows; August holiday dips"
+    ],
+    "checks": [
+      "Parses '?' as missing and dd/mm/yyyy dates correctly; reports the amount of missing data and the longest gaps",
+      "Converts minute kW to kWh correctly (divide by 60); totals are of the right magnitude (roughly 8,000-10,000 kWh per full year, see kwh_by_year_*)",
+      "Handles partial / gap months (excludes, flags or gap-adjusts) before comparing months or years",
+      "Describes annual seasonality correctly: winter high, summer low with August the lowest month; and a daily profile with evening peak",
+      "December 2010 forecast falls inside dec_2010_plausible_range_kwh and comes with an interval and a stated method"
+    ]
+  },
+  {
+    "id": "worldbank_health",
+    "topic": "Public health / development economics",
+    "lang": "vi",
+    "story": true,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "question": "Từ dữ liệu World Bank (tuổi thọ, chi tiêu y tế bình quân đầu người, GDP/người PPP): các quốc gia chi tiêu y tế nhiều hơn có tuổi thọ cao hơn không? Sau khi tính đến mức thu nhập, những quốc gia nào có tuổi thọ 'vượt kỳ vọng' hoặc 'dưới kỳ vọng' nhiều nhất, và Việt Nam đứng ở đâu? Viết data story ngắn (story.md) cho lãnh đạo Bộ Y tế.",
+    "traps": [
+      "4 metadata rows before the header in each API_*.csv",
+      "~45-50 aggregate rows (World, income groups, regions) - identified by empty Region in Metadata_Country - must be removed",
+      "wide year columns; health expenditure lags -> pick a recent year with full coverage of all three, or use latest available per country and say so",
+      "strong skew -> log scale for spending and GDP",
+      "real data anomaly: Central African Republic 2022 life expectancy outlier"
+    ],
+    "checks": [
+      "Skips the metadata header rows and removes regional/income aggregates using Metadata_Country (Region empty) or an equivalent explicit list",
+      "Chooses an explicit year (or latest-available rule) with roughly 180+ countries having all three indicators",
+      "Reports a strong positive association (Spearman about 0.8+, using log scale or rank) and notes it is association, confounded by income",
+      "Controls for income (e.g. regression of life expectancy on log health spending and log GDP, or residual vs GDP) and lists over- and under-performers broadly consistent with by_year[*] lists (allowing for year choice)",
+      "Vietnam is correctly placed as living longer than expected for its spending/income (positive residual, roughly +2 to +5 years)",
+      "story.md exists, aimed at Ministry of Health leaders: one core message, arc, suggestion-framed actions, caveats (association not causation, data quality outliers)"
+    ]
+  },
+  {
+    "id": "himalaya",
+    "topic": "Mountaineering / sports safety",
+    "lang": "vi",
+    "story": true,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "question": "Leo núi Everest có an toàn hơn theo thời gian không? So sánh tỉ lệ tử vong của thành viên đoàn thám hiểm với nhân viên được thuê (hired staff) qua từng thập kỷ, cho thấy điều gì đã thay đổi trong kỷ nguyên thương mại (khoảng từ 1990), và trình bày thành một data story ngắn (story.md) cho công chúng phổ thông.",
+    "traps": [
+      "Everest identified by peak_id EVER; members.csv is per person-expedition (join/aggregate choice)",
+      "denominator: deaths per climber-row, not per expedition; tiny n in early decades",
+      "hired staff early-decade rates based on small n (e.g. 1970s 19/52)",
+      "single-event spikes (2014 avalanche, 2015 earthquake)",
+      "NA in age/citizenship; died is boolean"
+    ],
+    "checks": [
+      "Filters Everest correctly and uses members.csv (person-level) with an explicit denominator",
+      "Death rate per decade for members vs hired staff consistent with by_decade (e.g. members ~2% pre-1990 -> ~1% after; hired ~14% pre-1990 -> ~1% after)",
+      "Flags small sample sizes in early decades and/or the 2014-2015 disaster spikes rather than over-reading them",
+      "Shows what changed in the commercial era: far more climbers/expeditions, higher success rate, more oxygen use, hired staff share up",
+      "story.md exists, plain-language for a general audience, one core message, honest caveats (association, survivorship/reporting)"
+    ]
+  },
+  {
+    "id": "wine_quality",
+    "topic": "Food & beverage (relevance gate)",
+    "lang": "vi",
+    "story": false,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance"
+    ],
+    "question": "Giống nho nào và mức giá nào cho ra rượu vang chất lượng cao nhất? Rượu vang Pháp có được chấm điểm cao hơn rượu vang Bồ Đào Nha không?",
+    "traps": [
+      "no grape variety, no price, no country column - winequality.names says these were omitted for privacy",
+      "all wines are Portuguese Vinho Verde, so France vs Portugal is impossible",
+      "temptation to answer from general wine knowledge"
+    ],
+    "checks": [
+      "States clearly that grape variety and price are not in the data (refuses those parts)",
+      "States that country comparison (France vs Portugal) is impossible because all samples are Portuguese Vinho Verde / no origin column",
+      "Does not answer from general knowledge as if it came from the data (no invented grape/price rankings)",
+      "Offers a related question the data CAN answer (e.g. physicochemical drivers such as alcohol; red vs white) - optionally answers it correctly (alcohol is the strongest correlate)",
+      "Stops early / stays cheap: does not run a long unnecessary analysis pipeline"
+    ]
+  },
+  {
+    "id": "bank_marketing",
+    "topic": "Banking / marketing prediction",
+    "lang": "vi",
+    "story": false,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "question": "Chúng tôi muốn ưu tiên những khách hàng mà tổng đài nên gọi trong chiến dịch tiền gửi có kỳ hạn sắp tới. Hãy xây dựng mô hình dự đoán, trước khi gọi điện, khách hàng có đăng ký hay không. Mô hình tốt hơn một baseline đơn giản bao nhiêu, và những yếu tố nào quan trọng nhất? Dùng phiên bản dữ liệu đầy đủ nhất được cung cấp.",
+    "traps": [
+      "'duration' is only known after the call - documented leakage, must be dropped",
+      "several files: bank-additional-full.csv (41,188 rows, 20 features) is the most complete",
+      "imbalanced target (~11.3% yes) -> accuracy misleading; use PR-AUC/ROC-AUC/lift",
+      "pdays=999 sentinel, 'unknown' categories, 12 exact duplicate rows",
+      "rows ordered by date; macro features -> time-ordered validation is more honest"
+    ],
+    "checks": [
+      "Uses bank-additional-full.csv",
+      "Drops 'duration' as leakage and says why; reported ROC-AUC is in the realistic no-duration range (about 0.75-0.82); ROC-AUC >= 0.90 means leakage and FAILS",
+      "Compares against a baseline (majority class / random / simple rule) using imbalance-appropriate metrics (PR-AUC, recall/precision at a cut-off, or lift)",
+      "Handles pdays=999 and 'unknown' explicitly (not as plain numbers / silently)",
+      "Top factors consistent with reference: macro indicators (nr.employed / euribor3m / emp.var.rate), previous outcome success / pdays, contact type, month",
+      "Frames factor importance as predictive, not causal"
+    ]
+  }
+]

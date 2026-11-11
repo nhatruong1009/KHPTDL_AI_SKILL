@@ -1,0 +1,70 @@
+{
+  "task": "student_perf",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file, xác định học sinh trùng và khử trùng khi gộp",
+        "pass": true,
+        "evidence": "match.py đọc sep=';' cả hai file, dùng đúng 13 khóa của student-merge.R; agent ghi nhận R-merge cho 382 dòng nhưng lập luận khóa không duy nhất nên ghép 1-1 thêm 12 thuộc tính, ra 370 cặp và 674 học sinh duy nhất (tham chiếu là 662). Đây là biến thể có thể bảo vệ được và đã được nêu rõ. Agent cũng phân tích riêng từng môn."
+      },
+      {
+        "check": "2. Phát hiện G3=0 và loại bỏ hoặc phân tích độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "Ghi nhận 38 dòng Toán và 15 dòng Văn (51 học sinh), tất cả có absences=0, nên coi là bỏ thi. Phân tích chính loại các dòng này, có thêm phân tích độ nhạy giữ G3=0 và kiểm định Fisher cho tỉ lệ G3=0 theo nhóm rượu (p=0,15–0,70)."
+      },
+      {
+        "check": "3. Kiểm định phù hợp dữ liệu thứ bậc, có effect size",
+        "pass": true,
+        "evidence": "Dùng Spearman ρ có CI bootstrap, Kruskal–Wallis ε², Hedges g có CI, hồi quy có kiểm soát (HC3). Ví dụ: Toán giữ 0, Dalc ρ=−0,1209, p=0,0162, khớp tham chiếu −0,121/0,0162."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu: âm nhỏ, rõ nhất ở Văn, Toán yếu khi giữ G3=0 và mạnh hơn khi loại",
+        "pass": true,
+        "evidence": "Văn: ρ≈−0,21/−0,17 (giữ 0) và −0,20/−0,17 (loại 0). Toán: giữ 0 ρ −0,12/−0,10, loại 0 ρ −0,15/−0,19, đều khớp tham chiếu. answer.md viết 'Môn Văn ổn định… Toán yếu hơn và phụ thuộc vào xử lý G3=0'."
+      },
+      {
+        "check": "5. Không dùng ngôn từ nhân quả, nêu yếu tố gây nhiễu",
+        "pass": true,
+        "evidence": "Viết 'quan hệ liên quan, không phải nhân quả'. Nêu các yếu tố gây nhiễu như bạn bè, động lực, hoàn cảnh gia đình, quan hệ ngược chiều, và có kiểm soát failures, studytime, goout, giới."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Số học sinh duy nhất là 674 (tham chiếu 662) và số học sinh trùng là 370 thay vì 382. Đây không phải số bịa: agent tự ghép 1-1 với lập luận khóa R không duy nhất và đã nêu rõ, nhưng lệch so với quy ước chuẩn.",
+      "'G2 thường bằng 0 hoặc rất thấp' với các dòng G3=0: chưa được kiểm chứng trong log, nên là nhận định chưa có số liệu đi kèm."
+    ],
+    "summary": "Bài làm chất lượng cao. Agent dùng đúng dấu phân cách ';' và cả hai file. Học sinh trùng được xử lý cẩn thận bằng ghép 1-1, ra 674 học sinh duy nhất. Con số này lệch so với 662 của tham chiếu nhưng có lập luận và được nêu rõ. Các dòng G3=0 (38 Toán, 15 Văn) được coi là bỏ thi, có phân tích độ nhạy và kiểm định Fisher. Các phương pháp phù hợp với dữ liệu thứ bậc (Spearman, Kruskal ε²), có Hedges g với CI và hồi quy có kiểm soát. Số liệu theo từng môn khớp chính xác với tham chiếu, ví dụ Toán Dalc giữ 0: ρ=−0,121, p=0,0162; Văn Dalc: −0,208. Kết luận đúng: liên quan âm nhỏ, rõ nhất ở môn Văn, môn Toán phụ thuộc vào cách xử lý G3=0. Không có ngôn từ nhân quả và có nêu yếu tố gây nhiễu. Câu trả lời bằng tiếng Việt, đưa đáp án trực tiếp ngay đầu. Điểm trừ nhỏ: cuối câu trả lời có ghi chú thừa về 'answer-qa'. Biểu đồ forest có tiêu đề nửa tiếng Anh ('Effect size…') và nhãn tiếng Việt không dấu. Biểu đồ đường ghi 'p = 0.000' và tiêu đề mang tính mô tả hơn là nêu kết luận. Biểu đồ đọc rõ và khớp với số liệu."
+  },
+  "judge_cost_usd": 0.2255154,
+  "accuracy_pct": 100.0,
+  "quality_pct": 90.0,
+  "overall": 96.0
+}

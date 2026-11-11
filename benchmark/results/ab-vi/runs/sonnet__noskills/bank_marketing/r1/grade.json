@@ -1,0 +1,72 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "model2.py đọc 'data/bank-additional/bank-additional-full.csv'; answer.md: '41.188 khách, 20 biến, tỷ lệ đăng ký 11,3%'."
+      },
+      {
+        "check": "Loại duration vì rò rỉ, ROC-AUC trong khoảng thực tế",
+        "pass": true,
+        "evidence": "base_drop = ['y','duration'], lý do 'chỉ biết sau khi gọi'; GB AUC 0,80, LR 0,79 (CV ngẫu nhiên), khớp tham chiếu 0,786–0,80; bản có duration 0,95 chỉ dùng để so sánh."
+      },
+      {
+        "check": "So với baseline bằng thước đo phù hợp mất cân bằng",
+        "pass": true,
+        "evidence": "Bảng có ngẫu nhiên/đa số (AUC 0,50, PR-AUC 0,11), quy tắc poutcome (0,60/0,23), chỉ-euribor (0,74/0,34), GB 0,80/0,47; lift top 10% 4,6, recall top 10% 46% (decile_gain_cv.csv: 0,513; 0,456)."
+      },
+      {
+        "check": "Xử lý pdays=999 và 'unknown' rõ ràng",
+        "pass": true,
+        "evidence": "pdays==999 → NaN + cờ prev_contacted; answer.md: '\"unknown\" được giữ làm một nhóm riêng'. 12 dòng trùng được nêu và chủ động giữ lại."
+      },
+      {
+        "check": "Yếu tố hàng đầu khớp tham chiếu",
+        "pass": true,
+        "evidence": "Permutation importance: nr.employed 0,043, month 0,035, contact 0,021, emp.var.rate, euribor3m, pdays; poutcome=success 65% được nêu."
+      },
+      {
+        "check": "Diễn giải tầm quan trọng là dự đoán, không nhân quả",
+        "pass": true,
+        "evidence": "Dùng 'mức giảm AUC khi xáo trộn biến', tỷ lệ theo nhóm được ghi 'Về mặt mô tả'; không khẳng định gọi tháng 3 sẽ gây ra đăng ký, dù không có câu từ chối nhân quả rõ ràng."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Agent dùng đúng tệp đầy đủ (41.188 dòng, 11,3%), loại duration vì rò rỉ và đạt AUC 0,80, PR-AUC 0,47 với CV ngẫu nhiên, khớp tham chiếu. Agent so với ba baseline (ngẫu nhiên, quy tắc poutcome, chỉ-euribor) bằng PR-AUC và lift; các con số lift 4,6, tỷ lệ 51% và recall 46% khớp với decile_gain_cv.csv. Agent xử lý pdays=999 bằng NaN cộng một cờ, giữ 'unknown' thành nhóm riêng và có nêu 12 dòng trùng. Điểm nổi bật là agent tự kiểm định theo trục thời gian: AUC còn 0,66 và thua baseline chỉ-euribor. Agent trung thực thừa nhận 0,80 là con số lạc quan và khuyên chạy thử có nhóm đối chứng. Các yếu tố quan trọng nhất khớp tham chiếu (vĩ mô, tháng, kênh liên hệ, pdays/poutcome). Câu trả lời bằng tiếng Việt, trả lời trực tiếp ngay từ đầu. Biểu đồ rõ ràng và khớp số liệu, nhưng tiêu đề chỉ mô tả, không nêu ý chính. Ngoài ra model_log.txt chỉ ghi lỗi của model.py nên không đối chiếu được log của model2.py."
+  },
+  "judge_cost_usd": 0.22464460000000003,
+  "accuracy_pct": 100.0,
+  "quality_pct": 95.0,
+  "overall": 98.0
+}

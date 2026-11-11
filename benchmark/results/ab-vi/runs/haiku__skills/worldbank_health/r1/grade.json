@@ -1,0 +1,73 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Bỏ dòng metadata và loại nhóm tổng hợp",
+        "pass": true,
+        "evidence": "analysis.py dùng pd.read_csv(skiprows=4) và giữ quốc gia có Region khác rỗng trong Metadata_Country; còn 184 nước năm 2023, khớp đáp án tham chiếu (184)."
+      },
+      {
+        "check": "Chọn năm rõ ràng với khoảng 180+ quốc gia đủ 3 chỉ số",
+        "pass": true,
+        "evidence": "Chọn năm 2023 (n=184) theo quy tắc 'năm gần nhất có ≥150 nước'; coverage_by_year cho 2021=186, 2022=185, 2024=22, khớp ground truth."
+      },
+      {
+        "check": "Liên hệ dương mạnh (Spearman ~0,8+), là liên hệ và bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "Spearman 0,842 và Pearson(ln HE) 0,829, khớp GT 0,842/0,829. Nêu rõ 'liên hệ, không phải nhân quả' và tương quan ln HE–ln GDP là 0,91."
+      },
+      {
+        "check": "Kiểm soát thu nhập; danh sách vượt/dưới kỳ vọng khớp tương đối với GT",
+        "pass": true,
+        "evidence": "Phần dư theo ln GDP + ln GDP². Nhóm vượt kỳ vọng: Jordan +6,9, Solomon +6,8, Lebanon +6,5, Sri Lanka, Malawi (GT 2023: Jordan, Lebanon, Solomon, Sri Lanka, Malawi). Nhóm dưới kỳ vọng: Nigeria −15,0, Nauru, Equatorial Guinea, Chad, Guyana, Lesotho, trùng gần hết danh sách GT."
+      },
+      {
+        "check": "Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "VN tuổi thọ 74,6, kỳ vọng 72,3, phần dư +2,3, hạng 49/184. Theo năm: 2021 +4,3, 2022 +2,2. GT: phần dư mô hình chỉ GDP năm 2023 là 1,94, mô hình đầy đủ là 2,73."
+      },
+      {
+        "check": "story.md cho lãnh đạo Bộ Y tế: một thông điệp, mạch truyện, hành động dạng gợi ý, lưu ý",
+        "pass": true,
+        "evidence": "Có thông điệp chính, mạch Bối cảnh → Điểm then chốt → Ai vượt/dưới → Việt Nam → Hàm ý (dạng 'Nên…') → Lưu ý (quan sát, không nhân quả; chất lượng số liệu; Nigeria cần kiểm chứng). Story không nhúng biểu đồ nào."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Xử lý đúng các bẫy dữ liệu: bỏ 4 dòng metadata, loại nhóm tổng hợp bằng Region rỗng, dùng thang log, chọn năm 2023 với n=184. Năm 2023 cũng tránh được giá trị ngoại lai của CAR năm 2022, dù bài không nhắc đến CAR. Mọi con số đều khớp run_log và ground truth: Spearman 0,842; R² 0,749 tăng lên 0,759; hệ số 1,077 × ln2 ≈ 0,75 năm, CI 0,10–1,53. Danh sách vượt/dưới kỳ vọng trùng phần lớn với GT. Việt Nam +2,3 năm, hạng 49/184, có kiểm tra độ nhạy 2021–2023. Bài trung thực về hạn chế: chi tiêu tính bằng USD chưa điều chỉnh PPP, đa cộng tuyến 0,91, Nigeria cần kiểm chứng, không khẳng định nhân quả. Câu trả lời, answer.md và story.md đều bằng tiếng Việt, trả lời thẳng câu hỏi trước. Điểm trừ: story.md không nhúng hay dẫn biểu đồ; tiêu đề chart4 không nêu kết luận; câu 'nhiều nước chi cao nhưng vẫn dưới kỳ vọng' chỉ dựa trên phần dư theo thu nhập nên bằng chứng còn lỏng; danh sách ASEAN dưới kỳ vọng trong story bỏ sót Myanmar và Lào."
+  },
+  "judge_cost_usd": 0.3700947,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

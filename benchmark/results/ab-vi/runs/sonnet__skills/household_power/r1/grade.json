@@ -1,0 +1,67 @@
+{
+  "task": "household_power",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Đọc '?' là thiếu, ngày dd/mm/yyyy; báo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "prep.py dùng na_values='?' và format '%d/%m/%Y %H:%M:%S'; báo 71 khoảng trống, 25.979 phút (1,25%), dài nhất ~5 ngày (17–22/8/2010), ~3,6 ngày (25/9/2010), ~2,6 ngày (28/4/2007), khớp đáp án 120,4h/87,3h/62h"
+      },
+      {
+        "check": "Quy đổi kWh = kW/60, tổng đúng độ lớn",
+        "pass": true,
+        "evidence": "kwh = Global_active_power/60; thang.csv: T1/2007 = 1150,2, T12/2007 = 1210,1, T8/2008 = 205,7 kWh, khớp đáp án (1150, 1210, 206)"
+      },
+      {
+        "check": "Xử lý tháng thiếu/tháng không trọn trước khi so sánh",
+        "pass": true,
+        "evidence": "Quy về kWh/ngày theo phút có dữ liệu, tổng tháng hiệu chỉnh (vd T8/2010 368→439,5; T1/2010 989,7→1064,3, khớp đáp án 440/1064); nêu rõ T12/2006 và T11/2010 không trọn tháng"
+      },
+      {
+        "check": "Mùa vụ năm: đông cao, hè thấp, T8 thấp nhất; ngày có đỉnh tối",
+        "pass": true,
+        "evidence": "Chỉ số mùa T1 = 1,37 (cao nhất), T8 = 0,63 (thấp nhất); đỉnh tối 20–21h (~1,9 kW), đỉnh sáng 7–8h; cuối tuần 29,6 so với ngày thường 24,8 kWh/ngày, khớp đáp án"
+      },
+      {
+        "check": "Dự báo T12/2010 nằm trong [759, 1392], có khoảng và phương pháp",
+        "pass": true,
+        "evidence": "Dự báo 1.052 kWh; KTC 80% 916–1.209, 95% 848–1.306; phương pháp là trung bình hình học T12 các năm 2007–2009, kiểm tra lùi trên 32 tháng (MAPE 8,3% so với 9,0% của seasonal naive)"
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm đạt chất lượng cao, đạt cả 5 tiêu chí. Dữ liệu được đọc và làm sạch đúng ('?' giữ là NaN, ngày dd/mm/yyyy, kWh = kW/60). Tổng tháng sau khi hiệu chỉnh khoảng trống khớp gần như tuyệt đối với đáp án tham chiếu. Phần mùa vụ theo năm, tuần và giờ đều đúng, và T8/2008 được nhận diện là giai đoạn bất thường lớn nhất. Các tuần bất thường được dò bằng robust z so với cùng kỳ các năm khác, và tuần thiếu dữ liệu được tách riêng. Dự báo 1.052 kWh nằm trong khoảng hợp lý, có KTC 80% và 95% lấy từ kiểm tra lùi và có so sánh với mô hình chuẩn. Phần hạn chế nêu thẳng thắn, không khẳng định quan hệ nhân quả. Câu trả lời đưa kết luận trước, có số liệu kèm đơn vị và viết bằng tiếng Việt. Biểu đồ rõ ràng và khớp số liệu, nhưng có một điểm trừ nhỏ: tiêu đề biểu đồ xu hướng ghi 'giảm nhẹ theo năm', trong khi văn bản kết luận xu hướng 'gần như đi ngang' (p = 0,35, không có ý nghĩa thống kê)."
+  },
+  "judge_cost_usd": 0.21294010000000002,
+  "accuracy_pct": 100.0,
+  "quality_pct": 95.0,
+  "overall": 98.0
+}

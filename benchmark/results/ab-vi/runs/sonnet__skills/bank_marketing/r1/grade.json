@@ -1,0 +1,72 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py đọc data/bank-additional/bank-additional-full.csv; answer.md nêu 41.188 dòng, 20 biến, và giải thích vì sao không dùng bank-full.csv (45.211 dòng, không có chỉ số vĩ mô)."
+      },
+      {
+        "check": "Loại 'duration' vì rò rỉ, nêu lý do; AUC trong khoảng thực tế",
+        "pass": true,
+        "evidence": "Loại duration vì 'chỉ biết sau khi gọi'. AUC hold-out ngẫu nhiên của GB-C là 0,814, Logistic-C là 0,806, đều khớp mức tham chiếu 0,786–0,80. Agent còn minh họa rò rỉ: thêm duration thì AUC theo thời gian lên 0,757. Agent cũng loại campaign như một kiểm tra độ nhạy."
+      },
+      {
+        "check": "So với baseline bằng thước đo phù hợp dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Bảng so sánh với gọi ngẫu nhiên và quy tắc poutcome=success, có PR-AUC (0,113 / 0,244 / 0,486), tỷ lệ thu hồi top 20% (20% / 34% / 66%), lift top 20% là 3,3 và decile 1 đạt 53% so với 11,3%."
+      },
+      {
+        "check": "Xử lý pdays=999 và 'unknown' một cách tường minh",
+        "pass": false,
+        "evidence": "pdays=999 được đổi thành NaN và thêm cờ pdays_contacted, đã nêu trong answer.md. Tuy nhiên các giá trị 'unknown' bị ngầm giữ làm một nhóm khi one-hot, không có chỗ nào phân tích hay nhắc tới. 12 dòng trùng được nêu nhưng giữ nguyên."
+      },
+      {
+        "check": "Các yếu tố hàng đầu khớp tham chiếu",
+        "pass": true,
+        "evidence": "Theo permutation importance của mô hình C: nr.employed 0,051, emp.var.rate 0,022, month 0,011, contact 0,011, euribor3m 0,007, poutcome và pdays. Phần đơn biến: poutcome=success 65,1%, cellular 14,7% so với telephone 5,2%."
+      },
+      {
+        "check": "Diễn giải tầm quan trọng là dự báo, không phải nhân quả",
+        "pass": true,
+        "evidence": "Có câu 'các yếu tố ở đây là liên quan, không chứng minh nhân quả' kèm ví dụ về kênh di động. Agent cũng cảnh báo các biến vĩ mô tương quan chặt nên không diễn giải riêng lẻ."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 5
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Agent dùng đúng tệp đầy đủ, loại duration (và cả campaign) với lý do rõ ràng. AUC ngẫu nhiên là 0,81 và PR-AUC 0,486, khớp mức tham chiếu không rò rỉ. Mô hình được so với hai baseline bằng PR-AUC, recall và lift. Agent còn kiểm tra theo thời gian (70/30 và rolling 4 khối) và thẳng thắn nói lợi thế co lại còn AUC khoảng 0,60–0,62, gần mức quy tắc đơn giản. Agent giải thích nguyên nhân bằng sự thay đổi chế độ dữ liệu (tỷ lệ đăng ký từ 3% lên 46%, euribor từ 4,9 xuống 0,8). Các yếu tố quan trọng (nr.employed, emp.var.rate, month, contact, poutcome/pdays) khớp tham chiếu và được diễn giải là liên quan, không phải nhân quả. Các số liệu nêu ra đều khớp CSV. Có ba điểm trừ. Thứ nhất, các giá trị 'unknown' bị xử lý ngầm, không được nhắc tới. Thứ hai, 12 dòng trùng được giữ nguyên. Thứ ba, ở phép chia thời gian 70/30, quy tắc poutcome thực ra nhỉnh hơn GB-C (AUC 0,63 so với 0,61; PR-AUC 0,42 so với 0,33) nhưng chỉ được mô tả là 'gần mức quy tắc'. AUC theo thời gian của agent thấp hơn tham chiếu (khoảng 0,70) do cách chia khác. Ba biểu đồ có tiêu đề nêu thông điệp, nhãn tiếng Việt rõ ràng và số liệu khớp bảng. Câu trả lời và answer.md đều viết bằng tiếng Việt."
+  },
+  "judge_cost_usd": 0.3312452,
+  "accuracy_pct": 83.3,
+  "quality_pct": 95.0,
+  "overall": 88.0
+}

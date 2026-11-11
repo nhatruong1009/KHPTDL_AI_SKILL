@@ -1,0 +1,70 @@
+{
+  "task": "household_power",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Đọc '?' là thiếu, ngày dd/mm/yyyy, báo cáo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "na_values='?', format='%d/%m/%Y %H:%M:%S'; báo 25.979 phút (1,25%), khoảng dài nhất 120 giờ (17/08/2010), 87 giờ (25/09/2010), 62 giờ (28/04/2007), 55 giờ (13/06/2009) — khớp số liệu tham chiếu."
+      },
+      {
+        "check": "2. Quy đổi kW theo phút sang kWh đúng, độ lớn hợp lý",
+        "pass": true,
+        "evidence": "kWh/ngày = 24 × kW trung bình (tương đương sum/60); tổng tháng 2007-01 = 1150, 2008-08 = 206, 2009-12 = 1015 — khớp số tham chiếu."
+      },
+      {
+        "check": "3. Xử lý tháng bị cắt/thiếu dữ liệu trước khi so sánh",
+        "pass": true,
+        "evidence": "Ước lượng theo trung bình ngày × số ngày, đánh dấu cột 'day_du', tô xám 12/2006 và 11/2010; so cùng kỳ T1–10; loại ngày phủ <50% (20 ngày); loại 8/2008, 8/2009 khỏi backtest."
+      },
+      {
+        "check": "4. Mùa vụ năm (đông cao, hè thấp, tháng 8 thấp nhất) và hồ sơ ngày có đỉnh buổi tối",
+        "pass": true,
+        "evidence": "Chỉ số T01 1,32, T08 0,47 (thấp nhất); đỉnh 20:00 (1,90 kW), đáy 04:00 (0,44 kW); cuối tuần 29,9/29,3 so với ngày thường 23,5–26 kWh/ngày."
+      },
+      {
+        "check": "5. Dự báo 12/2010 nằm trong [759, 1392] kèm khoảng và phương pháp",
+        "pass": true,
+        "evidence": "1.023 kWh, khoảng 90% 820–1.247 kWh, phương pháp YoY × tháng 12/2009 và khoảng từ phân vị sai số backtest 24 tháng (MAPE 10,7%)."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Tổng tháng 12/2006 ngoại suy 1.399 kWh trên biểu đồ tổng tháng (thực đo khoảng 697 kWh cho 16 ngày). Cột này có tô xám là tháng bị cắt nhưng vẫn dễ gây hiểu lầm.",
+      "Tuần kết thúc 31/12/2006 được gán là 'Tết dương lịch'. Đây là suy đoán nguyên nhân không có bằng chứng (lỗi nhỏ)."
+    ],
+    "summary": "Bài làm chất lượng cao, cả 5 mục kiểm tra đều đạt.\n\n- **Xử lý dữ liệu:** Đọc đúng '?' là giá trị thiếu và đúng định dạng ngày dd/mm/yyyy. Quy đổi kWh đúng (24 × kW trung bình, tương đương tổng/60). Tổng tháng khớp số tham chiếu, ví dụ 2007-12 là 1210 và 2008-08 là 206 kWh. Số phút thiếu (25.979, 1,25%) và các khoảng trống dài nhất (120, 87, 62, 55 giờ) đều chính xác.\n- **Phân tích:** Mùa vụ mô tả đúng: tháng 1 cao nhất, tháng 8 thấp nhất, đỉnh 20:00, đáy 04:00, cuối tuần cao hơn ngày thường. Bất thường tháng 8/2008 được phát hiện và giải thích hợp lý (công tơ phụ gần 0, chỉ còn tải nền). Xu hướng đánh giá bằng so sánh cùng kỳ tháng 1–10, tránh được nhiễu do tháng bị cắt.\n- **Dự báo:** 1.023 kWh với khoảng 90% là 820–1.247 kWh, nằm trong vùng hợp lý. Có kiểm thử ngược 24 tháng (MAPE 10,7%) và phân tích độ nhạy.\n- **Trình bày:** Viết bằng tiếng Việt, rõ ràng, nêu câu trả lời trước, có đủ đơn vị, giả định và hạn chế.\n\nĐiểm trừ nhỏ:\n- Biểu đồ tổng tháng hiển thị tháng 12/2006 ngoại suy khoảng 1.400 kWh, dù có tô xám là tháng bị cắt.\n- Gán tuần cuối 2006 cho 'Tết dương lịch' là suy đoán không có bằng chứng.\n- Tiêu đề biểu đồ chỉ mô tả, không nêu ý chính.\n- Phương pháp dự báo khá đơn giản: dựa trên một tháng 12 duy nhất."
+  },
+  "judge_cost_usd": 0.2866913,
+  "accuracy_pct": 100.0,
+  "quality_pct": 85.0,
+  "overall": 94.0
+}

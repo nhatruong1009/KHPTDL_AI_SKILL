@@ -1,0 +1,55 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "model_id": "claude-sonnet-5-5",
+  "rep": 1,
+  "wall_s": 307.0,
+  "duration_api_s": 68.9,
+  "cost_usd": 0.240578,
+  "num_turns": 13,
+  "input_tokens": 22,
+  "output_tokens": 9698,
+  "cache_read_tokens": 296900,
+  "cache_write_tokens": 28466,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 22,
+      "outputTokens": 9698,
+      "cacheReadInputTokens": 296900,
+      "cacheCreationInputTokens": 28466,
+      "webSearchRequests": 0,
+      "costUSD": 0.240578,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 655,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 28466,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "final_text": "The model ranks clients clearly better than the naive baseline, but less well on a later period than a standard cross-validation suggests. I'd plan on the later-period numbers.\n\nI used `bank-additional-full.csv`, the most complete version. It has 41,188 clients and includes economic indicators. I left out `duration` (call length, only known after the call) and `campaign` (it counts the current call), because neither is known before dialling.\n\n**How much better than the baseline**\n- **Later-period test:** I trained on the earliest 70% of calls and tested on the latest 30%. Logistic regression scored AUC 0.66, where AUC is how well the model ranks buyers above non-buyers (0.50 is a coin flip). The naive baseline scored 0.50.\n- **Top-scored 10% of clients:** they subscribed at 46.6%, against 24.6% for calling at random, which is 1.9 times better. The top 20% subscribed at 44.4%.\n- **Random cross-validation:** AUC was 0.80, but random splits mix time periods, so this overstates what you'd get on a future campaign.\n- **Why not accuracy:** only 11.3% of clients subscribe, so predicting \"no\" for everyone is 88.7% accurate but finds no buyers. I judged the model on ranking instead.\n\n**Which factors matter most**\n- **Strongest drivers:** the month of contact and days since the previous contact. Age, job, contact type and the previous campaign's outcome follow.\n- **Previous campaign success:** 65% subscribed, against 8.8% for clients not contacted before.\n- **Contact type:** cellular converts at 14.7%, landline at 5.2%.\n- **Job:** students (31%) and retirees (25%) convert far better than blue-collar workers (6.9%).\n- **Seasonality:** March, September, October and December convert at 44–51%, but those months have few calls. May had the most calls (13,769) and converted at 6.4%.\n\nThese are associations in observational data, not proof of cause.\n\n**Caveats**\n- **Drift:** the subscription rate was 5.6% in the training period and 24.6% in the test period, so the client mix changed a lot. Retrain on recent data and pilot the ranking on a small batch before relying on it.\n- **Use scores for ranking only:** the predicted probabilities are poorly calibrated, so don't read them as actual chances.\n- **Economic indicators:** they didn't help on the later period.\n- **Tuning:** the gradient boosting model wasn't tuned. Logistic regression did slightly better, so extra complexity wasn't clearly useful.\n\nEverything is in `outputs/term-deposit-targeting/`; start with `answer.md`.",
+  "outputs": [
+    "outputs/term-deposit-targeting/analysis.py",
+    "outputs/term-deposit-targeting/answer.md",
+    "outputs/term-deposit-targeting/conversion_by_factor.csv",
+    "outputs/term-deposit-targeting/decile_lift.csv",
+    "outputs/term-deposit-targeting/model_comparison_temporal.csv",
+    "outputs/term-deposit-targeting/model_summary.png",
+    "outputs/term-deposit-targeting/permutation_importance.csv"
+  ],
+  "tools": {
+    "Bash": 8,
+    "Write": 2,
+    "Read": 1,
+    "Monitor": 1
+  },
+  "skills_invoked": [],
+  "skill_md_reads": [],
+  "tool_errors": 4,
+  "total_tokens": 335086
+}

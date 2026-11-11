@@ -1,0 +1,77 @@
+tổng tử vong thành viên (expeditions): 186
+tổng tử vong thành viên (members.csv, died=True): 186
+tổng tử vong nhân viên (expeditions): 120
+tổng tử vong nhân viên (members.csv, hired=True): 120
+tổng thành viên (expeditions): 15281
+tổng nhân viên thuê (expeditions): 12741
+số dòng thành viên trong members.csv: 21813
+số dòng thành viên hired=False: 15083
+số dòng thành viên hired=True: 6730
+
+== Theo thập kỷ ==
+         chuyen_thám_hiểm  thanh_vien  tu_vong_thanh_vien  ti_le_tv_thanh_vien_%  nhan_vien_thue  tu_vong_nhan_vien  ti_le_tv_nhan_vien_%
+thap_ky                                                                                                                                  
+1920                    3          33                   3                   9.09              91                 10                 10.99
+1930                    5          43                   1                   2.33             149                  0                  0.00
+1940                    1           1                   0                   0.00               2                  0                  0.00
+1950                    9         107                   0                   0.00             139                  1                  0.72
+1960                   16         184                   4                   2.17             359                  2                  0.56
+1970                   29         613                  10                   1.63             778                 19                  2.44
+1980                  141        1980                  40                   2.02            1012                 20                  1.98
+1990                  331        2980                  43                   1.44            1800                 19                  1.06
+2000                  745        4360                  42                   0.96            3302                  9                  0.27
+2010                  869        4980                  43                   0.86            5109                 40                  0.78
+
+== Theo kỷ nguyên ==
+                    chuyen_thám_hiểm  thanh_vien  tu_vong_thanh_vien  ti_le_tv_thanh_vien_%  nhan_vien_thue  tu_vong_nhan_vien  ti_le_tv_nhan_vien_%
+ky_nguyen                                                                                                                                           
+Thương mại (1990+)              1945       12320                 128                   1.04           10211                 68                  0.67
+Trước 1990                       204        2961                  58                   1.96            2530                 52                  2.06
+
+== Kiểm định ==
+                                     ti_le_1  ti_le_2  ti_le_ratio_2_vs_1  p_value
+thanh_vien: trước 1990 vs 1990+       1.9588   1.0390              0.5304   0.0000
+nhan_vien: trước 1990 vs 1990+        2.0553   0.6659              0.3240   0.0000
+1990+: nhan_vien vs thanh_vien        1.0390   0.6659              0.6410   0.0027
+trước 1990: nhan_vien vs thanh_vien   1.9588   2.0553              1.0493   0.7991
+
+== Độ nhạy (bỏ dòng có 99) ==
+                    ti_le_tv_thanh_vien_%  ti_le_tv_nhan_vien_%
+era                                                            
+Thương mại (1990+)                  1.039                 0.666
+Trước 1990                          1.966                 2.329
+
+== Độ nhạy: bỏ 2014-2015 (kỷ nguyên 1990+) ==
+1990+ nhan_vien (bỏ 2014-2015) %: 0.4225
+1990+ thanh_vien (bỏ 2014-2015) %: 1.0967
+1990+ nhan_vien (bỏ 2014-2015) p vs thanh_vien: 0.0000
+
+== Năm có nhiều nhân viên thuê tử vong nhất ==
+      thanh_vien  tu_vong_tv  nhan_vien  tu_vong_nv
+year                                               
+2014         403           0        300          17
+2015         519           3        444          11
+1922          13           0         30           7
+1970          73           1         56           7
+1974          26           1         30           5
+1982         124           6         76           5
+1992         401           3        229           5
+1988         365           6        226           4
+
+== Nguyên nhân tử vong ==
+kieu_nguoi                   Nhân viên thuê  Thành viên
+death_cause                                            
+Avalanche                                56          21
+Fall                                     17          54
+Icefall collapse                         13           2
+Illness (non-AMS)                        10          15
+AMS                                       9          27
+Crevasse                                  7           4
+Other                                     3           2
+Falling rock / ice                        3           0
+Exhaustion                                1          25
+Exposure / frostbite                      1          25
+Disappearance (unexplained)               0           9
+Unknown                                   0           2
+
+Done. Outputs in /root/.cache/skill-bench/runs/ab-vi/haiku__skills/himalaya/r1/workspace/outputs/everest-safety

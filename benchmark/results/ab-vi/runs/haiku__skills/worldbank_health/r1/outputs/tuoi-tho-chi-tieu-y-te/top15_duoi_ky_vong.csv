@@ -1,0 +1,16 @@
+Country Name,Country Code,Region,IncomeGroup,life_exp,expected_le_income,gap_vs_income,health_exp_pc,gdp_pc_ppp
+Nigeria,NGA,Sub-Saharan Africa,Lower middle income,54.46,69.48,-15.01,66.82,8711.69
+Nauru,NRU,East Asia & Pacific,High income,62.11,71.61,-9.5,2292.37,13171.96
+Guyana,GUY,Latin America & Caribbean,High income,70.18,79.62,-9.44,505.03,54774.15
+Equatorial Guinea,GNQ,Sub-Saharan Africa,Upper middle income,63.71,72.97,-9.26,233.68,16997.0
+Chad,TCD,Sub-Saharan Africa,Low income,55.07,63.89,-8.82,47.44,2703.07
+Brunei Darussalam,BRN,East Asia & Pacific,High income,75.33,82.3,-6.98,733.01,85102.69
+Lesotho,LSO,Sub-Saharan Africa,Lower middle income,57.38,64.18,-6.8,122.64,2879.59
+Eswatini,SWZ,Sub-Saharan Africa,Lower middle income,64.12,70.81,-6.69,296.05,11309.2
+Cote d'Ivoire,CIV,Sub-Saharan Africa,Lower middle income,61.94,68.55,-6.61,87.68,7243.15
+South Africa,ZAF,Sub-Saharan Africa,Upper middle income,66.14,72.37,-6.23,536.59,15212.26
+Gabon,GAB,Sub-Saharan Africa,Upper middle income,68.34,74.06,-5.72,252.98,20772.77
+Guinea,GIN,Sub-Saharan Africa,Lower middle income,60.74,66.07,-5.33,59.33,4337.32
+Angola,AGO,Sub-Saharan Africa,Lower middle income,64.62,69.94,-5.33,76.07,9549.79
+Russian Federation,RUS,Europe & Central Asia,High income,73.25,78.36,-5.11,1003.33,44298.68
+Benin,BEN,Sub-Saharan Africa,Lower middle income,60.77,65.84,-5.07,46.53,4133.37

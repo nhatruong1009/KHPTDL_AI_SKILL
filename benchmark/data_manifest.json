@@ -1,0 +1,151 @@
+{
+  "retail_uk": {
+    "task": "retail_uk",
+    "topic": "E-commerce / retail",
+    "origin": "UCI #502 Online Retail II",
+    "downloads": [
+      {
+        "url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+        "bytes": 45622418,
+        "sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+        "files": [
+          "online_retail_II.xlsx"
+        ]
+      }
+    ]
+  },
+  "student_perf": {
+    "task": "student_perf",
+    "topic": "Education",
+    "origin": "UCI #320 Student Performance (Cortez & Silva, 2008)",
+    "downloads": [
+      {
+        "url": "https://archive.ics.uci.edu/static/public/320/student+performance.zip",
+        "bytes": 40735,
+        "sha256": "82ae9d66437b9808df42e8c89d2bb179c46e9cfbcf06f38abc1d20b3b747e177",
+        "files": [
+          "student-mat.csv",
+          "student-por.csv",
+          "student-merge.R",
+          "student.txt"
+        ]
+      }
+    ]
+  },
+  "household_power": {
+    "task": "household_power",
+    "topic": "Energy / time series",
+    "origin": "UCI #235 Individual Household Electric Power Consumption",
+    "downloads": [
+      {
+        "url": "https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip",
+        "bytes": 20640916,
+        "sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+        "files": [
+          "household_power_consumption.txt"
+        ]
+      }
+    ]
+  },
+  "worldbank_health": {
+    "task": "worldbank_health",
+    "topic": "Public health / development economics",
+    "origin": "World Bank WDI: SP.DYN.LE00.IN, SH.XPD.CHEX.PC.CD, NY.GDP.PCAP.PP.CD",
+    "downloads": [
+      {
+        "url": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=csv",
+        "bytes": 91365,
+        "sha256": "30d2b453b07c90c602f4424aa77e5af502e18a36ee3b84b8b3f51af72efe0277",
+        "files": [
+          "Metadata_Indicator_API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv",
+          "API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv",
+          "Metadata_Country_API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv"
+        ]
+      },
+      {
+        "url": "https://api.worldbank.org/v2/en/indicator/SH.XPD.CHEX.PC.CD?downloadformat=csv",
+        "bytes": 57102,
+        "sha256": "99e582a91338a32bc5fa3574ba859cbd351c757677a706d1645d005525ebe53d",
+        "files": [
+          "Metadata_Indicator_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv",
+          "API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv",
+          "Metadata_Country_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv"
+        ]
+      },
+      {
+        "url": "https://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.PP.CD?downloadformat=csv",
+        "bytes": 95109,
+        "sha256": "c7f9101196b72ca1a93b367a93f4b92ab70434685f8036e946268f3eab486822",
+        "files": [
+          "Metadata_Indicator_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv",
+          "API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv",
+          "Metadata_Country_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv"
+        ]
+      }
+    ]
+  },
+  "himalaya": {
+    "task": "himalaya",
+    "topic": "Mountaineering / sports & safety",
+    "origin": "TidyTuesday 2020-09-22 (The Himalayan Database)",
+    "downloads": [
+      {
+        "url": "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-09-22/expeditions.csv",
+        "bytes": 1372293,
+        "sha256": "659707e69944c8f1f0687135cc9c99778b9b13a75e35e9ba6123364aab35ef78"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-09-22/members.csv",
+        "bytes": 9342729,
+        "sha256": "733b25c4bc7ea865e6bd12cd5dc51df57fb8bfbfa4348650c62262680589a0c1"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-09-22/peaks.csv",
+        "bytes": 29251,
+        "sha256": "8515d9d239647b1912846ddfe1ce61e4901920c621004a40d0d7eb17be5bb890"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-09-22/readme.md",
+        "bytes": 13941,
+        "sha256": "a11ac97b955a3cc6cc348bdddbb1fd512519f0df74425c0e94b74c8b96f61716"
+      }
+    ]
+  },
+  "wine_quality": {
+    "task": "wine_quality",
+    "topic": "Food & beverage (relevance gate)",
+    "origin": "UCI #186 Wine Quality (Cortez et al., 2009)",
+    "downloads": [
+      {
+        "url": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+        "bytes": 91353,
+        "sha256": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+        "files": [
+          "winequality-red.csv",
+          "winequality-white.csv",
+          "winequality.names"
+        ]
+      }
+    ]
+  },
+  "bank_marketing": {
+    "task": "bank_marketing",
+    "topic": "Banking / marketing prediction",
+    "origin": "UCI #222 Bank Marketing (Moro et al., 2014)",
+    "downloads": [
+      {
+        "url": "https://archive.ics.uci.edu/static/public/222/bank+marketing.zip",
+        "bytes": 1023843,
+        "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4",
+        "files": [
+          "bank-full.csv",
+          "bank-names.txt",
+          "bank.csv",
+          "bank-additional/bank-additional-full.csv",
+          "bank-additional/bank-additional-names.txt",
+          "bank-additional/bank-additional.csv"
+        ]
+      }
+    ]
+  }
+}

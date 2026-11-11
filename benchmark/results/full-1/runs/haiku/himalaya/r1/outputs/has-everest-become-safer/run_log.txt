@@ -1,0 +1,82 @@
+Everest expeditions: 2149 (1921-2019)
+Everest member rows: 21813
+
+Decade table:
+  decade  expeditions  members  member_deaths  hired_staff  hired_staff_deaths  member_death_rate_pct  hired_death_rate_pct  hired_per_member  small_sample_flag
+   1920            3       33              3           91                  10                   9.09                 10.99              2.76               True
+   1930            5       43              1          149                   0                   2.33                  0.00              3.47               True
+   1940            1        1              0            2                   0                   0.00                  0.00              2.00               True
+   1950            9      107              0          139                   1                   0.00                  0.72              1.30              False
+   1960           16      184              4          359                   2                   2.17                  0.56              1.95              False
+   1970           29      613             10          778                  19                   1.63                  2.44              1.27              False
+   1980          141     1980             40         1012                  20                   2.02                  1.98              0.51              False
+   1990          331     2980             43         1800                  19                   1.44                  1.06              0.60              False
+   2000          745     4360             42         3302                   9                   0.96                  0.27              0.76              False
+   2010          869     4980             43         5109                  40                   0.86                  0.78              1.03              False
+
+Era table:
+                        era              group  deaths  people  death_rate_pct  ci_low_pct  ci_high_pct
+    Commercial (1990-2019) Expedition members     128   12320           1.039       0.875        1.234
+    Commercial (1990-2019)        Hired staff      68   10211           0.666       0.526        0.843
+Pre-commercial (1921-1989) Expedition members      58    2961           1.959       1.518        2.524
+Pre-commercial (1921-1989)        Hired staff      52    2530           2.055       1.571        2.685
+
+Era tests (person-level chi-square; ignores expedition clustering):
+              group  rate_ratio_commercial_vs_pre      chi2      p_value
+Expedition members                      0.530408 16.798723 4.156127e-05
+       Hired staff                      0.324010 41.953101 9.348902e-11
+
+Sensitivity:
+                      sample              group  deaths  people  death_rate_pct
+      Commercial, all years        Hired staff      68   10211           0.666
+      Commercial, all years Expedition members     128   12320           1.039
+Commercial, excl. 2014-2015        Hired staff      40    9467           0.423
+Commercial, excl. 2014-2015 Expedition members     125   11398           1.097
+      1990s excl. 2014-2015        Hired staff      19    1800           1.056
+      1990s excl. 2014-2015 Expedition members      43    2980           1.443
+      2000s excl. 2014-2015        Hired staff       9    3302           0.273
+      2000s excl. 2014-2015 Expedition members      42    4360           0.963
+      2010s excl. 2014-2015        Hired staff      12    4365           0.275
+      2010s excl. 2014-2015 Expedition members      40    4058           0.986
+
+Top years by hired-staff deaths:
+       hired_staff_deaths  member_deaths  hired_staff  members
+year                                                         
+2014                  17              0          300      403
+2015                  11              3          444      519
+1922                   7              0           30       13
+1970                   7              1           56       73
+1974                   5              1           30       26
+1982                   5              6           76      124
+1992                   5              3          229      401
+1988                   4              6          226      365
+
+Member profile by era:
+                        era  member_rows  oxygen_share_pct  summit_share_pct  deaths_per_100_summits  median_age  female_share_pct
+    Commercial (1990-2019)        12285             52.90             39.94                    2.61        39.0             12.93
+Pre-commercial (1921-1989)         2798             19.98              7.83                   26.48        32.0              5.93
+
+Death causes by era (member table; counts and share of each era's deaths):
+ era                          Commercial (1990-2019)_deaths  Pre-commercial (1921-1989)_deaths  Commercial (1990-2019)_share_pct  Pre-commercial (1921-1989)_share_pct
+death_cause                                                                                                                                                          
+AMS                                                     30                                  6                              15.3                                   5.5
+Avalanche                                               43                                 34                              21.9                                  30.9
+Crevasse                                                 8                                  3                               4.1                                   2.7
+Disappearance (unexplained)                              6                                  3                               3.1                                   2.7
+Exhaustion                                              24                                  2                              12.2                                   1.8
+Exposure / frostbite                                    17                                  9                               8.7                                   8.2
+Fall                                                    39                                 32                              19.9                                  29.1
+Falling rock / ice                                       1                                  2                               0.5                                   1.8
+Icefall collapse                                         3                                 12                               1.5                                  10.9
+Illness (non-AMS)                                       20                                  5                              10.2                                   4.5
+Other                                                    3                                  2                               1.5                                   1.8
+Unknown                                                  2                                  0                               1.0                                   0.0
+Death totals (member table): {'Commercial (1990-2019)': 196, 'Pre-commercial (1921-1989)': 110}
+
+Expedition profile by era:
+                             expeditions  mean_members  mean_hired  oxygen_expedition_share_pct  agency_named_share_pct
+era                                                                                                                   
+Commercial (1990-2019)             1945          6.33        5.25                        76.45                   97.07
+Pre-commercial (1921-1989)          204         14.51       12.40                        62.75                   26.47
+
+Done. Outputs written to /root/.cache/skill-bench/runs/full-1/haiku/himalaya/r1/workspace/outputs/has-everest-become-safer

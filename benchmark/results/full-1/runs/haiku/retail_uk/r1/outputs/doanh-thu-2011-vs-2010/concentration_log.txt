@@ -1,0 +1,36 @@
+New customers: 1536 revenue 2011 = 1421615.55
+  top  1 new customers share of new revenue: 4.0%
+  top  5 new customers share of new revenue: 10.6%
+  top 10 new customers share of new revenue: 13.9%
+  top 20 new customers share of new revenue: 18.6%
+  top 50 new customers share of new revenue: 27.6%
+Churned customers: 1557 2010 revenue = 1057718.4
+  top  1 churned customers share of churned revenue: 5.2%
+  top  5 churned customers share of churned revenue: 15.5%
+  top 10 churned customers share of churned revenue: 20.2%
+  top 20 churned customers share of churned revenue: 24.8%
+
+Active identified customers 2010 window: 4199 | retained into 2011: 2642 (62.9%) | churned: 1557 (37.1%)
+Avg revenue per retained customer: 2010 = 2520, 2011 = 2374 (-5.8%)
+Avg 2011 revenue per new customer = 926 (n=1536)
+Avg 2010 revenue per churned customer = 679 (n=1557)
+
+Delta by market x segment:
+ segment         Khác (chỉ hoàn trả)  Khách cũ - ngừng mua 2011  Khách cũ - quay lại 2011  Khách cũ - tiếp tục mua  Khách mới (lần đầu mua 2011)  Không rõ mã khách
+market                                                                                                                                                            
+Ngoài UK                     1082.0                  -135098.0                   24801.0                 110110.0                      220853.0            -7133.0
+United Kingdom              59131.0                  -932466.0                   17019.0                -495991.0                     1201993.0            91445.0
+
+Delta by top market x segment:
+ segment      Khác (chỉ hoàn trả)  Khách cũ - ngừng mua 2011  Khách cũ - quay lại 2011  Khách cũ - tiếp tục mua  Khách mới (lần đầu mua 2011)  Không rõ mã khách
+Country                                                                                                                                                        
+Australia                    0.0                    -2567.0                       0.0                 108637.0                           0.0                0.0
+Denmark                      0.0                   -30035.0                       0.0                   -425.0                        2358.0                0.0
+EIRE                         0.0                     -309.0                       0.0                 -68551.0                           0.0           -10285.0
+France                       0.0                    -7142.0                       0.0                  30056.0                       40045.0             -305.0
+Germany                      0.0                    -9106.0                     974.0                 -28717.0                       57426.0                0.0
+Japan                        0.0                     -754.0                   17433.0                   -979.0                        3291.0                0.0
+Netherlands                 18.0                   -12531.0                       0.0                  39733.0                           0.0                0.0
+Norway                       0.0                     3803.0                       0.0                   3737.0                       20242.0                0.0
+Spain                        0.0                    -5355.0                       0.0                  13145.0                       15989.0                0.0
+Sweden                       0.0                   -29856.0                       0.0                  11751.0                        1468.0             -354.0

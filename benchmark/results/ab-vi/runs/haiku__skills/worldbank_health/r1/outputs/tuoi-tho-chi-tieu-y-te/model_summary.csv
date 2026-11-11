@@ -1,0 +1,4 @@
+mo_hinh,R2,he_coef_ln,n,ci95_he_low,ci95_he_high
+(1) Chỉ chi tiêu y tế (ln),0.688,3.6141,184,,
+"(2) Chỉ thu nhập (ln GDP, ln GDP²)",0.7487,,184,,
+(3) Thu nhập + chi tiêu (ln),0.759,1.0767,184,0.1463,2.2085

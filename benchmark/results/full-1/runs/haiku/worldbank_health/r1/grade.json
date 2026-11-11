@@ -1,0 +1,72 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": false,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Skips metadata rows and removes aggregates via Metadata_Country Region",
+        "pass": true,
+        "evidence": "analysis.py: pd.read_csv(path, skiprows=4); country_codes = meta.index[meta['Region'].notna()]; n=186 for 2019 matches the ground-truth count of 186."
+      },
+      {
+        "check": "2. Explicit year with ~180+ countries having all three indicators",
+        "pass": true,
+        "evidence": "Primary year 2019 with n=186 (ground truth for 2018–2021 is 186). Robustness checks use 2010 (n=184) and 2023 (n=184; ground truth 184)."
+      },
+      {
+        "check": "3. Strong positive association (~0.8+) on log/rank scale, noted as confounded by income",
+        "pass": true,
+        "evidence": "Log shows Pearson r(logHX, LE)=0.806 and Spearman 0.844. Story reports r=0.81 and says 'phần lớn mối liên hệ này đến từ mức thu nhập'. Its limitations section says 'Quan sát, không phải nhân quả'."
+      },
+      {
+        "check": "4. Controls for income and lists over/under-performers consistent with the reference",
+        "pass": true,
+        "evidence": "Uses a cubic log-GDP benchmark plus OLS LE~logGDP+logHX (b_logHX=0.84, p=0.081, R2 0.726). Over-performers: Solomon +7.5, West Bank & Gaza +7.5, Syria +6.4, Jordan, Vanuatu, Cabo Verde. Under-performers: CAR −24.3, Nigeria −16.2, Eq. Guinea, Eswatini, Nauru, Chad. These overlap heavily with the reference lists for 2021 and 2022."
+      },
+      {
+        "check": "5. Vietnam has a positive residual of about +2 to +5 years",
+        "pass": true,
+        "evidence": "VNM 2019: LE 74.21 vs expected 71.36, gap +2.85, rank 48/186. 2023 gap is +2.26 (reference GDP-only residual is +1.94). Both are consistent."
+      },
+      {
+        "check": "6. story.md for MoH leaders: core message, arc, suggestion-framed actions, caveats",
+        "pass": true,
+        "evidence": "Vietnamese story with a 'Thông điệp chính' section and an arc of association → income explains most → over/under list → Vietnam's position. Includes 'Gợi ý hành động' and a 'Hạn chế' section covering causation, CAR 31.5 and Nigeria 53.0 as values to verify, and current-USD spending."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "This is a strong run. Headers and aggregates are handled correctly via the Region field, giving 186 countries for 2019. The run uses log scales and reports a raw association of r=0.81 (Spearman 0.84). It controls for income in two ways: residuals from a cubic log-GDP benchmark and OLS with both logs, with bootstrap CIs and a check across 2010 and 2023. It is candid that the income-adjusted spending effect is weak in 2019 (p=0.08) but significant in other years. The over/under-performer lists match the reference well. Vietnam is placed correctly at +2.85 years, and the story shows its gap narrowing from +7.2 (2010) to +2.3 (2023). Every number in the story traces to analysis_log.txt.\n\nMinor gaps:\n- The narrowing gap is attributed somewhat causally to 'thu nhập tăng nhanh và chi tiêu chưa theo kịp'.\n- The peer comparison uses Vietnam's current income group, not its 2019 one. This is stated in the final reply but only lightly in the story.\n- Charts are labelled in English for a Vietnamese ministry audience. Chart 3's title is descriptive rather than a takeaway, and the Vietnam label in chart 1 is slightly ambiguous.\n- The CAR outlier is flagged in the story but not handled with a sensitivity check (e.g. rerunning without it)."
+  },
+  "judge_cost_usd": 0.34614,
+  "accuracy_pct": 100.0,
+  "quality_pct": 79.2,
+  "overall": 91.7
+}

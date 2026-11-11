@@ -1,0 +1,122 @@
+Year 2023: 217 economies (non-aggregate), complete cases 184
+Dropped (missing any var): ['American Samoa', 'Aruba', 'Bermuda', 'British Virgin Islands', 'Cayman Islands', 'Channel Islands', 'Cuba', 'Curacao', 'Eritrea', 'Faroe Islands', 'French Polynesia', 'Gibraltar', 'Greenland', 'Guam', 'Hong Kong SAR, China', 'Isle of Man', "Korea, Dem. People's Rep.", 'Kosovo', 'Liechtenstein', 'Macao SAR, China', 'Monaco', 'New Caledonia', 'Northern Mariana Islands', 'Puerto Rico (US)', 'Sint Maarten (Dutch part)', 'South Sudan', 'St. Martin (French part)', 'Syrian Arab Republic', 'Turks and Caicos Islands', 'Ukraine', 'Venezuela, RB', 'Virgin Islands (U.S.)', 'Yemen, Rep.']
+Pearson r(ln health, LE)=0.829 (p=6.5e-48); Spearman=0.842; r(ln GDP, LE)=0.864; r(ln health, ln GDP)=0.906
+LE~lnHealth R2=0.688 {'const': 51.082, 'lh': 3.614} p= {'const': 2e-100, 'lh': 6.5e-48}
+LE~lnGDP R2=0.746 {'const': 21.681, 'lg': 5.299} p= {'const': 3.6e-18, 'lg': 4.2e-56}
+LE~lnHealth+lnGDP R2=0.758 {'const': 28.821, 'lh': 1.135, 'lg': 3.85} p= {'const': 4.5e-16, 'lh': 0.0029, 'lg': 1.1e-11}
+10pct more health spending -> LE +0.34 yrs (unadjusted); +0.11 yrs (adj. income)
+Doubling health spending -> +2.5 yrs unadjusted; +0.8 adj.
+Partial r(health, LE | GDP)=0.219
+          income_group   n  r_lnhealth_le  median_le  median_health_usd
+0          High income  62           0.57      81.43            2536.30
+1           Low income  20          -0.03      63.62              38.51
+2  Lower middle income  46           0.39      67.52              86.42
+3  Upper middle income  56           0.20      74.01             491.08
+resid SD=3.58 yrs
+TOP 10 over-performers
+         Country Name  lifeexp  pred_le  resid    z  health      gdp          IncomeGroup
+171  Solomon Islands     70.5     63.3    7.2  2.0   111.4   2599.0  Lower middle income
+97            Jordan     77.8     71.2    6.6  1.8   342.1  11450.6  Upper middle income
+108          Lebanon     77.8     71.7    6.1  1.7   260.8  12585.2  Lower middle income
+137           Malawi     67.4     61.5    5.9  1.6    41.3   1832.0           Low income
+124         Maldives     81.0     75.3    5.7  1.6  1159.0  24806.6  Upper middle income
+210          Vanuatu     71.5     65.9    5.6  1.6   143.4   4201.8  Lower middle income
+43        Cabo Verde     76.1     70.6    5.4  1.5   290.1  10250.6  Upper middle income
+143        Nicaragua     74.9     69.5    5.4  1.5   216.6   8326.8  Lower middle income
+113        Sri Lanka     77.5     72.5    5.0  1.4   134.2  14512.1  Upper middle income
+191       Tajikistan     71.8     66.8    5.0  1.4    85.1   4967.7  Lower middle income
+BOTTOM 10 under-performers
+           Country Name  lifeexp  pred_le  resid    z  health      gdp          IncomeGroup
+28   Brunei Darussalam     75.3     81.8   -6.5 -1.8   733.0  85102.7          High income
+114            Lesotho     57.4     63.9   -6.5 -1.8   122.6   2879.6  Lower middle income
+214       South Africa     66.1     72.7   -6.6 -1.8   536.6  15212.3  Upper middle income
+37       Cote d'Ivoire     61.9     68.8   -6.8 -1.9    87.7   7243.1  Lower middle income
+183           Eswatini     64.1     71.1   -7.0 -2.0   296.0  11309.2  Lower middle income
+188               Chad     55.1     63.6   -8.5 -2.4    47.4   2703.1           Low income
+81              Guyana     70.2     79.5   -9.3 -2.6   505.0  54774.1          High income
+75   Equatorial Guinea     63.7     73.3   -9.6 -2.7   233.7  16997.0  Upper middle income
+147             Naoero     62.1     71.9   -9.8 -2.7  2292.4  13172.0          High income
+142            Nigeria     54.5     69.8  -15.3 -4.3    66.8   8711.7  Lower middle income
+Rank corr of residuals 2023 vs 2019: 0.94, vs 2022: 0.94, vs quadratic: 0.99
+Robustness for top/bottom
+                    2019  2022  2023  quad  inc+health  rank2023
+Country Name                                                   
+Brunei Darussalam  -7.3  -8.7  -6.5  -7.0        -4.7     175.0
+Cabo Verde          5.6   6.3   5.4   5.8         5.2       7.0
+Chad               -9.0  -8.0  -8.5  -8.8        -8.6     180.0
+Cote d'Ivoire      -6.8  -6.2  -6.8  -6.6        -6.2     178.0
+Equatorial Guinea -11.4  -9.9  -9.6  -9.3        -8.8     182.0
+Eswatini          -10.4  -7.3  -7.0  -6.7        -7.1     179.0
+Guyana             -3.3  -7.7  -9.3  -9.4        -7.7     181.0
+Jordan              6.0   6.7   6.6   6.9         6.4       2.0
+Lebanon             2.9   6.9   6.1   6.4         6.3       3.0
+Lesotho            -7.3  -6.0  -6.5  -6.8        -7.6     176.0
+Malawi              5.9   5.7   5.9   5.2         5.4       4.0
+Maldives            4.0   6.2   5.7   6.0         5.2       5.0
+Naoero             -9.6  -9.4  -9.8  -9.5       -12.0     183.0
+Nicaragua           6.2   5.9   5.4   5.7         5.3       8.0
+Nigeria           -16.0 -14.8 -15.3 -15.0       -14.1     184.0
+Solomon Islands     7.6   8.2   7.2   6.8         6.1       1.0
+South Africa       -6.4  -6.7  -6.6  -6.2        -6.9     177.0
+Sri Lanka           3.9   5.4   5.0   5.4         6.2       9.0
+Tajikistan          6.6   6.1   5.0   5.1         5.2      10.0
+Vanuatu             6.0   6.6   5.6   5.6         4.9       6.0
+Viet Nam            2.9   2.7   1.9   2.3         2.7      56.0
+VIETNAM {'lifeexp': 74.588, 'pred_le': 72.64766329824074, 'resid': 1.94033670175925, 'z': 0.5419560727860485, 'health': 197.19210815, 'gdp': 15033.899969483, 'rank_resid': 56} of 184
+Vietnam predicted by health spend alone: 70.2; by income+health: 71.9
+Peers GDP within -25%/+33%: 31 Vietnam resid rank among peers incl. itself: 9 / 32
+                       Country Name  lifeexp  resid  health      gdp
+97                           Jordan     77.8    6.6   342.1  11450.6
+108                         Lebanon     77.8    6.1   260.8  12585.2
+113                       Sri Lanka     77.5    5.0   134.2  14512.1
+56                          Ecuador     77.4    4.4   509.5  15907.4
+152                            Peru     77.7    4.4   445.5  17041.6
+196                         Tunisia     76.5    4.2   317.7  14052.2
+91               Iran, Islamic Rep.     77.7    3.8   267.1  18932.7
+55                          Algeria     76.3    3.0   233.4  16838.4
+23                           Belize     73.6    1.4   309.4  13741.2
+77                          Grenada     75.2    1.3   526.4  18986.4
+204                      Uzbekistan     72.4    1.1   192.1  11678.6
+79                        Guatemala     72.6    0.4   392.0  13751.6
+160                        Paraguay     73.8    0.4   526.5  17585.1
+173                     El Salvador     72.1    0.4   500.7  12667.5
+29                           Bhutan     73.0   -0.1   162.2  16228.5
+92                             Iraq     72.3   -0.2   333.3  14664.6
+96                          Jamaica     71.5   -0.3   520.2  12661.3
+132                        Mongolia     72.1   -1.5   359.6  18019.7
+87                        Indonesia     71.1   -1.6   131.8  15428.4
+57                 Egypt, Arab Rep.     71.6   -2.1   141.4  18540.1
+122                         Moldova     71.2   -2.3   451.7  17750.6
+110                           Libya     69.3   -2.9   470.4  13858.5
+205  St. Vincent and the Grenadines     71.2   -2.9   469.2  19836.2
+25                          Bolivia     68.6   -3.3   255.0  12902.8
+192                    Turkmenistan     70.1   -4.0   581.4  19644.7
+154                           Palau     69.3   -4.4  1683.8  18313.3
+63                             Fiji     67.3   -5.2   212.9  14656.2
+214                    South Africa     66.1   -6.6   536.6  15212.3
+183                        Eswatini     64.1   -7.0   296.0  11309.2
+75                Equatorial Guinea     63.7   -9.6   233.7  16997.0
+147                          Naoero     62.1   -9.8  2292.4  13172.0
+    Country Name  lifeexp  resid  health       gdp
+36         China     78.0    2.6   763.4   25200.1
+87     Indonesia     71.1   -1.6   131.8   15428.4
+89         India     72.0    1.6    84.7    9853.0
+98         Japan     84.0    4.7  3638.2   52726.2
+102     Cambodia     70.7    1.8   114.6    7436.9
+105  Korea, Rep.     83.4    3.7  3043.9   57429.8
+107      Lao PDR     69.0   -1.1    27.4    9299.4
+130      Myanmar     66.9   -0.9    56.2    5958.3
+138     Malaysia     76.7   -0.7   450.3   36496.9
+153  Philippines     69.8   -1.2   194.1   10994.9
+170    Singapore     83.1   -1.6  3921.6  144728.4
+190     Thailand     76.4    1.4   326.5   23598.4
+209     Viet Nam     74.6    1.9   197.2   15033.9
+Countries with lower health spend than VN: 59 ; of those with higher LE: 2
+Countries with higher LE than VN: 83 ; their median health spend: 1645 vs VN 197
+   year    n  vn_le  vn_resid  vn_rank
+0  2000  180  72.75     11.06        2
+1  2005  183  73.20      8.72        4
+2  2010  184  73.61      6.93        6
+3  2015  185  73.96      4.65       16
+4  2019  186  74.21      2.94       45
+5  2023  184  74.59      1.94       56

@@ -1,0 +1,67 @@
+{
+  "task": "himalaya",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Filters Everest correctly and uses members.csv (person-level) with an explicit denominator",
+        "pass": true,
+        "evidence": "peak_id=EVER, 2,149 expeditions, 21,813 member rows (matches reference). Denominators are explicit, but they come from expedition-level totals (members 2,961/12,320; hired 2,530/10,211), not member rows. members.csv is used only for causes, oxygen and summits. The agent stated and justified this choice: member-level hired headcounts don't reconcile before about 2000, while death totals reconcile exactly. Defensible."
+      },
+      {
+        "check": "Death rate per decade for members vs hired staff consistent with by_decade",
+        "pass": true,
+        "evidence": "Death counts match the reference exactly: pre-1990 members 58, hired 52; 1990+ members 128, hired 68. Member rates match (2.0%→1.0% vs reference 2.07→1.04). Hired rates differ (2.1%→0.7% vs reference 14.4%→1.07%; 1970s 2.4% on 778 people vs reference 36.5% on 52) because the agent used the expedition-level hired_staff denominator. That choice was stated and arguably avoids survivorship bias in the member-level hired rows. Both versions agree on the direction."
+      },
+      {
+        "check": "Flags small sample sizes in early decades and/or the 2014-2015 disaster spikes",
+        "pass": true,
+        "evidence": "Says 2014 (17) and 2015 (11) account for 28 of the 40 hired-staff deaths in the 2010s, with a sensitivity check: the commercial-era staff rate drops to 0.42% without those years, members 1.10%. The decade CSV has small_sample_flag, and pre-1960 decades are dropped from the chart, with the reason given in answer.md. story.md mentions the spikes but not early small n."
+      },
+      {
+        "check": "Shows what changed in commercial era: more climbers/expeditions, higher success, more oxygen, hired staff share",
+        "pass": false,
+        "evidence": "Oxygen use 20%→53% is in the story. Summit share 7.8%→39.9% appears only in answer.md, not in the story. Growth in climbers and expeditions appears only in chart3, which the story doesn't use; the story instead says 'smaller teams 14.5→6.3', which hides the boom (expeditions went 141 in the 1980s → 869 in the 2010s). The rise in hired staff share (hired per member 0.51 in the 1980s → 1.03 in the 2010s) is never stated."
+      },
+      {
+        "check": "story.md exists, plain-language, one core message, honest caveats",
+        "pass": true,
+        "evidence": "story.md is short and plain, with the headline 'Yes: per person, deaths fell by half or more after 1990' and a plateau/lumpiness twist. Its caveats cover association vs causation and the 2019 cutoff. It has no survivorship/reporting caveat and no small-n caveat."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "This is a solid, well-reconciled analysis. Everest filtering and death counts match the reference exactly (58/52 pre-1990, 128/68 after), and member rates agree (about 2%→1%). The agent deliberately used expedition-level headcounts as denominators and documented why. Because of that, hired-staff rates (2.1%→0.7%) are much lower than the reference's member-row rates (14.4%→1.1%); the choice is defensible and both versions point the same way. Rigor includes Wilson CIs, chi-square tests with a clustering caveat, and an excl-2014/2015 sensitivity check. The weak spot is the story's account of the commercial era: it leaves out the huge rise in climber and expedition numbers and the rise in success rate (that is only in answer.md), and calls the change 'smaller teams', which can mislead. Chart titles describe rather than state the takeaway. The story also lacks survivorship/reporting and small-n caveats. No invented numbers found."
+  },
+  "judge_cost_usd": 0.3042119,
+  "accuracy_pct": 80.0,
+  "quality_pct": 70.8,
+  "overall": 76.3
+}

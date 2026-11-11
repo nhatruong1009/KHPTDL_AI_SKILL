@@ -1,0 +1,81 @@
+{
+  "task": "retail_uk",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Khử trùng lặp, nhận ra hai sheet chồng nhau đầu 12/2010",
+        "pass": true,
+        "evidence": "run_log: 'vùng chồng 1-9/12/2010: sheet1=22,523 dòng, sheet2=22,523 dòng, giống hệt=True', chỉ giữ một bản (khớp tham chiếu 22.523). Tuy nhiên chưa loại các dòng trùng nguyên bản (~11,8k dòng; tham chiếu tổng 34.335)."
+      },
+      {
+        "check": "2. Nhận ra 2011 kết thúc 9/12 và so cùng kỳ",
+        "pass": true,
+        "evidence": "So 1/1–9/12 cả hai năm; nêu rõ so cả năm cho −1,2% là sai; kiểm tra thêm 1/1–30/11 cho +2,4%."
+      },
+      {
+        "check": "3. Xử lý hoá đơn huỷ 'C' nhất quán",
+        "pass": true,
+        "evidence": "rev = Quantity×Price, giữ cả số lượng âm (net); báo cáo hàng trả/huỷ −£604k → −£822k và kịch bản chỉ bán hàng +5,1%."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ trong ±3 điểm % so với tham chiếu",
+        "pass": true,
+        "evidence": "+3,0% (£8,74tr → £9,00tr) so với tham chiếu net_all_lines 3,1%."
+      },
+      {
+        "check": "5. Tách khách mới/cũ theo Customer ID và nói rõ loại phần thiếu ID",
+        "pass": true,
+        "evidence": "Khách mới +£1,41tr (1.529 khách, tham chiếu 1.532/£1,42tr); giữ lại −£468k; rời bỏ −£925k; tách riêng 'không rõ mã khách' +£199k, nêu 12–14% doanh thu thiếu mã."
+      },
+      {
+        "check": "6. Nêu đúng thị trường tăng/giảm mạnh nhất",
+        "pass": true,
+        "evidence": "Úc +£106k, Pháp +£63k, Anh +£44k; Ireland −£79k, Đan Mạch −£28k, Thụy Điển −£17k — khớp tham chiếu (106.058; 61.596; 42.682; −79.384; −28.198; −16.399)."
+      },
+      {
+        "check": "7. story.md có thông điệp chính, mạch bối cảnh–căng thẳng–insight–hành động, khuyến nghị cho CEO",
+        "pass": true,
+        "evidence": "Tiêu đề 'Tăng trưởng 2011 đến từ khách mới, còn khách cũ đang rò rỉ'; các mục Bối cảnh / Điều đáng lo / Khách mới bù lại / Quyết định đề xuất, kèm ước tính 10 điểm % giữ chân ≈ £139–249k."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "'Số khách mới giảm từ 3.338 xuống 1.529 (−54%)': số khách 'mới' năm 2010 bị thổi phồng vì dữ liệu chỉ bắt đầu từ 12/2009 (nhiều khách cũ bị tính là mới năm 2010), nên mức giảm −54% bị phóng đại; con số này không sai về tính toán nhưng gây hiểu lầm khi so sánh",
+      "Doanh thu cùng kỳ £8,74tr/£9,00tr hơi cao hơn tham chiếu (£8,71tr/£8,98tr) do chưa loại các dòng trùng nguyên bản — sai lệch nhỏ"
+    ],
+    "summary": "Bài làm chất lượng cao. Agent xác minh và loại vùng chồng 22.523 dòng giữa hai sheet, so cùng kỳ 1/1–9/12 (+3,0%, khớp tham chiếu 3,1%) và nêu rõ so sánh ngây thơ cho −1,2% là sai. Hoá đơn huỷ được tính ròng nhất quán. Cầu nối khách mới/cũ khớp tổng Δ, phần thiếu mã khách được tách riêng và có kiểm tra độ nhạy. Các thị trường tăng/giảm khớp tham chiếu: Úc, Pháp tăng; Ireland, Đan Mạch, Thụy Điển giảm; Anh gần như đi ngang. Điểm yếu: chưa loại ~11,8k dòng trùng nguyên bản; giữ các mã phí (có nêu và định lượng ~−£76k); so sánh số khách mới 2010 với 2011 (−54%) bị lệch do dữ liệu chỉ bắt đầu từ 12/2009, mà hạn chế này không được nêu riêng cho phép so sánh đó. Story tiếng Việt có mạch rõ ràng, khuyến nghị được đặt trong mục 'Quyết định đề xuất' và nêu rõ hạn chế (không có chi phí, không suy ra nhân quả). Hai biểu đồ (thác nước và thanh ngang) dễ đọc, khớp số liệu, nhưng tiêu đề chỉ mô tả, chưa nêu kết luận."
+  },
+  "judge_cost_usd": 0.3150474,
+  "accuracy_pct": 100.0,
+  "quality_pct": 79.2,
+  "overall": 91.7
+}

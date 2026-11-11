@@ -1,0 +1,81 @@
+{
+  "task": "retail_uk",
+  "model": "sonnet",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": false,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Deduplication / sheet overlap",
+        "pass": true,
+        "evidence": "analysis.py:5 keeps only sheet-2 rows dated >= 2010-12-10, so the overlap is dropped (story cites '1.088 hóa đơn' duplicated). However the ~11.8k native exact-duplicate rows are never removed (no drop_duplicates anywhere)."
+      },
+      {
+        "check": "2. Like-for-like period (data ends 9 Dec 2011)",
+        "pass": true,
+        "evidence": "Window is 1/1–9/12 for both years (md<='12-09'). The story explicitly rejects the naive comparison: 'So cả năm ... −1,5% ... cách này sai'."
+      },
+      {
+        "check": "3. Cancellations handled consistently",
+        "pass": true,
+        "evidence": "'C' invoices are kept with negative qty, so revenue is net. Returns are reported separately: £228k→£461k."
+      },
+      {
+        "check": "4. LFL growth within ±3pp of reference",
+        "pass": true,
+        "evidence": "+2.5% (£8.81M→£9.03M) vs the reference net_product_lines figure of 2.67% (£8.78M→£9.01M)."
+      },
+      {
+        "check": "5. New vs returning split by Customer ID, missing IDs excluded",
+        "pass": true,
+        "evidence": "Customers without an ID form a separate 'Unidentified' group (+£0.25M), and the story states '11–14% doanh thu không có mã khách hàng... không phân loại được'. 2011 new = £1.43M and existing = £6.31M, matching the reference (£1.42M / £6.29M). However, the headline conclusion 'khách cũ gánh tăng trưởng' contradicts the reference: retained customers' revenue fell £421k and £1.06M was lost from churned customers, so new customers drove the net growth. The agent caveats that the ±£2.1M is inflated and its sensitivity check reverses the result, yet it keeps the conclusion anyway."
+      },
+      {
+        "check": "6. Top country movers consistent with reference",
+        "pass": true,
+        "evidence": "Australia +£106k, France +£62k, EIRE −£79k, Denmark −£28k, Sweden −£16k all match the reference. UK is ~84% of revenue at +0.4% (+£30k vs ref +£43k)."
+      },
+      {
+        "check": "7. story.md with core message, arc, CEO recommendation",
+        "pass": true,
+        "evidence": "story.md has one headline message and sections for context (fair comparison), tension (new customers falling), insight (markets) and action ('Quyết định cho CEO'), with numbered suggestions. The core message, though, rests on a biased decomposition."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 2,
+      "communication": 4,
+      "storytelling": 3,
+      "honesty": 3,
+      "charts": 2
+    },
+    "numbers_invented_or_wrong": [
+      "'Khách cũ (đã mua trước 1/1 năm đó) +£2,09 triệu / Khách mới −£2,11 triệu' and the headline that existing customers drove the growth: this is an artifact of left-censoring (2010 has only 1 month of history). The reference shows customers who bought in both years fell £421k, so the 'existing carry growth' claim is wrong.",
+      "Final reply 'Khách cũ đóng góp toàn bộ mức tăng này': not supported, for the same reason.",
+      "UK change +£30k (+0.4%) vs reference +£42.7k: a minor variant difference, acceptable."
+    ],
+    "summary": "The cleaning is solid. The agent removed the sheet overlap (but not the native exact duplicates), used a correct like-for-like window of 1/1–9/12 and explicitly rejected the naive −1.5%. It netted cancellations, excluded non-product codes and arrived at +2.5% growth, close to the reference 2.67%. The country movers match the reference well.\n\nThe main weakness is the new-vs-returning analysis. It defines 'existing' as first-purchase-before-year, which is heavily biased because the data only starts in Dec 2009. The agent itself shows this bias reverses the result, yet the headline and CEO recommendation still say existing customers drove the growth. A retained/churned/new cohort decomposition shows the opposite: retained customers' revenue fell £421k, £1.06M was lost from churned customers, and new customers (£1.42M) produced the net gain. The −37% drop in new customers is a partial mitigation but is itself somewhat censoring-affected.\n\nThe chart prominently plots the ±£2.1M bars that the text says not to quote, and its titles describe the content rather than state a takeaway. The story structure is reasonable and the caveats are present, but the core message is undermined."
+  },
+  "judge_cost_usd": 0.24893510000000002,
+  "accuracy_pct": 100.0,
+  "quality_pct": 50.0,
+  "overall": 80.0
+}

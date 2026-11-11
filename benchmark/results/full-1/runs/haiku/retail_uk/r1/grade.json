@@ -1,0 +1,80 @@
+{
+  "task": "retail_uk",
+  "model": "haiku",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Deduplication incl. sheet overlap Dec 1-9 2010",
+        "pass": true,
+        "evidence": "analysis.py takes sheet1 before 2010-12-01 and sheet2 from then on; logs overlap 22,523 rows on each side, then removes 11,812 native exact duplicates (22,523 + 11,812 = 34,335, which matches the reference)."
+      },
+      {
+        "check": "2. Like-for-like comparison (2011 ends 9 Dec)",
+        "pass": true,
+        "evidence": "Window is 1/1–9/12 in both years. The naive full-year comparison (9.22M vs 9.00M, −2.3%) is shown and explicitly labelled the wrong comparison."
+      },
+      {
+        "check": "3. Cancellations handled consistently",
+        "pass": true,
+        "evidence": "Revenue = Quantity × Price, so negative-quantity C-invoice lines are netted out ('sau khi trừ hoàn trả'). Lines with price ≤ 0 are dropped."
+      },
+      {
+        "check": "4. Like-for-like growth within ±3pp of a reference variant",
+        "pass": true,
+        "evidence": "Headline +1.76% (8,845,679 → 9,001,425) is within 1.4pp of the 3.1% net_all reference. The product-lines sensitivity of +2.67% matches the 2.67% reference exactly."
+      },
+      {
+        "check": "5. New vs returning split by Customer ID; missing IDs excluded and stated",
+        "pass": true,
+        "evidence": "New: 1,536 customers, +1.42M (ref 1,532 / 1.42M). Churned: −1.07M from 1,557 customers (ref −1.06M). Retained: −0.39M (ref −0.42M). 63% bought again (ref 63.4%). Missing-ID customers form a separate +0.08M bucket and the ~20–25% missing share is stated."
+      },
+      {
+        "check": "6. Largest market increases/decreases consistent with reference",
+        "pass": true,
+        "evidence": "Australia +106K, France +63K, EIRE −79K, Denmark −28K and Sweden −17K all match the reference. UK share ~84% is stated (ref 84.21%). Caveat: UK is −59K here vs +42.7K in the reference. The sign depends on including fee lines, and the agent did not test that sensitivity by country."
+      },
+      {
+        "check": "7. story.md with core message, arc, CEO recommendation as suggestion",
+        "pass": true,
+        "evidence": "The title states the core message ('Tăng trưởng 2011 đến từ khách mới, còn khách cũ đang rò rỉ doanh thu'). The story runs context (fair comparison) → tension (leakage from existing customers) → insight (markets) → a 'Gợi ý quyết định' section, with limits on CAC and margin."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "UK −59K (−0.8%) and 'UK đang là nơi rò rỉ lớn nhất' are variant-sensitive. The reference product-line country change for UK is +42.7K, so the UK decline is likely driven by fee/adjustment lines (e.g. AMAZONFEE). The agent did not flag this sign flip, even though it ran a product-line sensitivity for the total.",
+      "Missing Customer ID share is stated vaguely as '~20–25%' (ref 22.76%). Not wrong, but imprecise."
+    ],
+    "summary": "Strong run. It correctly handles the sheet overlap (22,523 rows) and native duplicates (11,812), and compares a like-for-like 1/1–9/12 window while explicitly rejecting the naive −2.3% comparison. Cancellations are netted, and a product-lines sensitivity reproduces the reference +2.67% exactly; the headline is +1.76%. The new/churned/retained decomposition reconciles to the total and closely matches the reference (new 1,536 / +1.42M; churned −1.07M; retained −0.39M; 63% repeat). The top countries match the reference (Australia, France, EIRE, Denmark, Sweden). The main weakness is that UK is reported as −59K and framed as the largest leakage market, while under product-only revenue UK grew (+42.7K in the reference). The agent did not carry its own sensitivity through to the country level. The story is well structured for the CEO, with a hedged recommendation and stated limits on margin and acquisition cost. Both charts are clean and their numbers match the logs, but the titles are descriptive rather than takeaway headlines."
+  },
+  "judge_cost_usd": 0.3430903,
+  "accuracy_pct": 100.0,
+  "quality_pct": 83.3,
+  "overall": 93.3
+}

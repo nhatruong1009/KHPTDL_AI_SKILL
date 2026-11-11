@@ -1,0 +1,20 @@
+metric,value
+raw_rows_both_sheets,1044848
+exact_duplicates_removed,11812
+rows_after_price_filter,1027017
+window,1 Jan - 9 Dec each year
+net_revenue_2010_window,8845679.08
+net_revenue_2011_window,9001425.46
+delta_abs,155746.38
+delta_pct,1.76
+delta_new_customers,1422845.83
+delta_old_customers,-1351411.75
+delta_unidentified_id,84312.3
+delta_UK,-58869.11
+delta_outside_UK,214615.49
+naive_full_2010,9216135.87
+naive_full_2011_to_9dec,9001425.46
+customers_2010_with_id,4199
+customers_2011_with_id,4219
+overlap_rows_sheet1_dec1_9_2010,22523
+overlap_rows_sheet2_dec1_9_2010,22523

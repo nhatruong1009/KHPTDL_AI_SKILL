@@ -1,0 +1,54 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "model_id": "claude-sonnet-5-5",
+  "rep": 1,
+  "wall_s": 65.3,
+  "duration_api_s": 58.0,
+  "cost_usd": 0.20874489999999996,
+  "num_turns": 9,
+  "input_tokens": 16,
+  "output_tokens": 8072,
+  "cache_read_tokens": 194289,
+  "cache_write_tokens": 27141,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 8072,
+      "cacheReadInputTokens": 194289,
+      "cacheCreationInputTokens": 27141,
+      "webSearchRequests": 0,
+      "costUSD": 0.20874489999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 669,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27141,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "final_text": "**Everest has become safer, but most of the improvement came before 2000.** The data runs from 1950 to spring 2019. The deaths are in `data/members.csv` and `data/expeditions.csv`. The story is in `outputs/story.md`, with the chart and supporting tables in `outputs/everest-safety/`.\n\n| Deaths per 1,000 people on Everest teams | 1950–1989 | 1990–2019 |\n|---|---|---|\n| Expedition members | 19.8 | 10.4 |\n| Hired staff | 157.3 | 10.7 |\n\n- **Members:** their death rate roughly halved. The drop is statistically clear (p < 0.001).\n- **Hired staff:** their rate fell about 15-fold, from about 1 in 6 before 1990 to about 1 in 100 since.\n- **Commercial era:** staff and members now face about the same risk. Summit success and bottled-oxygen use rose together, but I can't show which caused the safer outcomes.\n- **Stalled since 2000:** the rate has been flat at roughly 5–15 per 1,000 since the early 2000s. Individual years show no clear downward trend for either group.\n- **2014 and 2015:** these two years hit staff hardest. Staff deaths were 17 in the 2014 icefall avalanche and 11 in the 2015 earthquake. Without those two years, the staff rate since 1990 is 6.8 per 1,000, below the members' 11.0.\n- **Causes of death:** since 1990, avalanches caused 33 of the 68 staff deaths. Members die more from falls, altitude sickness and exhaustion.\n\n**Method:**\n- **Rate:** deaths divided by team-member entries on Everest, counting a person once per expedition.\n- **Groups:** the `hired` flag separates members from staff.\n- **Confidence intervals:** Wilson intervals around each rate.\n- **Tests:** Fisher exact tests for the before/after comparisons and Spearman correlation for the yearly trend.\n\n**Caveats:**\n- **Possible undercount of staff:** `members.csv` lists 6,730 hired-staff entries for Everest, but `expeditions.csv` reports 12,741 hired staff above base camp, so staff may be undercounted there. Death totals are the same in both files.\n- **Small early samples:** the pre-1990 staff numbers are small (267 entries), so those rates are imprecise.\n- **Association only:** this is observational data, so it shows association, not cause.\n- **Not run:** I didn't run the separate QA step.\n\nFiles are in `outputs/`:\n- `story.md`\n- `everest-safety/analysis.py`\n- `everest-safety/death_rate_by_decade.png`\n- `everest-safety/by_decade.csv`\n- `everest-safety/by_era.csv`\n- `everest-safety/by_5yr_1990plus.csv`\n- `everest-safety/by_year_1990plus.csv`\n- `everest-safety/causes_1990plus.csv`",
+  "outputs": [
+    "outputs/everest-safety/analysis.py",
+    "outputs/everest-safety/by_5yr_1990plus.csv",
+    "outputs/everest-safety/by_decade.csv",
+    "outputs/everest-safety/by_era.csv",
+    "outputs/everest-safety/by_year_1990plus.csv",
+    "outputs/everest-safety/causes_1990plus.csv",
+    "outputs/everest-safety/death_rate_by_decade.png",
+    "outputs/story.md"
+  ],
+  "tools": {
+    "Bash": 6,
+    "Write": 2
+  },
+  "skills_invoked": [],
+  "skill_md_reads": [],
+  "tool_errors": 2,
+  "total_tokens": 229518
+}

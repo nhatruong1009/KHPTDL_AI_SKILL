@@ -1,0 +1,89 @@
+Primary year 2019: n=186 countries with LE, health spend and GDP
+Raw: Pearson r(logHX, LE)=0.806 (p=9e-44); Spearman rho(HX, LE)=0.844
+               n  median_HX_usd  mean_LE  median_GDP
+HX_quartile                                         
+Q1 (lowest)   47           49.3     63.2      3237.0
+Q2            46          223.4     71.2     11507.9
+Q3            46          614.0     74.3     20404.9
+Q4 (highest)  47         2924.2     80.5     50499.1
+Income-only curve R^2 = 0.722
+OLS LE ~ logGDP + logHX: b_logGDP=4.90 (se 0.68), b_logHX=0.84 (se 0.48, p=0.081), R2=0.726
+OLS LE ~ logGDP only R2=0.722; LE ~ logHX only R2=0.650
+Partial r(LE, logHX | logGDP) = 0.129 (p=0.08)
+Bootstrap 95% CI for b_logHX: [-0.40, 2.08]
+Doubling health spend (log2) ~ 0.59 years LE (income-adjusted, linear model); bootstrap 95% CI [-0.28, 1.44]
+   year    n  r_raw_logHX_LE  b_logHX_income_adj     se  R2_both
+0  2019  186           0.806               0.844  0.480    0.726
+1  2010  184           0.801               1.997  0.525    0.683
+2  2023  184           0.829               1.135  0.377    0.758
+
+Top 15 OVER expectation:
+                              name                      region               income     LE       HX       GDP  LE_expected_income  gap_income
+Country Code                                                                                                                                 
+SLB                Solomon Islands         East Asia & Pacific  Lower middle income  69.98    98.67   2512.01               62.44        7.54
+PSE             West Bank and Gaza  Middle East & North Africa  Lower middle income  75.81   317.45   6508.45               68.31        7.50
+BDI                        Burundi          Sub-Saharan Africa           Low income  62.18    22.24    868.42               54.86        7.32
+TJK                     Tajikistan       Europe & Central Asia  Lower middle income  70.96    60.52   3459.97               64.49        6.47
+SYR           Syrian Arab Republic  Middle East & North Africa           Low income  70.97    55.22   3502.18               64.56        6.41
+MWI                         Malawi          Sub-Saharan Africa           Low income  65.00    36.92   1450.01               58.70        6.30
+NIC                      Nicaragua   Latin America & Caribbean  Lower middle income  73.76   166.49   5981.11               67.81        5.96
+JOR                         Jordan  Middle East & North Africa  Upper middle income  76.86   294.93  10305.66               70.97        5.89
+ALB                        Albania       Europe & Central Asia  Upper middle income  79.47   366.34  16442.03               73.65        5.81
+VUT                        Vanuatu         East Asia & Pacific  Lower middle income  70.78   112.14   3762.09               65.01        5.77
+CPV                     Cabo Verde          Sub-Saharan Africa  Upper middle income  75.45   211.25   8645.76               69.96        5.49
+ECU                        Ecuador   Latin America & Caribbean  Upper middle income  77.29   484.54  12543.01               72.10        5.19
+JPN                          Japan         East Asia & Pacific          High income  84.36  4431.30  43743.53               79.42        4.94
+BGD                     Bangladesh                  South Asia  Lower middle income  72.62    45.08   6047.12               67.87        4.75
+MAR                        Morocco  Middle East & North Africa  Lower middle income  74.24   178.74   8046.23               69.54        4.70
+
+Top 15 UNDER expectation:
+                                  name                     region               income     LE       HX       GDP  LE_expected_income  gap_income
+Country Code                                                                                                                                    
+CAF           Central African Republic         Sub-Saharan Africa           Low income  31.53    35.76    984.84               55.84      -24.31
+NGA                            Nigeria         Sub-Saharan Africa  Lower middle income  53.01    67.63   7551.39               69.18      -16.17
+GNQ                  Equatorial Guinea         Sub-Saharan Africa  Upper middle income  62.30   223.14  16451.36               73.66      -11.36
+SWZ                           Eswatini         Sub-Saharan Africa  Lower middle income  59.85   320.05   9248.32               70.35      -10.50
+NRU                             Naoero        East Asia & Pacific          High income  61.39  1213.87  10554.52               71.11       -9.72
+TCD                               Chad         Sub-Saharan Africa           Low income  52.99    30.24   2351.65               62.01       -9.02
+LSO                            Lesotho         Sub-Saharan Africa  Lower middle income  55.25   235.94   2568.34               62.59       -7.34
+BRN                  Brunei Darussalam        East Asia & Pacific          High income  75.05   678.82  69353.68               82.33       -7.28
+CIV                      Cote d'Ivoire         Sub-Saharan Africa  Lower middle income  60.27    68.30   5516.39               67.33       -7.05
+NAM                            Namibia         Sub-Saharan Africa  Lower middle income  63.55   419.15   9609.49               70.57       -7.02
+AGO                             Angola         Sub-Saharan Africa  Lower middle income  63.05    64.45   8621.66               69.94       -6.89
+BHS                       Bahamas, The  Latin America & Caribbean          High income  71.41  1881.40  36116.00               78.26       -6.85
+ZAF                       South Africa         Sub-Saharan Africa  Upper middle income  66.07   538.80  13361.49               72.46       -6.39
+BWA                           Botswana         Sub-Saharan Africa  Upper middle income  67.17   438.29  15960.02               73.48       -6.31
+GAB                              Gabon         Sub-Saharan Africa  Upper middle income  67.34   206.00  15949.64               73.48       -6.14
+
+Vietnam (VNM) rank 48 of 186 by gap (1 = most above expectation):
+                  name               region               income     LE      HX       GDP  LE_expected_income  gap_income
+Country Code                                                                                                             
+VNM           Viet Nam  East Asia & Pacific  Upper middle income  74.21  171.15  11029.27               71.36        2.85
+Vietnam gap percentile: 74
+
+Vietnam (WB group today: Upper middle income) among peers: rank 15 of 57 by gap
+Peer gap median = +0.78; Vietnam gap = +2.85
+Peers ranked (first 8 and last 8):
+                            name     LE      HX       GDP  gap_income
+Country Code                                                         
+JOR                       Jordan  76.86  294.93  10305.66        5.89
+ALB                      Albania  79.47  366.34  16442.03        5.81
+CPV                   Cabo Verde  75.45  211.25   8645.76        5.49
+ECU                      Ecuador  77.29  484.54  12543.01        5.19
+IRN           Iran, Islamic Rep.  76.86  223.64  13927.51        4.15
+MDV                     Maldives  79.71  880.80  23077.21        4.10
+TON                        Tonga  72.29  266.69   6473.32        4.02
+LKA                    Sri Lanka  76.70  147.01  14112.95        3.92
+SUR                     Suriname  71.77  588.84  19771.55       -2.94
+KAZ                   Kazakhstan  73.66  263.61  28689.27       -3.23
+TKM                 Turkmenistan  69.40  432.78  15389.25       -3.87
+FJI                         Fiji  67.01  254.83  12978.10       -5.29
+GAB                        Gabon  67.34  206.00  15949.64       -6.14
+BWA                     Botswana  67.17  438.29  15960.02       -6.31
+ZAF                 South Africa  66.07  538.80  13361.49       -6.39
+GNQ            Equatorial Guinea  62.30  223.14  16451.36      -11.36
+Vietnam HX=$171 vs peer-group median HX=$389; GDP=$11029 vs peer median $15389
+Vietnam 2010: LE=73.6, HX=$85, GDP=$5389, gap=+7.15, rank 6/184
+Vietnam 2023: LE=74.6, HX=$197, GDP=$15034, gap=+2.26, rank 51/184
+
+Charts saved.

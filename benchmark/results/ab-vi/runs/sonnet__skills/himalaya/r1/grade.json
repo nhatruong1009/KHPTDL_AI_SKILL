@@ -1,0 +1,68 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Lọc đúng Everest, dùng members.csv với mẫu số rõ ràng",
+        "pass": true,
+        "evidence": "Lọc Everest giai đoạn 1950–2019; mẫu số là 'lượt tham gia' (một người đi hai đoàn tính hai lượt) lấy từ các cột cấp đoàn members/hired_staff. Agent có dùng members.csv nhưng kiểm tra thấy bảng này chỉ ghi 7–75% số nhân viên thuê (hired_coverage_check.csv), trong khi số ca tử vong của hai bảng khớp nhau. Vì vậy agent chọn mẫu số cấp đoàn, nói rõ lựa chọn này và giữ kết quả theo bảng members để đối chiếu."
+      },
+      {
+        "check": "2. Tỉ lệ tử vong theo thập kỷ khớp by_decade",
+        "pass": true,
+        "evidence": "Số ca tử vong khớp tham chiếu: thành viên 40/43/42/43 và nhân viên thuê 20/19/9/40 cho 1980s–2010s. Thành viên 18,7‰ trước 1990 → 10,4‰ sau 1990, khớp tham chiếu 2,07% → 1,04%. Nhân viên thuê 18,4‰ → 6,7‰, khác tham chiếu 14,36% → 1,07% vì mẫu số khác. Đây là biến thể hợp lý, đã được giải thích và có bằng chứng về độ phủ."
+      },
+      {
+        "check": "3. Cảnh báo n nhỏ ở các thập kỷ đầu và đột biến 2014–2015",
+        "pass": true,
+        "evidence": "Có khoảng tin cậy Wilson và câu 'không nên đọc xu hướng trước 1970'. Năm 2014–2015 được tách riêng: 28/744 (37,6‰), riêng 2014 là 17/300. Nếu bỏ hai năm này, nhân viên thuê còn 4,2‰. Agent coi đây là sự kiện đơn lẻ, không phải xu hướng đảo chiều."
+      },
+      {
+        "check": "4. Nêu những gì thay đổi trong kỷ nguyên thương mại (số người leo, thành công, oxy, tỉ trọng nhân viên thuê)",
+        "pass": true,
+        "evidence": "Lượt tham gia tăng từ ~3.000 lên ~10.000; nhân viên thuê 5.109 so với thành viên 4.980 ở thập niên 2010; cơ cấu nguyên nhân tử vong thay đổi (33/68 ca do lở tuyết). Tỉ lệ thành công 7% → 52% chỉ xuất hiện trong phần lưu ý của answer.md, không có trong story. Việc dùng oxy hoàn toàn không được phân tích. Đạt một phần."
+      },
+      {
+        "check": "5. Có story.md, ngôn ngữ phổ thông, một thông điệp chính, lưu ý trung thực",
+        "pass": true,
+        "evidence": "Tiêu đề 'Everest đông hơn gấp ba, nhưng mỗi lượt leo ít chết người hơn một nửa' là một thông điệp rõ ràng. Bài có mạch bối cảnh → phát hiện → điều rút ra, kèm phần 'Lưu ý trước khi trích dẫn' (dữ liệu quan sát, ghi thiếu, n nhỏ, dừng ở 2019). Bài viết bằng tiếng Việt, dễ hiểu."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Agent tự phát hiện bảng members ghi thiếu nhân viên thuê (độ phủ chỉ 7–75%), trong khi số ca tử vong của hai bảng khớp nhau. Từ đó agent chọn mẫu số cấp đoàn, nói rõ lựa chọn và giữ kết quả theo bảng members để đối chiếu. Đây là lựa chọn hợp lý, có thể còn tốt hơn cách tham chiếu. Số ca tử vong theo thập kỷ khớp hoàn toàn với tham chiếu, và tỉ lệ của thành viên (18,7‰ → 10,4‰) khớp mức ~2% → ~1%. Bài có khoảng tin cậy Wilson, kiểm định Fisher, phân tích nhạy khi bỏ 2014–2015 (nhân viên thuê còn 4,2‰), tách riêng 2014 (17/300) và cảnh báo n nhỏ trước 1970. Câu trả lời và story đều bằng tiếng Việt, trả lời thẳng câu hỏi ngay từ đầu và có một thông điệp chính. Điểm thiếu: không phân tích việc dùng oxy; tỉ lệ thành công (7% → 52%) chỉ nằm trong phần lưu ý của answer.md, không có trong story. Story cũng có câu suy đoán nguyên nhân ('khách ít đi qua'), dù nhìn chung đã dè dặt. Biểu đồ có tiêu đề nêu kết luận và có thanh sai số. Tuy vậy, biểu đồ bỏ thập niên 1950, và cách đặt điểm lệch hai bên mốc thập kỷ khiến điểm 1990s của thành viên nằm bên trái đường 'kỷ nguyên thương mại', dễ gây hiểu nhầm."
+  },
+  "judge_cost_usd": 0.2353273,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

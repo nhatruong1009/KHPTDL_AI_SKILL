@@ -1,0 +1,60 @@
+[dedupe] vùng chồng 1-9/12/2010: sheet1=22,523 dòng, sheet2=22,523 dòng, giống hệt=True
+
+[1] Tổng quan cùng kỳ 1/1-9/12
+                 chi_so  cung_ky_2010  cung_ky_2011       thay_doi  thay_doi_pct
+        doanh_thu_thuan  8.739638e+06  8.998809e+06  259171.390000      2.965471
+         so_khach_co_ma  4.258000e+03  4.244000e+03     -14.000000     -0.328793
+                 so_don  2.229500e+04  2.036500e+04   -1930.000000     -8.656649
+     doanh_thu_hoan_huy -6.040167e+05 -8.220234e+05 -218006.650000    -36.092817
+ty_le_dt_khong_ro_khach  1.206802e-01  1.392772e-01       0.018597     15.410192
+
+[2] Cầu nối theo nhóm khách (Δ = 259,171 £)
+                        dong_gop  so_khach_2010  so_khach_2011      dt_2010      dt_2011  ty_trong_thay_doi
+nhom_khach                                                                                                 
+Khách mới            1411158.631            0.0         1529.0        0.000  1411158.631              5.445
+Khách cũ - giữ lại   -467943.968         2673.0         2673.0  6759860.351  6291916.383             -1.806
+Khách cũ - quay lại    42404.780            0.0           42.0        0.000    42404.780              0.164
+Khách cũ - rời bỏ    -925076.173         1585.0            0.0   925076.173        0.000             -3.569
+Không rõ khách hàng   198628.120            0.0            0.0  1054701.000  1253329.120              0.766
+
+[2b] Giữ chân:
+   khach_co_mua_2010: 4,258
+   khach_giu_lai_2011: 2,673
+   ty_le_giu_chan_khach: 0.6278
+   dt_2010_cua_khach_co_mua_2010: 7,684,936.5240
+   dt_2011_cua_nhom_giu_lai: 6,291,916.3830
+   dt_2010_cua_nhom_giu_lai: 6,759,860.3510
+   ty_le_giu_doanh_thu_nhom_giu_lai: 0.9308
+   chi_tieu_trung_binh_2010_moi_khach_cu: 1,804.8230
+   so_khach_moi_2011: 1,529
+   chi_tieu_trung_binh_2011_moi_khach_moi: 922.9291
+
+[3] Thị trường: 43 quốc gia; top giảm/tăng theo £:
+                        dt_2010    dt_2011  thay_doi  thay_doi_pct  ty_trong_thay_doi
+quoc_gia                                                                             
+EIRE                  333114.79  254246.87 -78867.92       -23.676             -0.304
+Denmark                45588.49   17486.64 -28101.85       -61.642             -0.108
+Sweden                 50953.71   33949.61 -17004.10       -33.372             -0.066
+Greece                 13674.02    4710.52  -8963.50       -65.551             -0.035
+United Arab Emirates    7566.83    1902.28  -5664.55       -74.860             -0.022
+Lithuania               4892.68       0.00  -4892.68      -100.000             -0.019
+   ...
+                    dt_2010      dt_2011    thay_doi  thay_doi_pct  ty_trong_thay_doi
+quoc_gia                                                                             
+Spain             29166.070    52930.850   23764.780        81.481              0.092
+Netherlands      248658.680   275877.060   27218.380        10.946              0.105
+Norway             3594.260    31376.340   27782.080       772.957              0.107
+United Kingdom  7467121.573  7511063.744   43942.171         0.588              0.170
+France           125214.860   187846.540   62631.680        50.019              0.242
+Australia         30001.550   136072.170  106070.620       353.550              0.409
+   Vương quốc Anh Δ=43,942; ngoài Anh Δ=215,229
+
+[4] Độ nhạy:
+                          kich_ban   dt_2010   dt_2011  thay_doi  thay_doi_pct
+          Cùng kỳ 1/1-9/12 (chính) 8739637.5 8998808.9  259171.4           3.0
+      Cùng kỳ 1/1-30/11 (kiểm tra) 8362149.1 8565122.9  202973.8           2.4
+  Sai: cả năm 2010 vs 2011 chưa đủ 9111106.1 8998808.9 -112297.2          -1.2
+Chỉ giao dịch bán (không hàng trả) 9343654.2 9820832.3  477178.0           5.1
+              Chỉ dòng có mã khách 7684936.5 7745479.8   60543.3           0.8
+
+Xong. Kết quả ghi tại: /root/.cache/skill-bench/runs/ab-vi/haiku__skills/retail_uk/r1/workspace/outputs/doanh-thu-2011-vs-2010

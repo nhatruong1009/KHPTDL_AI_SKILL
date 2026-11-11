@@ -1,0 +1,118 @@
+{
+  "cv": [
+    {
+      "mo_hinh": "Ngẫu nhiên (baseline 1)",
+      "auc": 0.5041,
+      "auc_sd": 0.0122,
+      "pr_auc": 0.1178,
+      "pr_auc_sd": 0.0051,
+      "prec10": 0.1131,
+      "prec10_sd": 0.0131,
+      "prec20": 0.115,
+      "prec20_sd": 0.01,
+      "recall20": 0.1966,
+      "recall20_sd": 0.017,
+      "lift20": 0.9833,
+      "lift20_sd": 0.0849
+    },
+    {
+      "mo_hinh": "Quy tắc poutcome (baseline 2)",
+      "auc": 0.6135,
+      "auc_sd": 0.0125,
+      "pr_auc": 0.244,
+      "pr_auc_sd": 0.0137,
+      "prec10": 0.3071,
+      "prec10_sd": 0.0128,
+      "prec20": 0.2152,
+      "prec20_sd": 0.0128,
+      "recall20": 0.3679,
+      "recall20_sd": 0.0219,
+      "lift20": 1.8399,
+      "lift20_sd": 0.1094
+    },
+    {
+      "mo_hinh": "Hồi quy logistic",
+      "auc": 0.7619,
+      "auc_sd": 0.0085,
+      "pr_auc": 0.4008,
+      "pr_auc_sd": 0.0158,
+      "prec10": 0.475,
+      "prec10_sd": 0.0161,
+      "prec20": 0.3241,
+      "prec20_sd": 0.0052,
+      "recall20": 0.554,
+      "recall20_sd": 0.009,
+      "lift20": 2.7703,
+      "lift20_sd": 0.0454
+    },
+    {
+      "mo_hinh": "Gradient boosting (HistGB)",
+      "auc": 0.7997,
+      "auc_sd": 0.0075,
+      "pr_auc": 0.4519,
+      "pr_auc_sd": 0.0163,
+      "prec10": 0.5069,
+      "prec10_sd": 0.0139,
+      "prec20": 0.3625,
+      "prec20_sd": 0.0105,
+      "recall20": 0.6196,
+      "recall20_sd": 0.018,
+      "lift20": 3.0984,
+      "lift20_sd": 0.0906
+    }
+  ],
+  "holdout": [
+    {
+      "mo_hinh": "Ngẫu nhiên (baseline 1)",
+      "auc": 0.498,
+      "pr_auc": 0.3145,
+      "prec10": 0.3075,
+      "prec20": 0.3079,
+      "recall20": 0.195,
+      "lift20": 0.975
+    },
+    {
+      "mo_hinh": "Quy tắc poutcome (baseline 2)",
+      "auc": 0.6443,
+      "pr_auc": 0.4581,
+      "prec10": 0.6692,
+      "prec20": 0.5583,
+      "recall20": 0.3536,
+      "lift20": 1.768
+    },
+    {
+      "mo_hinh": "Hồi quy logistic",
+      "auc": 0.6807,
+      "pr_auc": 0.4866,
+      "prec10": 0.5166,
+      "prec20": 0.5732,
+      "recall20": 0.3631,
+      "lift20": 1.815
+    },
+    {
+      "mo_hinh": "Gradient boosting (HistGB)",
+      "auc": 0.6872,
+      "pr_auc": 0.4873,
+      "prec10": 0.5597,
+      "prec20": 0.5252,
+      "recall20": 0.3326,
+      "lift20": 1.663
+    }
+  ],
+  "bank_additional_full": {
+    "Ngẫu nhiên": {
+      "auc": 0.4973,
+      "lift20": 0.968
+    },
+    "Hồi quy logistic": {
+      "auc": 0.7907,
+      "lift20": 3.133
+    },
+    "Gradient boosting": {
+      "auc": 0.802,
+      "lift20": 3.226
+    }
+  },
+  "base_rate": 0.117,
+  "n": 45211
+}

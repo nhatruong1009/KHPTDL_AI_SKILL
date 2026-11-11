@@ -1,0 +1,71 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Uses bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py loads data/bank-additional/bank-additional-full.csv; answer states 41,188 rows and calls it the most complete version."
+      },
+      {
+        "check": "2. Drops duration as leakage, says why; AUC in realistic range",
+        "pass": true,
+        "evidence": "Drops duration because it is 'only known after the call' (and also drops campaign). Random 5-fold CV AUC is 0.80 and PR-AUC 0.46, matching the reference HGB (0.80/0.462). The headline time-ordered AUC of 0.66 LR / 0.64 GB on the last 30% is below the reference 0.70–0.715 on the last 25%, but no leakage was used."
+      },
+      {
+        "check": "3. Baseline comparison with imbalance-appropriate metrics",
+        "pass": true,
+        "evidence": "Constant-rate baseline compared on ROC-AUC, PR-AUC (0.389 LR vs 0.246 naive) and top-decile lift (46.6% vs 24.6%, 1.9x). Explains why 88.7% accuracy is misleading."
+      },
+      {
+        "check": "4. Handles pdays=999 and 'unknown' explicitly",
+        "pass": false,
+        "evidence": "pdays=999 is handled explicitly: a prev_contacted flag is created and 999 is recoded to -1. 'unknown' levels are silently kept as their own category and never discussed. Duplicates are mentioned ('12 duplicate rows left in')."
+      },
+      {
+        "check": "5. Top factors consistent with reference (macro, poutcome/pdays, contact, month)",
+        "pass": false,
+        "evidence": "Month, pdays, contact and poutcome match the reference. Macro indicators (nr.employed, euribor3m, emp.var.rate) score 0 permutation importance, and the agent says macro 'did not help', which contradicts the reference's strongest signals. This follows from the temporal split, where macro values shift out of range. Age is ranked #3."
+      },
+      {
+        "check": "6. Importance framed as predictive, not causal",
+        "pass": true,
+        "evidence": "'These are associations in observational data, not proof of cause'. Also warns that the month effect may reflect campaign timing or selection rather than something that can be acted on."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "This is a strong, honest run.\n\n**Data and leakage:** It uses the full file and drops duration for a stated reason. It conservatively drops campaign too, which is defensible.\n\n**Validation:** It reports both a random-CV AUC (0.80, matching the reference) and a more honest time-ordered split. The time-ordered AUC is 0.66, a bit below the reference's ~0.70–0.715, but the split differs (last 30% vs last 25%). It quantifies drift (training rate 5.6% vs test rate 24.6%).\n\n**Baseline:** It compares against a naive constant-rate baseline using PR-AUC and decile lift. It explains why accuracy is misleading and gives a bootstrap CI on the AUC. All the numbers I spot-checked trace to the CSVs.\n\n**Gaps:**\n- **'unknown' categories:** They are kept silently and never discussed.\n- **Macro indicators:** They get zero importance on the temporal split, so the agent says macro indicators don't help. This contradicts the reference's strongest signals; the agent's explanation is partial but it doesn't explore the artifact.\n- **Chart:** It has descriptive rather than takeaway titles. The decile panel shows the gradient-boosting model (top decile 43%), while the text headlines logistic regression's 46.6%, a minor mismatch.\n\n**Caveats:** The caveats on calibration, drift, causality and small subgroups are excellent."
+  },
+  "judge_cost_usd": 0.25573039999999997,
+  "accuracy_pct": 66.7,
+  "quality_pct": 80.0,
+  "overall": 72.0
+}

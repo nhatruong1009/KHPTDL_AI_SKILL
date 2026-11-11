@@ -1,0 +1,51 @@
+dataset,feature,importance_mean,importance_sd
+bank-additional-full (with macro),nr.employed,0.05828069720269831,0.0042004920919846474
+bank-additional-full (with macro),cons.price.idx,0.018380694549271225,0.003448022750017991
+bank-additional-full (with macro),contact,0.01737281239681119,0.00405566444672073
+bank-additional-full (with macro),emp.var.rate,0.01555357121798202,0.0034197038226653964
+bank-additional-full (with macro),euribor3m,0.013726178121609534,0.0022740014035149644
+bank-additional-full (with macro),month,0.013301202297278237,0.0035072098497486073
+bank-additional-full (with macro),cons.conf.idx,0.012540074119062272,0.0027678127193482903
+bank-additional-full (with macro),campaign,0.005510725741780298,0.0019987104764944614
+bank-additional-full (with macro),poutcome,0.0030189882187839356,0.0008752754306270231
+bank-additional-full (with macro),default,0.0019656292749658634,0.0005187999717633977
+bank-additional-full (with macro),pdays_clean,0.0018338276569649704,0.001068218097019646
+bank-additional-full (with macro),day_of_week,0.0012728268432473655,0.0006291714059004432
+bank-additional-full (with macro),age,0.0010729795627152483,0.00188489127895242
+bank-additional-full (with macro),education,0.0004936995848861314,0.00045296692270387615
+bank-additional-full (with macro),was_contacted_before,0.00032657790461817495,0.0003079897472844564
+bank-additional-full (with macro),previous,5.519865323837525e-05,0.00022672714017063367
+bank-additional-full (with macro),marital,-0.0003281699608471911,0.0006826497976974077
+bank-additional-full (with macro),housing,-0.00042603719515066363,0.0006023248317332157
+bank-additional-full (with macro),loan,-0.0005176172814754687,0.0002795214607058332
+bank-additional-full (with macro),job,-0.0009197957450822636,0.0007156257575632825
+bank-additional-full (no macro),month,0.08649668026793711,0.005461970836246377
+bank-additional-full (no macro),contact,0.05981958907259768,0.0037345674281001897
+bank-additional-full (no macro),age,0.014435748738147935,0.003759336938281464
+bank-additional-full (no macro),default,0.008928605122883081,0.0022159556990668603
+bank-additional-full (no macro),campaign,0.008191136669182442,0.0023650034322404002
+bank-additional-full (no macro),was_contacted_before,0.006844994162460405,0.0020128940838101293
+bank-additional-full (no macro),day_of_week,0.0034774930421245577,0.0009376179574390256
+bank-additional-full (no macro),pdays_clean,0.0027809389593848044,0.0018146825042163822
+bank-additional-full (no macro),poutcome,0.0025096776380960526,0.0014642910629681367
+bank-additional-full (no macro),previous,0.0015987340204725697,0.0004263202650784794
+bank-additional-full (no macro),housing,0.0007960428557950317,0.0006069481254634399
+bank-additional-full (no macro),job,0.00036805244351140187,0.0010602233582790964
+bank-additional-full (no macro),marital,-3.3698523515302006e-05,0.0008450195275240396
+bank-additional-full (no macro),education,-0.0001226104415303353,0.0013259175829905595
+bank-additional-full (no macro),loan,-0.000601893072786519,0.00028520990736694105
+"bank-full (no macro, cross-check)",contact,0.0681105641130049,0.0030673814396252426
+"bank-full (no macro, cross-check)",month,0.05828170257796696,0.004297585657570837
+"bank-full (no macro, cross-check)",poutcome,0.02557884407555283,0.0024816531469663496
+"bank-full (no macro, cross-check)",campaign,0.011414034821907348,0.0027868017019300993
+"bank-full (no macro, cross-check)",housing,0.010989295856006021,0.0019911795215694942
+"bank-full (no macro, cross-check)",age,0.010955169960689525,0.0024846232548576806
+"bank-full (no macro, cross-check)",balance,0.00982717477122157,0.0023070178565008986
+"bank-full (no macro, cross-check)",pdays_clean,0.008149105186591576,0.0014918831177203496
+"bank-full (no macro, cross-check)",marital,0.00451705288626002,0.0022106782887528803
+"bank-full (no macro, cross-check)",education,0.0031499160169173534,0.0007697677118555671
+"bank-full (no macro, cross-check)",loan,0.0014952776531610978,0.0006974890414617453
+"bank-full (no macro, cross-check)",default,1.9749932825374738e-05,1.1346218581419826e-05
+"bank-full (no macro, cross-check)",job,1.9607889556638725e-05,0.0006494857850512977
+"bank-full (no macro, cross-check)",was_contacted_before,0.0,0.0
+"bank-full (no macro, cross-check)",previous,-0.00011497218911165064,0.0004847047862731698

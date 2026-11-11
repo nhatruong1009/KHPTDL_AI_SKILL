@@ -1,0 +1,172 @@
+dataset,term,coef,odds_ratio
+bank-additional-full (with macro),num__emp.var.rate,-2.196534389538209,0.1111878251147127
+bank-additional-full (with macro),cat__month_mar,1.271779451849024,3.567194569005966
+bank-additional-full (with macro),num__cons.price.idx,1.1509943269743577,3.16133474783845
+bank-additional-full (with macro),cat__month_jun,-0.786626989837791,0.4553782030350519
+bank-additional-full (with macro),cat__contact_telephone,-0.631317351100442,0.5318906525425036
+bank-additional-full (with macro),cat__month_may,-0.6093341596258645,0.5437127744927001
+bank-additional-full (with macro),cat__month_nov,-0.5966564025994072,0.550649712435104
+bank-additional-full (with macro),cat__poutcome_failure,-0.5301507672213482,0.5885162340319865
+bank-additional-full (with macro),num__nr.employed,0.47029541226426497,1.600466920946136
+bank-additional-full (with macro),cat__default_unknown,-0.3750889597362903,0.6872281404374421
+bank-additional-full (with macro),cat__day_of_week_mon,-0.31388051621992186,0.7306063185491174
+bank-additional-full (with macro),cat__marital_divorced,-0.3018788151694672,0.7394276668767231
+bank-additional-full (with macro),num__euribor3m,0.28240297898039246,1.3263130886060275
+bank-additional-full (with macro),cat__month_aug,0.27830541262960595,1.320889551962626
+bank-additional-full (with macro),cat__job_retired,0.2747476028411346,1.3161984281965475
+bank-additional-full (with macro),cat__month_dec,0.25223067773794977,1.2868928605823238
+bank-additional-full (with macro),cat__marital_married,-0.24164312569445473,0.7853363939280457
+bank-additional-full (with macro),num__was_contacted_before,0.23491611965401948,1.2648026721975059
+bank-additional-full (with macro),cat__education_illiterate,0.223218079576223,1.2500931637991415
+bank-additional-full (with macro),cat__housing_yes,-0.22243294085943657,0.800568690398559
+bank-additional-full (with macro),cat__education_basic.9y,-0.21557315296023474,0.8060793010142031
+bank-additional-full (with macro),cat__loan_no,-0.2066652019879119,0.8132918929208288
+bank-additional-full (with macro),cat__month_apr,-0.18471994037229403,0.8313370752046544
+bank-additional-full (with macro),cat__loan_yes,-0.18413948009770317,0.8318197734316247
+bank-additional-full (with macro),cat__job_services,-0.1826559906182434,0.8330546850770575
+bank-additional-full (with macro),cat__job_blue-collar,-0.17878743662501168,0.8362836437791626
+bank-additional-full (with macro),cat__marital_single,-0.17571744182488586,0.8388549751844788
+bank-additional-full (with macro),cat__housing_no,-0.16837174122618284,0.8450396402167313
+bank-additional-full (with macro),cat__marital_unknown,0.16742984104080838,1.1822623409798063
+bank-additional-full (with macro),cat__housing_unknown,-0.1610048595623852,0.8512879342102754
+bank-additional-full (with macro),cat__loan_unknown,-0.1610048595623852,0.8512879342102754
+bank-additional-full (with macro),cat__education_basic.4y,-0.15670146948177555,0.8549592521528965
+bank-additional-full (with macro),cat__education_professional.course,-0.14574391072014742,0.8643790330474234
+bank-additional-full (with macro),cat__poutcome_nonexistent,-0.13959969624862922,0.8697063124253427
+bank-additional-full (with macro),cat__default_no,-0.1390031655258646,0.8702252737332795
+bank-additional-full (with macro),cat__education_high.school,-0.13890914135320373,0.8703070997914243
+bank-additional-full (with macro),num__cons.conf.idx,0.13296271933749498,1.142207415287977
+bank-additional-full (with macro),cat__month_oct,-0.13073251550711917,0.8774524479269392
+bank-additional-full (with macro),num__campaign,-0.12638573785081034,0.8812748401481056
+bank-additional-full (with macro),cat__poutcome_success,0.11794092182197198,1.1251776359590484
+bank-additional-full (with macro),cat__day_of_week_fri,-0.11771203175630678,0.8889520057074785
+bank-additional-full (with macro),cat__job_housemaid,-0.1034553546780001,0.9017162792568562
+bank-additional-full (with macro),cat__month_jul,-0.10256980566387197,0.9025151468849898
+bank-additional-full (with macro),cat__job_student,0.09777997177540623,1.102720128861698
+bank-additional-full (with macro),cat__job_entrepreneur,-0.09480803203600467,0.9095475216960149
+bank-additional-full (with macro),cat__job_self-employed,-0.08834365530259702,0.9154462247111417
+bank-additional-full (with macro),cat__contact_cellular,0.07950780945243106,1.082754015212398
+bank-additional-full (with macro),cat__day_of_week_tue,-0.07836610947091023,0.9246258502884952
+bank-additional-full (with macro),cat__day_of_week_thu,-0.07003673722649204,0.9323595669721894
+bank-additional-full (with macro),cat__job_unknown,-0.06815698502612547,0.9341138201838556
+bank-additional-full (with macro),cat__job_unemployed,-0.06640102061920732,0.9357555317758305
+bank-additional-full (with macro),cat__education_university.degree,-0.062261695353117874,0.9396369559880184
+bank-additional-full (with macro),cat__month_sep,0.05651472974181205,1.0581422008468555
+bank-additional-full (with macro),cat__job_management,-0.05625780694829002,0.9452954007509398
+bank-additional-full (with macro),cat__job_technician,-0.04451357776394904,0.9564626133818651
+bank-additional-full (with macro),cat__education_unknown,-0.04326036117838597,0.9576620195933273
+bank-additional-full (with macro),num__previous,-0.041579000083139396,0.9592735496577977
+bank-additional-full (with macro),cat__job_admin.,-0.04095725664709251,0.9598701571398448
+bank-additional-full (with macro),cat__default_yes,-0.03771741638584379,0.9629850262350509
+bank-additional-full (with macro),cat__day_of_week_wed,0.02818585302564916,1.0285868326331258
+bank-additional-full (with macro),num__pdays_clean,-0.013389744719108237,0.9866994991511162
+bank-additional-full (with macro),cat__education_basic.6y,-0.012577890177329801,0.9875008808795541
+bank-additional-full (with macro),num__age,-0.0050219099983139885,0.994990678709766
+bank-additional-full (no macro),cat__month_mar,1.0696671973138072,2.914409415280483
+bank-additional-full (no macro),cat__month_nov,-0.9213029659737976,0.39800012247413175
+bank-additional-full (no macro),cat__month_aug,-0.8329368380705736,0.43477055880373533
+bank-additional-full (no macro),cat__month_may,-0.8114933856590205,0.4441942173810906
+bank-additional-full (no macro),cat__month_dec,0.8025344388283797,2.231188579625864
+bank-additional-full (no macro),cat__month_jul,-0.7188142314053414,0.4873297738320779
+bank-additional-full (no macro),cat__contact_telephone,-0.7035835922785294,0.49480892933304393
+bank-additional-full (no macro),cat__month_oct,0.607667236529455,1.8361431113692903
+bank-additional-full (no macro),cat__default_unknown,-0.5006291522545384,0.6061491795977493
+bank-additional-full (no macro),cat__poutcome_failure,-0.48091447576203084,0.6182177880472673
+bank-additional-full (no macro),cat__job_retired,0.47652136295886693,1.6104624325780492
+bank-additional-full (no macro),cat__job_student,0.47310233903915716,1.6049656252118838
+bank-additional-full (no macro),cat__month_sep,0.42568282393646656,1.5306352172807312
+bank-additional-full (no macro),cat__marital_divorced,-0.2858851741844934,0.751348885242298
+bank-additional-full (no macro),cat__job_blue-collar,-0.28170982053156374,0.7544925910294715
+bank-additional-full (no macro),cat__job_services,-0.2749659758604435,0.7595979674525536
+bank-additional-full (no macro),num__was_contacted_before,0.26382000882652634,1.3018938458099714
+bank-additional-full (no macro),cat__poutcome_nonexistent,-0.261255838651248,0.7700838771901316
+bank-additional-full (no macro),cat__poutcome_success,0.260586885061409,1.297691458956486
+bank-additional-full (no macro),cat__day_of_week_mon,-0.25874333418922163,0.7720211490506889
+bank-additional-full (no macro),cat__education_basic.9y,-0.23277458087479067,0.7923321602175611
+bank-additional-full (no macro),cat__contact_cellular,0.22200016292665753,1.2485715812898612
+bank-additional-full (no macro),cat__marital_married,-0.21002928974858637,0.810560504509107
+bank-additional-full (no macro),cat__job_entrepreneur,-0.20452704453597578,0.8150326994382844
+bank-additional-full (no macro),num__campaign,-0.2004454563566736,0.8183661254784895
+bank-additional-full (no macro),cat__housing_yes,-0.19411474456396344,0.8235633994235588
+bank-additional-full (no macro),cat__loan_no,-0.1746471174732894,0.8397533027570551
+bank-additional-full (no macro),cat__loan_yes,-0.17090526889183627,0.8429014186751118
+bank-additional-full (no macro),cat__job_technician,-0.16453747088820683,0.8482859703200454
+bank-additional-full (no macro),cat__housing_no,-0.15143764180116664,0.859471475695088
+bank-additional-full (no macro),cat__job_management,-0.1441963539179039,0.8657177442984071
+bank-additional-full (no macro),cat__job_housemaid,-0.139816431372286,0.8695178369455401
+bank-additional-full (no macro),cat__loan_unknown,-0.13603104298673888,0.8728155372670143
+bank-additional-full (no macro),cat__housing_unknown,-0.13603104298673885,0.8728155372670143
+bank-additional-full (no macro),cat__education_high.school,-0.12939900464488996,0.8786233208096843
+bank-additional-full (no macro),cat__job_self-employed,-0.12649575067756028,0.881177893944558
+bank-additional-full (no macro),cat__education_professional.course,-0.12376361864292078,0.8835886800902304
+bank-additional-full (no macro),cat__education_basic.4y,-0.12084598864222974,0.886170429394703
+bank-additional-full (no macro),cat__day_of_week_fri,-0.0895075447854673,0.9143813662870356
+bank-additional-full (no macro),cat__education_illiterate,0.08215629073253493,1.0856254697709946
+bank-additional-full (no macro),cat__day_of_week_thu,-0.078323810817078,0.9246649615444318
+bank-additional-full (no macro),num__previous,0.07636312731717476,1.0793544460875648
+bank-additional-full (no macro),cat__education_unknown,0.07456366595526684,1.0774139359261798
+bank-additional-full (no macro),cat__job_admin.,-0.06101187463638695,0.9408120679084641
+bank-additional-full (no macro),cat__month_jun,-0.05940814376568997,0.9423220877743886
+bank-additional-full (no macro),cat__day_of_week_tue,-0.053158269758072904,0.9482299244846703
+bank-additional-full (no macro),cat__marital_unknown,0.052648218042936096,1.0540587810306816
+bank-additional-full (no macro),num__age,0.05036588585877533,1.051655811980635
+bank-additional-full (no macro),cat__job_unknown,-0.04772566683209601,0.9533952991578287
+bank-additional-full (no macro),cat__month_apr,-0.04317956108554247,0.9577394018996299
+bank-additional-full (no macro),cat__marital_single,-0.03831718346172132,0.9624076326898795
+bank-additional-full (no macro),cat__default_no,0.036883836231775796,1.0375724855076511
+bank-additional-full (no macro),cat__education_basic.6y,-0.02446930527134833,0.9758276412233742
+bank-additional-full (no macro),num__pdays_clean,0.020781271096653803,1.0209987052851428
+bank-additional-full (no macro),cat__default_yes,-0.017838113329110984,0.9823200440086922
+bank-additional-full (no macro),cat__job_unemployed,0.01377925790253917,1.0138746294228418
+bank-additional-full (no macro),cat__education_university.degree,-0.007050887963483227,0.9929739112273839
+bank-additional-full (no macro),cat__day_of_week_wed,-0.001850469802019458,0.998151241261638
+"bank-full (no macro, cross-check)",cat__poutcome_success,1.4745860176734908,4.3692266158765865
+"bank-full (no macro, cross-check)",cat__month_mar,1.1031666453287745,3.01369423051632
+"bank-full (no macro, cross-check)",cat__month_jan,-0.9911951924812846,0.3711328506448913
+"bank-full (no macro, cross-check)",cat__contact_unknown,-0.9708690486241585,0.3787537396196155
+"bank-full (no macro, cross-check)",cat__month_nov,-0.7921443664325546,0.45287262845124926
+"bank-full (no macro, cross-check)",cat__poutcome_failure,-0.7853833894465503,0.4559448638232674
+"bank-full (no macro, cross-check)",cat__month_aug,-0.7751205106570969,0.4606482646288149
+"bank-full (no macro, cross-check)",cat__month_sep,0.702941584385492,2.019685051959299
+"bank-full (no macro, cross-check)",cat__month_oct,0.68585785655403,1.9854743573633193
+"bank-full (no macro, cross-check)",cat__month_dec,0.6673660081888695,1.949096648752329
+"bank-full (no macro, cross-check)",cat__poutcome_unknown,-0.6491755556906303,0.5224763518991196
+"bank-full (no macro, cross-check)",cat__month_jul,-0.6186328537949126,0.5386803892532086
+"bank-full (no macro, cross-check)",cat__poutcome_other,-0.5057175571305942,0.6030726810298446
+"bank-full (no macro, cross-check)",cat__housing_yes,-0.4934436410663189,0.6105203570742633
+"bank-full (no macro, cross-check)",cat__month_may,-0.42839580461830756,0.651553475880564
+"bank-full (no macro, cross-check)",cat__loan_yes,-0.42132575205728645,0.6561763158056952
+"bank-full (no macro, cross-check)",cat__job_retired,0.4058811103885825,1.5006241332320502
+"bank-full (no macro, cross-check)",cat__job_housemaid,-0.3730812839260394,0.6886092577050738
+"bank-full (no macro, cross-check)",cat__default_yes,-0.3427803939949638,0.7097940694859123
+"bank-full (no macro, cross-check)",cat__contact_cellular,0.3411551583842045,1.406571465287879
+"bank-full (no macro, cross-check)",cat__marital_married,-0.3386902034105702,0.7127032079153482
+"bank-full (no macro, cross-check)",cat__month_feb,-0.31630711208159656,0.7288355815804086
+"bank-full (no macro, cross-check)",cat__job_student,0.29932138516115264,1.348943084105743
+"bank-full (no macro, cross-check)",cat__education_primary,-0.265611086041236,0.7667372643472798
+"bank-full (no macro, cross-check)",num__campaign,-0.24789472464433704,0.7804421002730856
+"bank-full (no macro, cross-check)",cat__month_jun,0.21797562791780037,1.243556759182169
+"bank-full (no macro, cross-check)",cat__job_entrepreneur,-0.19045275355566696,0.8265848099997207
+"bank-full (no macro, cross-check)",cat__contact_telephone,0.16402340564567167,1.1782418922822362
+"bank-full (no macro, cross-check)",cat__job_self-employed,-0.1590974356825385,0.852913250735612
+"bank-full (no macro, cross-check)",cat__job_blue-collar,-0.1363935523281864,0.8724991908241292
+"bank-full (no macro, cross-check)",cat__job_unknown,-0.12638896082499337,0.8812719998266249
+"bank-full (no macro, cross-check)",cat__default_no,-0.1229100905993463,0.8843431697509099
+"bank-full (no macro, cross-check)",cat__education_unknown,-0.12154538438427846,0.8855508622562195
+"bank-full (no macro, cross-check)",cat__education_secondary,-0.10980502999682736,0.8960088131086427
+"bank-full (no macro, cross-check)",cat__marital_divorced,-0.10540566569551274,0.8999593658834051
+"bank-full (no macro, cross-check)",cat__job_services,-0.10365563499393377,0.9015357013192709
+"bank-full (no macro, cross-check)",cat__job_technician,-0.08334818337206981,0.9200307520355719
+"bank-full (no macro, cross-check)",cat__month_apr,0.07879763309651211,1.081985341890634
+"bank-full (no macro, cross-check)",cat__job_unemployed,0.07066269996561943,1.0732191679484686
+"bank-full (no macro, cross-check)",num__balance,0.05591736325705233,1.0575102909196568
+"bank-full (no macro, cross-check)",cat__job_management,-0.05435772923887357,0.947093242949769
+"bank-full (no macro, cross-check)",cat__loan_no,-0.04436473253699712,0.9566049888723183
+"bank-full (no macro, cross-check)",cat__education_tertiary,0.03127101582806209,1.031765090669003
+"bank-full (no macro, cross-check)",cat__housing_no,0.027753156472046243,1.028141862930935
+"bank-full (no macro, cross-check)",num__previous,0.025304275302415732,1.0256271460612227
+"bank-full (no macro, cross-check)",cat__marital_single,-0.021594615488189896,0.9786368788825304
+"bank-full (no macro, cross-check)",cat__job_admin.,-0.01478014618732245,0.9853285440286805
+"bank-full (no macro, cross-check)",num__age,0.008613671797160364,1.0086508762135642
+"bank-full (no macro, cross-check)",num__pdays_clean,0.008068806184879724,1.0081014467325267
+"bank-full (no macro, cross-check)",num__was_contacted_before,0.0,1.0

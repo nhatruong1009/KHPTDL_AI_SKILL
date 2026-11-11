@@ -1,0 +1,5 @@
+poutcome,mean,size
+success,0.6473,1511
+other,0.1668,1840
+failure,0.1261,4901
+unknown,0.0916,36959
