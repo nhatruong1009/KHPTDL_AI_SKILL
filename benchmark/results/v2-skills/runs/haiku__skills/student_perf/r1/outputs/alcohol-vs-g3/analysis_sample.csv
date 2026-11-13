@@ -1,0 +1,991 @@
+school,sex,age,address,famsize,Pstatus,Medu,Fedu,Mjob,Fjob,reason,guardian,traveltime,studytime,failures,schoolsup,famsup,paid,activities,nursery,higher,internet,romantic,famrel,freetime,goout,Dalc,Walc,health,absences,G1,G2,G3,row,student_id,subject,is_por,male,both_files
+GP,F,18,U,GT3,A,4,4,at_home,teacher,course,mother,2,2,0,yes,no,no,no,yes,yes,no,no,4,3,4,1,1,3,6,5,6,6,0,B0,Toán,0,0,1
+GP,F,17,U,GT3,T,1,1,at_home,other,course,father,1,2,0,no,yes,no,no,no,yes,yes,no,5,3,3,1,1,3,4,5,5,6,1,B1,Toán,0,0,1
+GP,F,15,U,LE3,T,1,1,at_home,other,other,mother,1,2,3,yes,no,yes,no,yes,yes,yes,no,4,3,2,2,3,3,10,7,8,10,2,B2,Toán,0,0,1
+GP,F,15,U,GT3,T,4,2,health,services,home,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,yes,3,2,2,1,1,5,2,15,14,15,3,B3,Toán,0,0,1
+GP,F,16,U,GT3,T,3,3,other,other,home,father,1,2,0,no,yes,yes,no,yes,yes,no,no,4,3,2,1,2,5,4,6,10,10,4,B4,Toán,0,0,1
+GP,M,16,U,LE3,T,4,3,services,other,reputation,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,5,4,2,1,2,5,10,15,15,15,5,B5,Toán,0,1,1
+GP,M,16,U,LE3,T,2,2,other,other,home,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,4,4,1,1,3,0,12,12,11,6,B6,Toán,0,1,1
+GP,F,17,U,GT3,A,4,4,other,teacher,home,mother,2,2,0,yes,yes,no,no,yes,yes,no,no,4,1,4,1,1,1,6,6,5,6,7,B7,Toán,0,0,1
+GP,M,15,U,LE3,A,3,2,services,other,home,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,2,2,1,1,1,0,16,18,19,8,B8,Toán,0,1,1
+GP,M,15,U,GT3,T,3,4,other,other,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,5,5,1,1,1,5,0,14,15,15,9,B9,Toán,0,1,1
+GP,F,15,U,GT3,T,4,4,teacher,health,reputation,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,3,3,3,1,2,2,0,10,8,9,10,B10,Toán,0,0,1
+GP,F,15,U,GT3,T,2,1,services,other,reputation,father,3,3,0,no,yes,no,yes,yes,yes,yes,no,5,2,2,1,1,4,4,10,12,12,11,B11,Toán,0,0,1
+GP,M,15,U,LE3,T,4,4,health,services,course,father,1,1,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,1,3,5,2,14,14,14,12,B12,Toán,0,1,1
+GP,M,15,U,GT3,T,4,3,teacher,other,course,mother,2,2,0,no,yes,yes,no,yes,yes,yes,no,5,4,3,1,2,3,2,10,10,11,13,B13,Toán,0,1,1
+GP,M,15,U,GT3,A,2,2,other,other,home,other,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,5,2,1,1,3,0,14,16,16,14,B14,Toán,0,1,1
+GP,F,16,U,GT3,T,4,4,health,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,4,4,4,1,2,2,4,14,14,14,15,B15,Toán,0,0,1
+GP,F,16,U,GT3,T,4,4,services,services,reputation,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,no,3,2,3,1,2,2,6,13,14,14,16,B16,Toán,0,0,1
+GP,F,16,U,GT3,T,3,3,other,other,reputation,mother,3,2,0,yes,yes,no,yes,yes,yes,no,no,5,3,2,1,1,4,4,8,10,10,17,B17,Toán,0,0,1
+GP,M,17,U,GT3,T,3,2,services,services,course,mother,1,1,3,no,yes,no,yes,yes,yes,yes,no,5,5,5,2,4,5,16,6,5,5,18,B18,Toán,0,1,1
+GP,M,16,U,LE3,T,4,3,health,other,home,father,1,1,0,no,no,yes,yes,yes,yes,yes,no,3,1,3,1,3,5,4,8,10,10,19,B19,Toán,0,1,1
+GP,M,15,U,GT3,T,4,3,teacher,other,reputation,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,4,1,1,1,1,0,13,14,15,20,B20,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,health,health,other,father,1,1,0,no,yes,yes,no,yes,yes,yes,no,5,4,2,1,1,5,0,12,15,15,21,B21,Toán,0,1,1
+GP,M,16,U,LE3,T,4,2,teacher,other,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,4,5,1,1,3,5,2,15,15,16,22,B22,Toán,0,1,1
+GP,M,16,U,LE3,T,2,2,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,2,4,5,0,13,13,12,23,B23,Toán,0,1,1
+GP,F,15,R,GT3,T,2,4,services,health,course,mother,1,3,0,yes,yes,yes,yes,yes,yes,yes,no,4,3,2,1,1,5,2,10,9,8,24,B24,Toán,0,0,1
+GP,F,16,U,GT3,T,2,2,services,services,home,mother,1,1,2,no,yes,yes,no,no,yes,yes,no,1,2,2,1,3,5,14,6,9,8,25,B25,Toán,0,0,1
+GP,M,15,U,GT3,T,2,2,other,other,home,mother,1,1,0,no,yes,yes,no,yes,yes,yes,no,4,2,2,1,2,5,2,12,12,11,26,B26,Toán,0,1,1
+GP,M,15,U,GT3,T,4,2,health,services,other,mother,1,1,0,no,no,yes,no,yes,yes,yes,no,2,2,4,2,4,1,4,15,16,15,27,B27,Toán,0,1,1
+GP,M,16,U,LE3,A,3,4,services,other,home,mother,1,2,0,yes,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,5,4,11,11,11,28,B28,Toán,0,1,1
+GP,M,16,U,GT3,T,4,4,teacher,teacher,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,4,4,5,5,5,5,16,10,12,11,29,B29,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,health,services,home,mother,1,2,0,no,yes,yes,no,no,yes,yes,no,5,4,2,3,4,5,0,9,11,12,30,B30,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,services,services,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,1,1,1,5,0,17,16,17,31,B31,Toán,0,1,1
+GP,M,15,R,GT3,T,4,3,teacher,at_home,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,4,5,2,1,1,5,0,17,16,16,32,B32,Toán,0,1,1
+GP,M,15,U,LE3,T,3,3,other,other,course,mother,1,2,0,no,no,no,yes,no,yes,yes,no,5,3,2,1,1,2,0,8,10,12,33,B33,Toán,0,1,1
+GP,M,16,U,GT3,T,3,2,other,other,home,mother,1,1,0,no,yes,yes,no,no,yes,yes,no,5,4,3,1,1,5,0,12,14,15,34,B34,Toán,0,1,1
+GP,F,15,U,GT3,T,2,3,other,other,other,father,2,1,0,no,yes,no,yes,yes,yes,no,no,3,5,1,1,1,5,0,8,7,6,35,B35,Toán,0,0,1
+GP,M,15,U,LE3,T,4,3,teacher,services,home,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,4,3,1,1,4,2,15,16,18,36,B36,Toán,0,1,1
+GP,M,16,R,GT3,A,4,4,other,teacher,reputation,mother,2,3,0,no,yes,no,yes,yes,yes,yes,yes,2,4,3,1,1,5,7,15,16,15,37,B37,Toán,0,1,1
+GP,F,15,R,GT3,T,3,4,services,health,course,mother,1,3,0,yes,yes,yes,yes,yes,yes,yes,no,4,3,2,1,1,5,2,12,12,11,38,B38,Toán,0,0,1
+GP,F,15,R,GT3,T,2,2,at_home,other,reputation,mother,1,1,0,yes,yes,yes,yes,yes,yes,no,no,4,3,1,1,1,2,8,14,13,13,39,B39,Toán,0,0,1
+GP,F,16,U,LE3,T,2,2,other,other,home,mother,2,2,1,no,yes,no,yes,no,yes,yes,yes,3,3,3,1,2,3,25,7,10,11,40,B40,Toán,0,0,1
+GP,M,15,U,LE3,T,4,4,teacher,other,home,other,1,1,0,no,yes,no,no,no,yes,yes,yes,5,4,3,2,4,5,8,12,12,12,41,B41,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,services,teacher,course,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,1,5,2,19,18,18,42,B42,Toán,0,1,1
+GP,M,15,U,GT3,T,2,2,services,services,course,father,1,1,0,yes,yes,no,no,yes,yes,yes,no,5,4,1,1,1,1,0,8,8,11,43,B43,Toán,0,1,1
+GP,F,16,U,LE3,T,2,2,other,at_home,course,father,2,2,1,yes,no,no,yes,yes,yes,yes,no,4,3,3,2,2,5,14,10,10,9,44,B44,Toán,0,0,1
+GP,F,15,U,LE3,A,4,3,other,other,course,mother,1,2,0,yes,yes,yes,yes,yes,yes,yes,yes,5,2,2,1,1,5,8,8,8,6,45,B45,Toán,0,0,1
+GP,F,16,U,LE3,A,3,3,other,services,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,2,3,5,1,4,3,12,11,12,11,46,B46,Toán,0,0,1
+GP,M,16,U,GT3,T,4,3,health,services,reputation,mother,1,4,0,no,no,no,yes,yes,yes,yes,no,4,2,2,1,1,2,4,19,19,20,47,B47,Toán,0,1,1
+GP,M,15,U,GT3,T,4,2,teacher,other,home,mother,1,2,0,no,yes,yes,no,yes,yes,no,no,4,3,3,2,2,5,2,15,15,14,48,B48,Toán,0,1,1
+GP,F,15,U,GT3,T,4,4,services,teacher,other,father,1,2,1,yes,yes,no,yes,no,yes,yes,no,4,4,4,1,1,3,2,7,7,7,49,B49,Toán,0,0,1
+GP,F,16,U,LE3,T,2,2,services,services,course,mother,3,2,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,2,3,4,2,12,13,13,50,B50,Toán,0,0,1
+GP,F,15,U,LE3,T,4,2,health,other,other,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,1,1,5,2,11,13,13,51,B51,Toán,0,0,1
+GP,M,15,U,LE3,A,4,2,health,health,other,father,2,1,1,no,no,no,no,yes,yes,no,no,5,5,5,3,4,5,6,11,11,10,52,B52,Toán,0,1,1
+GP,F,15,U,GT3,T,4,4,services,services,course,mother,1,1,0,yes,yes,yes,no,yes,yes,yes,no,3,3,4,2,3,5,0,8,10,11,53,B53,Toán,0,0,1
+GP,F,15,U,LE3,A,3,3,other,other,other,mother,1,1,0,no,no,yes,no,yes,yes,yes,no,5,3,4,4,4,1,6,10,13,13,54,B54,Toán,0,0,1
+GP,F,16,U,GT3,A,2,1,other,other,other,mother,1,2,0,no,no,yes,yes,yes,yes,yes,yes,5,3,4,1,1,2,8,8,9,10,55,B55,Toán,0,0,1
+GP,F,15,U,GT3,A,4,3,services,services,reputation,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,4,3,2,1,1,1,0,14,15,15,56,B56,Toán,0,0,1
+GP,M,15,U,GT3,T,4,4,teacher,health,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,no,no,3,2,2,1,1,5,4,14,15,15,57,B57,Toán,0,1,1
+GP,M,15,U,LE3,T,1,2,other,at_home,home,father,1,2,0,yes,yes,no,yes,yes,yes,yes,no,4,3,2,1,1,5,2,9,10,9,58,B58,Toán,0,1,1
+GP,F,16,U,GT3,T,4,2,services,other,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,2,3,1,1,5,2,15,16,16,59,B59,Toán,0,0,1
+GP,F,16,R,GT3,T,4,4,health,teacher,other,mother,1,2,0,no,yes,no,yes,yes,yes,no,no,2,4,4,2,3,4,6,10,11,11,60,B60,Toán,0,0,1
+GP,F,16,U,GT3,T,1,1,services,services,course,father,4,1,0,yes,yes,no,yes,no,yes,yes,yes,5,5,5,5,5,5,6,10,8,11,61,B61,Toán,0,0,1
+GP,F,16,U,LE3,T,1,2,other,services,reputation,father,1,2,0,yes,no,no,yes,yes,yes,yes,no,4,4,3,1,1,1,4,8,10,9,62,B62,Toán,0,0,1
+GP,F,16,U,GT3,T,4,3,teacher,health,home,mother,1,3,0,yes,yes,yes,yes,yes,yes,yes,no,3,4,4,2,4,4,2,10,9,9,63,B63,Toán,0,0,1
+GP,F,15,U,LE3,T,4,3,services,services,reputation,father,1,2,0,yes,no,no,yes,yes,yes,yes,yes,4,4,4,2,4,2,0,10,10,10,64,B64,Toán,0,0,1
+GP,F,16,U,LE3,T,4,3,teacher,services,course,mother,3,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,3,1,2,1,2,16,15,15,65,B65,Toán,0,0,1
+GP,M,15,U,GT3,A,4,4,other,services,reputation,mother,1,4,0,no,yes,no,yes,no,yes,yes,yes,1,3,3,5,5,3,4,13,13,12,66,B66,Toán,0,1,1
+GP,F,16,U,GT3,T,3,1,services,other,course,mother,1,4,0,yes,yes,yes,no,yes,yes,yes,no,4,3,3,1,2,5,4,7,7,6,67,B67,Toán,0,0,1
+GP,F,15,R,LE3,T,2,2,health,services,reputation,mother,2,2,0,yes,yes,yes,no,yes,yes,yes,no,4,1,3,1,3,4,2,8,9,8,68,B68,Toán,0,0,1
+GP,F,15,R,LE3,T,3,1,other,other,reputation,father,2,4,0,no,yes,no,no,no,yes,yes,no,4,4,2,2,3,3,12,16,16,16,69,B69,Toán,0,0,1
+GP,M,16,U,GT3,T,3,1,other,other,reputation,father,2,4,0,no,yes,yes,no,yes,yes,yes,no,4,3,2,1,1,5,0,13,15,15,70,B70,Toán,0,1,1
+GP,M,15,U,GT3,T,4,2,other,other,course,mother,1,4,0,no,no,no,no,yes,yes,yes,no,3,3,3,1,1,3,0,10,10,10,71,B71,Toán,0,1,1
+GP,F,15,R,GT3,T,1,1,other,other,reputation,mother,1,2,2,yes,yes,no,no,no,yes,yes,yes,3,3,4,2,4,5,2,8,6,5,72,B72,Toán,0,0,1
+GP,M,16,U,GT3,T,3,1,other,other,reputation,mother,1,1,0,no,no,no,yes,yes,yes,no,no,5,3,2,2,2,5,2,12,12,14,73,B73,Toán,0,1,1
+GP,F,16,U,GT3,T,3,3,other,services,home,mother,1,2,0,yes,yes,yes,yes,yes,yes,yes,no,4,3,3,2,4,5,54,11,12,11,74,B74,Toán,0,0,1
+GP,M,15,U,GT3,T,4,3,teacher,other,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,2,3,5,6,9,9,10,75,B75,Toán,0,1,1
+GP,M,15,U,GT3,T,4,0,teacher,other,course,mother,2,4,0,no,no,no,yes,yes,yes,yes,no,3,4,3,1,1,1,8,11,11,10,76,B76,Toán,0,1,1
+GP,F,16,U,GT3,T,2,2,other,other,reputation,mother,1,4,0,no,no,yes,no,yes,yes,yes,yes,5,2,3,1,3,3,0,11,11,11,77,B77,Toán,0,0,1
+GP,M,17,U,GT3,T,2,1,other,other,home,mother,2,1,3,yes,yes,no,yes,yes,no,yes,no,4,5,1,1,1,3,2,8,8,10,78,B78,Toán,0,1,1
+GP,F,16,U,GT3,T,3,4,at_home,other,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,2,4,3,1,2,3,12,5,5,5,79,B79,Toán,0,0,1
+GP,M,15,U,GT3,T,2,3,other,services,course,father,1,1,0,yes,yes,yes,yes,no,yes,yes,yes,3,2,2,1,3,3,2,10,12,12,80,B80,Toán,0,1,1
+GP,M,15,U,GT3,T,2,3,other,other,home,mother,1,3,0,yes,no,yes,no,no,yes,yes,no,5,3,2,1,2,5,4,11,10,11,81,B81,Toán,0,1,1
+GP,F,15,U,LE3,T,3,2,services,other,reputation,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,4,4,1,1,5,10,7,6,6,82,B82,Toán,0,0,1
+GP,M,15,U,LE3,T,2,2,services,services,home,mother,2,2,0,no,no,yes,yes,yes,yes,yes,no,5,3,3,1,3,4,4,15,15,15,83,B83,Toán,0,1,1
+GP,F,15,U,GT3,T,1,1,other,other,home,father,1,2,0,no,yes,no,yes,no,yes,yes,no,4,3,2,2,3,4,2,9,10,10,84,B84,Toán,0,0,1
+GP,F,15,U,GT3,T,4,4,services,services,reputation,father,2,2,2,no,no,yes,no,yes,yes,yes,yes,4,4,4,2,3,5,6,7,9,8,85,B85,Toán,0,0,1
+GP,F,16,U,LE3,T,2,2,at_home,other,course,mother,1,2,0,no,yes,no,no,yes,yes,no,no,4,3,4,1,2,2,4,8,7,6,86,B86,Toán,0,0,1
+GP,F,15,U,GT3,T,4,2,other,other,reputation,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,3,1,4,13,14,14,87,B87,Toán,0,0,1
+GP,M,16,U,GT3,T,2,2,services,other,reputation,father,2,2,1,no,no,yes,yes,no,yes,yes,no,4,4,2,1,1,3,12,11,10,10,88,B88,Toán,0,1,1
+GP,M,16,U,LE3,A,4,4,teacher,health,reputation,mother,1,2,0,no,yes,no,no,yes,yes,no,no,4,1,3,3,5,5,18,8,6,7,89,B89,Toán,0,1,1
+GP,F,16,U,GT3,T,3,3,other,other,home,mother,1,3,0,no,yes,yes,no,yes,yes,yes,yes,4,3,3,1,3,4,0,7,7,8,90,B90,Toán,0,0,1
+GP,F,15,U,GT3,T,4,3,services,other,reputation,mother,1,1,0,no,no,yes,yes,yes,yes,yes,no,4,5,5,1,3,1,4,16,17,18,91,B91,Toán,0,0,1
+GP,F,16,U,LE3,T,3,1,other,other,home,father,1,2,0,yes,yes,no,no,yes,yes,no,no,3,3,3,2,3,2,4,7,6,6,92,B92,Toán,0,0,1
+GP,F,16,U,GT3,T,4,2,teacher,services,home,mother,2,2,0,no,yes,yes,yes,yes,yes,yes,no,5,3,3,1,1,1,0,11,10,10,93,B93,Toán,0,0,1
+GP,M,15,U,LE3,T,2,2,services,health,reputation,mother,1,4,0,no,yes,no,yes,yes,yes,yes,no,4,3,4,1,1,4,6,11,13,14,94,B94,Toán,0,1,1
+GP,F,15,R,GT3,T,1,1,at_home,other,home,mother,2,4,1,yes,yes,yes,yes,yes,yes,yes,no,3,1,2,1,1,1,2,7,10,10,95,B95,Toán,0,0,1
+GP,M,16,R,GT3,T,4,3,services,other,reputation,mother,2,1,0,yes,yes,no,yes,no,yes,yes,no,3,3,3,1,1,4,2,11,15,15,96,B96,Toán,0,1,1
+GP,F,16,U,GT3,T,2,1,other,other,course,mother,1,2,0,no,yes,yes,no,yes,yes,no,yes,4,3,5,1,1,5,2,8,9,10,97,B97,Toán,0,0,1
+GP,F,16,U,GT3,T,4,4,other,other,reputation,mother,1,1,0,no,no,no,yes,no,yes,yes,no,5,3,4,1,2,1,6,11,14,14,98,B98,Toán,0,0,1
+GP,F,16,U,GT3,T,4,3,other,at_home,course,mother,1,3,0,yes,yes,yes,no,yes,yes,yes,no,5,3,5,1,1,3,0,7,9,8,99,B99,Toán,0,0,1
+GP,M,16,U,GT3,T,4,4,services,services,other,mother,1,1,0,yes,yes,yes,yes,yes,yes,yes,no,4,5,5,5,5,4,14,7,7,5,100,B100,Toán,0,1,1
+GP,M,16,U,GT3,T,4,4,services,teacher,other,father,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,4,3,1,1,4,0,16,17,17,101,B101,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,services,other,course,mother,1,1,0,no,yes,no,yes,no,yes,yes,no,5,3,3,1,1,5,4,10,13,14,102,B102,Toán,0,1,1
+GP,F,15,U,GT3,T,3,2,services,other,home,mother,2,2,0,yes,yes,yes,no,yes,yes,yes,no,4,3,5,1,1,2,26,7,6,6,103,B103,Toán,0,0,1
+GP,M,15,U,GT3,A,3,4,services,other,course,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,5,4,4,1,1,1,0,16,18,18,104,B104,Toán,0,1,1
+GP,F,15,U,GT3,A,3,3,other,health,reputation,father,1,4,0,yes,no,no,no,yes,yes,no,no,4,3,3,1,1,4,10,10,11,11,105,B105,Toán,0,0,1
+GP,F,15,U,GT3,T,2,2,other,other,course,mother,1,4,0,yes,yes,yes,no,yes,yes,yes,no,5,1,2,1,1,3,8,7,8,8,106,B106,Toán,0,0,1
+GP,M,16,U,GT3,T,3,3,services,other,home,father,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,5,2,16,18,18,107,B107,Toán,0,1,1
+GP,M,15,R,GT3,T,4,4,other,other,home,father,4,4,0,no,yes,yes,yes,yes,yes,yes,yes,1,3,5,3,5,1,6,10,13,13,108,B108,Toán,0,1,1
+GP,F,16,U,LE3,T,4,4,health,health,other,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,yes,5,4,5,1,1,4,4,14,15,16,109,B109,Toán,0,0,1
+GP,M,15,U,LE3,A,4,4,teacher,teacher,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,5,5,3,1,1,4,6,18,19,19,110,B110,Toán,0,1,1
+GP,F,16,R,GT3,T,3,3,services,other,reputation,father,1,3,1,yes,yes,no,yes,yes,yes,yes,no,4,1,2,1,1,2,0,7,10,10,111,B111,Toán,0,0,1
+GP,F,16,U,GT3,T,2,2,at_home,other,home,mother,1,2,1,yes,no,no,yes,yes,yes,yes,no,3,1,2,1,1,5,6,10,13,13,112,B112,Toán,0,0,1
+GP,M,15,U,LE3,T,4,2,teacher,other,course,mother,1,1,0,no,no,no,no,yes,yes,yes,no,3,5,2,1,1,3,10,18,19,19,113,B113,Toán,0,1,1
+GP,M,15,R,GT3,T,2,1,health,services,reputation,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,4,2,1,1,5,8,9,9,9,114,B114,Toán,0,1,1
+GP,M,16,U,GT3,T,4,4,teacher,teacher,course,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,1,2,5,2,15,15,16,115,B115,Toán,0,1,1
+GP,M,15,U,GT3,T,4,4,other,teacher,reputation,father,2,2,0,no,yes,no,yes,yes,yes,no,no,4,4,3,1,1,2,2,11,13,14,116,B116,Toán,0,1,1
+GP,M,16,U,GT3,T,3,3,other,services,home,father,2,1,0,no,no,no,yes,yes,yes,yes,no,5,4,2,1,1,5,0,13,14,13,117,B117,Toán,0,1,1
+GP,M,17,R,GT3,T,1,3,other,other,course,father,3,2,1,no,yes,no,yes,yes,yes,yes,no,5,2,4,1,4,5,20,9,7,8,118,B118,Toán,0,1,1
+GP,M,15,U,GT3,T,3,4,other,other,reputation,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,4,3,1,2,4,6,14,13,13,119,B119,Toán,0,1,1
+GP,F,15,U,GT3,T,1,2,at_home,services,course,mother,1,2,0,no,no,no,no,no,yes,yes,no,3,2,3,1,2,1,2,16,15,15,120,B120,Toán,0,0,1
+GP,M,15,U,GT3,T,2,2,services,services,home,father,1,4,0,no,yes,yes,yes,yes,yes,yes,no,5,5,4,1,2,5,6,16,14,15,121,B121,Toán,0,1,1
+GP,F,16,U,LE3,T,2,4,other,health,course,father,2,2,0,no,yes,yes,yes,yes,yes,yes,yes,4,2,2,1,2,5,2,13,13,13,122,B122,Toán,0,0,1
+GP,M,16,U,GT3,T,4,4,health,other,course,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,3,4,4,1,4,5,18,14,11,13,123,B123,Toán,0,1,1
+GP,F,16,U,GT3,T,2,2,other,other,home,mother,1,2,0,no,no,yes,no,yes,yes,yes,yes,5,4,4,1,1,5,0,8,7,8,124,B124,Toán,0,0,1
+GP,M,15,U,GT3,T,3,4,services,services,home,father,1,1,0,yes,no,no,no,yes,yes,yes,no,5,5,5,3,2,5,0,13,13,12,125,B125,Toán,0,1,1
+GP,F,15,U,LE3,A,3,4,other,other,home,mother,1,2,0,yes,no,no,yes,yes,yes,yes,yes,5,3,2,1,1,1,0,7,10,11,126,B126,Toán,0,0,1
+GP,F,19,U,GT3,T,0,1,at_home,other,course,other,1,2,3,no,yes,no,no,no,no,no,no,3,4,2,1,1,5,2,7,8,9,127,B127,Toán,0,0,1
+GP,M,16,R,GT3,T,4,4,teacher,teacher,course,mother,1,1,0,no,no,yes,yes,yes,yes,yes,no,3,5,5,2,5,4,8,18,18,18,129,B128,Toán,0,1,1
+GP,F,17,U,LE3,T,2,2,other,other,course,father,1,1,0,no,yes,no,no,yes,yes,yes,yes,3,4,4,1,3,5,12,10,13,12,132,B131,Toán,0,0,1
+GP,F,16,U,GT3,A,3,4,services,other,course,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,2,1,1,4,5,16,12,11,11,133,B132,Toán,0,0,1
+GP,M,16,U,LE3,T,1,1,services,other,course,mother,1,2,1,no,no,no,no,yes,yes,no,yes,4,4,4,1,3,5,0,14,12,12,138,B137,Toán,0,1,1
+GP,F,15,U,GT3,T,4,4,teacher,teacher,course,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,4,3,2,1,1,5,0,16,16,15,139,B138,Toán,0,0,1
+GP,M,16,U,LE3,T,2,2,services,services,reputation,father,2,1,2,no,yes,no,yes,yes,yes,yes,no,2,3,3,2,2,2,8,9,9,9,141,B140,Toán,0,1,1
+GP,F,15,U,GT3,T,4,4,teacher,services,course,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,no,4,2,2,1,1,5,2,9,11,11,142,B141,Toán,0,0,1
+GP,F,16,U,LE3,T,1,1,at_home,at_home,course,mother,1,1,0,no,no,no,no,yes,yes,yes,no,3,4,4,3,3,1,2,14,14,13,143,B142,Toán,0,0,1
+GP,F,15,U,GT3,T,1,1,other,services,course,father,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,4,2,1,2,5,0,8,11,11,145,B143,Toán,0,0,1
+GP,F,15,U,GT3,T,1,2,at_home,other,course,mother,1,2,0,no,yes,yes,no,no,yes,yes,no,4,3,2,1,1,5,2,10,11,11,147,B145,Toán,0,0,1
+GP,M,15,U,LE3,A,2,1,services,other,course,mother,4,1,3,no,no,no,no,yes,yes,yes,no,4,5,5,2,5,5,0,8,9,10,149,B146,Toán,0,1,1
+GP,M,16,U,LE3,T,2,1,at_home,other,course,mother,1,1,1,no,no,no,yes,yes,yes,no,yes,4,4,4,3,5,5,6,12,13,14,151,B148,Toán,0,1,1
+GP,F,15,R,GT3,T,3,3,services,services,reputation,other,2,3,2,no,yes,yes,yes,yes,yes,yes,yes,4,2,1,2,3,3,8,10,10,10,152,B149,Toán,0,0,1
+GP,F,17,U,GT3,T,4,4,other,teacher,course,mother,1,1,0,yes,yes,no,no,yes,yes,no,yes,4,2,1,1,1,4,0,11,11,12,154,B151,Toán,0,0,1
+GP,M,15,R,GT3,T,2,3,at_home,services,course,mother,1,2,0,yes,no,yes,yes,yes,yes,no,no,4,4,4,1,1,1,2,11,8,8,155,B152,Toán,0,1,1
+GP,M,17,R,LE3,T,1,2,other,other,reputation,mother,1,1,0,no,no,no,no,yes,yes,no,no,2,2,2,3,3,5,8,16,12,13,156,B153,Toán,0,1,1
+GP,F,18,R,GT3,T,1,1,at_home,other,course,mother,3,1,3,no,yes,no,yes,no,yes,no,no,5,2,5,1,5,4,6,9,8,10,157,B154,Toán,0,0,1
+GP,M,16,R,GT3,T,2,2,at_home,other,course,mother,3,1,0,no,no,no,no,no,yes,no,no,4,2,2,1,2,3,2,17,15,15,158,B155,Toán,0,1,1
+GP,M,16,U,GT3,T,3,3,other,services,course,father,1,2,1,no,yes,yes,no,yes,yes,yes,yes,4,5,5,4,4,5,4,10,12,12,159,B156,Toán,0,1,1
+GP,M,15,R,GT3,T,3,2,other,other,course,mother,2,2,2,yes,yes,no,no,yes,yes,yes,yes,4,4,4,1,4,3,6,5,9,7,161,M161,Toán,0,1,0
+GP,M,17,U,GT3,T,1,3,at_home,services,course,father,1,1,0,no,no,no,no,yes,no,yes,no,5,3,3,1,4,2,2,10,10,10,163,M163,Toán,0,1,0
+GP,M,17,R,LE3,T,1,1,other,services,course,mother,4,2,3,no,no,no,yes,yes,no,no,yes,5,3,5,1,5,5,0,5,8,7,164,B158,Toán,0,1,1
+GP,M,16,U,GT3,T,3,2,services,services,course,mother,2,1,1,no,yes,no,yes,no,no,no,no,4,5,2,1,1,2,16,12,11,12,165,M165,Toán,0,1,0
+GP,M,16,U,GT3,T,2,2,other,other,course,father,1,2,0,no,no,no,no,yes,no,yes,no,4,3,5,2,4,4,4,10,10,10,166,B159,Toán,0,1,1
+GP,F,16,U,GT3,T,4,2,health,services,home,father,1,2,0,no,no,yes,no,yes,yes,yes,yes,4,2,3,1,1,3,0,14,15,16,167,B160,Toán,0,0,1
+GP,F,16,U,GT3,T,4,4,health,health,reputation,mother,1,2,0,no,yes,yes,no,yes,yes,yes,yes,4,4,2,1,1,3,0,14,14,14,169,B162,Toán,0,0,1
+GP,M,16,U,GT3,T,1,0,other,other,reputation,mother,2,2,0,no,yes,yes,yes,yes,yes,yes,yes,4,3,2,1,1,3,2,13,15,16,171,B164,Toán,0,1,1
+GP,M,17,U,LE3,T,4,4,teacher,other,reputation,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,4,4,4,1,3,5,0,13,11,10,172,B165,Toán,0,1,1
+GP,F,16,U,LE3,T,3,3,other,other,reputation,mother,2,2,0,no,yes,yes,yes,yes,yes,yes,no,4,4,5,1,1,4,4,10,11,9,174,B167,Toán,0,0,1
+GP,M,17,U,LE3,T,4,3,teacher,other,course,mother,2,2,0,no,no,yes,yes,yes,yes,yes,no,4,4,4,4,4,4,4,10,9,9,175,B168,Toán,0,1,1
+GP,F,16,U,GT3,T,2,2,services,other,reputation,mother,2,2,0,no,no,yes,yes,no,yes,yes,no,3,4,4,1,4,5,2,13,13,11,176,B169,Toán,0,0,1
+GP,M,17,U,GT3,T,3,3,other,other,reputation,father,1,2,0,no,no,no,yes,no,yes,yes,no,4,3,4,1,4,4,4,6,5,6,177,B170,Toán,0,1,1
+GP,M,16,R,GT3,T,4,2,teacher,services,other,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,4,3,3,3,4,3,10,10,8,9,178,B171,Toán,0,1,1
+GP,M,17,U,GT3,T,4,3,other,other,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,5,2,3,1,1,2,4,10,10,11,179,B172,Toán,0,1,1
+GP,M,16,U,GT3,T,4,3,teacher,other,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,3,4,3,2,3,3,10,9,8,8,180,B173,Toán,0,1,1
+GP,M,16,U,GT3,T,3,3,services,other,home,mother,1,2,0,no,no,yes,yes,yes,yes,yes,yes,4,2,3,1,2,3,2,12,13,12,181,M181,Toán,0,1,0
+GP,F,17,U,GT3,T,2,4,services,services,reputation,father,1,2,0,no,yes,no,yes,yes,yes,no,no,5,4,2,2,3,5,0,16,17,17,182,B174,Toán,0,0,1
+GP,F,17,U,LE3,T,3,3,other,other,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,5,3,3,2,3,1,56,9,9,8,183,B175,Toán,0,0,1
+GP,F,16,U,GT3,T,3,2,other,other,reputation,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,1,2,2,1,2,1,14,12,13,12,184,B176,Toán,0,0,1
+GP,M,17,U,GT3,T,3,3,services,services,other,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,4,3,4,2,3,4,12,12,12,11,185,B177,Toán,0,1,1
+GP,M,16,U,GT3,T,1,2,services,services,other,mother,1,1,0,no,yes,yes,yes,yes,yes,yes,yes,3,3,3,1,2,3,2,11,12,11,186,B178,Toán,0,1,1
+GP,M,16,U,LE3,T,2,1,other,other,course,mother,1,2,0,no,no,yes,yes,yes,yes,yes,yes,4,2,3,1,2,5,0,15,15,15,187,B179,Toán,0,1,1
+GP,F,17,U,GT3,A,3,3,health,other,reputation,mother,1,2,0,no,yes,no,no,no,yes,yes,yes,3,3,3,1,3,3,6,8,7,9,188,B180,Toán,0,0,1
+GP,M,17,R,GT3,T,1,2,at_home,other,home,mother,1,2,0,no,no,no,no,yes,yes,no,no,3,1,3,1,5,3,4,8,9,10,189,B181,Toán,0,1,1
+GP,F,16,U,GT3,T,2,3,services,services,course,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,3,3,1,1,2,10,11,12,13,190,B182,Toán,0,0,1
+GP,F,17,U,GT3,T,1,1,at_home,services,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,3,3,1,1,3,0,8,8,9,191,B183,Toán,0,0,1
+GP,M,17,U,GT3,T,1,2,at_home,services,other,other,2,2,0,no,no,yes,yes,no,yes,yes,no,4,4,4,4,5,5,12,7,8,8,192,B184,Toán,0,1,1
+GP,M,16,R,GT3,T,3,3,services,services,reputation,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,4,3,2,3,4,5,8,8,9,10,193,B185,Toán,0,1,1
+GP,M,16,U,GT3,T,2,3,other,other,home,father,2,1,0,no,no,no,no,yes,yes,yes,no,5,3,3,1,1,3,0,13,14,14,194,B186,Toán,0,1,1
+GP,F,17,U,LE3,T,2,4,services,services,course,father,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,2,1,1,5,0,14,15,15,195,B187,Toán,0,0,1
+GP,M,17,U,GT3,T,4,4,services,teacher,home,mother,1,1,0,no,no,no,no,yes,yes,yes,no,5,2,3,1,2,5,4,17,15,16,196,B188,Toán,0,1,1
+GP,M,16,R,LE3,T,3,3,teacher,other,home,father,3,1,0,no,yes,yes,yes,yes,yes,yes,no,3,3,4,3,5,3,8,9,9,10,197,B189,Toán,0,1,1
+GP,F,17,U,GT3,T,4,4,services,teacher,home,mother,2,1,1,no,yes,no,no,yes,yes,yes,no,4,2,4,2,3,2,24,18,18,18,198,B190,Toán,0,0,1
+GP,F,16,U,LE3,T,4,4,teacher,teacher,reputation,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,5,2,1,2,3,0,9,9,10,199,B191,Toán,0,0,1
+GP,F,16,U,GT3,T,4,3,health,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,5,1,5,2,2,16,16,16,200,B192,Toán,0,0,1
+GP,F,16,U,GT3,T,2,3,other,other,reputation,mother,1,2,0,yes,yes,yes,yes,yes,yes,no,no,4,4,3,1,3,4,6,8,10,10,201,B193,Toán,0,0,1
+GP,F,17,U,GT3,T,1,1,other,other,course,mother,1,2,0,no,yes,yes,no,no,yes,no,no,4,4,4,1,3,1,4,9,9,10,202,B194,Toán,0,0,1
+GP,F,17,R,GT3,T,2,2,other,other,reputation,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,5,3,2,1,2,3,18,7,6,6,203,B195,Toán,0,0,1
+GP,F,16,R,GT3,T,2,2,services,services,reputation,mother,2,4,0,no,yes,yes,yes,no,yes,yes,no,5,3,5,1,1,5,6,10,10,11,204,B196,Toán,0,0,1
+GP,F,17,U,GT3,T,3,4,at_home,services,home,mother,1,3,1,no,yes,yes,no,yes,yes,yes,yes,4,4,3,3,4,5,28,10,9,9,205,B197,Toán,0,0,1
+GP,F,16,U,GT3,A,3,1,services,other,course,mother,1,2,3,no,yes,yes,no,yes,yes,yes,no,2,3,3,2,2,4,5,7,7,7,206,B198,Toán,0,0,1
+GP,F,16,U,GT3,T,4,3,teacher,other,other,mother,1,2,0,no,no,yes,yes,yes,yes,yes,yes,1,3,2,1,1,1,10,11,12,13,207,B199,Toán,0,0,1
+GP,F,16,U,GT3,T,1,1,at_home,other,home,mother,2,1,0,no,yes,yes,no,yes,yes,no,no,4,3,2,1,4,5,6,9,9,10,208,B200,Toán,0,0,1
+GP,F,17,R,GT3,T,4,3,teacher,other,reputation,mother,2,3,0,no,yes,yes,yes,yes,yes,yes,yes,4,4,2,1,1,4,6,7,7,7,209,B201,Toán,0,0,1
+GP,F,19,U,GT3,T,3,3,other,other,reputation,other,1,4,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,1,2,3,10,8,8,8,210,B202,Toán,0,0,1
+GP,M,17,U,LE3,T,4,4,services,other,home,mother,1,2,0,no,yes,yes,no,yes,yes,yes,yes,5,3,5,4,5,3,13,12,12,13,211,B203,Toán,0,1,1
+GP,F,16,U,GT3,A,2,2,other,other,reputation,mother,1,2,0,yes,yes,yes,no,yes,yes,yes,no,3,3,4,1,1,4,0,12,13,14,212,B204,Toán,0,0,1
+GP,M,18,U,GT3,T,2,2,services,other,home,mother,1,2,1,no,yes,yes,yes,yes,yes,yes,no,4,4,4,2,4,5,15,6,7,8,213,B205,Toán,0,1,1
+GP,F,17,R,LE3,T,4,4,services,other,other,mother,1,1,0,no,yes,yes,no,yes,yes,no,no,5,2,1,1,2,3,12,8,10,10,214,B206,Toán,0,0,1
+GP,F,17,U,LE3,T,3,2,other,other,reputation,mother,2,2,0,no,no,yes,no,yes,yes,yes,no,4,4,4,1,3,1,2,14,15,15,215,B207,Toán,0,0,1
+GP,F,17,U,GT3,T,4,3,other,other,reputation,mother,1,2,2,no,no,yes,no,yes,yes,yes,yes,3,4,5,2,4,1,22,6,6,4,216,B208,Toán,0,0,1
+GP,M,18,U,LE3,T,3,3,services,health,home,father,1,2,1,no,yes,yes,no,yes,yes,yes,no,3,2,4,2,4,4,13,6,6,8,217,B209,Toán,0,1,1
+GP,F,17,U,GT3,T,2,3,at_home,other,home,father,2,1,0,no,yes,yes,no,yes,yes,no,no,3,3,3,1,4,3,3,7,7,8,218,B210,Toán,0,0,1
+GP,F,17,U,GT3,T,2,2,at_home,at_home,course,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,1,1,4,4,9,10,10,219,B211,Toán,0,0,1
+GP,F,17,R,GT3,T,2,1,at_home,services,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,2,5,1,2,5,2,6,6,6,220,B212,Toán,0,0,1
+GP,F,16,U,GT3,T,2,3,services,teacher,other,mother,1,2,0,yes,no,no,no,yes,yes,yes,no,2,3,1,1,1,3,2,16,16,17,222,B214,Toán,0,0,1
+GP,M,18,U,GT3,T,2,2,other,other,home,mother,2,2,0,no,yes,yes,no,yes,yes,yes,no,3,3,3,5,5,4,0,12,13,13,223,B215,Toán,0,1,1
+GP,F,16,U,GT3,T,4,4,teacher,services,home,mother,1,3,0,no,yes,no,yes,no,yes,yes,no,5,3,2,1,1,5,0,13,13,14,224,B216,Toán,0,0,1
+GP,F,18,R,GT3,T,3,1,other,other,reputation,mother,1,2,1,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,1,4,16,9,8,7,225,B217,Toán,0,0,1
+GP,F,17,U,GT3,T,3,2,other,other,course,mother,1,2,0,no,no,no,yes,no,yes,yes,no,5,3,4,1,3,3,10,16,15,15,226,B218,Toán,0,0,1
+GP,M,17,U,LE3,T,2,3,services,services,reputation,father,1,2,0,no,yes,yes,no,no,yes,yes,no,5,3,3,1,3,3,2,12,11,12,227,B219,Toán,0,1,1
+GP,M,18,U,LE3,T,2,1,at_home,other,course,mother,4,2,0,yes,yes,yes,yes,yes,yes,yes,yes,4,3,2,4,5,3,14,10,8,9,228,B220,Toán,0,1,1
+GP,F,17,U,GT3,A,2,1,other,other,course,mother,2,3,0,no,no,no,yes,yes,yes,yes,yes,3,2,3,1,2,3,10,12,10,12,229,B221,Toán,0,0,1
+GP,F,17,U,LE3,T,4,3,health,other,reputation,father,1,2,0,no,no,no,yes,yes,yes,yes,yes,3,2,3,1,2,3,14,13,13,14,230,B222,Toán,0,0,1
+GP,M,17,R,GT3,T,2,2,other,other,course,father,2,2,0,no,yes,yes,yes,yes,yes,yes,no,4,5,2,1,1,1,4,11,11,11,231,B223,Toán,0,1,1
+GP,M,17,U,GT3,T,4,4,teacher,teacher,reputation,mother,1,2,0,yes,yes,no,yes,yes,yes,yes,yes,4,5,5,1,3,2,14,11,9,9,232,B224,Toán,0,1,1
+GP,M,16,U,GT3,T,4,4,health,other,reputation,father,1,2,0,no,yes,yes,yes,yes,yes,yes,no,4,2,4,2,4,1,2,14,13,13,233,B225,Toán,0,1,1
+GP,M,16,U,LE3,T,1,1,other,other,home,mother,2,2,0,no,yes,yes,no,yes,yes,yes,no,3,4,2,1,1,5,18,9,7,6,234,B226,Toán,0,1,1
+GP,M,16,U,GT3,T,3,2,at_home,other,reputation,mother,2,3,0,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,3,2,10,11,9,10,235,B227,Toán,0,1,1
+GP,M,17,U,LE3,T,2,2,other,other,home,father,1,2,0,no,no,yes,yes,no,yes,yes,yes,4,4,2,5,5,4,4,14,13,13,236,B228,Toán,0,1,1
+GP,F,16,U,GT3,T,2,1,other,other,home,mother,1,1,0,no,no,no,no,yes,yes,yes,yes,4,5,2,1,1,5,20,13,12,12,237,B229,Toán,0,0,1
+GP,F,17,R,GT3,T,2,1,at_home,services,course,mother,3,2,0,no,no,no,yes,yes,yes,no,no,2,1,1,1,1,3,2,13,11,11,238,B230,Toán,0,0,1
+GP,M,17,U,LE3,T,4,3,health,other,course,mother,2,2,0,no,no,no,yes,yes,yes,yes,yes,2,5,5,1,4,5,14,12,12,12,240,B232,Toán,0,1,1
+GP,M,17,R,LE3,A,4,4,teacher,other,course,mother,2,2,0,no,yes,yes,no,yes,yes,yes,no,3,3,3,2,3,4,2,10,11,12,241,B233,Toán,0,1,1
+GP,M,16,U,GT3,T,4,4,services,services,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,5,3,2,1,2,5,0,13,12,12,243,B235,Toán,0,1,1
+GP,M,16,U,GT3,T,2,1,other,other,course,mother,3,1,0,no,no,no,no,yes,yes,yes,no,4,3,3,1,1,4,6,18,18,18,245,B237,Toán,0,1,1
+GP,M,17,U,GT3,T,2,3,other,other,course,father,2,1,0,no,no,no,no,yes,yes,yes,no,5,2,2,1,1,2,4,12,12,13,246,B238,Toán,0,1,1
+GP,M,22,U,GT3,T,3,1,services,services,other,mother,1,1,3,no,no,no,no,no,no,yes,yes,5,4,5,5,5,1,16,6,8,8,247,B239,Toán,0,1,1
+GP,M,18,R,LE3,T,3,3,other,services,course,mother,1,2,1,no,yes,no,no,yes,yes,yes,yes,4,3,3,1,3,5,8,3,5,5,248,B240,Toán,0,1,1
+GP,M,16,U,GT3,T,0,2,other,other,other,mother,1,1,0,no,no,yes,no,no,yes,yes,no,4,3,2,2,4,5,0,13,15,15,249,B241,Toán,0,1,1
+GP,M,18,U,GT3,T,3,2,services,other,course,mother,2,1,1,no,no,no,no,yes,no,yes,no,4,4,5,2,4,5,0,6,8,8,250,B242,Toán,0,1,1
+GP,M,16,U,GT3,T,3,3,at_home,other,reputation,other,3,2,0,yes,yes,no,no,no,yes,yes,no,5,3,3,1,3,2,6,7,10,10,251,B243,Toán,0,1,1
+GP,M,18,U,GT3,T,2,1,services,services,other,mother,1,1,1,no,no,no,no,no,no,yes,no,3,2,5,2,5,5,4,6,9,8,252,B244,Toán,0,1,1
+GP,M,16,R,GT3,T,2,1,other,other,course,mother,2,1,0,no,no,no,yes,no,yes,no,no,3,3,2,1,3,3,0,8,9,8,253,B245,Toán,0,1,1
+GP,M,17,R,GT3,T,2,1,other,other,course,mother,1,1,0,no,no,no,no,no,yes,yes,no,4,4,2,2,4,5,0,8,12,12,254,B246,Toán,0,1,1
+GP,M,17,U,LE3,T,1,1,health,other,course,mother,2,1,1,no,yes,no,yes,yes,yes,yes,no,4,4,4,1,2,5,2,7,9,8,255,B247,Toán,0,1,1
+GP,F,17,U,LE3,T,4,2,teacher,services,reputation,mother,1,4,0,no,yes,yes,yes,yes,yes,yes,no,4,2,3,1,1,4,6,14,12,13,256,B248,Toán,0,0,1
+GP,M,19,U,LE3,A,4,3,services,at_home,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,1,1,1,1,12,11,11,11,257,B249,Toán,0,1,1
+GP,M,18,U,GT3,T,2,1,other,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,2,4,1,2,4,8,15,14,14,258,B250,Toán,0,1,1
+GP,F,18,U,GT3,T,4,3,services,other,home,father,1,2,0,no,yes,yes,no,yes,yes,yes,yes,3,1,2,1,3,2,21,17,18,18,260,B252,Toán,0,0,1
+GP,M,18,U,GT3,T,4,3,teacher,other,course,mother,1,2,0,no,yes,yes,no,no,yes,yes,no,4,3,2,1,1,3,2,8,8,8,261,B253,Toán,0,1,1
+GP,M,18,R,GT3,T,3,2,other,other,course,mother,1,3,0,no,no,no,yes,no,yes,no,no,5,3,2,1,1,3,1,13,12,12,262,B254,Toán,0,1,1
+GP,F,17,U,GT3,T,3,3,other,other,home,mother,1,3,0,no,no,no,yes,no,yes,no,no,3,2,3,1,1,4,4,10,9,9,263,B255,Toán,0,0,1
+GP,M,18,R,LE3,A,3,4,other,other,reputation,mother,2,2,0,no,yes,yes,yes,yes,yes,yes,no,4,2,5,3,4,1,13,17,17,17,265,B257,Toán,0,1,1
+GP,M,17,U,GT3,T,3,1,services,other,other,mother,1,2,0,no,no,yes,yes,yes,yes,yes,yes,5,4,4,3,4,5,2,9,9,10,266,B258,Toán,0,1,1
+GP,F,18,R,GT3,T,4,4,teacher,other,reputation,mother,2,2,0,no,no,yes,yes,yes,yes,yes,no,4,3,4,2,2,4,8,12,10,11,267,B259,Toán,0,0,1
+GP,M,18,U,GT3,T,4,2,health,other,reputation,father,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,5,4,5,1,3,5,10,10,9,10,268,B260,Toán,0,1,1
+GP,F,19,U,GT3,T,3,3,other,services,home,other,1,2,2,no,yes,yes,yes,yes,yes,yes,no,4,3,5,3,3,5,15,9,9,9,270,B262,Toán,0,0,1
+GP,F,18,U,GT3,T,2,3,other,services,reputation,father,1,4,0,no,yes,yes,yes,yes,yes,yes,yes,4,5,5,1,3,2,4,15,14,14,271,B263,Toán,0,0,1
+GP,F,18,U,LE3,T,1,1,other,other,home,mother,2,2,0,no,yes,yes,no,no,yes,no,no,4,4,3,1,1,3,2,11,11,11,272,B264,Toán,0,0,1
+GP,M,17,R,GT3,T,1,2,at_home,at_home,home,mother,1,2,0,no,yes,yes,yes,no,yes,no,yes,3,5,2,2,2,1,2,15,14,14,273,B265,Toán,0,1,1
+GP,F,17,U,GT3,T,2,4,at_home,health,reputation,mother,2,2,0,no,yes,yes,no,yes,yes,yes,yes,4,3,3,1,1,1,2,10,10,10,274,B266,Toán,0,0,1
+GP,F,17,U,LE3,T,2,2,services,other,course,mother,2,2,0,yes,yes,yes,no,yes,yes,yes,yes,4,4,4,2,3,5,6,12,12,12,275,B267,Toán,0,0,1
+GP,F,18,R,GT3,A,3,2,other,services,home,mother,2,2,0,no,no,no,no,no,no,yes,yes,4,1,1,1,1,5,75,10,9,9,276,B268,Toán,0,0,1
+GP,M,18,U,GT3,T,4,4,teacher,services,home,mother,2,1,0,no,no,yes,yes,yes,yes,yes,no,3,2,4,1,4,3,22,9,9,9,277,B269,Toán,0,1,1
+GP,F,18,U,GT3,T,4,4,health,health,reputation,father,1,2,1,yes,yes,no,yes,yes,yes,yes,yes,2,4,4,1,1,4,15,9,8,8,278,B270,Toán,0,0,1
+GP,M,18,U,LE3,T,4,3,teacher,services,course,mother,2,1,0,no,no,yes,yes,yes,yes,yes,no,4,2,3,1,2,1,8,10,11,10,279,B271,Toán,0,1,1
+GP,M,17,U,LE3,A,4,1,services,other,home,mother,2,1,0,no,no,yes,yes,yes,yes,yes,yes,4,5,4,2,4,5,30,8,8,8,280,B272,Toán,0,1,1
+GP,M,17,U,LE3,A,3,2,teacher,services,home,mother,1,1,1,no,no,no,no,yes,yes,yes,no,4,4,4,3,4,3,19,11,9,10,281,B273,Toán,0,1,1
+GP,F,18,R,LE3,T,1,1,at_home,other,reputation,mother,2,4,0,no,yes,yes,yes,yes,yes,no,no,5,2,2,1,1,3,1,12,12,12,282,B274,Toán,0,0,1
+GP,F,18,U,GT3,T,1,1,other,other,home,mother,2,2,0,yes,no,no,yes,yes,yes,yes,no,5,4,4,1,1,4,4,8,9,10,283,B275,Toán,0,0,1
+GP,F,17,U,GT3,T,2,2,other,other,course,mother,1,2,0,no,yes,no,no,no,yes,yes,no,5,4,5,1,2,5,4,10,9,11,284,B276,Toán,0,0,1
+GP,M,17,U,GT3,T,1,1,other,other,reputation,father,1,2,0,no,no,yes,no,no,yes,yes,no,4,3,3,1,2,4,2,12,10,11,285,B277,Toán,0,1,1
+GP,F,18,U,GT3,T,2,2,at_home,at_home,other,mother,1,3,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,1,2,2,5,18,18,19,286,B278,Toán,0,0,1
+GP,F,17,U,GT3,T,1,1,services,teacher,reputation,mother,1,3,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,1,1,3,6,13,12,12,287,B279,Toán,0,0,1
+GP,M,18,U,GT3,T,2,1,services,services,reputation,mother,1,3,0,no,no,yes,yes,yes,yes,yes,no,4,2,4,1,3,2,6,15,14,14,288,B280,Toán,0,1,1
+GP,M,18,U,LE3,A,4,4,teacher,teacher,reputation,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,5,4,3,1,1,2,9,15,13,15,289,B281,Toán,0,1,1
+GP,M,18,U,GT3,T,4,2,teacher,other,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,4,3,2,1,4,5,11,12,11,11,290,B282,Toán,0,1,1
+GP,F,17,U,GT3,T,4,3,health,services,reputation,mother,1,3,0,no,yes,yes,no,yes,yes,yes,no,4,2,2,1,2,3,0,15,15,15,291,B283,Toán,0,0,1
+GP,F,18,U,LE3,T,2,1,services,at_home,reputation,mother,1,2,1,no,no,no,no,yes,yes,yes,yes,5,4,3,1,1,5,12,12,12,13,292,M292,Toán,0,0,0
+GP,F,17,R,LE3,T,3,1,services,other,reputation,mother,2,4,0,no,yes,yes,no,yes,yes,no,no,3,1,2,1,1,3,6,18,18,18,293,B284,Toán,0,0,1
+GP,M,18,R,LE3,T,3,2,services,other,reputation,mother,2,3,0,no,yes,yes,yes,yes,yes,yes,no,5,4,2,1,1,4,8,14,13,14,294,B285,Toán,0,1,1
+GP,M,17,U,GT3,T,3,3,health,other,home,mother,1,1,0,no,yes,yes,no,yes,yes,yes,no,4,4,3,1,3,5,4,14,12,11,295,B286,Toán,0,1,1
+GP,F,18,U,LE3,T,4,3,other,other,home,other,2,2,0,no,yes,yes,no,yes,yes,yes,yes,4,4,5,1,2,2,10,10,8,8,297,B288,Toán,0,0,1
+GP,F,18,U,GT3,T,4,3,other,other,reputation,father,1,4,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,1,1,3,0,14,13,14,298,B289,Toán,0,0,1
+GP,M,18,U,LE3,T,4,4,teacher,teacher,home,mother,1,1,0,no,yes,yes,no,yes,yes,yes,yes,1,4,2,2,2,1,5,16,15,16,299,B290,Toán,0,1,1
+GP,F,18,U,LE3,A,4,4,health,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,2,4,1,1,4,14,12,10,11,300,B291,Toán,0,0,1
+GP,M,17,U,LE3,T,4,4,other,teacher,home,father,2,1,0,no,no,yes,no,yes,yes,yes,no,4,1,1,2,2,5,0,11,11,10,301,B292,Toán,0,1,1
+GP,F,17,U,GT3,T,4,2,other,other,reputation,mother,2,3,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,1,1,3,0,15,12,14,302,B293,Toán,0,0,1
+GP,F,17,U,GT3,T,3,2,health,health,reputation,father,1,4,0,no,yes,yes,yes,no,yes,yes,no,5,2,2,1,2,5,0,17,17,18,303,B294,Toán,0,0,1
+GP,M,19,U,GT3,T,3,3,other,other,home,other,1,2,1,no,yes,no,yes,yes,yes,yes,yes,4,4,4,1,1,3,20,15,14,13,304,M304,Toán,0,1,0
+GP,F,18,U,GT3,T,2,4,services,at_home,reputation,other,1,2,1,no,yes,yes,yes,yes,yes,yes,no,4,4,3,1,1,3,8,14,12,12,305,M305,Toán,0,0,0
+GP,M,20,U,GT3,A,3,2,services,other,course,other,1,1,0,no,no,no,yes,yes,yes,no,no,5,5,3,1,1,5,0,17,18,18,306,B295,Toán,0,1,1
+GP,M,19,U,GT3,T,4,4,teacher,services,reputation,other,2,1,1,no,yes,yes,no,yes,yes,yes,yes,4,3,4,1,1,4,38,8,9,8,307,M307,Toán,0,1,0
+GP,M,19,R,GT3,T,3,3,other,services,reputation,father,1,2,1,no,no,no,yes,yes,yes,no,yes,4,5,3,1,2,5,0,15,12,12,308,B296,Toán,0,1,1
+GP,F,19,U,LE3,T,1,1,at_home,other,reputation,other,1,2,1,yes,yes,no,yes,no,yes,yes,no,4,4,3,1,3,3,18,12,10,10,309,M309,Toán,0,0,0
+GP,F,19,U,GT3,T,2,1,at_home,other,other,other,3,2,0,no,yes,no,no,yes,no,yes,yes,3,4,1,1,1,2,20,14,12,13,311,M311,Toán,0,0,0
+GP,M,19,U,GT3,T,1,2,other,services,course,other,1,2,1,no,no,no,no,no,yes,yes,no,4,5,2,2,2,4,3,13,11,11,312,M312,Toán,0,1,0
+GP,F,19,U,LE3,T,3,2,services,other,reputation,other,2,2,1,no,yes,yes,no,no,yes,yes,yes,4,2,2,1,2,1,22,13,10,11,313,M313,Toán,0,0,0
+GP,F,19,U,GT3,T,1,1,at_home,health,home,other,1,3,2,no,no,no,no,no,yes,yes,yes,4,1,2,1,1,3,14,15,13,13,314,M314,Toán,0,0,0
+GP,F,19,R,GT3,T,2,3,other,other,reputation,other,1,3,1,no,no,no,no,yes,yes,yes,yes,4,1,2,1,1,3,40,13,11,11,315,M315,Toán,0,0,0
+GP,F,18,U,GT3,T,4,3,other,other,course,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,yes,4,3,4,1,1,5,9,9,10,9,317,B298,Toán,0,0,1
+GP,F,17,R,GT3,T,3,4,at_home,services,course,father,1,3,0,no,yes,yes,yes,no,yes,yes,no,4,3,4,2,5,5,0,11,11,10,318,B299,Toán,0,0,1
+GP,F,18,U,GT3,T,4,4,teacher,other,course,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,4,4,3,3,5,2,11,11,11,319,B300,Toán,0,0,1
+GP,F,17,U,GT3,A,4,3,services,services,course,mother,1,2,0,no,yes,yes,no,yes,yes,yes,yes,5,2,2,1,2,5,23,13,13,13,320,B301,Toán,0,0,1
+GP,F,17,U,GT3,T,2,2,other,other,course,mother,1,2,0,no,yes,no,no,yes,yes,no,yes,4,2,2,1,1,3,12,11,9,9,321,B302,Toán,0,0,1
+GP,F,17,R,LE3,T,2,2,services,services,course,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,no,3,3,2,2,2,3,3,11,11,11,322,B303,Toán,0,0,1
+GP,F,17,U,GT3,T,3,1,services,services,course,father,1,3,0,no,yes,no,no,no,yes,yes,no,3,4,3,2,3,5,1,12,14,15,323,B304,Toán,0,0,1
+GP,F,17,U,LE3,T,0,2,at_home,at_home,home,father,2,3,0,no,no,no,no,yes,yes,yes,no,3,3,3,2,3,2,0,16,15,15,324,B305,Toán,0,0,1
+GP,M,18,U,GT3,T,4,4,other,other,course,mother,1,3,0,no,no,no,yes,yes,yes,yes,no,4,3,3,2,2,3,3,9,12,11,325,B306,Toán,0,1,1
+GP,M,17,U,GT3,T,3,3,other,services,reputation,mother,1,1,0,no,no,no,yes,no,yes,yes,no,4,3,5,3,5,5,3,14,15,16,326,B307,Toán,0,1,1
+GP,M,17,R,GT3,T,2,2,services,other,course,mother,4,1,0,no,yes,no,no,yes,yes,yes,no,4,4,5,5,5,4,8,11,10,10,327,B308,Toán,0,1,1
+GP,F,17,U,GT3,T,4,4,teacher,services,course,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,no,5,4,4,1,3,4,7,10,9,9,328,B309,Toán,0,0,1
+GP,F,17,U,GT3,T,4,4,teacher,teacher,course,mother,2,3,0,no,yes,yes,no,no,yes,yes,yes,4,3,3,1,2,4,4,14,14,14,329,B310,Toán,0,0,1
+GP,M,18,U,LE3,T,2,2,other,other,course,mother,1,4,0,no,yes,no,yes,yes,yes,yes,no,4,5,5,2,4,5,2,9,8,8,330,B311,Toán,0,1,1
+GP,F,17,R,GT3,T,2,4,at_home,other,course,father,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,4,3,1,1,5,7,12,14,14,331,B312,Toán,0,0,1
+GP,F,17,U,GT3,T,3,4,services,other,course,mother,1,3,0,no,no,no,no,yes,yes,yes,no,4,4,5,1,3,5,16,16,15,15,335,B316,Toán,0,0,1
+GP,F,19,R,GT3,A,3,1,services,at_home,home,other,1,3,1,no,no,yes,no,yes,yes,no,no,5,4,3,1,2,5,12,14,13,13,336,M336,Toán,0,0,0
+GP,F,18,U,LE3,T,3,3,services,services,home,mother,1,4,0,no,yes,no,no,yes,yes,yes,no,5,3,3,1,1,1,7,16,15,17,338,B318,Toán,0,0,1
+GP,F,17,R,GT3,A,3,2,other,other,home,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,3,3,2,3,2,4,9,10,10,339,B319,Toán,0,0,1
+GP,F,19,U,GT3,T,2,1,services,services,home,other,1,3,1,no,no,yes,yes,yes,yes,yes,yes,4,3,4,1,3,3,4,11,12,11,340,M340,Toán,0,0,0
+GP,M,18,U,LE3,T,3,4,services,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,3,1,3,5,11,16,15,15,342,B320,Toán,0,1,1
+GP,F,18,U,GT3,T,2,3,at_home,other,course,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,2,3,4,11,10,10,344,B322,Toán,0,0,1
+GP,F,18,U,GT3,T,3,2,other,services,other,mother,1,3,0,no,no,no,no,yes,yes,yes,yes,5,4,3,2,3,1,7,13,13,14,345,B323,Toán,0,0,1
+GP,M,18,R,GT3,T,4,3,teacher,services,course,mother,1,3,0,no,no,no,no,yes,yes,yes,yes,5,3,2,1,2,4,9,16,15,16,346,B324,Toán,0,1,1
+GP,M,18,U,GT3,T,4,3,teacher,other,course,mother,1,3,0,no,yes,yes,no,yes,yes,yes,yes,5,4,5,2,3,5,0,10,10,9,347,B325,Toán,0,1,1
+GP,F,17,U,GT3,T,4,3,health,other,reputation,mother,1,3,0,no,yes,yes,yes,yes,yes,yes,yes,4,4,3,1,3,4,0,13,15,15,348,B326,Toán,0,0,1
+MS,M,18,R,GT3,T,3,2,other,other,course,mother,2,1,1,no,yes,no,no,no,yes,yes,no,2,5,5,5,5,5,10,11,13,13,349,B327,Toán,0,1,1
+MS,M,19,R,GT3,T,1,1,other,services,home,other,3,2,3,no,no,no,no,yes,yes,yes,no,5,4,4,3,3,2,8,8,7,8,350,B328,Toán,0,1,1
+MS,M,17,U,GT3,T,3,3,health,other,course,mother,2,2,0,no,yes,yes,no,yes,yes,yes,no,4,5,4,2,3,3,2,13,13,13,351,B329,Toán,0,1,1
+MS,M,18,U,LE3,T,1,3,at_home,services,course,mother,1,1,1,no,no,no,no,yes,no,yes,yes,4,3,3,2,3,3,7,8,7,8,352,B330,Toán,0,1,1
+MS,M,19,R,GT3,T,1,1,other,other,home,other,3,1,1,no,yes,no,no,yes,yes,yes,no,4,4,4,3,3,5,4,8,8,8,353,B331,Toán,0,1,1
+MS,M,17,R,GT3,T,4,3,services,other,home,mother,2,2,0,no,yes,yes,yes,no,yes,yes,yes,4,5,5,1,3,2,4,13,11,11,354,B332,Toán,0,1,1
+MS,F,18,U,GT3,T,3,3,services,services,course,father,1,2,0,no,yes,no,no,yes,yes,no,yes,5,3,4,1,1,5,0,10,9,9,355,B333,Toán,0,0,1
+MS,F,17,R,GT3,T,4,4,teacher,services,other,father,2,2,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,1,2,5,4,12,13,13,356,B334,Toán,0,0,1
+MS,F,17,U,LE3,A,3,2,services,other,reputation,mother,2,2,0,no,no,no,no,yes,yes,no,yes,1,2,3,1,2,5,2,12,12,11,357,B335,Toán,0,0,1
+MS,M,18,U,LE3,T,1,1,other,services,home,father,2,1,0,no,no,no,no,no,yes,yes,yes,3,3,2,1,2,3,4,10,10,10,358,B336,Toán,0,1,1
+MS,F,18,U,LE3,T,1,1,at_home,services,course,father,2,3,0,no,no,no,no,yes,yes,yes,no,5,3,2,1,1,4,0,18,16,16,359,B337,Toán,0,0,1
+MS,F,18,R,LE3,A,1,4,at_home,other,course,mother,3,2,0,no,no,no,no,yes,yes,no,yes,4,3,4,1,4,5,0,13,13,13,360,M360,Toán,0,0,0
+MS,M,18,R,LE3,T,1,1,at_home,other,other,mother,2,2,1,no,no,no,yes,no,no,no,no,4,4,3,2,3,5,2,13,12,12,361,M361,Toán,0,1,0
+MS,F,18,U,GT3,T,3,3,services,services,other,mother,2,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,2,1,3,3,0,11,11,10,362,B338,Toán,0,0,1
+MS,F,17,U,LE3,T,4,4,at_home,at_home,course,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,2,3,4,1,1,1,0,16,15,15,363,B339,Toán,0,0,1
+MS,F,17,R,GT3,T,1,2,other,services,course,father,2,2,0,no,no,no,no,no,yes,no,no,3,2,2,1,2,3,0,12,11,12,364,B340,Toán,0,0,1
+MS,M,18,R,GT3,T,1,3,at_home,other,course,mother,2,2,0,no,yes,yes,no,yes,yes,no,no,3,3,4,2,4,3,4,10,10,10,365,B341,Toán,0,1,1
+MS,M,18,U,LE3,T,4,4,teacher,services,other,mother,2,3,0,no,no,yes,no,yes,yes,yes,yes,4,2,2,2,2,5,0,13,13,13,366,B342,Toán,0,1,1
+MS,F,18,U,GT3,T,2,3,at_home,services,course,father,2,1,0,no,yes,yes,no,yes,yes,yes,yes,5,2,3,1,2,4,0,11,10,10,368,B344,Toán,0,0,1
+MS,F,18,R,GT3,T,4,4,other,teacher,other,father,3,2,0,no,yes,yes,no,no,yes,yes,yes,3,2,2,4,2,5,10,14,12,11,369,B345,Toán,0,0,1
+MS,F,19,U,LE3,T,3,2,services,services,home,other,2,2,2,no,no,no,yes,yes,yes,no,yes,3,2,2,1,1,3,4,7,7,9,370,M370,Toán,0,0,0
+MS,M,18,R,LE3,T,1,2,at_home,services,other,father,3,1,0,no,yes,yes,yes,yes,no,yes,yes,4,3,3,2,3,3,3,14,12,12,371,B346,Toán,0,1,1
+MS,F,17,U,GT3,T,2,2,other,at_home,home,mother,1,3,0,no,no,no,yes,yes,yes,no,yes,3,4,3,1,1,3,8,13,11,11,372,B347,Toán,0,0,1
+MS,F,17,R,GT3,T,1,2,other,other,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,3,5,5,1,3,1,14,6,5,5,373,B348,Toán,0,0,1
+MS,F,18,R,LE3,T,4,4,other,other,reputation,mother,2,3,0,no,no,no,no,yes,yes,yes,no,5,4,4,1,1,1,0,19,18,19,374,B349,Toán,0,0,1
+MS,F,18,R,GT3,T,1,1,other,other,home,mother,4,3,0,no,no,no,no,yes,yes,yes,no,4,3,2,1,2,4,2,8,8,10,375,B350,Toán,0,0,1
+MS,F,20,U,GT3,T,4,2,health,other,course,other,2,3,2,no,yes,yes,no,no,yes,yes,yes,5,4,3,1,1,3,4,15,14,15,376,M376,Toán,0,0,0
+MS,F,18,R,LE3,T,4,4,teacher,services,course,mother,1,2,0,no,no,yes,yes,yes,yes,yes,no,5,4,3,3,4,2,4,8,9,10,377,B351,Toán,0,0,1
+MS,F,18,U,GT3,T,3,3,other,other,home,mother,1,2,0,no,no,yes,no,yes,yes,yes,yes,4,1,3,1,2,1,0,15,15,15,378,B352,Toán,0,0,1
+MS,F,17,R,GT3,T,3,1,at_home,other,reputation,mother,1,2,0,no,yes,yes,yes,no,yes,yes,no,4,5,4,2,3,1,17,10,10,10,379,B353,Toán,0,0,1
+MS,M,18,U,GT3,T,4,4,teacher,teacher,home,father,1,2,0,no,no,yes,yes,no,yes,yes,no,3,2,4,1,4,2,4,15,14,14,380,B354,Toán,0,1,1
+MS,M,18,R,GT3,T,2,1,other,other,other,mother,2,1,0,no,no,no,yes,no,yes,yes,yes,4,4,3,1,3,5,5,7,6,7,381,B355,Toán,0,1,1
+MS,M,17,U,GT3,T,2,3,other,services,home,father,2,2,0,no,no,no,yes,yes,yes,yes,no,4,4,3,1,1,3,2,11,11,10,382,B356,Toán,0,1,1
+MS,M,18,R,GT3,T,4,2,other,other,home,father,2,1,1,no,no,yes,no,yes,yes,no,no,5,4,3,4,3,3,14,6,5,5,384,B358,Toán,0,1,1
+MS,F,18,R,GT3,T,2,2,at_home,other,other,mother,2,3,0,no,no,yes,no,yes,yes,no,no,5,3,3,1,3,4,2,10,9,10,385,B359,Toán,0,0,1
+MS,F,18,R,GT3,T,4,4,teacher,at_home,reputation,mother,3,1,0,no,yes,yes,yes,yes,yes,yes,yes,4,4,3,2,2,5,7,6,5,6,386,B360,Toán,0,0,1
+MS,F,18,U,LE3,T,3,1,teacher,services,course,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,3,4,1,1,1,0,7,9,8,388,B362,Toán,0,0,1
+MS,M,20,U,LE3,A,2,2,services,services,course,other,1,2,2,no,yes,yes,no,yes,yes,no,no,5,5,4,4,5,4,11,9,9,9,390,M390,Toán,0,1,0
+MS,M,17,U,LE3,T,3,1,services,services,course,mother,2,1,0,no,no,no,no,no,yes,yes,no,2,4,5,3,4,2,3,14,16,16,391,B364,Toán,0,1,1
+MS,M,21,R,GT3,T,1,1,other,other,course,other,1,1,3,no,no,no,no,no,yes,no,no,5,5,3,3,3,3,3,10,8,7,392,M392,Toán,0,1,0
+MS,M,18,R,LE3,T,3,2,services,other,course,mother,3,1,0,no,no,no,no,no,yes,yes,no,4,4,1,3,4,5,0,11,12,10,393,B365,Toán,0,1,1
+MS,M,19,U,LE3,T,1,1,other,at_home,course,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,2,3,3,3,5,5,8,9,9,394,M394,Toán,0,1,0
+GP,F,17,U,GT3,T,1,1,at_home,other,course,father,1,2,0,no,yes,no,no,no,yes,yes,no,5,3,3,1,1,3,2,9,11,11,1,B1,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,T,1,1,at_home,other,other,mother,1,2,0,yes,no,no,no,yes,yes,yes,no,4,3,2,2,3,3,6,12,13,12,2,B2,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,4,2,health,services,home,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,3,2,2,1,1,5,0,14,14,14,3,B3,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,3,3,other,other,home,father,1,2,0,no,yes,no,no,yes,yes,no,no,4,3,2,1,2,5,0,11,13,13,4,B4,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,LE3,T,4,3,services,other,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,2,1,2,5,6,12,12,13,5,B5,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,2,2,other,other,home,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,4,4,1,1,3,0,13,12,13,6,B6,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,A,4,4,other,teacher,home,mother,2,2,0,yes,yes,no,no,yes,yes,no,no,4,1,4,1,1,1,2,10,13,13,7,B7,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,A,3,2,services,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,2,2,1,1,1,0,15,16,17,8,B8,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,3,4,other,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,5,1,1,1,5,0,12,12,13,9,B9,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,teacher,health,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,3,3,3,1,2,2,2,14,14,14,10,B10,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,2,1,services,other,reputation,father,3,3,0,no,yes,no,yes,yes,yes,yes,no,5,2,2,1,1,4,0,10,12,13,11,B11,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,4,4,health,services,course,father,1,1,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,3,5,0,12,13,12,12,B12,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,3,teacher,other,course,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,5,4,3,1,2,3,0,12,12,13,13,B13,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,A,2,2,other,other,home,other,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,5,2,1,1,3,0,14,14,15,14,B14,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,4,4,health,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,4,4,4,1,2,2,6,17,17,17,15,B15,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,4,services,services,reputation,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,3,2,3,1,2,2,10,13,13,14,16,B16,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,3,3,other,other,reputation,mother,3,2,0,yes,yes,no,yes,yes,yes,no,no,5,3,2,1,1,4,2,13,14,14,17,B17,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,3,2,services,services,course,mother,1,1,3,no,yes,yes,yes,yes,yes,yes,no,5,5,5,2,4,5,2,8,8,7,18,B18,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,4,3,health,other,home,father,1,1,0,no,no,no,yes,yes,yes,yes,no,3,1,3,1,3,5,6,12,12,12,19,B19,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,3,teacher,other,reputation,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,4,1,1,1,1,0,12,13,14,20,B20,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,health,health,other,father,1,1,0,no,yes,yes,no,yes,yes,yes,no,5,4,2,1,1,5,0,11,12,12,21,B21,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,4,2,teacher,other,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,4,5,1,1,3,5,0,12,13,14,22,B22,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,2,2,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,2,4,5,2,10,10,10,23,B23,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,R,GT3,T,2,4,services,health,course,mother,1,3,0,yes,yes,no,yes,yes,yes,yes,no,4,3,2,1,1,5,2,10,11,10,24,B24,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,2,2,services,services,home,mother,1,1,0,no,yes,no,no,no,yes,yes,no,1,2,2,1,3,5,6,10,11,12,25,B25,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,2,2,other,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,4,2,2,1,2,5,8,11,12,12,26,B26,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,2,health,services,other,mother,1,1,0,no,no,no,no,yes,yes,yes,no,2,2,4,2,4,1,0,11,11,11,27,B27,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,A,3,4,services,other,home,mother,1,2,0,yes,yes,yes,yes,yes,yes,yes,no,5,3,3,1,1,5,2,12,12,13,28,B28,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,4,teacher,teacher,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,4,4,5,5,5,5,4,12,11,12,29,B29,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,health,services,home,mother,1,2,0,no,yes,yes,no,no,yes,yes,no,5,4,2,3,4,5,0,10,11,11,30,B30,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,services,services,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,1,1,1,5,2,15,15,15,31,B31,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,R,GT3,T,4,3,teacher,at_home,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,4,5,2,1,1,5,0,13,14,15,32,B32,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,LE3,T,3,3,other,other,course,mother,1,2,0,no,no,no,yes,no,yes,yes,no,5,3,2,1,1,2,0,13,12,12,33,B33,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,2,other,other,home,mother,1,1,0,no,yes,no,no,no,yes,yes,no,5,4,3,1,1,5,4,12,12,12,34,B34,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,2,3,other,other,other,father,2,1,0,no,yes,no,yes,yes,yes,no,no,3,5,1,1,1,5,4,11,11,11,35,B35,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,4,3,teacher,services,home,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,4,3,1,1,4,0,14,14,14,36,B36,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,R,GT3,A,4,4,other,teacher,reputation,mother,2,3,0,no,yes,no,yes,yes,yes,yes,yes,2,4,3,1,1,5,4,13,13,13,37,B37,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,R,GT3,T,3,4,services,health,course,mother,1,3,0,yes,yes,no,yes,yes,yes,yes,no,4,3,2,1,1,5,2,11,12,12,38,B38,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,R,GT3,T,2,2,at_home,other,reputation,mother,1,1,0,yes,yes,no,yes,yes,yes,no,no,4,3,1,1,1,2,8,14,13,12,39,B39,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,2,2,other,other,home,mother,2,2,0,no,yes,no,yes,no,yes,yes,yes,3,3,3,1,2,3,16,11,11,10,40,B40,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,4,4,teacher,other,home,other,1,1,0,no,yes,no,no,no,yes,yes,yes,5,4,3,2,4,5,8,10,11,11,41,B41,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,services,teacher,course,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,1,5,0,14,15,15,42,B42,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,2,2,services,services,course,father,1,1,0,yes,yes,no,no,yes,yes,yes,no,5,4,1,1,1,1,0,9,10,10,43,B43,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,LE3,T,2,2,other,at_home,course,father,2,2,1,yes,no,no,yes,yes,yes,yes,no,4,3,3,2,2,5,14,10,11,11,44,B44,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,A,4,3,other,other,course,mother,1,2,0,yes,yes,yes,yes,yes,yes,yes,yes,5,2,2,1,1,5,4,10,11,11,45,B45,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,A,3,3,other,services,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,2,3,5,1,4,3,6,13,12,13,46,B46,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,4,3,health,services,reputation,mother,1,4,0,no,no,no,yes,yes,yes,yes,no,4,2,2,1,1,2,2,17,17,17,47,B47,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,2,teacher,other,home,mother,1,2,0,no,yes,no,no,yes,yes,no,no,4,3,3,2,2,5,4,11,12,13,48,B48,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,services,teacher,other,father,1,2,0,yes,yes,no,yes,no,yes,yes,no,4,4,4,1,1,3,2,13,12,12,49,B49,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,2,2,services,services,course,mother,3,2,0,no,yes,no,no,yes,yes,yes,no,4,3,3,2,3,4,0,14,13,13,50,B50,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,T,4,2,health,other,other,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,5,0,16,14,16,51,B51,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,A,4,2,health,health,other,father,2,1,0,no,no,no,no,yes,yes,no,no,5,5,5,3,4,5,4,10,9,9,52,B52,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,services,services,course,mother,1,1,0,yes,yes,no,no,yes,yes,yes,no,3,3,4,2,3,5,0,13,12,12,53,B53,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,A,3,3,other,other,other,mother,1,1,0,no,no,no,no,yes,yes,yes,no,5,3,4,4,4,1,0,13,12,13,54,B54,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,A,2,1,other,other,other,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,3,4,1,1,2,2,12,13,12,55,B55,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,A,4,3,services,services,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,2,1,1,1,0,15,14,15,56,B56,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,4,4,teacher,health,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,no,no,3,2,2,1,1,5,8,15,15,16,57,B57,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,LE3,T,1,2,other,at_home,home,father,1,2,0,yes,yes,no,yes,yes,yes,yes,no,4,3,2,1,1,5,0,14,13,14,58,B58,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,4,2,services,other,course,mother,1,2,0,no,yes,yes,no,yes,yes,yes,no,4,2,3,1,1,5,2,16,15,16,59,B59,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,R,GT3,T,4,4,health,teacher,other,mother,1,2,0,no,yes,no,yes,yes,yes,no,no,2,4,4,2,3,4,0,17,16,16,60,B60,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,1,1,services,services,course,father,4,1,0,yes,yes,no,yes,no,yes,yes,yes,5,5,5,5,5,5,0,10,10,16,61,B61,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,1,2,other,services,reputation,father,1,2,0,yes,no,no,yes,yes,yes,yes,no,4,4,3,1,1,1,0,13,13,10,62,B62,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,3,teacher,health,home,mother,1,3,0,yes,yes,no,yes,yes,yes,yes,no,3,4,4,2,4,4,0,14,13,13,63,B63,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,T,4,3,services,services,reputation,father,1,2,0,yes,no,no,yes,yes,yes,yes,yes,4,4,4,2,4,2,0,13,12,12,64,B64,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,4,3,teacher,services,course,mother,3,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,3,1,2,1,2,16,15,16,65,B65,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,A,4,4,other,services,reputation,mother,1,4,0,no,yes,no,yes,no,yes,yes,yes,1,3,3,5,5,3,0,11,12,12,66,B66,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,3,1,services,other,course,mother,1,4,0,yes,yes,no,no,yes,yes,yes,no,4,3,3,1,2,5,0,10,9,10,67,B67,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,R,LE3,T,2,2,health,services,reputation,mother,2,2,0,yes,yes,no,no,yes,yes,yes,no,4,1,3,1,3,4,0,11,10,11,68,B68,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,R,LE3,T,3,1,other,other,reputation,father,2,4,0,no,yes,no,no,no,yes,yes,no,4,4,2,2,3,3,6,15,15,15,69,B69,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,3,1,other,other,reputation,father,2,4,0,no,yes,no,no,yes,yes,yes,no,4,3,2,1,1,5,2,13,11,11,70,B70,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,2,other,other,course,mother,1,4,0,no,no,no,no,yes,yes,yes,no,3,3,3,1,1,3,0,11,9,10,71,B71,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,R,GT3,T,1,1,other,other,reputation,mother,1,2,0,yes,yes,no,no,no,yes,yes,yes,3,3,4,2,4,5,2,13,11,11,72,B72,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,3,1,other,other,reputation,mother,1,1,0,no,no,no,yes,yes,yes,no,no,5,3,2,2,2,5,0,13,13,14,73,B73,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,3,3,other,services,home,mother,1,2,0,yes,yes,no,yes,yes,yes,yes,no,4,3,3,2,4,5,4,11,11,11,74,B74,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,4,3,teacher,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,2,3,5,0,11,11,11,75,B75,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,0,teacher,other,course,mother,2,4,0,no,no,no,yes,yes,yes,yes,no,3,4,3,1,1,1,0,12,11,11,76,B76,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,2,other,other,reputation,mother,1,4,0,no,no,no,no,yes,yes,yes,yes,5,2,3,1,3,3,1,13,13,13,77,B77,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,2,1,other,other,home,mother,2,1,3,yes,yes,no,yes,yes,no,yes,no,4,5,1,1,1,3,0,9,9,10,78,B78,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,3,4,at_home,other,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,2,4,3,1,2,3,14,12,11,11,79,B79,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,2,3,other,services,course,father,1,1,0,yes,yes,no,yes,no,yes,yes,yes,3,2,2,1,3,3,0,11,11,12,80,B80,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,2,3,other,other,home,mother,1,3,0,yes,no,no,no,no,yes,yes,no,5,3,2,1,2,5,2,10,9,9,81,B81,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,LE3,T,3,2,services,other,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,4,4,1,1,5,4,12,11,11,82,B82,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,2,2,services,services,home,mother,2,2,0,no,no,yes,yes,yes,yes,yes,no,5,3,3,1,3,4,2,13,12,13,83,B83,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,1,1,other,other,home,father,1,2,0,no,yes,no,yes,no,yes,yes,no,4,3,2,2,3,4,2,13,12,12,84,B84,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,4,4,services,services,reputation,father,2,2,0,no,no,no,no,yes,yes,yes,yes,4,4,4,2,3,5,4,12,11,12,85,B85,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,2,2,at_home,other,course,mother,1,2,0,no,yes,no,no,yes,yes,no,no,4,3,4,1,2,2,6,13,11,11,86,B86,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,4,2,other,other,reputation,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,3,1,4,15,15,15,87,B87,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,2,2,services,other,reputation,father,2,2,0,no,no,no,yes,no,yes,yes,no,4,4,2,1,1,3,6,12,10,11,88,B88,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,A,4,4,teacher,health,reputation,mother,1,2,0,no,yes,no,no,yes,yes,no,no,4,1,3,3,5,5,6,9,9,10,89,B89,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,3,3,other,other,home,mother,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,3,3,1,3,4,2,9,11,11,90,B90,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,4,3,services,other,reputation,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,4,5,5,1,3,1,6,14,13,13,91,B91,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,3,1,other,other,home,father,1,2,0,yes,yes,no,no,yes,yes,no,no,3,3,3,2,3,2,0,12,13,12,92,B92,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,2,teacher,services,home,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,1,2,13,14,14,93,B93,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,2,2,services,health,reputation,mother,1,4,0,no,yes,no,yes,yes,yes,yes,no,4,3,4,1,1,4,2,11,12,12,94,B94,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,R,GT3,T,1,1,at_home,other,home,mother,2,4,0,yes,yes,yes,yes,yes,yes,yes,no,3,1,2,1,1,1,4,13,13,13,95,B95,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,R,GT3,T,4,3,services,other,reputation,mother,2,1,0,yes,yes,yes,yes,no,yes,yes,no,3,3,3,1,1,4,6,9,11,11,96,B96,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,1,other,other,course,mother,1,2,0,no,yes,no,no,yes,yes,no,yes,4,3,5,1,1,5,0,13,12,12,97,B97,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,4,other,other,reputation,mother,1,1,0,no,no,no,yes,no,yes,yes,no,5,3,4,1,2,1,4,12,13,13,98,B98,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,3,other,at_home,course,mother,1,3,0,yes,yes,no,no,yes,yes,yes,no,5,3,5,1,1,3,2,12,13,13,99,B99,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,4,4,services,services,other,mother,1,1,0,yes,yes,no,yes,yes,yes,yes,no,4,5,5,5,5,4,12,9,9,8,100,B100,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,4,services,teacher,other,father,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,4,3,1,1,4,0,16,16,16,101,B101,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,services,other,course,mother,1,1,0,no,yes,yes,yes,no,yes,yes,no,5,3,3,1,1,5,2,12,13,12,102,B102,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,3,2,services,other,home,mother,2,2,0,yes,yes,no,no,yes,yes,yes,no,4,3,5,1,1,2,16,11,10,10,103,B103,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,A,3,4,services,other,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,1,1,1,0,16,16,16,104,B104,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,A,3,3,other,health,reputation,father,1,4,0,yes,no,no,no,yes,yes,no,no,4,3,3,1,1,4,10,10,10,10,105,B105,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,2,2,other,other,course,mother,1,4,0,yes,yes,no,no,yes,yes,yes,no,5,1,2,1,1,3,4,10,10,10,106,B106,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,3,3,services,other,home,father,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,5,4,13,14,14,107,B107,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,R,GT3,T,4,4,other,other,home,father,4,4,0,no,yes,no,yes,yes,yes,yes,yes,1,3,5,3,5,1,8,12,10,11,108,B108,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,LE3,T,4,4,health,health,other,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,5,4,5,1,1,4,2,15,15,14,109,B109,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,A,4,4,teacher,teacher,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,5,5,3,1,1,4,4,13,14,14,110,B110,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,R,GT3,T,3,3,services,other,reputation,father,1,3,0,yes,yes,no,yes,yes,yes,yes,no,4,1,2,1,1,2,4,11,11,11,111,B111,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,2,2,at_home,other,home,mother,1,2,1,yes,no,no,yes,yes,yes,yes,no,3,1,2,1,1,5,12,8,10,10,112,B112,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,LE3,T,4,2,teacher,other,course,mother,1,1,0,no,no,no,no,yes,yes,yes,no,3,5,2,1,1,3,10,18,17,18,113,B113,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,R,GT3,T,2,1,health,services,reputation,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,4,2,1,1,5,4,10,9,10,114,B114,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,4,teacher,teacher,course,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,1,2,5,6,16,14,14,115,B115,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,4,4,other,teacher,reputation,father,2,2,0,no,yes,no,yes,yes,yes,no,no,4,4,3,1,1,2,4,16,15,16,116,B116,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,3,other,services,home,father,2,1,0,no,no,no,yes,yes,yes,yes,no,5,4,2,1,1,5,6,14,14,15,117,B117,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,GT3,T,1,3,other,other,course,father,3,2,1,no,yes,no,yes,yes,yes,yes,no,5,2,4,1,4,5,14,12,11,11,118,B118,Tiếng Bồ Đào Nha,1,1,1
+GP,M,15,U,GT3,T,3,4,other,other,reputation,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,4,3,1,2,4,2,14,13,14,119,B119,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,1,2,at_home,services,course,mother,1,2,0,no,no,no,no,no,yes,yes,no,3,2,3,1,2,1,0,14,14,14,120,B120,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,2,2,services,services,home,father,1,4,0,no,yes,no,yes,yes,yes,yes,no,5,5,4,1,2,5,6,14,13,13,121,B121,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,LE3,T,2,4,other,health,course,father,2,2,0,no,yes,no,yes,yes,yes,yes,yes,4,2,2,1,2,5,2,14,12,13,122,B122,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,4,4,health,other,course,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,3,4,4,1,4,5,4,12,13,13,123,B123,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,2,other,other,home,mother,1,2,0,no,no,no,no,yes,yes,yes,yes,5,4,4,1,1,5,0,12,11,11,124,B124,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,U,GT3,T,3,4,services,services,home,father,1,1,0,yes,no,no,no,yes,yes,yes,no,5,5,5,3,2,5,2,9,9,9,125,B125,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,LE3,A,3,4,other,other,home,mother,1,2,0,yes,no,no,yes,yes,yes,yes,yes,5,3,2,1,1,1,0,10,11,11,126,B126,Tiếng Bồ Đào Nha,1,0,1
+GP,F,19,U,GT3,T,0,1,at_home,other,course,other,1,2,2,no,yes,no,no,no,no,no,no,3,4,2,1,1,5,0,9,10,11,127,B127,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,R,GT3,T,4,4,teacher,teacher,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,3,5,5,2,5,4,8,14,14,15,128,B128,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,2,3,other,other,course,mother,2,3,0,no,yes,no,no,no,yes,yes,yes,3,2,3,2,2,1,4,13,12,13,129,P129,Tiếng Bồ Đào Nha,1,1,0
+GP,F,15,R,GT3,T,3,4,services,teacher,course,father,2,3,0,no,yes,no,no,yes,yes,yes,yes,4,2,2,2,2,5,0,10,11,12,130,B129,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,2,1,services,other,reputation,mother,1,2,3,no,yes,no,yes,yes,no,yes,yes,5,4,5,1,3,5,10,10,9,8,131,P131,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,LE3,A,2,1,other,other,course,mother,3,1,0,no,yes,no,no,yes,yes,yes,no,3,2,2,1,2,5,8,11,10,11,132,P132,Tiếng Bồ Đào Nha,1,0,0
+GP,F,15,U,GT3,T,1,1,at_home,other,course,mother,3,1,0,no,yes,no,yes,no,yes,yes,yes,4,3,3,1,2,4,6,11,12,13,133,B130,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,2,2,other,other,course,father,1,1,0,no,yes,no,no,yes,yes,yes,yes,3,4,4,1,3,5,2,13,12,12,134,B131,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,A,3,4,services,other,course,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,2,1,1,4,5,12,15,13,14,135,B132,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,2,1,at_home,other,course,mother,4,1,0,no,no,no,no,yes,yes,no,no,3,2,1,1,1,2,4,9,9,11,136,P136,Tiếng Bồ Đào Nha,1,1,0
+GP,F,16,U,GT3,A,2,2,other,other,home,mother,1,1,1,no,no,no,no,yes,yes,no,no,5,3,4,1,1,5,12,13,11,11,137,P137,Tiếng Bồ Đào Nha,1,0,0
+GP,M,15,R,GT3,T,3,4,at_home,teacher,course,mother,4,2,0,no,yes,no,no,yes,yes,no,yes,5,3,3,1,1,5,2,12,11,11,138,B133,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,services,at_home,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,3,3,1,1,5,4,13,14,15,139,B134,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,R,GT3,T,3,4,at_home,other,course,mother,3,2,0,no,no,no,no,yes,yes,no,no,5,4,5,2,4,5,2,10,9,10,140,B135,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,R,GT3,T,1,1,at_home,other,course,mother,4,2,0,no,yes,no,no,yes,yes,no,no,5,1,3,1,1,3,0,14,13,13,141,P141,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,3,1,services,services,course,mother,2,1,0,no,no,no,yes,yes,yes,yes,yes,3,3,4,4,5,4,2,11,11,12,142,P142,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,GT3,A,3,2,other,services,course,other,1,3,0,no,yes,no,yes,no,yes,yes,yes,4,3,3,5,1,5,10,12,11,11,143,P143,Tiếng Bồ Đào Nha,1,0,0
+GP,F,16,R,GT3,T,1,1,other,services,reputation,mother,2,1,0,no,yes,no,yes,yes,yes,no,yes,3,3,3,1,2,1,8,12,11,11,144,P144,Tiếng Bồ Đào Nha,1,0,0
+GP,F,16,U,GT3,A,3,3,other,other,course,other,2,1,0,no,yes,no,yes,no,yes,yes,yes,4,3,2,1,1,5,4,9,9,10,145,B136,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,LE3,T,1,1,services,other,course,mother,1,2,2,no,no,no,no,yes,yes,no,yes,4,4,4,1,3,5,0,10,10,10,146,B137,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,teacher,teacher,course,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,4,3,2,1,1,5,6,13,14,14,147,B138,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,R,GT3,T,1,1,other,other,course,mother,3,1,1,no,no,no,yes,yes,yes,yes,yes,5,5,5,1,1,1,2,8,9,9,148,P148,Tiếng Bồ Đào Nha,1,0,0
+GP,M,15,U,GT3,T,4,3,teacher,services,course,father,2,4,0,yes,yes,no,no,yes,yes,yes,no,2,2,2,1,1,3,6,9,11,11,149,B139,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,A,3,3,services,services,home,mother,1,2,0,no,no,no,no,no,yes,no,yes,1,3,2,2,3,1,24,9,8,9,150,P150,Tiếng Bồ Đào Nha,1,0,0
+GP,M,16,U,GT3,T,4,4,services,services,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,3,5,0,15,13,13,151,B235,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,2,2,services,services,reputation,father,2,1,0,no,yes,no,yes,yes,yes,yes,no,2,3,3,2,2,2,4,12,11,11,152,B140,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,U,GT3,T,4,4,teacher,services,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,4,2,2,1,1,5,2,13,13,13,153,B141,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,1,1,at_home,at_home,course,mother,1,1,0,no,no,no,no,yes,yes,yes,no,3,4,4,3,3,1,4,10,11,11,154,B142,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,2,1,other,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,5,4,5,1,2,5,22,9,7,6,155,P155,Tiếng Bồ Đào Nha,1,1,0
+GP,F,15,U,GT3,T,1,1,other,services,course,father,1,2,0,no,yes,no,no,yes,yes,yes,no,4,4,2,1,2,5,0,12,12,12,156,B143,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,LE3,A,2,1,at_home,other,home,mother,2,1,0,no,yes,no,yes,yes,no,yes,yes,4,4,2,1,1,5,0,11,10,10,157,P157,Tiếng Bồ Đào Nha,1,0,0
+GP,F,15,U,GT3,T,3,2,health,services,home,father,1,2,1,no,yes,no,no,yes,yes,yes,no,3,3,2,1,1,3,2,11,11,11,158,B144,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,1,2,at_home,other,course,mother,1,2,0,no,yes,no,no,no,yes,yes,no,4,3,2,1,1,5,6,13,12,13,159,B145,Tiếng Bồ Đào Nha,1,0,1
+GP,F,15,U,GT3,T,1,2,at_home,services,course,father,1,2,0,no,no,no,no,no,yes,no,yes,2,3,4,2,4,1,6,11,11,11,160,P160,Tiếng Bồ Đào Nha,1,0,0
+GP,M,16,U,GT3,T,4,4,teacher,teacher,course,mother,1,1,0,no,yes,no,no,yes,no,yes,yes,3,3,2,2,1,5,16,9,9,8,161,P161,Tiếng Bồ Đào Nha,1,1,0
+GP,M,15,U,LE3,A,2,1,services,other,course,mother,4,1,0,no,no,no,no,yes,yes,yes,no,4,5,5,2,5,5,0,12,11,11,162,B146,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,2,1,at_home,other,course,mother,1,1,1,no,no,no,yes,yes,yes,no,yes,4,4,4,3,5,5,6,9,10,10,164,B148,Tiếng Bồ Đào Nha,1,1,1
+GP,F,15,R,GT3,T,3,3,services,services,reputation,other,2,3,0,no,yes,yes,yes,yes,yes,yes,yes,4,2,1,2,3,3,2,13,13,13,165,B149,Tiếng Bồ Đào Nha,1,0,1
+GP,M,19,U,GT3,T,3,2,services,at_home,home,mother,1,1,0,no,yes,no,no,yes,no,yes,yes,4,5,4,1,1,4,6,11,9,11,166,B150,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,4,4,other,teacher,course,mother,1,1,0,yes,yes,no,no,yes,yes,no,yes,4,2,1,1,1,4,0,13,13,13,167,B151,Tiếng Bồ Đào Nha,1,0,1
+GP,M,15,R,GT3,T,2,3,at_home,services,course,mother,1,2,0,yes,no,yes,yes,yes,yes,no,no,4,4,4,1,1,1,0,7,8,8,168,B152,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,LE3,T,1,2,other,other,reputation,mother,1,1,3,no,no,no,no,yes,yes,no,no,2,2,2,3,3,5,14,9,8,10,169,B153,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,R,GT3,T,1,1,at_home,other,course,mother,3,1,3,no,yes,no,yes,no,yes,no,no,5,2,5,1,5,4,6,11,10,11,170,B154,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,R,GT3,T,2,2,at_home,other,course,mother,3,1,0,no,no,no,no,no,yes,no,no,4,2,2,1,2,3,4,12,10,11,171,B155,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,3,other,services,course,father,1,2,1,no,yes,no,no,yes,yes,yes,yes,4,5,5,4,4,5,0,10,10,1,172,B156,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,1,2,health,services,course,mother,2,1,2,no,no,no,no,no,yes,yes,no,4,4,5,3,5,5,0,9,8,10,173,P173,Tiếng Bồ Đào Nha,1,1,0
+GP,M,17,R,LE3,T,2,1,at_home,other,course,mother,2,1,1,no,no,yes,yes,yes,no,yes,yes,3,3,2,2,2,5,8,8,8,9,174,B157,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,GT3,T,3,2,other,other,course,mother,2,2,2,yes,yes,no,no,yes,yes,yes,yes,4,4,4,1,4,3,4,7,6,8,175,P175,Tiếng Bồ Đào Nha,1,1,0
+GP,M,15,U,LE3,T,1,2,other,other,course,mother,2,1,0,no,no,no,yes,yes,yes,no,no,4,4,4,2,4,5,2,8,9,10,176,P176,Tiếng Bồ Đào Nha,1,1,0
+GP,M,16,U,GT3,T,1,3,at_home,services,course,father,1,1,1,no,no,no,no,yes,no,yes,no,5,3,3,1,4,2,2,9,8,8,177,P177,Tiếng Bồ Đào Nha,1,1,0
+GP,M,17,R,LE3,T,1,1,other,services,course,mother,4,2,0,no,no,no,yes,yes,no,no,yes,5,3,5,1,5,5,0,8,8,8,178,B158,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,3,2,services,services,course,mother,2,1,3,no,yes,no,yes,no,no,no,no,4,5,2,1,1,2,10,8,7,8,179,P179,Tiếng Bồ Đào Nha,1,1,0
+GP,M,16,U,GT3,T,2,2,other,other,course,father,1,2,0,no,no,no,no,yes,no,yes,no,4,3,5,2,4,4,0,9,10,11,180,B159,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,4,2,health,services,home,father,1,2,0,no,no,no,no,yes,yes,yes,yes,4,2,3,1,1,3,0,17,17,18,181,B160,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,2,2,other,other,home,mother,1,2,0,no,yes,no,no,no,yes,yes,no,5,1,5,1,1,4,0,12,12,13,182,B161,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,4,health,health,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,4,2,1,1,3,0,16,16,17,183,B162,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,3,4,other,other,course,father,3,1,1,no,yes,no,yes,no,yes,yes,no,3,4,5,2,4,2,4,9,9,10,184,B163,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,1,0,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,yes,4,3,2,1,1,3,0,16,17,18,185,B164,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,LE3,T,4,4,teacher,other,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,4,4,1,3,5,0,11,9,10,186,B165,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,1,3,at_home,services,home,mother,1,2,0,no,no,no,yes,no,yes,yes,yes,4,3,5,1,1,3,0,14,13,13,187,B166,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,3,3,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,4,5,1,1,4,0,14,14,15,188,B167,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,LE3,T,4,3,teacher,other,course,mother,2,2,0,no,no,no,yes,yes,yes,yes,no,4,4,4,4,4,4,0,10,11,11,189,B168,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,2,services,other,reputation,mother,2,2,0,no,no,no,yes,no,yes,yes,no,3,4,4,1,4,5,0,13,12,14,190,B169,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,3,3,other,other,reputation,father,1,2,0,no,no,no,yes,no,yes,yes,no,4,3,4,1,4,4,4,11,9,10,191,B170,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,R,GT3,T,4,2,teacher,services,other,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,4,3,3,3,4,3,8,10,9,11,192,B171,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,4,3,other,other,course,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,yes,5,2,3,1,1,2,4,11,11,13,193,B172,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,3,teacher,other,home,mother,1,2,0,no,yes,yes,yes,yes,yes,yes,no,3,4,3,2,3,3,4,11,10,11,194,B173,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,3,services,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,2,3,1,2,3,0,11,12,13,195,P195,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,GT3,T,2,4,services,services,reputation,father,1,2,0,no,yes,no,yes,yes,yes,no,no,5,4,2,2,3,5,0,17,18,17,196,B174,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,3,3,other,other,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,5,3,3,2,3,1,32,14,13,14,197,B175,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,3,2,other,other,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,1,2,2,1,2,1,8,14,15,16,198,B176,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,3,3,services,services,other,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,4,3,4,2,3,4,6,11,13,14,199,B177,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,1,2,services,services,other,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,3,3,3,1,2,3,0,10,9,11,200,B178,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,2,1,other,other,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,2,3,1,2,5,0,13,14,16,201,B179,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,A,3,3,health,other,reputation,mother,1,2,0,no,yes,no,no,no,yes,yes,yes,3,3,3,1,3,3,10,12,13,14,202,B180,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,R,GT3,T,1,2,at_home,other,home,mother,1,2,0,no,no,no,no,yes,yes,no,no,3,1,3,1,5,3,6,9,9,10,203,B181,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,3,services,services,course,mother,1,2,0,no,no,no,no,yes,yes,yes,no,4,3,3,1,1,2,6,12,12,13,204,B182,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,1,1,at_home,services,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,3,3,1,1,3,0,12,11,12,205,B183,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,1,2,at_home,services,other,other,2,2,0,no,no,no,yes,no,yes,yes,no,4,4,4,4,5,5,16,10,11,12,206,B184,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,R,GT3,T,3,3,services,services,reputation,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,4,3,2,3,4,5,0,11,10,10,207,B185,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,2,3,other,other,home,father,2,1,0,no,no,no,no,yes,yes,yes,no,5,3,3,1,1,3,0,13,12,12,208,B186,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,LE3,T,2,4,services,services,course,father,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,2,1,1,5,8,14,15,16,209,B187,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,4,4,services,teacher,home,mother,1,1,0,no,no,no,no,yes,yes,yes,no,5,2,3,1,2,5,4,13,13,14,210,B188,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,R,LE3,T,3,3,teacher,other,home,father,3,1,0,no,yes,no,yes,yes,yes,yes,no,3,3,4,3,5,3,16,10,11,12,211,B189,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,4,4,services,teacher,home,mother,2,1,1,no,yes,no,no,yes,yes,yes,no,4,2,4,2,3,2,30,14,15,16,212,B190,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,LE3,T,4,4,teacher,teacher,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,5,2,1,2,3,0,11,10,11,213,B191,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,3,health,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,5,1,5,2,2,14,14,15,214,B192,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,2,3,other,other,reputation,mother,1,2,0,yes,yes,no,yes,yes,yes,no,no,4,4,3,1,3,4,4,11,12,12,215,B193,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,1,1,other,other,course,mother,1,2,0,no,yes,no,no,no,yes,no,no,4,4,4,1,3,1,0,14,15,15,216,B194,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,GT3,T,2,2,other,other,reputation,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,5,3,2,1,2,3,21,13,13,13,217,B195,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,R,GT3,T,2,2,services,services,reputation,mother,2,4,0,no,yes,no,yes,no,yes,yes,no,5,3,5,1,1,5,6,13,13,13,218,B196,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,4,at_home,services,home,mother,1,3,1,no,yes,yes,no,yes,yes,yes,yes,4,4,3,3,4,5,14,8,9,8,219,B197,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,A,3,1,services,other,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,2,3,3,2,2,4,2,11,11,12,220,B198,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,4,3,teacher,other,other,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,1,3,2,1,1,1,4,14,15,15,221,B199,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,1,1,at_home,other,home,mother,2,1,0,no,yes,no,no,yes,yes,no,no,4,3,2,1,4,5,2,12,13,13,222,B200,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,GT3,T,4,3,teacher,other,reputation,mother,2,3,0,no,yes,no,yes,yes,yes,yes,yes,4,4,2,1,1,4,0,11,12,12,223,B201,Tiếng Bồ Đào Nha,1,0,1
+GP,F,19,U,GT3,T,3,3,other,other,reputation,other,1,4,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,2,3,4,12,12,12,224,B202,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,LE3,T,4,4,services,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,5,3,5,4,5,3,15,13,12,12,225,B203,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,A,2,2,other,other,reputation,mother,1,2,0,yes,yes,no,no,yes,yes,yes,no,3,3,4,1,1,4,0,13,13,13,226,B204,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,2,2,services,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,4,4,2,4,5,10,12,11,11,227,B205,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,R,LE3,T,4,4,services,other,other,mother,1,1,0,no,yes,no,no,yes,yes,no,no,5,2,1,1,2,3,6,12,11,11,228,B206,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,3,2,other,other,reputation,mother,2,2,0,no,no,no,no,yes,yes,yes,no,4,4,4,1,3,1,2,14,16,15,229,B207,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,4,3,other,other,reputation,mother,1,2,0,no,no,no,no,yes,yes,yes,yes,3,4,5,2,4,1,16,11,9,10,230,B208,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,LE3,T,3,3,services,health,home,father,1,2,0,no,yes,no,no,yes,yes,yes,no,3,2,4,2,4,4,10,10,10,10,231,B209,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,2,3,at_home,other,home,father,2,1,0,no,yes,no,no,yes,yes,no,no,3,3,3,1,4,3,4,12,13,13,232,B210,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,2,2,at_home,at_home,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,1,4,0,12,12,13,233,B211,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,GT3,T,2,1,at_home,services,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,2,5,1,2,5,0,11,10,11,234,B212,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,1,1,at_home,other,reputation,mother,1,3,0,no,yes,no,yes,yes,yes,no,yes,4,3,4,1,1,5,12,12,12,12,235,B213,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,T,2,3,services,teacher,other,mother,1,2,0,yes,no,no,no,yes,yes,yes,no,2,3,1,1,1,3,0,13,13,14,236,B214,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,2,2,other,other,home,mother,2,2,3,no,yes,yes,no,yes,yes,yes,no,3,3,3,5,5,4,9,10,9,10,237,B215,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,4,4,teacher,services,home,mother,1,3,0,no,yes,no,yes,no,yes,yes,no,5,3,2,1,1,5,4,15,16,16,238,B216,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,R,GT3,T,3,1,other,other,reputation,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,1,4,4,8,8,8,239,B217,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,2,other,other,course,mother,1,2,0,no,no,no,yes,no,yes,yes,no,5,3,4,1,3,3,2,17,18,17,240,B218,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,LE3,T,2,3,services,services,reputation,father,1,2,0,no,yes,no,no,no,yes,yes,no,5,3,3,1,3,3,0,10,11,11,241,B219,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,LE3,T,2,1,at_home,other,course,mother,4,2,0,yes,yes,no,yes,yes,yes,yes,yes,4,3,2,4,5,3,2,9,10,11,242,B220,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,A,2,1,other,other,course,mother,2,3,0,no,no,no,yes,yes,yes,yes,yes,3,2,3,1,2,3,0,15,15,16,243,B221,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,4,3,health,other,reputation,father,1,2,0,no,no,no,yes,yes,yes,yes,yes,3,2,3,1,2,3,0,14,12,12,244,B222,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,R,GT3,T,2,2,other,other,course,father,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,5,2,1,1,1,0,12,13,13,245,B223,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,4,4,teacher,teacher,reputation,mother,1,2,0,yes,yes,no,yes,yes,yes,yes,yes,4,5,5,1,3,2,0,13,13,13,246,B224,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,4,health,other,reputation,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,2,4,2,4,1,0,13,13,14,247,B225,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,1,1,other,other,home,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,3,4,2,1,1,5,2,9,9,9,248,B226,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,2,at_home,other,reputation,mother,2,3,0,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,3,2,0,12,12,12,249,B227,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,LE3,T,2,2,other,other,home,father,1,2,0,no,no,no,yes,no,yes,yes,yes,4,4,2,5,5,4,0,16,16,16,250,B228,Tiếng Bồ Đào Nha,1,1,1
+GP,F,16,U,GT3,T,2,1,other,other,home,mother,1,1,0,no,no,no,no,yes,yes,yes,yes,4,5,2,1,1,5,4,9,10,10,251,B229,Tiếng Bồ Đào Nha,1,0,1
+GP,F,16,U,GT3,A,4,1,other,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,2,5,0,14,13,13,252,P252,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,LE3,A,2,4,services,other,course,mother,2,2,1,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,3,18,10,10,10,253,P253,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,LE3,T,2,2,at_home,services,course,mother,1,2,1,no,yes,no,no,no,yes,yes,yes,5,3,1,1,1,5,16,9,8,10,254,P254,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,3,3,other,other,course,mother,2,1,1,no,no,no,no,yes,no,yes,no,4,1,1,1,1,3,14,8,7,7,255,P255,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,GT3,T,2,2,other,at_home,course,other,1,1,1,no,yes,no,yes,no,no,yes,yes,4,4,3,2,2,1,26,7,8,8,256,P256,Tiếng Bồ Đào Nha,1,1,0
+GP,M,17,U,GT3,T,4,4,teacher,teacher,course,mother,1,1,0,no,yes,no,yes,no,yes,yes,no,4,2,1,1,2,5,6,10,8,9,257,P257,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,GT3,T,3,2,other,other,course,father,1,2,0,no,no,no,yes,yes,yes,no,no,5,4,2,1,1,3,4,14,14,15,258,P258,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,LE3,T,1,1,at_home,at_home,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,3,2,1,2,4,10,11,10,10,259,P259,Tiếng Bồ Đào Nha,1,0,0
+GP,F,16,U,GT3,T,1,2,other,other,course,mother,1,1,0,no,no,no,no,yes,no,yes,no,5,3,5,1,2,5,4,12,11,11,260,P260,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,R,GT3,T,2,1,at_home,services,course,mother,3,2,0,no,no,no,yes,yes,yes,no,no,2,1,1,1,1,3,2,13,13,13,261,B230,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,LE3,A,1,4,other,other,course,other,4,1,1,no,yes,no,no,yes,yes,yes,no,5,5,4,1,1,5,14,9,9,8,262,P262,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,GT3,T,2,2,other,services,reputation,father,1,2,0,no,no,no,no,yes,no,yes,no,5,5,4,3,5,2,16,8,7,8,263,B231,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,LE3,A,2,2,other,other,home,mother,1,1,1,no,yes,no,no,no,no,yes,no,3,1,2,1,1,1,8,11,9,10,264,P264,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,R,LE3,T,1,1,at_home,other,course,mother,2,3,0,no,no,no,yes,yes,yes,yes,no,4,3,3,1,3,5,4,15,14,15,265,P265,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,LE3,A,4,2,teacher,other,course,mother,1,2,0,no,yes,no,yes,yes,yes,no,no,4,3,2,1,1,4,4,15,14,14,266,P266,Tiếng Bồ Đào Nha,1,0,0
+GP,M,17,U,LE3,T,4,3,health,other,course,mother,2,2,0,no,no,no,yes,yes,yes,yes,yes,2,5,5,1,4,5,8,15,15,15,267,B232,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,LE3,A,4,4,teacher,other,course,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,3,3,3,2,3,4,0,12,12,12,268,B233,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,LE3,T,4,3,teacher,other,course,mother,1,1,0,no,no,no,yes,no,yes,yes,no,5,4,5,1,1,3,7,14,14,15,269,B234,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,4,4,services,services,course,mother,1,1,0,no,no,yes,yes,yes,yes,yes,no,5,3,2,1,2,5,4,14,15,15,270,P270,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,GT3,T,4,4,teacher,services,course,mother,1,2,0,no,yes,yes,no,yes,yes,yes,yes,5,3,1,1,4,5,2,11,11,12,271,B309,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,R,GT3,T,1,1,other,other,home,father,2,3,0,no,no,no,no,no,yes,yes,yes,4,3,3,1,1,1,2,13,14,15,272,P272,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,GT3,T,3,3,services,other,home,mother,2,3,0,no,yes,no,no,yes,yes,yes,yes,4,2,2,2,3,5,10,11,11,11,273,P273,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,1,1,at_home,other,course,mother,1,2,0,yes,no,no,no,no,yes,no,yes,4,3,2,1,1,4,10,10,9,10,274,P274,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,2,1,other,other,course,other,2,3,0,no,yes,no,no,no,yes,yes,yes,4,4,4,1,1,3,10,12,10,11,275,B236,Tiếng Bồ Đào Nha,1,0,1
+GP,M,16,U,GT3,T,2,1,other,other,course,mother,3,1,0,no,no,no,no,yes,yes,yes,no,4,3,3,1,1,4,7,15,16,16,276,B237,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,1,1,other,services,course,father,1,2,0,no,yes,no,no,yes,yes,no,no,4,3,4,1,2,5,4,11,10,11,277,P277,Tiếng Bồ Đào Nha,1,0,0
+GP,M,17,U,GT3,T,2,3,other,other,course,father,2,1,0,no,no,no,no,yes,yes,yes,no,5,2,2,1,1,2,2,9,12,13,278,B238,Tiếng Bồ Đào Nha,1,1,1
+GP,M,22,U,GT3,T,3,1,services,services,other,mother,1,1,3,no,no,no,no,no,no,yes,yes,5,4,5,5,5,1,12,7,8,5,279,B239,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,R,LE3,T,3,3,other,services,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,3,1,3,5,8,10,9,10,280,B240,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,0,2,other,other,other,mother,1,1,0,no,no,no,no,no,yes,yes,no,4,3,2,2,4,5,0,11,12,11,281,B241,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,3,2,services,other,course,mother,2,1,0,no,no,no,no,yes,no,yes,no,4,4,5,2,4,5,8,7,8,7,282,B242,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,U,GT3,T,3,3,at_home,other,reputation,other,3,2,1,yes,yes,no,no,no,yes,yes,no,5,3,3,1,3,2,4,9,11,10,283,B243,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,2,1,services,services,other,mother,1,1,2,no,no,no,no,no,no,yes,no,3,2,5,2,5,5,4,7,8,6,284,B244,Tiếng Bồ Đào Nha,1,1,1
+GP,M,16,R,GT3,T,2,1,other,other,course,mother,2,1,0,no,no,no,yes,no,yes,no,no,3,3,2,1,3,3,2,14,13,12,285,B245,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,GT3,T,2,1,other,other,course,mother,1,1,0,no,no,no,no,no,yes,yes,no,4,4,2,2,4,5,0,12,12,13,286,B246,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,LE3,T,1,1,health,other,course,mother,2,1,1,no,yes,no,yes,yes,yes,yes,no,4,4,4,1,2,5,0,9,10,10,287,B247,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,LE3,A,2,1,other,other,course,mother,1,2,0,no,yes,no,no,no,yes,yes,yes,4,3,4,1,3,5,2,12,12,13,288,P288,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,LE3,T,4,2,teacher,services,reputation,mother,1,4,0,no,yes,no,yes,yes,yes,yes,no,4,2,3,1,1,4,2,14,15,17,289,B248,Tiếng Bồ Đào Nha,1,0,1
+GP,F,19,U,GT3,T,2,2,services,services,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,5,0,10,10,11,290,P290,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,2,1,services,other,course,mother,3,2,1,no,no,no,yes,no,no,yes,no,4,4,5,4,4,5,4,11,10,11,291,P291,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,R,GT3,T,4,2,other,other,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,4,3,4,1,3,5,2,11,12,14,292,P292,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,LE3,T,1,1,other,at_home,home,mother,1,3,0,no,yes,no,no,no,yes,no,no,4,4,3,2,3,3,4,11,12,14,293,P293,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,R,GT3,T,2,2,other,other,home,mother,1,2,0,yes,no,no,no,yes,yes,no,no,3,2,3,1,1,5,4,11,11,13,294,P294,Tiếng Bồ Đào Nha,1,0,0
+GP,M,19,U,LE3,A,4,3,services,at_home,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,1,1,1,1,4,11,13,14,295,B249,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,2,1,other,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,2,4,1,2,4,2,16,16,16,296,B250,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,GT3,T,2,2,other,services,other,mother,2,1,0,no,no,no,no,no,no,no,no,5,2,2,1,1,4,0,9,10,10,297,P297,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,LE3,T,2,2,services,services,course,father,1,4,0,no,no,no,yes,yes,yes,yes,yes,3,4,1,1,1,2,2,10,11,12,298,B251,Tiếng Bồ Đào Nha,1,0,1
+GP,F,20,R,GT3,T,2,1,other,other,course,other,2,2,0,no,yes,yes,yes,yes,no,yes,yes,1,2,3,1,2,2,8,10,12,12,299,P299,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,4,3,services,other,home,father,1,2,0,no,yes,no,no,yes,yes,yes,yes,3,1,2,1,3,2,2,15,15,15,300,B252,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,4,3,teacher,other,course,mother,1,2,0,no,yes,no,no,no,yes,yes,no,4,3,2,1,1,3,2,10,10,11,301,B253,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,R,GT3,T,3,2,other,other,course,mother,1,3,0,no,no,no,yes,no,yes,no,no,5,3,2,1,1,3,2,10,11,12,302,B254,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,3,3,other,other,home,mother,1,3,0,no,no,no,yes,no,yes,no,no,3,2,3,1,1,4,2,15,12,13,303,B255,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,2,2,at_home,services,home,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,3,3,1,1,3,0,11,12,13,304,B256,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,GT3,T,2,2,other,other,home,father,2,1,0,no,no,no,no,yes,no,yes,no,4,4,4,2,3,4,8,8,8,9,305,P305,Tiếng Bồ Đào Nha,1,1,0
+GP,M,18,R,LE3,A,3,4,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,2,5,3,4,1,6,15,16,16,306,B257,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,3,1,services,other,other,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,5,4,4,3,4,5,0,11,11,14,307,B258,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,R,GT3,T,4,4,teacher,other,reputation,mother,2,2,0,no,no,no,yes,yes,yes,yes,no,4,3,4,2,2,4,8,10,11,12,308,B259,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,4,2,health,other,reputation,father,1,2,0,no,yes,no,yes,yes,yes,yes,yes,5,4,5,1,3,5,4,10,12,14,309,B260,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,R,GT3,T,2,1,other,other,reputation,mother,2,2,0,no,yes,no,no,yes,no,yes,yes,4,3,5,1,2,3,12,8,9,10,310,B261,Tiếng Bồ Đào Nha,1,0,1
+GP,F,19,U,GT3,T,3,3,other,services,home,other,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,5,3,3,5,16,11,12,12,311,B262,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,2,3,other,services,reputation,father,1,4,0,no,yes,no,yes,yes,yes,yes,yes,4,5,5,1,3,2,10,16,16,16,312,B263,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,LE3,T,1,1,other,other,home,mother,2,2,0,no,yes,no,no,no,yes,no,no,4,4,3,1,1,3,2,13,13,13,313,B264,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,R,GT3,T,1,2,at_home,at_home,home,mother,1,2,0,no,yes,no,yes,no,yes,no,yes,3,5,2,2,2,1,2,16,17,18,314,B265,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,GT3,T,2,1,other,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,2,5,1,2,1,8,14,14,15,315,P315,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,2,4,at_home,health,reputation,mother,2,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,3,1,1,1,6,15,16,16,316,B266,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,2,2,services,other,course,mother,2,2,0,yes,yes,no,no,yes,yes,yes,yes,4,4,4,2,3,5,6,12,12,12,317,B267,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,R,GT3,A,3,2,other,services,home,mother,2,2,0,no,no,no,no,no,no,yes,yes,4,1,1,1,1,5,15,12,9,10,318,B268,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,4,4,teacher,services,home,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,3,2,4,1,4,3,6,11,12,12,319,B269,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,GT3,T,4,4,health,health,reputation,father,1,2,1,yes,yes,no,yes,yes,yes,yes,yes,2,4,4,1,1,4,2,14,12,13,320,B270,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,2,2,other,services,reputation,father,3,3,0,no,yes,no,no,yes,yes,yes,yes,4,2,3,1,1,1,8,13,15,15,321,P321,Tiếng Bồ Đào Nha,1,0,0
+GP,F,19,R,GT3,T,3,2,services,services,reputation,father,1,2,1,yes,yes,no,no,yes,no,yes,no,3,3,3,4,3,3,0,9,8,10,322,P322,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,4,3,teacher,services,course,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,4,2,3,1,2,1,0,10,10,10,323,B271,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,1,2,at_home,other,home,other,2,1,0,no,no,no,no,no,no,yes,no,3,4,4,2,4,4,10,10,10,11,324,P324,Tiếng Bồ Đào Nha,1,1,0
+GP,M,17,U,LE3,A,4,1,services,other,home,mother,2,1,0,no,no,no,yes,yes,yes,yes,yes,4,5,4,2,4,5,22,11,11,10,325,B272,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,LE3,A,3,2,teacher,services,home,mother,1,1,0,no,no,no,no,yes,yes,yes,no,4,4,4,3,4,3,18,13,13,13,326,B273,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,R,LE3,T,1,1,at_home,other,reputation,mother,2,4,0,no,yes,no,yes,yes,yes,no,no,5,2,2,1,1,3,2,17,17,18,327,B274,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,1,1,other,other,home,mother,2,2,0,yes,no,no,yes,yes,yes,yes,no,5,4,4,1,1,4,0,12,13,13,328,B275,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,2,2,other,other,course,mother,1,2,0,no,yes,no,no,no,yes,yes,no,5,4,5,1,2,5,12,12,12,14,329,B276,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,2,1,other,other,reputation,mother,2,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,1,1,1,5,10,12,13,14,330,P330,Tiếng Bồ Đào Nha,1,0,0
+GP,M,17,U,GT3,T,1,1,other,other,reputation,father,1,2,0,no,no,no,no,no,yes,yes,no,4,3,3,1,2,4,0,12,12,12,331,B277,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,GT3,T,2,2,at_home,at_home,other,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,2,2,0,18,18,18,332,B278,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,1,1,services,teacher,reputation,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,3,0,13,13,14,333,B279,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,2,1,services,services,reputation,mother,1,3,0,no,no,no,yes,yes,yes,yes,no,4,2,4,1,3,2,0,14,15,15,334,B280,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,LE3,A,4,4,teacher,teacher,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,4,3,1,1,2,0,17,17,17,335,B281,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,4,2,teacher,other,home,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,4,3,2,1,4,5,2,15,16,16,336,B282,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,4,3,health,services,reputation,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,2,2,1,2,3,0,17,18,18,337,B283,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,LE3,T,3,1,services,other,reputation,mother,2,4,0,no,yes,no,no,yes,yes,no,no,3,1,2,1,1,3,0,18,19,19,338,B284,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,R,LE3,T,3,2,services,other,reputation,mother,2,3,0,no,yes,no,yes,yes,yes,yes,no,5,4,2,1,1,4,0,14,15,15,339,B285,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,3,3,health,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,4,4,3,1,3,5,0,14,15,15,340,B286,Tiếng Bồ Đào Nha,1,1,1
+GP,F,19,U,GT3,T,4,4,health,other,reputation,other,2,2,0,no,yes,no,yes,yes,yes,yes,no,2,3,4,2,3,2,2,14,13,13,341,B287,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,LE3,T,4,3,other,other,home,other,2,2,0,no,yes,no,no,yes,yes,yes,yes,4,4,5,1,2,2,0,13,14,14,342,B288,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,4,3,other,other,reputation,father,1,4,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,3,0,16,17,17,343,B289,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,LE3,T,4,4,teacher,teacher,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,yes,1,4,2,2,2,1,0,18,18,17,344,B290,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,LE3,A,4,4,health,other,home,mother,1,2,0,no,yes,yes,no,yes,yes,yes,yes,4,2,4,1,1,4,0,14,15,15,345,B291,Tiếng Bồ Đào Nha,1,0,1
+GP,M,17,U,LE3,T,4,4,other,teacher,home,father,2,1,0,no,no,no,no,yes,yes,yes,no,4,1,1,2,2,5,0,12,13,13,346,B292,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,R,GT3,T,4,4,services,services,reputation,mother,2,3,0,no,yes,no,yes,yes,yes,yes,no,5,3,4,1,1,5,0,7,7,8,347,P347,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,4,2,other,other,reputation,mother,2,3,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,1,3,0,16,16,16,348,B293,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,2,health,health,reputation,father,1,4,0,no,yes,no,yes,no,yes,yes,no,5,2,2,1,2,5,0,18,18,18,349,B294,Tiếng Bồ Đào Nha,1,0,1
+GP,M,19,R,LE3,T,2,1,at_home,services,course,mother,2,3,1,no,no,no,yes,yes,yes,yes,yes,4,3,1,1,1,5,0,9,10,11,350,P350,Tiếng Bồ Đào Nha,1,1,0
+GP,M,20,U,GT3,A,3,2,services,other,course,other,1,1,2,no,no,no,yes,yes,yes,no,no,5,5,3,1,1,5,0,14,15,15,351,B295,Tiếng Bồ Đào Nha,1,1,1
+GP,M,19,R,GT3,T,3,3,other,services,reputation,father,1,2,0,no,no,no,yes,yes,yes,no,yes,4,5,3,1,2,5,0,10,10,11,352,B296,Tiếng Bồ Đào Nha,1,1,1
+GP,F,18,U,GT3,T,1,4,other,teacher,home,mother,1,2,0,yes,yes,no,no,no,yes,no,yes,3,4,4,1,2,5,2,10,10,11,353,P353,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,2,1,services,other,course,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,2,1,2,12,12,15,354,B297,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,2,3,other,other,course,father,2,2,0,no,no,no,yes,yes,yes,yes,yes,4,2,1,1,1,3,2,11,12,14,355,P355,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,R,GT3,T,4,4,teacher,teacher,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,4,4,4,1,1,5,2,15,16,17,356,P356,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,4,3,other,other,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,3,4,1,1,5,2,14,15,17,357,B298,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,LE3,T,4,3,health,services,course,mother,2,1,0,no,yes,no,no,yes,yes,yes,no,3,2,4,1,4,1,8,12,12,15,358,P358,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,R,GT3,T,3,4,at_home,services,course,father,1,3,0,no,yes,no,yes,no,yes,yes,no,4,3,4,2,5,5,2,15,15,17,359,B299,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,3,3,at_home,other,course,father,1,2,0,no,yes,no,no,yes,yes,yes,no,4,1,4,1,1,3,8,11,12,14,360,P360,Tiếng Bồ Đào Nha,1,0,0
+GP,M,19,U,GT3,T,4,2,health,other,course,mother,2,2,0,no,yes,no,yes,yes,yes,yes,yes,5,4,4,1,1,1,9,11,10,10,361,P361,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,GT3,T,4,4,teacher,other,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,4,4,3,3,5,0,12,11,13,362,B300,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,3,4,other,other,course,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,5,4,4,1,1,1,4,11,12,14,363,P363,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,4,4,health,health,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,5,3,4,1,2,5,2,14,15,17,364,P364,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,A,4,3,services,services,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,5,2,2,1,2,5,14,15,14,17,365,B301,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,A,3,3,services,other,home,mother,1,2,0,yes,yes,no,no,yes,yes,yes,no,5,3,3,1,1,5,0,12,12,13,366,P366,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,LE3,T,2,1,other,other,home,father,1,2,0,no,no,no,yes,yes,yes,yes,no,4,2,3,2,2,2,2,11,12,14,367,P367,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,4,4,other,other,reputation,father,1,1,0,no,yes,no,no,yes,yes,yes,no,4,2,5,3,4,5,2,8,9,11,368,P368,Tiếng Bồ Đào Nha,1,1,0
+GP,F,19,U,GT3,T,1,1,other,other,course,other,3,3,0,no,no,no,yes,yes,no,no,yes,1,5,5,4,3,5,12,10,10,11,369,P369,Tiếng Bồ Đào Nha,1,0,0
+GP,F,19,U,LE3,A,1,1,other,other,course,other,3,2,2,no,yes,no,no,no,yes,yes,yes,5,3,4,1,1,4,2,8,8,9,370,P370,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,2,2,other,other,course,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,4,3,5,2,4,5,2,10,10,10,371,P371,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,2,2,other,other,course,mother,1,2,0,no,yes,no,no,yes,yes,no,yes,4,2,2,1,1,3,4,14,13,13,372,B302,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,LE3,T,2,2,services,services,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,3,3,2,2,2,3,0,11,11,10,373,B303,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,1,services,services,course,father,1,3,0,no,yes,no,no,no,yes,yes,no,3,4,3,2,3,5,0,17,18,17,374,B304,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,LE3,T,0,2,at_home,at_home,home,father,2,3,0,no,no,no,no,yes,yes,yes,no,3,3,3,2,3,2,0,14,14,15,375,B305,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,1,1,other,other,home,mother,2,3,0,no,no,no,yes,yes,yes,yes,no,4,5,5,1,2,2,0,14,14,14,376,P376,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,GT3,T,4,4,other,other,course,mother,1,3,0,no,no,no,yes,yes,yes,yes,no,4,3,3,2,2,3,0,13,14,13,377,B306,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,U,GT3,T,3,3,other,services,reputation,mother,1,1,0,no,no,no,yes,no,yes,yes,no,4,3,5,3,5,5,0,17,18,17,378,B307,Tiếng Bồ Đào Nha,1,1,1
+GP,M,17,R,GT3,T,2,2,services,other,course,mother,4,1,0,no,yes,no,no,yes,yes,yes,no,4,4,5,5,5,4,2,11,10,10,379,B308,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,4,4,teacher,services,course,mother,1,3,0,no,yes,no,yes,yes,yes,yes,no,5,4,4,1,3,4,0,13,12,13,380,P380,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,4,4,teacher,teacher,course,mother,2,3,0,no,yes,no,no,no,yes,yes,yes,4,3,3,1,2,4,4,15,14,15,381,B310,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,3,at_home,other,course,mother,1,1,0,no,yes,yes,yes,yes,yes,yes,no,4,2,5,2,5,5,2,11,12,11,382,P382,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,2,2,other,other,course,mother,1,4,0,no,yes,yes,yes,yes,yes,yes,no,4,5,5,2,4,5,0,11,11,12,383,B311,Tiếng Bồ Đào Nha,1,1,1
+GP,M,19,R,GT3,T,3,2,at_home,services,home,other,1,1,0,no,yes,no,no,no,yes,no,yes,5,3,4,2,2,5,0,11,10,10,384,P384,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,GT3,T,2,2,at_home,other,course,mother,4,2,0,no,no,no,yes,yes,yes,no,yes,4,2,5,1,1,2,2,10,9,10,385,P385,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,R,GT3,T,2,4,at_home,other,course,father,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,4,3,1,1,5,0,15,15,15,386,B312,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,2,2,other,other,reputation,mother,1,1,0,no,no,no,no,no,yes,yes,no,5,4,2,1,2,5,6,15,14,15,387,P387,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,GT3,T,3,3,services,services,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,3,4,1,1,4,8,10,11,12,388,B313,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,LE3,T,2,2,other,other,home,other,1,2,0,no,no,no,yes,no,yes,yes,yes,4,3,3,1,1,2,0,10,9,12,389,B314,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,R,GT3,T,2,2,at_home,other,course,mother,2,4,0,no,no,no,yes,yes,yes,no,no,4,4,4,1,1,4,6,14,13,14,390,B315,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,4,services,other,course,mother,1,3,0,no,no,no,no,yes,yes,yes,no,4,4,5,1,3,5,8,11,13,14,391,B316,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,3,2,other,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,2,2,3,2,0,12,13,15,392,B317,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,LE3,T,3,3,services,services,home,mother,1,4,0,no,yes,no,no,yes,yes,yes,no,5,3,3,1,1,1,4,14,14,15,393,B318,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,R,GT3,A,3,2,other,other,home,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,3,2,3,2,0,14,14,16,394,B319,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,U,GT3,T,4,4,teacher,services,home,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,2,2,2,0,12,12,13,395,P395,Tiếng Bồ Đào Nha,1,1,0
+GP,M,18,U,LE3,T,3,4,services,other,home,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,3,1,3,5,6,16,16,17,396,B320,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,A,2,2,at_home,at_home,home,father,1,2,0,no,yes,no,no,yes,yes,yes,yes,3,3,1,1,2,4,18,10,12,14,397,B321,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,2,3,at_home,other,course,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,2,3,0,11,12,14,398,B322,Tiếng Bồ Đào Nha,1,0,1
+GP,F,18,U,GT3,T,3,2,other,services,other,mother,1,3,0,no,no,no,no,yes,yes,yes,yes,5,4,3,2,3,1,4,14,16,17,399,B323,Tiếng Bồ Đào Nha,1,0,1
+GP,M,18,R,GT3,T,4,3,teacher,services,course,mother,1,3,0,no,no,no,no,yes,yes,yes,yes,5,3,2,1,2,4,4,15,14,17,400,B324,Tiếng Bồ Đào Nha,1,1,1
+GP,M,18,U,GT3,T,4,3,teacher,other,course,mother,1,3,0,no,yes,no,no,yes,yes,yes,yes,5,4,5,2,3,5,0,14,13,14,401,B325,Tiếng Bồ Đào Nha,1,1,1
+GP,F,17,U,GT3,T,4,3,health,other,reputation,mother,1,3,0,no,yes,no,yes,yes,yes,yes,yes,4,4,3,1,3,4,0,11,12,13,402,B326,Tiếng Bồ Đào Nha,1,0,1
+GP,F,17,U,GT3,T,2,1,services,other,course,mother,2,2,0,no,yes,no,yes,yes,yes,yes,yes,4,3,4,2,2,1,10,12,15,15,403,P403,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,2,1,services,other,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,5,2,4,4,4,12,16,16,404,P404,Tiếng Bồ Đào Nha,1,0,0
+GP,F,19,U,LE3,A,2,3,at_home,other,home,other,2,1,1,no,no,no,no,yes,no,yes,no,2,2,3,3,4,5,16,10,11,11,405,P405,Tiếng Bồ Đào Nha,1,0,0
+GP,F,17,U,GT3,T,3,1,other,at_home,home,mother,1,1,1,no,yes,yes,no,yes,yes,yes,yes,4,1,2,1,1,3,6,10,13,13,406,P406,Tiếng Bồ Đào Nha,1,0,0
+GP,F,21,U,LE3,T,4,4,other,other,reputation,other,1,3,2,no,no,yes,yes,yes,yes,yes,no,3,3,2,1,1,5,0,9,12,12,407,P407,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,U,LE3,T,2,2,services,services,reputation,mother,1,2,0,no,yes,no,yes,no,no,yes,no,4,4,4,1,3,3,11,9,11,12,408,P408,Tiếng Bồ Đào Nha,1,1,0
+GP,M,18,U,LE3,A,3,4,other,other,reputation,other,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,3,5,1,4,2,9,13,14,15,409,P409,Tiếng Bồ Đào Nha,1,1,0
+GP,F,17,U,GT3,T,2,2,services,services,reputation,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,4,1,3,4,0,13,17,17,410,P410,Tiếng Bồ Đào Nha,1,0,0
+GP,M,17,U,LE3,A,4,4,health,other,reputation,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,4,2,1,2,4,2,12,15,15,411,P411,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,LE3,T,4,2,teacher,other,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,4,2,2,1,1,3,0,14,17,17,412,P412,Tiếng Bồ Đào Nha,1,0,0
+GP,M,21,R,LE3,T,1,1,at_home,other,course,other,2,2,2,no,yes,no,yes,yes,no,yes,yes,5,3,3,5,2,4,21,9,10,10,413,P413,Tiếng Bồ Đào Nha,1,1,0
+GP,F,20,R,GT3,T,1,1,other,other,reputation,other,2,3,0,no,no,no,no,yes,yes,yes,yes,3,2,2,1,3,3,8,11,15,15,414,P414,Tiếng Bồ Đào Nha,1,0,0
+GP,F,19,U,GT3,T,4,4,teacher,other,home,other,1,1,1,no,yes,no,no,yes,yes,yes,yes,3,2,5,4,4,5,5,9,10,11,415,P415,Tiếng Bồ Đào Nha,1,0,0
+GP,M,17,U,LE3,A,3,2,other,other,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,4,4,1,2,5,10,16,18,18,416,P416,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,GT3,T,3,2,at_home,other,reputation,father,1,3,0,no,yes,no,no,yes,yes,yes,yes,4,3,4,1,2,2,5,14,17,17,417,P417,Tiếng Bồ Đào Nha,1,0,0
+GP,M,18,R,GT3,T,2,3,other,services,reputation,father,1,1,0,no,no,no,no,yes,yes,yes,no,3,1,3,4,5,4,13,13,14,14,418,P418,Tiếng Bồ Đào Nha,1,1,0
+GP,M,19,U,GT3,T,2,1,other,other,reputation,mother,1,1,0,no,no,no,no,yes,yes,yes,no,5,3,4,1,4,4,10,7,11,11,419,P419,Tiếng Bồ Đào Nha,1,1,0
+GP,F,18,U,LE3,A,2,2,services,other,reputation,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,4,1,4,1,3,4,10,14,17,17,420,P420,Tiếng Bồ Đào Nha,1,0,0
+GP,F,20,U,GT3,T,1,0,other,other,reputation,mother,2,1,1,yes,no,no,no,yes,yes,yes,yes,5,3,1,1,1,5,5,8,10,10,421,P421,Tiếng Bồ Đào Nha,1,0,0
+GP,F,18,U,GT3,T,3,2,services,other,home,mother,1,2,0,no,yes,no,yes,no,yes,yes,yes,3,1,2,1,2,1,4,10,13,13,422,P422,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,1,3,at_home,other,other,father,2,1,0,no,yes,no,no,yes,no,yes,yes,4,3,3,1,3,5,11,10,11,11,423,P423,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,2,other,other,course,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,4,4,1,1,5,0,12,12,12,424,P424,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,1,1,at_home,services,other,mother,1,1,1,no,yes,no,no,yes,yes,no,yes,4,1,3,1,1,2,6,10,10,10,425,P425,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,3,3,at_home,other,course,mother,2,1,0,no,yes,no,no,yes,yes,yes,no,5,4,4,2,3,5,4,10,10,11,426,P426,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,3,at_home,services,course,mother,2,2,0,no,no,no,no,yes,yes,no,no,4,5,2,1,2,5,0,16,17,17,427,P427,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,LE3,T,2,1,at_home,other,home,mother,2,1,0,no,no,no,no,yes,no,no,no,1,3,4,1,1,1,0,6,8,9,428,P428,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,LE3,A,4,4,at_home,other,home,mother,1,2,0,no,yes,no,no,yes,yes,no,no,5,3,2,1,3,2,5,10,11,11,429,P429,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,U,GT3,A,1,2,other,other,other,mother,1,3,0,yes,no,no,no,yes,yes,yes,no,4,4,3,1,1,5,0,10,11,11,430,P430,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,R,GT3,T,3,2,at_home,other,course,father,1,2,1,no,no,no,no,yes,yes,no,yes,4,5,4,1,2,5,0,10,10,10,431,P431,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,1,1,other,other,other,father,1,1,1,no,yes,no,no,no,no,yes,no,5,4,4,2,2,5,0,6,6,7,432,P432,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,4,4,teacher,other,course,mother,2,1,0,no,no,no,no,yes,yes,yes,yes,1,5,1,3,5,5,0,13,14,14,433,P433,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,LE3,A,2,2,at_home,other,reputation,mother,2,4,0,no,no,no,yes,no,no,no,yes,1,2,1,1,1,1,4,10,9,11,434,P434,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,LE3,T,1,1,at_home,services,reputation,father,2,2,0,no,yes,no,no,yes,yes,yes,no,5,4,3,1,2,4,0,10,10,10,435,P435,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,LE3,T,1,1,other,services,course,mother,2,1,1,no,yes,no,no,yes,yes,yes,yes,4,4,3,1,2,2,4,6,7,8,436,P436,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,0,2,other,other,other,mother,2,1,0,no,yes,no,yes,yes,yes,no,no,3,2,3,1,2,2,0,12,11,12,437,P437,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,2,3,other,other,course,mother,2,1,0,no,yes,no,no,yes,yes,yes,no,5,5,5,1,3,3,2,10,11,12,438,P438,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,3,3,other,services,course,father,2,1,0,no,no,no,no,no,yes,yes,no,4,1,3,1,1,4,0,14,16,16,439,P439,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,GT3,T,1,1,other,other,home,mother,1,2,0,no,no,yes,no,no,yes,yes,no,4,4,3,2,4,5,4,8,9,9,441,P441,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,R,LE3,T,4,1,health,services,reputation,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,4,1,2,2,0,12,13,14,442,P442,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,R,LE3,T,4,1,health,services,reputation,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,4,1,2,2,7,7,9,8,443,P443,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,R,GT3,T,3,4,other,health,other,mother,3,2,0,no,no,no,no,no,yes,no,no,3,4,5,1,2,5,4,9,10,11,444,P444,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,R,GT3,T,1,1,other,other,course,mother,4,2,0,no,yes,no,yes,yes,yes,no,yes,5,4,5,2,4,4,8,7,9,9,445,P445,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,U,LE3,T,3,3,at_home,at_home,reputation,father,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,5,0,11,11,11,446,P446,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,R,GT3,T,2,1,other,other,other,mother,3,1,0,no,no,no,yes,yes,no,no,yes,5,5,5,5,5,3,8,8,10,9,447,P447,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,GT3,T,4,4,teacher,teacher,course,mother,2,3,0,no,no,no,yes,yes,yes,yes,yes,4,2,2,1,1,4,6,16,16,17,448,P448,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,1,2,other,services,course,mother,2,1,0,no,no,no,no,yes,yes,no,no,5,1,2,1,1,1,3,11,13,13,449,P449,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,3,other,services,course,mother,3,2,0,no,yes,no,no,yes,yes,yes,no,4,5,4,1,2,1,2,15,15,15,450,P450,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,GT3,T,1,2,other,other,course,father,2,2,0,no,no,no,no,yes,yes,no,no,4,3,3,1,1,5,0,10,11,11,451,P451,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,GT3,T,2,2,other,other,course,mother,3,2,0,no,yes,no,no,yes,yes,yes,no,4,4,5,1,1,4,4,9,10,11,452,P452,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,1,2,other,services,course,mother,1,3,1,no,yes,no,no,yes,yes,no,no,1,3,2,1,2,4,0,10,8,8,453,P453,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,1,2,other,services,course,mother,1,3,1,no,yes,no,no,yes,yes,no,no,1,3,2,1,2,4,3,9,8,8,454,P454,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,U,GT3,T,2,1,at_home,other,home,mother,1,2,0,yes,yes,no,no,no,yes,yes,no,4,4,2,3,3,2,0,9,10,9,455,P455,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,1,1,at_home,other,course,father,1,2,0,no,yes,no,no,no,yes,no,yes,5,4,3,2,1,2,0,13,14,15,456,P456,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,R,LE3,T,1,2,at_home,services,reputation,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,5,5,5,5,5,3,4,10,11,11,457,P457,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,GT3,T,1,1,other,other,home,father,4,4,0,no,yes,no,no,no,yes,yes,no,4,3,2,1,1,1,0,13,10,13,458,P458,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,1,1,at_home,other,other,father,4,3,0,yes,yes,no,no,yes,yes,no,no,4,4,3,1,1,5,2,10,9,10,459,P459,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,1,1,at_home,other,home,father,2,2,0,no,yes,no,yes,yes,yes,yes,no,4,3,3,1,1,2,1,11,10,11,460,P460,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,1,1,at_home,other,other,mother,2,1,0,no,no,no,yes,yes,yes,yes,yes,4,2,2,4,3,2,0,13,12,14,461,P461,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,GT3,T,1,1,at_home,at_home,course,father,3,2,0,no,yes,no,no,yes,yes,no,no,4,2,1,1,2,2,0,13,14,14,462,P462,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,LE3,T,2,2,other,other,other,father,1,3,0,yes,yes,no,no,yes,yes,no,no,4,4,3,2,2,5,2,14,11,12,463,P463,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,GT3,T,1,1,at_home,other,other,father,2,1,0,no,no,no,yes,yes,yes,no,no,3,4,4,3,4,5,6,11,11,11,464,P464,Tiếng Bồ Đào Nha,1,1,0
+MS,F,18,U,GT3,T,1,2,other,other,course,father,1,2,1,no,yes,no,yes,yes,yes,yes,yes,3,4,4,2,3,5,9,9,8,8,465,P465,Tiếng Bồ Đào Nha,1,0,0
+MS,M,15,U,GT3,T,3,1,other,services,home,mother,2,1,0,no,yes,no,no,yes,yes,no,no,3,2,3,1,3,4,0,10,9,11,466,P466,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,GT3,T,2,2,other,services,course,father,3,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,4,1,1,2,1,14,13,14,467,P467,Tiếng Bồ Đào Nha,1,0,0
+MS,M,15,U,GT3,T,2,2,health,other,reputation,mother,3,1,0,no,no,no,no,yes,yes,no,no,4,3,3,1,2,4,1,13,12,13,468,P468,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,U,GT3,T,4,4,other,teacher,course,father,1,2,0,no,yes,no,yes,yes,yes,no,yes,4,3,1,1,1,3,0,13,12,13,469,P469,Tiếng Bồ Đào Nha,1,1,0
+MS,F,15,R,GT3,T,3,3,services,other,reputation,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,5,4,1,1,1,4,13,12,12,470,P470,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,2,at_home,other,course,mother,2,2,1,no,yes,no,yes,no,yes,no,no,4,4,4,2,3,5,2,12,11,12,471,P471,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,LE3,T,2,2,other,other,home,father,3,1,0,no,yes,no,yes,yes,yes,no,yes,4,3,2,1,1,4,0,14,14,16,472,P472,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,U,LE3,T,2,1,at_home,services,course,mother,2,1,0,no,yes,no,yes,yes,yes,yes,no,2,4,3,2,3,4,4,10,8,10,473,P473,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,R,LE3,T,1,3,at_home,other,reputation,father,3,1,0,no,yes,no,yes,yes,yes,yes,no,4,2,4,3,5,3,2,10,11,11,474,P474,Tiếng Bồ Đào Nha,1,1,0
+MS,F,15,U,GT3,T,2,2,other,services,course,mother,2,3,0,no,yes,no,yes,yes,yes,no,no,5,3,2,1,1,4,0,12,13,14,475,P475,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,LE3,T,2,1,other,other,home,mother,1,1,0,no,yes,no,no,yes,yes,yes,yes,5,4,3,1,1,5,2,10,8,8,476,P476,Tiếng Bồ Đào Nha,1,0,0
+MS,M,15,U,GT3,T,3,3,services,services,course,father,2,1,0,no,yes,no,yes,no,yes,yes,no,4,3,3,2,4,3,11,12,10,11,477,P477,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,GT3,T,1,1,at_home,other,course,father,2,2,3,yes,yes,no,no,yes,yes,no,no,3,4,3,1,1,1,0,7,7,8,478,P478,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,2,2,other,at_home,course,mother,1,1,0,no,yes,no,yes,yes,no,no,no,4,5,3,1,1,5,4,9,9,10,479,P479,Tiếng Bồ Đào Nha,1,0,0
+MS,F,19,U,GT3,T,2,3,at_home,services,course,other,1,1,1,no,no,no,no,yes,no,yes,yes,4,4,4,1,1,2,0,9,9,10,480,P480,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,2,1,at_home,other,course,mother,3,1,0,no,yes,no,yes,yes,no,no,yes,5,5,3,1,1,3,2,9,10,11,481,P481,Tiếng Bồ Đào Nha,1,0,0
+MS,F,15,R,LE3,T,1,1,at_home,other,course,mother,2,1,0,no,yes,no,no,yes,no,no,yes,5,2,1,1,3,4,0,9,10,9,482,P482,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,2,other,other,course,father,3,2,0,no,yes,no,no,yes,no,yes,no,3,4,5,1,2,1,1,9,10,11,483,P483,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,LE3,A,2,2,other,other,home,mother,1,1,0,no,yes,no,no,yes,no,no,no,4,3,4,1,2,1,6,7,7,8,484,P484,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,2,2,at_home,other,course,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,4,3,5,1,2,4,0,11,10,11,485,P485,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,2,2,other,services,course,father,1,1,1,no,yes,yes,yes,no,yes,yes,no,4,4,3,1,4,3,1,9,10,10,486,P486,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,LE3,A,3,2,other,other,course,other,2,3,2,no,yes,no,no,no,no,no,yes,3,3,2,1,1,2,6,7,9,10,487,P487,Tiếng Bồ Đào Nha,1,0,0
+MS,F,19,U,GT3,T,1,1,at_home,services,course,mother,1,3,1,no,no,no,yes,yes,no,no,yes,5,3,1,1,1,3,6,7,9,9,488,P488,Tiếng Bồ Đào Nha,1,0,0
+MS,M,18,R,GT3,T,1,1,other,other,home,mother,2,1,1,no,no,no,yes,yes,no,yes,no,4,4,3,3,4,4,0,8,9,10,489,P489,Tiếng Bồ Đào Nha,1,1,0
+MS,F,18,R,GT3,T,1,1,at_home,at_home,course,mother,2,1,1,no,no,no,no,no,no,yes,yes,3,2,3,1,1,2,4,9,11,10,490,P490,Tiếng Bồ Đào Nha,1,0,0
+MS,F,19,U,GT3,T,1,1,other,other,course,other,2,2,1,no,yes,no,no,yes,yes,yes,yes,1,1,4,4,1,1,12,7,8,9,491,P491,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,A,2,2,health,other,course,mother,1,2,0,no,no,no,no,no,yes,no,yes,3,3,2,1,1,3,2,8,10,10,492,P492,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,0,1,other,at_home,course,father,2,1,0,no,no,no,yes,no,yes,no,no,2,4,4,3,5,5,5,9,9,10,493,P493,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,LE3,T,1,2,at_home,other,course,mother,1,2,0,no,no,no,yes,yes,no,yes,no,4,4,5,1,3,3,0,8,9,9,494,P494,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,3,3,other,other,reputation,mother,1,1,0,no,no,no,yes,yes,no,yes,yes,4,5,4,1,1,4,0,14,13,13,495,P495,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,LE3,T,1,1,services,services,home,mother,1,1,0,no,yes,no,yes,yes,yes,yes,yes,4,4,4,2,2,4,2,14,14,14,496,P496,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,GT3,T,3,3,services,at_home,course,mother,2,4,1,no,yes,yes,yes,yes,yes,no,no,5,4,5,3,4,5,0,10,11,10,497,P497,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,U,GT3,T,2,1,other,services,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,no,5,3,3,1,1,1,0,14,13,14,498,P498,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,2,2,services,other,course,mother,1,1,0,no,yes,yes,yes,yes,yes,no,yes,4,2,5,1,2,5,0,17,16,16,499,P499,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,GT3,T,1,2,other,other,course,father,1,1,1,no,yes,no,yes,yes,no,yes,yes,5,3,5,5,5,1,12,6,7,7,500,P500,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,U,LE3,T,4,3,other,other,course,father,1,1,0,no,no,no,yes,yes,yes,yes,no,4,2,5,1,5,5,8,14,12,13,501,P501,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,R,LE3,T,2,2,services,services,other,mother,3,4,1,no,yes,no,no,yes,yes,no,no,1,3,5,3,5,3,2,10,8,9,502,P502,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,U,GT3,T,1,1,other,other,course,other,1,4,0,yes,yes,no,yes,yes,yes,yes,no,2,2,1,1,1,5,0,14,14,14,503,P503,Tiếng Bồ Đào Nha,1,0,0
+MS,F,19,U,LE3,T,2,2,other,other,home,mother,1,3,0,no,no,no,no,yes,yes,yes,yes,5,4,5,1,1,1,0,12,13,13,504,P504,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,1,1,at_home,other,reputation,mother,2,1,0,no,yes,no,yes,no,yes,yes,yes,4,4,5,1,2,5,0,11,11,11,505,P505,Tiếng Bồ Đào Nha,1,0,0
+MS,F,20,U,GT3,T,3,3,at_home,services,other,mother,2,2,1,no,no,no,yes,yes,yes,yes,yes,3,3,4,2,4,3,8,11,9,10,506,P506,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,LE3,T,1,1,other,services,course,father,1,3,0,no,yes,no,no,yes,yes,no,yes,4,3,3,1,1,3,0,11,11,10,507,P507,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,R,GT3,T,2,2,other,other,course,mother,3,1,1,no,yes,no,no,no,yes,yes,no,4,4,5,1,2,5,0,10,9,9,508,P508,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,LE3,T,1,1,at_home,other,course,father,3,2,0,no,yes,no,no,yes,yes,no,no,5,3,2,1,1,1,0,16,17,18,509,P509,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,2,2,other,other,reputation,mother,2,2,0,no,yes,no,yes,yes,yes,no,no,5,3,2,1,1,1,0,15,17,17,510,P510,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,A,1,0,other,other,other,mother,2,2,0,no,no,no,no,yes,yes,yes,yes,4,4,5,1,1,4,1,11,9,10,511,P511,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,GT3,T,1,1,at_home,other,other,mother,1,2,1,no,yes,no,no,yes,yes,yes,yes,4,3,2,1,1,5,9,7,7,7,512,P512,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,3,1,other,other,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,3,1,3,1,3,1,0,8,6,8,513,P513,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,3,2,services,at_home,course,mother,1,1,0,no,no,no,no,yes,yes,yes,no,3,1,3,1,4,3,2,7,6,7,514,P514,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,LE3,T,1,1,other,at_home,reputation,mother,2,2,0,yes,no,no,no,yes,yes,no,no,2,3,5,1,4,3,8,9,8,10,515,P515,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,4,4,health,teacher,reputation,father,1,2,0,no,no,no,yes,no,yes,yes,yes,4,3,3,2,3,2,0,14,16,16,516,P516,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,LE3,T,1,2,other,other,reputation,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,5,4,5,1,4,2,0,14,14,15,517,P517,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,A,2,4,other,services,reputation,father,1,2,1,no,yes,no,no,yes,yes,yes,no,2,3,2,1,3,1,8,8,5,8,518,P518,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,LE3,T,1,1,at_home,other,other,mother,3,2,0,no,yes,no,no,yes,yes,yes,no,4,3,2,1,3,5,6,6,8,8,520,P520,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,2,3,at_home,services,other,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,3,3,3,1,1,2,0,8,10,10,521,P521,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,4,4,health,health,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,4,1,2,3,4,8,8,8,522,P522,Tiếng Bồ Đào Nha,1,0,0
+MS,M,18,U,LE3,T,4,4,at_home,health,home,mother,1,4,0,no,yes,no,yes,yes,no,yes,yes,5,5,5,5,5,5,2,5,6,6,523,P523,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,LE3,T,3,4,at_home,other,other,mother,3,2,0,no,yes,no,no,no,yes,no,no,4,2,1,1,1,2,2,7,9,8,524,P524,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,LE3,T,4,4,other,services,home,mother,1,3,0,no,yes,no,no,yes,yes,yes,no,4,4,3,1,2,5,0,15,14,16,525,P525,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,R,GT3,T,4,1,other,other,other,mother,1,1,0,no,no,no,no,yes,yes,yes,yes,4,2,3,1,2,5,1,13,14,14,526,P526,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,U,LE3,T,2,2,services,services,other,mother,4,3,0,no,no,no,no,yes,yes,no,no,5,1,3,2,2,3,0,10,9,10,527,P527,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,R,GT3,T,2,2,at_home,other,other,mother,1,1,0,no,yes,yes,no,yes,yes,yes,no,5,1,3,1,2,5,5,9,9,9,528,P528,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,LE3,T,4,4,services,services,other,father,2,1,0,no,yes,no,no,yes,yes,no,no,5,1,3,1,2,5,1,11,11,11,529,P529,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,GT3,T,3,3,services,services,home,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,4,1,4,5,5,3,8,7,10,9,530,P530,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,U,GT3,T,1,1,at_home,services,other,mother,3,2,0,no,no,no,no,yes,yes,yes,yes,5,1,3,3,3,1,0,10,10,10,531,P531,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,U,GT3,T,2,1,health,services,other,mother,2,2,0,no,no,no,no,no,yes,yes,yes,4,2,2,1,4,5,2,9,7,8,532,P532,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,U,LE3,T,2,1,other,services,other,mother,1,2,0,no,no,no,no,yes,yes,yes,yes,3,2,2,1,1,3,0,14,15,16,533,P533,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,U,LE3,T,4,4,teacher,health,other,father,1,1,0,no,yes,no,no,yes,yes,yes,no,4,1,2,2,5,5,0,11,12,12,534,P534,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,R,GT3,T,1,2,other,services,course,mother,3,2,0,no,yes,no,yes,yes,yes,no,no,5,5,5,1,3,5,11,9,11,10,535,P535,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,U,LE3,A,2,2,other,other,reputation,mother,3,4,0,no,yes,no,yes,yes,yes,no,no,5,4,5,2,3,5,8,13,14,14,536,P536,Tiếng Bồ Đào Nha,1,1,0
+MS,M,15,U,LE3,A,2,1,services,services,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,4,3,3,1,2,5,11,12,13,12,537,P537,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,LE3,T,2,2,other,other,course,mother,1,3,0,no,yes,no,no,no,yes,no,yes,4,3,3,2,2,5,2,11,11,11,538,P538,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,LE3,T,4,1,other,other,home,mother,2,2,0,no,yes,no,yes,yes,yes,yes,no,1,2,4,2,2,1,8,9,10,10,539,P539,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,3,2,at_home,other,home,mother,2,1,0,no,no,no,no,yes,yes,no,yes,4,3,3,2,2,1,5,9,11,11,540,P540,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,2,2,other,other,other,mother,2,2,0,yes,no,yes,no,yes,yes,no,no,5,1,3,1,1,5,0,11,9,11,541,P541,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,U,GT3,T,4,4,teacher,services,course,mother,2,3,0,no,yes,no,no,yes,yes,yes,yes,5,3,5,1,4,5,1,10,11,12,542,P542,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,R,GT3,T,4,4,health,other,course,father,3,1,3,no,no,no,yes,yes,yes,yes,yes,3,3,3,1,3,5,2,9,9,8,543,P543,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,R,LE3,T,1,3,other,other,course,father,2,1,0,no,no,no,yes,yes,yes,no,yes,5,1,2,3,3,5,2,12,11,12,544,P544,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,U,GT3,T,3,4,services,other,other,mother,1,2,1,no,yes,no,yes,no,yes,yes,yes,5,4,4,3,4,5,8,8,9,8,545,P545,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,U,GT3,T,4,4,health,health,course,father,1,2,0,no,yes,no,no,yes,yes,yes,no,5,2,5,1,1,5,0,13,15,16,546,P546,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,LE3,T,4,1,other,at_home,other,father,1,1,0,no,no,no,no,yes,yes,yes,no,4,1,2,2,1,2,0,10,11,11,547,P547,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,U,GT3,A,1,1,at_home,at_home,other,mother,1,2,0,no,no,no,yes,yes,yes,yes,yes,4,5,5,1,2,3,2,11,10,11,548,P548,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,4,2,other,other,course,mother,2,2,0,yes,yes,no,no,no,yes,yes,no,4,3,3,2,3,5,0,17,18,18,549,P549,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,U,LE3,A,2,2,other,services,course,father,2,2,0,no,yes,no,no,no,yes,yes,yes,4,1,2,2,2,5,0,12,13,13,550,P550,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,U,GT3,T,3,2,other,other,other,father,2,2,0,no,yes,yes,no,yes,yes,yes,no,4,1,2,2,2,1,0,13,14,13,551,P551,Tiếng Bồ Đào Nha,1,1,0
+MS,M,19,U,GT3,T,1,1,other,other,other,mother,1,2,2,no,yes,no,yes,yes,no,yes,no,4,4,3,3,4,4,2,9,9,10,552,P552,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,U,LE3,A,1,0,other,other,home,mother,1,1,0,no,no,no,no,yes,yes,no,yes,4,1,2,1,1,5,4,11,11,12,553,P553,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,R,GT3,T,1,1,at_home,at_home,course,father,2,1,0,no,yes,no,yes,yes,no,yes,yes,3,5,5,2,2,4,3,10,11,10,554,P554,Tiếng Bồ Đào Nha,1,0,0
+MS,F,16,R,GT3,T,1,2,other,other,home,father,1,3,0,yes,yes,no,no,no,yes,yes,yes,4,3,4,1,1,3,5,13,14,13,555,P555,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,LE3,T,1,2,other,at_home,course,mother,1,1,0,no,no,no,no,yes,yes,no,no,4,4,4,2,4,5,4,9,10,11,556,P556,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,R,GT3,T,3,1,other,other,course,mother,2,2,3,no,yes,no,yes,no,yes,yes,yes,5,4,4,1,1,5,2,7,9,10,557,P557,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,R,GT3,T,2,2,other,other,course,mother,2,1,0,no,no,no,yes,yes,no,no,yes,5,5,5,3,5,5,0,8,13,10,558,P558,Tiếng Bồ Đào Nha,1,1,0
+MS,M,18,R,GT3,T,1,0,at_home,at_home,course,other,3,1,1,yes,yes,no,no,yes,yes,no,no,4,3,2,1,1,4,0,12,12,13,559,P559,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,R,GT3,T,1,1,other,services,course,mother,2,1,0,no,yes,no,yes,no,yes,yes,yes,4,5,5,1,3,2,0,10,9,10,560,P560,Tiếng Bồ Đào Nha,1,1,0
+MS,M,18,U,LE3,T,1,1,at_home,at_home,course,mother,2,2,0,no,yes,no,yes,yes,yes,no,no,4,3,3,1,4,5,6,10,9,10,561,P561,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,R,LE3,T,2,2,other,services,course,father,1,2,0,no,no,no,yes,yes,yes,no,yes,5,4,3,1,1,1,0,11,13,12,562,P562,Tiếng Bồ Đào Nha,1,0,0
+MS,M,16,R,GT3,T,3,2,services,other,course,father,2,1,0,no,no,no,no,yes,yes,yes,no,4,5,5,2,3,5,2,11,9,10,564,P564,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,R,LE3,T,1,1,at_home,other,course,mother,2,1,0,no,no,no,yes,yes,yes,yes,no,4,5,5,2,4,5,0,10,10,9,565,P565,Tiếng Bồ Đào Nha,1,1,0
+MS,M,18,R,GT3,T,1,1,services,other,course,other,2,1,1,no,yes,no,no,yes,no,yes,yes,5,3,3,2,3,5,2,9,7,9,566,P566,Tiếng Bồ Đào Nha,1,1,0
+MS,M,19,U,GT3,T,3,2,at_home,services,course,mother,2,1,3,no,no,no,yes,yes,yes,no,no,3,2,1,1,1,3,4,6,11,9,568,P568,Tiếng Bồ Đào Nha,1,1,0
+MS,M,18,U,GT3,T,3,3,at_home,at_home,course,mother,1,2,2,no,yes,no,yes,yes,no,yes,no,4,4,5,1,3,3,9,4,8,8,569,P569,Tiếng Bồ Đào Nha,1,1,0
+MS,M,16,R,GT3,T,2,2,services,services,course,mother,2,1,0,no,yes,no,yes,yes,yes,yes,yes,5,4,3,2,4,4,6,7,8,8,570,P570,Tiếng Bồ Đào Nha,1,1,0
+MS,M,19,U,GT3,T,2,1,at_home,other,course,other,2,1,3,no,no,no,yes,no,no,yes,yes,4,4,3,1,3,5,4,8,9,9,571,P571,Tiếng Bồ Đào Nha,1,1,0
+MS,F,16,U,GT3,A,3,2,services,at_home,course,mother,2,2,2,no,yes,no,yes,yes,yes,no,yes,2,5,5,1,1,1,8,5,5,7,572,P572,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,1,1,other,at_home,course,mother,1,1,0,no,yes,no,yes,yes,yes,no,no,4,3,2,1,2,5,9,7,9,10,573,P573,Tiếng Bồ Đào Nha,1,0,0
+MS,M,20,R,GT3,T,1,1,other,other,course,other,2,1,1,no,yes,no,no,yes,no,yes,yes,4,4,3,2,4,4,12,8,11,10,574,P574,Tiếng Bồ Đào Nha,1,1,0
+MS,F,18,R,GT3,A,4,3,services,services,course,mother,1,1,0,no,yes,no,no,yes,yes,yes,no,5,4,4,3,4,2,8,10,11,10,575,P575,Tiếng Bồ Đào Nha,1,0,0
+MS,M,18,R,GT3,T,3,2,other,other,course,mother,2,1,0,no,yes,no,no,no,yes,yes,no,2,5,5,5,5,5,8,9,10,11,576,B327,Tiếng Bồ Đào Nha,1,1,1
+MS,M,19,R,GT3,T,1,1,other,services,home,other,3,2,1,no,no,no,no,yes,yes,yes,no,5,4,4,3,3,2,8,10,9,11,577,B328,Tiếng Bồ Đào Nha,1,1,1
+MS,M,17,U,GT3,T,3,3,health,other,course,mother,2,2,1,no,yes,no,no,yes,yes,yes,no,4,5,4,2,3,3,4,8,9,10,578,B329,Tiếng Bồ Đào Nha,1,1,1
+MS,M,18,U,LE3,T,1,3,at_home,services,course,mother,1,1,0,no,no,no,no,yes,no,yes,yes,4,3,3,2,3,3,0,9,10,9,579,B330,Tiếng Bồ Đào Nha,1,1,1
+MS,M,19,R,GT3,T,1,1,other,other,home,other,3,1,1,no,yes,no,no,yes,yes,yes,no,4,4,4,3,3,5,4,8,9,10,580,B331,Tiếng Bồ Đào Nha,1,1,1
+MS,F,18,U,GT3,A,1,2,at_home,other,course,mother,2,2,2,no,yes,no,no,yes,yes,no,no,4,3,3,1,1,5,2,6,8,8,581,P581,Tiếng Bồ Đào Nha,1,0,0
+MS,F,19,U,LE3,A,1,1,at_home,other,course,mother,1,1,0,no,yes,no,no,yes,no,no,no,1,4,4,1,1,5,0,6,8,7,582,P582,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,GT3,T,0,0,at_home,other,course,mother,2,1,0,no,yes,no,no,yes,yes,yes,no,4,4,3,1,1,5,0,10,11,11,584,P584,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,LE3,A,3,1,other,at_home,course,other,2,3,0,no,yes,yes,no,yes,no,no,no,4,2,3,2,2,3,5,8,7,8,585,P585,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,LE3,T,2,2,services,services,course,mother,1,2,1,no,yes,no,yes,yes,yes,yes,no,2,3,3,1,2,4,3,7,6,8,587,P587,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,4,1,health,at_home,course,mother,1,1,0,no,yes,no,no,yes,yes,no,yes,3,2,2,1,1,5,0,8,10,9,588,P588,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,LE3,T,1,2,at_home,other,course,father,1,1,0,no,no,no,no,yes,yes,yes,no,5,5,1,1,1,3,0,7,10,10,589,P589,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,T,1,1,other,other,course,mother,3,2,2,no,no,no,yes,yes,yes,no,yes,3,4,4,2,2,5,3,7,8,7,590,B363,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,U,GT3,T,2,2,services,at_home,reputation,father,2,2,0,no,no,no,yes,no,yes,yes,no,4,3,5,1,1,1,2,12,13,14,591,P591,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,3,3,services,services,course,mother,2,1,0,no,yes,no,no,yes,yes,yes,no,4,4,3,1,1,4,0,11,12,13,592,P592,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,LE3,A,1,2,at_home,other,reputation,mother,2,2,0,no,no,no,no,yes,yes,yes,no,4,4,3,1,2,4,0,12,13,14,593,P593,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,T,4,4,teacher,teacher,reputation,mother,2,2,0,no,no,no,yes,no,yes,yes,no,4,3,5,1,2,1,0,18,18,18,594,P594,Tiếng Bồ Đào Nha,1,0,0
+MS,M,18,U,LE3,T,4,4,services,other,reputation,mother,1,1,0,no,yes,no,yes,yes,yes,yes,no,5,4,5,1,1,5,3,17,17,17,595,P595,Tiếng Bồ Đào Nha,1,1,0
+MS,F,17,U,GT3,T,4,2,other,other,course,mother,2,2,0,no,yes,no,no,yes,yes,yes,no,4,3,3,1,2,4,0,17,18,18,596,P596,Tiếng Bồ Đào Nha,1,0,0
+MS,M,18,U,LE3,T,1,2,at_home,services,home,mother,2,1,0,no,yes,no,no,no,yes,no,no,4,1,4,5,5,1,8,10,11,11,598,P598,Tiếng Bồ Đào Nha,1,1,0
+MS,M,18,R,GT3,T,4,4,at_home,services,other,mother,3,1,0,no,yes,yes,yes,yes,yes,yes,yes,2,5,5,1,1,1,5,12,13,14,599,P599,Tiếng Bồ Đào Nha,1,1,0
+MS,M,17,R,GT3,T,1,1,other,services,other,father,3,1,0,no,no,no,no,no,no,no,no,4,2,3,3,4,4,4,12,13,14,600,P600,Tiếng Bồ Đào Nha,1,1,0
+MS,F,18,U,GT3,T,2,2,other,other,course,mother,2,2,0,no,yes,no,no,no,yes,yes,yes,1,3,1,1,1,2,4,8,8,10,601,P601,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,LE3,T,2,2,services,services,course,father,2,3,0,no,no,no,no,yes,yes,yes,yes,5,4,5,1,4,3,0,11,12,13,602,P602,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,T,1,1,at_home,services,course,mother,3,2,1,no,no,no,no,yes,no,no,no,4,4,2,1,2,2,2,9,10,10,604,P604,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,U,GT3,T,4,2,teacher,other,course,father,2,4,0,no,no,no,no,yes,yes,yes,yes,4,2,3,3,1,5,0,18,18,18,606,P606,Tiếng Bồ Đào Nha,1,0,0
+MS,F,17,R,LE3,A,2,1,services,other,reputation,mother,2,2,0,no,no,no,yes,yes,yes,yes,yes,5,3,3,1,2,2,5,11,11,12,607,P607,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,LE3,A,1,1,at_home,services,course,mother,1,2,0,no,no,no,no,yes,yes,no,yes,5,2,3,1,2,3,2,8,10,11,608,P608,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,T,1,2,at_home,at_home,course,father,2,2,0,no,yes,no,no,yes,no,no,no,4,1,1,1,1,4,0,11,11,12,609,P609,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,GT3,T,2,2,services,other,home,mother,2,3,0,no,no,no,no,yes,yes,yes,yes,4,2,1,1,1,4,5,14,14,15,611,P611,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,R,GT3,T,4,3,services,other,home,mother,2,2,1,no,yes,yes,yes,no,yes,yes,yes,4,5,5,1,3,2,4,10,11,11,612,B332,Tiếng Bồ Đào Nha,1,1,1
+MS,F,18,U,GT3,T,3,3,services,services,course,father,1,2,0,no,yes,no,no,yes,yes,no,yes,5,3,4,1,1,5,0,10,10,10,613,B333,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,R,GT3,T,4,4,teacher,services,other,father,2,2,0,no,yes,yes,yes,yes,yes,yes,no,4,3,3,1,2,5,2,12,12,12,614,B334,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,U,LE3,A,3,2,services,other,reputation,mother,2,2,0,no,no,no,no,yes,yes,no,yes,1,2,3,1,2,5,0,15,14,15,615,B335,Tiếng Bồ Đào Nha,1,0,1
+MS,M,18,U,LE3,T,1,1,other,services,home,father,2,1,0,no,no,no,no,no,yes,yes,yes,3,3,2,1,2,3,2,14,13,14,616,B336,Tiếng Bồ Đào Nha,1,1,1
+MS,F,18,U,LE3,T,1,1,at_home,services,course,father,2,3,0,no,no,no,no,yes,yes,yes,no,5,3,2,1,1,4,0,19,17,18,617,B337,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,R,LE3,A,1,2,at_home,other,course,mother,3,2,0,no,no,no,no,yes,yes,no,yes,4,3,4,1,4,5,0,16,15,15,618,P618,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,U,GT3,T,3,3,services,services,other,mother,2,2,0,no,yes,no,no,yes,yes,yes,yes,4,3,2,1,3,3,6,13,12,13,619,B338,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,U,LE3,T,4,4,at_home,at_home,course,mother,1,2,0,no,yes,no,yes,yes,yes,yes,yes,2,3,4,1,1,1,4,15,14,15,620,B339,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,R,GT3,T,1,2,other,services,course,father,2,2,0,no,no,no,no,no,yes,no,no,3,2,2,1,2,3,0,13,13,13,621,B340,Tiếng Bồ Đào Nha,1,0,1
+MS,M,18,R,GT3,T,1,3,at_home,other,course,mother,2,2,0,no,yes,yes,no,yes,yes,no,no,3,3,4,2,4,3,0,8,10,9,622,B341,Tiếng Bồ Đào Nha,1,1,1
+MS,M,18,U,LE3,T,4,4,teacher,services,other,mother,2,3,0,no,no,no,no,yes,yes,yes,yes,4,2,2,2,2,5,0,15,16,16,623,B342,Tiếng Bồ Đào Nha,1,1,1
+MS,F,17,R,GT3,T,1,1,other,services,reputation,mother,3,1,1,no,yes,no,no,yes,yes,yes,yes,5,2,1,1,2,1,0,8,8,9,624,B343,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,U,GT3,T,2,3,at_home,services,course,father,2,1,0,no,yes,no,no,yes,yes,yes,yes,5,2,3,1,2,4,0,10,10,10,625,B344,Tiếng Bồ Đào Nha,1,0,1
+MS,M,18,R,LE3,T,1,2,at_home,services,other,father,3,1,0,no,yes,no,yes,yes,no,yes,yes,4,3,3,2,3,3,3,9,10,10,627,B346,Tiếng Bồ Đào Nha,1,1,1
+MS,F,17,U,GT3,T,2,2,other,at_home,home,mother,1,3,0,no,no,no,yes,yes,yes,no,yes,3,4,3,1,1,3,8,10,11,12,628,B347,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,R,GT3,T,1,2,other,other,course,mother,1,1,0,no,no,no,yes,yes,yes,yes,no,3,5,5,1,3,1,4,7,8,9,629,B348,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,R,LE3,T,4,4,other,other,reputation,mother,2,3,0,no,no,no,no,yes,yes,yes,no,5,4,4,1,1,1,0,15,17,17,630,B349,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,R,GT3,T,1,1,other,other,home,mother,4,3,0,no,no,no,no,yes,yes,yes,no,4,3,2,1,2,4,4,10,11,12,631,B350,Tiếng Bồ Đào Nha,1,0,1
+MS,F,19,R,GT3,T,1,1,at_home,other,course,other,2,2,1,no,yes,no,no,yes,yes,yes,yes,4,3,3,1,1,3,4,7,8,9,632,P632,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,LE3,T,4,4,teacher,services,course,mother,1,2,0,no,no,no,yes,yes,yes,yes,no,5,4,3,3,4,2,1,13,14,14,633,B351,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,U,GT3,T,3,3,other,other,home,mother,1,2,0,no,no,no,no,yes,yes,yes,yes,4,1,3,1,2,1,1,16,16,16,634,B352,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,R,GT3,T,3,1,at_home,other,reputation,mother,1,2,0,no,yes,no,yes,no,yes,yes,no,4,5,4,2,3,1,10,8,9,9,635,B353,Tiếng Bồ Đào Nha,1,0,1
+MS,M,18,U,GT3,T,4,4,teacher,teacher,home,father,1,2,0,no,no,no,yes,no,yes,yes,no,3,2,4,1,4,2,4,17,18,19,636,B354,Tiếng Bồ Đào Nha,1,1,1
+MS,M,17,U,GT3,T,2,3,other,services,home,father,2,2,0,no,no,no,yes,yes,yes,yes,no,4,4,3,1,1,3,4,14,15,16,638,B356,Tiếng Bồ Đào Nha,1,1,1
+MS,F,18,R,GT3,T,2,2,at_home,other,other,mother,2,3,0,no,no,no,no,yes,yes,no,no,5,3,3,1,3,4,0,14,17,15,641,B359,Tiếng Bồ Đào Nha,1,0,1
+MS,F,17,U,GT3,T,4,3,teacher,other,other,mother,2,2,0,no,no,no,no,yes,yes,yes,no,5,5,4,1,1,1,0,6,9,11,642,P642,Tiếng Bồ Đào Nha,1,0,0
+MS,F,18,R,GT3,T,4,4,teacher,at_home,reputation,mother,3,1,0,no,yes,no,yes,yes,yes,yes,yes,4,4,3,2,2,5,4,7,9,10,643,B360,Tiếng Bồ Đào Nha,1,0,1
+MS,F,19,R,GT3,T,2,3,services,other,course,mother,1,3,1,no,no,no,yes,no,yes,yes,no,5,4,2,1,2,5,4,10,11,10,644,B361,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,U,LE3,T,3,1,teacher,services,course,mother,1,2,0,no,yes,no,no,yes,yes,yes,no,4,3,4,1,1,1,4,15,15,16,645,B362,Tiếng Bồ Đào Nha,1,0,1
+MS,F,18,U,GT3,T,1,1,other,other,course,mother,2,2,0,no,no,no,yes,yes,yes,no,no,1,1,1,1,1,5,6,11,12,9,646,P646,Tiếng Bồ Đào Nha,1,0,0
+MS,M,17,U,LE3,T,3,1,services,services,course,mother,2,1,0,no,no,no,no,no,yes,yes,no,2,4,5,3,4,2,6,10,10,10,647,B364,Tiếng Bồ Đào Nha,1,1,1
+MS,M,18,R,LE3,T,3,2,services,other,course,mother,3,1,0,no,no,no,no,no,yes,yes,no,4,4,1,3,4,5,4,10,11,11,648,B365,Tiếng Bồ Đào Nha,1,1,1

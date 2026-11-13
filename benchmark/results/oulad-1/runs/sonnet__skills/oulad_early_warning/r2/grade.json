@@ -1,0 +1,88 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 6,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh click và ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "Trung vị click tuần 1: Pass 59, Withdrawn 33, Fail 20; ngày hoạt động TB tuần 1: 3,15/2,42/2,02, khớp tham chiếu. Pass cao nhất, Fail thấp nhất mọi tuần; tổng 0-28 n = 7.399/2.152/3.469; có Kruskal-Wallis và kiểm định từng cặp. Lỗi nhỏ: dùng nunique(id_student) nên n theo tuần ra 3.445/7.397/2.062, và kết luận sai rằng aq1 chỉ có 12.904 sinh viên."
+      },
+      {
+        "check": "AQ2: dùng effect size, xử lý kiểm định bội, kết luận khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Có Cliff's delta cho 36 chỉ báo và hiệu chỉnh Bonferroni; ghi rõ 'với n lớn, p-value gần như vô nghĩa'. Click tuần 1 δ ≈ 0,26, ngày hoạt động 0-28 δ = 0,35. Kết luận 'đã có từ tuần 1'. Có xét nhất quán qua 8 module-kỳ."
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo thời gian (train 2013B+2013J, val 2014B, test 2014J)",
+        "pass": true,
+        "evidence": "Dùng cột split; mô hình và ngưỡng chọn trên validation, test chỉ để báo cáo. Không dùng CV xáo trộn."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng biến kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo look-ahead",
+        "pass": false,
+        "evidence": "Không dùng biến nhạy cảm (để riêng cho audit). Tuy nhiên tma1_score được đưa vào làm đặc trưng chính và không được cảnh báo về nguy cơ look-ahead (thời điểm công bố điểm). Agent chỉ xử lý 'thang điểm bất thường' ở BBB 2014J, và quy tắc phát hiện (>10% điểm = 1) được tính trên chính dữ liệu test."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ≈ tham chiếu ±0,05, có baseline, recall/precision ở ngưỡng từ validation, trả lời trung thực về mục tiêu 70%",
+        "pass": true,
+        "evidence": "PR-AUC test của Logistic 0,635 (tham chiếu 0,665), GB 0,659 (tham chiếu 0,644). So với baseline ít click 0,541, quy tắc TMA1 0,615 và tỷ lệ nền 37,8%. Recall test 65,8%, precision 53,0% ở ngưỡng chọn trên val; nói rõ chưa đạt 70%."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ (200 mỗi bên), precision@200 khớp tham chiếu (BBB ~0,76, FFF ~0,88 ±0,08), so với tỷ lệ nền",
+        "pass": false,
+        "evidence": "Xếp hạng đúng cách, riêng từng module-kỳ. FFF 2014J đạt 86,5% (khớp tham chiếu), nhưng BBB 2014J chỉ 59,0%, lệch xa tham chiếu 0,76, nhiều khả năng do dùng tma1_score. Có so với tỷ lệ nền 0,356/0,399."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt dễ hiểu, dựa trên đóng góp thực của mô hình, không dùng thuộc tính nhạy cảm",
+        "pass": true,
+        "evidence": "Đóng góp = hệ số × giá trị chuẩn hóa, gộp thành 7 chủ đề. Cột ghi_chu_co_van có 2-3 câu cho mỗi sinh viên. Chủ đề hàng đầu: số ngày vào học 333, TMA1 245, khoảng cách từ lần học cuối 117, khớp tham chiếu. Câu 'TMA1 nộp muộn hoặc kết quả chưa tốt' còn mơ hồ."
+      },
+      {
+        "check": "Không khẳng định nhân quả; nêu giới hạn quan sát/khái quát",
+        "pass": true,
+        "evidence": "Nêu 'tương quan, không phải nhân quả'. Mức chuyển đổi 14% được ghi là giả định của nhà trường. Có nêu giới hạn: test chỉ một kỳ, chỉ gồm sinh viên còn học sau ngày 28, AUC val 0,76 so với test 0,72."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "'bảng theo tuần (aq1) có 12.904 sinh viên, ít hơn bảng chẩn đoán (13.020)' là sai: aq1 có đủ 13.020 lượt đăng ký; lỗi do nunique(id_student) gộp sinh viên trùng giữa các module-kỳ",
+      "q1_weekly_by_outcome.csv: n = 3.445 / 7.397 / 2.062 là sai (đúng là 3.469 / 7.399 / 2.152)",
+      "Precision@200 BBB 2014J = 59,0% lệch xa tham chiếu (~0,76), do mô hình dùng tma1_score (biến có rủi ro look-ahead và thang điểm lệch)"
+    ],
+    "summary": "Bài làm khá tốt về cấu trúc.\n- Điểm mạnh: chia train/val/test theo thời gian đúng, ngưỡng chọn trên validation, có effect size (Cliff's delta) và Bonferroni, kết luận khác biệt có từ tuần 1, báo cáo trung thực rằng recall test 65,8% chưa đạt 70%. Danh sách ưu tiên xếp riêng 200 người cho mỗi module-kỳ, có so sánh với quy tắc đơn giản và tỷ lệ nền. Lời giải thích Q5 bằng tiếng Việt dựa trên đóng góp thực của mô hình logistic, và không khẳng định nhân quả.\n- Điểm yếu chính: tma1_score được đưa vào mô hình mà không cảnh báo nguy cơ look-ahead. Agent chỉ 'sửa' thang điểm bất thường ở BBB 2014J bằng một quy tắc tính trên dữ liệu test, và precision@200 ở BBB chỉ 59% so với tham chiếu ~76%.\n- Lỗi đếm: dùng nunique(id_student) dẫn đến tuyên bố sai rằng aq1 chỉ có 12.904 sinh viên.\n- Biểu đồ rõ ràng, tiêu đề có thông điệp, nhưng tiêu đề biểu đồ Q5 bị cắt.\n- Báo cáo và câu trả lời cuối đều bằng tiếng Việt."
+  },
+  "judge_cost_usd": 0.4605393,
+  "accuracy_pct": 75.0,
+  "quality_pct": 65.0,
+  "overall": 71.0
+}

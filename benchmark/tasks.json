@@ -208,5 +208,44 @@
       "Top factors consistent with reference: macro indicators (nr.employed / euribor3m / emp.var.rate), previous outcome success / pdays, contact type, month",
       "Frames factor importance as predictive, not causal"
     ]
+  },
+  {
+    "id": "oulad_early_warning",
+    "topic": "Education / early warning (prepared data)",
+    "lang": "vi",
+    "story": false,
+    "expected_skills": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "question": "Đây là dữ liệu đã được chuẩn bị từ Open University Learning Analytics Dataset (OULAD): module BBB và FFF, 4 kỳ 2013B, 2013J, 2014B, 2014J, gồm các lượt đăng ký sinh viên còn theo học đến cuối ngày 28 của khóa. Nhà trường muốn xây một hệ thống cảnh báo sớm sinh viên cần hỗ trợ, với mốc ra quyết định là cuối ngày 28. Hãy trả lời 5 câu hỏi:\n1. Tương tác trong 4 tuần đầu khác nhau thế nào giữa ba nhóm kết quả Pass / Fail / Withdrawn?\n2. Chỉ báo nào khác biệt có ý nghĩa giữa sinh viên hoàn thành và không hoàn thành (Fail hoặc Withdrawn), và khác biệt xuất hiện từ tuần nào?\n3. Chỉ dùng dữ liệu từ ngày 0 đến 28, có dự báo được sinh viên sẽ Fail/Withdrawn không, và tốt đến mức nào? Nhà trường mong bắt được ít nhất 70% số sinh viên sẽ không hoàn thành.\n4. Mỗi module-kỳ chỉ đủ nhân lực liên hệ tối đa 200 sinh viên. Nên ưu tiên ai theo quy tắc nào, và danh sách đó trúng được bao nhiêu?\n5. Với mỗi sinh viên trong danh sách ưu tiên, đặc trưng nào đóng góp nhiều nhất vào điểm rủi ro? Diễn đạt thành 2-3 câu cho cố vấn học tập (không chuyên).",
+    "traps": [
+      "aq1_student_week.csv has 4 rows per student (weeks 1-4): group counts must be per student (Pass 7,399 / Fail 3,469 / Withdrawn 2,152 = 13,020), not rows",
+      "a 'split' column already encodes a temporal split by presentation (train 2013B+2013J, validation 2014B, test 2014J); random shuffle CV across presentations leaks cohort effects and overstates performance; prevalence differs (train 0.448, val 0.465, test 0.378)",
+      "aq2_diagnostic_table.csv contains outcome columns (final_result, label3, target_noncompletion) and sensitive attributes (gender, age_band, disability, imd_band, region) - must not be used as predictors / for prioritisation",
+      "tma1_score: timing of score release is unverified (possible look-ahead) and it is missing for non-submitters; adding it raises validation PR-AUC but test PR-AUC drops sharply (0.66 -> 0.53) - should be excluded or treated as a sensitivity only",
+      "n=13,020 makes almost every test significant: needs effect sizes and multiple-testing correction; clicks_change_w1_w4 is 'significant' by p but negligible in effect (Cliff's delta ~ -0.04)",
+      "capacity is 200 PER module-presentation: rank within BBB-2014J and FFF-2014J separately (a pooled top-400 puts ~124 in BBB and ~276 in FFF, violating the cap)",
+      "threshold for the 70% recall target must be chosen on validation, not on test",
+      "context_all_registrations.csv includes registrations that withdrew before day 28 / registered later - they are outside the population at the decision point",
+      "data is observational: precision of the contact list is not the effect of an intervention"
+    ],
+    "checks": [
+      "AQ1: compares weekly clicks AND active days for Pass / Fail / Withdrawn per student (not per row) with robust statistics; numbers consistent with reference (e.g. median clicks week 1: Pass ~59, Withdrawn ~33, Fail ~20; Pass highest every week, Fail lowest)",
+      "AQ2: compares completers vs non-completers with effect sizes (not p-values alone) and addresses multiple testing or practical significance; concludes the difference in clicks/active days is already present from week 1",
+      "AQ3 design: evaluates on a held-out later presentation (uses the split column: train 2013B+2013J, validate 2014B, test 2014J, or an equivalent temporal hold-out); random-shuffle CV as the only/headline evaluation FAILS",
+      "AQ3 leakage/ethics: no outcome-derived columns and no sensitive attributes (gender, age_band, disability, imd_band, region) as predictors; tma1_score excluded or explicitly flagged as possibly look-ahead",
+      "AQ3 result: test PR-AUC within about +-0.05 of the reference (logistic ~0.66, boosting ~0.64), compared with a baseline (prevalence 0.378 or a simple rule); reports recall/precision at a threshold set without the test set and states honestly whether the 70% recall target is met on the test term (reference variants: recall 0.62-0.69 at the validation threshold, i.e. just below 70%)",
+      "AQ4: ranks within EACH module-presentation (cap 200 each) on the test term and reports precision@200 consistent with reference (BBB-2014J ~0.76, FFF-2014J ~0.88, +-0.08), compared with the cohort base rate (~0.36 / ~0.40)",
+      "AQ5: gives per-student explanations in plain Vietnamese (2-3 sentences) derived from the model's actual contributions, with no sensitive attributes; dominant reasons consistent with reference (TMA1 not submitted / not on time by day 28, low clicks or active days in days 0-28, days since last activity)",
+      "No causal claim that contacting students will reduce non-completion; states observational/generalisation limits"
+    ]
   }
 ]

@@ -1,0 +1,80 @@
+{
+  "task": "retail_uk",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 25.0,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Khử trùng lặp, nhận ra hai sheet chồng lấn 1–9/12/2010",
+        "pass": true,
+        "evidence": "analysis.py lấy sheet 1 cho trước 1/12/2010 và sheet 2 cho phần còn lại (loại 22.523 dòng chồng lấn), sau đó drop_duplicates bỏ 11.812 dòng. 22.523 + 11.812 = 34.335, khớp đúng số trùng lặp trong reference."
+      },
+      {
+        "check": "2. So sánh cùng kỳ vì dữ liệu 2011 kết thúc 9/12",
+        "pass": true,
+        "evidence": "Cửa sổ so sánh là 1/1–8/12 cho cả hai năm. answer.md nêu rõ so sánh sai (cả năm 2010 £9,29tr với 2011 £9,22tr) cho ra −0,7% và làm mất tăng trưởng thật."
+      },
+      {
+        "check": "3. Xử lý hóa đơn hủy 'C' / số lượng âm một cách nhất quán",
+        "pass": true,
+        "evidence": "rev = Quantity×Price, giữ các dòng âm để ra doanh thu thuần, áp dụng như nhau cho cả hai năm. Dòng giá ≤0 bị loại."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ nằm trong ±3 điểm % so với reference",
+        "pass": true,
+        "evidence": "Headline +4,0% (bỏ admin) và +2,0% (gồm admin), so với reference 3,93% / 3,1% / 2,67%. Cả hai đều nằm trong ±3 điểm %."
+      },
+      {
+        "check": "5. Tách khách mới/cũ theo Customer ID và nêu rõ phần thiếu ID bị loại khỏi phép tách",
+        "pass": true,
+        "evidence": "Khách mới +£1,45tr (1.521 khách, ref 1.532 / £1,42tr); khách mất −£1,06tr (ref £1,059tr); khách giữ lại −£0,39tr (ref −£0,42tr). Phần không có mã (+£322k) được tách riêng và ghi rõ là không phân loại được."
+      },
+      {
+        "check": "6. Thị trường tăng/giảm nhiều nhất khớp reference",
+        "pass": true,
+        "evidence": "Tăng: Anh +£142k, Úc +£106k, Pháp +£68k. Giảm: EIRE −£78k, Đan Mạch −£27k, Thụy Điển −£17k. Cùng tập quốc gia với reference (Úc +106k, Pháp +62k, Anh +43k; EIRE −79k, Đan Mạch −28k, Thụy Điển −16k). Riêng số của Anh cao hơn reference (+142k so với +43k) do cách loại mã admin, nên Anh xếp đầu thay vì Úc."
+      },
+      {
+        "check": "7. story.md có một thông điệp chính, đủ mạch bối cảnh–xung đột–insight–hành động, và khuyến nghị dạng gợi ý",
+        "pass": true,
+        "evidence": "Có các mục Thông điệp chính / Bối cảnh / Diễn biến / Hành động đề xuất / Lưu ý. Thông điệp: khách mới chỉ bù đủ khách cũ rời đi, nên ưu tiên giữ chân khách cũ. Khuyến nghị có đề xuất thử nghiệm với nhóm đối chứng."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "story.md viết 'Mức tăng này đến từ khách mới', nhưng theo bridge của chính agent, khách có mã chỉ tăng ròng +£37k, còn +£322k trong tổng +£359k đến từ đơn không có mã khách. Câu này gán sai nguồn tăng trưởng.",
+      "Phần lưu ý cho rằng tỷ lệ mất khách 36,6% bị đánh giá cao vì 'khách mua 9–31/12/2011 chưa được tính'. Lập luận này sai: cửa sổ đã được cắt cùng kỳ (đến 8/12) cho cả hai năm, nên cut-off không làm lệch tỷ lệ churn so với 2010.",
+      "Anh +£142k cao hơn nhiều so với reference (+£43k), do định nghĩa loại mã admin (M, B...). Đây là lựa chọn có nêu rõ chứ không phải số bịa, nhưng nó khiến Anh xếp đầu mức tăng."
+    ],
+    "summary": "Agent xử lý tốt tất cả các bẫy dữ liệu:\n- Cắt phần chồng lấn giữa hai sheet và bỏ 11.812 dòng trùng, tổng số loại khớp reference 34.335.\n- So sánh cùng kỳ 1/1–8/12, có cảnh báo về so sánh ngây thơ (−0,7%).\n- Giữ dòng hủy để tính doanh thu thuần.\n- Loại các mã điều chỉnh nội bộ và báo cáo độ nhạy +4,0% / +2,0% / +0,5%.\n- Tách khách mới/cũ chỉ trên khách có mã, phần không có mã được tách riêng.\n\nCác con số bridge gần sát reference: khách mới £1,45tr / 1.521 khách, khách mất −£1,06tr, khách giữ lại −£0,39tr, tỷ lệ quay lại 63%. Thị trường nêu đúng: Úc, Pháp, Anh tăng; EIRE, Đan Mạch, Thụy Điển giảm. Story bằng tiếng Việt, đủ mạch bối cảnh–xung đột–hành động. Hai biểu đồ (waterfall và diverging bar) có tiêu đề nêu kết luận, nhãn rõ ràng và khớp với CSV.\n\nĐiểm trừ:\n- story.md nói mức tăng 'đến từ khách mới', trong khi phần lớn mức tăng ròng (+£322k trên +£359k) đến từ đơn không có mã.\n- Caveat cho rằng churn bị đánh giá cao vì cut-off 9/12 là lập luận sai, vì cửa sổ đã cắt cùng kỳ.\n- Do loại mã M/B, mức tăng của Anh (+£142k) lệch nhiều so với reference.\n- Không nêu tỷ lệ dòng thiếu Customer ID (~22,8%), chỉ nêu tỷ lệ doanh thu thiếu mã (13–16%)."
+  },
+  "judge_cost_usd": 0.3127737,
+  "accuracy_pct": 100.0,
+  "quality_pct": 79.2,
+  "overall": 91.7
+}

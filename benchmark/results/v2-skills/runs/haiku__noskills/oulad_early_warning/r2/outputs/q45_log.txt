@@ -1,0 +1,87 @@
+  module     ky     n  ty_le_khong_hoan_thanh  AUC_LOPO
+0    BBB  2013B  1529                  0.4755    0.7920
+1    BBB  2013J  1834                  0.4160    0.7706
+2    BBB  2014B  1280                  0.4320    0.7503
+3    BBB  2014J  1786                  0.3555    0.6413
+4    FFF  2013B  1450                  0.4607    0.7680
+5    FFF  2013J  1982                  0.4475    0.7757
+6    FFF  2014B  1301                  0.4973    0.7752
+7    FFF  2014J  1858                  0.3988    0.7799
+AUC LOPO toan bo: 0.7417
+    suc_chua_k module     ky  so_sv_module_ky  so_sv_duoc_lien_he  so_sv_khong_hoan_thanh_thuc_te  trung_dich  precision_danh_sach  ty_le_bat_duoc_tren_tong  diem_rui_ro_nguong_thu_k
+0          100    BBB  2013B             1529                 100                             727          99               0.9900                    0.1362                    0.9018
+1          100    BBB  2013J             1834                 100                             763          88               0.8800                    0.1153                    0.9373
+2          100    BBB  2014B             1280                 100                             553          93               0.9300                    0.1682                    0.8726
+3          100    BBB  2014J             1786                 100                             635          87               0.8700                    0.1370                    0.8956
+4          100    FFF  2013B             1450                 100                             668          96               0.9600                    0.1437                    0.8449
+5          100    FFF  2013J             1982                 100                             887          94               0.9400                    0.1060                    0.8925
+6          100    FFF  2014B             1301                 100                             647          95               0.9500                    0.1468                    0.8804
+7          100    FFF  2014J             1858                 100                             741          94               0.9400                    0.1269                    0.8993
+8          200    BBB  2013B             1529                 200                             727         188               0.9400                    0.2586                    0.8012
+9          200    BBB  2013J             1834                 200                             763         173               0.8650                    0.2267                    0.8613
+10         200    BBB  2014B             1280                 200                             553         174               0.8700                    0.3146                    0.7266
+11         200    BBB  2014J             1786                 200                             635         129               0.6450                    0.2031                    0.8727
+12         200    FFF  2013B             1450                 200                             668         179               0.8950                    0.2680                    0.6786
+13         200    FFF  2013J             1982                 200                             887         179               0.8950                    0.2018                    0.7687
+14         200    FFF  2014B             1301                 200                             647         177               0.8850                    0.2736                    0.7012
+15         200    FFF  2014J             1858                 200                             741         177               0.8850                    0.2389                    0.8312
+16         300    BBB  2013B             1529                 300                             727         264               0.8800                    0.3631                    0.6775
+17         300    BBB  2013J             1834                 300                             763         251               0.8367                    0.3290                    0.7091
+18         300    BBB  2014B             1280                 300                             553         238               0.7933                    0.4304                    0.6402
+19         300    BBB  2014J             1786                 300                             635         177               0.5900                    0.2787                    0.8581
+20         300    FFF  2013B             1450                 300                             668         243               0.8100                    0.3638                    0.5829
+21         300    FFF  2013J             1982                 300                             887         258               0.8600                    0.2909                    0.6957
+22         300    FFF  2014B             1301                 300                             647         253               0.8433                    0.3910                    0.6012
+23         300    FFF  2014J             1858                 300                             741         247               0.8233                    0.3333                    0.7401
+   suc_chua_k  so_sv_duoc_lien_he  so_sv_khong_hoan_thanh_thuc_te  trung_dich  precision_danh_sach  ty_le_bat_duoc_tren_tong  so_sv_du_kien_giu_lai_theo_tham_so_gia_dinh
+0         100                 800                            5621         746               0.9325                    0.1327                                        104.4
+1         200                1600                            5621        1376               0.8600                    0.2448                                        192.6
+2         300                2400                            5621        1931               0.8046                    0.3435                                        270.3
+  module     ky  ngau_nhien_trung_TB  quy_tac_don_gian_it_luot_nhap_nhat  mo_hinh_HGB  tong_khong_hoan_thanh
+0    BBB  2013B                 95.1                                 172          188                    727
+1    BBB  2013J                 83.2                                 144          173                    763
+2    BBB  2014B                 86.2                                 148          174                    553
+3    BBB  2014J                 71.0                                 121          129                    635
+4    FFF  2013B                 92.1                                 157          179                    668
+5    FFF  2013J                 89.5                                 167          179                    887
+6    FFF  2014B                 99.6                                 166          177                    647
+7    FFF  2014J                 79.7                                 168          177                    741
+tong: {'ngau_nhien_trung_TB': 696.4, 'quy_tac_don_gian_it_luot_nhap_nhat': 1243.0, 'mo_hinh_HGB': 1376.0, 'tong_khong_hoan_thanh': 5621.0}
+so sv uu tien: 1600
+dac trung 1 (dem):
+dac_trung_1
+tma1_chua_co_diem             732
+tma1_on_time                  415
+tma1_score                    220
+days_since_last_active_d28    111
+highest_education_ord          85
+studied_credits                 9
+tma1_days_before_deadline       8
+num_of_prev_attempts            6
+clicks_change_w1_w4             3
+active_days_w4                  2
+clicks_forumng_0_28             2
+clicks_subpage_0_28             2
+clicks_pre_start                2
+clicks_oucontent_0_28           2
+clicks_homepage_0_28            1
+ti le dong gop cua dac trung 1 (TB): 0.1927
+    thuoc_tinh     nhom  so_sv  so_khong_hoan_thanh  so_bat_duoc_trong_danh_sach  ty_le_bat_duoc
+0       gender        F   6863                 2840                          698           0.246
+1       gender        M   6157                 2781                          678           0.244
+2     age_band     0-35   9058                 4096                          980           0.239
+3     age_band    35-55   3929                 1512                          395           0.261
+4     age_band     55<=     33                   13                            1           0.077
+5   disability        N  11808                 4954                         1210           0.244
+6   disability        Y   1212                  667                          166           0.249
+7     imd_band    0-10%   1436                  818                          239           0.292
+8     imd_band   10-20%   1477                  747                          198           0.265
+9     imd_band   20-30%   1485                  728                          190           0.261
+10    imd_band   30-40%   1492                  635                          158           0.249
+11    imd_band   40-50%   1266                  537                          107           0.199
+12    imd_band   50-60%   1252                  510                          115           0.225
+13    imd_band   60-70%   1109                  427                          103           0.241
+14    imd_band   70-80%   1130                  455                          102           0.224
+15    imd_band   80-90%   1037                  353                           67           0.190
+16    imd_band  90-100%    935                  300                           70           0.233
+17    imd_band  Unknown    401                  111                           27           0.243

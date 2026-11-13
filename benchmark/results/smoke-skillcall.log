@@ -1,0 +1,2 @@
+run smoke-skillcall: 1 jobs -> /root/.cache/skill-bench/runs/smoke-skillcall
+[done] haiku__skills    oulad_early_warning r1   299.1s $0.097 turns=26 skills=['data-eda'] err=False timeout=False

@@ -1,0 +1,14 @@
+total deaths by decade (members+hired):
+      member_deaths  hired_staff_deaths  total
+d                                             
+1920              3                  10     13
+1930              1                   0      1
+1940              0                   0      0
+1950              0                   1      1
+1960              4                   2      6
+1970             10                  19     29
+1980             40                  20     60
+1990             43                  19     62
+2000             42                   9     51
+2010             43                  40     83
+missing trekking_agency share pre/post 1990: {False: 0.735, True: 0.029}

@@ -1,0 +1,16 @@
+,value
+expeditions,720.0
+members,4058.0
+member_deaths,40.0
+member_death_per_1000,9.857072449482503
+member_ci_lo,7.05111221245315
+member_ci_hi,13.398578226882426
+hired_staff,4365.0
+hired_deaths,12.0
+hired_death_per_1000,2.7491408934707904
+hired_ci_lo,1.4213030130112176
+hired_ci_hi,4.797266536856392
+hired_per_member,1.0756530310497783
+oxygen_share,0.8833333333333333
+success_share,0.7972222222222223
+zero_hired_share,0.10833333333333334

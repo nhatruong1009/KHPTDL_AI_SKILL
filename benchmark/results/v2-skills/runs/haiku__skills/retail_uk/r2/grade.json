@@ -1,0 +1,78 @@
+{
+  "task": "retail_uk",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 37.5,
+    "skills_missing": [
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Khử trùng lặp, nhận ra hai sheet chồng nhau đầu tháng 12/2010",
+        "pass": true,
+        "evidence": "analysis.py dùng drop_duplicates() với chú thích 'sheets overlap (1-9 Dec 2010)'; câu trả lời nêu đã loại 34,335 dòng trùng, khớp số tham chiếu 34,335."
+      },
+      {
+        "check": "2. Nhận ra 2011 kết thúc 9/12 và so sánh cùng kỳ",
+        "pass": true,
+        "evidence": "So sánh Tháng 1–11 của cả hai năm và loại tháng 12 vì 2011 chỉ có dữ liệu đến 9/12. Đây là cách so cùng kỳ chấp nhận được."
+      },
+      {
+        "check": "3. Xử lý hóa đơn hủy 'C' nhất quán",
+        "pass": true,
+        "evidence": "Doanh thu thuần = Quantity × Price, tính luôn các dòng 'C' (số lượng âm) để trừ ra, áp dụng như nhau cho cả hai năm."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ nằm trong ±3 điểm % so với tham chiếu",
+        "pass": true,
+        "evidence": "Agent ra +2.6% (8,332,860 → 8,546,582 GBP), bản chỉ tính dòng sản phẩm ra +2.3%. Tham chiếu là 3.1% / 2.67% / 3.93%."
+      },
+      {
+        "check": "5. Tách khách mới và khách cũ theo Customer ID, nói rõ phần thiếu ID bị loại",
+        "pass": true,
+        "evidence": "Có cầu nối theo từng khách: mới +1,309,116; rời đi −1,115,434; mua cả hai năm −337,904. Nhóm 'Không rõ Customer ID' (+0.18M) được tách riêng, và có nêu 22.8% dòng thiếu ID. Tham chiếu: khách mua cả hai năm −421K, mất 1.06M từ khách rời đi, cùng chiều và cùng độ lớn."
+      },
+      {
+        "check": "6. Thị trường tăng/giảm mạnh nhất khớp tham chiếu",
+        "pass": true,
+        "evidence": "Úc +107K, Pháp +62K; EIRE −81K, Đan Mạch −27K, Thụy Điển −17K, khớp tham chiếu (+106K, +62K, −79K, −28K, −16K). Có nêu UK chiếm 85% doanh thu và gần đi ngang."
+      },
+      {
+        "check": "7. story.md có một thông điệp chính, theo mạch bối cảnh–căng thẳng–insight–hành động, đề xuất cho CEO",
+        "pass": true,
+        "evidence": "Tiêu đề nêu đúng thông điệp chính ('mất khách cũ nhanh hơn mức thêm khách mới'). Có các mục Bối cảnh / Diễn biến / Thị trường / Hành động đề xuất / Lưu ý. Đề xuất ưu tiên win-back khách cũ, kèm phép tính minh họa có ghi 'không phải dự báo'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "story.md viết khách 2010 rời đi mất 1.12 triệu GBP là 'gần bằng toàn bộ mức tăng ròng'. Thực tế 1.12M lớn gấp khoảng 5 lần mức tăng ròng 0.21M, nên cách nói này sai.",
+      "story.md viết 'khách mới bù lại phần đó' (−1.45M), nhưng khách mới chỉ có +1.31M. Phần còn lại đến từ nhóm thiếu ID (+0.18M) và nhóm 'Khác' (+0.10M), nên nói khách mới bù đủ là không chính xác."
+    ],
+    "summary": "Bài làm chắc tay: đã khử trùng lặp (34,335 dòng, có nêu hai sheet chồng nhau), so cùng kỳ Tháng 1–11, trừ hóa đơn hủy nhất quán và có kiểm tra độ nhạy chỉ với dòng sản phẩm (+2.3%). Mức tăng +2.6% nằm trong khoảng tham chiếu. Cầu nối theo từng khách cho thấy khách mới +1.31M bù cho phần mất từ khách cũ (−1.12M do rời đi, −0.34M do chi ít hơn), cùng chiều với tham chiếu. Các thị trường Úc, Pháp, Ireland, Đan Mạch, Thụy Điển xác định đúng. Story bằng tiếng Việt, có một thông điệp chính, mạch rõ, đề xuất hợp lý và có lưu ý về nhân quả cũng như thiếu Customer ID. Điểm trừ: (1) story có câu so sánh sai ('1.12M gần bằng toàn bộ mức tăng ròng 0.21M') và nói quá rằng khách mới bù đủ phần mất. (2) Nhóm 'Khác (hoàn trả)' +0.10M trong biểu đồ cầu nối được giải thích mơ hồ. (3) Biểu đồ thị trường bỏ UK mà không ghi chú trên hình. (4) Doanh thu chính vẫn gồm phí, bưu phí; chỉ xử lý các mã này trong phần kiểm tra độ nhạy. Biểu đồ waterfall và bar có tiêu đề nêu kết luận, số liệu khớp với CSV."
+  },
+  "judge_cost_usd": 0.2200547,
+  "accuracy_pct": 100.0,
+  "quality_pct": 75.0,
+  "overall": 90.0
+}

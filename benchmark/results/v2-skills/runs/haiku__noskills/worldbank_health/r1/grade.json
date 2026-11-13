@@ -1,0 +1,73 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Bỏ dòng metadata và loại các dòng tổng hợp",
+        "pass": true,
+        "evidence": "load.py tìm dòng tiêu đề 'Country Name' để bỏ qua metadata; chỉ giữ mã có IncomeGroup trong Metadata_Country. Cách này tương đương việc lọc theo Region rỗng, nhưng làm rơi Venezuela (không có IncomeGroup), một lỗi nhỏ."
+      },
+      {
+        "check": "2. Chọn năm rõ ràng, ~180+ nước đủ 3 chỉ số",
+        "pass": true,
+        "evidence": "Chọn năm 2019 (trước đại dịch), n = 186 nước, khớp ground truth 186. Có kiểm tra thêm năm 2015 (n = 185) và 2023 (n = 184)."
+      },
+      {
+        "check": "3. Tương quan dương mạnh (~0,8+), log/rank, ghi rõ là tương quan, bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "Pearson r(LE, ln CHE) = 0,806, không có Spearman nhưng có dùng log. Nêu rõ 'phần lớn là do thu nhập', R² 0,72 → 0,73, partial r = 0,14, và ghi 'không chứng minh quan hệ nhân quả'."
+      },
+      {
+        "check": "4. Kiểm soát thu nhập; danh sách vượt/dưới kỳ vọng phù hợp ground truth",
+        "pass": true,
+        "evidence": "Phần dư lấy từ LE ~ lnGDP + lnGDP². Nhóm vượt gồm Solomon Islands +7,6, West Bank and Gaza +7,6, Syria +6,6, Vanuatu +6,0; nhóm dưới gồm CAR −25,0, Nigeria −16,1, Equatorial Guinea −11,4, Eswatini −10,4, Nauru −9,7, Chad −8,9, Brunei −7,1. Hai danh sách khớp tốt với các năm 2021–2023 trong ground truth."
+      },
+      {
+        "check": "5. Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "Việt Nam: LE 74,2, kỳ vọng 71,4, chênh +2,9 năm, hạng 47/186. Năm 2015 là +4,8, năm 2023 là +2,3. Ground truth mô hình chỉ GDP: 2023 = +1,94, 2022 = +2,72, nên kết quả hợp lý."
+      },
+      {
+        "check": "6. story.md cho lãnh đạo Bộ Y tế: một thông điệp, mạch truyện, hành động dạng đề xuất, lưu ý",
+        "pass": true,
+        "evidence": "Có thông điệp chính ('tương quan mạnh nhưng phần lớn do thu nhập'), có các phần Ai vượt/dưới, Việt Nam, Lưu ý (không nhân quả, CAR bất thường, USD so với PPP). Tuy nhiên phần hành động chỉ là một câu 'Hàm ý' chung chung, không có đề xuất cụ thể cho Bộ. Story cũng không nhúng biểu đồ."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 3,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm vững về dữ liệu và phương pháp. Agent bỏ được dòng metadata, loại tổng hợp qua IncomeGroup (làm rơi Venezuela, lỗi nhỏ), chọn năm 2019 với n = 186 và có kiểm tra độ bền với 2015/2023. Tương quan log r = 0,81. Agent kiểm soát thu nhập bằng hồi quy bậc hai theo ln GDP, cho thấy chi tiêu gần như không giải thích thêm (R² 0,72 → 0,73, t ≈ 1,9). Danh sách vượt/dưới kỳ vọng khớp ground truth. Việt Nam +2,9 năm (hạng 47/186) nằm trong khoảng hợp lý. Ngoại lai CAR 31,5 tuổi được phát hiện và gắn nhãn 'dữ liệu nghi ngờ'. Tất cả số liệu khớp với log. Điểm yếu: không có Spearman; không có biểu đồ nào về chi tiêu y tế, dù đây là câu hỏi chính; tiêu đề biểu đồ 1 nói 'độ dốc giảm dần' trong khi đường gần như thẳng trên thang log. Story thiếu đề xuất hành động cụ thể cho Bộ Y tế và không tham chiếu biểu đồ. Câu trả lời cuối có đoạn nhiễu về validate_palette.js không liên quan đến người đọc. Toàn bộ bằng tiếng Việt."
+  },
+  "judge_cost_usd": 0.26053410000000005,
+  "accuracy_pct": 100.0,
+  "quality_pct": 75.0,
+  "overall": 90.0
+}

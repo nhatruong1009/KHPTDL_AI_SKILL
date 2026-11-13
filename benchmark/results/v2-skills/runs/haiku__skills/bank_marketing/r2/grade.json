@@ -1,0 +1,67 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 71.4,
+    "skills_missing": [
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py đọc data/bank-additional/bank-additional-full.csv (41.188 dòng); bank-full.csv chỉ dùng để kiểm tra độ nhạy S4."
+      },
+      {
+        "check": "Loại 'duration' vì rò rỉ và giải thích; ROC-AUC nằm trong khoảng thực tế không dùng duration",
+        "pass": true,
+        "evidence": "Loại duration vì 'chỉ biết sau khi gọi'. Khi chia ngẫu nhiên đạt LR 0,804 / GB 0,813, khớp tham chiếu (0,786/0,800). Con số chính là 0,577, lấy trên 15% cuối theo thời gian, thấp hơn nhiều so với tham chiếu chia thời gian (0,715). Đây không phải rò rỉ."
+      },
+      {
+        "check": "So với baseline bằng thước đo phù hợp với dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Có baseline ngẫu nhiên và luật theo poutcome. Báo cáo PR-AUC (LR 0,447; luật 0,535 trong metrics_test.csv), lift top 10/20/30% (LR 1,23x, luật 1,77x) và recall top 20% (24,7%)."
+      },
+      {
+        "check": "Xử lý rõ pdays=999 và 'unknown'",
+        "pass": true,
+        "evidence": "Tạo biến was_contacted = (pdays != 999); pdays_num đặt NaN rồi điền trung vị. 'unknown' được giữ làm một danh mục riêng và có nêu ở mục Hạn chế 4."
+      },
+      {
+        "check": "Các yếu tố hàng đầu khớp tham chiếu (vĩ mô, poutcome/pdays, contact, tháng)",
+        "pass": true,
+        "evidence": "Permutation importance: nr.employed 0,083; was_contacted (pdays) 0,051; month 0,039; poutcome 0,030; emp.var.rate 0,028; contact 0,006."
+      },
+      {
+        "check": "Trình bày tầm quan trọng của yếu tố là dự báo, không phải nhân quả",
+        "pass": true,
+        "evidence": "Viết rõ 'chỉ báo giai đoạn… không phải nguyên nhân' và 'liên hệ quan sát, không phải nguyên nhân'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Agent dùng đúng file, loại duration (và cả campaign) vì rò rỉ, xử lý rõ pdays=999 và 'unknown', ghi nhận 12 dòng trùng. Agent có so sánh với baseline ngẫu nhiên và luật poutcome bằng PR-AUC, lift và recall. Các con số khớp với CSV, và kết quả chia ngẫu nhiên (0,804/0,813) khớp tham chiếu. Điểm yếu chính nằm ở kết luận 'mô hình không tốt hơn baseline'. Kết luận này dựa trên một cách chia khá khắc nghiệt: chỉ train trên 70% đầu, không fit lại trên train+valid, và test là 15% cuối với tỷ lệ nền 38,5%. Với cách này agent được AUC 0,577, thấp hơn nhiều so với tham chiếu chia thời gian (0,715). Agent cũng gọi chia ngẫu nhiên là 'không hợp lệ/không dùng được', như vậy là quá mạnh. Ngoài ra agent tự loại age và marital vì 'nhạy cảm' mà người hỏi không yêu cầu, điều này có thể làm giảm hiệu năng. Chẩn đoán về dịch chuyển chế độ (tỷ lệ nền tăng từ 2% lên khoảng 50%) và các kiểm tra độ bền có giá trị. Các lưu ý và cách diễn giải dự báo/nhân quả trung thực. Câu trả lời viết bằng tiếng Việt và đưa kết luận trực tiếp ngay đầu. Biểu đồ có tiêu đề nêu thông điệp và số liệu khớp với bảng. Riêng biểu đồ AUC cắt trục ở 0,5 nên cột GB gần như không thấy."
+  },
+  "judge_cost_usd": 0.29101829999999995,
+  "accuracy_pct": 100.0,
+  "quality_pct": 70.0,
+  "overall": 88.0
+}

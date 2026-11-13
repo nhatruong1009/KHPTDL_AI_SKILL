@@ -1,0 +1,5 @@
+module,presentation,quy_tắc,số_sinh_viên_cohort,số_không_hoàn_thành_thực_tế,số_ưu_tiên,trúng,precision,recall_trên_mp
+BBB,2014J,Điểm rủi ro mô hình (cao -> thấp),1786,635,200,111,0.555,0.175
+BBB,2014J,Baseline: ít lượt nhấp 0-28 nhất,1786,635,200,121,0.605,0.191
+FFF,2014J,Điểm rủi ro mô hình (cao -> thấp),1858,741,200,176,0.88,0.238
+FFF,2014J,Baseline: ít lượt nhấp 0-28 nhất,1858,741,200,168,0.84,0.227

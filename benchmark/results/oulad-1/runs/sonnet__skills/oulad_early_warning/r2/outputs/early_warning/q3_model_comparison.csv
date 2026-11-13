@@ -1,0 +1,5 @@
+model,AUC_val,PRAUC_val,AUC_test,PRAUC_test,thr_from_val,recall_val,precision_val,flagged_share_val,recall_test,precision_test,flagged_share_test
+Logistic,0.761,0.7531,0.7228,0.6351,0.3958,0.7,0.6557,0.4963,0.6577,0.5299,0.4687
+GradientBoosting,0.7616,0.7563,0.7417,0.6592,0.4137,0.7,0.6437,0.5056,0.6882,0.5532,0.4698
+Baseline: -log(click 0-28),0.6466,0.6251,0.6517,0.5411,-5.5452,0.7008,0.536,0.6079,0.7042,0.4522,0.5881
+Baseline: chua nop TMA1 + it ngay,0.6968,0.6882,0.6863,0.6148,-10.3,0.7,0.5801,0.561,0.7144,0.4724,0.5711

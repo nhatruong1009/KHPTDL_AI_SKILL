@@ -1,0 +1,66 @@
+{
+  "task": "household_power",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 57.1,
+    "skills_missing": [
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Đọc '?' là thiếu, ngày dd/mm/yyyy đúng; báo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "run_log: 2.075.259 dòng, 16/12/2006 17:24 → 26/11/2010 21:02, 25.979 phút NaN (1,25%); khoảng trống dài nhất 17–22/8/2010 (5,02 ngày ≈120,4h), 25–28/9/2010 (3,64 ngày), 28–30/4/2007 (2,59), 13–15/6/2009 (2,3), khớp ground truth."
+      },
+      {
+        "check": "2. Quy đổi kW phút → kWh đúng (≈8.000–10.000 kWh/năm)",
+        "pass": true,
+        "evidence": "kWh/ngày = kW trung bình × 24 (tương đương sum/60); khối 12 tháng ~26 kWh/ngày ≈ 9.500 kWh/năm; tháng 1/2007 1.150, 12/2007 1.210, 8/2008 206 kWh khớp gần như tuyệt đối với ground truth."
+      },
+      {
+        "check": "3. Xử lý tháng thiếu/một phần trước khi so sánh",
+        "pass": true,
+        "evidence": "Tổng tháng = trung bình ngày đủ dữ liệu (≥80% phút) × số ngày; cờ thang_du=False cho 12/2006, 8/2010, 9/2010, 11/2010; so sánh xu hướng bằng kWh/ngày theo khối 12 tháng. Hạn chế: 12/2006 ngoại suy thành 1.453 kWh (thực tế quan sát 697) vẫn hiển thị trên chart2 và được tính vào trung bình mùa vụ tháng 12."
+      },
+      {
+        "check": "4. Mùa vụ năm (đông cao, hè thấp, tháng 8 thấp nhất) và hồ sơ ngày có đỉnh tối",
+        "pass": true,
+        "evidence": "T8 13,7 kWh/ngày thấp nhất, T12 36,0/T1 35,1 cao nhất; đỉnh 19–21h (~1,9 kW, max giờ 20), đáy 3–5h (0,44 kW, khớp giờ 4); cuối tuần 30,2/29,3 > ngày thường. Lưu ý: T12 cao nhất một phần do gộp 12/2006 một phần (46,9 kWh/ngày), ground truth cho T1 cao nhất."
+      },
+      {
+        "check": "5. Dự báo 12/2010 nằm trong [759, 1392] kèm khoảng và phương pháp",
+        "pass": true,
+        "evidence": "Điểm 1.039 kWh, khoảng 90% 919–1.369 (từ phân vị sai số backtest 32 tháng) và khoảng hẹp 1.010–1.224; mô hình hồi quy ngày với xu hướng + Fourier năm + biến giả thứ; MAPE 14,3% so với naive 15,5%/21,1%."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Tổng tháng 12/2006 ước tính 1.453 kWh (chart2, monthly.csv) — ngoại suy 16 ngày nghỉ lễ ra 31 ngày, thực tế quan sát chỉ 697 kWh; đã đánh dấu là tháng thiếu nhưng con số vẫn gây hiểu lầm",
+      "Trung bình mùa vụ tháng 12 = 36,0 kWh/ngày bị kéo lên do gộp 12/2006 một phần (46,9 kWh/ngày); không tính 12/2006 thì tháng 1 mới là tháng cao nhất"
+    ],
+    "summary": "Bài làm chất lượng cao. Agent phân tích đúng dữ liệu thiếu: 25.979 phút (1,25%) và các khoảng trống dài nhất khớp ground truth. Cách quy đổi kWh đúng, và tổng tháng sau hiệu chỉnh gần như trùng ground truth (1.150, 1.210, 206 kWh…). Xu hướng được đánh giá bằng kWh/ngày theo khối 12 tháng nên tránh được sai lệch do tháng thiếu. Mùa vụ đúng: tháng 8 thấp nhất, mùa đông cao, đỉnh tối lúc 20h, cuối tuần cao hơn ngày thường. Agent nhận diện được tháng 8/2008 bất thường (~206 kWh). Dự báo 12/2010 là 1.039 kWh, khoảng 90% 919–1.369, nằm trong khoảng hợp lý. Dự báo có backtest so với hai baseline naive và có kiểm tra độ nhạy. Agent nêu rõ hạn chế và không khẳng định nhân quả. Câu trả lời viết bằng tiếng Việt, rõ ràng và có đơn vị. Điểm trừ: tháng 12/2006 ngoại suy thành 1.453 kWh vẫn xuất hiện trên chart2 và được gộp vào trung bình mùa vụ tháng 12, khiến tháng 12 thay vì tháng 1 thành tháng cao nhất. Biểu đồ có tiêu đề nêu kết luận và dễ đọc. Riêng chart4 dùng dấu phẩy kiểu Anh (1,039) trong khi văn bản dùng kiểu Việt (1.039)."
+  },
+  "judge_cost_usd": 0.30736779999999997,
+  "accuracy_pct": 100.0,
+  "quality_pct": 90.0,
+  "overall": 96.0
+}

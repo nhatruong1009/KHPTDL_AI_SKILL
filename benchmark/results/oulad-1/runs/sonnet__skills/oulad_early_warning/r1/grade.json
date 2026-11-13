@@ -1,0 +1,88 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh click và ngày hoạt động theo tuần, theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "q1_weekly_by_outcome.csv khớp tham chiếu: trung vị click tuần 1 Pass 59 / Withdrawn 33 / Fail 20; số ngày hoạt động 3/2/2; n=7.399/3.469/2.152 tính theo sinh viên; có Kruskal-Wallis và Cliff's delta giữa từng cặp nhóm"
+      },
+      {
+        "check": "AQ2: dùng cỡ hiệu ứng, hiệu chỉnh kiểm định bội, khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Dùng Cliff's delta, hiệu chỉnh BH-FDR, ngưỡng |δ|≥0,1; xếp clicks_change_w1_w4 vào nhóm không có ý nghĩa thực tế; kết luận khác biệt có từ tuần 1 (δ≈0,26), khớp tham chiếu"
+      },
+      {
+        "check": "AQ3 thiết kế: kiểm tra trên kỳ sau, tách theo thời gian",
+        "pass": true,
+        "evidence": "Train 2013B/2013J (6.795), validation 2014B (2.581), test 2014J (3.644); mô hình và ngưỡng chỉ chọn trên validation"
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo",
+        "pass": false,
+        "evidence": "Không dùng thuộc tính nhạy cảm, nhưng đưa tma1_score vào mô hình và đây là hệ số mạnh nhất (-0,44). Agent mặc nhiên giả định điểm đã có trước ngày 28, chỉ nhắc khả năng bỏ cột mà không chạy phân tích độ nhạy. Hệ quả: PR-AUC test của Logistic chỉ 0,541, đúng bằng biến thể +tma1_score của tham chiếu (0,539)"
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test gần tham chiếu, có baseline, ngưỡng lấy từ validation, nói rõ có đạt 70% không",
+        "pass": true,
+        "evidence": "GB có PR-AUC test 0,621 (tham chiếu 0,644), nhưng answer.md chỉ nêu ROC-AUC 0,705; Logistic có PR-AUC 0,541, lệch quá ±0,05. Recall 67,8% ở ngưỡng chọn trên validation, agent nói thẳng là chưa đạt 70%; có so với quy tắc ít click (AUC 0,652). Đạt một phần"
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ, precision@200 gần tham chiếu, so với tỷ lệ nền",
+        "pass": false,
+        "evidence": "Có xếp hạng riêng từng module và so với ngẫu nhiên (35%/40%), nhưng precision@200 của BBB là 0,635 (127/200), lệch hơn 0,08 so với tham chiếu 0,76. FFF 0,90 thì khớp"
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt dễ hiểu, dựa trên đóng góp thực của mô hình, không dùng thuộc tính nhạy cảm",
+        "pass": true,
+        "evidence": "Dùng phương pháp thay từng nhóm đặc trưng bằng trung vị rồi đo mức giảm điểm rủi ro. Lý do số 1 là TMA1 ở 399/400 sinh viên (288 người chưa nộp), tiếp theo là hoạt động thấp và lâu không vào học. Có câu mẫu 2-3 câu cho cố vấn. Lưu ý nhóm TMA1 gộp cả điểm số tma1_score"
+      },
+      {
+        "check": "Không khẳng định nhân quả; nêu giới hạn của dữ liệu quan sát",
+        "pass": false,
+        "evidence": "Có nêu 'quan sát, không phải nhân quả' và 'không đo được uplift'. Tuy nhiên agent vẫn ghi '200 người/module-kỳ cứu được khoảng 18 (BBB) + 25 (FFF)' dựa trên tỷ lệ hỗ trợ thành công 14% mà agent nói là 'từ tham số đề bài', trong khi đề bài không có tham số này"
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 3,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Tỷ lệ hỗ trợ thành công 14% 'lấy từ tham số đề bài': đề bài không có tham số này, kéo theo số 'giúp được ~18 (BBB) và ~25 (FFF) sinh viên' cũng không có căn cứ",
+      "Precision@200 của BBB-2014J là 127/200 = 63,5%, thấp hơn rõ so với tham chiếu ~76%, do mô hình dùng tma1_score",
+      "answer.md không báo cáo PR-AUC test; PR-AUC thực của Logistic chỉ 0,541 (tham chiếu ~0,66) nhưng bị che đi vì chỉ nêu ROC-AUC 0,685"
+    ],
+    "summary": "Câu Q1 và Q2 làm tốt: đếm đúng theo sinh viên, số liệu khớp tham chiếu, dùng Cliff's delta với hiệu chỉnh FDR, và kết luận đúng là khác biệt có từ tuần 1. Q3 dùng đúng cách chia theo thời gian, chọn ngưỡng trên validation và nói thẳng là recall 67,8% chưa đạt 70%. Sai lầm chính là đưa tma1_score vào mô hình và coi nó là biến mạnh nhất, mặc nhiên giả định điểm đã có trước ngày 28 mà không chạy phân tích độ nhạy. Hậu quả là PR-AUC test của Logistic giảm còn 0,541 và precision@200 của BBB chỉ 63,5% so với tham chiếu ~76%. Báo cáo cũng chỉ nêu ROC-AUC, không nêu PR-AUC. Q4 xếp hạng đúng trong từng module, nhưng đưa ra con số 'cứu được' sinh viên dựa trên tỷ lệ 14% mà agent bịa là 'từ đề bài'. Q5 có lời giải thích bằng tiếng Việt dễ hiểu. Phần tiếng Việt và biểu đồ rõ ràng, tiêu đề biểu đồ nêu được thông điệp chính."
+  },
+  "judge_cost_usd": 0.4171222,
+  "accuracy_pct": 62.5,
+  "quality_pct": 60.0,
+  "overall": 61.5
+}

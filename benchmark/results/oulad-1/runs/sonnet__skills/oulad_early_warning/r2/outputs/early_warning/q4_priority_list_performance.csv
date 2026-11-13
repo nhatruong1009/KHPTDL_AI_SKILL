@@ -1,0 +1,25 @@
+split,K,rule,flagged,hits,precision,recall,noncompleters_total,expected_helped
+validation,100,Mô hình (điểm rủi ro),200,181.0,0.905,0.1508,1200,25.34
+validation,100,Quy tắc đơn giản: ít click nhất 0-28,200,168.0,0.84,0.14,1200,23.52
+validation,100,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",200,180.0,0.9,0.15,1200,25.2
+validation,100,Ngẫu nhiên,200,94.2,0.471,0.0785,1200,13.1873
+validation,200,Mô hình (điểm rủi ro),400,353.0,0.8825,0.2942,1200,49.42
+validation,200,Quy tắc đơn giản: ít click nhất 0-28,400,315.0,0.7875,0.2625,1200,44.1
+validation,200,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",400,331.0,0.8275,0.2758,1200,46.34
+validation,200,Ngẫu nhiên,400,185.0,0.4626,0.1542,1200,25.9063
+validation,300,Mô hình (điểm rủi ro),600,496.0,0.8267,0.4133,1200,69.44
+validation,300,Quy tắc đơn giản: ít click nhất 0-28,600,430.0,0.7167,0.3583,1200,60.2
+validation,300,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",600,456.0,0.76,0.38,1200,63.84
+validation,300,Ngẫu nhiên,600,278.1,0.4635,0.2318,1200,38.9375
+test,100,Mô hình (điểm rủi ro),200,154.0,0.77,0.1119,1376,21.56
+test,100,Quy tắc đơn giản: ít click nhất 0-28,200,160.0,0.8,0.1163,1376,22.4
+test,100,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",200,188.0,0.94,0.1366,1376,26.32
+test,100,Ngẫu nhiên,200,75.0,0.3748,0.0545,1376,10.4937
+test,200,Mô hình (điểm rủi ro),400,291.0,0.7275,0.2115,1376,40.74
+test,200,Quy tắc đơn giản: ít click nhất 0-28,400,288.0,0.72,0.2093,1376,40.32
+test,200,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",400,322.0,0.805,0.234,1376,45.08
+test,200,Ngẫu nhiên,400,151.1,0.3778,0.1098,1376,21.1554
+test,300,Mô hình (điểm rủi ro),600,421.0,0.7017,0.306,1376,58.94
+test,300,Quy tắc đơn giản: ít click nhất 0-28,600,399.0,0.665,0.29,1376,55.86
+test,300,"Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động",600,422.0,0.7033,0.3067,1376,59.08
+test,300,Ngẫu nhiên,600,226.5,0.3775,0.1646,1376,31.7107

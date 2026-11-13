@@ -1,0 +1,187 @@
+{
+  "q1_n_by_group": {
+    "Pass": 6053,
+    "Fail": 3469,
+    "Withdrawn": 2152
+  },
+  "n_distinction_excluded_q1": 1346,
+  "q2_onset": {
+    "clicks_theo_tuan": {
+      "tuan_dau_co_y_nghia": 1,
+      "duy_tri_den_cuoi": true,
+      "co_y_nghia_theo_tuan": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "active_days_theo_tuan": {
+      "tuan_dau_co_y_nghia": 1,
+      "duy_tri_den_cuoi": true,
+      "co_y_nghia_theo_tuan": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "clicks_luy_ke": {
+      "tuan_dau_co_y_nghia": 1,
+      "duy_tri_den_cuoi": true,
+      "co_y_nghia_theo_tuan": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "q2_n_significant_indicators": 28,
+  "q2_n_tested": 34,
+  "n_features": 34,
+  "n_train_val_test": [
+    6795,
+    2581,
+    3644
+  ],
+  "prevalence_train_val_test": [
+    0.4481,
+    0.4649,
+    0.3776
+  ],
+  "q3": [
+    {
+      "mo_hinh": "Hồi quy logistic (chọn)",
+      "auc_validation": 0.7561,
+      "auc_test": 0.6853,
+      "ap_test": 0.5402,
+      "ap_ngau_nhien_test": 0.3776,
+      "nguong_chon_tren_validation": 0.3914,
+      "test_so_gan_co": 1668,
+      "test_ti_le_gan_co": 0.4577,
+      "test_recall_tai_nguong": 0.6323,
+      "test_precision_tai_nguong": 0.5216,
+      "ti_le_sv_can_lien_he_de_dat_70pct_test": 0.5167
+    },
+    {
+      "mo_hinh": "Gradient boosting (so sánh)",
+      "auc_validation": 0.7525,
+      "auc_test": 0.6909,
+      "ap_test": 0.5909,
+      "ap_ngau_nhien_test": 0.3776,
+      "nguong_chon_tren_validation": 0.4172,
+      "test_so_gan_co": 1756,
+      "test_ti_le_gan_co": 0.4819,
+      "test_recall_tai_nguong": 0.6541,
+      "test_precision_tai_nguong": 0.5125,
+      "ti_le_sv_can_lien_he_de_dat_70pct_test": 0.5277
+    },
+    {
+      "mo_hinh": "Cơ sở: ít lượt truy cập đến ngày 28",
+      "auc_validation": 0.6466,
+      "auc_test": 0.6517,
+      "ap_test": 0.5411,
+      "ap_ngau_nhien_test": 0.3776,
+      "nguong_chon_tren_validation": -255.0,
+      "test_so_gan_co": 2143,
+      "test_ti_le_gan_co": 0.5881,
+      "test_recall_tai_nguong": 0.7042,
+      "test_precision_tai_nguong": 0.4522,
+      "ti_le_sv_can_lien_he_de_dat_70pct_test": 0.5799
+    }
+  ],
+  "q4_lopo_base_total_hits": 1243,
+  "q4_lopo_max_recall_possible": 0.28464685998932576,
+  "q4_val_hits_lr": 352,
+  "q4_val_hits_base": 314,
+  "q4_val_contacts": 400,
+  "q4_test_total_hits": 284,
+  "q4_test_total_contacts": 400,
+  "q4_test_total_noncompletion": 1376,
+  "q4_test_recall_200": 0.2063953488372093,
+  "q4_test_precision_200": 0.71,
+  "q4_test_baseline_precision_200": 0.7225,
+  "q4_test_random_expected_hits": 151.0,
+  "q4_test_baseline_clicks_hits": 289,
+  "q4_lopo_total_hits": 1356,
+  "q4_lopo_total_contacts": 1600,
+  "q4_lopo_total_noncompletion": 5621,
+  "q4_lopo_auc": [
+    {
+      "ky": "2013B",
+      "auc_mo_hinh": 0.7601,
+      "auc_co_so_it_click": 0.6699,
+      "ti_le_nen": 0.4683
+    },
+    {
+      "ky": "2013J",
+      "auc_mo_hinh": 0.7525,
+      "auc_co_so_it_click": 0.6532,
+      "ti_le_nen": 0.4324
+    },
+    {
+      "ky": "2014B",
+      "auc_mo_hinh": 0.7475,
+      "auc_co_so_it_click": 0.6466,
+      "ti_le_nen": 0.4649
+    },
+    {
+      "ky": "2014J",
+      "auc_mo_hinh": 0.6863,
+      "auc_co_so_it_click": 0.6517,
+      "ti_le_nen": 0.3776
+    }
+  ],
+  "q5_n_students": 400,
+  "q5_top_drivers": [
+    {
+      "yeu_to": "clicks_0_28",
+      "mo_ta_ngan": "clicks_0_28",
+      "so_sinh_vien_co_trong_top3": 360,
+      "ti_le": 0.9
+    },
+    {
+      "yeu_to": "missingindicator_tma1_score",
+      "mo_ta_ngan": "chưa có điểm TMA1",
+      "so_sinh_vien_co_trong_top3": 227,
+      "ti_le": 0.568
+    },
+    {
+      "yeu_to": "tma1_score",
+      "mo_ta_ngan": "tma1_score",
+      "so_sinh_vien_co_trong_top3": 173,
+      "ti_le": 0.432
+    },
+    {
+      "yeu_to": "active_days_0_28",
+      "mo_ta_ngan": "active_days_0_28",
+      "so_sinh_vien_co_trong_top3": 102,
+      "ti_le": 0.255
+    },
+    {
+      "yeu_to": "tma1_on_time",
+      "mo_ta_ngan": "tma1_on_time",
+      "so_sinh_vien_co_trong_top3": 97,
+      "ti_le": 0.242
+    },
+    {
+      "yeu_to": "days_since_last_active_d28",
+      "mo_ta_ngan": "days_since_last_active_d28",
+      "so_sinh_vien_co_trong_top3": 89,
+      "ti_le": 0.222
+    },
+    {
+      "yeu_to": "highest_education_ord",
+      "mo_ta_ngan": "highest_education_ord",
+      "so_sinh_vien_co_trong_top3": 80,
+      "ti_le": 0.2
+    },
+    {
+      "yeu_to": "num_of_prev_attempts",
+      "mo_ta_ngan": "num_of_prev_attempts",
+      "so_sinh_vien_co_trong_top3": 20,
+      "ti_le": 0.05
+    }
+  ]
+}

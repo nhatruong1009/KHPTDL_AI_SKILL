@@ -1,0 +1,23 @@
+loai,dac_trung,rho,p
+Vang do,fixed acidity,0.114,4.801219639181434e-06
+Vang do,volatile acidity,-0.381,2.7349440224656153e-56
+Vang do,citric acid,0.213,6.1589522852157746e-18
+Vang do,residual sugar,0.032,0.20024535327856594
+Vang do,chlorides,-0.19,1.8828578369578583e-14
+Vang do,free sulfur dioxide,-0.057,0.02288322277691533
+Vang do,total sulfur dioxide,-0.197,2.046487847598198e-15
+Vang do,density,-0.177,9.91813916467906e-13
+Vang do,pH,-0.044,0.08084594364705264
+Vang do,sulphates,0.377,3.477695182639372e-55
+Vang do,alcohol,0.479,2.726837739847405e-92
+Vang trang,fixed acidity,-0.084,3.183308474741962e-09
+Vang trang,volatile acidity,-0.197,7.417220521649196e-44
+Vang trang,citric acid,0.018,0.19955893221186494
+Vang trang,residual sugar,-0.082,8.821910957890522e-09
+Vang trang,chlorides,-0.314,6.907550191370827e-113
+Vang trang,free sulfur dioxide,0.024,0.09703375864964624
+Vang trang,total sulfur dioxide,-0.197,6.582656786215242e-44
+Vang trang,density,-0.348,9.497077980306564e-140
+Vang trang,pH,0.109,1.656015674201484e-14
+Vang trang,sulphates,0.033,0.01970573852864164
+Vang trang,alcohol,0.44,1.6591955335865496e-231

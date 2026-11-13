@@ -1,0 +1,152 @@
+       label3  week  clicks_mean  clicks_median  active_days_mean  active_days_median
+0        Fail     1        55.23           20.0              2.02                 2.0
+1        Fail     2        45.56           15.0              1.81                 1.0
+2        Fail     3        59.32           23.0              2.20                 2.0
+3        Fail     4        44.41           10.0              1.90                 1.0
+4        Pass     1       102.92           59.0              3.15                 3.0
+5        Pass     2        90.48           50.0              3.09                 3.0
+6        Pass     3       109.10           60.0              3.46                 3.0
+7        Pass     4        92.73           43.0              3.26                 3.0
+8   Withdrawn     1        71.31           33.0              2.42                 2.0
+9   Withdrawn     2        58.25           24.5              2.26                 2.0
+10  Withdrawn     3        76.91           36.0              2.62                 2.0
+11  Withdrawn     4        58.73           21.0              2.33                 2.0
+    week             metric  kruskal_H    p  cliffs_Pass_vs_Fail  cliffs_Pass_vs_Withdrawn  cliffs_Fail_vs_Withdrawn    Pass    Fail  Withdrawn
+0      1             clicks   700.4565  0.0               0.3017                    0.1936                   -0.1098     NaN     NaN        NaN
+1      1        active_days   724.6499  0.0               0.3046                    0.1947                   -0.1118     NaN     NaN        NaN
+2      1  share_zero_clicks        NaN  NaN                  NaN                       NaN                       NaN  0.1234  0.2739     0.2240
+3      2             clicks   905.4147  0.0               0.3407                    0.2269                   -0.1184     NaN     NaN        NaN
+4      2        active_days   991.1702  0.0               0.3551                    0.2304                   -0.1282     NaN     NaN        NaN
+5      2  share_zero_clicks        NaN  NaN                  NaN                       NaN                       NaN  0.1134  0.3200     0.2388
+6      3             clicks   704.3574  0.0               0.3046                    0.1897                   -0.1113     NaN     NaN        NaN
+7      3        active_days   907.2732  0.0               0.3395                    0.2261                   -0.1121     NaN     NaN        NaN
+8      3  share_zero_clicks        NaN  NaN                  NaN                       NaN                       NaN  0.0791  0.2525     0.2045
+9      4             clicks   867.2792  0.0               0.3342                    0.2193                   -0.1144     NaN     NaN        NaN
+10     4        active_days  1011.7342  0.0               0.3562                    0.2436                   -0.1134     NaN     NaN        NaN
+11     4  share_zero_clicks        NaN  NaN                  NaN                       NaN                       NaN  0.1226  0.3419     0.2746
+label3                                Fail     Pass  Withdrawn
+clicks_0_28_mean                    207.96   404.77     270.71
+clicks_0_28_median                  112.00   257.00     160.50
+active_days_0_28_mean                 8.12    13.33       9.86
+active_days_0_28_median               7.00    12.00       9.00
+n_sites_0_28_mean                    21.03    29.77      24.45
+n_sites_0_28_median                  18.00    27.00      22.00
+tma1_submitted_by_d28_mean            0.75     0.97       0.76
+tma1_submitted_by_d28_median          1.00     1.00       1.00
+tma1_on_time_mean                     0.66     0.94       0.67
+tma1_on_time_median                   1.00     1.00       1.00
+no_vle_activity_0_28_mean             0.09     0.01       0.07
+no_vle_activity_0_28_median           0.00     0.00       0.00
+days_since_last_active_d28_mean       7.33     2.86       6.15
+days_since_last_active_d28_median     4.00     1.00       3.00
+n                                  3469.00  7399.00    2152.00
+                     indicator  median_complete  median_noncomplete  cliffs_delta  p_fdr  meaningful  same_sign_all_cohorts
+11            active_days_0_28            12.00               7.000         0.348  0.000        True                   True
+14        clicks_homepage_0_28            49.00              26.000         0.330  0.000        True                   True
+7               active_days_w4             3.00               2.000         0.313  0.000        True                   True
+10                 clicks_0_28           257.00             127.000         0.308  0.000        True                   True
+5               active_days_w2             3.00               1.000         0.307  0.000        True                   True
+18         clicks_forumng_0_28            69.00              26.000         0.304  0.000        True                   True
+13  days_since_last_active_d28             1.00               3.000        -0.303  0.000        True                   True
+1                    clicks_w2            50.00              18.000         0.297  0.000        True                   True
+6               active_days_w3             3.00               2.000         0.296  0.000        True                   True
+3                    clicks_w4            43.00              13.000         0.290  0.000        True                   True
+22                tma1_on_time             1.00               1.000         0.271  0.000        True                   True
+4               active_days_w1             3.00               2.000         0.263  0.000        True                   True
+2                    clicks_w3            60.00              27.000         0.261  0.000        True                   True
+0                    clicks_w1            59.00              24.000         0.260  0.000        True                   True
+8             clicks_pre_start            42.00              15.000         0.256  0.000        True                   True
+12                n_sites_0_28            27.00              19.000         0.240  0.000        True                   True
+23   tma1_days_before_deadline             1.00               1.000         0.240  0.000        True                   True
+9        active_days_pre_start             3.00               2.000         0.235  0.000        True                   True
+24                  tma1_score            80.00              74.000         0.223  0.000        True                   True
+21       tma1_submitted_by_d28             1.00               1.000         0.218  0.000        True                   True
+17         clicks_subpage_0_28            26.00              15.000         0.208  0.000        True                   True
+15       clicks_oucontent_0_28            44.00              16.000         0.197  0.000        True                   True
+20             clicks_url_0_28             4.00               2.000         0.195  0.000        True                   True
+16        clicks_resource_0_28             7.00               5.000         0.191  0.000        True                   True
+28       highest_education_ord             2.00               1.000         0.184  0.000        True                   True
+19            clicks_quiz_0_28             1.00               0.000         0.173  0.000        True                   True
+26        num_of_prev_attempts             0.00               0.000        -0.096  0.000       False                   True
+27             studied_credits            60.00              60.000        -0.061  0.000       False                  False
+25         clicks_change_w1_w4            -0.15              -0.032         0.041  0.000       False                  False
+29      registration_lead_days            53.00              53.000         0.002  0.857       False                  False
+    week       metric  median_complete  median_noncomplete  cliffs_delta    p
+0      1       clicks             59.0                24.0        0.2603  0.0
+1      1  active_days              3.0                 2.0        0.2626  0.0
+2      1   cum_clicks             59.0                24.0        0.2603  0.0
+3      1     cum_days              3.0                 2.0        0.2626  0.0
+4      2       clicks             50.0                18.0        0.2971  0.0
+5      2  active_days              3.0                 1.0        0.3073  0.0
+6      2   cum_clicks            120.0                55.0        0.2999  0.0
+7      2     cum_days              6.0                 3.0        0.3138  0.0
+8      3       clicks             60.0                27.0        0.2606  0.0
+9      3  active_days              3.0                 2.0        0.2961  0.0
+10     3   cum_clicks            193.0                97.0        0.3005  0.0
+11     3     cum_days              9.0                 6.0        0.3324  0.0
+12     4       clicks             43.0                13.0        0.2902  0.0
+13     4  active_days              3.0                 2.0        0.3131  0.0
+14     4   cum_clicks            251.0               125.0        0.3054  0.0
+15     4     cum_days             12.0                 7.0        0.3465  0.0
+                     model       split    auc  pr_auc  base_rate  threshold_from_val  flagged_share  recall  precision
+0            Logistic (L2)  validation  0.756   0.750      0.465               0.390          0.506   0.700      0.643
+1            Logistic (L2)        test  0.685   0.541      0.378               0.390          0.461   0.637      0.522
+2         GradientBoosting  validation  0.762   0.758      0.465               0.423          0.494   0.700      0.659
+3         GradientBoosting        test  0.705   0.621      0.378               0.423          0.499   0.678      0.513
+4  Baseline: ít click 0-28  validation  0.647   0.625      0.465              -5.545          0.608   0.701      0.536
+5  Baseline: ít click 0-28        test  0.652   0.541      0.378              -5.545          0.588   0.704      0.452
+BEST GradientBoosting
+AUC test 95% CI [np.float64(0.6876800351045087), np.float64(0.720598226356329)]
+                 attr                        level     n  noncompl_rate  recall  flagged_share
+0              gender                            F  1914          0.350   0.643          0.518
+1              gender                            M  1730          0.409   0.711          0.479
+2            age_band                         0-35  2496          0.398   0.677          0.507
+3            age_band                        35-55  1135          0.331   0.684          0.484
+4            age_band                         55<=    13          0.462   0.500          0.462
+5          disability                            N  3303          0.363   0.670          0.493
+6          disability                            Y   341          0.519   0.734          0.566
+7   highest_education        A Level or Equivalent  1575          0.337   0.595          0.408
+8   highest_education             HE Qualification   505          0.265   0.619          0.404
+9   highest_education           Lower Than A Level  1519          0.457   0.746          0.621
+10  highest_education              No Formal quals    27          0.519   0.929          0.778
+11  highest_education  Post Graduate Qualification    18          0.167   1.000          0.444
+12        code_module                          BBB  1786          0.356   0.649          0.545
+13        code_module                          FFF  1858          0.399   0.703          0.456
+   module presentation     K                                 rule  n_students  n_noncompleters     hits  precision  recall   lift  expected_helped
+0     BBB        2014J   100                Mô hình (điểm rủi ro)        1786              635   78.000      0.780   0.123  2.194           10.920
+1     BBB        2014J   100               Quy tắc: ít click nhất        1786              635   68.000      0.680   0.107  1.913            9.520
+2     BBB        2014J   100  Quy tắc: chưa nộp TMA1 rồi ít click        1786              635   91.000      0.910   0.143  2.559           12.740
+3     BBB        2014J   100              Ngẫu nhiên (TB 200 lần)        1786              635   35.140      0.351   0.055  1.000            4.920
+4     BBB        2014J   200                Mô hình (điểm rủi ro)        1786              635  127.000      0.635   0.200  1.786           17.780
+5     BBB        2014J   200               Quy tắc: ít click nhất        1786              635  121.000      0.605   0.191  1.702           16.940
+6     BBB        2014J   200  Quy tắc: chưa nộp TMA1 rồi ít click        1786              635  137.000      0.685   0.216  1.927           19.180
+7     BBB        2014J   200              Ngẫu nhiên (TB 200 lần)        1786              635   70.395      0.352   0.111  1.000            9.855
+8     BBB        2014J   300                Mô hình (điểm rủi ro)        1786              635  164.000      0.547   0.258  1.538           22.960
+9     BBB        2014J   300               Quy tắc: ít click nhất        1786              635  165.000      0.550   0.260  1.547           23.100
+10    BBB        2014J   300  Quy tắc: chưa nộp TMA1 rồi ít click        1786              635  183.000      0.610   0.288  1.716           25.620
+11    BBB        2014J   300              Ngẫu nhiên (TB 200 lần)        1786              635  106.615      0.355   0.168  1.000           14.926
+12    BBB        2014J  1051        K cần để recall 70% (mô hình)        1786              635  445.000      0.423   0.701    NaN              NaN
+13    FFF        2014J   100                Mô hình (điểm rủi ro)        1858              741   94.000      0.940   0.127  2.357           13.160
+14    FFF        2014J   100               Quy tắc: ít click nhất        1858              741   92.000      0.920   0.124  2.307           12.880
+15    FFF        2014J   100  Quy tắc: chưa nộp TMA1 rồi ít click        1858              741   93.000      0.930   0.126  2.332           13.020
+16    FFF        2014J   100              Ngẫu nhiên (TB 200 lần)        1858              741   39.565      0.396   0.053  1.000            5.539
+17    FFF        2014J   200                Mô hình (điểm rủi ro)        1858              741  180.000      0.900   0.243  2.257           25.200
+18    FFF        2014J   200               Quy tắc: ít click nhất        1858              741  168.000      0.840   0.227  2.106           23.520
+19    FFF        2014J   200  Quy tắc: chưa nộp TMA1 rồi ít click        1858              741  178.000      0.890   0.240  2.232           24.920
+20    FFF        2014J   200              Ngẫu nhiên (TB 200 lần)        1858              741   79.685      0.398   0.108  1.000           11.156
+21    FFF        2014J   300                Mô hình (điểm rủi ro)        1858              741  251.000      0.837   0.339  2.098           35.140
+22    FFF        2014J   300               Quy tắc: ít click nhất        1858              741  234.000      0.780   0.316  1.956           32.760
+23    FFF        2014J   300  Quy tắc: chưa nộp TMA1 rồi ít click        1858              741  240.000      0.800   0.324  2.006           33.600
+24    FFF        2014J   300              Ngẫu nhiên (TB 200 lần)        1858              741  119.755      0.399   0.162  1.000           16.766
+25    FFF        2014J   836        K cần để recall 70% (mô hình)        1858              741  519.000      0.621   0.700    NaN              NaN
+top1
+tma1               399
+studied_credits      1
+Name: count, dtype: int64
+top1
+studied_credits    0.0025
+tma1               0.9975
+dtype: float64
+Sinh viên này được ưu tiên chủ yếu vì chưa nộp bài kiểm tra TMA1 đầu tiên; hoạt động từng tuần thấp hoặc giảm dần (tuần 1-4: 0/0/0/0 lượt click); ít dùng nội dung học chính (oucontent/quiz/forum). Nên liên hệ sớm để hỏi về khó khăn và giúp bắt kịp tiến độ.
+Sinh viên này được ưu tiên chủ yếu vì chưa nộp bài kiểm tra TMA1 đầu tiên; hoạt động từng tuần thấp hoặc giảm dần (tuần 1-4: 0/0/0/0 lượt click); ít dùng nội dung học chính (oucontent/quiz/forum). Nên liên hệ sớm để hỏi về khó khăn và giúp bắt kịp tiến độ.
+Sinh viên này được ưu tiên chủ yếu vì chưa nộp bài kiểm tra TMA1 đầu tiên; hoạt động từng tuần thấp hoặc giảm dần (tuần 1-4: 0/0/0/0 lượt click); ít dùng nội dung học chính (oucontent/quiz/forum). Nên liên hệ sớm để hỏi về khó khăn và giúp bắt kịp tiến độ.

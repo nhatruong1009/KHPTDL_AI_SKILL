@@ -1,0 +1,159 @@
+Số SV thuộc module-kỳ có thang điểm TMA1 bất thường: 1786
+                                            du_lieu             model  AUC_val  AUC_test  AUC_test_BBB2014J  AUC_test_FFF2014J
+0                          tho (giu tma1_score = 1)          Logistic    0.761     0.686              0.622              0.785
+1                          tho (giu tma1_score = 1)  GradientBoosting    0.762     0.711              0.653              0.782
+2  da xu ly (tma1_score BBB 2014J = trung vi train)          Logistic    0.761     0.723              0.641              0.785
+3  da xu ly (tma1_score BBB 2014J = trung vi train)  GradientBoosting    0.762     0.742              0.694              0.782
+                           0                 1                           2                                  3
+model               Logistic  GradientBoosting  Baseline: -log(click 0-28)  Baseline: chua nop TMA1 + it ngay
+AUC_val                0.761            0.7616                      0.6466                             0.6968
+PRAUC_val             0.7531            0.7563                      0.6251                             0.6882
+AUC_test              0.7228            0.7417                      0.6517                             0.6863
+PRAUC_test            0.6351            0.6592                      0.5411                             0.6148
+thr_from_val          0.3958            0.4137                     -5.5452                              -10.3
+recall_val               0.7               0.7                      0.7008                                0.7
+precision_val         0.6557            0.6437                       0.536                             0.5801
+flagged_share_val     0.4963            0.5056                      0.6079                              0.561
+recall_test           0.6577            0.6882                      0.7042                             0.7144
+precision_test        0.5299            0.5532                      0.4522                             0.4724
+flagged_share_test    0.4687            0.4698                      0.5881                             0.5711
+MODEL CHON: Logistic
+Flag share needed for 70% recall on test: 0.5079582875960483
+Brier 0.19966793595509774
+AUC test CI [0.70671151 0.73876948]
+Q3 thr val: 0.3958220523579381 test recall/prec/flag 0.657703488372093 0.5298594847775175 0.46871569703622395
+         split    K                                                    rule  flagged   hits  precision  recall  noncompleters_total  expected_helped
+4   validation  200                                   Mô hình (điểm rủi ro)      400  353.0     0.8825  0.2942                 1200          49.4200
+5   validation  200                    Quy tắc đơn giản: ít click nhất 0-28      400  315.0     0.7875  0.2625                 1200          44.1000
+6   validation  200  Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động      400  331.0     0.8275  0.2758                 1200          46.3400
+7   validation  200                                              Ngẫu nhiên      400  185.0     0.4626  0.1542                 1200          25.9063
+16        test  200                                   Mô hình (điểm rủi ro)      400  291.0     0.7275  0.2115                 1376          40.7400
+17        test  200                    Quy tắc đơn giản: ít click nhất 0-28      400  288.0     0.7200  0.2093                 1376          40.3200
+18        test  200  Quy tắc đơn giản: chưa nộp TMA1, rồi ít ngày hoạt động      400  322.0     0.8050  0.2340                 1376          45.0800
+19        test  200                                              Ngẫu nhiên      400  151.1     0.3778  0.1098                 1376          21.1554
+top1
+tma1              234
+ho_so_hoc_tap      62
+luong_truy_cap     54
+so_ngay_hoc        50
+Name: so_sv_top1, dtype: int64
+so_ngay_hoc            333
+tma1                   245
+ho_so_hoc_tap          241
+luong_truy_cap         227
+lan_hoc_gan_nhat       117
+xu_huong_giam           20
+chuan_bi_truoc_khoa     17
+Name: so_sv_co_trong_top3, dtype: int64
+tma1_score                  -0.955770
+highest_education_ord       -0.313653
+clicks_subpage_0_28          0.253413
+n_sites_0_28                 0.220950
+clicks_oucontent_0_28        0.193027
+tma1_submitted_by_d28        0.192085
+tma1_days_before_deadline   -0.178956
+active_days_0_28            -0.176514
+tma1_on_time                -0.174255
+clicks_w2                   -0.163418
+tma1_score_missing          -0.150600
+studied_credits              0.146806
+dtype: float64
+code_module
+BBB    200
+FFF    200
+dtype: int64
+['Sinh viên này được ưu tiên chủ yếu vì bài TMA1 nộp muộn hoặc kết quả chưa tốt, lượng truy cập học liệu chỉ 70 lượt click trong 28 ngày đầu (trung vị toàn khóa: 192) và chỉ vào học 3 ngày trong 29 ngày đầu (trung vị: 10). Nên liên hệ sớm để hỏi về khó khăn và hỗ trợ lịch học (đây là dấu hiệu tương quan, không khẳng định nguyên nhân).', 'Sinh viên này được ưu tiên chủ yếu vì hồ sơ nền (trình độ đầu vào thấp hơn mức trung bình hoặc đã từng học lại), bài TMA1 nộp muộn hoặc kết quả chưa tốt và chỉ vào học 8 ngày trong 29 ngày đầu (trung vị: 10). Nên liên hệ sớm để hỏi về khó khăn và hỗ trợ lịch học (đây là dấu hiệu tương quan, không khẳng định nguyên nhân).', 'Sinh viên này được ưu tiên chủ yếu vì bài TMA1 nộp muộn hoặc kết quả chưa tốt, chỉ vào học 0 ngày trong 29 ngày đầu (trung vị: 10) và đã 29 ngày chưa vào học. Nên liên hệ sớm để hỏi về khó khăn và hỗ trợ lịch học (đây là dấu hiệu tương quan, không khẳng định nguyên nhân).']
+              n  clicks_median  clicks_mean  active_days_median  no_activity_pct  tma1_submitted_pct  tma1_score_median
+label3                                                                                                                 
+Fail       3469          112.0       207.96                 7.0             9.14               74.92               74.0
+Pass       7399          257.0       404.77                12.0             0.89               97.28               80.0
+Withdrawn  2152          160.5       270.71                 9.0             7.39               76.39               74.0
+{'clicks_0_28': (978.8458526407026, 2.794626559211579e-213), 'active_days_0_28': (1243.6363101421255, 8.867608385082718e-271)}
+                     indicator     AUC  cliffs_delta  p_bonferroni         effect  groups_same_direction
+0                    clicks_w1  0.6301        0.2603           0.0            vừa                      8
+1                    clicks_w2  0.6486        0.2971           0.0            vừa                      8
+2                    clicks_w3  0.6303        0.2606           0.0            vừa                      8
+3                    clicks_w4  0.6451        0.2902           0.0            vừa                      8
+4               active_days_w1  0.6313        0.2626           0.0            vừa                      8
+5               active_days_w2  0.6537        0.3073           0.0            vừa                      8
+6               active_days_w3  0.6480        0.2961           0.0            vừa                      8
+7               active_days_w4  0.6565        0.3131           0.0            vừa                      8
+8                  clicks_0_28  0.6538        0.3077           0.0            vừa                      8
+9             active_days_0_28  0.6742        0.3484           0.0            vừa                      8
+10                n_sites_0_28  0.6202        0.2404           0.0            vừa                      8
+11  days_since_last_active_d28  0.3487       -0.3026           0.0            vừa                      8
+12            clicks_pre_start  0.6280        0.2560           0.0            vừa                      8
+13         clicks_forumng_0_28  0.6518        0.3037           0.0            vừa                      8
+14       clicks_oucontent_0_28  0.5983        0.1966           0.0            nhỏ                      8
+15            clicks_quiz_0_28  0.5866        0.1732           0.0            nhỏ                      8
+16        clicks_homepage_0_28  0.6652        0.3304           0.0            vừa                      8
+17         clicks_subpage_0_28  0.6038        0.2077           0.0            vừa                      8
+18        clicks_resource_0_28  0.5955        0.1911           0.0            nhỏ                      8
+19             clicks_url_0_28  0.5975        0.1950           0.0            nhỏ                      8
+20       tma1_submitted_by_d28  0.6090        0.2180           0.0            vừa                      8
+21                tma1_on_time  0.6354        0.2709           0.0            vừa                      8
+22                  tma1_score  0.6113        0.2227           0.0            vừa                      8
+23   tma1_days_before_deadline  0.6201        0.2401           0.0            vừa                      8
+24        num_of_prev_attempts  0.4521       -0.0958           0.0  không đáng kể                      8
+25             studied_credits  0.4694       -0.0613           0.0  không đáng kể                      8
+26       highest_education_ord  0.5918        0.1837           0.0            nhỏ                      8
+27      registration_lead_days  0.5009        0.0018           1.0  không đáng kể                      5
+28             cum_clicks_w1_1  0.6301        0.2603           0.0            vừa                      8
+29             cum_clicks_w1_2  0.6500        0.2999           0.0            vừa                      8
+30             cum_clicks_w1_3  0.6502        0.3005           0.0            vừa                      8
+31             cum_clicks_w1_4  0.6527        0.3054           0.0            vừa                      8
+32               cum_days_w1_1  0.6313        0.2626           0.0            vừa                      8
+33               cum_days_w1_2  0.6569        0.3138           0.0            vừa                      8
+34               cum_days_w1_3  0.6662        0.3324           0.0            vừa                      8
+35               cum_days_w1_4  0.6732        0.3465           0.0            vừa                      8
+         metric  week         vs  cliffs_delta_pass_minus    p
+0        clicks     1       Fail                    0.302  0.0
+1        clicks     1  Withdrawn                    0.194  0.0
+2        clicks     2       Fail                    0.341  0.0
+3        clicks     2  Withdrawn                    0.227  0.0
+4        clicks     3       Fail                    0.305  0.0
+5        clicks     3  Withdrawn                    0.190  0.0
+6        clicks     4       Fail                    0.334  0.0
+7        clicks     4  Withdrawn                    0.219  0.0
+8   active_days     1       Fail                    0.305  0.0
+9   active_days     1  Withdrawn                    0.195  0.0
+10  active_days     2       Fail                    0.355  0.0
+11  active_days     2  Withdrawn                    0.230  0.0
+12  active_days     3       Fail                    0.340  0.0
+13  active_days     3  Withdrawn                    0.226  0.0
+14  active_days     4       Fail                    0.356  0.0
+15  active_days     4  Withdrawn                    0.244  0.0
+                               flagged  hits  ...  recall  base_rate
+code_module code_presentation                 ...                   
+BBB         2014J                  200   118  ...   0.186      0.356
+FFF         2014J                  200   173  ...   0.233      0.399
+
+[2 rows x 7 columns]
+   value  students  flagged  flag_rate_pct   attribute
+0      F      1914    198.0          10.34      gender
+1      M      1730    202.0          11.68      gender
+2   0-35      2496    282.0          11.30    age_band
+3  35-55      1135    118.0          10.40    age_band
+4   55<=        13      0.0           0.00    age_band
+5      N      3303    356.0          10.78  disability
+6      Y       341     44.0          12.90  disability
+          indicator     A          B         p_bonf  AUC_A_gt_B
+0       clicks_0_28  Pass       Fail  1.200491e-199    0.679293
+1       clicks_0_28  Pass  Withdrawn   8.313967e-57    0.612785
+2       clicks_0_28  Fail  Withdrawn   2.999870e-17    0.432099
+3  active_days_0_28  Pass       Fail  1.188882e-250    0.700908
+4  active_days_0_28  Pass  Withdrawn   1.994956e-76    0.631138
+5  active_days_0_28  Fail  Withdrawn   1.093787e-18    0.429219
+       label3  week     n  clicks_mean  clicks_median  days_mean  zero_week_pct
+0        Fail     1  3445        55.23           20.0       2.02          27.39
+1        Fail     2  3445        45.56           15.0       1.81          32.00
+2        Fail     3  3445        59.32           23.0       2.20          25.25
+3        Fail     4  3445        44.41           10.0       1.90          34.19
+4        Pass     1  7397       102.92           59.0       3.15          12.34
+5        Pass     2  7397        90.48           50.0       3.09          11.34
+6        Pass     3  7397       109.10           60.0       3.46           7.91
+7        Pass     4  7397        92.73           43.0       3.26          12.26
+8   Withdrawn     1  2062        71.31           33.0       2.42          22.40
+9   Withdrawn     2  2062        58.25           24.5       2.26          23.88
+10  Withdrawn     3  2062        76.91           36.0       2.62          20.45
+11  Withdrawn     4  2062        58.73           21.0       2.33          27.46

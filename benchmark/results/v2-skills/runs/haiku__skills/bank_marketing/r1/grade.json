@@ -1,0 +1,69 @@
+{
+  "task": "bank_marketing",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 42.9,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "data-predict",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py đọc data/bank-additional/bank-additional-full.csv, run_log: so_dong 41188, tỷ lệ đăng ký 0,1127; bank-full.csv chỉ dùng để kiểm tra độ bền."
+      },
+      {
+        "check": "2. Loại duration vì rò rỉ, ROC-AUC trong khoảng thực tế (~0,75-0,82)",
+        "pass": false,
+        "evidence": "Có loại duration và nêu lý do 'chỉ biết sau cuộc gọi' (thêm vào thì AUC 0,652). Nhưng AUC test chính chỉ 0,578 (validation 0,660), thấp hơn nhiều so với khoảng tham chiếu 0,79 (chia ngẫu nhiên) và cả ~0,70-0,715 (chia theo thời gian 25% cuối). Nguyên nhân chính: chia 70/15/15 và không huấn luyện lại trên train+validation trước khi chạy test."
+      },
+      {
+        "check": "3. So sánh baseline bằng thước đo phù hợp dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Có baseline ngẫu nhiên và baseline chỉ dùng poutcome. Báo cáo PR-AUC (0,447 so với 0,510), recall trong 20% đầu (24,7% so với 34,9%), lift (1,24 so với 1,74) và CI bootstrap cho chênh lệch AUC (−0,067 đến −0,022)."
+      },
+      {
+        "check": "4. Xử lý pdays=999 và 'unknown' rõ ràng",
+        "pass": true,
+        "evidence": "Tạo biến cờ pdays_contacted (pdays != 999) và pdays_clean (999 → 0). Ghi rõ 96,32% dòng có pdays=999. Giá trị 'unknown' được giữ thành một mức riêng và có nêu trong answer.md."
+      },
+      {
+        "check": "5. Yếu tố hàng đầu khớp tham chiếu",
+        "pass": true,
+        "evidence": "Thứ tự permutation: nr.employed 0,085, pdays 0,047, month 0,042, poutcome 0,030, emp.var.rate 0,026, contact 0,006. Khớp tham chiếu. Riêng euribor3m có điểm âm (−0,023), tác giả giải thích là do biến không ổn định theo thời gian."
+      },
+      {
+        "check": "6. Diễn giải tầm quan trọng là dự báo, không phải nhân quả",
+        "pass": true,
+        "evidence": "answer.md ghi: 'Kết quả là liên quan, không phải nhân quả', kèm ví dụ về poutcome."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Agent chọn đúng tệp bank-additional-full.csv, loại duration vì rò rỉ và có giải thích, xử lý pdays=999 bằng biến cờ, nêu rõ 12 dòng trùng lặp và tỷ lệ cơ sở 11,27%. Cách chia theo thời gian 70/15/15 là trung thực. Agent so sánh với baseline ngẫu nhiên và baseline poutcome bằng PR-AUC, recall/lift ở mức 20% và CI bootstrap. Các yếu tố quan trọng (nr.employed, pdays, month, poutcome, emp.var.rate) khớp tham chiếu, và kết quả được diễn giải là liên quan, không phải nhân quả. Mọi con số đều truy được về run_log và CSV. Điểm yếu chính về độ chặt chẽ: mô hình cuối chỉ học trên 70% đầu, không huấn luyện lại trên train+validation trước khi chạy test, dù test rơi đúng vào giai đoạn tỷ lệ đăng ký tăng vọt lên 38,5%. Vì vậy AUC chỉ 0,578, thấp xa mức tham chiếu ~0,70-0,715 khi chia theo thời gian và ~0,79 khi chia ngẫu nhiên. Kết luận lớn 'mô hình không vượt baseline, không nên dùng' dựa trên đúng một thiết kế chia cực đoan này, không có phép chia ngẫu nhiên hay rolling để đối chiếu. Ngoài ra, việc loại age vì lý do 'nhạy cảm' làm mất một tín hiệu hợp lệ. Câu trả lời bằng tiếng Việt, trả lời thẳng vào câu hỏi và nêu rõ giả định. Năm biểu đồ có tiêu đề nêu kết luận, trục rõ ràng và số liệu khớp; chỉ có lệch nhỏ do làm tròn (0,651 trên biểu đồ so với 0,652 trong văn bản)."
+  },
+  "judge_cost_usd": 0.3682533,
+  "accuracy_pct": 83.3,
+  "quality_pct": 70.0,
+  "overall": 78.0
+}

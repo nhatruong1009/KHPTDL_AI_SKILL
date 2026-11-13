@@ -1,0 +1,20 @@
+[2026-11-13T00:07:05Z] waiting for run_bench oulad-1
+[2026-11-13T00:07:05Z] runs finished -> grading
+haiku__noskills/oulad_early_warning/r1: overall=56.0 acc=50.0 qual=65.0 
+haiku__noskills/oulad_early_warning/r2: overall=50.0 acc=50.0 qual=50.0 
+haiku__skills/oulad_early_warning/r1: overall=69.0 acc=75.0 qual=60.0 
+haiku__skills/oulad_early_warning/r2: overall=63.5 acc=62.5 qual=65.0 
+sonnet__noskills/oulad_early_warning/r1: overall=61.5 acc=62.5 qual=60.0 
+sonnet__noskills/oulad_early_warning/r2: overall=63.5 acc=62.5 qual=65.0 
+sonnet__skills/oulad_early_warning/r1: overall=61.5 acc=62.5 qual=60.0 
+sonnet__skills/oulad_early_warning/r2: overall=71.0 acc=75.0 qual=65.0 
+[2026-11-13T00:08:58Z] grading done -> report
+8/8 runs graded and included
+             config  tasks  overall  accuracy  quality storytelling  cost_total  cost_per_task  time_per_task_s  tokens_per_task  output_tokens_per_task  thinking_tokens_per_task  charts_per_task  turns_per_task  skill_hit_pct  finished  score_per_dollar
+0   haiku__noskills      2    53.00     50.00     57.5          NaN       0.178          0.089           293.50        2451090.0                 57594.0                   23053.0              3.5            48.0            NaN         2           596.468
+1     haiku__skills      2    66.25     68.75     62.5          NaN       0.416          0.208           373.20        2434568.5                 80301.0                   41056.5              4.0            47.5            0.0         2           318.413
+2  sonnet__noskills      2    62.50     62.50     62.5          NaN       0.855          0.427           162.55         484424.5                 21156.5                    2176.0              2.5            18.5            NaN         2           146.239
+3    sonnet__skills      2    66.25     68.75     62.5          NaN       1.620          0.810           299.55        1362631.0                 41131.5                    5471.0              5.5            27.0            0.0         2            81.771
+
+-> /code/KHPTDL_AI_SKILL/benchmark/results/oulad-1
+[2026-11-13T00:08:59Z] DONE -> /code/KHPTDL_AI_SKILL/benchmark/results/oulad-1/report.md

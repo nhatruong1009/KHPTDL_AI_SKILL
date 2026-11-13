@@ -1,0 +1,76 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 88.9,
+    "skills_missing": [
+      "data-calc"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh click và ngày hoạt động theo từng sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "n Pass 7.399 / Fail 3.469 / Withdrawn 2.152 (đếm theo sinh viên); trung vị click tuần 1 là 59/33/20, tuần 4 là 43/21/10; ngày hoạt động TB 3,15/2,42/2,02; dùng Kruskal-Wallis. Khớp tham chiếu."
+      },
+      {
+        "check": "AQ2: có effect size, hiệu chỉnh đa kiểm định, khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Mann-Whitney kèm Holm và AUC làm effect size (clicks_w1 0,630 ≈ Cliff's delta -0,26); clicks_change có AUC 0,48 (effect_abs 0,02) trong CSV; kết luận 'khác biệt đã có từ tuần 1'."
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo kỳ",
+        "pass": true,
+        "evidence": "train 2013B+2013J, validation 2014B, test 2014J dùng một lần; chọn mô hình và ngưỡng trên validation."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức",
+        "pass": true,
+        "evidence": "Loại tma1_score (chỉ chạy độ nhạy), loại các thuộc tính nhạy cảm (chỉ dùng để kiểm toán), loại cả highest_education_ord."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC, baseline, ngưỡng lấy từ validation, nói rõ có đạt 70% không",
+        "pass": true,
+        "evidence": "PR-AUC test Logistic 0,644 và HistGB 0,664 (tham chiếu 0,66/0,64, trong ±0,05), so với nền 0,378; ngưỡng 0,438 chọn trên validation cho recall 70,4% (KTC 68–72,7%) và precision 50,1%. Recall nhỉnh hơn khoảng tham chiếu, nhưng agent nêu rõ không còn dư địa."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ, precision@200 so với tỷ lệ nền",
+        "pass": true,
+        "evidence": "BBB 2014J 146/200 = 73% (nền 35,6%) và FFF 2014J 176/200 = 88% (nền 39,9%); cả hai trong ±0,08 so với tham chiếu 0,76/0,88; có so với quy tắc đơn giản (78,8%)."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt từ đóng góp thực của mô hình",
+        "pass": true,
+        "evidence": "Đóng góp = hệ số × giá trị chuẩn hóa của logistic; cột explanation_vi cho cả 400 sinh viên; yếu tố số 1 là TMA1 (354/400), tiếp theo là click và ngày hoạt động; không dùng thuộc tính nhạy cảm."
+      },
+      {
+        "check": "Không tuyên bố nhân quả; nêu giới hạn",
+        "pass": true,
+        "evidence": "'Quan sát, không phải nhân quả: chưa biết liên hệ có thực sự giúp sinh viên ở lại hay không'; test chỉ một kỳ; 2.644 sinh viên đã rút trước ngày 28 nằm ngoài quần thể; tỷ lệ 14% được ghi rõ là giả định."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 5
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng chuyên gia và xử lý đúng hầu hết các bẫy. Agent đếm theo sinh viên (13.020), dùng đúng cột split theo kỳ, chọn ngưỡng trên validation và loại tma1_score cùng các thuộc tính nhạy cảm (chỉ dùng chúng để kiểm toán công bằng). Ở Q2, agent dùng Holm kèm AUC làm effect size, tương đương Cliff's delta. Ở Q4, agent xếp hạng riêng trong từng module-kỳ: precision@200 là 73% ở BBB và 88% ở FFF, có so với tỷ lệ nền và quy tắc đơn giản. Ở Q5, giải thích tiếng Việt cho từng sinh viên được lấy từ đóng góp thực của mô hình logistic. Các con số (PR-AUC 0,644/0,664, trung vị click 59/33/20) khớp tham chiếu. Recall test 70,4% cao hơn một chút so với khoảng tham chiếu (0,62–0,69) do khác bộ đặc trưng, nhưng ngưỡng vẫn chọn trên validation và agent nói rõ khoảng tin cậy. Agent có lưu ý không suy diễn nhân quả và nêu giới hạn tổng quát hóa. Các biểu đồ có tiêu đề nêu kết luận và khớp số liệu. Một điểm nhỏ: phần độ nhạy với tma1_score không nhắc rằng PR-AUC trên validation có tăng."
+  },
+  "judge_cost_usd": 0.3114162,
+  "accuracy_pct": 100.0,
+  "quality_pct": 100.0,
+  "overall": 100.0
+}

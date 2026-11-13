@@ -1,0 +1,174 @@
+aq1 vs aq2 weekly clicks mismatches: 0
+                                   0       1          2
+label3                          Fail    Pass  Withdrawn
+n                               3469    7399       2152
+median_clicks_w1                20.0    59.0       33.0
+mean_clicks_w1                 55.23  102.92      71.31
+mean_active_days_w1             2.02    3.15       2.42
+pct_zero_clicks_w1             27.39   12.34       22.4
+median_clicks_w2                15.0    50.0       24.5
+mean_clicks_w2                 45.56   90.48      58.25
+mean_active_days_w2             1.81    3.09       2.26
+pct_zero_clicks_w2              32.0   11.34      23.88
+median_clicks_w3                23.0    60.0       36.0
+mean_clicks_w3                 59.32   109.1      76.91
+mean_active_days_w3              2.2    3.46       2.62
+pct_zero_clicks_w3             25.25    7.91      20.45
+median_clicks_w4                10.0    43.0       21.0
+mean_clicks_w4                 44.41   92.73      58.73
+mean_active_days_w4              1.9    3.26       2.33
+pct_zero_clicks_w4             34.19   12.26      27.46
+median_clicks_0_28             112.0   257.0      160.5
+pct_no_vle_0_28                 9.14    0.89       7.39
+pct_tma1_submitted             74.92   97.28      76.39
+median_days_since_last_active    4.0     1.0        3.0
+clicks_0_28 Kruskal KruskalResult(statistic=np.float64(978.8458526407026), pvalue=np.float64(2.794626559211579e-213))
+active_days_0_28 Kruskal KruskalResult(statistic=np.float64(1243.6363101421255), pvalue=np.float64(8.867608385082718e-271))
+Pass vs Fail clicks_0_28 rbc=0.359 p=4e-200
+Pass vs Withdrawn clicks_0_28 rbc=0.226 p=2.8e-57
+Fail vs Withdrawn clicks_0_28 rbc=-0.136 p=1e-17
+                       feature  median_complete  median_noncomplete  mean_complete  mean_noncomplete  auc_complete_gt_non  effect_rbc       p  p_holm  significant_holm
+9             active_days_0_28             12.0                 7.0        13.3305            8.7892               0.6742      0.3484  0.0000  0.0000              True
+14        clicks_homepage_0_28             49.0                26.0        71.1360           40.5878               0.6652      0.3304  0.0000  0.0000              True
+7               active_days_w4              3.0                 2.0         3.2552            2.0648               0.6565      0.3131  0.0000  0.0000              True
+8                  clicks_0_28            257.0               127.0       404.7725          231.9859               0.6538      0.3077  0.0000  0.0000              True
+5               active_days_w2              3.0                 1.0         3.0941            1.9845               0.6537      0.3073  0.0000  0.0000              True
+18         clicks_forumng_0_28             69.0                26.0       126.2864           65.6088               0.6518      0.3037  0.0000  0.0000              True
+11  days_since_last_active_d28              1.0                 3.0         2.8566            6.8762               0.3487     -0.3026  0.0000  0.0000              True
+1                    clicks_w2             50.0                18.0        90.4802           50.4179               0.6486      0.2971  0.0000  0.0000              True
+6               active_days_w3              3.0                 2.0         3.4615            2.3594               0.6480      0.2961  0.0000  0.0000              True
+3                    clicks_w4             43.0                13.0        92.7267           49.8931               0.6451      0.2902  0.0000  0.0000              True
+22                tma1_on_time              1.0                 1.0         0.9361            0.6652               0.6354      0.2709  0.0000  0.0000              True
+4               active_days_w1              3.0                 2.0         3.1533            2.1719               0.6313      0.2626  0.0000  0.0000              True
+2                    clicks_w3             60.0                27.0       109.1029           66.0552               0.6303      0.2606  0.0000  0.0000              True
+0                    clicks_w1             59.0                24.0       102.9216           61.3869               0.6301      0.2603  0.0000  0.0000              True
+12            clicks_pre_start             42.0                15.0        97.8115           53.5937               0.6280      0.2560  0.0000  0.0000              True
+10                n_sites_0_28             27.0                19.0        29.7651           22.3412               0.6202      0.2404  0.0000  0.0000              True
+23   tma1_days_before_deadline              1.0                 1.0         2.6495            1.4044               0.6201      0.2401  0.0000  0.0000              True
+13       active_days_pre_start              3.0                 2.0         3.9889            2.6262               0.6176      0.2352  0.0000  0.0000              True
+21       tma1_submitted_by_d28              1.0                 1.0         0.9728            0.7548               0.6090      0.2180  0.0000  0.0000              True
+17         clicks_subpage_0_28             26.0                15.0        38.7202           27.3850               0.6038      0.2077  0.0000  0.0000              True
+15       clicks_oucontent_0_28             44.0                16.0        89.6825           53.4997               0.5983      0.1966  0.0000  0.0000              True
+20             clicks_url_0_28              4.0                 2.0         5.8809            4.1567               0.5975      0.1950  0.0000  0.0000              True
+16        clicks_resource_0_28              7.0                 5.0         9.9719            7.6273               0.5955      0.1911  0.0000  0.0000              True
+19            clicks_quiz_0_28              1.0                 0.0        49.3261           25.8404               0.5866      0.1732  0.0000  0.0000              True
+25        num_of_prev_attempts              0.0                 0.0         0.1453            0.2818               0.4521     -0.0958  0.0000  0.0000              True
+26             studied_credits             60.0                60.0        82.5578           87.9256               0.4694     -0.0613  0.0000  0.0000              True
+24      registration_lead_days             53.0                53.0        66.1014           65.5173               0.5009      0.0018  0.8572  0.8572             False
+        min    max
+week              
+1     0.161  0.375
+2     0.221  0.414
+3     0.221  0.393
+4     0.249  0.417 week
+1    1.0
+2    1.0
+3    1.0
+4    1.0
+Name: p, dtype: float64
+   week    rbc  ci_lo  ci_hi  median_complete  median_non  pct_zero_complete  pct_zero_non  mean_active_days_complete  mean_active_days_non
+0     1  0.260  0.246  0.282             59.0        24.0             12.340        25.476                      3.153                 2.172
+1     2  0.297  0.280  0.317             50.0        18.0             11.339        28.892                      3.094                 1.985
+2     3  0.261  0.242  0.279             60.0        27.0              7.906        23.412                      3.462                 2.359
+3     4  0.290  0.268  0.307             43.0        13.0             12.258        31.614                      3.255                 2.065
+                    set                   model  auc_val  prauc_val  auc_test  prauc_test
+0                  main                  LogReg   0.7562     0.7404    0.7355      0.6713
+1                  main                  HistGB   0.7553     0.7475    0.7475      0.6834
+2  sens_with_tma1_score                  LogReg   0.7711     0.7553    0.6910      0.6098
+3  sens_with_tma1_score                  HistGB   0.7700     0.7595    0.7137      0.6426
+4              baseline       Dummy (tỷ lệ nền)   0.5000     0.4649    0.5000      0.3776
+5              baseline  Quy tắc: ít click 0-28   0.6466     0.6251    0.6517      0.5411
+chosen on validation: LogReg
+        split  threshold  flagged  flagged_pct   tp   fp   fn    tn  recall  precision  specificity  base_rate
+0  validation     0.4454     1303         50.5  840  463  360   918   0.700      0.645        0.665      0.465
+1        test     0.4454     1341         36.8  791  550  585  1718   0.575      0.590        0.757      0.378
+flag rate by label (test): {'Fail': 0.584, 'Pass': 0.243, 'Withdrawn': 0.563}
+test recall 95%% CI [0.54952864 0.60026494] AUC CI [0.7178688  0.75004899]
+sens (tma1_score) AUC val/test 0.7710584117789043 0.6909936912965013
+            attribute                  level     n  n_noncompleters  base_rate  flag_rate  recall    fpr
+0              gender                      F  1914              669      0.350      0.274   0.456  0.177
+1              gender                      M  1730              707      0.409      0.472   0.687  0.323
+2            age_band                   0-35  2496              994      0.398      0.408   0.594  0.285
+3            age_band                  35-55  1135              376      0.331      0.283   0.529  0.161
+4          disability                      N  3303             1199      0.363      0.358   0.567  0.238
+5          disability                      Y   341              177      0.519      0.469   0.627  0.299
+6            imd_band                  0-10%   395              185      0.468      0.430   0.611  0.271
+7            imd_band                 10-20%   415              181      0.436      0.388   0.558  0.256
+8            imd_band                 20-30%   405              164      0.405      0.348   0.573  0.195
+9            imd_band                 30-40%   404              144      0.356      0.342   0.569  0.215
+10           imd_band                 40-50%   366              142      0.388      0.366   0.556  0.246
+11           imd_band                 50-60%   368              136      0.370      0.356   0.529  0.254
+12           imd_band                 60-70%   322              115      0.357      0.354   0.513  0.266
+13           imd_band                 70-80%   311              108      0.347      0.386   0.657  0.241
+14           imd_band                 80-90%   288               95      0.330      0.365   0.600  0.249
+15           imd_band                90-100%   267               81      0.303      0.322   0.568  0.215
+16           imd_band                Unknown   103               25      0.243      0.398   0.680  0.308
+17             region    East Anglian Region   320              109      0.341      0.331   0.495  0.246
+18             region   East Midlands Region   257              103      0.401      0.350   0.563  0.208
+19             region                Ireland   250               94      0.376      0.388   0.649  0.231
+20             region          London Region   292              124      0.425      0.428   0.653  0.262
+21             region           North Region   180               55      0.306      0.400   0.582  0.320
+22             region   North Western Region   298              126      0.423      0.456   0.738  0.250
+23             region               Scotland   429              173      0.403      0.296   0.474  0.176
+24             region      South East Region   230               62      0.270      0.317   0.581  0.220
+25             region           South Region   317              105      0.331      0.375   0.543  0.292
+26             region      South West Region   235               90      0.383      0.353   0.533  0.241
+27             region                  Wales   360              155      0.431      0.411   0.587  0.278
+28             region   West Midlands Region   257               95      0.370      0.370   0.526  0.278
+29             region       Yorkshire Region   219               85      0.388      0.320   0.565  0.164
+30  highest_education  A Level or Equivalent  1575              531      0.337      0.302   0.533  0.184
+31  highest_education       HE Qualification   505              134      0.265      0.150   0.351  0.078
+32  highest_education     Lower Than A Level  1519              694      0.457      0.506   0.648  0.387
+     k                    rule  contacted    hits  n_non  n_students  precision  recall  base_rate   lift  expected_helped_at_14pct
+0  100   Mô hình (điểm rủi ro)        200  188.00   1376        3644      0.940   0.137      0.378  2.489                    26.320
+1  100  Ngẫu nhiên (TB 20 lần)        200   74.30   1376        3644      0.372   0.054      0.378  0.984                    10.402
+2  100      Ít click nhất 0-28        200  160.00   1376        3644      0.800   0.116      0.378  2.119                    22.400
+3  200   Mô hình (điểm rủi ro)        400  333.00   1376        3644      0.832   0.242      0.378  2.205                    46.620
+4  200  Ngẫu nhiên (TB 20 lần)        400  150.45   1376        3644      0.376   0.109      0.378  0.996                    21.063
+5  200      Ít click nhất 0-28        400  289.00   1376        3644      0.722   0.210      0.378  1.913                    40.460
+6  300   Mô hình (điểm rủi ro)        600  446.00   1376        3644      0.743   0.324      0.378  1.969                    62.440
+7  300  Ngẫu nhiên (TB 20 lần)        600  227.10   1376        3644      0.379   0.165      0.378  1.002                    31.794
+8  300      Ít click nhất 0-28        600  399.00   1376        3644      0.665   0.290      0.378  1.761                    55.860
+     k                   rule module presentation  n_students  n_noncompleters  contacted   hits  precision  recall  base_rate   lift
+6  200  Mô hình (điểm rủi ro)    BBB        2014J        1786              635        200  151.0      0.755   0.238      0.356  2.124
+7  200  Mô hình (điểm rủi ro)    FFF        2014J        1858              741        200  182.0      0.910   0.246      0.399  2.282
+  module presentation  n_students  n_noncompleters  contacts_for_70pct_recall
+0    BBB        2014J        1786              635                        933
+1    FFF        2014J        1858              741                        861
+reason1
+Bài TMA1                         336
+Mức tương tác tổng 4 tuần đầu     41
+Học vấn đầu vào                   16
+Học lại / từng đăng ký trước       6
+Số tín chỉ                         1
+8     Sinh viên này được ưu tiên (điểm rủi ro 0.66) ...
+11    Sinh viên này được ưu tiên (điểm rủi ro 0.59) ...
+16    Sinh viên này được ưu tiên (điểm rủi ro 0.68) ...
+19    Sinh viên này được ưu tiên (điểm rủi ro 0.66) ...
+Bài TMA1                            1.200
+Mức tương tác tổng 4 tuần đầu       0.282
+Module                              0.266
+Học vấn đầu vào                     0.214
+Tương tác tuần 2                    0.191
+Tương tác tuần 4                    0.168
+Số ngày từ lần hoạt động cuối       0.156
+Hoạt động trước khi khóa bắt đầu    0.121
+Học lại / từng đăng ký trước        0.055
+Số tín chỉ                          0.050
+Thời điểm đăng ký                   0.021
+Tương tác tuần 3                    0.010
+Tương tác tuần 1                    0.001
+dtype: float64
+is_FFF                       0.537629
+tma1_submitted_by_d28       -0.367636
+highest_education_ord       -0.354964
+clicks_oucontent_0_28       -0.253838
+tma1_on_time                -0.234443
+clicks_subpage_0_28          0.206008
+clicks_0_28                  0.190276
+n_sites_0_28                -0.188072
+active_days_0_28            -0.164117
+tma1_days_before_deadline   -0.162558
+clicks_w2                   -0.157767
+clicks_pre_start            -0.147742
+dtype: float64

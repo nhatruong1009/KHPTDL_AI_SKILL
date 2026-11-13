@@ -1,0 +1,88 @@
+Dòng gốc (2 sheet): 1,044,848; trùng lặp hoàn toàn bỏ: 11,812; sau khi bỏ giá<=0: 1,027,017
+Cửa sổ so sánh: 1/1–8/12 mỗi năm; dòng trong cửa sổ: 958,402
+Tham khảo: doanh thu 2010 cả năm (không cùng kỳ) = 9,216,136 (bỏ admin: 9,288,457)
+Kiểm tra bridge khách có mã: 7,777,132 vs 2011 có mã 7,777,132
+Kiểm tra tổng: 2010 (bỏ admin) + thay đổi khách có mã + thay đổi không mã = 9,223,328 vs 2011 9,223,328
+
+HEADLINE
+             doanh_thu_tat_ca_dong  doanh_thu_ban_hang_bo_admin        so_dong
+year                                                                         
+2010                 8.793185e+06                 8.864344e+06  467608.000000
+2011                 8.969296e+06                 9.223328e+06  490794.000000
+thay_doi             1.761106e+05                 3.589846e+05   23186.000000
+thay_doi_%           2.002808e+00                 4.049759e+00       4.958427
+
+BRIDGE (£)
+ Doanh thu 2010 (cùng kỳ, có mã KH)      7740573.0
+Khách mất (mua 2010, không mua 2011)   -1064368.0
+Khách giữ lại: thay đổi chi tiêu        -394832.0
+Khách cũ quay lại (không mua 2010)        45784.0
+Khách mới 2011                          1449975.0
+Doanh thu không có mã KH: thay đổi       322426.0
+Doanh thu 2011 (cùng kỳ, bỏ admin)      9223328.0
+
+CUSTOMERS
+                                       0
+so_khach_2010                    4184.0
+so_khach_2011                    4221.0
+khach_moi_2011                   1521.0
+khach_giu_lai                    2651.0
+khach_quay_lai                     49.0
+khach_mat                        1533.0
+ty_le_mat_khach_%                  36.6
+doanh_thu_TB_khach_moi            953.0
+doanh_thu_TB_khach_giu_lai_2011  2369.0
+doanh_thu_TB_khach_giu_lai_2010  2518.0
+
+SENSITIVITY
+                           phuong_an    dt_2010    dt_2011  thay_doi  thay_doi_%
+0      Headline: bỏ admin, có mã KH  7740573.4  7777132.1   36558.7         0.5
+1                Độ nhạy: gồm admin  7617590.6  7710606.0   93015.4         1.2
+2  Độ nhạy: gồm cả dòng không có mã  8864343.7  9223328.3  358984.6         4.0
+
+COUNTRY (top/bottom)
+ year                       2010       2011  thay_doi  thay_doi_%  dong_gop_%_tong_thay_doi
+Country                                                                                   
+EIRE                   333433.0   255091.0  -78343.0  -23.495755                     -22.0
+Denmark                 44307.0    17487.0  -26820.0  -60.532999                      -7.0
+Sweden                  50978.0    33909.0  -17069.0  -33.483508                      -5.0
+Greece                  13674.0     4711.0   -8964.0  -65.551316                      -2.0
+United Arab Emirates     7314.0     1902.0   -5412.0  -73.990645                      -2.0
+Lithuania                4893.0        0.0   -4893.0      -100.0                      -1.0
+Thailand                 3071.0        0.0   -3071.0      -100.0                      -1.0
+USA                      4414.0     1731.0   -2683.0  -60.783638                      -1.0
+Bahrain                  2313.0      343.0   -1970.0  -85.186434                      -1.0
+Unspecified              6164.0     4741.0   -1423.0  -23.089377                      -0.0
+RSA                      2367.0     1002.0   -1364.0  -57.649828                      -0.0
+Channel Islands         21070.0    19713.0   -1357.0   -6.441279                      -0.0
+Bermuda                  1253.0        0.0   -1253.0      -100.0                      -0.0
+Austria                 10895.0     9897.0    -998.0   -9.157095                      -0.0
+Korea                     950.0        0.0    -950.0      -100.0                      -0.0
+West Indies               536.0        0.0    -536.0      -100.0                      -0.0
+Malta                    2687.0     2505.0    -181.0   -6.747185                      -0.0
+Nigeria                   113.0        0.0    -113.0      -100.0                      -0.0
+Saudi Arabia                0.0      131.0     131.0        <NA>                       0.0
+Czech Republic              0.0      708.0     708.0        <NA>                       0.0
+Brazil                    268.0     1144.0     875.0   326.28695                       0.0
+European Community          0.0     1292.0    1292.0        <NA>                       0.0
+Lebanon                   172.0     1694.0    1522.0  884.642214                       0.0
+Italy                   13997.0    16101.0    2103.0   15.025169                       1.0
+Iceland                  1323.0     3598.0    2275.0  171.907777                       1.0
+Canada                   1217.0     3666.0    2450.0  201.347953                       1.0
+Cyprus                   7764.0    11272.0    3508.0   45.178529                       1.0
+Poland                   2943.0     6965.0    4022.0  136.652136                       1.0
+Israel                   3199.0     8129.0    4930.0  154.091705                       1.0
+Singapore                4038.0     9120.0    5083.0  125.876907                       1.0
+Hong Kong                3922.0     9908.0    5986.0  152.615584                       2.0
+Portugal                20585.0    26935.0    6350.0   30.849214                       2.0
+Switzerland             42754.0    55058.0   12304.0   28.778868                       3.0
+Finland                  6718.0    20883.0   14165.0  210.845723                       4.0
+Belgium                 22196.0    38892.0   16696.0   75.219213                       5.0
+Germany                186118.0   205224.0   19106.0   10.265409                       5.0
+Norway                   9543.0    28738.0   19195.0  201.153363                       5.0
+Japan                    4856.0    27715.0   22859.0  470.753798                       6.0
+Netherlands            248757.0   275983.0   27226.0   10.944641                       8.0
+Spain                   28421.0    55755.0   27334.0    96.17453                       8.0
+France                 119252.0   187503.0   68251.0   57.232077                      19.0
+Australia               29927.0   136072.0  106146.0  354.687126                      30.0
+United Kingdom        7595942.0  7737812.0  141870.0     1.86771                      40.0

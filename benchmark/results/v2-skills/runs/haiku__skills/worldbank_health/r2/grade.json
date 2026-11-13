@@ -1,0 +1,74 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 12.5,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Bỏ dòng metadata và loại các dòng tổng hợp",
+        "pass": true,
+        "evidence": "analysis.py dùng read_csv(skiprows=4) và meta.dropna(subset=['Region','IncomeGroup']), sau đó inner-merge nên chỉ giữ quốc gia thật"
+      },
+      {
+        "check": "Chọn năm rõ ràng, khoảng 180+ quốc gia đủ cả 3 chỉ số",
+        "pass": true,
+        "evidence": "Năm chính 2019 với n=186 (khớp số liệu tham chiếu 186), kiểm tra độ nhạy 2020–2023 (n = 186/186/185/184)"
+      },
+      {
+        "check": "Tương quan dương mạnh (Spearman ~0,8+) và nêu rằng đây là tương quan, bị thu nhập gây nhiễu",
+        "pass": true,
+        "evidence": "Spearman = 0,84 (2019); các năm 2021–2023 là 0,819/0,823/0,842, khớp tham chiếu; nói rõ 'phần lớn là do thu nhập', 'không phải nhân quả'"
+      },
+      {
+        "check": "Kiểm soát thu nhập, danh sách vượt/dưới kỳ vọng phù hợp với tham chiếu",
+        "pass": true,
+        "evidence": "Có cả hồi quy LE~logGDP+logHE (hệ số 2021 = 1,44, 2022 = 0,68, 2023 = 1,14, khớp tham chiếu) và phần dư theo logGDP; vượt: Palestine, Solomon, Syria, Jordan, Vanuatu, Cabo Verde; dưới: CAR, Nigeria, Nauru, Eswatini, Xích Đạo Guinea, Chad, Lesotho, trùng nhiều với tham chiếu"
+      },
+      {
+        "check": "Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "+2,9 năm (2019, hạng 45/186); 2023: +1,9 (tham chiếu mô hình chỉ GDP năm 2023 là 1,94), tuổi thọ 74,2 so với kỳ vọng 71,3"
+      },
+      {
+        "check": "story.md cho lãnh đạo Bộ Y tế: một thông điệp, mạch truyện, hành động dạng gợi ý, có cảnh báo",
+        "pass": true,
+        "evidence": "Có thông điệp chính, Bối cảnh → Diễn biến → Hành động gợi ý → Lưu ý; cảnh báo 'không chứng minh nhân quả' và nêu outlier CAR 2019, Syria, Palestine, GDP méo ở nước dầu mỏ"
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "CAR −25,3 trong answer.md/final reply, trong khi gap_ranking.csv là −25,247 (biểu đồ ghi −25,2); chỉ là lỗi làm tròn nhỏ"
+    ],
+    "summary": "Bài làm tốt và số liệu khớp tham chiếu. Agent xử lý đúng các bẫy dữ liệu: bỏ 4 dòng metadata, loại dòng tổng hợp bằng Region/IncomeGroup, chọn năm 2019 với n=186 và kiểm tra độ nhạy các năm 2019–2023. Spearman 0,82–0,84 và hệ số log chi tiêu y tế (1,44/0,68/1,14) đều khớp tham chiếu. Agent dùng thang log, kiểm soát thu nhập, có kiểm tra bằng mô hình bậc 2 và lập danh sách vượt/dưới kỳ vọng ổn định qua hai năm. Danh sách vượt/dưới kỳ vọng phần lớn trùng tham chiếu. Việt Nam vượt kỳ vọng +2,9 năm (2019) và +1,9 năm (2023), đúng chiều và gần đúng độ lớn. Outlier CAR được nhận diện rõ là lỗi dữ liệu nhưng vẫn để trên biểu đồ, làm trục y bị kéo giãn. Story.md bằng tiếng Việt, có thông điệp rõ, mạch truyện hợp lý, hành động dạng gợi ý và có cảnh báo. Tuy vậy, câu 'thu nhập giải thích gần như toàn bộ' (R² = 72%) hơi phóng đại. Câu 'thêm tiền chi y tế không còn chắc chắn làm tuổi thọ tăng' mang sắc thái nhân quả. Gợi ý về y tế cơ sở và tiêm chủng là suy đoán ngoài dữ liệu, dù được đặt dưới dạng 'tìm hiểu'. Biểu đồ có tiêu đề nêu kết luận, nhãn rõ và khớp số liệu; biểu đồ 1 không có đường hồi quy. Chỉ có một lỗi làm tròn nhỏ (CAR −25,3 so với −25,2)."
+  },
+  "judge_cost_usd": 0.2730727,
+  "accuracy_pct": 100.0,
+  "quality_pct": 83.3,
+  "overall": 93.3
+}

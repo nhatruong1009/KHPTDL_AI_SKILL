@@ -1,0 +1,84 @@
+{
+  "task": "oulad_early_warning",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 33.3,
+    "skills_missing": [
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh lượt truy cập và số ngày hoạt động theo tuần giữa Pass/Fail/Withdrawn, tính theo sinh viên",
+        "pass": true,
+        "evidence": "Trung vị lượt truy cập tuần 1 là 59/33/20, tuần 4 là 43/21/10; số ngày hoạt động tuần 1 trung vị 3/2/2. Kết quả khớp tham chiếu, đếm theo sinh viên (13,020), có Kruskal–Wallis, so sánh cặp và hiệu chỉnh Holm."
+      },
+      {
+        "check": "AQ2: có kích thước hiệu ứng, hiệu chỉnh đa kiểm định, khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Dùng AUC Mann-Whitney làm kích thước hiệu ứng (clicks_w1 0.37 ≈ delta -0.26; active_days_w4 0.343) và hiệu chỉnh Holm. Kết luận khác biệt có 'ngay từ tuần 1'. Thiếu sót: clicks_change_w1_w4 (AUC 0.48, hiệu ứng không đáng kể) chỉ được ghi trong bảng mà không được nêu ra trong bài viết."
+      },
+      {
+        "check": "AQ3 thiết kế: tách theo thời gian (train 2013B+2013J, val 2014B, test 2014J)",
+        "pass": true,
+        "evidence": "train 6,795 / validation 2,581 / test 3,644. Mô hình và ngưỡng được chọn trên validation, tập test chỉ dùng một lần."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng biến kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo",
+        "pass": true,
+        "evidence": "Đã loại final_result/label3/date_unregistration, giới tính, tuổi, khuyết tật, IMD, vùng và cả trình độ học vấn. tma1_score chỉ dùng làm phân tích nhạy cảm (AUC test giảm xuống 0.667, PR-AUC 0.507)."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0.05 so với tham chiếu, có baseline, recall tại ngưỡng chọn trên validation, nói rõ có đạt 70% hay không",
+        "pass": true,
+        "evidence": "PR-AUC test 0.649 (tham chiếu 0.665), baseline clicks_0_28 có PR-AUC 0.541. Ngưỡng 0.392 chọn trên validation cho recall 64.2%, precision 53.4%; agent nói rõ 'không đạt'. Phương án dùng cùng tỷ lệ cảnh báo (cũng chốt trên validation) cho recall 71.9%."
+      },
+      {
+        "check": "AQ4: xếp hạng riêng trong từng module-kỳ, 200 suất mỗi bên, precision@200 khớp tham chiếu, có so với tỷ lệ nền",
+        "pass": true,
+        "evidence": "BBB-2014J 149/200 = 74.5% (tham chiếu ~0.76), FFF-2014J 173/200 = 86.5% (tham chiếu ~0.88). Tỷ lệ nền có thể suy ra từ bảng (635/1786 và 741/1858) và có phân tích độ nhạy với 100 và 300 suất."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên dựa trên đóng góp thực của mô hình, không dùng thuộc tính nhạy cảm, lý do chính hợp lý",
+        "pass": false,
+        "evidence": "Lỗi chỉ số: lst_idx lấy từ te_df (2014J) nhưng m.loc[idx] và X.loc[idx] lại trả về dòng của 2013B. Cả 400 dòng trong q5_giai_thich_cho_co_van.csv đều là BBB 2013B, không có dòng nào thuộc 2014J. Ví dụ sinh viên 34756 'BBB 2013B' không có trong danh sách ưu tiên. Vì vậy con số 268/400 và giá trị đặc trưng đều thuộc sai sinh viên."
+      },
+      {
+        "check": "Không khẳng định nhân quả; nêu giới hạn của dữ liệu quan sát và khả năng tổng quát hóa",
+        "pass": true,
+        "evidence": "Có ghi 'Không thể kết luận can thiệp sẽ làm giảm việc không hoàn thành', nêu tỷ lệ không hoàn thành khác nhau giữa các kỳ (37.8% so với 46.5%), và mỗi đoạn giải thích đều có câu 'tương quan, không phải nguyên nhân'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Q5: 'tổng lượt truy cập 28 ngày đầu là yếu tố hàng đầu của 268/400 sinh viên' — tính trên các dòng 2013B bị lấy nhầm do lỗi chỉ số, không phải 400 sinh viên 2014J trong danh sách ưu tiên",
+      "Q5: ví dụ sinh viên 34756 (BBB 2013B) với xác suất 65% và 42 lượt truy cập — sinh viên này không thuộc danh sách ưu tiên 2014J, xác suất lấy từ một người còn giá trị đặc trưng lấy từ người khác"
+    ],
+    "summary": "Câu 1–4 làm tốt và nhất quán với tham chiếu. Quần thể 13,020 sinh viên. Agent dùng đúng cách tách theo thời gian, loại tma1_score và các thuộc tính nhạy cảm. PR-AUC test là 0.649. Recall tại ngưỡng chọn trên validation là 64.2%, agent nói rõ là không đạt 70%. Xếp hạng 200 suất riêng cho từng module-kỳ, precision đạt 74.5% (BBB) và 86.5% (FFF). Câu 2 có kích thước hiệu ứng (AUC) và hiệu chỉnh Holm nhưng không chỉ ra clicks_change_w1_w4 có hiệu ứng không đáng kể. Lỗi nghiêm trọng ở câu 5: do lệch chỉ số giữa te_df và m/X, cả 400 đoạn giải thích đều gán cho sinh viên 2013B thay vì danh sách 2014J, nên các đặc trưng và con số 268/400 là sai. Biểu đồ đúng số liệu nhưng tiêu đề bị cắt và hai tiêu đề ở biểu đồ 1 chồng lên nhau. Văn bản bằng tiếng Việt, rõ ràng và nêu đầy đủ hạn chế."
+  },
+  "judge_cost_usd": 0.38667989999999997,
+  "accuracy_pct": 87.5,
+  "quality_pct": 65.0,
+  "overall": 78.5
+}

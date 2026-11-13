@@ -17,6 +17,8 @@ from __future__ import annotations
 import hashlib
 import io
 import json
+import os
+import shutil
 import sys
 import urllib.request
 import zipfile
@@ -26,6 +28,9 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 TT = "https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data"
 WB = "https://api.worldbank.org/v2/en/indicator/{}?downloadformat=csv"
+# prepared OULAD views from the N05 project (P3). Only data/processed is copied - no README,
+# dictionary, decision logs or P4 results, so the agent starts from the data alone.
+OULAD_P3 = Path(os.environ.get("OULAD_P3_DIR", ROOT.parent.parent / "da-oulad-early-warning" / "P3" / "data" / "processed"))
 
 SOURCES: dict[str, dict] = {
     # Online Retail II - UK online gift shop, 2009-2011, 2 Excel sheets, ~1M lines
@@ -73,6 +78,12 @@ SOURCES: dict[str, dict] = {
         "origin": "UCI #222 Bank Marketing (Moro et al., 2014)",
         "files": [("https://archive.ics.uci.edu/static/public/222/bank+marketing.zip", "zip")],
     },
+    # OULAD early warning - prepared analytic views (BBB+FFF, 2013B-2014J), local copy from project P3
+    "oulad_early_warning": {
+        "topic": "Education / early warning (prepared data)",
+        "origin": "OULAD (Kuzilek et al., 2017, CC BY 4.0) - N05 prepared views, P3/data/processed only",
+        "files": [(str(OULAD_P3), "local_dir")],
+    },
 }
 
 
@@ -110,6 +121,16 @@ def fetch(task: str) -> dict:
     manifest = {"task": task, "topic": spec["topic"], "origin": spec["origin"], "downloads": []}
     for url, kind in spec["files"]:
         print(f"  {task}: {url}", flush=True)
+        if kind == "local_dir":  # flat copy of a local folder (files only, no subfolders)
+            src = Path(url)
+            if not src.is_dir():
+                raise SystemExit(f"{task}: local source {src} not found - set OULAD_P3_DIR")
+            files = sorted(f for f in src.iterdir() if f.is_file() and not f.name.startswith("."))
+            for f in files:
+                shutil.copy2(f, dest / f.name)
+            manifest["downloads"].append({"local_dir": str(src), "files": [
+                {"name": f.name, "bytes": f.stat().st_size, "sha256": hashlib.sha256(f.read_bytes()).hexdigest()} for f in files]})
+            continue
         blob = _get(url)
         entry = {"url": url, "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest()}
         if kind == "raw":

@@ -1,0 +1,19 @@
+{
+  "mo_hinh_chon": "LR",
+  "auc_val_lr": 0.7271,
+  "auc_val_hgb": 0.7236,
+  "nguong_xac_suat": 0.3924,
+  "test": {
+    "AUC": 0.7156,
+    "PR_AUC": 0.6491,
+    "ngưỡng": 0.3924,
+    "recall": 0.6417,
+    "precision": 0.5342,
+    "ty_le_bi_canh_bao": 0.4536,
+    "so_bi_canh_bao": 1653,
+    "so_khong_hoan_thanh": 1376,
+    "so_luot": 3644
+  },
+  "first_week_clicks": 1,
+  "first_week_active": 1
+}

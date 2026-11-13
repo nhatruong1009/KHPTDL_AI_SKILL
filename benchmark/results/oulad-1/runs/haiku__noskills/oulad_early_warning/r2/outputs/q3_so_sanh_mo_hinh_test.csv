@@ -1,0 +1,3 @@
+nguong,AUC,PR_AUC,recall,precision,specificity,ty_le_bi_bat,TP,FP,FN,TN,mo_hinh
+0.392,0.685,0.539,0.6344,0.5224,0.6481,0.4586,873,798,503,1470,logistic
+0.4133,0.7016,0.6233,0.7333,0.497,0.5498,0.5571,1009,1021,367,1247,hgb

@@ -1,0 +1,71 @@
+{
+  "task": "household_power",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Đọc '?' là thiếu, ngày dd/mm/yyyy; báo cáo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "load.py dùng na_values=['?'] và format '%d/%m/%Y %H:%M:%S'; báo 25.979 phút thiếu (1,25%), dài nhất 17–22/8/2010 (~5 ngày), 25–28/9/2010 (~3,6 ngày), 28/4/2007 (~2,6 ngày), 13/6/2009 (~2,2 ngày), khớp đáp án tham chiếu (120,4h; 87,3h; 62h; 55,1h)."
+      },
+      {
+        "check": "Đổi kW phút sang kWh đúng; độ lớn hợp lý",
+        "pass": true,
+        "evidence": "kWh/ngày = kW trung bình × 24 (tương đương sum/60 có hiệu chỉnh khoảng trống); 26,8 kWh/ngày năm 2007 ≈ 9.780 kWh/năm (tham chiếu 9.785); tháng 12/2009 = 1.015 kWh khớp tham chiếu."
+      },
+      {
+        "check": "Xử lý tháng thiếu/khoảng trống trước khi so sánh",
+        "pass": true,
+        "evidence": "Loại ngày có <80% số phút (21 ngày), dùng trung bình kWh/ngày theo tháng, chỉ lấy tháng có ≥20 ngày đủ; bỏ 8/2008 khi huấn luyện. Tuy nhiên biểu đồ dự báo nhân mọi tháng với 31 ngày (vd. 2/2007 ≈1.041 so với tham chiếu 942)."
+      },
+      {
+        "check": "Mùa vụ năm đúng (đông cao, hè thấp, tháng 8 thấp nhất) và hồ sơ ngày có đỉnh tối",
+        "pass": true,
+        "evidence": "Đỉnh tháng 12 (36,0) và tháng 1 (35,1), đáy tháng 8 (13,7 ≈ 425 kWh/tháng, tham chiếu 427); đỉnh tối 20h ~1,90 kW, đáy 3–5h ~0,44 kW (tham chiếu đỉnh 20h, đáy 4h); cuối tuần 29–30 vs ngày thường 23,5–26,0."
+      },
+      {
+        "check": "Dự báo 12/2010 nằm trong [759, 1392], có khoảng và phương pháp",
+        "pass": true,
+        "evidence": "Trung vị 1.033 kWh, khoảng 80% 912–1.170, 95% 851–1.255, khoảng thực dụng 800–1.300; hồi quy log tuyến tính có xu hướng + hiệu ứng tháng, có backtest 12/2008 và 12/2009."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "16/12/2006 với 73 kWh: ngày chỉ có ~6,6 giờ dữ liệu (bắt đầu 17:24), giá trị là ngoại suy mean×24 cho một ngày thiếu, không phải tiêu thụ thực",
+      "Biểu đồ dự báo: tổng tháng = trung bình/ngày × 31 cho mọi tháng (vd. 2/2007 ≈1.041 kWh so với ~942; 11/2010 ≈890 so với ~743 thực đo/hiệu chỉnh), nhãn 'Tổng kWh tháng' gây hiểu lầm",
+      "Thứ Bảy 30,2 trong văn bản so với 30,1 trên biểu đồ (sai lệch nhỏ)"
+    ],
+    "summary": "Bài làm chất lượng cao: đọc dữ liệu đúng ('?', dd/mm/yyyy), quy đổi kWh đúng qua kW trung bình × 24 (có hiệu chỉnh khoảng trống), lượng thiếu (25.979 phút, 1,25%) và các khoảng trống dài nhất khớp tham chiếu. Mùa vụ đúng: đông cao, tháng 8 thấp nhất, đỉnh tối 20h, cuối tuần cao hơn. Đã phát hiện kỳ nghỉ 8/2008 và các tuần bất thường. Dự báo 12/2010 ≈1.033 kWh (95%: 851–1.255, khuyến nghị 800–1.300) nằm trong khoảng hợp lý, có backtest và nêu rõ hạn chế. Điểm trừ: biểu đồ tổng tháng nhân ×31 cho mọi tháng, nên tổng các tháng ngắn bị thổi phồng. Trích dẫn ngày 16/12/2006 là 73 kWh, dù đây là giá trị ngoại suy từ một ngày thiếu dữ liệu. Không báo tổng kWh theo năm. Tiêu đề biểu đồ chỉ mô tả, không nêu kết luận, và trên biểu đồ mùa vụ chú giải chồng lên nhãn. Toàn bộ trình bày bằng tiếng Việt, rõ ràng, có đơn vị."
+  },
+  "judge_cost_usd": 0.27597119999999997,
+  "accuracy_pct": 100.0,
+  "quality_pct": 90.0,
+  "overall": 96.0
+}

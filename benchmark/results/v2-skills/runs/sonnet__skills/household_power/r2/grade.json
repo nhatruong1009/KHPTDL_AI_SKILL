@@ -1,0 +1,61 @@
+{
+  "task": "household_power",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 85.7,
+    "skills_missing": [
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Đọc '?' là thiếu, ngày dd/mm/yyyy; báo cáo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "prep.py dùng na_values='?' và format='%d/%m/%Y %H:%M:%S'; báo cáo 25.979 phút thiếu (1,25%), đợt dài nhất 17–22/8/2010 (5,0 ngày), 25–28/9/2010 (3,6), 28–30/4/2007 (2,6), 13–15/6/2009 (2,3), khớp đáp án tham chiếu (120,4h; 87,3h; 62h; 55,1h)."
+      },
+      {
+        "check": "2. Quy đổi kW phút sang kWh (chia 60), độ lớn đúng",
+        "pass": true,
+        "evidence": "df.kwh = Global_active_power/60; monthly.csv: 12/2007=1.210, 8/2008=206, 1/2010 quy đổi 1.064, khớp đúng tham chiếu; trung bình ~25–27 kWh/ngày ≈ 9.000–9.800 kWh/năm."
+      },
+      {
+        "check": "3. Xử lý tháng thiếu/không đầy đủ trước khi so sánh",
+        "pass": true,
+        "evidence": "Quy đổi theo độ phủ (kwh_est), đánh dấu 12/2006 và 11/2010 là không đầy đủ (full=False), so sánh xu hướng bằng kWh/ngày cùng kỳ tháng 1–10; 8/2010 quy đổi 440 kWh khớp tham chiếu 440."
+      },
+      {
+        "check": "4. Mùa vụ năm (đông cao, tháng 8 thấp nhất) và hồ sơ ngày có đỉnh tối",
+        "pass": true,
+        "evidence": "Tháng 1 cao nhất 35,1 kWh/ngày, tháng 8 thấp nhất 13,8; đỉnh ngày thường 20–21h (1,84–1,85 kWh/giờ), đáy 3–4h; cuối tuần cao hơn 19% (29,9/29,3 so với 23,5–26,0), khớp tham chiếu 24,8 vs 29,6."
+      },
+      {
+        "check": "5. Dự báo 12/2010 nằm trong khoảng hợp lý, có khoảng bất định và phương pháp",
+        "pass": true,
+        "evidence": "Dự báo 1.053 kWh nằm trong [759; 1.392]; khoảng 80% 910–1.220, 95% 840–1.320; phương pháp: mức 12 tháng × chỉ số mùa vụ tháng 12, backtest 22 tháng MAPE 6,3% so với cơ sở 9,9%."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 5
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Đây là bài làm chất lượng cao, đạt cả 5 tiêu chí. Dữ liệu được nạp đúng: '?' được coi là giá trị thiếu, ngày đọc theo dd/mm/yyyy, phút được reindex đầy đủ. kWh tính bằng cách chia 60, và số liệu tháng khớp gần như tuyệt đối với đáp án tham chiếu (ví dụ 1.210, 206, 1.064, 440 kWh). Các tháng thiếu dữ liệu được quy đổi theo độ phủ; tháng 12/2006 và 11/2010 được đánh dấu không đầy đủ. Xu hướng được so sánh theo kWh/ngày cùng kỳ tháng 1–10 và có khoảng tin cậy cho hệ số xu hướng. Mùa vụ được mô tả đúng: tháng 8 thấp nhất, tháng 1 cao nhất, đỉnh buổi tối khoảng 20–21h, cuối tuần cao hơn ngày thường khoảng 19%. Các khoảng trống dữ liệu dài khớp với tham chiếu, và tháng 8/2008 được nhận diện là giai đoạn bất thường; agent nói rõ lý do 'nhà vắng người' chỉ là suy đoán. Dự báo 1.053 kWh nằm trong khoảng hợp lý, có khoảng 80% và 95%. Mô hình được kiểm định theo thời gian (MAPE 6,3%, so với 9,9% của cách lặp lại năm trước), có phân tích độ nhạy và nêu rõ việc loại mô hình hồi quy. Câu trả lời đưa kết luận ngay đầu, có đơn vị, viết bằng tiếng Việt và nêu hạn chế rõ ràng. Năm biểu đồ đều có tiêu đề nêu thông điệp và khớp với số liệu. Điểm yếu nhỏ: chú giải ở biểu đồ 4 hơi đè lên dải khoảng trống dữ liệu, và tổng kWh theo từng năm không được nêu trực tiếp."
+  },
+  "judge_cost_usd": 0.2788353,
+  "accuracy_pct": 100.0,
+  "quality_pct": 100.0,
+  "overall": 100.0
+}

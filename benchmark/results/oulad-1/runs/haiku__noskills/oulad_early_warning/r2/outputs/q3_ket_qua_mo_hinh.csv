@@ -1,0 +1,2 @@
+mo_hinh_chon,val_nguong,val_AUC,val_PR_AUC,val_recall,val_precision,val_specificity,val_ty_le_bi_bat,val_TP,val_FP,val_FN,val_TN,test_nguong,test_AUC,test_PR_AUC,test_recall,test_precision,test_specificity,test_ty_le_bi_bat,test_TP,test_FP,test_FN,test_TN
+hgb,0.4133,0.7572,0.752,0.7008,0.6509,0.6734,0.5006,841,451,359,930,0.4133,0.7016,0.6233,0.7333,0.497,0.5498,0.5571,1009,1021,367,1247

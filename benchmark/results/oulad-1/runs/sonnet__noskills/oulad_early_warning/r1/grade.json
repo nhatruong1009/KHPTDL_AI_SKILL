@@ -1,0 +1,88 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh click và ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "Trung vị click tuần 1–4: Pass 59/50/60/43, Withdrawn 33/24,5/36/21, Fail 20/15/23/10; ngày hoạt động TB 3,2/2,4/2,0 ở tuần 1, khớp tham chiếu; n=13.020 sinh viên"
+      },
+      {
+        "check": "AQ2: hiệu ứng (effect size), hiệu chỉnh đa kiểm định, khác biệt từ tuần 1",
+        "pass": true,
+        "evidence": "Mann-Whitney + Holm cho 32 chỉ báo, Cliff's delta 0,26–0,35 cho nhóm mạnh; xếp clicks_change_w1_w4 vào nhóm yếu (<0,1); kết luận khác biệt có từ tuần 1 (AUC 0,63)"
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo thời gian",
+        "pass": true,
+        "evidence": "Train 2013B+2013J, validation 2014B, test 2014J (3.644 SV); ngưỡng chọn trên validation"
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng biến kết quả hay biến nhạy cảm; tma1_score bị loại hoặc được cảnh báo",
+        "pass": false,
+        "evidence": "scripts/a.py dòng 29 loại gender/age/disability/imd/region nhưng giữ tma1_score làm đặc trưng (kèm tma1_score_missing) và không hề cảnh báo nguy cơ nhìn trước; giải thích còn nhắc 'điểm thấp' TMA1"
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ≈0,66 so với baseline; recall tại ngưỡng validation",
+        "pass": false,
+        "evidence": "avg_precision test = 0,533 (tham chiếu 0,665; trùng biến thể có tma1_score là 0,533), không báo PR-AUC trong answer mà dùng ROC-AUC 0,685; dù vậy đã nêu trung thực recall 66,7% < 70% với precision 51,9%"
+      },
+      {
+        "check": "AQ4: xếp hạng riêng từng module-kỳ, precision@200 ≈ BBB 0,76 / FFF 0,88, so với tỉ lệ nền",
+        "pass": false,
+        "evidence": "Có chia 200/module và so với tỉ lệ nền 35,6%/39,9%, nhưng BBB precision 0,52 (104/200) lệch xa 0,76; FFF 0,88 khớp; mô hình còn thua quy tắc 'ít ngày hoạt động' (297 so với 280)"
+      },
+      {
+        "check": "AQ5: giải thích theo từng SV bằng tiếng Việt dễ hiểu, dựa trên đóng góp thực của mô hình, không dùng biến nhạy cảm",
+        "pass": true,
+        "evidence": "Đóng góp = hệ số × độ lệch chuẩn hóa, gom 9 nhóm; 399/400 SV có nhóm TMA1 đứng đầu, sau đó là ngày hoạt động/click; có cột loi_nhan_cho_co_van với ví dụ 2–3 câu; tuy nhiên nhóm TMA1 bao gồm tma1_score"
+      },
+      {
+        "check": "Không khẳng định nhân quả; nêu giới hạn quan sát và khái quát hóa",
+        "pass": true,
+        "evidence": "'đó là những dấu hiệu liên quan chứ không chứng minh nguyên nhân'; nêu chỉ 1 kỳ test, 2 module, trôi phân phối; con số 39 SV được giúp ghi rõ dựa trên tỉ lệ chuyển đổi giả định 14%"
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "PR-AUC test của mô hình logistic chỉ 0,533 (do đưa tma1_score vào), thấp hơn nhiều so với 0,665 của mô hình core; answer không báo PR-AUC mà chỉ dùng ROC-AUC 0,685",
+      "Precision@200 BBB-2014J = 52% (104/200) so với tham chiếu ~76%; tổng 280/400 thấp hơn tham chiếu ~335/400, hệ quả của việc dùng tma1_score",
+      "Kết luận 'mô hình kém quy tắc đơn giản' là hệ quả của lựa chọn đặc trưng có vấn đề, không phải đặc tính chung của mô hình"
+    ],
+    "summary": "Phần mô tả (Câu 1–2) làm tốt: tính theo sinh viên, số liệu khớp tham chiếu, có Cliff's delta, hiệu chỉnh Holm, và kết luận đúng là khác biệt xuất hiện từ tuần 1. Cách chia train/validation/test theo thời gian đúng, ngưỡng chọn trên validation, xếp hạng 200 người riêng cho mỗi module-kỳ, và loại các biến nhạy cảm. Tuy nhiên, agent đưa tma1_score vào mô hình mà không cảnh báo nguy cơ nhìn trước. Hậu quả là PR-AUC test chỉ 0,533 (core khoảng 0,665), và precision@200 của BBB chỉ 0,52 so với tham chiếu 0,76. Mô hình vì thế còn thua quy tắc đơn giản. Câu trả lời dùng ROC-AUC làm số chính và không nêu PR-AUC. Về trung thực, agent khá tốt: nói rõ recall 66,7% chưa đạt 70%, nêu trần recall khi bị giới hạn 200 suất, và nói rõ đây là quan hệ tương quan chứ không phải nhân quả. Nội dung viết bằng tiếng Việt, rõ ràng. Biểu đồ đọc được nhưng tiêu đề chỉ mô tả, chưa nêu thông điệp chính."
+  },
+  "judge_cost_usd": 0.26108240000000005,
+  "accuracy_pct": 62.5,
+  "quality_pct": 60.0,
+  "overall": 61.5
+}

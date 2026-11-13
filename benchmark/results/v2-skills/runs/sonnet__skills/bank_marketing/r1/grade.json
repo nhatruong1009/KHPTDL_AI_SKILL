@@ -1,0 +1,68 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 57.1,
+    "skills_missing": [
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "model.py đọc 'data/bank-additional/bank-additional-full.csv'; answer.md: 41.188 dòng, còn 41.176 sau khi bỏ 12 dòng trùng, và giải thích vì sao không dùng bank-full.csv."
+      },
+      {
+        "check": "2. Loại 'duration' vì rò rỉ và ROC-AUC nằm trong khoảng thực tế",
+        "pass": true,
+        "evidence": "Bảng kiểm toán ghi 'duration: chỉ biết sau cuộc gọi … loại'. ROC-AUC khi CV theo khối là 0,79 (HistGB), khi chia theo thời gian là 0,49–0,64. Không có số nào ≥0,90, nên không có dấu hiệu rò rỉ."
+      },
+      {
+        "check": "3. So với baseline bằng thước đo phù hợp dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Có baseline ngẫu nhiên và baseline luật (poutcome=success, euribor thấp). Báo cáo PR-AUC, precision/recall/lift ở top 10/20/30%, ví dụ lift@20%: 3,1 so với 2,8 so với 1. Có bootstrap chênh AUC: −0,26 (KTC 95% −0,28 đến −0,24)."
+      },
+      {
+        "check": "4. Xử lý rõ pdays=999 và 'unknown'",
+        "pass": false,
+        "evidence": "pdays=999 được xử lý rõ bằng hai biến pdays_contacted và pdays_val. Còn 'unknown' bị one-hot ngầm như một nhóm riêng: answer.md không nhắc đến và cũng không báo tỷ lệ 'unknown' (ví dụ ở default). Mục 'unknown' vì vậy không đạt yêu cầu 'xử lý rõ ràng'."
+      },
+      {
+        "check": "5. Yếu tố quan trọng nhất khớp với tham chiếu",
+        "pass": true,
+        "evidence": "Theo permutation importance khi CV theo khối: emp.var.rate 0,049, nr.employed 0,045, euribor3m 0,019, contact 0,011, rồi đến poutcome và pdays. Kết quả khớp tham chiếu, chỉ thiếu month vì agent đã chủ động loại biến này và có nêu lý do."
+      },
+      {
+        "check": "6. Diễn giải tầm quan trọng là dự báo, không phải nhân quả",
+        "pass": true,
+        "evidence": "Có câu 'Đây là mối liên hệ, không phải nhân quả', và cảnh báo rằng các biến vĩ mô cộng tuyến, thực chất đóng vai trò 'đồng hồ thời gian'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm cẩn thận và trung thực. Agent dùng đúng file đầy đủ nhất, bỏ 12 dòng trùng, loại duration vì rò rỉ và có lý do rõ, xử lý pdays=999 bằng biến chỉ báo. Ngoài chia theo thời gian 60/20/20, agent còn chạy hai kiểm tra độ nhạy: huấn luyện lại trên train+valid và CV theo khối. Agent so với baseline ngẫu nhiên và baseline luật bằng PR-AUC/lift, có bootstrap KTC. Các con số trong answer.md khớp với metrics.csv và metrics_sensitivity.csv. ROC-AUC khi CV theo khối là 0,79, khi chia theo thời gian là 0,49–0,64, cả hai đều không có dấu hiệu rò rỉ. Kết luận 'mô hình chưa thắng luật đơn giản khi dự báo giai đoạn sau' được trình bày thẳng thắn, có giải thích bằng drift: tỷ lệ đăng ký 4,8% ở train so với 30,8% ở test. Các yếu tố quan trọng (vĩ mô, contact, poutcome/pdays) khớp tham chiếu và được nói rõ là liên hệ chứ không phải nhân quả. Hạn chế: 'unknown' bị xử lý ngầm qua one-hot. Agent loại month, một tín hiệu mạnh trong tham chiếu. Train chỉ dùng 60% đầu nên mô hình chính đạt AUC dưới mức ngẫu nhiên (0,47 ở valid, 0,49 ở test), thấp hơn nhiều so với 0,715 của tham chiếu khi chia 75/25, và agent không tìm hiểu kỹ thêm. Baseline luật dựa trên euribor có thể đã được chọn sau khi xem dữ liệu. CV theo khối 300 dòng vẫn để lọt thông tin thời gian lân cận, nhưng agent có cảnh báo điều này. Về biểu đồ, so_sanh_kiem_tra.png bị cắt mất tiêu đề và chú thích đè lên cột baseline. feature_importance.png rõ ràng và có tiêu đề nêu kết luận. Câu trả lời và answer.md viết bằng tiếng Việt, đưa kết luận lên đầu."
+  },
+  "judge_cost_usd": 0.3039941,
+  "accuracy_pct": 83.3,
+  "quality_pct": 75.0,
+  "overall": 80.0
+}

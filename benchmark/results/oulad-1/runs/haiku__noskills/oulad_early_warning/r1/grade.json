@@ -1,0 +1,89 @@
+{
+  "task": "oulad_early_warning",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh lượt nhấp và ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê bền vững, khớp tham chiếu",
+        "pass": true,
+        "evidence": "Bảng trung vị lượt nhấp tuần 1–4: Pass 59/50/60/43, Fail 20/15/23/10, Withdrawn 33/24,5/36/21, khớp đúng tham chiếu; có nhắc ngày hoạt động trung vị Fail 1–2 ngày/tuần và tỷ lệ tuần 0 lượt nhấp; Kruskal–Wallis."
+      },
+      {
+        "check": "AQ2: có effect size, xử lý đa kiểm định, kết luận khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Mann–Whitney + hiệu chỉnh BH trên 26 phép kiểm định, dùng AUC làm effect size (lượt nhấp tuần 1 AUC 0,630; ngày hoạt động 0,631), kết luận 'khác biệt đã có ngay tuần đầu'; nói rõ p-value gần như luôn đạt với n≈13.000."
+      },
+      {
+        "check": "AQ3 thiết kế: đánh giá trên kỳ sau giữ lại (train 2013B+2013J, val 2014B, test 2014J)",
+        "pass": true,
+        "evidence": "Dùng đúng cột split; ngưỡng đặt trên validation (0,391) rồi áp lên test 2014J; không dùng CV xáo trộn."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả/thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo look-ahead",
+        "pass": false,
+        "evidence": "Không dùng final_result/label hay giới/tuổi/IMD trong mô hình chính (chỉ là sensitivity), nhưng tma1_score được đưa vào mô hình chính (hệ số chuẩn hóa -0,42) và chỉ được bàn về cách điền thiếu, không hề cảnh báo nguy cơ look-ahead."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ~0,66±0,05, so với baseline, recall/precision tại ngưỡng từ validation, nói rõ có đạt 70% không",
+        "pass": false,
+        "evidence": "PR-AUC test của logistic chỉ 0,539 (q3_model_performance.csv), GB 0,600, đều ngoài khoảng ±0,05 quanh 0,66/0,64 (đúng bằng biến thể +tma1_score trong tham chiếu); answer.md chỉ nêu ROC AUC 0,685, không so với prevalence 0,378. Phần recall 0,635 < 70% được nói trung thực."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ (200 mỗi nhóm), precision@200 khớp (BBB ~0,76, FFF ~0,88 ±0,08), so với tỷ lệ nền",
+        "pass": false,
+        "evidence": "Xếp hạng riêng từng module-kỳ là đúng, FFF 176/200 = 0,88 khớp, nhưng BBB chỉ 111/200 = 0,555 so với tham chiếu ~0,76 (lệch 0,2, do tma1_score chi phối đầu danh sách); không nêu rõ tỷ lệ nền 0,36/0,40, chỉ đưa số lượng 635/1.786 và 741/1.858; có so với baseline ít lượt nhấp."
+      },
+      {
+        "check": "AQ5: giải thích theo từng sinh viên bằng tiếng Việt đơn giản, dựa trên đóng góp mô hình, không có thuộc tính nhạy cảm, lý do chính khớp tham chiếu",
+        "pass": false,
+        "evidence": "Có ghi chú 2–3 câu bằng tiếng Việt cho từng sinh viên, dựa trên phân rã logit, không có thuộc tính nhạy cảm; nhưng lý do số 1 ở đầu danh sách là 'điểm TMA1 thấp' (tma1_score, 167/400 người, đóng góp 2,598 logit) chứ không phải lượt nhấp/ngày hoạt động như tham chiếu; lời giải thích còn mâu thuẫn, ví dụ gọi '117 lượt nhấp' là 'ít truy cập học liệu'."
+      },
+      {
+        "check": "Không khẳng định nhân quả về việc liên hệ sinh viên; nêu giới hạn quan sát/khái quát hóa",
+        "pass": true,
+        "evidence": "Nói rõ 'giải thích của mô hình, không phải quan hệ nhân quả', nêu tỷ lệ nền thay đổi giữa các kỳ (46,5% so với 37,8%) và test chỉ có 2 module-kỳ; không có câu nào nói liên hệ sẽ giảm tỷ lệ bỏ học."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "PR-AUC test của logistic chính = 0,539 (tham chiếu ~0,66), do mô hình chứa tma1_score; answer.md không nêu con số này mà chỉ báo ROC AUC 0,685",
+      "Precision@200 BBB-2014J = 0,555 (111/200), so với tham chiếu ~0,76, lệch ngoài dung sai",
+      "story.md viết 'ngưỡng đặt để bắt 70% ... trên kỳ kiểm tra', sai mô tả vì ngưỡng thực ra được đặt trên validation 2014B",
+      "Ghi chú Q5 mô tả 70–117 lượt nhấp là 'ít truy cập học liệu', không khớp với trung vị của nhóm Pass"
+    ],
+    "summary": "Bài làm có cấu trúc tốt và viết bằng tiếng Việt. Q1 và Q2 làm chính xác: trung vị khớp tham chiếu, có hiệu chỉnh BH, dùng AUC làm effect size, và kết luận đúng rằng khác biệt có từ tuần 1. Chia train/val/test theo thời gian đúng cột split, ngưỡng đặt trên validation, và báo cáo trung thực rằng recall 0,635 chưa đạt 70%. Quota 200 được áp riêng cho từng module-kỳ và có so với baseline đơn giản. Lỗi chính là rơi vào bẫy tma1_score: biến này nằm trong mô hình chính mà không được cảnh báo look-ahead. Vì vậy PR-AUC test chỉ 0,539 (tham chiếu 0,66) và không được nêu trong answer.md, nơi chỉ báo ROC AUC và không so với prevalence. Precision@200 của BBB chỉ 0,555 (tham chiếu ~0,76), và lời giải thích Q5 bị 'điểm TMA1 thấp' chi phối. Biểu đồ rõ ràng, tiêu đề nêu được thông điệp và khớp số liệu. Phần nói về hạn chế khá tốt, không khẳng định nhân quả."
+  },
+  "judge_cost_usd": 0.3987079,
+  "accuracy_pct": 50.0,
+  "quality_pct": 65.0,
+  "overall": 56.0
+}

@@ -1,0 +1,28 @@
+import pandas as pd, numpy as np
+D = "data/"
+w = pd.read_csv(D + "aq1_student_week.csv")
+m = pd.read_csv(D + "aq3_model_table.csv")
+d = pd.read_csv(D + "aq2_diagnostic_table.csv")
+a = pd.read_csv(D + "aq3_audit_attributes.csv")
+c = pd.read_csv(D + "context_all_registrations.csv")
+K = ['code_module', 'code_presentation', 'id_student']
+print(c.final_result.value_counts(dropna=False))
+print(c.label3.value_counts(dropna=False))
+print(pd.crosstab(c.label3, c.target_noncompletion))
+print(c[['active_d28', 'unregistered_by_d28', 'registered_after_d28']].apply(lambda s: s.value_counts(dropna=False)).T)
+print(c.split.value_counts(dropna=False))
+print("ctx dup", c.duplicated(K).sum())
+print(c.describe().T)
+cf = c[(c.unregistered_by_d28 == 0) & (c.registered_after_d28 == 0)]
+print("filtered ctx", cf.shape)
+print("d keys in ctx filtered:", pd.merge(d[K], cf[K], how='left', indicator=True)._merge.value_counts())
+print("model vs diag same keys:", m[K].equals(d[K]))
+print("audit vs diag same keys:", a[K].equals(d[K]))
+print(d.label3.value_counts(dropna=False))
+print(d.final_result.value_counts(dropna=False))
+print(pd.crosstab(d.label3, d.target_noncompletion))
+print(d.split.value_counts(dropna=False))
+print(d.isna().sum()[d.isna().sum() > 0])
+print(m.isna().sum()[m.isna().sum() > 0])
+print(a.isna().sum()[a.isna().sum() > 0])
+print(a.describe().T)

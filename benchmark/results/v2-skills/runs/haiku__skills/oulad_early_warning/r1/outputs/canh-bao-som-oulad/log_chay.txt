@@ -1,0 +1,162 @@
+Kiểm tra khớp aq1/aq3: OK
+Phân bố nhãn label3 (13,020 lượt): {'Pass': 7399, 'Fail': 3469, 'Withdrawn': 2152}
+Tỷ lệ không hoàn thành: 0.4317
+
+=== Q1 ===
+                                     0       1          2
+nhom                              Pass    Fail  Withdrawn
+so_luot                           7399    3469       2152
+tb_clicks_w1                    102.92   55.23      71.31
+tv_clicks_w1                      59.0    20.0       33.0
+tb_clicks_w2                     90.48   45.56      58.25
+tv_clicks_w2                      50.0    15.0       24.5
+tb_clicks_w3                     109.1   59.32      76.91
+tv_clicks_w3                      60.0    23.0       36.0
+tb_clicks_w4                     92.73   44.41      58.73
+tv_clicks_w4                      43.0    10.0       21.0
+tb_active_days_w1                 3.15    2.02       2.42
+tv_active_days_w1                  3.0     2.0        2.0
+tb_active_days_w2                 3.09    1.81       2.26
+tv_active_days_w2                  3.0     1.0        2.0
+tb_active_days_w3                 3.46     2.2       2.62
+tv_active_days_w3                  3.0     2.0        2.0
+tb_active_days_w4                 3.26     1.9       2.33
+tv_active_days_w4                  3.0     1.0        2.0
+tb_clicks_0_28                  404.77  207.96     270.71
+tv_clicks_0_28                   257.0   112.0      160.5
+tb_active_days_0_28              13.33    8.12       9.86
+tv_active_days_0_28               12.0     7.0        9.0
+tb_n_sites_0_28                  29.77   21.03      24.45
+tv_n_sites_0_28                   27.0    18.0       22.0
+tb_days_since_last_active_d28     2.86    7.33       6.15
+tv_days_since_last_active_d28      1.0     4.0        3.0
+ty_le_nop_tma1_truoc_ngay28      0.973   0.749      0.764
+ty_le_khong_hoat_dong_vle_0_28   0.009   0.091      0.074
+                       chi_bao  p_kruskal_wallis
+0                    clicks_w1     7.903289e-153
+1                    clicks_w2     2.464309e-197
+2                    clicks_w3     1.123933e-153
+3                    clicks_w4     4.706594e-189
+4               active_days_w1     4.408367e-158
+5               active_days_w2     5.890164e-216
+6               active_days_w3     9.730396e-198
+7               active_days_w4     2.017064e-220
+8                  clicks_0_28     2.794627e-213
+9             active_days_0_28     8.867608e-271
+10                n_sites_0_28     2.047208e-132
+11  days_since_last_active_d28     2.398107e-207
+   nhom_1     nhom_2           chi_bao  auc_nhom1_cao_hon    p  p_holm
+0    Pass       Fail       clicks_0_28              0.679  0.0     0.0
+1    Pass       Fail  active_days_0_28              0.701  0.0     0.0
+2    Pass       Fail         clicks_w1              0.651  0.0     0.0
+3    Pass       Fail    active_days_w1              0.652  0.0     0.0
+4    Pass  Withdrawn       clicks_0_28              0.613  0.0     0.0
+5    Pass  Withdrawn  active_days_0_28              0.631  0.0     0.0
+6    Pass  Withdrawn         clicks_w1              0.597  0.0     0.0
+7    Pass  Withdrawn    active_days_w1              0.597  0.0     0.0
+8    Fail  Withdrawn       clicks_0_28              0.432  0.0     0.0
+9    Fail  Withdrawn  active_days_0_28              0.429  0.0     0.0
+10   Fail  Withdrawn         clicks_w1              0.445  0.0     0.0
+11   Fail  Withdrawn    active_days_w1              0.444  0.0     0.0
+
+=== Q2 ===
+                       chi_bao      loai  trung_vi_khong_hoan_thanh  trung_vi_hoan_thanh  auc_khong_hoan_thanh_cao_hon       p  p_holm  co_y_nghia_holm_0_05
+0                    clicks_w1        so                    24.0000              59.0000                         0.370  0.0000  0.0000                  True
+1                    clicks_w2        so                    18.0000              50.0000                         0.351  0.0000  0.0000                  True
+2                    clicks_w3        so                    27.0000              60.0000                         0.370  0.0000  0.0000                  True
+3                    clicks_w4        so                    13.0000              43.0000                         0.355  0.0000  0.0000                  True
+4               active_days_w1        so                     2.0000               3.0000                         0.369  0.0000  0.0000                  True
+5               active_days_w2        so                     1.0000               3.0000                         0.346  0.0000  0.0000                  True
+6               active_days_w3        so                     2.0000               3.0000                         0.352  0.0000  0.0000                  True
+7               active_days_w4        so                     2.0000               3.0000                         0.343  0.0000  0.0000                  True
+8                  clicks_0_28        so                   127.0000             257.0000                         0.346  0.0000  0.0000                  True
+9             active_days_0_28        so                     7.0000              12.0000                         0.326  0.0000  0.0000                  True
+10                n_sites_0_28        so                    19.0000              27.0000                         0.380  0.0000  0.0000                  True
+11  days_since_last_active_d28        so                     3.0000               1.0000                         0.651  0.0000  0.0000                  True
+12         clicks_change_w1_w4        so                    -0.0317              -0.1495                         0.480  0.0001  0.0001                  True
+13            clicks_pre_start        so                    15.0000              42.0000                         0.372  0.0000  0.0000                  True
+14       active_days_pre_start        so                     2.0000               3.0000                         0.382  0.0000  0.0000                  True
+15        num_of_prev_attempts        so                     0.0000               0.0000                         0.548  0.0000  0.0000                  True
+16             studied_credits        so                    60.0000              60.0000                         0.531  0.0000  0.0000                  True
+17      registration_lead_days        so                    53.0000              53.0000                         0.499  0.8572  0.8572                 False
+18       tma1_submitted_by_d28  nhi_phan                     0.7550               0.9730                           NaN  0.0000  0.0000                  True
+19                tma1_on_time  nhi_phan                     0.6650               0.9360                           NaN  0.0000  0.0000                  True
+20        no_vle_activity_0_28  nhi_phan                     0.0850               0.0090                           NaN  0.0000  0.0000                  True
+             chi_bao  tuan  trung_vi_khong_hoan_thanh  trung_vi_hoan_thanh  auc_khong_hoan_thanh_cao_hon    p  p_holm  co_y_nghia_holm_0_05
+0      luot_truy_cap     1                       24.0                 59.0                         0.370  0.0     0.0                  True
+1  so_ngay_hoat_dong     1                        2.0                  3.0                         0.369  0.0     0.0                  True
+2      luot_truy_cap     2                       18.0                 50.0                         0.351  0.0     0.0                  True
+3  so_ngay_hoat_dong     2                        1.0                  3.0                         0.346  0.0     0.0                  True
+4      luot_truy_cap     3                       27.0                 60.0                         0.370  0.0     0.0                  True
+5  so_ngay_hoat_dong     3                        2.0                  3.0                         0.352  0.0     0.0                  True
+6      luot_truy_cap     4                       13.0                 43.0                         0.355  0.0     0.0                  True
+7  so_ngay_hoat_dong     4                        2.0                  3.0                         0.343  0.0     0.0                  True
+Tuần đầu có khác biệt có ý nghĩa (Holm): {'luot_truy_cap': 1, 'so_ngay_hoat_dong': 1}
+
+Số dòng train/validation/test: 6795 2581 3644
+
+AUC validation: LR=0.7271, HGB=0.7236 -> chọn LR
+
+=== Q3 ===
+                                                mo_hinh           tap     AUC  PR_AUC  ngưỡng  recall  precision  ty_le_bi_canh_bao  so_bi_canh_bao  so_khong_hoan_thanh  so_luot
+0                               LR (chính, 28 ngày đầu)    validation  0.7271  0.7195  0.3924  0.7000     0.6069             0.5362            1384                 1200     2581
+1                               LR (chính, 28 ngày đầu)  test (2014J)  0.7156  0.6491  0.3924  0.6417     0.5342             0.4536            1653                 1376     3644
+2                LR (chính, ngưỡng theo tỷ lệ cảnh báo)  test (2014J)  0.7156  0.6491  0.3612  0.7188     0.5061             0.5362            1954                 1376     3644
+3                             Baseline: chỉ clicks_0_28  test (2014J)  0.6517  0.5411  0.4702  0.7042     0.4522             0.5881            2143                 1376     3644
+4  Nhạy cảm: LR + tma1_score (không dùng để quyết định)  test (2014J)  0.6673  0.5068  0.3773  0.6272     0.5131             0.4616            1682                 1376     3644
+
+=== Q4 ===
+   module_ky  so_sinh_vien  so_khong_hoan_thanh  so_trong_danh_sach  so_khong_hoan_thanh_trong_danh_sach  precision  recall_trong_module_ky  tran_toi_da_recall
+0  BBB-2014J          1786                  635                 200                                  149      0.745                   0.235               0.315
+1  FFF-2014J          1858                  741                 200                                  173      0.865                   0.233               0.270
+2  Tổng test          3644                 1376                 400                                  322      0.805                   0.234               0.291
+   k_moi_module_ky  so_trong_danh_sach  trung  recall_tong
+0              100                 200    185        0.134
+1              200                 400    322        0.234
+2              300                 600    437        0.318
+
+=== Q5 ===
+                            so_lan_top3  so_lan_dong_gop_1
+clicks_0_28                         338              268.0
+active_days_w2                      110                0.0
+active_days_0_28                     92                0.0
+active_days_w4                       76                0.0
+studied_credits                      69                6.0
+tma1_submitted_by_d28                57               57.0
+clicks_forumng_0_28                  56               11.0
+days_since_last_active_d28           54                0.0
+tma1_on_time                         53                3.0
+tma1_days_before_deadline            47                2.0
+clicks_w1                            44               20.0
+num_of_prev_attempts                 43                8.0
+clicks_w2                            43               12.0
+clicks_url_0_28                      23                0.0
+clicks_w3                            22                6.0
+clicks_change_w1_w4                  15                0.0
+clicks_subpage_0_28                  13                5.0
+clicks_homepage_0_28                 12                0.0
+clicks_resource_0_28                 11                0.0
+clicks_oucontent_0_28                 8                0.0
+clicks_w4                             7                2.0
+n_sites_0_28                          7                0.0
+Sinh viên 34756 (BBB 2013B) được ưu tiên vì xác suất không hoàn thành ước tính khoảng 65%, các dấu hiệu chính là: tổng lượt truy cập 28 ngày đầu là 42 (thấp hơn mức trung vị 192.5 của cả nhóm); không nộp bài TMA1 đúng hạn; nộp bài TMA1 muộn 2 ngày so với hạn. Đây là tương quan trong dữ liệu, không phải nguyên nhân đã được chứng minh, nên cố vấn nên trao đổi sớm để hiểu hoàn cảnh cụ thể của sinh viên.
+
+TÓM TẮT: {
+  "mo_hinh_chon": "LR",
+  "auc_val_lr": 0.7271,
+  "auc_val_hgb": 0.7236,
+  "nguong_xac_suat": 0.3924,
+  "test": {
+    "AUC": 0.7156,
+    "PR_AUC": 0.6491,
+    "ngưỡng": 0.3924,
+    "recall": 0.6417,
+    "precision": 0.5342,
+    "ty_le_bi_canh_bao": 0.4536,
+    "so_bi_canh_bao": 1653,
+    "so_khong_hoan_thanh": 1376,
+    "so_luot": 3644
+  },
+  "first_week_clicks": 1,
+  "first_week_active": 1
+}

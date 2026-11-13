@@ -1,0 +1,73 @@
+{
+  "task": "himalaya",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Lọc đúng Everest, dùng members.csv (cấp cá nhân) với mẫu số rõ ràng",
+        "pass": false,
+        "evidence": "Lọc peak_id == \"EVER\" đúng (2.149 chuyến), nhưng dùng cột member_deaths, hired_staff_deaths, members và hired_staff trong expeditions.csv chứ không dùng members.csv. Agent có nêu rõ mẫu số và lý do: hired_staff có 12.741 người so với 6.730 dòng nhân viên trong members.csv, đồng thời đối chiếu tổng 306 ca tử vong. Đây là lựa chọn có lý do nhưng không đúng yêu cầu dùng members.csv."
+      },
+      {
+        "check": "2. Tỉ lệ tử vong theo thập kỷ khớp by_decade (thành viên ~2% → ~1%; nhân viên ~14% → ~1%)",
+        "pass": false,
+        "evidence": "Tỉ lệ thành viên gần khớp: 19,6‰ (58/2.961) → 10,4‰ (128/12.320), so với chuẩn 2,07% → 1,04%. Nhân viên thì lệch lớn: trước 1990 là 20,6‰ (52/2.530) so với chuẩn 14,36% (52/362); thập kỷ 1970 là 24,4‰ so với 36,5%. Vì vậy kết luận 'trước 1990 khách và nhân viên rủi ro gần bằng nhau' trái với chuẩn, khi nhân viên cao gấp khoảng 7 lần. Agent có nêu lựa chọn mẫu số khác, nên đây là một biến thể, nhưng nó làm mất chi tiết chính về nhân viên."
+      },
+      {
+        "check": "3. Cảnh báo n nhỏ ở các thập kỷ đầu và/hoặc đỉnh 2014–2015",
+        "pass": true,
+        "evidence": "answer.md viết 'Các thập kỷ 1920s–1940s có rất ít chuyến leo... không nên đọc quá nhiều'. Biểu đồ bỏ 1920s–1940s. Agent tách riêng 2014 (17) và 2015 (11): bỏ hai năm này thì tỉ lệ nhân viên thập kỷ 2010 còn khoảng 2,8‰."
+      },
+      {
+        "check": "4. Cho thấy thay đổi trong kỷ nguyên thương mại: số người/chuyến tăng, tỉ lệ thành công tăng, dùng oxy nhiều hơn, tỉ trọng nhân viên tăng",
+        "pass": false,
+        "evidence": "Có nêu số chuyến tăng gần 10 lần và nguyên nhân tử vong thay đổi. Tỉ lệ thành công (cấp chuyến) và cột oxy chỉ có trong CSV, không được bàn trong answer.md hay story.md. Không phân tích tỉ trọng nhân viên tăng."
+      },
+      {
+        "check": "5. story.md tồn tại, ngôn ngữ phổ thông, một thông điệp chính, có lưu ý trung thực",
+        "pass": true,
+        "evidence": "Có story.md bằng tiếng Việt dễ hiểu, thông điệp 'an toàn hơn nhưng không đều cho mọi người', có mục 'Lưu ý khi đọc số liệu' (đơn vị người-chuyến, giá trị 99, dữ liệu đến 2019). Tuy nhiên story.md thiếu cảnh báo tương quan không phải nhân quả (chỉ có trong answer.md) và không nhắc thiên lệch báo cáo."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": 3,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Tỉ lệ tử vong nhân viên trước 1990 là 20,6‰ (52/2.530), trong khi theo members.csv là 14,36% (52/362). Kết luận 'khách và nhân viên rủi ro gần bằng nhau trước 1990' vì thế bị sai lệch.",
+      "Tỉ lệ nhân viên thập kỷ 1970 là 24,4‰, so với chuẩn 36,5% (19/52). Thập kỷ 1980 là 19,8‰, so với 13,8%.",
+      "Thành viên thập kỷ 1960: n=184, tỉ lệ 21,7‰, so với chuẩn n=145, 2,76%. Lệch do dùng số members ở cấp chuyến.",
+      "Thành viên thập kỷ 1950: n=107, so với 64 theo members.csv."
+    ],
+    "summary": "Agent lọc đúng Everest và đưa ra câu trả lời trực tiếp bằng tiếng Việt, có story.md, biểu đồ và CSV. Agent cảnh báo n nhỏ ở các thập kỷ đầu và tách riêng hai năm 2014–2015. Tuy nhiên agent dùng mẫu số cấp chuyến từ expeditions.csv thay vì members.csv. Với thành viên, kết quả gần khớp chuẩn (khoảng 2% → 1%). Với nhân viên được thuê, tỉ lệ trước 1990 chỉ còn khoảng 2% so với chuẩn 14,4%, dẫn tới kết luận sai rằng hai nhóm có rủi ro ngang nhau trước 1990. Lựa chọn này có nêu lý do, nhưng nó che mất phát hiện chính: rủi ro của nhân viên giảm mạnh hơn nhiều. Phần thay đổi trong kỷ nguyên thương mại còn thiếu: không bàn tỉ lệ thành công, việc dùng oxy hay tỉ trọng nhân viên. Biểu đồ rõ ràng và có đường chia 1990, nhưng tiêu đề chỉ mô tả chứ không nêu kết luận và không ghi n. story.md dễ đọc nhưng thiếu cảnh báo tương quan không phải nhân quả."
+  },
+  "judge_cost_usd": 0.2516606,
+  "accuracy_pct": 40.0,
+  "quality_pct": 58.3,
+  "overall": 47.3
+}

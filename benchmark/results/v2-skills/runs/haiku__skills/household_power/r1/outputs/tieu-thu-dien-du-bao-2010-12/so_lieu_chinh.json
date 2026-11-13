@@ -1,0 +1,54 @@
+{
+  "so_dong_goc": 2075259,
+  "so_dong_trung_lap": 0,
+  "so_phut_bi_thieu_timestamp": 0,
+  "so_phut_tong": 2075259,
+  "ty_le_gia_tri_thieu_%": 1.25,
+  "so_ngay_co_du_lieu_hop_le": 1420,
+  "so_ngay_tong": 1442,
+  "so_thang_day_du": 39,
+  "so_khoang_trong_>=60phut": 9,
+  "tong_phut_trong_>=60phut": 25691,
+  "so_ngay_bat_thuong": 30,
+  "so_tuan_bat_thuong": 22,
+  "xu_huong_%_moi_nam_theil_sen": -2.23,
+  "xu_huong_khoang_tin_cay_%_low": -10.25,
+  "xu_huong_khoang_tin_cay_%_high": 5.93,
+  "thang_cao_nhat": "T1",
+  "tb_thang_cao_nhat_kwh_ngay": 35.33,
+  "thang_thap_nhat": "T8",
+  "tb_thang_thap_nhat_kwh_ngay": 12.49,
+  "tb_kwh_ngay_theo_thu": {
+    "Thứ 2": 24.02,
+    "Thứ 3": 25.66,
+    "Thứ 4": 25.98,
+    "Thứ 5": 23.53,
+    "Thứ 6": 25.03,
+    "Thứ 7": 29.88,
+    "Chủ nhật": 29.27
+  },
+  "gio_cao_diem": 20,
+  "cong_suat_TB_gio_cao_diem_kW": 1.899,
+  "gio_thap_diem": 4,
+  "cong_suat_TB_gio_thap_diem_kW": 0.444,
+  "backtest_so_thang": 14,
+  "backtest_rmse_log": 0.1023,
+  "backtest_MAPE_tong_%": 8.81,
+  "ty_le_11_2010_vs_11_2009_1_26": 0.9208,
+  "sensitivity_du_bao_theo_ty_le_thang_11": 934.8,
+  "du_bao_dec2010_kwh": 1024.5,
+  "du_bao_dec2010_khoang95": [
+    695.5,
+    1509.3
+  ],
+  "du_bao_dec2010_khoang95_chi_mo_hinh": [
+    695.5,
+    1509.3
+  ],
+  "dec2009_kwh_uoc_tinh": 1015.1,
+  "dec_hist_tong_kwh": {
+    "2007": 1210.1,
+    "2008": 949.1,
+    "2009": 1015.1
+  }
+}

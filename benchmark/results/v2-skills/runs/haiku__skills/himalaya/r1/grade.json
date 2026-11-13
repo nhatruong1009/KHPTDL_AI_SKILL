@@ -1,0 +1,67 @@
+{
+  "task": "himalaya",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 62.5,
+    "skills_missing": [
+      "time-series",
+      "group-compare",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Lọc Everest đúng và dùng members.csv (cấp cá nhân) với mẫu số rõ ràng",
+        "pass": false,
+        "evidence": "Lọc peak_id==\"EVER\" đúng (2.149 đoàn, 1921–2019), nhưng phân tích chính dùng expeditions.csv (tổng members/hired_staff theo đoàn). members.csv chỉ được dùng làm kiểm tra phụ (death_rate_by_decade_persons.csv). Mẫu số được nêu rõ."
+      },
+      {
+        "check": "Tỉ lệ tử vong theo thập kỷ thành viên vs nhân viên khớp by_decade",
+        "pass": false,
+        "evidence": "Thành viên khớp gần đúng (1,96%→1,04%; 2010s 0,86% so với 0,87%). Nhân viên lệch hẳn: tiêu đề nói 2,06%→0,67%, thập kỷ 1970 là 2,44% (ground truth 36,5%, 19/52). Agent có tính 14,4%→1,07% theo người nhưng gạt đi là 'không đáng tin', vì vậy đã bỏ lỡ phát hiện chính: nhân viên thuê từng chịu rủi ro cao hơn rất nhiều."
+      },
+      {
+        "check": "Cảnh báo cỡ mẫu nhỏ thập kỷ đầu và/hoặc đỉnh thảm họa 2014–2015",
+        "pass": true,
+        "evidence": "Có nêu 'Các thập kỷ 1920–1940 chỉ có 1–5 đoàn, nên tỉ lệ rất dao động'. Tuy nhiên không nhắc lở tuyết 2014 hay động đất 2015, dù 83 ca của thập kỷ 2010 bị ảnh hưởng mạnh bởi hai sự kiện này."
+      },
+      {
+        "check": "Cho thấy thay đổi trong kỷ nguyên thương mại: nhiều người leo hơn, tỉ lệ lên đỉnh cao hơn, dùng oxy nhiều hơn, tỉ trọng nhân viên tăng",
+        "pass": false,
+        "evidence": "Chỉ có số đoàn/người tăng (2.961→12.320 thành viên; 141→869 đoàn). Không phân tích tỉ lệ lên đỉnh, sử dụng oxy hay nguyên nhân tử vong; tỉ trọng nhân viên chỉ thấy gián tiếp qua bảng."
+      },
+      {
+        "check": "story.md tồn tại, ngôn ngữ phổ thông, một thông điệp, lưu ý trung thực",
+        "pass": true,
+        "evidence": "Có story.md bằng tiếng Việt, đi theo mạch bối cảnh–mâu thuẫn–thay đổi–hành động, với một thông điệp rõ ràng ('tỉ lệ giảm, số ca tuyệt đối vẫn cao'). Có lưu ý về tương quan và mẫu số. Điểm trừ: dùng thuật ngữ 'Fisher p' với độc giả phổ thông, và đặt con số 0,67% của nhân viên lên đầu."
+      }
+    ],
+    "scores": {
+      "data_handling": 2,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": 3,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Tỉ lệ tử vong nhân viên được thuê trước 1990 là 2,06% (dữ liệu theo người: 14,36%, 52/362). Không phải số bịa mà do chọn mẫu số từ expeditions.csv, nhưng nó che mất phát hiện chính.",
+      "Nhân viên thập kỷ 1970: 2,44% (theo người: 36,5%, 19/52); thập kỷ 1980: 1,98% (theo người: 13,8%).",
+      "Nhân viên sau 1990: 0,67% được dùng làm con số chính (theo người: 1,07%; agent có nêu con số này như một phương án thay thế)."
+    ],
+    "summary": "Agent lọc Everest đúng nhưng chọn expeditions.csv làm nguồn chính thay cho members.csv. Vì vậy tỉ lệ tử vong của nhân viên được thuê trước 1990 bị kéo xuống rất thấp: 2,06%, so với khoảng 14% nếu tính theo từng người. Agent có phát hiện độ lệch mẫu số và trình bày minh bạch, nhưng lại gạt bỏ con số 14% và bỏ lỡ câu chuyện chính: nhân viên thuê từng chết với tỉ lệ cao hơn nhiều so với thành viên, và khoảng cách này đã thu hẹp lại. Số liệu của thành viên khớp với dữ liệu (khoảng 2% xuống 1,04%). Phân tích kỷ nguyên thương mại còn thiếu: không có tỉ lệ lên đỉnh, sử dụng oxy hay nguyên nhân tử vong, và cũng không nhắc đến đỉnh tử vong năm 2014–2015. Story và câu trả lời viết bằng tiếng Việt rõ ràng, có lưu ý về tương quan. Biểu đồ dễ đọc, tiêu đề nêu rõ kết luận, nhưng đường của nhân viên phản ánh mẫu số sai."
+  },
+  "judge_cost_usd": 0.1891764,
+  "accuracy_pct": 40.0,
+  "quality_pct": 54.2,
+  "overall": 45.7
+}

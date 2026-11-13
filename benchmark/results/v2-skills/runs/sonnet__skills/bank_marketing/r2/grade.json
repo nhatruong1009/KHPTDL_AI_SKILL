@@ -1,0 +1,69 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 71.4,
+    "skills_missing": [
+      "data-chart",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng bank-additional-full.csv",
+        "pass": true,
+        "evidence": "analysis.py đọc 'data/bank-additional/bank-additional-full.csv'; answer.md ghi 41.188 khách, 20 biến + y và giải thích vì sao không chọn bank-full.csv."
+      },
+      {
+        "check": "2. Loại duration vì rò rỉ, AUC ở mức thực tế",
+        "pass": true,
+        "evidence": "duration bị loại vì 'chỉ biết sau cuộc gọi'. Thêm duration thì AUC lên 0,80 và agent gọi rõ đó là rò rỉ. Chia ngẫu nhiên không có duration cho AUC 0,79. Kết quả chính chia theo thời gian là 0,68, gần mức tham chiếu khi chia theo thời gian (0,70–0,715). Không có AUC nào ≥0,90."
+      },
+      {
+        "check": "3. So với baseline bằng chỉ số hợp với dữ liệu mất cân bằng",
+        "pass": true,
+        "evidence": "Có so với gọi ngẫu nhiên và luật poutcome=success, dùng PR-AUC (0,30 / 0,48 / 0,48), precision@20% (29,8% / 56,6% / 53,4%) và lift@20% (0,97 / 1,84 / 1,73). Agent nói thẳng là mô hình không thắng luật đơn giản ở top 20%."
+      },
+      {
+        "check": "4. Xử lý rõ pdays=999 và 'unknown'",
+        "pass": false,
+        "evidence": "pdays=999 được xử lý rõ bằng cờ pdays_contacted, còn pdays_val đặt bằng 0. Nhưng 'unknown' bị giữ lại âm thầm như một nhóm one-hot, không phân tích hay nhắc đến trong answer.md. Có ghi chú về 12 dòng trùng."
+      },
+      {
+        "check": "5. Yếu tố quan trọng khớp với tham chiếu",
+        "pass": false,
+        "evidence": "Chỉ nêu poutcome/pdays/previous (AUC giảm 0,060) và contact (14,7% so với 5,2%). Các chỉ số vĩ mô (nr.employed/euribor3m/emp.var.rate) và month bị loại khỏi mô hình chính vì trôi theo thời gian, nên không được xếp vào nhóm yếu tố quan trọng. Agent chỉ nhắc rằng vĩ mô giải thích khác biệt giữa các giai đoạn. Như vậy mới khớp một phần."
+      },
+      {
+        "check": "6. Diễn giải là dự báo, không phải nhân quả",
+        "pass": true,
+        "evidence": "Có câu 'Đây là mối liên hệ, không chứng minh nguyên nhân' và 'Quan hệ là tương quan, không phải nhân quả' kèm ví dụ về nhóm khách vốn đã quan tâm."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "'gấp khoảng 1,8 lần' tính bằng 53,4/29,8 (so với precision của baseline ngẫu nhiên). So với tỉ lệ nền test 30,8% thì lift chỉ là 1,73. Sai lệch nhỏ, không phải số bịa."
+    ],
+    "summary": "Bài làm cẩn thận và trung thực. Agent dùng đúng file full, loại duration vì rò rỉ và có chạy sensitivity (AUC 0,80). Dữ liệu được chia theo thời gian 60/20/20, mô hình chọn trên validation và test chỉ đọc một lần. Agent cũng phát hiện dữ liệu trôi mạnh (tỉ lệ đăng ký 4,8% → 11,1% → 30,8%) và báo cả AUC khi chia ngẫu nhiên (0,79) để tham chiếu. Phần so baseline dùng PR-AUC, precision@20% và lift, đồng thời thừa nhận thẳng là mô hình (53,4%) không hơn luật poutcome=success (56,6%) ở top 20%. Các con số khớp với metrics.csv. Điểm trừ: 'unknown' bị giữ âm thầm như một nhóm. Vì bỏ vĩ mô và month khỏi mô hình chính, phần yếu tố quan trọng chỉ còn lịch sử chiến dịch và contact, không có các tín hiệu vĩ mô mạnh như tham chiếu. Ngoài ra, việc tự loại age/marital/campaign là lựa chọn chủ quan. Hai biểu đồ có tiêu đề nêu kết luận, nhãn tiếng Việt rõ ràng và khớp số liệu. Phần trả lời bằng tiếng Việt, mạch lạc, đưa câu trả lời lên đầu."
+  },
+  "judge_cost_usd": 0.2557104,
+  "accuracy_pct": 66.7,
+  "quality_pct": 85.0,
+  "overall": 74.0
+}

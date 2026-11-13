@@ -640,5 +640,359 @@
     "strongest_quality_correlate": "alcohol",
     "spearman_alcohol_quality": 0.447,
     "acceptable_alternative": "e.g. which physicochemical properties are associated with higher quality (alcohol, volatile acidity), red vs white quality"
+  },
+  "oulad_early_warning": {
+    "population_students": 13020,
+    "students_per_label3": {
+      "Pass": 7399,
+      "Fail": 3469,
+      "Withdrawn": 2152
+    },
+    "rows_aq1_student_week": 52080,
+    "rows_per_student_aq1": 4,
+    "AQ1_by_group_week": [
+      {
+        "label3": "Fail",
+        "week": 1,
+        "n": 3469,
+        "clicks_median": 20.0,
+        "clicks_mean": 55.23,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.02
+      },
+      {
+        "label3": "Fail",
+        "week": 2,
+        "n": 3469,
+        "clicks_median": 15.0,
+        "clicks_mean": 45.56,
+        "active_days_median": 1.0,
+        "active_days_mean": 1.81
+      },
+      {
+        "label3": "Fail",
+        "week": 3,
+        "n": 3469,
+        "clicks_median": 23.0,
+        "clicks_mean": 59.32,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.2
+      },
+      {
+        "label3": "Fail",
+        "week": 4,
+        "n": 3469,
+        "clicks_median": 10.0,
+        "clicks_mean": 44.41,
+        "active_days_median": 1.0,
+        "active_days_mean": 1.9
+      },
+      {
+        "label3": "Pass",
+        "week": 1,
+        "n": 7399,
+        "clicks_median": 59.0,
+        "clicks_mean": 102.92,
+        "active_days_median": 3.0,
+        "active_days_mean": 3.15
+      },
+      {
+        "label3": "Pass",
+        "week": 2,
+        "n": 7399,
+        "clicks_median": 50.0,
+        "clicks_mean": 90.48,
+        "active_days_median": 3.0,
+        "active_days_mean": 3.09
+      },
+      {
+        "label3": "Pass",
+        "week": 3,
+        "n": 7399,
+        "clicks_median": 60.0,
+        "clicks_mean": 109.1,
+        "active_days_median": 3.0,
+        "active_days_mean": 3.46
+      },
+      {
+        "label3": "Pass",
+        "week": 4,
+        "n": 7399,
+        "clicks_median": 43.0,
+        "clicks_mean": 92.73,
+        "active_days_median": 3.0,
+        "active_days_mean": 3.26
+      },
+      {
+        "label3": "Withdrawn",
+        "week": 1,
+        "n": 2152,
+        "clicks_median": 33.0,
+        "clicks_mean": 71.31,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.42
+      },
+      {
+        "label3": "Withdrawn",
+        "week": 2,
+        "n": 2152,
+        "clicks_median": 24.5,
+        "clicks_mean": 58.25,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.26
+      },
+      {
+        "label3": "Withdrawn",
+        "week": 3,
+        "n": 2152,
+        "clicks_median": 36.0,
+        "clicks_mean": 76.91,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.62
+      },
+      {
+        "label3": "Withdrawn",
+        "week": 4,
+        "n": 2152,
+        "clicks_median": 21.0,
+        "clicks_mean": 58.73,
+        "active_days_median": 2.0,
+        "active_days_mean": 2.33
+      }
+    ],
+    "AQ2_completers_vs_noncompleters": [
+      {
+        "indicator": "clicks_w1",
+        "median_noncompl": 24.0,
+        "median_compl": 59.0,
+        "cliffs_delta": -0.26,
+        "p_holm": 3.5e-143
+      },
+      {
+        "indicator": "clicks_w2",
+        "median_noncompl": 18.0,
+        "median_compl": 50.0,
+        "cliffs_delta": -0.297,
+        "p_holm": 3.2e-186
+      },
+      {
+        "indicator": "clicks_w3",
+        "median_noncompl": 27.0,
+        "median_compl": 60.0,
+        "cliffs_delta": -0.261,
+        "p_holm": 3.5e-143
+      },
+      {
+        "indicator": "clicks_w4",
+        "median_noncompl": 13.0,
+        "median_compl": 43.0,
+        "cliffs_delta": -0.29,
+        "p_holm": 3.6e-178
+      },
+      {
+        "indicator": "active_days_w1",
+        "median_noncompl": 2.0,
+        "median_compl": 3.0,
+        "cliffs_delta": -0.263,
+        "p_holm": 7.4e-148
+      },
+      {
+        "indicator": "active_days_w2",
+        "median_noncompl": 1.0,
+        "median_compl": 3.0,
+        "cliffs_delta": -0.307,
+        "p_holm": 2.5e-202
+      },
+      {
+        "indicator": "active_days_w3",
+        "median_noncompl": 2.0,
+        "median_compl": 3.0,
+        "cliffs_delta": -0.296,
+        "p_holm": 4.9e-187
+      },
+      {
+        "indicator": "active_days_w4",
+        "median_noncompl": 2.0,
+        "median_compl": 3.0,
+        "cliffs_delta": -0.313,
+        "p_holm": 1.4e-209
+      },
+      {
+        "indicator": "clicks_change_w1_w4",
+        "median_noncompl": -0.03,
+        "median_compl": -0.15,
+        "cliffs_delta": -0.041,
+        "p_holm": 6.3e-05
+      },
+      {
+        "indicator": "days_since_last_active_d28",
+        "median_noncompl": 3.0,
+        "median_compl": 1.0,
+        "cliffs_delta": 0.303,
+        "p_holm": 3.4e-198
+      },
+      {
+        "indicator": "tma1_score",
+        "median_noncompl": 74.0,
+        "median_compl": 80.0,
+        "cliffs_delta": -0.223,
+        "p_holm": 9.7e-88
+      },
+      {
+        "indicator": "num_of_prev_attempts",
+        "median_noncompl": 0.0,
+        "median_compl": 0.0,
+        "cliffs_delta": 0.096,
+        "p_holm": 1.4e-49
+      },
+      {
+        "indicator": "studied_credits",
+        "median_noncompl": 60.0,
+        "median_compl": 60.0,
+        "cliffs_delta": 0.061,
+        "p_holm": 1.4e-11
+      },
+      {
+        "indicator": "highest_education_ord",
+        "median_noncompl": 1.0,
+        "median_compl": 2.0,
+        "cliffs_delta": -0.184,
+        "p_holm": 6.5e-85
+      },
+      {
+        "indicator": "tma1_submitted_by_d28",
+        "rate_noncompl": 0.755,
+        "rate_compl": 0.973,
+        "risk_difference": -0.218,
+        "p_holm": 4.5e-310
+      },
+      {
+        "indicator": "tma1_on_time",
+        "rate_noncompl": 0.665,
+        "rate_compl": 0.936,
+        "risk_difference": -0.271,
+        "p_holm": 0.0
+      }
+    ],
+    "AQ2_note": "All weekly clicks / active-days differ from week 1 with small-medium effect (|delta| 0.26-0.31); clicks_change_w1_w4 is significant by p but negligible (|delta| ~0.04). Non-submission of TMA1 by day 28 is a strong signal.",
+    "AQ3_split": {
+      "train": {
+        "n": 6795,
+        "noncompletion_rate": 0.448
+      },
+      "validation": {
+        "n": 2581,
+        "noncompletion_rate": 0.465
+      },
+      "test": {
+        "n": 3644,
+        "noncompletion_rate": 0.378
+      }
+    },
+    "AQ3_models_test_2014J": {
+      "prevalence_baseline_pr_auc": 0.378,
+      "logistic_core": {
+        "val_pr_auc": 0.735,
+        "test_pr_auc": 0.665,
+        "test_roc_auc": 0.733,
+        "threshold_from_validation": 0.407,
+        "test_recall_at_t": 0.624,
+        "test_precision_at_t": 0.56
+      },
+      "hist_gradient_boosting_core": {
+        "val_pr_auc": 0.729,
+        "test_pr_auc": 0.644,
+        "test_roc_auc": 0.716,
+        "threshold_from_validation": 0.406,
+        "test_recall_at_t": 0.666,
+        "test_precision_at_t": 0.526
+      },
+      "logistic_plus_tma1_score (sensitivity)": {
+        "val_pr_auc": 0.75,
+        "test_pr_auc": 0.539,
+        "test_roc_auc": 0.685,
+        "threshold_from_validation": 0.392,
+        "test_recall_at_t": 0.634,
+        "test_precision_at_t": 0.522
+      }
+    },
+    "AQ3_random_5fold_cv_pr_auc_all_terms (not a valid headline)": 0.716,
+    "AQ4_test_2014J_logistic_core": {
+      "k100": {
+        "BBB-2014J": {
+          "precision": 0.93,
+          "true_noncompleters": 93,
+          "cohort": 1786,
+          "base_rate": 0.356
+        },
+        "FFF-2014J": {
+          "precision": 0.92,
+          "true_noncompleters": 92,
+          "cohort": 1858,
+          "base_rate": 0.399
+        }
+      },
+      "k200": {
+        "BBB-2014J": {
+          "precision": 0.775,
+          "true_noncompleters": 155,
+          "cohort": 1786,
+          "base_rate": 0.356
+        },
+        "FFF-2014J": {
+          "precision": 0.9,
+          "true_noncompleters": 180,
+          "cohort": 1858,
+          "base_rate": 0.399
+        }
+      },
+      "k300": {
+        "BBB-2014J": {
+          "precision": 0.653,
+          "true_noncompleters": 196,
+          "cohort": 1786,
+          "base_rate": 0.356
+        },
+        "FFF-2014J": {
+          "precision": 0.823,
+          "true_noncompleters": 247,
+          "cohort": 1858,
+          "base_rate": 0.399
+        }
+      },
+      "pooled_top400_without_quota_split": {
+        "FFF": 275,
+        "BBB": 125
+      }
+    },
+    "AQ5_most_frequent_top3_reasons_in_top200": {
+      "clicks_0_28": 361,
+      "tma1_submitted_by_d28": 308,
+      "tma1_on_time": 230,
+      "days_since_last_active_d28": 125,
+      "highest_education_ord": 67,
+      "tma1_days_before_deadline": 36,
+      "num_of_prev_attempts": 26,
+      "studied_credits": 16
+    },
+    "AQ5_note": "Contributions are exact in logit space for the linear model; no sensitive attribute is a feature.",
+    "project_P4_reference": {
+      "test_pr_auc": {
+        "M0_prevalence": 0.378,
+        "M1_rule": 0.615,
+        "M2_logistic": 0.662,
+        "M3_hgb": 0.645,
+        "M2+tma1_score": 0.533
+      },
+      "M2_test_recall_at_val_threshold": 0.693,
+      "M2_test_precision": 0.519,
+      "precision_at_200_test": {
+        "BBB-2014J": 0.76,
+        "FFF-2014J": 0.88
+      },
+      "first_significant_week": 1,
+      "top_reason": "tma1_submitted_by_d28 = 0 (TMA1 not submitted by day 28), then low active_days_0_28",
+      "fairness_recall_gaps_test": "all <= 0.10 (gender 0.02, age 0.01, disability 0.00)"
+    }
   }
 }

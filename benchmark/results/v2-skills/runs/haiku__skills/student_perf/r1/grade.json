@@ -1,0 +1,69 @@
+{
+  "task": "student_perf",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 14.3,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file, xác định học sinh trùng và khử trùng khi gộp",
+        "pass": true,
+        "evidence": "read_csv(sep=';') cho cả hai file; merge theo đúng 13 khóa của student-merge.R ra 382 cặp, nêu rõ 16 cặp trùng khóa nên giữ 366 cặp 1-1 (678 học sinh, so với 662 của tham chiếu; đây là biến thể có nêu lý do). SE gom cụm theo student_id, có thêm kịch bản C/D mỗi học sinh 1 bản ghi."
+      },
+      {
+        "check": "2. Phát hiện G3 = 0 và loại bỏ hoặc kiểm tra độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "Đếm được 38 bản ghi Toán và 15 bản ghi BĐN có G3 = 0, giải thích là bỏ học/không thi. Mẫu chính loại các bản ghi này (1044 → 990); kịch bản B đưa lại (ρ Dalc −0,17, Walc −0,15)."
+      },
+      {
+        "check": "3. Kiểm định phù hợp dữ liệu thứ bậc và có effect size",
+        "pass": true,
+        "evidence": "Spearman ρ có CI bootstrap theo cụm, Mann–Whitney (mức 1 so với 4–5), Cliff's δ −0,29/−0,32, Cohen's d −0,53/−0,64, kèm OLS điều chỉnh."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu: âm nhỏ ở cả hai môn, rõ nhất ở BĐN, Toán yếu hơn khi giữ G3 = 0",
+        "pass": false,
+        "evidence": "Chỉ báo cáo ρ gộp (−0,18) và kịch bản C/D (−0,14 đến −0,21); không có Spearman thô theo từng môn, không nói BĐN rõ hơn, cũng không nói Toán mạnh lên khi loại G3 = 0. Thông điệp chính lại là 'gần như biến mất sau khi kiểm soát G1/G2', khác với trọng tâm của tham chiếu."
+      },
+      {
+        "check": "5. Không dùng từ ngữ nhân quả; nêu ít nhất một yếu tố gây nhiễu",
+        "pass": true,
+        "evidence": "'chỉ là liên hệ, không phải nhân quả'; nêu động lực, nền tảng gia đình, hoạt động xã hội; đã kiểm soát failures, studytime, giới."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "678 học sinh duy nhất / 366 cặp: khác tham chiếu (662 / 382) do agent tự bỏ 16 cặp trùng khóa. Đây là biến thể có nêu lý do, không phải số bịa, nhưng lệch so với cách ghép chuẩn trong student-merge.R.",
+      "story.md viết 'ở cả ba kiểm tra độ bền' trong khi biểu đồ có 4 kịch bản (A–D). Đây là lỗi nhỏ, không nhất quán."
+    ],
+    "summary": "Xử lý dữ liệu tốt. Agent đọc đúng dấu ';', ghép đúng 13 khóa (ra 382 cặp, rồi tự giảm còn 366 cặp 1-1 có giải thích), gom cụm SE theo học sinh, loại G3 = 0 (38/15) và có kịch bản độ nhạy. Phương pháp phù hợp với dữ liệu thứ bậc: Spearman, Mann–Whitney, Cliff's δ, Cohen's d, CI bootstrap. Các số trong câu trả lời khớp với CSV. Điểm yếu chính về độ chặt chẽ: thông điệp chính dựa trên mô hình kiểm soát G1/G2. Hai biến này rất có thể là biến trung gian của chính tác động cần đo, vậy mà agent coi absences là trung gian nhưng không coi G1/G2 như vậy. Agent cũng thiếu Spearman thô theo từng môn, nên không nêu được rằng BĐN rõ hơn và Toán mạnh lên khi loại G3 = 0. Kết luận 'không cho thấy rượu làm giảm điểm' vì thế hơi lệch trọng tâm, dù có ghi đây là câu hỏi khác. Tiếng Việt rõ ràng, câu trả lời trực tiếp. Hai biểu đồ đọc tốt, tiêu đề nêu được kết luận, có n và CI."
+  },
+  "judge_cost_usd": 0.28266579999999997,
+  "accuracy_pct": 80.0,
+  "quality_pct": 70.0,
+  "overall": 76.0
+}

@@ -1,0 +1,5 @@
+type,hi,alcohol,volatile acidity,density,residual sugar
+red,False,10.251,0.547,0.997,2.512
+red,True,11.518,0.406,0.996,2.709
+white,False,10.265,0.282,0.994,6.703
+white,True,11.416,0.265,0.992,5.262

@@ -1,0 +1,7 @@
+set,model,auc_val,prauc_val,auc_test,prauc_test
+main,LogReg,0.7562,0.7404,0.7355,0.6713
+main,HistGB,0.7553,0.7475,0.7475,0.6834
+sens_with_tma1_score,LogReg,0.7711,0.7553,0.691,0.6098
+sens_with_tma1_score,HistGB,0.77,0.7595,0.7137,0.6426
+baseline,Dummy (tỷ lệ nền),0.5,0.4649,0.5,0.3776
+baseline,Quy tắc: ít click 0-28,0.6466,0.6251,0.6517,0.5411

@@ -1,0 +1,138 @@
+Quần thể: 13020 | tỷ lệ không hoàn thành: 0.4317
+            size    mean
+split                   
+test        3644  0.3776
+train       6795  0.4481
+validation  2581  0.4649
+
+=== Câu 1: theo tuần ===
+   label3  week  so_sv  trung_vi_luot_truy_cap  trung_binh_luot_truy_cap  trung_vi_so_ngay_truy_cap  trung_binh_so_ngay_truy_cap  ty_le_0_ngay_truy_cap
+     Fail     1   3469                    20.0                     55.23                        2.0                         2.02                   0.27
+     Fail     2   3469                    15.0                     45.56                        1.0                         1.81                   0.32
+     Fail     3   3469                    23.0                     59.32                        2.0                         2.20                   0.25
+     Fail     4   3469                    10.0                     44.41                        1.0                         1.90                   0.34
+     Pass     1   7399                    59.0                    102.92                        3.0                         3.15                   0.12
+     Pass     2   7399                    50.0                     90.48                        3.0                         3.09                   0.11
+     Pass     3   7399                    60.0                    109.10                        3.0                         3.46                   0.08
+     Pass     4   7399                    43.0                     92.73                        3.0                         3.26                   0.12
+Withdrawn     1   2152                    33.0                     71.31                        2.0                         2.42                   0.22
+Withdrawn     2   2152                    24.5                     58.25                        2.0                         2.26                   0.24
+Withdrawn     3   2152                    36.0                     76.91                        2.0                         2.62                   0.20
+Withdrawn     4   2152                    21.0                     58.73                        2.0                         2.33                   0.27
+ tuan      chi_so nhom_a    nhom_b  kruskal_p  mw_p  cliff_like_effect  mw_p_holm
+    1      clicks   Pass      Fail        0.0   0.0             0.3017        0.0
+    1      clicks   Pass Withdrawn        0.0   0.0             0.1936        0.0
+    1      clicks   Fail Withdrawn        0.0   0.0            -0.1098        0.0
+    1 active_days   Pass      Fail        0.0   0.0             0.3046        0.0
+    1 active_days   Pass Withdrawn        0.0   0.0             0.1947        0.0
+    1 active_days   Fail Withdrawn        0.0   0.0            -0.1118        0.0
+    2      clicks   Pass      Fail        0.0   0.0             0.3407        0.0
+    2      clicks   Pass Withdrawn        0.0   0.0             0.2269        0.0
+    2      clicks   Fail Withdrawn        0.0   0.0            -0.1184        0.0
+    2 active_days   Pass      Fail        0.0   0.0             0.3551        0.0
+    2 active_days   Pass Withdrawn        0.0   0.0             0.2304        0.0
+    2 active_days   Fail Withdrawn        0.0   0.0            -0.1282        0.0
+    3      clicks   Pass      Fail        0.0   0.0             0.3046        0.0
+    3      clicks   Pass Withdrawn        0.0   0.0             0.1897        0.0
+    3      clicks   Fail Withdrawn        0.0   0.0            -0.1113        0.0
+    3 active_days   Pass      Fail        0.0   0.0             0.3395        0.0
+    3 active_days   Pass Withdrawn        0.0   0.0             0.2261        0.0
+    3 active_days   Fail Withdrawn        0.0   0.0            -0.1121        0.0
+    4      clicks   Pass      Fail        0.0   0.0             0.3342        0.0
+    4      clicks   Pass Withdrawn        0.0   0.0             0.2193        0.0
+    4      clicks   Fail Withdrawn        0.0   0.0            -0.1144        0.0
+    4 active_days   Pass      Fail        0.0   0.0             0.3562        0.0
+    4 active_days   Pass Withdrawn        0.0   0.0             0.2436        0.0
+    4 active_days   Fail Withdrawn        0.0   0.0            -0.1134        0.0
+           so_sv  trung_vi_clicks_4tuan  trung_vi_ngay_truy_cap_4tuan
+label3                                                               
+Pass        7397                  251.0                          12.0
+Fail        3445                  111.0                           7.0
+Withdrawn   2062                  167.0                           9.0
+
+=== Câu 2 ===
+                      chi_so  trung_vi_hoan_thanh  trung_vi_khong_hoan_thanh  hieu_ung  p_holm  co_y_nghia_holm_0_05
+            active_days_0_28              12.0000                     7.0000    0.3484  0.0000                  True
+ cum_ngay_truy_cap_den_tuan4              12.0000                     7.0000    0.3465  0.0000                  True
+ cum_ngay_truy_cap_den_tuan3               9.0000                     6.0000    0.3324  0.0000                  True
+        clicks_homepage_0_28              49.0000                    26.0000    0.3304  0.0000                  True
+ cum_ngay_truy_cap_den_tuan2               6.0000                     3.0000    0.3138  0.0000                  True
+              active_days_w4               3.0000                     2.0000    0.3131  0.0000                  True
+             log_clicks_0_28               5.5530                     4.8520    0.3077  0.0000                  True
+              active_days_w2               3.0000                     1.0000    0.3073  0.0000                  True
+        cum_clicks_den_tuan4             251.0000                   125.0000    0.3054  0.0000                  True
+         clicks_forumng_0_28              69.0000                    26.0000    0.3037  0.0000                  True
+  days_since_last_active_d28               1.0000                     3.0000   -0.3026  0.0000                  True
+        cum_clicks_den_tuan3             193.0000                    97.0000    0.3005  0.0000                  True
+        cum_clicks_den_tuan2             120.0000                    55.0000    0.2999  0.0000                  True
+                   clicks_w2              50.0000                    18.0000    0.2971  0.0000                  True
+              active_days_w3               3.0000                     2.0000    0.2961  0.0000                  True
+                   clicks_w4              43.0000                    13.0000    0.2902  0.0000                  True
+                tma1_on_time               0.9361                     0.6652    0.2709  0.0000                  True
+              active_days_w1               3.0000                     2.0000    0.2626  0.0000                  True
+ cum_ngay_truy_cap_den_tuan1               3.0000                     2.0000    0.2626  0.0000                  True
+                   clicks_w3              60.0000                    27.0000    0.2606  0.0000                  True
+                   clicks_w1              59.0000                    24.0000    0.2603  0.0000                  True
+        cum_clicks_den_tuan1              59.0000                    24.0000    0.2603  0.0000                  True
+            clicks_pre_start              42.0000                    15.0000    0.2560  0.0000                  True
+                n_sites_0_28              27.0000                    19.0000    0.2404  0.0000                  True
+   tma1_days_before_deadline               1.0000                     1.0000    0.2401  0.0000                  True
+       active_days_pre_start               3.0000                     2.0000    0.2352  0.0000                  True
+                  tma1_score              80.0000                    74.0000    0.2227  0.0000                  True
+       tma1_submitted_by_d28               0.9728                     0.7548    0.2180  0.0000                  True
+       clicks_oucontent_0_28              44.0000                    16.0000    0.1966  0.0000                  True
+        clicks_resource_0_28               7.0000                     5.0000    0.1911  0.0000                  True
+            clicks_quiz_0_28               1.0000                     0.0000    0.1732  0.0000                  True
+        num_of_prev_attempts               0.0000                     0.0000   -0.0958  0.0000                  True
+        no_vle_activity_0_28               0.0089                     0.0847   -0.0758  0.0000                  True
+             studied_credits              60.0000                    60.0000   -0.0613  0.0000                  True
+seen_in_earlier_presentation               0.0000                     0.0000   -0.0348  0.0000                  True
+      registration_lead_days              53.0000                    53.0000    0.0018  0.8572                 False
+                ho_chi_so  tuan_dau_tien_co_y_nghia                            hieu_ung_theo_tuan                                      p_holm_theo_tuan
+  Lượt truy cập theo tuần                         1 T1:+0.260 | T2:+0.297 | T3:+0.261 | T4:+0.290 T1:9.9e-144 | T2:1.3e-186 | T3:9.9e-144 | T4:1.2e-178
+  Ngày truy cập theo tuần                         1 T1:+0.263 | T2:+0.307 | T3:+0.296 | T4:+0.313 T1:9.2e-149 | T2:5.8e-203 | T3:8.9e-188 | T4:3.9e-210
+Tổng lượt truy cập luỹ kế                         1 T1:+0.260 | T2:+0.300 | T3:+0.300 | T4:+0.305   T1:5e-144 | T2:2.5e-189 | T3:1.1e-189 | T4:8.7e-196
+Tổng ngày truy cập luỹ kế                         1 T1:+0.263 | T2:+0.314 | T3:+0.332 | T4:+0.346 T1:9.2e-149 | T2:2.8e-208 | T3:1.8e-232 | T4:5.8e-252
+
+Validation AUC: logistic=0.7288, boosting=0.7236 -> chọn: logistic
+                            bo_dac_trung  mo_hinh  auc_validation  auc_test  nguong_tu_validation  recall_test  precision_test  ty_le_bi_gan_co_test  dat_muc_tieu_70
+         chính: 32 đặc trưng đến ngày 28 logistic          0.7288    0.7159                0.3865       0.7151          0.5085                0.5310             True
+         chính: 32 đặc trưng đến ngày 28 boosting          0.7236    0.7126                0.4097       0.6759          0.5138                0.4967            False
+                            bỏ nhóm TMA1 logistic          0.7009    0.6919                0.4260       0.7747          0.4671                0.6262             True
+                            bỏ nhóm TMA1 boosting          0.6859    0.6814                0.4322       0.7536          0.4684                0.6076             True
+                thêm điểm TMA1 (độ nhạy) logistic          0.7464    0.6673                0.3771       0.6592          0.5165                0.4819            False
+                thêm điểm TMA1 (độ nhạy) boosting          0.7363    0.6861                0.3989       0.6657          0.5016                0.5011            False
+đường cơ sở: chỉ tổng lượt truy cập 0–28 logistic          0.6466    0.6517                0.3960       0.7057          0.4510                0.5908             True
+đường cơ sở: chỉ tổng lượt truy cập 0–28 boosting          0.6453    0.6417                0.4117       0.7253          0.4412                0.6207             True
+
+Test: AUC=0.716, recall=0.715 (95% CI 0.693-0.737), precision=0.509, tỷ lệ gắn cờ=0.531, ngưỡng=0.3865
+
+=== Câu 4 (test, k=200 mặc định) ===
+ tap                                quy_tac module_ky   k  so_sv_trong_module_ky  so_sv_duoc_lien_he  so_trung_khong_hoan_thanh  ty_le_trung  tong_khong_hoan_thanh  ty_le_bat_duoc
+test                         mô hình rủi ro BBB 2014J 200                   1786                 200                        146        0.730                    635           0.230
+test                         mô hình rủi ro FFF 2014J 200                   1858                 200                        176        0.880                    741           0.238
+test ít lượt truy cập nhất 0–28 (đối chứng) BBB 2014J 200                   1786                 200                        121        0.605                    635           0.191
+test ít lượt truy cập nhất 0–28 (đối chứng) FFF 2014J 200                   1858                 200                        168        0.840                    741           0.227
+
+=== Câu 5: đặc trưng đóng góp nhiều nhất trong danh sách ưu tiên ===
+active_days_0_28              359
+tma1_submitted_by_d28         308
+tma1_on_time                  259
+clicks_homepage_0_28          114
+num_of_prev_attempts           37
+clicks_w2                      37
+tma1_days_before_deadline      35
+clicks_forumng_0_28            17
+studied_credits                12
+clicks_oucontent_0_28           8
+clicks_pre_start                7
+clicks_subpage_0_28             5
+days_since_last_active_d28      1
+active_days_w1                  1
+
+Ví dụ 3 học viên đầu danh sách:
+ - Sinh viên này được xếp ưu tiên chủ yếu vì chưa nộp bài TMA1 đến ngày 28, ít ngày có truy cập trong 28 ngày đầu và đã học lại nhiều lần trước đây. Nên nhắc lịch nộp bài TMA và hỗ trợ kế hoạch cho bài tiếp theo. Đây là tín hiệu dự báo từ dữ liệu 28 ngày đầu, nên dùng để mở đầu trao đổi, không phải kết luận về năng lực của sinh viên.
+ - Sinh viên này được xếp ưu tiên chủ yếu vì chưa nộp bài TMA1 đến ngày 28, ít ngày có truy cập trong 28 ngày đầu và đã học lại nhiều lần trước đây. Nên nhắc lịch nộp bài TMA và hỗ trợ kế hoạch cho bài tiếp theo. Đây là tín hiệu dự báo từ dữ liệu 28 ngày đầu, nên dùng để mở đầu trao đổi, không phải kết luận về năng lực của sinh viên.
+ - Sinh viên này được xếp ưu tiên chủ yếu vì chưa nộp bài TMA1 đến ngày 28, ít ngày có truy cập trong 28 ngày đầu và đã học lại nhiều lần trước đây. Nên nhắc lịch nộp bài TMA và hỗ trợ kế hoạch cho bài tiếp theo. Đây là tín hiệu dự báo từ dữ liệu 28 ngày đầu, nên dùng để mở đầu trao đổi, không phải kết luận về năng lực của sinh viên.
+
+HOÀN TẤT. Mô hình dùng cho danh sách: logistic | giải thích: hồi quy logistic

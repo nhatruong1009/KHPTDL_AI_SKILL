@@ -1,0 +1,5 @@
+du_lieu,model,AUC_val,AUC_test,AUC_test_BBB2014J,AUC_test_FFF2014J
+tho (giu tma1_score = 1),Logistic,0.761,0.686,0.6217,0.785
+tho (giu tma1_score = 1),GradientBoosting,0.7616,0.7113,0.6529,0.7817
+da xu ly (tma1_score BBB 2014J = trung vi train),Logistic,0.761,0.7228,0.6414,0.785
+da xu ly (tma1_score BBB 2014J = trung vi train),GradientBoosting,0.7616,0.7417,0.6942,0.7817

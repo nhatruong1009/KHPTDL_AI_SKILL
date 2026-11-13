@@ -1,0 +1,64 @@
+{
+  "task": "student_perf",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 71.4,
+    "skills_missing": [
+      "data-chart",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file; xác định học sinh trùng và khử trùng lặp khi gộp",
+        "pass": true,
+        "evidence": "Dùng 13 khóa của student-merge.R, nhận ra 382 dòng ghép chỉ ứng với 366 nhóm khóa; ghép 1–1 được 370 cặp → 674 HS duy nhất (tham chiếu 662 theo 382). Lựa chọn khác nhưng được giải thích rõ; mỗi HS là một đơn vị, z-score theo môn; có thêm phân tích riêng từng môn và gộp thô chỉ làm đối chứng."
+      },
+      {
+        "check": "2. Phát hiện G3=0 và loại/kiểm tra độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "53 dòng G3=0 (38 Toán, 15 Bồ), cả 53 có absences=0, 33 dòng có G2>0 → coi là bỏ thi; loại trong phân tích chính, giữ lại thì ρ = −0,18/−0,13; kiểm tra G3=0 không liên quan rượu (p=0,61; 0,21)."
+      },
+      {
+        "check": "3. Kiểm định phù hợp dữ liệu thứ bậc và báo cáo effect size",
+        "pass": true,
+        "evidence": "Spearman với KTC bootstrap, Mann-Whitney, Kruskal-Wallis η²≈0,033, Cohen's d −0,37…−0,47, Holm; thêm OLS HC3 có hiệu chỉnh nhiễu."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu: âm nhỏ ở cả hai môn, rõ nhất ở Bồ, Toán yếu hơn khi giữ G3=0",
+        "pass": false,
+        "evidence": "Hướng và độ lớn khớp (Toán bỏ G3=0: −0,153/−0,187; Bồ giữ G3=0: −0,208/−0,171, trùng tham chiếu). Nhưng answer.md không nói rõ Bồ là môn rõ nhất, cũng không nêu Toán giữ G3=0 yếu hơn (−0,12/−0,10). Số này chỉ có trong nhay_cam.csv và biểu đồ."
+      },
+      {
+        "check": "5. Không dùng ngôn ngữ nhân quả; nêu yếu tố nhiễu",
+        "pass": true,
+        "evidence": "Ghi rõ 'Chỉ là liên hệ, không phải nhân quả', có nêu nhân quả ngược; nêu goout, failures, absences, giới…; Walc mất ý nghĩa sau hiệu chỉnh (p=0,27)."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Tiêu đề biểu đồ g3_theo_muc_ruou.png ghi '|ρ| ≈ 0,1', mâu thuẫn với chính phụ đề ρ = −0,19 / −0,18"
+    ],
+    "summary": "Bài phân tích chặt chẽ. Tác giả phát hiện 13 khóa merge không duy nhất và ghép 1–1 được 370 cặp, khác 382 của tham chiếu nhưng có lý do và kiểm tra độ nhạy. Mỗi học sinh tính một lần với z-score theo môn. G3=0 (38+15) được giải thích hợp lý và có phân tích độ nhạy. Spearman, Kruskal η², Cohen's d và OLS hiệu chỉnh đều phù hợp. Các con số theo từng môn trong nhay_cam.csv trùng với tham chiếu (vd Bồ Dalc −0,208, Toán Walc bỏ G3=0 −0,187). Không có ngôn ngữ nhân quả. Tác giả trung thực khi nêu Walc mất ý nghĩa sau hiệu chỉnh. Thiếu sót: answer.md không nêu rằng Bồ Đào Nha rõ nhất, cũng không nêu Toán yếu đi khi giữ G3=0. Về biểu đồ: hình 1 có tiêu đề '|ρ|≈0,1' mâu thuẫn với ρ≈−0,19. Hình forest plot bị lệch hàng, điểm Walc nằm sát nhãn của dòng kế tiếp nên dễ đọc nhầm, và chú thích che dòng cuối. Câu trả lời và answer.md viết bằng tiếng Việt, rõ ràng, có câu trả lời trực tiếp ngay đầu."
+  },
+  "judge_cost_usd": 0.2016247,
+  "accuracy_pct": 80.0,
+  "quality_pct": 85.0,
+  "overall": 82.0
+}

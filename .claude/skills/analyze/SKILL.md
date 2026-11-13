@@ -20,6 +20,8 @@ Arguments: $ARGUMENTS
 - The user asks to "analyze", "chart", "find out", or "predict" something from a dataset
 
 # Process
+**Load each step's skill before doing that step**: call the Skill tool with its name (e.g. `Skill(skill="data-eda")`, `Skill(skill="data-predict")`) and follow the instructions it returns. Names written as `/name` below are skills to load this way - not reminders to work from memory. Load a skill once per run; reuse its instructions for later sub-questions.
+
 1. **Explore** - `/data-eda` on the data path.
 2. **Gate** - `/data-relevance` with the question. If **Not relevant -> stop and refuse** (explain what's missing).
 3. **Plan** - `/analysis-plan`: make the question precise, split it into sub-questions, pick a skill for each.
@@ -39,7 +41,15 @@ Arguments: $ARGUMENTS
 6. **Answer** - `/answer-write`.
 7. **Check** - `/answer-qa` before replying; fix anything it flags.
 
-For a simple question, do these steps briefly; no ceremony.
+For a simple question, do these steps briefly; no ceremony - but still load `/data-eda`, `/data-relevance` and `/answer-qa`.
+
+# Non-negotiables (apply even if a step's skill was not loaded)
+- **Feature timing audit before any model**: for every candidate predictor, write down when its value becomes known relative to the prediction moment. Known before -> allowed. After, or unknown/unverifiable (e.g. a score whose release date is not in the data, totals over the whole period) -> keep it out of the main model; at most report it as a labelled sensitivity run.
+- **Respect the data's own design**: if the data already has a split/fold/period column or a defined population, use it (train on earlier, choose models and thresholds on validation, touch the test part once). Do not replace a time-based split with a random one.
+- **Sensitive attributes** (gender, age, disability, ethnicity, deprivation, region, ...) are never predictors for decisions about people; use them only to audit errors by group.
+- **Constraints in the question are hard**: capacities, quotas, targets (e.g. "at most N per group", "at least X% recall") are applied per the unit stated, and you say plainly whether a target is met.
+- **Sensitivity results change the headline**: if a robustness check moves a number or reverses a conclusion, the final answer uses the robust version or states both - never a headline that your own check contradicts.
+- **Chart titles state the finding** ("North-region sales fell 12% after March"), not the content ("Clicks by week").
 
 # Inputs the skill needs
 - Required: data path; the question

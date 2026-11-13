@@ -1,0 +1,12 @@
+chỉ_số,giá_trị
+bản ghi Toán,395
+bản ghi Bồ Đào Nha,649
+số cặp khớp theo 13 khóa (merge),382
+số học sinh duy nhất (nhóm khóa),662
+học sinh có mặt ở cả hai file,366
+bản ghi thuộc học sinh trùng,744
+G3 = 0 (tổng),53
+G3 = 0 và vắng mặt = 0,53
+G3 = 0 nhưng G2 > 0,33
+G2 = 0,20
+G1 = 0,1

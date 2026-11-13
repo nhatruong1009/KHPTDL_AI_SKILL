@@ -1,0 +1,70 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 37.5,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "root-cause",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Bỏ dòng metadata và loại các nhóm tổng hợp",
+        "pass": true,
+        "evidence": "analysis.py đọc bằng pd.read_csv(skiprows=4), sau đó lọc m[m['Region'].notna()] theo Metadata_Country, còn n = 186 năm 2019."
+      },
+      {
+        "check": "2. Chọn năm rõ ràng, khoảng 180+ nước có đủ cả 3 chỉ số",
+        "pass": true,
+        "evidence": "Năm chính là 2019 (trước COVID) với n = 186. Có thêm kiểm tra độ nhạy cho 2022 (n = 185) và trung bình 2017–2019."
+      },
+      {
+        "check": "3. Liên hệ dương mạnh (Spearman ~0,8+), có nêu đây là liên hệ và bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "Pearson log = 0,806 và Spearman = 0,844 (summary_2019.csv). Câu trả lời ghi 'phần lớn trùng với thu nhập': R² thu nhập = 0,72, thêm chi tiêu chỉ ΔR² = 0,005. Có nêu rõ 'không phải nhân quả'."
+      },
+      {
+        "check": "4. Có kiểm soát thu nhập; danh sách vượt/dưới kỳ vọng phù hợp ground truth",
+        "pass": true,
+        "evidence": "Mô hình là LE ~ logGDP + logGDP², có partial r = 0,14 (p = 0,06). Vượt kỳ vọng: Solomon +7,6, Palestine +7,6, Syria +6,6, Tajikistan, Burundi. Dưới kỳ vọng: CAR, Nigeria −16,1, Guinea Xích Đạo, Eswatini, Nauru, Chad. Các danh sách này khớp phần lớn với tham chiếu 2021–2022."
+      },
+      {
+        "check": "5. Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "Năm 2019: +2,9 năm (74,2 so với kỳ vọng 71,4), hạng 47/186. Trung bình 2017–19: +3,4, hạng 38. Năm 2022: +2,2, hạng 57. Ground truth 2022 là +2,72 với mô hình chỉ GDP, nên các con số này nhất quán."
+      },
+      {
+        "check": "6. story.md cho lãnh đạo Bộ Y tế: một thông điệp, mạch truyện, hành động dạng gợi ý, có cảnh báo",
+        "pass": true,
+        "evidence": "Có thông điệp cốt lõi và mạch Bối cảnh → Vấn đề → Phát hiện → Hành động. Phần hành động ghi rõ '(gợi ý, không phải kết luận từ dữ liệu)'. Có lưu ý 'không phải nhân quả', về CAR và về các nước nhỏ."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao, xử lý đúng mọi bẫy dữ liệu:\n- **Đọc và làm sạch dữ liệu:** bỏ 4 dòng metadata, loại các nhóm tổng hợp theo cột Region.\n- **Chọn năm:** dùng 2019 với n = 186 và nêu rõ lý do. Có kiểm tra độ nhạy cho 2022 và trung bình 2017–2019, Spearman thứ hạng lần lượt 0,95 và 0,99.\n- **Thang đo:** dùng thang log cho chi tiêu và GDP.\n- **Cộng hòa Trung Phi:** phát hiện và cảnh báo rõ là dữ liệu bất thường.\n\n**Kết quả phân tích:** Tương quan mạnh (r = 0,81; Spearman 0,84), nhưng sau khi tính thu nhập thì chi tiêu y tế gần như không thêm gì (ΔR² = 0,005; partial r = 0,14). Danh sách vượt/dưới kỳ vọng khớp với tham chiếu. Việt Nam vượt kỳ vọng +2,9 năm (hạng 47/186), và dương ở cả ba cách tính.\n\n**story.md:** phù hợp với lãnh đạo Bộ Y tế, có mạch truyện rõ, hành động được nêu dưới dạng gợi ý và có cảnh báo không phải nhân quả.\n\n**Điểm trừ nhỏ:**\n- Thông điệp cốt lõi nói 'chi thấp hơn nhiều so với các nước cùng mức thu nhập'. Thực chất đây là so với trung vị của cả nhóm thu nhập trung-cao, trong khi GDP của Việt Nam nằm ở cận dưới nhóm này.\n- Biểu đồ 1 để chú thích nhóm thu nhập bằng tiếng Anh. Biểu đồ 2 có nhãn chồng lên nhau (TJK/SYR/VUT) và tiêu đề còn chung chung.\n- Câu trả lời cuối dùng tiêu đề tiếng Anh ('Method', 'Caveats', 'Files')."
+  },
+  "judge_cost_usd": 0.2721191,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

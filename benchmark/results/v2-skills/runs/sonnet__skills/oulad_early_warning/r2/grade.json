@@ -1,0 +1,77 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 77.8,
+    "skills_missing": [
+      "data-calc",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh clicks VÀ ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê bền vững, khớp tham chiếu",
+        "pass": false,
+        "evidence": "Đếm đúng theo sinh viên (Pass 7.399/Fail 3.469/Withdrawn 2.152), trung vị clicks tuần 1 là 59/33/20, khớp tham chiếu; có Kruskal-Wallis và rank-biserial. Tuy nhiên answer.md và câu trả lời cuối không nêu số ngày hoạt động theo tuần của ba nhóm; chỉ CSV có mean_active_days, còn phần chữ chỉ có clicks, % không click và % nộp TMA1."
+      },
+      {
+        "check": "AQ2: hoàn thành vs không hoàn thành, có độ lớn hiệu ứng và hiệu chỉnh đa kiểm định; khác biệt có từ tuần 1",
+        "pass": true,
+        "evidence": "Dùng Mann-Whitney với rank-biserial và hiệu chỉnh Holm cho 27 chỉ báo. Hiệu ứng clicks theo tuần là 0,26 / 0,30 / 0,26 / 0,29, khớp cliffs_delta tham chiếu (0,26–0,30), có bootstrap CI. Có ghi rõ 'cần đọc theo độ lớn hiệu ứng, không đọc theo p' và kết luận khác biệt xuất hiện từ tuần 1."
+      },
+      {
+        "check": "AQ3 thiết kế: đánh giá trên kỳ sau giữ riêng (train 2013B+2013J, val 2014B, test 2014J)",
+        "pass": true,
+        "evidence": "Dùng đúng cột split. Tỷ lệ nền 44,8% / 46,5% / 37,8%, khớp tham chiếu. Không dùng CV xáo trộn ngẫu nhiên."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được gắn cờ",
+        "pass": true,
+        "evidence": "Danh sách đặc trưng trong analysis.py không có final_result/label3 hay gender/age/disability/imd/region (các cột này chỉ dùng để kiểm toán). tma1_score bị loại và chỉ chạy độ nhạy: AUC test 0,691, PR-AUC 0,610, cùng hướng giảm với tham chiếu."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0,05 so với tham chiếu, có baseline, ngưỡng chọn ngoài test, nói thật về mục tiêu 70%",
+        "pass": true,
+        "evidence": "PR-AUC test của logistic 0,671 (tham chiếu 0,665), HGB 0,683 (tham chiếu 0,644, vẫn trong ±0,05). Baseline: tỷ lệ nền 0,378 và quy tắc ít click 0,541. Ngưỡng 0,445 chọn trên validation cho recall test 0,575, precision 0,590, và ghi rõ 'KHÔNG đạt'. Recall này thấp hơn dải tham chiếu 0,62–0,69 (có thể do class_weight balanced) nhưng được báo cáo trung thực. Câu trả lời cuối lại lấy ROC-AUC làm số chính thay vì PR-AUC."
+      },
+      {
+        "check": "AQ4: xếp hạng riêng trong từng module-kỳ (tối đa 200), precision@200 khớp tham chiếu, so với tỷ lệ nền",
+        "pass": true,
+        "evidence": "Xếp hạng riêng từng module-kỳ, ghi rõ 'Không gộp hai module'. BBB-2014J trúng 151/200 = 0,755 (tham chiếu 0,76), FFF-2014J trúng 182/200 = 0,91 (tham chiếu 0,88). Có so với tỷ lệ nền 0,356 / 0,399, quy tắc ít click và chọn ngẫu nhiên."
+      },
+      {
+        "check": "AQ5: giải thích theo từng sinh viên bằng tiếng Việt dễ hiểu, lấy từ đóng góp thực của mô hình, không dùng thuộc tính nhạy cảm, lý do chính khớp tham chiếu",
+        "pass": true,
+        "evidence": "Đóng góp tính bằng hệ số × giá trị chuẩn hóa (logistic). Cột advisor_note có câu riêng cho từng sinh viên. Lý do hàng đầu là TMA1 (336/400), sau đó là mức tương tác và số ngày từ lần hoạt động cuối, khớp tham chiếu; không có thuộc tính nhạy cảm."
+      },
+      {
+        "check": "Không tuyên bố nhân quả; nêu giới hạn của dữ liệu quan sát và khả năng tổng quát hóa",
+        "pass": true,
+        "evidence": "Có ghi 'quan hệ thống kê, không chứng minh nguyên nhân'. Con số chuyển đổi 14% được nói rõ là giả định chưa kiểm chứng. Có nêu hạn chế: test chỉ một kỳ, tỷ lệ nền thay đổi giữa các kỳ, giả định về TMA1, và sinh viên lặp lại qua nhiều kỳ."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 5
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao và xử lý gần như mọi bẫy. Số liệu được đếm theo sinh viên. Bài dùng đúng cách chia theo kỳ (split thời gian), loại tma1_score và chỉ chạy độ nhạy. Thuộc tính nhạy cảm chỉ dùng để kiểm toán. Ngưỡng recall 70% được chọn trên validation. Xếp hạng 200 người được làm riêng cho từng module-kỳ. Q2 dùng độ lớn hiệu ứng kèm hiệu chỉnh Holm. Kết quả khớp tham chiếu: PR-AUC test của logistic 0,671; precision@200 là 0,755 (BBB) và 0,91 (FFF); trung vị clicks tuần 1 là 59/33/20. Bài nói thẳng rằng mục tiêu 70% không đạt (recall test 0,575, thấp hơn dải tham chiếu 0,62–0,69 nhưng được báo cáo trung thực). Điểm trừ: Q1 không trình bày số ngày hoạt động theo tuần trong phần chữ; câu trả lời cuối lấy ROC-AUC làm số chính thay vì PR-AUC. Bài viết bằng tiếng Việt, rõ ràng, trả lời trực tiếp trước. Biểu đồ có tiêu đề nêu kết luận và khớp với số liệu."
+  },
+  "judge_cost_usd": 0.4444153,
+  "accuracy_pct": 87.5,
+  "quality_pct": 90.0,
+  "overall": 88.5
+}

@@ -302,7 +302,127 @@ def bank_marketing() -> dict:
     return out
 
 
-REFS = {"retail_uk": retail_uk, "student_perf": student_perf, "household_power": household_power,
+def oulad_early_warning() -> dict:
+    """Independent reference on the prepared OULAD views (P3/data/processed copy)."""
+    from sklearn.ensemble import HistGradientBoostingClassifier
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import average_precision_score, precision_score, recall_score, roc_auc_score
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+
+    def holm_adjust(ps):
+        order = np.argsort(ps)
+        adj, run = np.empty(len(ps)), 0.0
+        for i, j in enumerate(order):
+            run = max(run, min(1.0, (len(ps) - i) * ps[j]))
+            adj[j] = run
+        return adj
+
+    p = D / "oulad_early_warning"
+    wk = pd.read_csv(p / "aq1_student_week.csv")
+    dg = pd.read_csv(p / "aq2_diagnostic_table.csv")
+    mt = pd.read_csv(p / "aq3_model_table.csv")
+    out = {"population_students": int(len(mt)),
+           "students_per_label3": dg.label3.value_counts().to_dict(),
+           "rows_aq1_student_week": int(len(wk)), "rows_per_student_aq1": 4}
+
+    # AQ1 - per group x week medians (per student rows)
+    a1 = wk.groupby(["label3", "week"]).agg(n=("id_student", "size"), clicks_median=("clicks", "median"),
+                                            clicks_mean=("clicks", "mean"), active_days_median=("active_days", "median"),
+                                            active_days_mean=("active_days", "mean")).round(2).reset_index()
+    out["AQ1_by_group_week"] = a1.to_dict("records")
+
+    # AQ2 - Mann-Whitney + Cliff's delta (non-completers vs completers), Holm
+    y = dg.target_noncompletion
+
+    def cliff(a, b):
+        u = stats.mannwhitneyu(a, b).statistic
+        return 2 * u / (len(a) * len(b)) - 1
+
+    rows = []
+    for c in ["clicks_w1", "clicks_w2", "clicks_w3", "clicks_w4", "active_days_w1", "active_days_w2", "active_days_w3",
+              "active_days_w4", "clicks_change_w1_w4", "days_since_last_active_d28", "tma1_score", "num_of_prev_attempts",
+              "studied_credits", "highest_education_ord"]:
+        a, b = dg.loc[y == 1, c].dropna(), dg.loc[y == 0, c].dropna()
+        rows.append({"indicator": c, "median_noncompl": r(a.median()), "median_compl": r(b.median()),
+                     "cliffs_delta": r(cliff(a, b), 3), "p": stats.mannwhitneyu(a, b).pvalue})
+    for c in ["tma1_submitted_by_d28", "tma1_on_time"]:
+        rd = dg.loc[y == 1, c].mean() - dg.loc[y == 0, c].mean()
+        rows.append({"indicator": c, "rate_noncompl": r(dg.loc[y == 1, c].mean(), 3), "rate_compl": r(dg.loc[y == 0, c].mean(), 3),
+                     "risk_difference": r(rd, 3), "p": stats.chi2_contingency(pd.crosstab(dg[c], y))[1]})
+    holm = holm_adjust([x["p"] for x in rows])
+    for x, ph in zip(rows, holm):
+        x["p_holm"] = float(f"{ph:.2g}")
+        x.pop("p")
+    out["AQ2_completers_vs_noncompleters"] = rows
+    out["AQ2_note"] = ("All weekly clicks / active-days differ from week 1 with small-medium effect (|delta| 0.26-0.31); "
+                       "clicks_change_w1_w4 is significant by p but negligible (|delta| ~0.04). Non-submission of TMA1 by day 28 is a strong signal.")
+
+    # AQ3 - temporal split from the 'split' column; no sensitive attributes, no tma1_score (sensitivity only)
+    drop = {"code_module", "code_presentation", "id_student", "split", "target_noncompletion"}
+    feats = [c for c in mt.columns if c not in drop and c != "tma1_score"]
+    tr, va, te = (mt[mt.split == s] for s in ("train", "validation", "test"))
+    out["AQ3_split"] = {s: {"n": int(len(d)), "noncompletion_rate": r(d.target_noncompletion.mean(), 3)}
+                        for s, d in zip(("train", "validation", "test"), (tr, va, te))}
+
+    def evaluate(model, cols):
+        model.fit(tr[cols], tr.target_noncompletion)
+        pv, pt = model.predict_proba(va[cols])[:, 1], model.predict_proba(te[cols])[:, 1]
+        # t* = highest threshold with validation recall >= 0.70
+        ts = np.sort(np.unique(pv))[::-1]
+        t = next(t for t in ts if recall_score(va.target_noncompletion, pv >= t) >= 0.70)
+        yt = te.target_noncompletion
+        return pt, {"val_pr_auc": r(average_precision_score(va.target_noncompletion, pv), 3),
+                    "test_pr_auc": r(average_precision_score(yt, pt), 3), "test_roc_auc": r(roc_auc_score(yt, pt), 3),
+                    "threshold_from_validation": r(t, 3), "test_recall_at_t": r(recall_score(yt, pt >= t), 3),
+                    "test_precision_at_t": r(precision_score(yt, pt >= t), 3)}
+
+    logit = lambda: make_pipeline(SimpleImputer(strategy="median"), StandardScaler(), LogisticRegression(C=1.0, max_iter=2000))
+    p_lr, res_lr = evaluate(logit(), feats)
+    _, res_hgb = evaluate(HistGradientBoostingClassifier(max_iter=200, random_state=42), feats)
+    _, res_lr_score = evaluate(logit(), feats + ["tma1_score"])
+    out["AQ3_models_test_2014J"] = {"prevalence_baseline_pr_auc": out["AQ3_split"]["test"]["noncompletion_rate"],
+                                    "logistic_core": res_lr, "hist_gradient_boosting_core": res_hgb,
+                                    "logistic_plus_tma1_score (sensitivity)": res_lr_score}
+    # random-shuffle CV for contrast (what a leaky evaluation would report)
+    from sklearn.model_selection import cross_val_score
+    out["AQ3_random_5fold_cv_pr_auc_all_terms (not a valid headline)"] = r(
+        cross_val_score(logit(), mt[feats], mt.target_noncompletion, cv=5, scoring="average_precision").mean(), 3)
+
+    # AQ4 - top-200 per module-presentation on test, logistic core
+    te = te.assign(p=p_lr)
+    a4 = {}
+    for k in (100, 200, 300):
+        for mod, g in te.groupby("code_module"):
+            top = g.nlargest(k, "p")
+            a4.setdefault(f"k{k}", {})[f"{mod}-2014J"] = {"precision": r(top.target_noncompletion.mean(), 3),
+                                                         "true_noncompleters": int(top.target_noncompletion.sum()),
+                                                         "cohort": int(len(g)), "base_rate": r(g.target_noncompletion.mean(), 3)}
+    pooled = te.nlargest(400, "p")
+    a4["pooled_top400_without_quota_split"] = pooled.code_module.value_counts().to_dict()
+    out["AQ4_test_2014J_logistic_core"] = a4
+
+    # AQ5 - dominant reasons in top-200 lists (coef x standardized value)
+    m = logit().fit(tr[feats], tr.target_noncompletion)
+    imp, sc, lr = m.steps[0][1], m.steps[1][1], m.steps[2][1]
+    top = te.groupby("code_module", group_keys=False).apply(lambda g: g.nlargest(200, "p"))
+    contrib = sc.transform(imp.transform(top[feats])) * lr.coef_[0]
+    top3 = pd.DataFrame(contrib, columns=feats).apply(lambda s: list(s.nlargest(3).index), axis=1)
+    out["AQ5_most_frequent_top3_reasons_in_top200"] = pd.Series([f for xs in top3 for f in xs]).value_counts().head(8).to_dict()
+    out["AQ5_note"] = "Contributions are exact in logit space for the linear model; no sensitive attribute is a feature."
+
+    # project's own frozen-plan results (P4) - same data, for cross-checking
+    out["project_P4_reference"] = {
+        "test_pr_auc": {"M0_prevalence": 0.378, "M1_rule": 0.615, "M2_logistic": 0.662, "M3_hgb": 0.645, "M2+tma1_score": 0.533},
+        "M2_test_recall_at_val_threshold": 0.693, "M2_test_precision": 0.519,
+        "precision_at_200_test": {"BBB-2014J": 0.76, "FFF-2014J": 0.88}, "first_significant_week": 1,
+        "top_reason": "tma1_submitted_by_d28 = 0 (TMA1 not submitted by day 28), then low active_days_0_28",
+        "fairness_recall_gaps_test": "all <= 0.10 (gender 0.02, age 0.01, disability 0.00)"}
+    return out
+
+
+REFS = {"oulad_early_warning": oulad_early_warning, "retail_uk": retail_uk, "student_perf": student_perf, "household_power": household_power,
         "worldbank_health": worldbank_health, "himalaya": himalaya, "wine_quality": wine_quality,
         "bank_marketing": bank_marketing}
 

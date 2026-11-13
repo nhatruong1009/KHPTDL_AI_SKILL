@@ -1,0 +1,104 @@
+                                                              khach   rev_2010   rev_2011   thay_doi  dong_gop_%_vao_thay_doi_tong
+segment                                                                                                                           
+Cũ - mua cả 2 năm (giữ chân)                                 2650.0  6665404.0  6255727.0  -409677.0                        -169.0
+Cũ - quay lại (mua trước 2010/ngoài cửa sổ, không mua 2010)    48.0        0.0    37794.0    37794.0                          16.0
+Cũ - rời bỏ (có 2010, không có 2011)                         1532.0  1064414.0        0.0 -1064414.0                        -439.0
+Mới - lần đầu mua năm 2011                                   1533.0        0.0  1427391.0  1427391.0                         588.0
+Không có Customer ID (không phân loại được)                     NaN  1030006.0  1281590.0   251584.0                         104.0
+khach_2010                      4182.0
+khach_2010_con_mua_2011         2650.0
+ty_le_giu_chan_%                  63.4
+khach_moi_2011                  1533.0
+rev_moi_tren_khach               931.1
+rev_giu_chan_2010_tren_khach    2515.2
+rev_giu_chan_2011_tren_khach    2360.7
+rev_roi_bo_2010_tren_khach       694.8
+dtype: float64
+                      rev_2010  rev_2011  thay_doi  thay_doi_%  dong_gop_diem_%
+Country                                                                        
+EIRE                  329145.0  250984.0  -78162.0       -24.0             -1.0
+Denmark                43965.0   16905.0  -27060.0       -62.0             -0.0
+Sweden                 48942.0   32531.0  -16412.0       -34.0             -0.0
+Greece                 13624.0    4426.0   -9198.0       -68.0             -0.0
+United Arab Emirates    7284.0    1865.0   -5419.0       -74.0             -0.0
+Lithuania               4893.0       0.0   -4893.0      -100.0             -0.0
+                 rev_2010   rev_2011  thay_doi  thay_doi_%  dong_gop_diem_%
+Country                                                                    
+Norway             9543.0    25867.0   16325.0       171.0              0.0
+Germany          169570.0   186644.0   17074.0        10.0              0.0
+Japan              4856.0    27715.0   22859.0       471.0              0.0
+Spain             25967.0    50061.0   24095.0        93.0              0.0
+Netherlands      247749.0   274725.0   26976.0        11.0              0.0
+United Kingdom  7537355.0  7583407.0   46052.0         1.0              1.0
+France           110483.0   173425.0   62942.0        57.0              1.0
+Australia         29927.0   135985.0  106058.0       354.0              1.0
+           rev_2010   rev_2011  thay_doi  thay_doi_%
+g                                                   
+Ngoài UK  1222469.6  1419095.7  196626.1        16.1
+UK        7537355.1  7583407.1   46052.0         0.6
+y        2010       2011  thay_doi_%
+m                                   
+1    606359.0   580389.0        -4.0
+2    527144.0   500494.0        -5.0
+3    754636.0   680457.0       -10.0
+4    638861.0   482878.0       -24.0
+5    608334.0   732206.0        20.0
+6    672828.0   724991.0         8.0
+7    617753.0   677881.0        10.0
+8    663641.0   702564.0         6.0
+9    844082.0  1013424.0        20.0
+10  1072389.0  1062674.0        -1.0
+11  1400412.0  1432732.0         2.0
+12   760258.0   441363.0       -42.0
+full_2010             9166697.43
+full_2011_to_9Dec     9032052.65
+win_2010_1Jan_8Dec    8759824.70
+win_2011_1Jan_8Dec    9002502.77
+naive_change_%             -1.47
+fair_change_abs        242678.07
+fair_change_%               2.77
+gross_2010w           8987006.58
+returns_2010w         -227181.88
+gross_2011w           9295054.71
+returns_2011w         -292551.94
+orders_2010w            18801.00
+orders_2011w            18179.00
+active_cust_2010w        4189.00
+active_cust_2011w        4231.00
+ci_lo                      -5.00
+ci_hi                      10.47
+dtype: float64
+A_chuan (bo dong khong phai hang hoa, bo trung sheet)    2.77
+B_giu moi dong (gom phi/dieu chinh)                      3.22
+C_bo dong trung hoan toan                                2.90
+D_chi doanh thu gop (khong tru hang tra)                 3.43
+E_chi khach co Customer ID                              -0.12
+F_SAI: cong trung sheet 1-9/12/2010                     -1.22
+dtype: float64
+overlap_rows_sheet1          22523.0
+overlap_rows_sheet2          22523.0
+overlap_rev_sheet1          377488.4
+overlap_rev_sheet2          377488.4
+nonproduct_rev_removed      -70366.5
+rows_after_overlap         1044848.0
+new_cust_2010_in_window       3328.0
+new_cust_2010_rev          3691369.2
+H1_chg                          -2.8
+Q3_Q4_chg_to_8Dec                7.1
+dtype: float64
+       Country  top1_share_2011_pct  ...  n_cust_2010  n_cust_2011
+0    Australia                 90.9  ...           15            9
+1       France                 10.3  ...           45           84
+2         EIRE                 51.1  ...            3            3
+3      Denmark                 46.3  ...            9            9
+4  Netherlands                 98.4  ...           22            8
+
+[5 rows x 5 columns]
+segment         Cũ - mua cả 2 năm (giữ chân)  Cũ - quay lại (mua trước 2010/ngoài cửa sổ, không mua 2010)  Cũ - rời bỏ (có 2010, không có 2011)  Mới - lần đầu mua năm 2011      tong
+Country                                                                                                                                                                              
+United Kingdom                     -531243.0                                                      18027.0                             -936020.0                   1236774.0 -212462.0
+EIRE                                -67969.0                                                          0.0                                   0.0                         0.0  -67969.0
+Denmark                               5710.0                                                          0.0                              -30035.0                      1347.0  -22978.0
+Netherlands                          38530.0                                                          0.0                              -11554.0                         0.0   26976.0
+France                               28083.0                                                          0.0                               -3105.0                     36804.0   61782.0
+Australia                           105204.0                                                          0.0                               -2567.0                         0.0  102637.0

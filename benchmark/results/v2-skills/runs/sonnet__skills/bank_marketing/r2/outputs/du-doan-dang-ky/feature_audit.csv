@@ -1,0 +1,8 @@
+feature,known_when,decision,why
+"age, marital",trước cuộc gọi,loại khỏi mô hình,thuộc tính nhạy cảm: chỉ dùng kiểm tra sai số theo nhóm
+duration,SAU cuộc gọi,LOẠI,tài liệu nêu rõ không biết trước khi gọi; chỉ chạy sensitivity
+campaign,đếm cả cuộc gọi cuối,LOẠI khỏi mô hình chính,không kiểm chứng được trước cuộc gọi; chạy sensitivity
+"job, education, default, housing, loan",trước,giữ,hồ sơ khách hàng
+"contact, month, day_of_week",lúc lên lịch gọi,giữ,biết khi lên lịch
+"pdays, previous, poutcome",trước (chiến dịch cũ),giữ,lịch sử
+5 chỉ số vĩ mô,công bố tại thời điểm gọi,giữ (+ chạy bản không có),trôi theo thời gian

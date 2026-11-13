@@ -1,0 +1,62 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 75.0,
+    "skills_missing": [
+      "time-series",
+      "group-compare"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Lọc Everest đúng và dùng members.csv (cấp cá nhân) với mẫu số rõ ràng",
+        "pass": true,
+        "evidence": "Lọc peak_name == \"Everest\", ra 2.149 chuyến và năm 1921-2019, khớp tham chiếu. Agent có tính bảng theo members.csv (rates_by_decade_members_table.csv khớp chính xác ground truth, ví dụ 2010 member 43/4958). Kết quả chính lại dùng mẫu số 'người lên trên base camp' trong expeditions.csv, nhưng agent nêu rõ và lý giải lựa chọn này."
+      },
+      {
+        "check": "Tỉ lệ tử vong theo thập kỷ của thành viên và hired staff nhất quán với by_decade",
+        "pass": true,
+        "evidence": "Thành viên: 1,93% (1970-89) → 1,04% (1990-2019); 1990s 1,44%, 2000s 0,97%, 2010s 0,87%, khớp tham chiếu. Hired: số chính là 2,2% → 0,67% (mẫu số từ expeditions.csv), khác mức tham chiếu ~14% → ~1%. Agent nêu rõ biến thể theo members.csv (1970s 36,5%, 1980s 13,8%) và lý do không dùng (bảng thiếu dòng hired trước 2000), nên đây là lựa chọn biện hộ được."
+      },
+      {
+        "check": "Cảnh báo cỡ mẫu nhỏ thời kỳ đầu và/hoặc đỉnh thảm họa 2014-2015",
+        "pass": true,
+        "evidence": "Có kiểm tra độ bền: 28/40 ca chết hired thập niên 2010 rơi vào 2014 (17) và 2015 (11); bỏ hai năm này còn 0,27%. Nêu 'chỉ 34 chuyến trước 1970, không nên đọc quá sâu' và vẽ khoảng tin cậy Wilson."
+      },
+      {
+        "check": "Cho thấy điều đã thay đổi trong kỷ nguyên thương mại (số người/chuyến, tỉ lệ thành công, oxy, tỉ lệ hired)",
+        "pass": true,
+        "evidence": "Số chuyến 141 → 869 mỗi thập niên; lên đỉnh 9% → 62%; dùng oxy 21% → 71%; hired trên mỗi thành viên 0,69 → 1,03. Riêng story.md không nêu số liệu lên đỉnh, chỉ ghi 'nhiều người đến được đỉnh hơn'."
+      },
+      {
+        "check": "story.md tồn tại, ngôn ngữ phổ thông, một thông điệp chính, có cảnh báo trung thực",
+        "pass": true,
+        "evidence": "Thông điệp chính: 'tỉ lệ người chết giảm khoảng một nửa... nhưng mức giảm đã dừng lại từ thập niên 2000'. Có cấu trúc bối cảnh – điều đáng ngạc nhiên – dữ liệu – gợi ý. Có cảnh báo 'đi cùng... không chứng minh là nguyên nhân', về phơi nhiễm và về dữ liệu hired không đầy đủ. Không nhắc rõ thiên lệch sống sót hay thiên lệch báo cáo."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Đây là bài làm chất lượng cao, tất cả số liệu kiểm tra được đều khớp với CSV và ground truth: 2.149 chuyến; số chuyến 141/331/745/869; tỉ lệ thành viên 1,44/0,97/0,87%; năm 2014 có 17 người chết và năm 2015 có 14 (11 hired + 3 thành viên). Điểm khác biệt lớn là mẫu số của hired staff. Agent lấy số người lên trên base camp từ expeditions.csv thay cho members.csv, nên hired trước 1990 chỉ còn 2,2% thay vì ~14% như tham chiếu. Lựa chọn này được nêu rõ và có lý giải (members.csv thiếu dòng hired, còn số ca chết khớp giữa hai bảng), đồng thời agent vẫn báo cáo biến thể theo members.csv (36,5%/13,8%). Bài có kiểm định Fisher, khoảng tin cậy Wilson, kiểm tra độ bền với cú sốc 2014-2015, phân tích nguyên nhân tử vong (63% ca chết hired do tuyết lở/sập băng) và cảnh báo nhân quả rõ ràng. Story.md ngắn gọn, viết bằng tiếng Việt, hợp với độc giả phổ thông. Thiếu sót: story không đưa số liệu tỉ lệ lên đỉnh, không nhắc thiên lệch báo cáo/sống sót, và tiêu đề chart1 hơi rối. Ba biểu đồ đọc tốt, tiêu đề nêu kết luận và khớp số liệu. Agent thừa nhận chưa xem lại biểu đồ, nhưng thực tế các biểu đồ đều đúng."
+  },
+  "judge_cost_usd": 0.2544209,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

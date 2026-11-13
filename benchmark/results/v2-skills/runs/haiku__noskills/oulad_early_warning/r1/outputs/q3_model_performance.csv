@@ -1,0 +1,5 @@
+mô_hình,tập,AUC,PR_AUC,ngưỡng,recall,precision,số_bị_cảnh_báo,tỷ_lệ_bị_cảnh_báo,tỷ_lệ_không_hoàn_thành,n
+Hồi quy logistic (chính),validation,0.756,0.75,0.391,0.7,0.643,1307,0.506,0.465,2581
+Hồi quy logistic (chính),test (2014J),0.685,0.539,0.391,0.635,0.522,1673,0.459,0.378,3644
+Gradient boosting (so sánh),validation,0.752,0.754,0.416,0.7,0.65,1293,0.501,0.465,2581
+Gradient boosting (so sánh),test (2014J),0.696,0.6,0.416,0.656,0.51,1768,0.485,0.378,3644

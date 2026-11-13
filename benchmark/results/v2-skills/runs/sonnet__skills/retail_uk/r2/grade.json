@@ -1,0 +1,77 @@
+{
+  "task": "retail_uk",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 50.0,
+    "skills_missing": [
+      "data-calc",
+      "root-cause",
+      "data-chart",
+      "storytelling"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Loại trùng, nhận ra hai sheet chồng nhau đầu 12/2010",
+        "pass": true,
+        "evidence": "answer.md: 'trùng nhau 22,523 dòng (£377k) từ 1–9/12/2010; giữ một bản' — khớp đúng 22.523 của tham chiếu; trùng tuyệt đối gốc được kiểm tra trong độ nhạy ('Bỏ dòng trùng hoàn toàn +2.9%')."
+      },
+      {
+        "check": "2. Nhận ra 2011 kết thúc 9/12 và so sánh cùng kỳ",
+        "pass": true,
+        "evidence": "Cửa sổ 1/1–8/12 mỗi năm; nêu rõ so ngây thơ cho −1.5% (tham chiếu −1.34%) là sai dấu."
+      },
+      {
+        "check": "3. Xử lý hoá đơn huỷ 'C' nhất quán",
+        "pass": true,
+        "evidence": "'Doanh thu thuần = Quantity × Price, đã gồm hoá đơn hoàn/huỷ (Quantity âm)'; biến thể gộp không trừ hàng trả +3.4% được tách riêng."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ trong ±3 điểm % so với tham chiếu",
+        "pass": true,
+        "evidence": "+2.8% (£9,002,503 vs £8,759,825) so với tham chiếu dòng sản phẩm 2.67% (£9,013k vs £8,779k) — chênh 0.13 điểm."
+      },
+      {
+        "check": "5. Tách mới/cũ theo Customer ID và nêu loại trừ ID thiếu",
+        "pass": true,
+        "evidence": "Mới +£1.43tr (1.533 khách; tham chiếu 1.532, £1.42tr); rời bỏ −£1.06tr (tham chiếu £1.059tr); giữ chân −£0.41tr (tham chiếu −£0.42tr); 63.4% quay lại (tham chiếu 63.43%); nhóm không có ID +£0.25tr tách riêng, ghi rõ không phân loại được."
+      },
+      {
+        "check": "6. Nêu đúng thị trường kéo tăng/giảm",
+        "pass": true,
+        "evidence": "Australia +£106k, Pháp +£63k, UK +£46k; EIRE −£78k, Đan Mạch −£27k, Thụy Điển −£16k — khớp tham chiếu (106k, 61.6k, 42.7k; −79k, −28k, −16k); UK ~84% doanh thu được nêu."
+      },
+      {
+        "check": "7. story.md có thông điệp chính, mạch bối cảnh-căng thẳng-insight-hành động, khuyến nghị dạng đề xuất",
+        "pass": true,
+        "evidence": "Tiêu đề 'chạy nhanh chỉ để đứng yên', thông điệp chính in đậm ngay đầu, các mục 1→5 kết thúc bằng 'Đề xuất' ưu tiên giữ chân, kèm hạn chế và ghi chú 'ước tính minh hoạ, không phải dự báo'."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 5,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Ước tính 'mỗi 1 điểm % giữ chân ≈ 40 khách ≈ £100k/năm' dùng mức chi trung bình của khách giữ chân (~£2.5k), trong khi khách rời bỏ chỉ trung bình £695 (do chính agent tính) → phép tính phóng đại (khoảng £29k nếu dùng mức chi khách rời bỏ); có ghi là minh hoạ nhưng vẫn thiếu nhất quán",
+      "answer.md phần Hạn chế ghi nhóm không có ID tạo mức tăng '+£252k' trong khi bảng và phần trên ghi +£0.25tr/+£243k — lệch nhỏ, không nhất quán"
+    ],
+    "summary": "Bài làm rất chắc chắn: phát hiện đúng 22.523 dòng trùng giữa hai sheet, so sánh cùng kỳ 1/1–8/12 và cảnh báo phép so ngây thơ (−1.5%) là sai dấu. Agent cũng trừ hàng trả nhất quán, loại các dòng phí/điều chỉnh không phải hàng hoá và có bảng độ nhạy cùng khoảng tin cậy bootstrap. Mức +2.8% khớp tham chiếu (2.67%). Phần tách khách mới/rời bỏ/giữ chân khớp gần như chính xác với tham chiếu. Nhóm không có Customer ID được tách riêng và nêu rõ là không phân loại được. Các quốc gia kéo tăng/giảm khớp tham chiếu (Australia, Pháp so với EIRE, Đan Mạch, Thụy Điển), kèm cảnh báo tập trung vào vài tài khoản. story.md bằng tiếng Việt, có một thông điệp chính, mạch truyện rõ, khuyến nghị dạng đề xuất và nêu đủ hạn chế. Điểm trừ: ước tính '1 điểm % giữ chân ≈ £100k' bị phóng đại vì dùng mức chi của khách giữ chân thay cho khách rời bỏ (£695); có một lệch nhỏ +£252k so với +£243k. Biểu đồ 3 có chú thích đè lên đường dữ liệu. Ba biểu đồ đều có tiêu đề nêu kết luận và số liệu khớp với báo cáo."
+  },
+  "judge_cost_usd": 0.2451928,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

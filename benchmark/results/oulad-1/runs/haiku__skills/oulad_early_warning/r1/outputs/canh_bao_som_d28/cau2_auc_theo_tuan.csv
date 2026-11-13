@@ -1,0 +1,17 @@
+tuan,chi_bao,cot_goc,AUC_don_bien_theo_huong_rui_ro,p_holm,co_y_nghia_holm_5pct
+1,lượt nhấp trong tuần,clicks_w1,0.6301426006615711,9.40595596514147e-143,True
+1,ngày hoạt động trong tuần,active_days_w1,0.6312790096816817,1.938557637312355e-147,True
+1,lượt nhấp tích lũy đến tuần,tich_luy_clicks_den_tuan1,0.6301426006615711,9.40595596514147e-143,True
+1,ngày hoạt động tích lũy đến tuần,tich_luy_ngay_hd_den_tuan1,0.6312790096816817,1.938557637312355e-147,True
+2,lượt nhấp trong tuần,clicks_w2,0.6485546725314411,7.3131712361967206e-186,True
+2,ngày hoạt động trong tuần,active_days_w2,0.6536714705793459,5.794880631336584e-202,True
+2,lượt nhấp tích lũy đến tuần,tich_luy_clicks_den_tuan2,0.6499687339045491,3.1021738540095427e-188,True
+2,ngày hoạt động tích lũy đến tuần,tich_luy_ngay_hd_den_tuan2,0.6569109443933328,4.366595723619627e-207,True
+3,lượt nhấp trong tuần,clicks_w3,0.6303196513739591,9.40595596514147e-143,True
+3,ngày hoạt động trong tuần,active_days_w3,0.6480355305566783,1.06279037671278e-186,True
+3,lượt nhấp tích lũy đến tuần,tich_luy_clicks_den_tuan3,0.6502311180831233,9.459556595170877e-189,True
+3,ngày hoạt động tích lũy đến tuần,tich_luy_ngay_hd_den_tuan3,0.6662058002279838,2.0943863043389817e-231,True
+4,lượt nhấp trong tuần,clicks_w4,0.6451224109654441,8.751622668264293e-178,True
+4,ngày hoạt động trong tuần,active_days_w4,0.6565498099905749,3.1048186499757124e-209,True
+4,lượt nhấp tích lũy đến tuần,tich_luy_clicks_den_tuan4,0.6527015447713729,6.093733039435232e-195,True
+4,ngày hoạt động tích lũy đến tuần,tich_luy_ngay_hd_den_tuan4,0.6732363016403622,5.08601639412015e-251,True

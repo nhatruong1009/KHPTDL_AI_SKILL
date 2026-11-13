@@ -1,0 +1,4 @@
+method,n,MAPE,medAPE,bias_log,sd_log
+ratio_2m,19,6.759,4.15,0.028,0.109
+seasonal_naive,19,9.763,6.54,0.044,0.223
+yoy_scaled,19,9.253,6.972,0.056,0.226

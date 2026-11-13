@@ -54,32 +54,32 @@
     "downloads": [
       {
         "url": "https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=csv",
-        "bytes": 91365,
-        "sha256": "30d2b453b07c90c602f4424aa77e5af502e18a36ee3b84b8b3f51af72efe0277",
+        "bytes": 91359,
+        "sha256": "34347df4a917fa8128269ed8a1cf9f9aa90eea93a463307cab9cb2fab10028b5",
         "files": [
-          "Metadata_Indicator_API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv",
-          "API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv",
-          "Metadata_Country_API_SP.DYN.LE00.IN_DS2_en_csv_v2_259172.csv"
+          "Metadata_Indicator_API_SP.DYN.LE00.IN_DS2_en_csv_v2_70864.csv",
+          "API_SP.DYN.LE00.IN_DS2_en_csv_v2_70864.csv",
+          "Metadata_Country_API_SP.DYN.LE00.IN_DS2_en_csv_v2_70864.csv"
         ]
       },
       {
         "url": "https://api.worldbank.org/v2/en/indicator/SH.XPD.CHEX.PC.CD?downloadformat=csv",
-        "bytes": 57102,
-        "sha256": "99e582a91338a32bc5fa3574ba859cbd351c757677a706d1645d005525ebe53d",
+        "bytes": 57089,
+        "sha256": "fb242be6e7883a99eb227028fd982fd6abdc12506f2285ba7fb76093969e0be3",
         "files": [
-          "Metadata_Indicator_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv",
-          "API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv",
-          "Metadata_Country_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_3808.csv"
+          "Metadata_Indicator_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_57.csv",
+          "API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_57.csv",
+          "Metadata_Country_API_SH.XPD.CHEX.PC.CD_DS2_en_csv_v2_57.csv"
         ]
       },
       {
         "url": "https://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.PP.CD?downloadformat=csv",
-        "bytes": 95109,
-        "sha256": "c7f9101196b72ca1a93b367a93f4b92ab70434685f8036e946268f3eab486822",
+        "bytes": 95113,
+        "sha256": "b51f579a57ae5b019c16ccac3805bdb36e046d640ed90521bb7338d863ebf004",
         "files": [
-          "Metadata_Indicator_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv",
-          "API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv",
-          "Metadata_Country_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_1247.csv"
+          "Metadata_Indicator_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_60730.csv",
+          "API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_60730.csv",
+          "Metadata_Country_API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_60730.csv"
         ]
       }
     ]
@@ -144,6 +144,48 @@
           "bank-additional/bank-additional-full.csv",
           "bank-additional/bank-additional-names.txt",
           "bank-additional/bank-additional.csv"
+        ]
+      }
+    ]
+  },
+  "oulad_early_warning": {
+    "task": "oulad_early_warning",
+    "topic": "Education / early warning (prepared data)",
+    "origin": "OULAD (Kuzilek et al., 2017, CC BY 4.0) - N05 prepared views, P3/data/processed only",
+    "downloads": [
+      {
+        "local_dir": "/code/da-oulad-early-warning/P3/data/processed",
+        "files": [
+          {
+            "name": "aq1_student_week.csv",
+            "bytes": 2247267,
+            "sha256": "8c11f8f5d5f2eb3ca01587bf71bd88c458243730e258ff886e717d1a173a6579"
+          },
+          {
+            "name": "aq2_diagnostic_table.csv",
+            "bytes": 2691064,
+            "sha256": "6a3ef60b7b545044cae06e6748003f0a65c9ad39e2cdad25ee31d518c95c21e4"
+          },
+          {
+            "name": "aq3_audit_attributes.csv",
+            "bytes": 997307,
+            "sha256": "3ca494f80ed6a1ab929ef5aabcc22dec5d0d4887b686144574366895872dd918"
+          },
+          {
+            "name": "aq3_model_table.csv",
+            "bytes": 1976538,
+            "sha256": "f688038cc5609b4700332fdd8ca64224114807ebaf59412ad2e875e9de715f98"
+          },
+          {
+            "name": "aq4_decision_params.json",
+            "bytes": 163,
+            "sha256": "91a908bb270568647180517e1f75c0c546a0a7d99ae1ee48ff1963dc46c222db"
+          },
+          {
+            "name": "context_all_registrations.csv",
+            "bytes": 846158,
+            "sha256": "0c1cb4ea3aa1bb271bf3dc018ed3d1f4a0b27a9eedd514ed29d80e13da15c718"
+          }
         ]
       }
     ]

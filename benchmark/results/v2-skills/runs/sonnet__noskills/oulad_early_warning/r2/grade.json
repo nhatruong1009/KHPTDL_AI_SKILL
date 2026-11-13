@@ -1,0 +1,87 @@
+{
+  "task": "oulad_early_warning",
+  "model": "sonnet",
+  "variant": "noskills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh click và ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "Trung vị click tuần 1→4: Pass 59→50→60→43, Withdrawn 33→25→36→21, Fail 20→15→23→10, khớp tham chiếu; Pass cao nhất, Fail thấp nhất ở mọi tuần. Ngày hoạt động chỉ báo dưới dạng trung bình tổng 0–28 (13,3/9,9/8,1), không theo từng tuần. Đây là thiếu sót nhỏ."
+      },
+      {
+        "check": "AQ2: hoàn thành vs không hoàn thành, có kích cỡ hiệu ứng, xử lý kiểm định bội hoặc ý nghĩa thực tiễn, khác biệt từ tuần 1",
+        "pass": true,
+        "evidence": "Dùng AUC Mann-Whitney làm kích cỡ hiệu ứng và ghi rõ 'mẫu lớn nên p-value ít phân biệt'. clicks_change w1→w4 có AUC 0,52 nên được xếp loại 'yếu/không đáng kể'. Kết luận 'khác biệt có ngay từ tuần 1' (click w1 AUC 0,63; trung vị 59 so với 24). Không hiệu chỉnh Holm/Bonferroni nhưng có đánh giá ý nghĩa thực tiễn."
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo thời gian",
+        "pass": true,
+        "evidence": "Train 2013B/2013J, validation 2014B, test 2014J theo cột split; ngưỡng chọn trên validation (0,388)."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo look-ahead",
+        "pass": false,
+        "evidence": "model.py đưa tma1_score vào làm đặc trưng, giá trị thiếu điền bằng trung vị, và không hề cảnh báo nguy cơ look-ahead. 'Điểm TMA1 thấp' còn xuất hiện trong lý do gửi cố vấn (173 lần). Không dùng thuộc tính nhạy cảm."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0,05 so với tham chiếu, có baseline, recall/precision tại ngưỡng chọn trên validation, nói rõ có đạt 70% hay không",
+        "pass": false,
+        "evidence": "AP test 0,60 so với tham chiếu ~0,665 (logistic), lệch 0,065, vượt ngưỡng sai số; GBM chỉ báo AUC 0,699. Có so với tỷ lệ nền 37,8% và baseline click. Recall test 65,3%, precision 51,5%, nói rõ là trượt mục tiêu 70%."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ (200 mỗi bên), precision@200 khớp tham chiếu, so với tỷ lệ nền",
+        "pass": false,
+        "evidence": "Có tách quota đúng cách (groupby module-kỳ, head 200). Tuy nhiên BBB chỉ trúng 122/200 = 0,61, so với tham chiếu ~0,76, lệch quá ±0,08; FFF 183/200 = 0,915 thì khớp. Chỉ có tỷ lệ nền gộp 37,8%, thiếu tỷ lệ nền riêng từng module."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt dễ hiểu dựa trên đóng góp thực của mô hình, không dùng thuộc tính nhạy cảm, lý do chính hợp lý",
+        "pass": true,
+        "evidence": "Đóng góp = hệ số × giá trị chuẩn hóa, lấy top-3 cho mỗi người. Lý do hay gặp: ít ngày hoạt động (313), nộp TMA1 trễ (253), chưa nộp TMA1 (226). Lời nhắn tiếng Việt viết theo mẫu, hơi máy móc. Có 'điểm TMA1 thấp' (đặc trưng có nguy cơ look-ahead)."
+      },
+      {
+        "check": "Không tuyên bố nhân quả; nêu giới hạn quan sát và khả năng tổng quát",
+        "pass": true,
+        "evidence": "Ghi rõ 'liên hệ, không phải nhân quả', 'tỷ lệ chuyển đổi 14% là giả định, chưa kiểm chứng', có nhắc trôi phân phối giữa các kỳ và việc chỉ có 1 kỳ test. Cụm 'thực sự được cứu' hơi quá lời nhưng đã được rào đón."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Precision@200 BBB-2014J = 122/200 (0,61) thấp hơn nhiều so với tham chiếu ~0,76: con số không bịa, nhưng do mô hình có đưa tma1_score vào nên kết quả kém hơn",
+      "AP test 0,60 thấp hơn tham chiếu logistic lõi ~0,665 (cũng do tma1_score được điền trung vị)"
+    ],
+    "summary": "Bài làm có quy trình tốt: xác định đúng quần thể 13.020 sinh viên và loại 2.644 lượt đã hủy trước ngày 28, chia theo thời gian đúng cột split, chọn ngưỡng trên validation, tách quota 200 cho từng module-kỳ, và nói thẳng rằng recall test 65,3% không đạt mục tiêu 70%. Phần AQ1 và AQ2 khớp tham chiếu: trung vị click tuần 1 là 59/33/20, khác biệt có từ tuần 1, và có dùng kích cỡ hiệu ứng AUC. Lỗi chính là đưa tma1_score (điền trung vị) vào mô hình mà không cảnh báo look-ahead. Hệ quả là AP test chỉ 0,60 (tham chiếu ~0,665) và precision@200 của BBB chỉ 0,61 (tham chiếu ~0,76); 'điểm TMA1 thấp' còn xuất hiện trong lý do gửi cố vấn. Biểu đồ đọc dễ nhưng tiêu đề chỉ mô tả, không nêu thông điệp; biểu đồ 2 cho thấy mô hình gần như không hơn quy tắc 'ít click nhất', nhưng điều này chưa được nói rõ. Câu trả lời viết bằng tiếng Việt rõ ràng và nêu kết luận ngay từ đầu."
+  },
+  "judge_cost_usd": 0.299584,
+  "accuracy_pct": 62.5,
+  "quality_pct": 65.0,
+  "overall": 63.5
+}

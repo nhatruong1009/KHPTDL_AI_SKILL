@@ -1,0 +1,21 @@
+import pandas as pd, numpy as np
+D = "data/"
+w = pd.read_csv(D + "aq1_student_week.csv")
+m = pd.read_csv(D + "aq3_model_table.csv")
+d = pd.read_csv(D + "aq2_diagnostic_table.csv")
+a = pd.read_csv(D + "aq3_audit_attributes.csv")
+K = ['code_module', 'code_presentation', 'id_student']
+x = m.merge(d[K + ['clicks_0_28', 'label3', 'target_noncompletion']], on=K, suffixes=('', '_d'))
+print("target same:", (x.target_noncompletion == x.target_noncompletion_d).all())
+print("clicks_0_28 same:", (x.clicks_0_28 == x.clicks_0_28_d).all())
+print(x.groupby('flag_high_activity')[['clicks_0_28', 'target_noncompletion']].describe().T)
+print("clicks_0_28 > sum wk?", (d.clicks_0_28 - d[[f'clicks_w{i}' for i in range(1, 5)]].sum(axis=1)).describe())
+print(pd.crosstab(m.flag_high_activity, d.label3))
+print("flag_high_activity q:", x[x.flag_high_activity == 1].clicks_0_28.min(), x[x.flag_high_activity == 0].clicks_0_28.max())
+print("late reg:", pd.crosstab(m.late_registration_1_28, m.days_observable_0_28))
+print("seen_in_earlier:", m.seen_in_earlier_presentation.value_counts().to_dict())
+print("per mod-pres test counts:")
+print(pd.crosstab([m.code_module, m.code_presentation], m.split))
+print(pd.crosstab(d.label3, d.code_presentation))
+print(d.groupby('label3')[['clicks_w1', 'clicks_w2', 'clicks_w3', 'clicks_w4', 'active_days_w1', 'active_days_w4', 'clicks_0_28']].median())
+print(pd.crosstab(d.label3, d.tma1_submitted_by_d28, normalize='index'))

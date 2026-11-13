@@ -1,0 +1,75 @@
+{
+  "task": "retail_uk",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 75.0,
+    "skills_missing": [
+      "data-calc",
+      "root-cause"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Bỏ trùng, nhận ra hai sheet chồng nhau đầu 12/2010",
+        "pass": true,
+        "evidence": "analysis.py bỏ trùng bằng drop_duplicates trên toàn bộ cột, nên cả trùng gốc cũng bị loại. Agent ghi rõ 'hai sheet trùng nhau 22.523 dòng ở khoảng 01–09/12/2010', khớp đúng ground truth 22.523."
+      },
+      {
+        "check": "2. So sánh cùng kỳ vì 2011 dừng ở 09/12",
+        "pass": true,
+        "evidence": "Agent so cửa sổ 01/01–08/12 của cả hai năm và nêu rõ phép so ngây thơ cho −1,3%, sát mức tham chiếu −1,34%."
+      },
+      {
+        "check": "3. Xử lý hoá đơn hủy 'C' nhất quán",
+        "pass": true,
+        "evidence": "Doanh thu thuần = Quantity×Price và giữ lại các dòng âm, tức là đã trừ hàng hoàn/hủy. Có thêm kịch bản độ nhạy chỉ tính hoá đơn bán, cho +3,5%."
+      },
+      {
+        "check": "4. Tăng trưởng cùng kỳ nằm trong ±3 điểm % so với tham chiếu",
+        "pass": true,
+        "evidence": "Agent ra +2,9% (£8,74M → £8,99M), trong khi tham chiếu là 2,67%, 3,1% và 3,93%. Dải độ nhạy +2,9% đến +3,5% đều khớp."
+      },
+      {
+        "check": "5. Tách khách mới/cũ theo Customer ID, nêu rõ loại phần thiếu ID",
+        "pass": true,
+        "evidence": "Khách mới +£1,44M (1.536 khách, tham chiếu 1.532/£1,42M). Mất do khách không quay lại −£1,06M (tham chiếu £1,059M). Khách giữ lại chi ít hơn −£0,39M (tham chiếu −£0,42M). Tỷ lệ mua lại 63% (tham chiếu 63,43%). Agent nêu rõ '13,7% doanh thu không có Customer ID nên không phân loại mới/cũ được' và tách riêng thành phần +£0,25M."
+      },
+      {
+        "check": "6. Nêu thị trường kéo tăng/giảm khớp tham chiếu, UK chiếm phần lớn",
+        "pass": true,
+        "evidence": "Úc +£106k (tham chiếu +106.058), Pháp +£63k (61.596), Ireland −£78k (−79.384), Đan Mạch −£27k (−28.198), Thụy Điển −£16k (−16.399). UK được ghi là ≈86% doanh thu với +0,8%, còn biểu đồ ghi UK +58k so với tham chiếu +42,7k, chênh do cách lọc."
+      },
+      {
+        "check": "7. story.md có một thông điệp chính, mạch bối cảnh–căng thẳng–insight–hành động, khuyến nghị dạng gợi ý",
+        "pass": true,
+        "evidence": "story.md có dòng Core message, đi qua các mục Bối cảnh → Tension → Insight → 'Gợi ý hành động (đề xuất, không phải kết luận của dữ liệu)', và có phần Caveats ghi rõ thiếu dữ liệu chi phí."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 5,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Ước tính 'thêm 1 điểm % giữ chân ≈ 42 khách × £2.501 ≈ £105k/năm' dùng mức chi của khách đã giữ lại được. Khách giữ thêm ở mức cận biên nhiều khả năng giống nhóm không quay lại (£689 mỗi khách), nên con số này phóng đại, dù agent có ghi là 'minh hoạ'.",
+      "Câu 'UK chiếm khoảng 86% doanh thu' dùng tỷ trọng năm 2010. Tỷ trọng năm 2011 là ≈84,2% (7,57/8,99), khớp tham chiếu 84,21%. Đây chỉ là sai lệch nhỏ."
+    ],
+    "summary": "Bài làm chất lượng cao, bám đúng bẫy dữ liệu: bỏ trùng giữa hai sheet (22.523 dòng) cùng các dòng trùng gốc, so cùng kỳ 01/01–08/12 và chỉ ra phép so ngây thơ cho −1,3%, trừ hàng hủy, loại mã phi hàng hoá, có phân tích độ nhạy (+2,9% đến +3,5%). Mức tăng +2,9% khớp tham chiếu (2,67–3,93%). Phần tách khách mới/cũ khớp sát: 1.536 khách mới (+£1,44M), −£1,06M từ khách không quay lại, 63% khách mua lại; agent nêu rõ 13,7% doanh thu thiếu ID nằm ngoài phần tách này. Các thị trường Úc, Pháp, Ireland, Đan Mạch, Thụy Điển đều đúng, và agent cảnh báo hợp lý rằng Úc phụ thuộc vào một khách. story.md có mạch rõ, một thông điệp chính, khuyến nghị ở dạng gợi ý, và thừa nhận thiếu dữ liệu chi phí. Ba biểu đồ có tiêu đề nêu kết luận và khớp số liệu. Biểu đồ 1 có cột +0,01M gần như vô hình, còn biểu đồ 3 không được agent mở lại để kiểm tra. Điểm yếu chính là ước tính £105k cho mỗi điểm % giữ chân, dựa trên mức chi của khách đã giữ được nên có xu hướng phóng đại."
+  },
+  "judge_cost_usd": 0.2476619,
+  "accuracy_pct": 100.0,
+  "quality_pct": 87.5,
+  "overall": 95.0
+}

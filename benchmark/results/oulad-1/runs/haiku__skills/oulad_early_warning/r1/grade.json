@@ -1,0 +1,89 @@
+{
+  "task": "oulad_early_warning",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 0.0,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh lượt nhấp và ngày hoạt động theo tuần, theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "Tính theo sinh viên (Pass 7.399/Fail 3.469/Withdrawn 2.152). Trung vị lượt nhấp tuần 1 là 59/20/33, tuần 4 là 43/10/21, khớp tham chiếu. Có ngày hoạt động theo tuần, Kruskal-Wallis + Holm và eta² 0,05–0,09."
+      },
+      {
+        "check": "AQ2: có cỡ hiệu ứng, hiệu chỉnh đa kiểm định, kết luận khác biệt từ tuần 1",
+        "pass": true,
+        "evidence": "Mann-Whitney/chi-square cho 37 chỉ báo, hiệu chỉnh Holm. Dùng AUC đơn biến làm cỡ hiệu ứng (0,63 ở tuần 1, tương đương |delta|≈0,26). Ghi clicks_change_w1_w4 (AUC 0,48) là yếu về thực tế. Kết luận 'từ tuần 1'."
+      },
+      {
+        "check": "AQ3 thiết kế: kiểm định trên kỳ sau (split theo thời gian)",
+        "pass": true,
+        "evidence": "Train 2013B+2013J, validation 2014B, test 2014J. Ngưỡng 0,385 chọn trên validation. Số CV 5-fold (AUC 0,73) chỉ là phụ."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả, thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo",
+        "pass": true,
+        "evidence": "Đã bỏ gender, age, disability, IMD, region. tma1_score vẫn nằm trong FEATS (analysis.py:215) nhưng có cảnh báo rõ 'Chưa xác nhận tma1_score... có thể rò rỉ'. Chỉ đạt tối thiểu: không có phân tích độ nhạy loại bỏ nó."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0,05 so với tham chiếu, có baseline, nói rõ mục tiêu 70%",
+        "pass": false,
+        "evidence": "PR-AUC test 0,50, thấp hơn tham chiếu ~0,66 khoảng 0,16, do đưa tma1_score vào (đúng bẫy). AUC 0,67 so với 0,73. Recall 63,9% tại ngưỡng validation và nói rõ chưa đạt 70% (đạt). Baseline chỉ so trên validation, không so trên test."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ trên kỳ test, precision@200 khớp, so với tỉ lệ cơ sở",
+        "pass": false,
+        "evidence": "Có giới hạn 200 cho mỗi module-kỳ. BBB-2014J 0,72 và FFF-2014J 0,885 nằm trong ±0,08, có tỉ lệ cơ sở 0,356/0,399. Nhưng điểm rủi ro lấy từ CV 5-fold xáo trộn ngẫu nhiên trên mọi kỳ, không phải mô hình temporal. Con số chính 1.383/1.600 (86%) gộp cả các kỳ huấn luyện."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt dễ hiểu, dựa trên đóng góp thật, không dùng thuộc tính nhạy cảm",
+        "pass": true,
+        "evidence": "Đóng góp log-odds của logistic, câu 3 ý cho 1.600 sinh viên. Lý do hàng đầu là chưa nộp TMA1 đến ngày 28 (~1.375), tiếp đến ít ngày hoạt động/lượt nhấp, khớp tham chiếu. Câu chữ khá rập khuôn. Một số câu dùng điểm TMA1 (11)."
+      },
+      {
+        "check": "Không tuyên bố nhân quả, nêu giới hạn quan sát/khái quát hóa",
+        "pass": true,
+        "evidence": "'Quan hệ là liên kết, không phải nhân quả'. Có nêu chênh lệch giữa các kỳ (0,75 xuống 0,67) và việc Câu 4 dùng CV ngẫu nhiên nên có thể lạc quan."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 3,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "PR-AUC test 0,50 / AUC test 0,67: số tính đúng nhưng bị kéo xuống do đưa tma1_score vào mô hình. Tham chiếu mô hình core: PR-AUC ~0,66, AUC ~0,73.",
+      "Câu 4: precision 86,4% (1.383/1.600) và recall 24,6% tính từ CV 5-fold ngẫu nhiên gộp mọi kỳ, nên lạc quan so với triển khai sang kỳ mới (BBB-2014J chỉ 72%).",
+      "Khẳng định 'tốt hơn baseline đơn giản' chưa được kiểm trên test: baseline chỉ tính trên validation (PR-AUC 0,625), trong khi PR-AUC test của mô hình chỉ 0,50 (rule tham chiếu trên test ~0,615).",
+      "Câu trả lời cuối ghi 'precision 52%' ở ngưỡng validation và 'AUC 0,73 khi kiểm định chéo 5 lớp' như bằng chứng nhất quán. Thực chất CV ngẫu nhiên làm lộ hiệu ứng cohort."
+    ],
+    "summary": "Câu 1–2 làm tốt: đếm theo sinh viên, trung vị khớp tham chiếu (59/33/20), có Holm, có cỡ hiệu ứng (AUC đơn biến), kết luận khác biệt có từ tuần 1. Câu 3 dùng đúng split theo kỳ và chọn ngưỡng trên validation. Bài nói thẳng recall test 63,9% chưa đạt 70%. Tuy nhiên tác tử đưa tma1_score vào mô hình chính (chỉ cảnh báo, không loại bỏ), nên PR-AUC test chỉ 0,50, thấp xa tham chiếu ~0,66. Bài cũng không so baseline trên test. Câu 4 có xếp hạng riêng 200 cho từng module-kỳ (2014J: BBB 0,72, FFF 0,885, có tỉ lệ cơ sở). Nhưng điểm rủi ro lấy từ CV ngẫu nhiên trên mọi kỳ và con số chính 86%/24,6% gộp cả kỳ huấn luyện. Bài có tự ghi chú hạn chế này. Câu 5 giải thích bằng đóng góp logistic, tiếng Việt dễ hiểu, không dùng thuộc tính nhạy cảm, lý do chính khớp tham chiếu. Không có tuyên bố nhân quả. Biểu đồ rõ ràng, nhãn tiếng Việt, một nhãn bị chú giải che ở biểu đồ Câu 4."
+  },
+  "judge_cost_usd": 0.5483475,
+  "accuracy_pct": 75.0,
+  "quality_pct": 60.0,
+  "overall": 69.0
+}

@@ -1,0 +1,8 @@
+value,students,flagged,flag_rate_pct,attribute
+F,1914,198.0,10.34,gender
+M,1730,202.0,11.68,gender
+0-35,2496,282.0,11.3,age_band
+35-55,1135,118.0,10.4,age_band
+55<=,13,0.0,0.0,age_band
+N,3303,356.0,10.78,disability
+Y,341,44.0,12.9,disability

@@ -1,0 +1,3 @@
+type,count,mean,median,std,pct_quality_ge7
+red,1599,5.636,6.0,0.808,13.6
+white,4898,5.878,6.0,0.886,21.6

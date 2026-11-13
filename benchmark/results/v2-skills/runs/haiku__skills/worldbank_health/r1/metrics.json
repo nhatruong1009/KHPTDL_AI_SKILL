@@ -1,0 +1,70 @@
+{
+  "task": "worldbank_health",
+  "model": "haiku",
+  "model_id": "claude-haiku-5-5",
+  "rep": 1,
+  "variant": "skills",
+  "effort": "medium",
+  "thinking_tokens": 7184,
+  "wall_s": 147.7,
+  "duration_api_s": 117.9,
+  "cost_usd": 0.03443034,
+  "num_turns": 34,
+  "input_tokens": 42,
+  "output_tokens": 27287,
+  "cache_read_tokens": 906364,
+  "cache_write_tokens": 58595,
+  "model_usage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 42,
+      "outputTokens": 27287,
+      "cacheReadInputTokens": 906364,
+      "cacheCreationInputTokens": 58595,
+      "webSearchRequests": 0,
+      "costUSD": 0.03443034,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7184,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 58595,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "api_error": null,
+  "final_text": "**Trả lời:** Có, các nước chi tiêu y tế bình quân đầu người cao hơn thường có tuổi thọ cao hơn (r = 0,81 trên thang log, n = 186, năm 2019). Nhưng gần như toàn bộ mối liên hệ này trùng với thu nhập: GDP/người (PPP) giải thích R² = 0,72, còn thêm chi tiêu y tế chỉ tăng R² thêm 0,005. Sau khi tính thu nhập, chi tiêu y tế còn liên hệ dương nhưng yếu (partial r = 0,14; p = 0,06 năm 2019), và chỉ có ý nghĩa thống kê ở 1 trong 3 cách tính.\n\n**Vượt / dưới kỳ vọng nhiều nhất (năm 2019, sau khi tính thu nhập):**\n- Vượt: Quần đảo Solomon (+7,6 năm), Palestine (+7,6), Tajikistan (+6,7), Syria (+6,6), Burundi (+6,5).\n- Dưới: Cộng hòa Trung Phi (−25,0, nhưng đây là lỗi dữ liệu, xem dưới), Nigeria (−16,1), Guinea Xích Đạo (−11,5), Eswatini (−10,4), Nauru (−9,7).\n\n**Việt Nam:** tuổi thọ 74,2 năm, kỳ vọng theo thu nhập 71,4 năm, **vượt kỳ vọng +2,9 năm**, hạng **47/186**. Ở các cách tính khác: trung bình 2017–2019 là hạng 38 (+3,4 năm); năm 2022 là hạng 57 (+2,2 năm). Việt Nam vượt kỳ vọng ở cả ba cách. Chi tiêu y tế của Việt Nam (171 USD/người) thuộc nhóm thấp nhất khoảng 5% trong 57 nước thu nhập trung-cao (trung vị 389 USD), nhưng tuổi thọ vẫn cao hơn trung vị nhóm (73,7).\n\n**Method:** World Bank WDI, năm 2019 (trước COVID). Loại các tổng hợp khu vực/nhóm thu nhập. Mô hình kỳ vọng là tuổi thọ ~ log(GDP) + log(GDP)². Kiểm tra độ nhạy với năm 2022 và trung bình 2017–2019; thứ hạng chênh lệch gần như ổn định (Spearman 0,95 và 0,99).\n\n**Caveats:**\n- **Cộng hòa Trung Phi:** chuỗi tuổi thọ dao động bất thường (31,5 năm năm 2019, 18,8 năm năm 2022), nên mức −25 năm không đáng tin. Không nên dùng con số này.\n- Các nước nhỏ (Nauru, Solomon, Vanuatu...) có số liệu biến động mạnh.\n- Đây là liên hệ quan sát, không phải nhân quả. Mô hình chỉ kiểm soát thu nhập.\n\n**Files** (trong `outputs/tuoi-tho-chi-tieu-y-te/`):\n- `answer.md`: câu trả lời đầy đủ (tiếng Việt)\n- `story.md`: data story cho lãnh đạo Bộ Y tế (tiếng Việt)\n- `analysis.py`, `run_log.txt`\n- `chart1_le_vs_chi_tieu_2019.png`, `chart2_ky_vong_theo_thu_nhap_2019.png`\n- `ranking_2019.csv`, `ranking_2022_sensitivity.csv`, `ranking_tb3nam_2017_2019_sensitivity.csv`, `summary_*.csv`\n\n**Lưu ý:**\n- Thư mục `outputs/scratch/` còn một file kiểm tra coverage (`coverage.py`). Tôi chưa xóa được vì lệnh xóa cần phê duyệt; có thể xóa an toàn.\n- `inspect_data.py` của data-eda không đọc được các file World Bank do có 4 dòng metadata trước header. Tôi đã đọc trực tiếp bằng `skiprows=4`.",
+  "outputs": [
+    "outputs/scratch/coverage.py",
+    "outputs/tuoi-tho-chi-tieu-y-te/analysis.py",
+    "outputs/tuoi-tho-chi-tieu-y-te/answer.md",
+    "outputs/tuoi-tho-chi-tieu-y-te/chart1_le_vs_chi_tieu_2019.png",
+    "outputs/tuoi-tho-chi-tieu-y-te/chart2_ky_vong_theo_thu_nhap_2019.png",
+    "outputs/tuoi-tho-chi-tieu-y-te/ranking_2019.csv",
+    "outputs/tuoi-tho-chi-tieu-y-te/ranking_2022_sensitivity.csv",
+    "outputs/tuoi-tho-chi-tieu-y-te/ranking_tb3nam_2017_2019_sensitivity.csv",
+    "outputs/tuoi-tho-chi-tieu-y-te/story.md",
+    "outputs/tuoi-tho-chi-tieu-y-te/summary_2019.csv",
+    "outputs/tuoi-tho-chi-tieu-y-te/summary_2022_sensitivity.csv",
+    "outputs/tuoi-tho-chi-tieu-y-te/summary_tb3nam_2017_2019_sensitivity.csv"
+  ],
+  "tools": {
+    "Skill": 4,
+    "Bash": 16,
+    "Write": 4,
+    "Edit": 4,
+    "Read": 1
+  },
+  "skills_invoked": [
+    "data-eda",
+    "storytelling",
+    "answer-write",
+    "answer-qa"
+  ],
+  "skill_md_reads": [],
+  "tool_errors": 6,
+  "total_tokens": 992288
+}

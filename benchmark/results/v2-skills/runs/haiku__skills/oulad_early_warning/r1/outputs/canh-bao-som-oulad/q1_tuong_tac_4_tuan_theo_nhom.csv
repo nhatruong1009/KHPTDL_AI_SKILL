@@ -1,0 +1,4 @@
+nhom,so_luot,tb_clicks_w1,tv_clicks_w1,tb_clicks_w2,tv_clicks_w2,tb_clicks_w3,tv_clicks_w3,tb_clicks_w4,tv_clicks_w4,tb_active_days_w1,tv_active_days_w1,tb_active_days_w2,tv_active_days_w2,tb_active_days_w3,tv_active_days_w3,tb_active_days_w4,tv_active_days_w4,tb_clicks_0_28,tv_clicks_0_28,tb_active_days_0_28,tv_active_days_0_28,tb_n_sites_0_28,tv_n_sites_0_28,tb_days_since_last_active_d28,tv_days_since_last_active_d28,ty_le_nop_tma1_truoc_ngay28,ty_le_khong_hoat_dong_vle_0_28
+Pass,7399,102.92,59.0,90.48,50.0,109.1,60.0,92.73,43.0,3.15,3.0,3.09,3.0,3.46,3.0,3.26,3.0,404.77,257.0,13.33,12.0,29.77,27.0,2.86,1.0,0.973,0.009
+Fail,3469,55.23,20.0,45.56,15.0,59.32,23.0,44.41,10.0,2.02,2.0,1.81,1.0,2.2,2.0,1.9,1.0,207.96,112.0,8.12,7.0,21.03,18.0,7.33,4.0,0.749,0.091
+Withdrawn,2152,71.31,33.0,58.25,24.5,76.91,36.0,58.73,21.0,2.42,2.0,2.26,2.0,2.62,2.0,2.33,2.0,270.71,160.5,9.86,9.0,24.45,22.0,6.15,3.0,0.764,0.074

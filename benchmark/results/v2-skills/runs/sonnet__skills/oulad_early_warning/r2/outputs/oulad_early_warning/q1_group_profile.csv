@@ -1,0 +1,4 @@
+label3,n,median_clicks_w1,mean_clicks_w1,mean_active_days_w1,pct_zero_clicks_w1,median_clicks_w2,mean_clicks_w2,mean_active_days_w2,pct_zero_clicks_w2,median_clicks_w3,mean_clicks_w3,mean_active_days_w3,pct_zero_clicks_w3,median_clicks_w4,mean_clicks_w4,mean_active_days_w4,pct_zero_clicks_w4,median_clicks_0_28,pct_no_vle_0_28,pct_tma1_submitted,median_days_since_last_active
+Fail,3469,20.0,55.23,2.02,27.39,15.0,45.56,1.81,32.0,23.0,59.32,2.2,25.25,10.0,44.41,1.9,34.19,112.0,9.14,74.92,4.0
+Pass,7399,59.0,102.92,3.15,12.34,50.0,90.48,3.09,11.34,60.0,109.1,3.46,7.91,43.0,92.73,3.26,12.26,257.0,0.89,97.28,1.0
+Withdrawn,2152,33.0,71.31,2.42,22.4,24.5,58.25,2.26,23.88,36.0,76.91,2.62,20.45,21.0,58.73,2.33,27.46,160.5,7.39,76.39,3.0

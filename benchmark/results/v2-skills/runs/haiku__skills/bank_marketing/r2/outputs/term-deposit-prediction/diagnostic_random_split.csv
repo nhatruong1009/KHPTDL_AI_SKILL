@@ -1,0 +1,4 @@
+split,model,roc_auc,lift_top20
+ngẫu nhiên phân tầng (đối chiếu),Luật đơn giản (kết quả chiến dịch trước),0.6268492372453205,1.9393413123535317
+ngẫu nhiên phân tầng (đối chiếu),Hồi quy logistic,0.8041414843371676,3.275331994197076
+ngẫu nhiên phân tầng (đối chiếu),Gradient boosting,0.8134337901266402,3.34715945021017

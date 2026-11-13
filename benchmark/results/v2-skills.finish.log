@@ -1,0 +1,62 @@
+[2026-11-13T01:08:19Z] waiting for run_bench v2-skills
+[2026-11-13T01:08:19Z] runs finished -> grading
+haiku__noskills/bank_marketing/r1: overall=54.0 acc=50.0 qual=60.0 
+haiku__noskills/himalaya/r1: overall=47.3 acc=40.0 qual=58.3 
+haiku__noskills/household_power/r1: overall=96.0 acc=100.0 qual=90.0 
+haiku__noskills/oulad_early_warning/r1: overall=56.0 acc=50.0 qual=65.0 
+haiku__noskills/oulad_early_warning/r2: overall=50.0 acc=50.0 qual=50.0 
+haiku__noskills/retail_uk/r1: overall=90.0 acc=100.0 qual=75.0 
+haiku__noskills/student_perf/r1: overall=62.0 acc=60.0 qual=65.0 
+haiku__noskills/wine_quality/r1: overall=92.5 acc=100.0 qual=81.2 
+haiku__noskills/worldbank_health/r1: overall=90.0 acc=100.0 qual=75.0 
+haiku__skills/bank_marketing/r1: overall=78.0 acc=83.3 qual=70.0 
+haiku__skills/bank_marketing/r2: overall=88.0 acc=100.0 qual=70.0 
+haiku__skills/himalaya/r1: overall=45.7 acc=40.0 qual=54.2 
+haiku__skills/himalaya/r2: overall=74.7 acc=80.0 qual=66.7 
+haiku__skills/household_power/r1: overall=100.0 acc=100.0 qual=100.0 
+haiku__skills/household_power/r2: overall=96.0 acc=100.0 qual=90.0 
+haiku__skills/oulad_early_warning/r1: overall=78.5 acc=87.5 qual=65.0 
+haiku__skills/oulad_early_warning/r2: overall=82.5 acc=87.5 qual=75.0 
+haiku__skills/retail_uk/r1: overall=91.7 acc=100.0 qual=79.2 
+haiku__skills/retail_uk/r2: overall=90.0 acc=100.0 qual=75.0 
+haiku__skills/student_perf/r1: overall=76.0 acc=80.0 qual=70.0 
+haiku__skills/student_perf/r2: overall=78.0 acc=80.0 qual=75.0 
+haiku__skills/wine_quality/r1: overall=98.0 acc=100.0 qual=95.0 
+haiku__skills/wine_quality/r2: overall=96.0 acc=100.0 qual=90.0 
+haiku__skills/worldbank_health/r1: overall=95.0 acc=100.0 qual=87.5 
+haiku__skills/worldbank_health/r2: overall=93.3 acc=100.0 qual=83.3 
+sonnet__noskills/bank_marketing/r1: overall=98.0 acc=100.0 qual=95.0 
+sonnet__noskills/himalaya/r1: overall=90.0 acc=100.0 qual=75.0 
+sonnet__noskills/household_power/r1: overall=98.0 acc=100.0 qual=95.0 
+sonnet__noskills/oulad_early_warning/r1: overall=61.5 acc=62.5 qual=60.0 
+sonnet__noskills/oulad_early_warning/r2: overall=63.5 acc=62.5 qual=65.0 
+sonnet__noskills/retail_uk/r1: overall=93.3 acc=100.0 qual=83.3 
+sonnet__noskills/student_perf/r1: overall=94.0 acc=100.0 qual=85.0 
+sonnet__noskills/wine_quality/r1: overall=97.5 acc=100.0 qual=93.8 
+sonnet__noskills/worldbank_health/r1: overall=95.0 acc=100.0 qual=87.5 
+sonnet__skills/bank_marketing/r1: overall=80.0 acc=83.3 qual=75.0 
+sonnet__skills/bank_marketing/r2: overall=74.0 acc=66.7 qual=85.0 
+sonnet__skills/himalaya/r1: overall=93.3 acc=100.0 qual=83.3 
+sonnet__skills/himalaya/r2: overall=95.0 acc=100.0 qual=87.5 
+sonnet__skills/household_power/r1: overall=98.0 acc=100.0 qual=95.0 
+sonnet__skills/household_power/r2: overall=100.0 acc=100.0 qual=100.0 
+sonnet__skills/oulad_early_warning/r1: overall=100.0 acc=100.0 qual=100.0 
+sonnet__skills/oulad_early_warning/r2: overall=88.5 acc=87.5 qual=90.0 
+sonnet__skills/retail_uk/r1: overall=95.0 acc=100.0 qual=87.5 
+sonnet__skills/retail_uk/r2: overall=95.0 acc=100.0 qual=87.5 
+sonnet__skills/student_perf/r1: overall=78.0 acc=80.0 qual=75.0 
+sonnet__skills/student_perf/r2: overall=82.0 acc=80.0 qual=85.0 
+sonnet__skills/wine_quality/r1: overall=97.5 acc=100.0 qual=93.8 
+sonnet__skills/wine_quality/r2: overall=97.5 acc=100.0 qual=93.8 
+sonnet__skills/worldbank_health/r1: overall=96.7 acc=100.0 qual=91.7 
+sonnet__skills/worldbank_health/r2: overall=96.7 acc=100.0 qual=91.7 
+[2026-11-13T01:12:55Z] grading done -> report
+50/50 runs graded and included
+             config  tasks  overall  accuracy  quality  storytelling  cost_total  cost_per_task  time_per_task_s  tokens_per_task  output_tokens_per_task  thinking_tokens_per_task  charts_per_task  turns_per_task  skill_hit_pct  finished  score_per_dollar
+0   haiku__noskills      9   70.867    72.222   68.833         3.333       0.393          0.044          183.378      1228171.778               31477.889                 10590.333            2.111          32.778            NaN         9          1623.260
+1     haiku__skills     16   85.088    89.894   77.869         3.833       0.836          0.052          317.294      1060297.250               35731.562                 14974.875            2.750          31.062         45.994        16          1627.916
+2  sonnet__noskills      9   87.867    91.667   82.178         4.333       2.892          0.321          138.867       407684.556               14853.333                  1275.000            1.778          16.667            NaN         9           273.425
+3    sonnet__skills     16   91.700    93.594   88.862         4.333       8.083          0.505          245.444       874353.750               21349.688                  2711.750            2.625          33.188         77.262        16           181.506
+
+-> /code/KHPTDL_AI_SKILL/benchmark/results/v2-skills
+[2026-11-13T01:12:58Z] DONE -> /code/KHPTDL_AI_SKILL/benchmark/results/v2-skills/report.md

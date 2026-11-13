@@ -1,0 +1,12 @@
+feature,biết khi nào,quyết định,lý do
+"clicks_w1..w4, active_days_w1..w4, clicks_0_28, active_days_0_28, n_sites, clicks_<loại>_0_28, clicks_change, days_since_last_active_d28",ngày 1-28 (log VLE),GIỮ,tính từ log đến hết ngày 28
+"clicks_pre_start, active_days_pre_start",trước ngày 0,GIỮ,biết trước ngày 28
+"tma1_submitted_by_d28, tma1_on_time, tma1_days_before_deadline","khi nộp bài, <= ngày 28",GIỮ,"chỉ gồm bài nộp trong 28 ngày; tma1_on_time=0 gộp cả ""chưa nộp"""
+tma1_score,ngày chấm điểm - KHÔNG có trong dữ liệu,LOẠI khỏi mô hình chính (chỉ chạy độ nhạy),không kiểm chứng được điểm đã được công bố trước ngày 28 hay chưa
+"registration_lead_days, late_registration_1_28, days_observable_0_28",khi đăng ký (<= ngày 28),GIỮ,ngày đăng ký đã biết
+"num_of_prev_attempts, studied_credits, seen_in_earlier_presentation",trước/lúc đăng ký,GIỮ,lịch sử đăng ký
+flag_high_activity,định nghĩa không có tài liệu,LOẠI,"dẫn xuất từ clicks (trùng lặp), không rõ cách tạo"
+highest_education_ord,lúc đăng ký,LOẠI,thuộc tính nền tảng cá nhân - tránh dùng ra quyết định về người
+"gender, age_band, disability, imd_band, region (aq3_audit_attributes)",lúc đăng ký,CHỈ DÙNG KIỂM TOÁN SAI SỐ THEO NHÓM,thuộc tính nhạy cảm
+"flag_withdrawn_no_unreg_date, flag_unreg_date_not_withdrawn",sau kết quả,LOẠI,rò rỉ kết quả
+"final_result, label3, date_unregistration",sau ngày 28,LOẠI,là kết quả

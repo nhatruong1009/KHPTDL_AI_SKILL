@@ -1,0 +1,70 @@
+{
+  "task": "bank_marketing",
+  "model": "sonnet",
+  "model_id": "claude-sonnet-5-5",
+  "rep": 2,
+  "variant": "skills",
+  "effort": "medium",
+  "thinking_tokens": 2637,
+  "wall_s": 403.0,
+  "duration_api_s": 137.2,
+  "cost_usd": 0.4993041,
+  "num_turns": 31,
+  "input_tokens": 38,
+  "output_tokens": 19750,
+  "cache_read_tokens": 827321,
+  "cache_write_tokens": 54749,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 38,
+      "outputTokens": 19750,
+      "cacheReadInputTokens": 827321,
+      "cacheCreationInputTokens": 54749,
+      "webSearchRequests": 0,
+      "costUSD": 0.4993041,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2637,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 54749,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "api_error": null,
+  "final_text": "Mô hình tốt nhất tôi chọn chỉ hơn gọi ngẫu nhiên rõ rệt, còn so với một luật đơn giản thì gần như ngang nhau. Chia theo thời gian, nó đưa tỉ lệ đăng ký trong 20% khách được gọi trước lên 53,4%, so với 29,8% khi gọi ngẫu nhiên (gấp khoảng 1,8 lần).\n\nTôi dùng bản đầy đủ nhất là `bank-additional/bank-additional-full.csv` (41.188 khách, sắp theo thời gian từ 05/2008 đến 11/2010). Đây là bản duy nhất có các chỉ số vĩ mô và thứ tự thời gian.\n\n**Kết quả trên tập test** (20% cuối theo thời gian, chỉ đọc một lần; mô hình được chọn trên tập validation):\n\n| Mô hình | AUC | Tỉ lệ đăng ký trong 20% khách xếp đầu |\n|---|---|---|\n| Gọi ngẫu nhiên | 0,49 | 29,8% |\n| Luật \"từng đăng ký ở chiến dịch trước\" | 0,63 | 56,6% |\n| **Logistic, chỉ dùng thông tin biết trước cuộc gọi và bỏ chỉ số vĩ mô** | **0,68** | 53,4% |\n| Gradient Boosting (cùng biến) | 0,68 | 45,2% |\n\n- **So với luật đơn giản:** mô hình xếp hạng tổng thể tốt hơn một chút (AUC 0,68 so với 0,63), nhưng ở top 20% thì luật đơn giản nhỉnh hơn (56,6% so với 53,4%). Chưa có khoảng tin cậy cho chênh lệch này, nên tôi coi hai cách là ngang nhau về thực dụng.\n- **Yếu tố quan trọng nhất:** lịch sử chiến dịch trước (`poutcome`, `pdays`, `previous`). Xáo trộn nhóm này làm AUC giảm 0,060, các nhóm còn lại giảm dưới 0,004.\n  - Khách từng đăng ký ở chiến dịch trước đăng ký lại 65,1% (1.373 khách), khách chưa từng liên hệ chỉ 8,8%.\n  - Gọi bằng điện thoại di động đăng ký 14,7%, điện thoại bàn 5,2%.\n  - Đây là mối liên hệ, không chứng minh nguyên nhân.\n- **Dữ liệu trôi rất mạnh theo thời gian.** Tỉ lệ đăng ký là 4,8% ở phần train, 11,1% ở validation và 30,8% ở test. Giai đoạn test có euribor3m từ 0,63 đến 1,30, nằm hẳn ngoài khoảng của train (4,19 đến 5,05).\n  - Vì thế mô hình dùng chỉ số vĩ mô và tháng không ngoại suy được (AUC test 0,50).\n  - AUC 0,79 chỉ xuất hiện khi chia ngẫu nhiên, tức trộn lẫn các giai đoạn, nên tôi không dùng làm kết quả chính.\n- **Loại để tránh rò rỉ:**\n  - `duration` chỉ biết sau cuộc gọi. Thêm vào thì AUC lên 0,80, nhưng đó là rò rỉ nên không dùng được để lập danh sách gọi.\n  - `campaign` đếm cả cuộc gọi cuối nên không kiểm chứng được trước cuộc gọi. Thêm vào gần như không đổi kết quả.\n  - `age` và `marital` không dùng làm biến dự đoán, chỉ để kiểm tra theo nhóm. Trong top 20%, tỉ lệ đăng ký khá đều giữa các nhóm tuổi (49,5% đến 55,9%) và tình trạng hôn nhân (51,8% đến 53,7%). AUC thấp nhất ở nhóm 60 tuổi trở lên (0,56).\n\n**Khuyến nghị:** bắt đầu từ luật \"ưu tiên khách từng đăng ký hoặc từng được liên hệ ở chiến dịch trước, gọi qua di động\", rồi dùng điểm Logistic để xếp phần còn lại. Nên huấn luyện lại bằng dữ liệu mới nhất và theo dõi tỉ lệ đăng ký thực tế vài tuần đầu.\n\nMọi tệp nằm trong `outputs/du-doan-dang-ky/`. Mở `answer.md` trước, mã chạy nằm ở `analysis.py`; `metrics.csv` và `feature_group_importance.csv` có số liệu chi tiết, hai biểu đồ là `precision_top20.png` và `feature_importance.png`.",
+  "outputs": [
+    "outputs/du-doan-dang-ky/analysis.py",
+    "outputs/du-doan-dang-ky/answer.md",
+    "outputs/du-doan-dang-ky/audit_by_group.csv",
+    "outputs/du-doan-dang-ky/feature_audit.csv",
+    "outputs/du-doan-dang-ky/feature_group_importance.csv",
+    "outputs/du-doan-dang-ky/feature_importance.csv",
+    "outputs/du-doan-dang-ky/feature_importance.png",
+    "outputs/du-doan-dang-ky/feature_importance_hgb.csv",
+    "outputs/du-doan-dang-ky/metrics.csv",
+    "outputs/du-doan-dang-ky/metrics_random_cv_reference.csv",
+    "outputs/du-doan-dang-ky/precision_top20.png",
+    "outputs/du-doan-dang-ky/split_base_rate.csv"
+  ],
+  "tools": {
+    "Skill": 5,
+    "Bash": 15,
+    "Read": 3,
+    "Write": 2
+  },
+  "skills_invoked": [
+    "data-eda",
+    "data-relevance",
+    "analysis-plan",
+    "data-predict",
+    "answer-qa"
+  ],
+  "skill_md_reads": [],
+  "tool_errors": 4,
+  "total_tokens": 901858
+}

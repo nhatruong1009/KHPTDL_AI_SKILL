@@ -1,0 +1,63 @@
+{
+  "task": "student_perf",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": 85.7,
+    "skills_missing": [
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Dùng ';', cả hai file, nhận diện học sinh trùng, khử trùng khi gộp",
+        "pass": true,
+        "evidence": "read_csv sep=';' cho cả hai file; ghép theo 13 khóa của student-merge.R + cumcount → 370 cặp 1-1, 674 học sinh duy nhất (khác 382/662 của tham chiếu nhưng có nêu lý do: khóa trùng làm R nhân dòng). Có phân tích riêng từng môn và gộp sau khi khử trùng (mỗi học sinh tính một lần)."
+      },
+      {
+        "check": "2. Phát hiện G3=0, loại bỏ hoặc kiểm tra độ nhạy, có giải thích",
+        "pass": true,
+        "evidence": "38 dòng Toán, 15 dòng Bồ có G3=0, cả 53 dòng absences=0, 33 dòng có G2>0 → coi là bỏ thi. Phân tích chính loại bỏ, độ nhạy giữ lại: d Dalc −0,37, Walc −0,27."
+      },
+      {
+        "check": "3. Kiểm định phù hợp dữ liệu thứ bậc và có effect size",
+        "pass": true,
+        "evidence": "Spearman ρ (−0,19/−0,18), Mann-Whitney, Kruskal-Wallis với η²_H≈0,03, Cohen's d kèm CI bootstrap. Dùng d (giả định khoảng) làm số chính là hơi lệch với dữ liệu thứ bậc, nhưng các thước đo theo hạng đều có."
+      },
+      {
+        "check": "4. Kết luận khớp tham chiếu: âm nhỏ ở cả hai môn, rõ nhất ở Bồ; Toán yếu hơn khi giữ G3=0",
+        "pass": false,
+        "evidence": "Spearman từng môn (G3>0) khớp tham chiếu: Toán −0,153/−0,187, Bồ −0,204/−0,166. Nhưng agent không chạy từng môn khi giữ G3=0, nên không cho thấy Toán yếu đi khi giữ G3=0 (chỉ có ở dữ liệu gộp). Cũng không nói rõ môn Bồ cho kết quả rõ nhất. Ngoài ra còn mô tả là 'nhỏ đến trung bình' (d=−0,55)."
+      },
+      {
+        "check": "5. Không dùng từ ngữ nhân quả; nêu ít nhất một biến gây nhiễu",
+        "pass": true,
+        "evidence": "Có nói rõ 'mối liên quan, chưa chứng minh nhân quả'. Có nêu biến gây nhiễu (động lực, hoàn cảnh gia đình) và kiểm tra độ nhạy với G1. Chỉ có một chỗ lỡ lời: 'mỗi bậc Dalc làm G3 giảm 0,28 điểm'."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Số học sinh trùng 370 / duy nhất 674 khác tham chiếu 382 / 662. Đây là lựa chọn có nêu lý do (ghép 1-1 theo cumcount), không phải số bịa, nhưng việc ghép theo thứ tự trong nhóm trùng khóa có thể ghép sai người."
+    ],
+    "summary": "Bài làm tốt và minh bạch. Agent đọc đúng định dạng, ghép học sinh theo 13 khóa và khử trùng khi gộp (674 học sinh duy nhất, có giải thích vì sao khác 382). G3=0 được phát hiện, có giải thích và có phân tích độ nhạy. Agent báo cáo Spearman, Mann-Whitney, Kruskal (η²), Cohen's d kèm CI, hồi quy HC3 và kiểm tra độ nhạy với G1. Spearman từng môn khớp tham chiếu. Thiếu sót: gộp G3 bằng cách lấy trung bình điểm Toán và Bồ là khá gượng; không phân tích từng môn khi giữ G3=0, nên bỏ lỡ ý Toán yếu đi khi giữ điểm 0; không nêu rõ môn Bồ cho kết quả rõ nhất. Agent dùng Cohen's d làm số chính cho biến thứ bậc và gọi hiệu ứng là 'nhỏ đến trung bình'. Có một câu dùng từ ngữ nhân quả ('làm G3 giảm'), dù agent đã nhiều lần nói rõ đây chỉ là liên quan. Biểu đồ rõ ràng, có CI và n, tiêu đề nêu kết luận, khớp số liệu. Toàn bộ viết bằng tiếng Việt."
+  },
+  "judge_cost_usd": 0.2204439,
+  "accuracy_pct": 80.0,
+  "quality_pct": 75.0,
+  "overall": 78.0
+}

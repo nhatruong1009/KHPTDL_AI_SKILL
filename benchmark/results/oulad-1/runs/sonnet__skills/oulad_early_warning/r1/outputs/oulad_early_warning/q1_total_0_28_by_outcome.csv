@@ -1,0 +1,4 @@
+label3,clicks_0_28_mean,clicks_0_28_median,active_days_0_28_mean,active_days_0_28_median,n_sites_0_28_mean,n_sites_0_28_median,tma1_submitted_by_d28_mean,tma1_submitted_by_d28_median,tma1_on_time_mean,tma1_on_time_median,no_vle_activity_0_28_mean,no_vle_activity_0_28_median,days_since_last_active_d28_mean,days_since_last_active_d28_median,n
+Fail,207.96,112.0,8.12,7.0,21.03,18.0,0.75,1.0,0.66,1.0,0.09,0.0,7.33,4.0,3469
+Pass,404.77,257.0,13.33,12.0,29.77,27.0,0.97,1.0,0.94,1.0,0.01,0.0,2.86,1.0,7399
+Withdrawn,270.71,160.5,9.86,9.0,24.45,22.0,0.76,1.0,0.67,1.0,0.07,0.0,6.15,3.0,2152

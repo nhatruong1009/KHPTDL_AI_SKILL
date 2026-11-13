@@ -1,0 +1,68 @@
+{
+  "task": "himalaya",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 62.5,
+    "skills_missing": [
+      "time-series",
+      "group-compare",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Lọc Everest đúng và dùng members.csv (cấp người) với mẫu số rõ ràng",
+        "pass": false,
+        "evidence": "Lọc đúng peak_id == \"EVER\" (2.149 đoàn, 1921–2019), nhưng mẫu số lấy từ tổng `members`/`hired_staff` cấp đoàn trong expeditions.csv (ví dụ trước 1990 có 2.961 thành viên và 2.530 nhân viên), không lấy từ các dòng người trong members.csv. members.csv chỉ dùng cho nguyên nhân tử vong. Lựa chọn này có nêu rõ và có lý do, nhưng khác yêu cầu."
+      },
+      {
+        "check": "Tỉ lệ tử vong theo thập kỷ của thành viên và nhân viên khớp by_decade",
+        "pass": true,
+        "evidence": "Thành viên khớp: 19,6‰ trước 1990 → 10,4‰ từ 1990 (GT 2,07% → 1,04%). Nhân viên khác do mẫu số khác: 20,6‰ → 6,7‰, trong khi GT là 14,36% → 1,07%. Ví dụ 1970s: 19/778 so với GT 19/52. Số ca tử vong khớp (19, 20, 19, 9, 40). Biến thể này có nêu rõ nên chấp nhận được, nhưng dẫn tới kết luận 'nhân viên thấp hơn thành viên sau 1990' (RR 0,64), khác GT là gần bằng nhau (1,07% so với 1,04%)."
+      },
+      {
+        "check": "Cảnh báo mẫu nhỏ thập kỷ đầu và đột biến 2014–2015",
+        "pass": true,
+        "evidence": "Loại 1920s–1940s khỏi biểu đồ vì quá ít người và có KTC (ví dụ 1920s: 90,9‰, khoảng 19–243). Năm 2014–2015 chiếm 28/40 ca tử vong nhân viên thập kỷ 2010; nếu loại hai năm này thì còn 2,7‰. Tuy vậy, câu 'dữ liệu không ghi nguyên nhân cụ thể' là sai: members.csv ghi death_cause = Avalanche cho các ca năm 2014."
+      },
+      {
+        "check": "Chỉ ra thay đổi trong kỷ nguyên thương mại: số đoàn, tỉ lệ thành công, oxy, tỉ trọng nhân viên",
+        "pass": true,
+        "evidence": "Số đoàn 204 → 1.945; tỉ lệ đoàn lên đỉnh 30% (1980s) → khoảng 67%; dùng oxy 65% → 75–81%; nhân viên trên mỗi thành viên 0,51 → 1,03; tuyết lở chiếm 49% ca tử vong nhân viên so với 8% ở thành viên."
+      },
+      {
+        "check": "story.md tồn tại, ngôn ngữ phổ thông, một thông điệp chính, có cảnh báo trung thực",
+        "pass": true,
+        "evidence": "Có thông điệp chính và mạch bối cảnh → mâu thuẫn → phát hiện → điều chưa ổn → gợi ý. Có lưu ý về tương quan không phải nhân quả, ghi thiếu nhân viên và mẫu nhỏ. Không bàn đến survivorship bias. Có lặp lại câu sai về việc 2014–2015 thiếu nguyên nhân."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 3,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Câu 'dữ liệu không ghi nguyên nhân cụ thể của hai năm này (2014–2015)' sai: members.csv ghi death_cause = Avalanche cho các nhân viên tử vong năm 2014.",
+      "Câu trả lời cuối nói 'All five charts are checked' trong khi chỉ có 3 file PNG.",
+      "Kết luận 'sau 1990 nhân viên thấp hơn thành viên (6,7 so với 10,4‰, RR 0,64)' phụ thuộc vào mẫu số cấp đoàn. Với mẫu số cấp người trong members.csv thì hai nhóm gần bằng nhau (1,07% so với 1,04%). Đây không phải số bịa nhưng dễ gây hiểu sai.",
+      "Hired staff trước 1990 là 20,6‰ (52/2.530), khác GT 14,36% (52/362). Khác biệt do chọn mẫu số, đã được nêu rõ."
+    ],
+    "summary": "Bài phân tích làm cẩn thận: lọc đúng Everest, có KTC Clopper-Pearson, có RR và kiểm định Fisher, có kiểm tra độ nhạy khi loại 2014–2015, có phân tích nguyên nhân tử vong. Có answer.md, story.md và câu trả lời cuối bằng tiếng Việt rõ ràng. Story.md có mạch kể tốt, có lưu ý về tương quan. Điểm yếu chính: mẫu số lấy từ tổng cấp đoàn trong expeditions.csv thay vì các dòng người trong members.csv. Vì vậy tỉ lệ tử vong của nhân viên trước 1990 chỉ khoảng 2% thay vì 14%, và kết luận 'nhân viên an toàn hơn thành viên sau 1990' khác với kết quả tham chiếu (hai nhóm gần bằng nhau). Lựa chọn này có nêu rõ và có lý do nên được chấp nhận một phần. Có một nhận định sai: dữ liệu thực ra có ghi nguyên nhân (Avalanche) cho các ca năm 2014. Câu trả lời cuối nói có 5 biểu đồ trong khi chỉ có 3. Ba biểu đồ có tiêu đề nêu kết luận, nhãn tiếng Việt rõ và có thanh KTC. Biểu đồ trục kép dễ đọc nhầm."
+  },
+  "judge_cost_usd": 0.3059789,
+  "accuracy_pct": 80.0,
+  "quality_pct": 66.7,
+  "overall": 74.7
+}

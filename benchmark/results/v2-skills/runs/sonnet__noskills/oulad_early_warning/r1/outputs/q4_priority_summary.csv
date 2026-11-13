@@ -1,0 +1,3 @@
+module,presentation,n_students,n_noncomp,base_rate,k,model_hits,model_precision,model_recall,lowclicks_hits,lowclicks_precision,lowdays_hits,random_hits,max_possible_recall,expected_helped_conv14
+BBB,2014J,1786,635,0.3555431131019037,200,104,0.52,0.16377952755905512,121,0.605,126,70.395,0.31496062992125984,14.560000000000002
+FFF,2014J,1858,741,0.39881593110871905,200,176,0.88,0.23751686909581646,168,0.84,171,79.685,0.2699055330634278,24.64

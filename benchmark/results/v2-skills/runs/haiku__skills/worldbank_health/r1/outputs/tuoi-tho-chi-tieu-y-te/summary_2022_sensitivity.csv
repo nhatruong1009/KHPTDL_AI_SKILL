@@ -1,0 +1,25 @@
+,value
+year,2022
+n_countries,185
+raw_pearson_logHX_LE,0.7575014717784961
+raw_pearson_p,9.950632525450513e-36
+raw_spearman_HX_LE,0.8232770017033015
+raw_spearman_p,7.059924777558815e-47
+raw_pearson_logGDP_LE,0.8063866704411129
+pearson_logHX_logGDP,0.9101191052610613
+r2_income_only,0.6545323082081649
+r2_full,0.6599234410312238
+coef_logHX_adj,0.899577490276269
+se_logHX_adj,0.5310649329380084
+p_logHX_adj,0.09200199884575588
+delta_r2_from_HX,0.0053911328230589195
+pct_HX_increase_per_1yr_LE_adj,203.931746781668
+partial_r_HX_LE_given_income,0.12492124295066567
+partial_p,0.09021980398297258
+vn_life_exp,74.502
+vn_expected,72.28136944230064
+vn_gap,2.2206305576993515
+vn_rank,57
+vn_health_exp_pc,188.22650146
+vn_gdp_pc_ppp,13902.9499867089
+vn_income_group,Upper middle income

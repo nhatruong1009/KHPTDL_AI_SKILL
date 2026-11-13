@@ -1,0 +1,2 @@
+model,thr,recall_test,precision_test,flagged_share_test,base_rate_test,flag_share_for_70pct_recall_test,auc_ci_lo,auc_ci_hi
+Logistic,0.3958,0.6577,0.5299,0.4687,0.3776,0.508,0.7067,0.7388

@@ -1,0 +1,89 @@
+{
+  "task": "oulad_early_warning",
+  "model": "haiku",
+  "variant": "noskills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": false,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-qa",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: so sánh lượt nhấp và ngày hoạt động theo tuần cho Pass/Fail/Withdrawn theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "n theo sinh viên đúng (7.399/3.469/2.152). CSV có trung vị tuần 1: Pass 59, Withdrawn 33, Fail 20, kèm Kruskal-Wallis và so sánh Fail với Withdrawn. Tuy vậy answer.md và biểu đồ chỉ trình bày trung bình (103/71/55)."
+      },
+      {
+        "check": "AQ2: hiệu ứng, hiệu chỉnh đa kiểm định, khác biệt từ tuần 1",
+        "pass": true,
+        "evidence": "Mann-Whitney có Holm trên 23 chỉ báo, kèm AUC đơn chiều làm cỡ hiệu ứng (clicks_w1 0,63, active_days_w4 0,66; clicks_change AUC 0,52, tức không đáng kể). Kết luận khác biệt có từ tuần 1. Agent không nói rõ clicks_change chỉ có ý nghĩa theo p mà không có ý nghĩa thực tế."
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo kỳ (train 2013B+J, val 2014B, test 2014J)",
+        "pass": true,
+        "evidence": "Dùng cột split theo kỳ, ngưỡng 0,413 chọn trên 2014B rồi áp vào 2014J. Tuy nhiên agent chọn HGB thay vì logistic vì 'AUC test cao hơn (0,702 so với 0,685)', tức đã dùng tập test để chọn mô hình."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả hay thuộc tính nhạy cảm; tma1_score bị loại hoặc được cảnh báo",
+        "pass": false,
+        "evidence": "Không dùng nhân khẩu học, nhưng q3_meta.json đưa tma1_score và tma1_chua_co_diem vào 37 đặc trưng. Agent không hề cảnh báo khả năng look-ahead, và 'Điểm TMA1 thấp' còn là lý do hạng 1 của 220 sinh viên."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0,05 so với tham chiếu, có baseline, recall/precision ở ngưỡng chọn trên validation, trung thực về mục tiêu 70%",
+        "pass": false,
+        "evidence": "PR-AUC test của HGB là 0,623 (tham chiếu ~0,644, nằm trong dung sai). Recall 73,3% và precision 49,7% ở ngưỡng chọn trên validation, có so với tỷ lệ cơ sở 37,8%. Nhưng kết luận 'đạt 70%' dựa trên mô hình được chọn bằng AUC test và có tma1_score. Logistic với ngưỡng từ validation chỉ đạt recall 63,4% và PR-AUC 0,539, nên tuyên bố đạt mục tiêu không vững."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ trên kỳ test, precision@200 khớp tham chiếu (BBB ~0,76, FFF ~0,88), so với tỷ lệ cơ sở",
+        "pass": false,
+        "evidence": "Có xếp hạng trong từng module-kỳ, nhưng tính trên cả 8 module-kỳ bằng LOPO, kể cả các kỳ train (dùng mô hình học từ kỳ tương lai). Con số tiêu đề là gộp '1.376/5.621, precision 86%'. BBB-2014J đạt 64,5%, lệch hơn 0,08 so với ~0,76; FFF-2014J 88,5% thì khớp. Không so sánh rõ precision với tỷ lệ cơ sở 0,356/0,399."
+      },
+      {
+        "check": "AQ5: giải thích từng sinh viên bằng tiếng Việt dễ hiểu, từ đóng góp thực của mô hình, không có thuộc tính nhạy cảm, lý do chính hợp lý",
+        "pass": true,
+        "evidence": "Thay từng đặc trưng bằng trung vị để đo đóng góp, mỗi sinh viên có 3 câu kèm gợi ý hành động, không có thuộc tính nhạy cảm. Lý do chính là TMA1 (chưa có điểm 46%, nộp trễ 26%) và số ngày từ lần hoạt động cuối, khá khớp tham chiếu. Điểm trừ: phần lớn dựa trên tma1_score/tma1_chua_co_diem, và lượt nhấp 0–28 ít xuất hiện."
+      },
+      {
+        "check": "Không tuyên bố nhân quả; nêu giới hạn quan sát/khái quát hóa",
+        "pass": false,
+        "evidence": "Có nêu hiệu năng giảm ở kỳ mới. Tuy vậy agent viết '1.376 × 0,14 ≈ 193 sinh viên được giữ lại', một suy diễn nhân quả từ tham số giả định (dù có ghi chú chưa kiểm chứng). Agent không nói rằng dữ liệu là quan sát và precision không phải hiệu quả can thiệp."
+      }
+    ],
+    "scores": {
+      "data_handling": 3,
+      "analysis_rigor": 2,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 3,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [
+      "Recall test 73,3% 'đạt mục tiêu 70%': mô hình được chọn bằng AUC test và có tma1_score; logistic với ngưỡng từ validation chỉ đạt 63,4%, tham chiếu 0,62–0,69",
+      "Precision@200 BBB-2014J 64,5% (tham chiếu ~0,76)",
+      "Tiêu đề Câu 4 '1.376/5.621 (24,5%), precision 86%' gộp cả 8 module-kỳ, gồm các kỳ train, không phải kết quả trên kỳ test",
+      "'≈193 sinh viên được giữ lại' là suy diễn nhân quả từ tham số giả định 0,14"
+    ],
+    "summary": "Câu 1 và 2 làm tốt: đếm theo sinh viên, số khớp tham chiếu, có Holm và cỡ hiệu ứng (AUC đơn chiều), kết luận khác biệt có từ tuần 1. Câu 3 dùng đúng split theo kỳ và chọn ngưỡng trên validation, nhưng mắc hai lỗi lớn. Thứ nhất, agent đưa tma1_score vào mô hình mà không cảnh báo khả năng look-ahead. Thứ hai, agent chọn HGB vì AUC test cao hơn, nên tuyên bố 'đạt 70% recall' không đáng tin (logistic chỉ đạt 63,4%, PR-AUC 0,539). Câu 4 có chia suất theo từng module-kỳ, nhưng số tiêu đề lại gộp cả 8 kỳ chấm bằng LOPO, và precision BBB-2014J là 64,5%, lệch xa tham chiếu 0,76. Câu 5 có câu giải thích tiếng Việt dễ hiểu cho từng sinh viên, nhưng phụ thuộc nhiều vào tma1_score. Văn bản tiếng Việt rõ ràng, có nêu giả định. Biểu đồ đọc được nhưng tiêu đề chỉ mô tả, chưa nêu kết luận, và chú giải biểu đồ Câu 4 bị chồng nhãn. Agent không nói rằng dữ liệu là quan sát và có nhắc '193 sinh viên được giữ lại' từ một tham số giả định."
+  },
+  "judge_cost_usd": 0.44058800000000004,
+  "accuracy_pct": 50.0,
+  "quality_pct": 50.0,
+  "overall": 50.0
+}

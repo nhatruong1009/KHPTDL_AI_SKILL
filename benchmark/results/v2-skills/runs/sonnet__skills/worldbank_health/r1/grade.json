@@ -1,0 +1,67 @@
+{
+  "task": "worldbank_health",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 75.0,
+    "skills_missing": [
+      "group-compare",
+      "root-cause"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Bỏ dòng metadata và loại nhóm tổng hợp",
+        "pass": true,
+        "evidence": "eda.py dùng read_csv(skiprows=4); analysis.py lọc m.Region.notna() theo Metadata_Country; answer.md nêu 'Đã loại 48 nhóm tổng hợp' (khớp 48 của đáp án)."
+      },
+      {
+        "check": "2. Chọn năm rõ ràng với ~180+ nước đủ 3 chỉ số",
+        "pass": true,
+        "evidence": "Chọn năm 2023, n=184 (khớp đáp án 184); giải thích 2024 chỉ có số liệu cho ~24 nước; kiểm tra độ vững với 2022 (185) và 2019 (186)."
+      },
+      {
+        "check": "3. Tương quan dương mạnh (Spearman ~0,8+), nêu là tương quan bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "Pearson ln(chi tiêu)=0,83, Spearman=0,84 (đáp án 0,829/0,842); 'đây là tương quan, phần lớn đi cùng thu nhập', R² GDP 0,75 > chi tiêu 0,69."
+      },
+      {
+        "check": "4. Kiểm soát thu nhập và liệt kê nước vượt/dưới kỳ vọng phù hợp",
+        "pass": true,
+        "evidence": "Phần dư theo ln(GDP PPP) (có thêm mô hình đầy đủ res_both); vượt: Solomon +7,2, Jordan +6,6, Liban +6,1, Malawi +5,9, Sri Lanka; dưới: Nigeria −15,3, Nauru −9,8, Guinea Xích đạo −9,6, Chad −8,5, Guyana, Lesotho — trùng phần lớn với danh sách 2023 của đáp án."
+      },
+      {
+        "check": "5. Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "VN +1,9 năm theo mô hình chỉ có GDP (đáp án resid_gdp_only 2023 = 1,94); 74,6 tuổi, 197 US$; xu hướng +2,9 (2019), +2,7 (2022). Không báo cáo phần dư mô hình đầy đủ (+2,7) trong story, nhưng con số đúng với mô hình đã nêu."
+      },
+      {
+        "check": "6. story.md cho lãnh đạo Bộ Y tế: thông điệp chính, mạch truyện, đề xuất, lưu ý",
+        "pass": true,
+        "evidence": "Có 'Thông điệp chính', các mục Bối cảnh–Vấn đề–Phát hiện–Gợi ý hành động '(đề xuất, không phải kết luận)', Lưu ý về nhân quả, lệch đơn vị US$/PPP, nước nhỏ/xung đột. Không nhắc riêng ngoại lai CH Trung Phi 2022 (nhưng tránh được nhờ chọn 2023)."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Agent bỏ đúng 4 dòng metadata, loại 48 nhóm tổng hợp theo Region trống, chọn năm 2023 (n=184) và kiểm tra lại với 2022 và 2019. Agent dùng thang log, báo Spearman 0,84 và Pearson 0,83, khớp đáp án. Agent so sánh R² giữa mô hình chi tiêu y tế và mô hình thu nhập, đồng thời nêu rõ hệ số riêng của chi tiêu y tế không ổn định (p=0,003/0,19/0,08), khớp hệ số 1,14/0,68 của đáp án. Danh sách nước vượt và dưới kỳ vọng (theo phần dư so với GDP) trùng phần lớn với đáp án. Việt Nam +1,9 năm, khớp đúng mô hình chỉ GDP của đáp án (1,94). Agent có thêm phân tích theo nhóm thu nhập và nhóm nước có mức chi tiêu tương đương. Story bằng tiếng Việt có một thông điệp chính và mạch truyện rõ, hành động được đặt dưới dạng đề xuất. Các lưu ý gồm: chỉ là tương quan, không phải nhân quả; lệch đơn vị US$ và PPP; nước nhỏ hoặc có xung đột kém ổn định. Điểm trừ: story không nêu phần dư theo mô hình đầy đủ cho Việt Nam (khoảng +2,7) và không nhắc cụ thể ngoại lai CH Trung Phi. Ở biểu đồ 2, nhãn Jordan và Liban chồng nhau. Ở biểu đồ 1, đường chỉ nhãn Việt Nam bị kéo xa, khó đọc. Tiêu đề biểu đồ 3 chỉ mô tả, chưa nêu kết luận."
+  },
+  "judge_cost_usd": 0.28504430000000003,
+  "accuracy_pct": 100.0,
+  "quality_pct": 91.7,
+  "overall": 96.7
+}

@@ -1,0 +1,65 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 62.5,
+    "skills_missing": [
+      "time-series",
+      "group-compare",
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Lọc Everest đúng và dùng members.csv (cấp cá nhân) với mẫu số rõ ràng",
+        "pass": true,
+        "evidence": "peak_id == \"EVER\", 21.813 lượt (khớp đáp án); mẫu số = số lượt tham gia; đối chiếu 306 ca chết với expeditions.csv."
+      },
+      {
+        "check": "Tỉ lệ tử vong theo thập kỷ thành viên vs nhân viên thuê khớp by_decade",
+        "pass": true,
+        "evidence": "Bảng thập kỷ khớp hoàn toàn: 1970s thuê 19/52=36,54%, 1980s 20/145=13,79%, 2010s 40/3.841=1,04%, thành viên 2010s 43/4.958=0,87%. Giai đoạn: 1,98%→1,04% (thành viên), 15,73%→1,07% (thuê); nhưng 'trước 1990' thực chất là 1950–1989, bỏ thập niên 1920–40 (đáp án 58/2.798, 52/362) mà không giải thích lý do."
+      },
+      {
+        "check": "Cảnh báo cỡ mẫu nhỏ đầu kỳ và/hoặc đột biến 2014–2015",
+        "pass": true,
+        "evidence": "Nêu 1970s chỉ 52 lượt (KTC 24,8–50,1%), 267 lượt thuê trước 1990; phân tích độ nhạy bỏ 2014–2015: thuê 2010s 1,04%→0,36%; 2014: 17 thuê chết, 2015: 11+3=14 (khớp đáp án)."
+      },
+      {
+        "check": "Cho thấy thay đổi trong kỷ nguyên thương mại: nhiều người hơn, thành công cao hơn, oxy nhiều hơn, tỉ trọng nhân viên thuê tăng",
+        "pass": true,
+        "evidence": "Lượt tham gia 2.067→8.799, nhân viên thuê 7%→44%, oxy 19%→62% (thành viên), chết/100 người lên đỉnh 29,6→1,67. Không nêu trực tiếp tỉ lệ thành công % và số đoàn thám hiểm mỗi thập kỷ, nhưng đủ ý."
+      },
+      {
+        "check": "story.md tồn tại, ngôn ngữ phổ thông, một thông điệp chính, lưu ý trung thực",
+        "pass": true,
+        "evidence": "Story có thông điệp chính rõ, cấu trúc bối cảnh–vấn đề–phát hiện–điều chưa ổn–gợi ý; nêu rõ chỉ là liên hệ, không phải nhân quả, có thể ghi nhận thiếu trước 1990, mẫu số là lượt tham gia."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 5,
+      "communication": 4,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "'Trước 1990' (54/2.721 thành viên; 42/267 nhân viên thuê) trong story.md và câu trả lời cuối thực ra là 1950–1989; dữ liệu toàn bộ trước 1990 là 58/2.798 và 52/362 (14,36%). Không sai về số học nhưng ghi nhãn gây hiểu nhầm, và việc bỏ thập niên 1920–40 không được giải thích."
+    ],
+    "summary": "Bài phân tích chất lượng cao. Số liệu theo thập kỷ khớp chính xác với đáp án tham chiếu, có khoảng tin cậy Wilson, tỉ số nguy cơ kèm KTC, kiểm định xu hướng, và kiểm tra độ nhạy bỏ 2014–2015 cho thấy rủi ro của nhân viên thuê tập trung vào các thảm họa. Story.md bằng tiếng Việt, dễ hiểu, có một thông điệp chính, có lưu ý trung thực về mẫu nhỏ, khả năng ghi nhận thiếu và chỉ là liên hệ chứ không phải nhân quả. Hai biểu đồ có tiêu đề nêu kết luận và thanh sai số. Điểm trừ: thập niên 1920–40 bị loại khỏi giai đoạn 'trước 1990' mà không nói rõ lý do (story vẫn gọi là 'trước 1990'); không báo cáo trực tiếp tỉ lệ thành công % và số đoàn mỗi thập kỷ; agent thừa nhận chưa chạy lại toàn bộ script sau lần sửa cuối."
+  },
+  "judge_cost_usd": 0.2260565,
+  "accuracy_pct": 100.0,
+  "quality_pct": 83.3,
+  "overall": 93.3
+}

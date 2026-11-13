@@ -1,0 +1,17 @@
+metric,week,vs,cliffs_delta_pass_minus,p
+clicks,1,Fail,0.3017,0.0
+clicks,1,Withdrawn,0.1936,0.0
+clicks,2,Fail,0.3407,0.0
+clicks,2,Withdrawn,0.2269,0.0
+clicks,3,Fail,0.3046,0.0
+clicks,3,Withdrawn,0.1897,0.0
+clicks,4,Fail,0.3342,0.0
+clicks,4,Withdrawn,0.2193,0.0
+active_days,1,Fail,0.3046,0.0
+active_days,1,Withdrawn,0.1947,0.0
+active_days,2,Fail,0.3551,0.0
+active_days,2,Withdrawn,0.2304,0.0
+active_days,3,Fail,0.3395,0.0
+active_days,3,Withdrawn,0.2261,0.0
+active_days,4,Fail,0.3562,0.0
+active_days,4,Withdrawn,0.2436,0.0

@@ -18,9 +18,9 @@ argument-hint: <outputs folder>
    - row counts before/after joins (no duplication), no silently dropped groups or NaN rows
    - filters match the stated population/period
    - units and scales right (%, vs fraction, currency, days)
-4. **Statistics checks** - group sizes shown; effect sizes reported, not just p-values; test fits the data type; no leakage or evaluation on training data for models; a baseline shown.
-5. **Claim checks** - no causal wording on observational data; no generalizing beyond the data's population; caveats present; the conclusion follows from the evidence.
-6. **Chart checks** - the title states the finding, axes labelled, the bar axis starts at 0, readable, and the chart matches the numbers.
+4. **Statistics checks** - group sizes shown; effect sizes reported, not just p-values; test fits the data type; a baseline shown. Models: a feature timing audit exists and no feature of unknown availability is in the main model; the data's own split was used; thresholds/model choice made without the test set; no sensitive attribute among predictors.
+5. **Claim checks** - no causal wording on observational data; no generalizing beyond the data's population; caveats present; the conclusion follows from the evidence. Every sensitivity/robustness check you ran is reflected in the headline - if one contradicts it, rewrite the headline. Every target or constraint in the question is answered met / not met.
+6. **Chart checks** - open each PNG and read its title aloud: it must state the finding, not name the content. Axes labelled, the bar axis starts at 0, readable, and the chart matches the numbers.
 
 Fix every failure and re-run before replying.
 

@@ -1,0 +1,707 @@
+{
+  "n_total": 13020,
+  "base_rate": 0.43172043010752686,
+  "n_by_label3": {
+    "Pass": 7399,
+    "Fail": 3469,
+    "Withdrawn": 2152
+  },
+  "n_by_split": {
+    "train": 6795,
+    "test": 3644,
+    "validation": 2581
+  },
+  "n_by_mp": {
+    "BBB 2013B": 1529,
+    "BBB 2013J": 1834,
+    "BBB 2014B": 1280,
+    "BBB 2014J": 1786,
+    "FFF 2013B": 1450,
+    "FFF 2013J": 1982,
+    "FFF 2014B": 1301,
+    "FFF 2014J": 1858
+  },
+  "q1_kw": [
+    {
+      "chi_bao": "clicks_w1",
+      "KW_H": 700.4565,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0537,
+      "trung_vi_Pass": 59.0,
+      "trung_vi_Fail": 20.0,
+      "trung_vi_Withdrawn": 33.0
+    },
+    {
+      "chi_bao": "clicks_w2",
+      "KW_H": 905.4147,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0694,
+      "trung_vi_Pass": 50.0,
+      "trung_vi_Fail": 15.0,
+      "trung_vi_Withdrawn": 24.5
+    },
+    {
+      "chi_bao": "clicks_w3",
+      "KW_H": 704.3574,
+      "p_KW_holm": 0.0,
+      "eta2": 0.054,
+      "trung_vi_Pass": 60.0,
+      "trung_vi_Fail": 23.0,
+      "trung_vi_Withdrawn": 36.0
+    },
+    {
+      "chi_bao": "clicks_w4",
+      "KW_H": 867.2792,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0665,
+      "trung_vi_Pass": 43.0,
+      "trung_vi_Fail": 10.0,
+      "trung_vi_Withdrawn": 21.0
+    },
+    {
+      "chi_bao": "active_days_w1",
+      "KW_H": 724.6499,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0555,
+      "trung_vi_Pass": 3.0,
+      "trung_vi_Fail": 2.0,
+      "trung_vi_Withdrawn": 2.0
+    },
+    {
+      "chi_bao": "active_days_w2",
+      "KW_H": 991.1702,
+      "p_KW_holm": 0.0,
+      "eta2": 0.076,
+      "trung_vi_Pass": 3.0,
+      "trung_vi_Fail": 1.0,
+      "trung_vi_Withdrawn": 2.0
+    },
+    {
+      "chi_bao": "active_days_w3",
+      "KW_H": 907.2732,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0695,
+      "trung_vi_Pass": 3.0,
+      "trung_vi_Fail": 2.0,
+      "trung_vi_Withdrawn": 2.0
+    },
+    {
+      "chi_bao": "active_days_w4",
+      "KW_H": 1011.7342,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0776,
+      "trung_vi_Pass": 3.0,
+      "trung_vi_Fail": 1.0,
+      "trung_vi_Withdrawn": 2.0
+    },
+    {
+      "chi_bao": "clicks_4tuan",
+      "KW_H": 963.9314,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0739,
+      "trung_vi_Pass": 251.0,
+      "trung_vi_Fail": 111.0,
+      "trung_vi_Withdrawn": 158.0
+    },
+    {
+      "chi_bao": "ngay_hd_4tuan",
+      "KW_H": 1230.1986,
+      "p_KW_holm": 0.0,
+      "eta2": 0.0944,
+      "trung_vi_Pass": 12.0,
+      "trung_vi_Fail": 7.0,
+      "trung_vi_Withdrawn": 9.0
+    }
+  ],
+  "q2_sig": [
+    {
+      "chi_bao": "tich_luy_ngay_hd_den_tuan4",
+      "trung_vi_hoan_thanh": 12.0,
+      "trung_vi_khong_hoan_thanh": 7.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6732,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_ngay_hd_den_tuan3",
+      "trung_vi_hoan_thanh": 9.0,
+      "trung_vi_khong_hoan_thanh": 6.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6662,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_homepage_0_28",
+      "trung_vi_hoan_thanh": 49.0,
+      "trung_vi_khong_hoan_thanh": 26.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6652,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_ngay_hd_den_tuan2",
+      "trung_vi_hoan_thanh": 6.0,
+      "trung_vi_khong_hoan_thanh": 3.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6569,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "active_days_w4",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6565,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "active_days_w2",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 1.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6537,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_clicks_den_tuan4",
+      "trung_vi_hoan_thanh": 251.0,
+      "trung_vi_khong_hoan_thanh": 125.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6527,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_forumng_0_28",
+      "trung_vi_hoan_thanh": 69.0,
+      "trung_vi_khong_hoan_thanh": 26.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6518,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "days_since_last_active_d28",
+      "trung_vi_hoan_thanh": 1.0,
+      "trung_vi_khong_hoan_thanh": 3.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6513,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_clicks_den_tuan3",
+      "trung_vi_hoan_thanh": 193.0,
+      "trung_vi_khong_hoan_thanh": 97.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6502,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_clicks_den_tuan2",
+      "trung_vi_hoan_thanh": 120.0,
+      "trung_vi_khong_hoan_thanh": 55.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.65,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_w2",
+      "trung_vi_hoan_thanh": 50.0,
+      "trung_vi_khong_hoan_thanh": 18.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6486,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "active_days_w3",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.648,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_w4",
+      "trung_vi_hoan_thanh": 43.0,
+      "trung_vi_khong_hoan_thanh": 13.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6451,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "active_days_w1",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6313,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_ngay_hd_den_tuan1",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6313,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_w3",
+      "trung_vi_hoan_thanh": 60.0,
+      "trung_vi_khong_hoan_thanh": 27.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6303,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tich_luy_clicks_den_tuan1",
+      "trung_vi_hoan_thanh": 59.0,
+      "trung_vi_khong_hoan_thanh": 24.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6301,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_w1",
+      "trung_vi_hoan_thanh": 59.0,
+      "trung_vi_khong_hoan_thanh": 24.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6301,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_pre_start",
+      "trung_vi_hoan_thanh": 42.0,
+      "trung_vi_khong_hoan_thanh": 15.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.628,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "n_sites_0_28",
+      "trung_vi_hoan_thanh": 27.0,
+      "trung_vi_khong_hoan_thanh": 19.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6202,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tma1_days_before_deadline",
+      "trung_vi_hoan_thanh": 1.0,
+      "trung_vi_khong_hoan_thanh": 1.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6201,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "active_days_pre_start",
+      "trung_vi_hoan_thanh": 3.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6176,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tma1_score",
+      "trung_vi_hoan_thanh": 80.0,
+      "trung_vi_khong_hoan_thanh": 74.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6113,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_subpage_0_28",
+      "trung_vi_hoan_thanh": 26.0,
+      "trung_vi_khong_hoan_thanh": 15.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.6038,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_oucontent_0_28",
+      "trung_vi_hoan_thanh": 44.0,
+      "trung_vi_khong_hoan_thanh": 16.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.5983,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_url_0_28",
+      "trung_vi_hoan_thanh": 4.0,
+      "trung_vi_khong_hoan_thanh": 2.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.5975,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_resource_0_28",
+      "trung_vi_hoan_thanh": 7.0,
+      "trung_vi_khong_hoan_thanh": 5.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.5955,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "highest_education_ord",
+      "trung_vi_hoan_thanh": 2.0,
+      "trung_vi_khong_hoan_thanh": 1.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.5918,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_quiz_0_28",
+      "trung_vi_hoan_thanh": 1.0,
+      "trung_vi_khong_hoan_thanh": 0.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.5866,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "clicks_change_w1_w4",
+      "trung_vi_hoan_thanh": -0.1495,
+      "trung_vi_khong_hoan_thanh": -0.0317,
+      "AUC_don_bien_theo_huong_rui_ro": 0.4796,
+      "p_holm": 0.0001
+    },
+    {
+      "chi_bao": "studied_credits",
+      "trung_vi_hoan_thanh": 60.0,
+      "trung_vi_khong_hoan_thanh": 60.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.4694,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "no_vle_activity_0_28",
+      "trung_vi_hoan_thanh": 0.0,
+      "trung_vi_khong_hoan_thanh": 0.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.4621,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "num_of_prev_attempts",
+      "trung_vi_hoan_thanh": 0.0,
+      "trung_vi_khong_hoan_thanh": 0.0,
+      "AUC_don_bien_theo_huong_rui_ro": 0.4521,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tma1_submitted_by_d28",
+      "trung_vi_hoan_thanh": 0.9728,
+      "trung_vi_khong_hoan_thanh": 0.7548,
+      "AUC_don_bien_theo_huong_rui_ro": NaN,
+      "p_holm": 0.0
+    },
+    {
+      "chi_bao": "tma1_on_time",
+      "trung_vi_hoan_thanh": 0.9361,
+      "trung_vi_khong_hoan_thanh": 0.6652,
+      "AUC_don_bien_theo_huong_rui_ro": NaN,
+      "p_holm": 0.0
+    }
+  ],
+  "q2_nonsig": [
+    "registration_lead_days"
+  ],
+  "q2_week": [
+    {
+      "tuan": 1,
+      "chi_bao": "lượt nhấp trong tuần",
+      "cot_goc": "clicks_w1",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6301,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 1,
+      "chi_bao": "ngày hoạt động trong tuần",
+      "cot_goc": "active_days_w1",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6313,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 1,
+      "chi_bao": "lượt nhấp tích lũy đến tuần",
+      "cot_goc": "tich_luy_clicks_den_tuan1",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6301,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 1,
+      "chi_bao": "ngày hoạt động tích lũy đến tuần",
+      "cot_goc": "tich_luy_ngay_hd_den_tuan1",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6313,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 2,
+      "chi_bao": "lượt nhấp trong tuần",
+      "cot_goc": "clicks_w2",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6486,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 2,
+      "chi_bao": "ngày hoạt động trong tuần",
+      "cot_goc": "active_days_w2",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6537,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 2,
+      "chi_bao": "lượt nhấp tích lũy đến tuần",
+      "cot_goc": "tich_luy_clicks_den_tuan2",
+      "AUC_don_bien_theo_huong_rui_ro": 0.65,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 2,
+      "chi_bao": "ngày hoạt động tích lũy đến tuần",
+      "cot_goc": "tich_luy_ngay_hd_den_tuan2",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6569,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 3,
+      "chi_bao": "lượt nhấp trong tuần",
+      "cot_goc": "clicks_w3",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6303,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 3,
+      "chi_bao": "ngày hoạt động trong tuần",
+      "cot_goc": "active_days_w3",
+      "AUC_don_bien_theo_huong_rui_ro": 0.648,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 3,
+      "chi_bao": "lượt nhấp tích lũy đến tuần",
+      "cot_goc": "tich_luy_clicks_den_tuan3",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6502,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 3,
+      "chi_bao": "ngày hoạt động tích lũy đến tuần",
+      "cot_goc": "tich_luy_ngay_hd_den_tuan3",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6662,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 4,
+      "chi_bao": "lượt nhấp trong tuần",
+      "cot_goc": "clicks_w4",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6451,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 4,
+      "chi_bao": "ngày hoạt động trong tuần",
+      "cot_goc": "active_days_w4",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6565,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 4,
+      "chi_bao": "lượt nhấp tích lũy đến tuần",
+      "cot_goc": "tich_luy_clicks_den_tuan4",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6527,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    },
+    {
+      "tuan": 4,
+      "chi_bao": "ngày hoạt động tích lũy đến tuần",
+      "cot_goc": "tich_luy_ngay_hd_den_tuan4",
+      "AUC_don_bien_theo_huong_rui_ro": 0.6732,
+      "p_holm": 0.0,
+      "co_y_nghia_holm_5pct": true
+    }
+  ],
+  "n_features": 21,
+  "val_models": [
+    {
+      "mo_hinh": "logistic",
+      "AUC_validation": 0.7459,
+      "PR_AUC_validation": 0.7405
+    },
+    {
+      "mo_hinh": "hist_gbm",
+      "AUC_validation": 0.7379,
+      "PR_AUC_validation": 0.7376
+    },
+    {
+      "mo_hinh": "baseline: ít lượt nhấp đến ngày 28",
+      "AUC_validation": 0.6466,
+      "PR_AUC_validation": 0.6251
+    }
+  ],
+  "chosen_model": "logistic",
+  "threshold": 0.3850799119755967,
+  "test": {
+    "mo_hinh": "logistic",
+    "AUC_test": 0.6723578939543087,
+    "PR_AUC_test": 0.5029006960441986,
+    "n_test": 3644,
+    "ti_le_khong_hoan_thanh_test": 0.37760702524698136,
+    "recall_test": 0.6388081395348837,
+    "precision_test": 0.5158450704225352,
+    "ti_le_bi_gan_co": 0.4676180021953897,
+    "so_bat_duoc": 879,
+    "tong_khong_hoan_thanh": 1376,
+    "so_gan_co_khong_hoan_thanh": 825,
+    "so_bo_sot": 497,
+    "nguong": 0.3850799119755967
+  },
+  "test_share_for_recall70": 0.526344676180022,
+  "test_precision_at_recall70": 0.502606882168926,
+  "oof_auc": 0.7346550218504406,
+  "q4": [
+    {
+      "module": "BBB",
+      "presentation": "2013B",
+      "so_sv": 1529,
+      "so_khong_hoan_thanh": 727,
+      "ti_le_khong_hoan_thanh": 0.4755,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 190,
+      "precision_trong_danh_sach": 0.95,
+      "recall_trong_danh_sach": 0.2613,
+      "so_sv_can_gan_co_de_bat_70pct": 765,
+      "ti_le_cohort_can_gan_co_70pct": 0.5003
+    },
+    {
+      "module": "BBB",
+      "presentation": "2013J",
+      "so_sv": 1834,
+      "so_khong_hoan_thanh": 763,
+      "ti_le_khong_hoan_thanh": 0.416,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 175,
+      "precision_trong_danh_sach": 0.875,
+      "recall_trong_danh_sach": 0.2294,
+      "so_sv_can_gan_co_de_bat_70pct": 913,
+      "ti_le_cohort_can_gan_co_70pct": 0.4978
+    },
+    {
+      "module": "BBB",
+      "presentation": "2014B",
+      "so_sv": 1280,
+      "so_khong_hoan_thanh": 553,
+      "ti_le_khong_hoan_thanh": 0.432,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 170,
+      "precision_trong_danh_sach": 0.85,
+      "recall_trong_danh_sach": 0.3074,
+      "so_sv_can_gan_co_de_bat_70pct": 661,
+      "ti_le_cohort_can_gan_co_70pct": 0.5164
+    },
+    {
+      "module": "BBB",
+      "presentation": "2014J",
+      "so_sv": 1786,
+      "so_khong_hoan_thanh": 635,
+      "ti_le_khong_hoan_thanh": 0.3555,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 144,
+      "precision_trong_danh_sach": 0.72,
+      "recall_trong_danh_sach": 0.2268,
+      "so_sv_can_gan_co_de_bat_70pct": 1015,
+      "ti_le_cohort_can_gan_co_70pct": 0.5683
+    },
+    {
+      "module": "FFF",
+      "presentation": "2013B",
+      "so_sv": 1450,
+      "so_khong_hoan_thanh": 668,
+      "ti_le_khong_hoan_thanh": 0.4607,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 174,
+      "precision_trong_danh_sach": 0.87,
+      "recall_trong_danh_sach": 0.2605,
+      "so_sv_can_gan_co_de_bat_70pct": 748,
+      "ti_le_cohort_can_gan_co_70pct": 0.5159
+    },
+    {
+      "module": "FFF",
+      "presentation": "2013J",
+      "so_sv": 1982,
+      "so_khong_hoan_thanh": 887,
+      "ti_le_khong_hoan_thanh": 0.4475,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 178,
+      "precision_trong_danh_sach": 0.89,
+      "recall_trong_danh_sach": 0.2007,
+      "so_sv_can_gan_co_de_bat_70pct": 997,
+      "ti_le_cohort_can_gan_co_70pct": 0.503
+    },
+    {
+      "module": "FFF",
+      "presentation": "2014B",
+      "so_sv": 1301,
+      "so_khong_hoan_thanh": 647,
+      "ti_le_khong_hoan_thanh": 0.4973,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 175,
+      "precision_trong_danh_sach": 0.875,
+      "recall_trong_danh_sach": 0.2705,
+      "so_sv_can_gan_co_de_bat_70pct": 673,
+      "ti_le_cohort_can_gan_co_70pct": 0.5173
+    },
+    {
+      "module": "FFF",
+      "presentation": "2014J",
+      "so_sv": 1858,
+      "so_khong_hoan_thanh": 741,
+      "ti_le_khong_hoan_thanh": 0.3988,
+      "cap_lien_he": 200,
+      "trung_trong_danh_sach": 177,
+      "precision_trong_danh_sach": 0.885,
+      "recall_trong_danh_sach": 0.2389,
+      "so_sv_can_gan_co_de_bat_70pct": 903,
+      "ti_le_cohort_can_gan_co_70pct": 0.486
+    }
+  ],
+  "q4_total": {
+    "so_sv_trong_danh_sach": 1600,
+    "trung": 1383,
+    "tong_khong_hoan_thanh": 5621,
+    "recall": 0.24604162960327344,
+    "precision": 0.864375
+  },
+  "coef_top": {
+    "clicks_0_28": -1.082,
+    "active_days_0_28": -0.719,
+    "tma1_submitted_by_d28": -0.612,
+    "clicks_w1": 0.36,
+    "clicks_w3": 0.346,
+    "highest_education_ord": -0.339,
+    "n_sites_0_28": 0.236,
+    "clicks_w4": 0.229,
+    "clicks_w2": 0.214,
+    "days_since_last_active_d28": 0.171
+  },
+  "corr_oof_vs_lr_full": 0.9991830531848457,
+  "q5_top1": {
+    "tma1_submitted_by_d28": 1375,
+    "tổng số ngày hoạt động đến ngày 28": 101,
+    "tổng lượt nhấp đến ngày 28": 58,
+    "trình độ học vấn trước khi vào khóa": 19,
+    "số lượt nhấp tuần 3": 14,
+    "số tín chỉ đang theo học": 11,
+    "điểm TMA1": 11,
+    "số lần học lại trước đó": 5,
+    "số lượt nhấp tuần 1": 3,
+    "số loại học liệu đã truy cập": 2
+  },
+  "q5_top1_by_group": {
+    "BBB 2013B": "tma1_submitted_by_d28",
+    "BBB 2013J": "tma1_submitted_by_d28",
+    "BBB 2014B": "tma1_submitted_by_d28",
+    "BBB 2014J": "tma1_submitted_by_d28",
+    "FFF 2013B": "tma1_submitted_by_d28",
+    "FFF 2013J": "tma1_submitted_by_d28",
+    "FFF 2014B": "tma1_submitted_by_d28",
+    "FFF 2014J": "tma1_submitted_by_d28"
+  },
+  "q5_sample": [
+    "Sinh viên 79378 (BBB 2013B) nằm trong nhóm 200 sinh viên có điểm rủi ro cao nhất của module-kỳ này. Yếu tố đóng góp nhiều nhất là chưa nộp TMA1 đến ngày 28, tiếp theo là tổng số ngày hoạt động đến ngày 28 thấp hơn mức trung bình. Cố vấn nên hỗ trợ lập kế hoạch nộp bài đánh giá TMA1 đúng hạn.",
+    "Sinh viên 2340190 (BBB 2013B) nằm trong nhóm 200 sinh viên có điểm rủi ro cao nhất của module-kỳ này. Yếu tố đóng góp nhiều nhất là chưa nộp TMA1 đến ngày 28, tiếp theo là tổng số ngày hoạt động đến ngày 28 thấp hơn mức trung bình. Cố vấn nên hỗ trợ lập kế hoạch nộp bài đánh giá TMA1 đúng hạn.",
+    "Sinh viên 2570633 (BBB 2013B) nằm trong nhóm 200 sinh viên có điểm rủi ro cao nhất của module-kỳ này. Yếu tố đóng góp nhiều nhất là chưa nộp TMA1 đến ngày 28, tiếp theo là tổng số ngày hoạt động đến ngày 28 thấp hơn mức trung bình. Cố vấn nên hỗ trợ lập kế hoạch nộp bài đánh giá TMA1 đúng hạn."
+  ],
+  "q5_top1_fail_rate": {
+    "active_days_0_28": 0.673,
+    "clicks_0_28": 0.603,
+    "clicks_w1": 0.667,
+    "clicks_w2": 0.0,
+    "clicks_w3": 0.643,
+    "highest_education_ord": 0.737,
+    "n_sites_0_28": 1.0,
+    "num_of_prev_attempts": 0.6,
+    "studied_credits": 0.909,
+    "tma1_score": 0.273,
+    "tma1_submitted_by_d28": 0.9
+  }
+}

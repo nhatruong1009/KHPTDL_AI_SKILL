@@ -1,0 +1,61 @@
+{
+  "task": "household_power",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": false,
+    "n_charts": 5,
+    "has_script": true,
+    "expected_skills_hit_pct": 85.7,
+    "skills_missing": [
+      "data-chart"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "1. Đọc '?' là thiếu, ngày dd/mm/yyyy, báo lượng thiếu và khoảng trống dài nhất",
+        "pass": true,
+        "evidence": "25.979 phút thiếu (1,25% của 2.075.259), đúng với ground truth; khoảng dài nhất 17–22/8/2010 (7.226 phút ≈ 120,4 giờ), 25–28/9/2010 (5.237 phút ≈ 87,3 giờ), 28/4/2007, 13/6/2009, khớp longest_gaps."
+      },
+      {
+        "check": "2. Đổi kW phút sang kWh (chia 60), độ lớn đúng",
+        "pass": true,
+        "evidence": "Có ghi 'kWh = Global_active_power/60'. Tổng tháng khớp ground truth: 1/2007 = 1.150, 8/2008 = 205,7, 12/2007 = 1.210. Tổng 12 tháng là 9.363–9.679 kWh."
+      },
+      {
+        "check": "3. Xử lý tháng thiếu hoặc tháng không đủ trước khi so sánh",
+        "pass": true,
+        "evidence": "Hiệu chỉnh theo độ phủ: 8/2010 từ 368 lên 440, 9/2010 từ 605 lên 689. Loại 12/2006, quy 11/2010 ra cả tháng (743 lên 862). So sánh năm bằng cùng kỳ T1–T11. Tuần có dưới 90% số phút không được chấm điểm bất thường."
+      },
+      {
+        "check": "4. Mùa vụ năm (đông cao, hè thấp, tháng 8 thấp nhất) và đỉnh tối trong ngày",
+        "pass": true,
+        "evidence": "Tháng 1 (1,38) và 12 (1,29) cao nhất; tháng 7 (0,61) và 8 (0,63) thấp nhất theo trung vị. Ground truth lấy tháng 8 thấp nhất theo trung bình; agent dùng trung vị nên tháng 7 thấp nhất. Đây là lựa chọn có lý do và đã được nêu rõ. Đỉnh tối 20–21h ≈ 1,85 kW, khớp đỉnh giờ 20 của ground truth."
+      },
+      {
+        "check": "5. Dự báo 12/2010 trong khoảng [759, 1392], có khoảng và phương pháp",
+        "pass": true,
+        "evidence": "Dự báo 958 kWh, khoảng 80% là 856–1.133 và khoảng 95% là 795–1.220. Phương pháp ratio_2m được chọn nhờ backtest MAPE 6,8% (n = 19), khoảng bất định lấy từ phân bố sai số log của backtest."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": null,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Dữ liệu được xử lý đúng: '?' là giá trị thiếu, kWh = công suất/60, hiệu chỉnh theo độ phủ cho tháng thiếu dữ liệu, loại hoặc quy đổi tháng không đủ. Các số liệu tháng, khoảng trống và tỷ lệ thiếu đều khớp ground truth. Mùa vụ năm, tuần và ngày được mô tả đúng. Tháng 8/2008 được nhận diện là giai đoạn bất thường nổi bật, có phát hiện bất thường bằng z-score MAD so với đường cơ sở trượt. Dự báo 958 kWh nằm trong khoảng hợp lý, có so sánh 3 phương pháp bằng backtest theo thời gian và khoảng bất định lấy từ sai số thực nghiệm. Các hạn chế được nêu trung thực. Điểm trừ nhỏ: tiêu đề biểu đồ 01 ghi 'giảm nhẹ qua các năm', hơi lệch với kết luận 'gần như không có xu hướng'. Biểu đồ 03 ghi cuối tuần cao hơn ~19%, khác cách diễn đạt ~12% trong báo cáo, vì hai con số dùng mốc so sánh khác nhau. CSV ghi độ phủ 11/2010 là 1,0 dù tháng này chưa đủ. Báo cáo và câu trả lời viết bằng tiếng Việt rõ ràng, trả lời trực tiếp ngay từ đầu."
+  },
+  "judge_cost_usd": 0.24868869999999996,
+  "accuracy_pct": 100.0,
+  "quality_pct": 95.0,
+  "overall": 98.0
+}

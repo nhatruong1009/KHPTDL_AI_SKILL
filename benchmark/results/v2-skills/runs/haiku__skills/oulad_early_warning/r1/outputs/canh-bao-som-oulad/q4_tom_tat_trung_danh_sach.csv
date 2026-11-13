@@ -1,0 +1,4 @@
+module_ky,so_sinh_vien,so_khong_hoan_thanh,so_trong_danh_sach,so_khong_hoan_thanh_trong_danh_sach,precision,recall_trong_module_ky,tran_toi_da_recall
+BBB-2014J,1786,635,200,149,0.745,0.235,0.315
+FFF-2014J,1858,741,200,173,0.865,0.233,0.27
+Tổng test,3644,1376,400,322,0.805,0.234,0.291

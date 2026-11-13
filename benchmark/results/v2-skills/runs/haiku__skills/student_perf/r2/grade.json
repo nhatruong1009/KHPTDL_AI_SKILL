@@ -1,0 +1,66 @@
+{
+  "task": "student_perf",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 2,
+    "has_script": true,
+    "expected_skills_hit_pct": 14.3,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-chart",
+      "answer-write",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Dùng ';', cả hai file, xác định học sinh trùng, gộp có xử lý phụ thuộc",
+        "pass": true,
+        "evidence": "read_csv(sep=';') cho cả hai file; 13 khóa theo student-merge.R → 382 cặp, 366 học sinh có ở cả hai môn (do trùng khóa), 662 học sinh duy nhất; OLS có sai số cụm theo học sinh (647 cụm), thêm kiểm tra mỗi học sinh một bản ghi (n=656) và tách theo môn."
+      },
+      {
+        "check": "Phát hiện G3=0 và loại bỏ/kiểm tra độ nhạy kèm lý do",
+        "pass": true,
+        "evidence": "53 bản ghi G3=0 (38+15), tất cả vắng mặt=0, 33 có G2>0 → coi là bỏ học/không thi, loại khỏi mẫu chính; độ nhạy giữ G3=0: Walc −0,35 (p=0,001), Dalc −0,56."
+      },
+      {
+        "check": "Kiểm định phù hợp dữ liệu thứ bậc và có effect size",
+        "pass": true,
+        "evidence": "Spearman (Walc ρ=−0,178, Dalc ρ=−0,183), Mann-Whitney kèm rank-biserial (−0,283/−0,284), Cohen d (−0,50/−0,57), Kruskal Walc H=37,8; thêm OLS cụm có CI."
+      },
+      {
+        "check": "Kết luận khớp tham chiếu: liên hệ âm nhỏ ở cả hai môn, rõ nhất ở Bồ Đào Nha; Toán yếu hơn khi giữ G3=0",
+        "pass": false,
+        "evidence": "ρ gộp ≈ −0,18 nằm trong khoảng 0,1–0,2, và hệ số âm ở cả hai môn (Toán Walc −0,47, BĐN Walc −0,39), nhưng không báo Spearman/MWU theo từng môn, không chỉ ra Toán yếu đi khi giữ G3=0 (kiểm tra độ nhạy chỉ làm trên dữ liệu gộp). Kết luận chính lại chuyển sang 'phần lớn do điểm kỳ trước' (điều chỉnh G1+G2), khác trọng tâm của câu trả lời tham chiếu."
+      },
+      {
+        "check": "Không dùng từ ngữ nhân quả; nêu yếu tố gây nhiễu",
+        "pass": true,
+        "evidence": "'Dữ liệu quan sát nên không thể kết luận nhân quả'; nêu yếu tố nhiễu: động lực, gia đình, thời gian. Tuy vậy câu 'phần lớn là do điểm các kỳ trước' mang sắc thái giải thích nhân quả."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 3,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Xử lý dữ liệu rất tốt: dùng sep=';', ghép theo 13 khóa (382 cặp, 662 học sinh duy nhất, giải thích được vì sao chỉ có 366 người), dùng sai số cụm và kiểm tra mỗi học sinh một bản ghi; 53 bản ghi G3=0 được loại có lý do và có kiểm tra độ nhạy. Effect size đầy đủ (Spearman ≈ −0,18, rank-biserial ≈ −0,28, Cohen d ≈ −0,5), các con số khớp với log. Điểm yếu: kiểm định thứ bậc chỉ làm trên dữ liệu gộp, không theo từng môn, nên không thấy được việc Toán yếu hơn khi giữ G3=0 và rõ hơn sau khi loại G3=0. Kết luận chính dựa vào mô hình điều chỉnh G1+G2. G2 gần như là phép đo cùng học lực với G3, nên điều chỉnh theo G2 là kiểm soát quá mức (over-control), và kết luận 'hiệu ứng gần như biến mất / phần lớn do điểm kỳ trước' dễ gây hiểu lầm, lại có sắc thái nhân quả. Đã nêu yếu tố gây nhiễu và giới hạn. Biểu đồ G3 theo mức rượu rõ ràng, tiêu đề nêu được kết luận và có ghi n. Biểu đồ forest bị cắt tiêu đề và có quá nhiều dòng. Trả lời bằng tiếng Việt, đưa câu trả lời trực tiếp lên đầu."
+  },
+  "judge_cost_usd": 0.2208609,
+  "accuracy_pct": 80.0,
+  "quality_pct": 75.0,
+  "overall": 78.0
+}

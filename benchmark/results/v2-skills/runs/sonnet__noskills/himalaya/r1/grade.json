@@ -1,0 +1,68 @@
+{
+  "task": "himalaya",
+  "model": "sonnet",
+  "variant": "noskills",
+  "rep": 1,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 1,
+    "has_script": true,
+    "expected_skills_hit_pct": null,
+    "skills_missing": [
+      "data-eda",
+      "data-relevance",
+      "analysis-plan",
+      "time-series",
+      "group-compare",
+      "data-chart",
+      "storytelling",
+      "answer-qa"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Lọc Everest đúng và dùng members.csv với mẫu số rõ ràng",
+        "pass": true,
+        "evidence": "an.py lọc peak_id=='EVER', 21.813 lượt (khớp GT); nói rõ tỉ lệ = số tử vong / số lượt người, không phải số đoàn hay số người"
+      },
+      {
+        "check": "Tỉ lệ tử vong theo thập kỷ khớp by_decade",
+        "pass": true,
+        "evidence": "CSV: 1970 hired 19/52=36,5%, 1980 hired 13,8%, 2000 hired 0,45%, 2010 hired 1,04%, member 2,08→0,87%; đều khớp GT. Giai đoạn 1950–1989 (bỏ 1920–40s): member 54/2.721=2,0%, hired 42/267=15,7%; sau 1990: 1,04% và 1,07%, khớp GT"
+      },
+      {
+        "check": "Cảnh báo cỡ mẫu nhỏ và đỉnh 2014–2015",
+        "pass": true,
+        "evidence": "Ghi 'chỉ 267 lượt' trước 1990, '1970s đạt 36,5%' do mẫu nhỏ; tách 2014 (17 ca) và 2015 (11 ca nhân viên, đã kiểm tra đúng), bỏ hai năm thì 2010s chỉ còn 0,36%. Thiếu nhắc rằng 2015 là do động đất"
+      },
+      {
+        "check": "Cho thấy thay đổi trong kỷ nguyên thương mại",
+        "pass": true,
+        "evidence": "Nhân viên 145→3.841 lượt, thành viên ~2.000→~5.000; lên đỉnh nhân viên 18%→76%, thành viên 8%→40%; oxy 19%→62%; tỉ lệ khách/nhân viên gần 1:1. Không báo số đoàn thám hiểm theo thập kỷ"
+      },
+      {
+        "check": "story.md có, ngôn ngữ phổ thông, một thông điệp chính, có lưu ý trung thực",
+        "pass": true,
+        "evidence": "Thông điệp 'Everest an toàn hơn, nhưng người được thuê vẫn gánh rủi ro khi có thảm họa'; dùng cách nói 'cứ 100 người'; có phần lưu ý mẫu nhỏ, đơn vị là lượt, mốc 1990 ước chừng, không nhân quả. Câu 'dấu hiệu của dây cố định, oxy...' hơi suy diễn"
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 4,
+      "charts": 3
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài chạy chắc chắn: lọc EVER đúng, 21.813 lượt và mọi tỉ lệ theo thập kỷ, theo giai đoạn đều khớp ground truth. Tác giả chọn mốc trước 1990 là 1950–1989 và đã nêu rõ con số 267 lượt. Bài nói rõ mẫu số, cảnh báo mẫu nhỏ ở 1970s và tách riêng 2014 (17 ca) và 2015 (11 ca nhân viên, đã đối chiếu với dữ liệu thô). Bài cũng tính thêm tỉ lệ tử vong trên mỗi lần lên đỉnh, rất đáng giá. Phần kỷ nguyên thương mại có đủ số người, tỉ lệ lên đỉnh, oxy và nguyên nhân tử vong, nhưng không nêu số đoàn theo thập kỷ. Bài gọi sự cố 2015 là 'tuyết lở' mà không nhắc động đất. Có một câu suy diễn nguyên nhân là 'dây cố định, oxy', nhưng bài vẫn có lưu ý rằng không chứng minh được nhân quả. Biểu đồ đúng số liệu nhưng tiêu đề chỉ mô tả, chưa nêu kết luận. Nhãn ở 2000s và 2010s chồng lên nhau, và biểu đồ bỏ các thập kỷ trước 1970. Toàn bộ bài viết bằng tiếng Việt, rõ ràng, đi thẳng vào câu trả lời."
+  },
+  "judge_cost_usd": 0.2128732,
+  "accuracy_pct": 100.0,
+  "quality_pct": 75.0,
+  "overall": 90.0
+}

@@ -1,0 +1,4 @@
+method,forecast_kwh
+seasonal_naive,1015.1
+yoy_scaled,928.2
+ratio_2m,958.1

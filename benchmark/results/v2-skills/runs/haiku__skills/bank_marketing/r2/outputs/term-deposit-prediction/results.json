@@ -1,0 +1,259 @@
+{
+  "dup_rows_in_additional_full": 12,
+  "rows": {
+    "train": 28831,
+    "valid": 6178,
+    "test": 6179
+  },
+  "chosen_model": "Hồi quy logistic",
+  "test": {
+    "Ngẫu nhiên": {
+      "roc_auc": 0.5038113406835468,
+      "pr_auc": 0.39320012221942946,
+      "base_rate": 0.38452824081566594,
+      "precision_top10": 0.4174757281553398,
+      "recall_top10": 0.10858585858585859,
+      "lift_top10": 1.0856828805857932,
+      "precision_top20": 0.406957928802589,
+      "recall_top20": 0.2117003367003367,
+      "lift_top20": 1.0583304049121203,
+      "precision_top30": 0.39913700107874867,
+      "recall_top30": 0.3114478114478115,
+      "lift_top30": 1.0379913845393889
+    },
+    "Luật đơn giản (kết quả chiến dịch trước)": {
+      "roc_auc": 0.6248974095411118,
+      "pr_auc": 0.535071071292559,
+      "base_rate": 0.38452824081566594,
+      "precision_top10": 0.6877022653721683,
+      "recall_top10": 0.17887205387205388,
+      "lift_top10": 1.7884311017401633,
+      "precision_top20": 0.6788025889967637,
+      "recall_top20": 0.3531144781144781,
+      "lift_top20": 1.7652866992470553,
+      "precision_top30": 0.551779935275081,
+      "recall_top30": 0.4305555555555556,
+      "lift_top30": 1.4349529545726958
+    },
+    "Hồi quy logistic": {
+      "roc_auc": 0.5771370688212655,
+      "pr_auc": 0.44708107357005444,
+      "base_rate": 0.38452824081566594,
+      "precision_top10": 0.4627831715210356,
+      "recall_top10": 0.12037037037037036,
+      "lift_top10": 1.2035089296416157,
+      "precision_top20": 0.4741100323624595,
+      "recall_top20": 0.24663299663299662,
+      "lift_top20": 1.2329654419055713,
+      "precision_top30": 0.4482200647249191,
+      "recall_top30": 0.34974747474747475,
+      "lift_top30": 1.16563627101653
+    },
+    "Gradient boosting": {
+      "roc_auc": 0.495713445259856,
+      "pr_auc": 0.388532014372475,
+      "base_rate": 0.38452824081566594,
+      "precision_top10": 0.39967637540453077,
+      "recall_top10": 0.10395622895622895,
+      "lift_top10": 1.0393940755995774,
+      "precision_top20": 0.3697411003236246,
+      "recall_top20": 0.19234006734006734,
+      "lift_top20": 0.9615447217591232,
+      "precision_top30": 0.3727076591154261,
+      "recall_top30": 0.2908249158249158,
+      "lift_top30": 0.969259522590159
+    }
+  },
+  "valid": {
+    "Ngẫu nhiên": {
+      "roc_auc": 0.49590051099070526,
+      "pr_auc": 0.10676689811573967,
+      "base_rate": 0.10650696018128844,
+      "precision_top10": 0.10841423948220065,
+      "recall_top10": 0.10182370820668693,
+      "lift_top10": 1.0179075555030936,
+      "precision_top20": 0.10598705501618123,
+      "recall_top20": 0.19908814589665655,
+      "lift_top20": 0.9951185803798901,
+      "precision_top30": 0.1052347544522396,
+      "recall_top30": 0.29635258358662614,
+      "lift_top30": 0.9880551869391129
+    },
+    "Luật đơn giản (kết quả chiến dịch trước)": {
+      "roc_auc": 0.4823481069115898,
+      "pr_auc": 0.1378258449026679,
+      "base_rate": 0.10650696018128844,
+      "precision_top10": 0.15210355987055016,
+      "recall_top10": 0.14285714285714285,
+      "lift_top10": 1.4281091077207582,
+      "precision_top20": 0.10355987055016182,
+      "recall_top20": 0.1945288753799392,
+      "lift_top20": 0.9723296052566865,
+      "precision_top30": 0.08958445763626552,
+      "recall_top30": 0.25227963525835867,
+      "lift_top30": 0.8411136463173987
+    },
+    "Hồi quy logistic": {
+      "roc_auc": 0.6598206026166248,
+      "pr_auc": 0.19711444655541702,
+      "base_rate": 0.10650696018128844,
+      "precision_top10": 0.24757281553398058,
+      "recall_top10": 0.23252279635258358,
+      "lift_top10": 2.3244754625667663,
+      "precision_top20": 0.21925566343042072,
+      "recall_top20": 0.41185410334346506,
+      "lift_top20": 2.058604086129391,
+      "precision_top30": 0.18186724230976795,
+      "recall_top30": 0.5121580547112462,
+      "lift_top30": 1.7075620410178516
+    },
+    "Gradient boosting": {
+      "roc_auc": 0.5630883551385402,
+      "pr_auc": 0.13462960653150075,
+      "base_rate": 0.10650696018128844,
+      "precision_top10": 0.13106796116504854,
+      "recall_top10": 0.12310030395136778,
+      "lift_top10": 1.2306046566529938,
+      "precision_top20": 0.14158576051779936,
+      "recall_top20": 0.26595744680851063,
+      "lift_top20": 1.3293568821868762,
+      "precision_top30": 0.1332973556395035,
+      "recall_top30": 0.37537993920972645,
+      "lift_top30": 1.2515365701228764
+    }
+  },
+  "sensitivity": [
+    {
+      "scenario": "Chính (không duration/campaign, có chỉ số vĩ mô)",
+      "model": "Hồi quy logistic",
+      "roc_auc": 0.5771370688212655,
+      "pr_auc": 0.44708107357005444,
+      "lift_top20": 1.2329654419055713,
+      "recall_top20": 0.24663299663299662
+    },
+    {
+      "scenario": "Chính (không duration/campaign, có chỉ số vĩ mô)",
+      "model": "Gradient boosting",
+      "roc_auc": 0.495713445259856,
+      "pr_auc": 0.388532014372475,
+      "lift_top20": 0.9615447217591232,
+      "recall_top20": 0.19234006734006734
+    },
+    {
+      "scenario": "S1: thêm duration (biến sau cuộc gọi, chỉ để đối chiếu)",
+      "model": "Hồi quy logistic",
+      "roc_auc": 0.6513084212269067,
+      "pr_auc": 0.5270699761000961,
+      "lift_top20": 1.4917619425103246,
+      "recall_top20": 0.2984006734006734
+    },
+    {
+      "scenario": "S1: thêm duration (biến sau cuộc gọi, chỉ để đối chiếu)",
+      "model": "Gradient boosting",
+      "roc_auc": 0.6515999242136502,
+      "pr_auc": 0.5153354499494269,
+      "lift_top20": 1.4602013936560865,
+      "recall_top20": 0.29208754208754206
+    },
+    {
+      "scenario": "S2: thêm campaign (chưa biết trước cuộc gọi)",
+      "model": "Hồi quy logistic",
+      "roc_auc": 0.5771148242881086,
+      "pr_auc": 0.447703874825083,
+      "lift_top20": 1.2413815882667016,
+      "recall_top20": 0.24831649831649832
+    },
+    {
+      "scenario": "S2: thêm campaign (chưa biết trước cuộc gọi)",
+      "model": "Gradient boosting",
+      "roc_auc": 0.5037297773953046,
+      "pr_auc": 0.3876963520549065,
+      "lift_top20": 0.9573366485785579,
+      "recall_top20": 0.1914983164983165
+    },
+    {
+      "scenario": "S3: bỏ chỉ số kinh tế vĩ mô",
+      "model": "Hồi quy logistic",
+      "roc_auc": 0.6086119765451872,
+      "pr_auc": 0.4694195976497259,
+      "lift_top20": 1.304502685975178,
+      "recall_top20": 0.2609427609427609
+    },
+    {
+      "scenario": "S3: bỏ chỉ số kinh tế vĩ mô",
+      "model": "Gradient boosting",
+      "roc_auc": 0.6134236572048826,
+      "pr_auc": 0.45985999651605286,
+      "lift_top20": 1.243485624856984,
+      "recall_top20": 0.24873737373737373
+    },
+    {
+      "scenario": "S4: bank-full.csv (45.211 dòng, không có chỉ số vĩ mô)",
+      "model": "Hồi quy logistic",
+      "roc_auc": 0.6476686911770172,
+      "pr_auc": 0.5048673394766984,
+      "lift_top20": 1.3797172210355,
+      "recall_top20": 0.27586206896551724
+    },
+    {
+      "scenario": "S4: bank-full.csv (45.211 dòng, không có chỉ số vĩ mô)",
+      "model": "Gradient boosting",
+      "roc_auc": 0.6265958233814546,
+      "pr_auc": 0.4851710478233712,
+      "lift_top20": 1.300983357878583,
+      "recall_top20": 0.260119940029985
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "nr.employed",
+      "auc_drop_mean": 0.08281156069415341,
+      "auc_drop_std": 0.0028487158019277477
+    },
+    {
+      "feature": "was_contacted",
+      "auc_drop_mean": 0.0512426393835808,
+      "auc_drop_std": 0.0015881826699577616
+    },
+    {
+      "feature": "month",
+      "auc_drop_mean": 0.03889820724556461,
+      "auc_drop_std": 0.0031990758318214594
+    },
+    {
+      "feature": "poutcome",
+      "auc_drop_mean": 0.029529540297355217,
+      "auc_drop_std": 0.0008715750141365386
+    },
+    {
+      "feature": "emp.var.rate",
+      "auc_drop_mean": 0.028352317548347016,
+      "auc_drop_std": 0.008583844008232276
+    },
+    {
+      "feature": "cons.price.idx",
+      "auc_drop_mean": 0.019259338941169112,
+      "auc_drop_std": 0.002215649710926001
+    },
+    {
+      "feature": "pdays_num",
+      "auc_drop_mean": 0.007346849155947255,
+      "auc_drop_std": 0.0010836076780387238
+    },
+    {
+      "feature": "contact",
+      "auc_drop_mean": 0.006065043900305556,
+      "auc_drop_std": 0.0006729479845237323
+    },
+    {
+      "feature": "day_of_week",
+      "auc_drop_mean": 0.005001091199487284,
+      "auc_drop_std": 0.0006870870675252847
+    },
+    {
+      "feature": "job",
+      "auc_drop_mean": 0.004505779594525338,
+      "auc_drop_std": 0.001052050677585672
+    }
+  ]
+}

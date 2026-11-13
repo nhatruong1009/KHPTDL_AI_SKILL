@@ -1,0 +1,88 @@
+== 1. Phan bo diem chat luong theo loai ==
+             count   mean    std  min  25%  50%  75%  max
+loai                                                     
+Vang do     1599.0  5.636  0.808  3.0  5.0  6.0  6.0  8.0
+Vang trang  4898.0  5.878  0.886  3.0  5.0  6.0  6.0  9.0
+
+Ty le >=7 diem:
+loai
+Vang do       0.1357
+Vang trang    0.2164
+
+Diem cao nhat theo loai:
+loai
+Vang do       8
+Vang trang    9
+
+So luong moi diem theo loai:
+loai     Vang do  Vang trang
+quality                     
+3             10          20
+4             53         163
+5            681        1457
+6            638        2198
+7            199         880
+8             18         175
+9              0           5
+
+== 2. So sanh do - trang (Mann-Whitney, raw va da loai trung lap) ==
+raw: n do=1599, n trang=4898; mean do=5.636, trang=5.878, p=3.63e-23
+dedup: n do=1359, n trang=3961; mean do=5.623, trang=5.855, p=2.00e-18
+
+== 3. Tuong quan Spearman voi quality (trong tung loai, raw) ==
+-- Vang do --
+   loai            dac_trung    rho            p
+Vang do              alcohol  0.479 2.726838e-92
+Vang do     volatile acidity -0.381 2.734944e-56
+Vang do            sulphates  0.377 3.477695e-55
+Vang do          citric acid  0.213 6.158952e-18
+Vang do total sulfur dioxide -0.197 2.046488e-15
+Vang do            chlorides -0.190 1.882858e-14
+-- Vang trang --
+      loai            dac_trung    rho             p
+Vang trang              alcohol  0.440 1.659196e-231
+Vang trang              density -0.348 9.497078e-140
+Vang trang            chlorides -0.314 6.907550e-113
+Vang trang     volatile acidity -0.197  7.417221e-44
+Vang trang total sulfur dioxide -0.197  6.582657e-44
+Vang trang                   pH  0.109  1.656016e-14
+
+== 4. Diem chat luong theo nong do con (alcohol) ==
+                          mean  count
+loai       alcohol_nhom              
+Vang do    8-9           5.351     37
+           9-10          5.293    710
+           10-11         5.691    444
+           11-12         6.071    267
+           12+           6.440    141
+Vang trang 8-9           5.606    500
+           9-10          5.488   1583
+           10-11         5.864   1252
+           11-12         6.191    850
+           12+           6.594    711
+
+== 5. Ho so median: quality >= 7 vs con lai, theo loai ==
+loai                 Vang do         Vang trang         
+hi                     False   True       False    True 
+fixed acidity          7.800   8.700      6.800    6.700
+volatile acidity       0.540   0.370      0.270    0.250
+citric acid            0.240   0.400      0.320    0.310
+residual sugar         2.200   2.300      6.000    3.875
+chlorides              0.080   0.073      0.045    0.037
+free sulfur dioxide   14.000  11.000     34.000   33.000
+total sulfur dioxide  39.500  27.000    140.000  122.000
+density                0.997   0.996      0.994    0.992
+pH                     3.310   3.270      3.170    3.200
+sulphates              0.600   0.740      0.470    0.480
+alcohol               10.000  11.600     10.000   11.500
+
+== 6. Ruou quality >= 8 ==
+loai
+Vang do        18
+Vang trang    180
+            alcohol  volatile acidity  sulphates  density
+loai                                                     
+Vang do       12.15              0.37       0.74    0.995
+Vang trang    12.00              0.26       0.46    0.992
+
+Khong co cot gia ban, giong nho, vung/quoc gia trong du lieu -> khong tra loi duoc phan do gia va giong nho/Phap.

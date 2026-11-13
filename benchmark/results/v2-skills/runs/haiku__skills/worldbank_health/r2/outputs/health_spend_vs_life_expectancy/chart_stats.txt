@@ -1,0 +1,37 @@
+le: 17191 quan sat khac rong, 265 ma, nam 1960-2024
+hexp: 5713 quan sat khac rong, 241 ma, nam 2000-2024
+gdp: 8748 quan sat khac rong, 251 ma, nam 1990-2025
+
+So quoc gia co du 3 chi so theo nam (5 nam gan nhat):
+year
+2017    186
+2018    186
+2019    186
+2020    186
+2021    186
+2022    185
+2023    184
+2024     22
+VN chi tieu: 171.2 USD; GDP: 11029.0 ; LE: <bound method Series.le of Country Name                     Viet Nam
+Country Code                          VNM
+year                                 2019
+life_exp                           74.211
+hexp                           171.152969
+gdp                          11029.273208
+Region                East Asia & Pacific
+IncomeGroup           Upper middle income
+log_hexp                         5.142558
+log_gdp                          9.308308
+expected_le                     71.275566
+gap_le                           2.935434
+gap_le_quad                      2.856924
+rank_gap                               45
+rank_gap_quad                          47
+hexp_quartile_rank               0.327957
+Name: 180, dtype: object> ; expected: 71.28
+VN gap: 2.94 rank: 45 / 186 ; quad rank: 47
+VN spend percentile (all): 0.328
+Peers (upper-middle) median spend: 388.7 n: 57
+Spend rank among upper-middle peers: 54 / 57
+Upper-middle peers with gap > VN: 14
+Chart files written.

@@ -1,0 +1,2 @@
+mo_hinh,AUC_test,PR_AUC_test,n_test,ti_le_khong_hoan_thanh_test,recall_test,precision_test,ti_le_bi_gan_co,so_bat_duoc,tong_khong_hoan_thanh,so_gan_co_khong_hoan_thanh,so_bo_sot,nguong
+logistic,0.6723578939543087,0.5029006960441986,3644,0.37760702524698136,0.6388081395348837,0.5158450704225352,0.4676180021953897,879,1376,825,497,0.3850799119755967

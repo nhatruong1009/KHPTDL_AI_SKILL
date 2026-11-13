@@ -1,0 +1,3 @@
+split,threshold,flagged,flagged_pct,tp,fp,fn,tn,recall,precision,specificity,base_rate
+validation,0.4454,1303,50.5,840,463,360,918,0.7,0.645,0.665,0.465
+test,0.4454,1341,36.8,791,550,585,1718,0.575,0.59,0.757,0.378

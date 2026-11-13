@@ -1,0 +1,7 @@
+scenario,model,test_base_rate,roc_auc,lift_top20
+"bank-additional-full, thời gian: không macro, không tháng",Luật đơn giản (kết quả chiến dịch trước),0.38452824081566594,0.6248974095411118,1.7652866992470553
+"bank-additional-full, thời gian: không macro, không tháng",Hồi quy logistic,0.38452824081566594,0.5979684101068534,1.401288369128175
+"bank-additional-full, thời gian: không macro, không tháng",Gradient boosting,0.38452824081566594,0.6018093548332833,1.2981905762043302
+"bank-full, thời gian: không tháng",Luật đơn giản (kết quả chiến dịch trước),0.39339427897375406,0.6321044478975874,1.7246465262943749
+"bank-full, thời gian: không tháng",Hồi quy logistic,0.39339427897375406,0.6591495817477747,1.6627842052425115
+"bank-full, thời gian: không tháng",Gradient boosting,0.39339427897375406,0.6024217776867522,1.2353718052478186

@@ -1,0 +1,67 @@
+{
+  "task": "worldbank_health",
+  "model": "sonnet",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 3,
+    "has_script": true,
+    "expected_skills_hit_pct": 75.0,
+    "skills_missing": [
+      "group-compare",
+      "root-cause"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "Bỏ các dòng metadata và loại bỏ dòng tổng hợp",
+        "pass": true,
+        "evidence": "analysis.py dùng read_csv(skiprows=4) và lọc Region.notna() từ Metadata_Country; bỏ 49 dòng tổng hợp, còn 217 quốc gia/vùng, khớp n_real_countries=217 (266−217=49)."
+      },
+      {
+        "check": "Chọn năm rõ ràng, có khoảng 180+ nước đủ 3 chỉ số",
+        "pass": true,
+        "evidence": "Chọn năm 2023 với n=184, khớp đáp án tham chiếu (184); kiểm tra lại với năm 2022 (n=185)."
+      },
+      {
+        "check": "Báo cáo liên hệ dương mạnh (Spearman ~0,8+) và nói rõ là liên hệ, bị nhiễu bởi thu nhập",
+        "pass": true,
+        "evidence": "Spearman 0,84 (tham chiếu 0,842), Pearson log 0,83; R² của GDP là 75%, thêm chi tiêu y tế lên 76%; tương quan riêng phần 0,22 (2023) và 0,10 (2022); nêu rõ 'liên hệ, không chứng minh nhân quả'."
+      },
+      {
+        "check": "Kiểm soát thu nhập và liệt kê nước vượt/dưới kỳ vọng phù hợp với tham chiếu",
+        "pass": true,
+        "evidence": "Mô hình chính là phần dư theo ln(GDP), mô hình phụ có thêm ln(HE) (hệ số 1,14, khớp tham chiếu 1,14). Nước vượt kỳ vọng: Solomon, Jordan, Lebanon, Malawi, Sri Lanka; nước dưới kỳ vọng: Nigeria −15,3, Nauru, Guinea Xích đạo, Chad, Guyana, Lesotho. Danh sách trùng nhiều với by_year 2023."
+      },
+      {
+        "check": "Việt Nam có phần dư dương khoảng +2 đến +5 năm",
+        "pass": true,
+        "evidence": "Việt Nam +1,9 năm (CI +1,4 đến +2,5) theo mô hình chỉ dùng GDP, khớp resid_gdp_only=1,94 của tham chiếu; năm 2022 là +2,7 (tham chiếu 2,72). Kết quả ở biên dưới của khoảng nhưng đúng với mô hình đã chọn."
+      },
+      {
+        "check": "story.md cho lãnh đạo Bộ Y tế: thông điệp chính, mạch truyện, gợi ý hành động, lưu ý",
+        "pass": true,
+        "evidence": "Có thông điệp chính, các phần Bối cảnh → Vấn đề → Phát hiện → Gợi ý hành động (ghi rõ là 'đề xuất, không phải kết luận của dữ liệu') → Lưu ý (không nhân quả, US$ và PPP khác nhau, nhiễu ở nước nhỏ). Không nhắc tới ngoại lệ CAR 2022, nhưng năm 2023 đã tránh được ngoại lệ này."
+      }
+    ],
+    "scores": {
+      "data_handling": 5,
+      "analysis_rigor": 5,
+      "communication": 5,
+      "storytelling": 4,
+      "honesty": 5,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [],
+    "summary": "Bài làm chất lượng cao. Dữ liệu được làm sạch đúng cách: bỏ 4 dòng metadata, lọc theo Region và chọn năm 2023 với n=184. Các số liệu khớp với tham chiếu: Spearman 0,84, R² 0,746/0,758, hệ số ln(HE) 1,14, phần dư của Việt Nam +1,9 (tham chiếu 1,94) và năm 2022 là +2,7. Bài có kiểm tra độ vững qua hai năm và hai mô hình, có bootstrap CI cho Việt Nam, và phân tích nhóm nước cùng thu nhập. Story bằng tiếng Việt, có thông điệp rõ, hành động được đóng khung là gợi ý và có lưu ý trung thực về nhân quả cũng như chênh lệch US$/PPP. Điểm trừ nhỏ: dòng tiêu đề 'trên đường xu thế' hơi mâu thuẫn với mức vượt +1,9; không nhắc tới ngoại lệ CAR; biểu đồ 2 có nhãn Jordan/Lebanon chồng nhau (agent đã tự thừa nhận); biểu đồ 3 dùng tên tiếng Anh như 'Naoero', không nhất quán với 'Nauru' trong văn bản."
+  },
+  "judge_cost_usd": 0.24721959999999998,
+  "accuracy_pct": 100.0,
+  "quality_pct": 91.7,
+  "overall": 96.7
+}

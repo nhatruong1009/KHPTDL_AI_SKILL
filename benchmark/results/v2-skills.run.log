@@ -1,0 +1,33 @@
+run v2-skills: 32 jobs -> /root/.cache/skill-bench/runs/v2-skills
+[done] sonnet__skills   student_perf       r1   130.3s $0.408 turns=30 skills=['data-eda', 'data-relevance', 'group-compare', 'analysis-plan', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   retail_uk          r1   338.3s $0.486 turns=42 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-chart', 'answer-write', 'storytelling', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    household_power    r1   295.2s $0.035 turns=17 skills=['data-eda', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    worldbank_health   r1   147.7s $0.034 turns=34 skills=['data-eda', 'storytelling', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   household_power    r1   367.7s $0.513 turns=39 skills=['data-eda', 'data-relevance', 'time-series', 'analysis-plan', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   worldbank_health   r1   170.9s $0.507 turns=42 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-chart', 'storytelling', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    himalaya           r1   105.0s $0.026 turns=29 skills=['data-eda', 'data-relevance', 'analysis-plan', 'answer-write', 'storytelling', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    student_perf       r1   888.0s $0.042 turns=13 skills=['data-eda'] err=False timeout=False
+[done] haiku__skills    wine_quality       r1    87.4s $0.022 turns=27 skills=['data-eda', 'data-relevance', 'group-compare', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    retail_uk          r1   905.4s $0.110 turns=67 skills=['data-eda', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   himalaya           r1   164.5s $0.514 turns=33 skills=['data-eda', 'data-relevance', 'analysis-plan', 'answer-write', 'storytelling', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   wine_quality       r1    41.0s $0.160 turns=13 skills=['data-eda', 'data-relevance'] err=False timeout=False
+[done] sonnet__skills   bank_marketing     r1   304.7s $0.508 turns=25 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-predict'] err=False timeout=False
+[done] haiku__skills    oulad_early_warning r1   305.1s $0.083 turns=33 skills=['data-eda', 'data-relevance', 'analysis-plan'] err=False timeout=False
+[done] sonnet__skills   oulad_early_warning r1   301.0s $0.721 turns=36 skills=['data-eda', 'data-relevance', 'analysis-plan', 'group-compare', 'data-predict', 'data-chart', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    bank_marketing     r1   353.2s $0.077 turns=36 skills=['data-eda', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    student_perf       r2   141.4s $0.032 turns=18 skills=['data-eda'] err=False timeout=False
+[done] sonnet__skills   student_perf       r2   189.7s $0.434 turns=25 skills=['data-eda', 'data-relevance', 'analysis-plan', 'group-compare', 'answer-write'] err=False timeout=False
+[done] haiku__skills    retail_uk          r2   375.9s $0.031 turns=26 skills=['data-eda', 'data-relevance', 'analysis-plan'] err=False timeout=False
+[done] sonnet__skills   retail_uk          r2   461.9s $0.635 turns=48 skills=['data-eda', 'data-relevance', 'analysis-plan', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    household_power    r2   321.7s $0.044 turns=32 skills=['data-eda', 'data-relevance', 'analysis-plan', 'time-series'] err=False timeout=False
+[done] sonnet__skills   household_power    r2   283.0s $0.531 turns=32 skills=['data-eda', 'data-relevance', 'analysis-plan', 'time-series', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    worldbank_health   r2   142.8s $0.033 turns=29 skills=['data-eda'] err=False timeout=False
+[done] haiku__skills    wine_quality       r2    69.4s $0.017 turns=17 skills=['data-eda', 'data-relevance'] err=False timeout=False
+[done] sonnet__skills   worldbank_health   r2   152.5s $0.486 turns=33 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-chart', 'answer-write', 'storytelling', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   wine_quality       r2    43.8s $0.172 turns=14 skills=['data-eda', 'data-relevance', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    himalaya           r2   153.1s $0.042 turns=47 skills=['data-eda', 'data-relevance', 'analysis-plan', 'answer-write', 'answer-qa', 'storytelling'] err=False timeout=False
+[done] sonnet__skills   himalaya           r2   182.3s $0.590 turns=39 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-chart', 'answer-write', 'storytelling', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    bank_marketing     r2   321.6s $0.047 turns=31 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-predict', 'data-chart'] err=False timeout=False
+[done] sonnet__skills   bank_marketing     r2   403.0s $0.499 turns=31 skills=['data-eda', 'data-relevance', 'analysis-plan', 'data-predict', 'answer-qa'] err=False timeout=False
+[done] sonnet__skills   oulad_early_warning r2   392.5s $0.919 turns=49 skills=['data-eda', 'data-relevance', 'analysis-plan', 'group-compare', 'data-predict', 'answer-write', 'answer-qa'] err=False timeout=False
+[done] haiku__skills    oulad_early_warning r2   463.8s $0.162 turns=41 skills=['data-eda', 'answer-qa'] err=False timeout=False

@@ -1,0 +1,86 @@
+{
+  "task": "oulad_early_warning",
+  "model": "haiku",
+  "variant": "skills",
+  "rep": 2,
+  "deterministic": {
+    "has_answer_md": true,
+    "has_story_md": true,
+    "n_charts": 4,
+    "has_script": true,
+    "expected_skills_hit_pct": 22.2,
+    "skills_missing": [
+      "data-relevance",
+      "analysis-plan",
+      "group-compare",
+      "data-predict",
+      "data-calc",
+      "data-chart",
+      "answer-write"
+    ],
+    "finished": true
+  },
+  "judge_model": "claude-opus-5-5",
+  "judge": {
+    "checks": [
+      {
+        "check": "AQ1: clicks và active days theo tuần cho Pass/Fail/Withdrawn, theo sinh viên, thống kê vững",
+        "pass": true,
+        "evidence": "n mỗi tuần Pass 7.399 / Fail 3.469 / Withdrawn 2.152 (theo sinh viên). Trung vị clicks tuần 1 là 59/33/20, khớp tham chiếu. Có trung vị ngày truy cập (3/2/2–1), tỷ lệ tuần 0 ngày truy cập, Kruskal + Mann-Whitney với Holm và hiệu ứng ~0,30."
+      },
+      {
+        "check": "AQ2: hiệu ứng, xử lý đa kiểm định, khác biệt từ tuần 1",
+        "pass": true,
+        "evidence": "Dùng rank-biserial (active_days_0_28 0,35; clicks_w1 0,26), hiệu chỉnh Holm, nói rõ n lớn làm hầu hết đều có ý nghĩa. Kết luận 'ngay từ tuần 1' (p_Holm ≈ 1e-144), khớp tham chiếu."
+      },
+      {
+        "check": "AQ3 thiết kế: hold-out theo kỳ bằng cột split",
+        "pass": true,
+        "evidence": "Train 2013B+2013J (6.795), validation 2014B (2.581), test 2014J (3.644). Chọn mô hình và ngưỡng trên validation."
+      },
+      {
+        "check": "AQ3 rò rỉ/đạo đức: không dùng cột kết quả/thuộc tính nhạy cảm; tma1_score bị loại hoặc gắn cờ",
+        "pass": true,
+        "evidence": "Gender/age/disability/IMD/region chỉ dùng để audit. highest_education cũng bị loại. tma1_score bị loại khỏi mô hình chính vì không có ngày công bố, chỉ chạy như phân tích độ nhạy (AUC test giảm còn 0,667)."
+      },
+      {
+        "check": "AQ3 kết quả: PR-AUC test ±0,05, so với baseline, recall/precision tại ngưỡng từ validation, nói trung thực về mục tiêu 70%",
+        "pass": false,
+        "evidence": "answer.md chỉ báo ROC-AUC 0,716. PR-AUC test (0,647) chỉ có trong q3_main_metrics.csv, không được báo cáo, và không so với prevalence 0,378. Recall 71,5% tại ngưỡng validation 0,3865 được kết luận là 'đạt (biên)', trong khi tham chiếu là 0,62–0,69, tức hơi dưới 70%. Có baseline chỉ dùng tổng lượt truy cập (AUC 0,652)."
+      },
+      {
+        "check": "AQ4: xếp hạng trong từng module-kỳ, precision@200 khớp, so với tỷ lệ nền",
+        "pass": true,
+        "evidence": "Xếp hạng riêng cho BBB-2014J và FFF-2014J. Trúng 146/200 = 73% và 176/200 = 88%, nằm trong ±0,08 so với tham chiếu 0,76/0,88. Có nêu tổng số không hoàn thành 635/1.786 và 741/1.858, có so với đối chứng 'ít truy cập nhất' (121 và 168). Tuy vậy, tỷ lệ nền (0,36/0,40) không được viết ra thành tỷ lệ."
+      },
+      {
+        "check": "AQ5: giải thích tiếng Việt 2-3 câu theo đóng góp thực của mô hình, không thuộc tính nhạy cảm, lý do chính hợp lý",
+        "pass": true,
+        "evidence": "Đóng góp tính bằng hệ số × giá trị chuẩn hoá trong log-odds. Các lý do hàng đầu trong top-3: active_days_0_28 (359), tma1_submitted_by_d28 (308), tma1_on_time (259), khớp tham chiếu. Câu cho cố vấn rõ ràng nhưng mang tính khuôn mẫu: 3 ví dụ đầu giống hệt nhau."
+      },
+      {
+        "check": "Không khẳng định nhân quả; nêu giới hạn quan sát/khái quát hoá",
+        "pass": true,
+        "evidence": "Có ghi 'Quan sát, không phải thí nghiệm ... không chứng minh rằng tăng truy cập sẽ cải thiện kết quả' và dùng 'mở đầu trao đổi, không phải kết luận'. Không nói thẳng rằng precision của danh sách không phải hiệu quả can thiệp."
+      }
+    ],
+    "scores": {
+      "data_handling": 4,
+      "analysis_rigor": 4,
+      "communication": 4,
+      "storytelling": null,
+      "honesty": 4,
+      "charts": 4
+    },
+    "numbers_invented_or_wrong": [
+      "Recall test 71,5% và kết luận 'đạt mục tiêu 70% (biên)': số thật theo pipeline của tác tử (bộ 32 đặc trưng khác tham chiếu), nhưng lệch so với các biến thể tham chiếu (0,62–0,69, dưới 70%)",
+      "q1_totals_by_outcome.csv ghi số sinh viên 7.397 / 3.445 / 2.062, không khớp quần thể 7.399 / 3.469 / 2.152 (có thể do thiếu dữ liệu ở bảng tổng 0–28); không được nêu trong câu trả lời",
+      "Final reply ghi 'Danh sách mô hình trúng nhiều hơn đối chứng (322 so với 289)': đúng theo log (121+168=289)"
+    ],
+    "summary": "Bài làm vững và xử lý tốt phần lớn các bẫy. Đếm theo sinh viên (13.020 = 7.399 / 3.469 / 2.152). Dùng split theo kỳ, chọn ngưỡng trên validation. Loại thuộc tính nhạy cảm và tma1_score (chỉ dùng làm độ nhạy). Xếp hạng 200 riêng cho từng module-kỳ (73% / 88%, khớp tham chiếu). Có hiệu ứng, Holm, kết luận khác biệt từ tuần 1 và giải thích dựa trên đóng góp logit. Điểm yếu chính: không báo PR-AUC (0,647 chỉ có trong CSV) và không so với prevalence 0,378, chỉ dùng ROC-AUC. Kết luận 'đạt 70% (biên)' với recall 71,5%, trong khi tham chiếu cho thấy hơi dưới 70%; tác tử có nêu tính biên và độ nhạy, nên vẫn tương đối trung thực. Tỷ lệ nền theo module không được viết rõ thành tỷ lệ. Câu cho cố vấn mang tính khuôn mẫu. Biểu đồ có tiêu đề nêu kết luận, nhưng chú giải ở biểu đồ Q1 đè lên đường Fail, và biểu đồ Q2 ghi 'Xanh = có ý nghĩa' dù mọi cột cùng màu. Toàn bộ bằng tiếng Việt, rõ ràng, có nêu giả định."
+  },
+  "judge_cost_usd": 0.3766437,
+  "accuracy_pct": 87.5,
+  "quality_pct": 75.0,
+  "overall": 82.5
+}

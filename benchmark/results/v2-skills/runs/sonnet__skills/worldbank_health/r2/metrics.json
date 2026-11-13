@@ -1,0 +1,71 @@
+{
+  "task": "worldbank_health",
+  "model": "sonnet",
+  "model_id": "claude-sonnet-5-5",
+  "rep": 2,
+  "variant": "skills",
+  "effort": "medium",
+  "thinking_tokens": 1355,
+  "wall_s": 152.5,
+  "duration_api_s": 140.3,
+  "cost_usd": 0.48648739999999996,
+  "num_turns": 33,
+  "input_tokens": 38,
+  "output_tokens": 21265,
+  "cache_read_tokens": 682534,
+  "cache_write_tokens": 51377,
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 38,
+      "outputTokens": 21265,
+      "cacheReadInputTokens": 682534,
+      "cacheCreationInputTokens": 51377,
+      "webSearchRequests": 0,
+      "costUSD": 0.48648739999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1355,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 51377,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "subtype": "success",
+  "is_error": false,
+  "timed_out": false,
+  "api_error": null,
+  "final_text": "**Trả lời:** Có, nhưng phần lớn là do thu nhập. Năm 2023, nước chi tiêu y tế cao hơn thường có tuổi thọ cao hơn (Spearman 0,84, n = 184 quốc gia/vùng lãnh thổ). GDP/người PPP một mình giải thích 75% khác biệt tuổi thọ giữa các nước; thêm chi tiêu y tế chỉ nâng lên 76%. Sau khi tính đến thu nhập, phần đóng góp riêng của chi tiêu y tế nhỏ và không ổn định. Tương quan riêng phần là r = 0,22 (p = 0,003) năm 2023 nhưng chỉ r = 0,10 (p = 0,19) năm 2022. Vì vậy tôi kết luận ở mức \"yếu, chưa vững\", không phải \"chi tiêu làm tăng tuổi thọ\".\n\n**Việt Nam (2023):**\n- **Vị trí:** tuổi thọ 74,6 năm so với kỳ vọng khoảng 72,6 theo GDP PPP, tức vượt khoảng +1,9 năm (khoảng tin cậy bootstrap 95%: +1,4 đến +2,5), xếp hạng 56/184. Năm 2022 là +2,7.\n- **So với nước cùng thu nhập:** Việt Nam ở nửa trên của 27 nước có GDP PPP trong ±25%. Lebanon, Jordan, Peru, Sri Lanka, Ecuador, Tunisia và Algeria đạt 76–78 năm.\n- **Chi tiêu:** Việt Nam chi 197 US$/người, thấp hơn trung vị nhóm đó (333 US$).\n\n| Vượt kỳ vọng nhất (năm) | Dưới kỳ vọng nhất (năm) |\n|---|---|\n| Quần đảo Solomon +7,2 | Nigeria −15,3 |\n| Jordan +6,6 | Nauru −9,8 |\n| Lebanon +6,1 | Guinea Xích đạo −9,6 |\n| Malawi +5,9 | Guyana −9,3 |\n| Maldives +5,7 | Chad −8,5 |\n\nNhóm dưới kỳ vọng tập trung ở châu Phi cận Sahara. Nhiều nước vượt kỳ vọng chi rất ít, ví dụ Sri Lanka 134 US$ và Malawi 41 US$/người.\n\n**Cách làm:**\n- **Dữ liệu:** World Bank 2023. Tôi bỏ 49 dòng tổng hợp khu vực, còn 217 quốc gia/vùng, rồi bỏ thêm 33 nước thiếu ít nhất một chỉ số, còn 184.\n- **Mô hình:** hồi quy OLS tuổi thọ ~ ln(GDP PPP). Phần dư là mức \"vượt\" hoặc \"dưới\" kỳ vọng.\n- **Kiểm tra độ vững:** thêm ln(chi tiêu y tế) vào mô hình và lặp lại với năm 2022. Tương quan hạng của phần dư giữa 2023 và 2022 là 0,94, giữa hai mô hình là 0,97. Trong top 15 vượt kỳ vọng, 14/15 nước trùng giữa hai năm và 12/15 trùng giữa hai mô hình.\n\n**Hạn chế:**\n- Đây là so sánh giữa các nước, chỉ cho thấy liên hệ, không chứng minh nhân quả.\n- Chi tiêu y tế tính theo US$ hiện hành còn GDP theo PPP, nên chi tiêu của nước giá thấp như Việt Nam có thể bị đánh giá thấp.\n- Các nước nhỏ (Nauru, Solomon, Guyana, Brunei) cho phần dư nhiều nhiễu.\n- Vì không cài được statsmodels, tôi tự viết hàm OLS bằng numpy/scipy.\n- Biểu đồ 2: nhãn \"Jordan\" và \"Lebanon\" chồng nhẹ lên nhau do hai nước có điểm gần nhau; tôi chưa chỉnh.\n\nTệp nằm trong `outputs/chi-tieu-y-te-tuoi-tho/`:\n- answer.md\n- story.md\n- analysis.py\n- 01_chi_tieu_vs_tuoi_tho.png\n- 02_phan_du_theo_thu_nhap.png\n- 03_vuot_duoi_ky_vong.png\n- phan_du_theo_quoc_gia_2023.csv\n- nhom_tuong_dong_vn.csv\n- tom_tat_mo_hinh_2023.csv\n- tom_tat_mo_hinh_2022.csv",
+  "outputs": [
+    "outputs/chi-tieu-y-te-tuoi-tho/01_chi_tieu_vs_tuoi_tho.png",
+    "outputs/chi-tieu-y-te-tuoi-tho/02_phan_du_theo_thu_nhap.png",
+    "outputs/chi-tieu-y-te-tuoi-tho/03_vuot_duoi_ky_vong.png",
+    "outputs/chi-tieu-y-te-tuoi-tho/analysis.py",
+    "outputs/chi-tieu-y-te-tuoi-tho/answer.md",
+    "outputs/chi-tieu-y-te-tuoi-tho/nhom_tuong_dong_vn.csv",
+    "outputs/chi-tieu-y-te-tuoi-tho/phan_du_theo_quoc_gia_2023.csv",
+    "outputs/chi-tieu-y-te-tuoi-tho/story.md",
+    "outputs/chi-tieu-y-te-tuoi-tho/tom_tat_mo_hinh_2022.csv",
+    "outputs/chi-tieu-y-te-tuoi-tho/tom_tat_mo_hinh_2023.csv"
+  ],
+  "tools": {
+    "Skill": 7,
+    "Bash": 13,
+    "Write": 3,
+    "Edit": 1,
+    "Read": 1
+  },
+  "skills_invoked": [
+    "data-eda",
+    "data-relevance",
+    "analysis-plan",
+    "data-chart",
+    "answer-write",
+    "storytelling",
+    "answer-qa"
+  ],
+  "skill_md_reads": [],
+  "tool_errors": 6,
+  "total_tokens": 755214
+}

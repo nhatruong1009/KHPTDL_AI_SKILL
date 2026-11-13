@@ -1,0 +1,63 @@
+{
+  "rows_raw": 2075259,
+  "duplicate_timestamps": 0,
+  "start": "2006-12-16 17:24:00",
+  "end": "2010-11-26 21:02:00",
+  "minutes_expected": 2075259,
+  "minutes_absent": 0,
+  "minutes_nan_value": 25979,
+  "pct_minutes_valid": 98.7481562542314,
+  "gaps_ge_1h_count": 9,
+  "gaps_ge_1h_total_days": 17.860000000000003,
+  "days_total": 1442,
+  "days_good": 1421,
+  "trend_kwh_per_year": -10.333326823238615,
+  "trend_pct_per_year": -1.2955197881435612,
+  "anom_daily_count": 90,
+  "anom_weekly_count": 25,
+  "backtest_n": 32,
+  "backtest_mape_pct": {
+    "mo_hinh": 14.285587245786346,
+    "naive_nam_truoc": 15.494290459749285,
+    "naive_30_ngay": 21.089977014720695
+  },
+  "backtest_pe_q05_q95": [
+    -0.24152612201440296,
+    0.12999400654016469
+  ],
+  "sens_ex_aug2008_mape_pct": {
+    "mo_hinh": 8.593727742873094,
+    "naive_nam_truoc": 10.305011505499598,
+    "naive_30_ngay": 15.743367154273693
+  },
+  "sens_ex_aug2008_pe_q05_q95": [
+    -0.24229710138420324,
+    0.0650119110184621
+  ],
+  "sens_from2009_n": 20,
+  "sens_from2009_mape_pct": 6.06899747795962,
+  "sens_from2009_pe_q05_q95": [
+    -0.15153862644184146,
+    0.028716751815608448
+  ],
+  "backtest_dec_rows": {
+    "2008-12": {
+      "thuc_te": 949.0555,
+      "du_bao": 1133.955,
+      "pe_mo_hinh": 0.1948
+    },
+    "2009-12": {
+      "thuc_te": 1015.1311,
+      "du_bao": 1055.6534,
+      "pe_mo_hinh": 0.0399
+    }
+  },
+  "forecast_dec2010": {
+    "diem": 1038.7102586150088,
+    "khoang_90_lo": 919.2174937240153,
+    "khoang_90_hi": 1369.4740040008778,
+    "kwh_ngay_tb_du_bao": 33.50678253596803,
+    "ngay_du_lieu_cuoi_dung_de_huan_luyen": "2010-11-26",
+    "so_ngay_huan_luyen": 1421
+  }
+}
