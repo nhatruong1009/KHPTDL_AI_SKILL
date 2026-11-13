@@ -1,0 +1,6 @@
+{
+  "name": "da-skills",
+  "version": "1.0.0",
+  "description": "Data-analysis skills: /analyze orchestrator (EDA -> relevance gate -> plan -> analysis -> chart -> answer -> QA) plus 15 sub-skills.",
+  "skills": "./.claude/skills/"
+}

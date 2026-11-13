@@ -1,0 +1,11 @@
+{
+  "name": "khptdl",
+  "owner": { "name": "KHPTDL" },
+  "plugins": [
+    {
+      "name": "da-skills",
+      "source": "./",
+      "description": "Data-analysis skills: /analyze orchestrator plus 15 sub-skills."
+    }
+  ]
+}

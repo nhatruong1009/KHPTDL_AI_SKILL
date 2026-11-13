@@ -20,7 +20,7 @@ Arguments: $ARGUMENTS
 - The user asks to "analyze", "chart", "find out", or "predict" something from a dataset
 
 # Process
-**Load each step's skill before doing that step**: call the Skill tool with its name (e.g. `Skill(skill="data-eda")`, `Skill(skill="data-predict")`) and follow the instructions it returns. Names written as `/name` below are skills to load this way - not reminders to work from memory. Load a skill once per run; reuse its instructions for later sub-questions.
+**Load each step's skill before doing that step**: call the Skill tool with its name (e.g. `Skill(skill="data-eda")`, `Skill(skill="data-predict")`) and follow the instructions it returns. Names written as `/name` below are skills to load this way - not reminders to work from memory. Load a skill once per run; reuse its instructions for later sub-questions. If the bare name is not found, use the plugin-prefixed name (e.g. `da-skills:data-eda`).
 
 1. **Explore** - `/data-eda` on the data path.
 2. **Gate** - `/data-relevance` with the question. If **Not relevant -> stop and refuse** (explain what's missing).
